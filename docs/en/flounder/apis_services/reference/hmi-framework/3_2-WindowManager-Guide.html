@@ -1,0 +1,3669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Window Manager Developper Guide  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/flounder/apis_services/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: flounder flounder-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/en/flounder/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/flounder/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/flounder//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/flounder/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/flounder/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/flounder/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/flounder/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'flounder' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                API Reference
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/api-reference/0-api-introduction.html">
+                API Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-main/0-introduction.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-main/1-afm-daemons.html">
+                The afm daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-main/2-widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-main/2.1-widgets.html">
+                Overview of widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-main/2.2-config.xml.html">
+                Widget configuration file
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-main/3-permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-main/4-quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework Binder
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-vocabulary.html">
+                Binder daemon vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-binding-writing.html">
+                How to write a binding ?
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Binder references
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/types-and-globals.html">
+                Types and globals
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/macro-log.html">
+                Macros for logging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-api.html">
+                Functions of class afb_api
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-req.html">
+                Functions of class afb_req
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-event.html">
+                Functions of class afb_event
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-daemon.html">
+                Functions of class afb_daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-service.html">
+                Functions of class afb_service
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-events-guide.html">
+                Binder events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-application-writing.html">
+                Binder Application writing guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-migration-to-binding-v3.html">
+                Migration to bindings v3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/protocol-x-afb-ws-json1.html">
+                WebSocket protocol x-afb-ws-json1
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-desktop-package.html">
+                Installing the binder on a desktop
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-options.html">
+                Options of afb-daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-debugging.html">
+                Debugging binder and bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+                LEGACY Migration from v1 to v2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/legacy/afb-binding-v2-references.html">
+                LEGACY Binding V2 references
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/REVISIONS.html">
+                Document revision
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Test Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/0_Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/1_Write_the_tests.html">
+                Write the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/2_The_test_widget.html">
+                The test widget
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/3_Launch_the_tests.html">
+                Launch the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/4_Tests_Examples.html">
+                Tests examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                References
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/0_BindingTestFunctions.html">
+                Binding Test Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/1_BindingAssertFunctions.html">
+                Binding Assert Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/2_TestFrameworkFunctions.html">
+                Test Framework Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                LuaUnit Assertion Functions
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.html">
+                General Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.html">
+                Value Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.html">
+                Scientific Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/3_StringAssertions.html">
+                String Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.html">
+                Error Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.html">
+                Type Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/6_TableAssertions.html">
+                Table Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/signaling/signaling/architecture.html">
+                Message Signaling
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Service CAN Low Level
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/signaling/1-Architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/signaling/2-Installation.html">
+                Installation Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/signaling/3-Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                High Leval VIWI Service
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/signaling/high-viwi-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/signaling/2-Install-Usage.html">
+                Installation and Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Service Signal Composer
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/part-1/1-Architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/part-1/2-Configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/part-1/3-Plugins.html">
+                Plugins
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/part-1/4-SignalComposerAPI.html">
+                Signal Composer API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/iotbzh2016/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/iotbzh2016/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                CanDevStudio Quickstart
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/1_Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/2_can_device_socketcan_backend.html">
+                Bringing up a CAN device using socketcan backend
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/3_Add_CAN_Device.html">
+                Add a CAN device in CANdevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/4_Configure_CanRawSender_Node.html">
+                Configure a CanRawSender node
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/5_Using_CanRawView.html">
+                Using CanRawView
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/app-framework/index.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/audio/bluez-alsa.html">
+                bluez-alsa
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                PulseAudio Module 4a
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/README.html">
+                PulseAudio - 4A Integration Module
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Service Audio 4a
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/4a-framework/README.html">
+                Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/4a-framework/concepts.html">
+                Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/4a-framework/components.html">
+                Components
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/README.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/kickstart.html">
+                Kickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/reference.html">
+                Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+                Adjust volumes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+                4a-tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+                Devices
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+                HALs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HMI Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/flounder/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
+                Window Manager Developper Guide
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+                Home Screen Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/3_3-SoundManager-Guide.html">
+                Sound Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/Display_Audio_Transition1.html">
+                Sound Manager Developper Guide 2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/Display_Audio_Transition2.html">
+                Sound Manager Developper Guide 3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Homescreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/homescreen_api.html">
+                HomeScreen API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/api-reference/0-api-introduction.html">
+        API Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-main/0-introduction.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-main/1-afm-daemons.html">
+        The afm daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-main/2-widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-main/2.1-widgets.html">
+        Overview of widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-main/2.2-config.xml.html">
+        Widget configuration file
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-main/3-permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-main/4-quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-vocabulary.html">
+        Binder daemon vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-binding-writing.html">
+        How to write a binding ?
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/types-and-globals.html">
+        Types and globals
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/macro-log.html">
+        Macros for logging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-api.html">
+        Functions of class afb_api
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-req.html">
+        Functions of class afb_req
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-event.html">
+        Functions of class afb_event
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-daemon.html">
+        Functions of class afb_daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-service.html">
+        Functions of class afb_service
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-events-guide.html">
+        Binder events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-application-writing.html">
+        Binder Application writing guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-migration-to-binding-v3.html">
+        Migration to bindings v3
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/protocol-x-afb-ws-json1.html">
+        WebSocket protocol x-afb-ws-json1
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-desktop-package.html">
+        Installing the binder on a desktop
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-options.html">
+        Options of afb-daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-debugging.html">
+        Debugging binder and bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+        LEGACY Migration from v1 to v2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/legacy/afb-binding-v2-references.html">
+        LEGACY Binding V2 references
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/REVISIONS.html">
+        Document revision
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/0_Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/1_Write_the_tests.html">
+        Write the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/2_The_test_widget.html">
+        The test widget
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/3_Launch_the_tests.html">
+        Launch the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/4_Tests_Examples.html">
+        Tests examples
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/0_BindingTestFunctions.html">
+        Binding Test Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/1_BindingAssertFunctions.html">
+        Binding Assert Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/2_TestFrameworkFunctions.html">
+        Test Framework Functions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.html">
+        General Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.html">
+        Value Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.html">
+        Scientific Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/3_StringAssertions.html">
+        String Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.html">
+        Error Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.html">
+        Type Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/6_TableAssertions.html">
+        Table Assertions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/signaling/signaling/architecture.html">
+        Message Signaling
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/signaling/1-Architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/signaling/2-Installation.html">
+        Installation Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/signaling/3-Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/signaling/high-viwi-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/signaling/2-Install-Usage.html">
+        Installation and Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/part-1/1-Architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/part-1/2-Configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/part-1/3-Plugins.html">
+        Plugins
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/part-1/4-SignalComposerAPI.html">
+        Signal Composer API
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/iotbzh2016/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/iotbzh2016/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/1_Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/2_can_device_socketcan_backend.html">
+        Bringing up a CAN device using socketcan backend
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/3_Add_CAN_Device.html">
+        Add a CAN device in CANdevStudio
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/4_Configure_CanRawSender_Node.html">
+        Configure a CanRawSender node
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/candevstudio/5_Using_CanRawView.html">
+        Using CanRawView
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/af-binder/app-framework/index.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/audio/bluez-alsa.html">
+        bluez-alsa
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/README.html">
+        PulseAudio - 4A Integration Module
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/4a-framework/README.html">
+        Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/4a-framework/concepts.html">
+        Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/4a-framework/components.html">
+        Components
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/README.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/kickstart.html">
+        Kickstart
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/reference.html">
+        Reference
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+        Adjust volumes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+        4a-tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+        Devices
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+        HALs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="this-page" href="/docs/en/flounder/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
+        Window Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/3_3-SoundManager-Guide.html">
+        Sound Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/Display_Audio_Transition1.html">
+        Sound Manager Developper Guide 2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/Display_Audio_Transition2.html">
+        Sound Manager Developper Guide 3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/flounder/apis_services/reference/hmi-framework/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/docs/en/flounder/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            flounder
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/master/apis_services/" class="missing-page">
+                                    
+                                        
+                                    master
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/guppy/apis_services/" class="missing-page">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/flounder/apis_services/" class="missing-page">
+                                    
+                                        <span class="selected">
+                                            
+                                    flounder
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                -->
+
+                <!-- outdated warning
+                
+                    <div class="alert docs-alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        This version of the documentation is outdated!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/apis_services/flounder/flounder-agl-service-windowmanager-developer-guides-api-services-book.yml -->
+
+<h1 id="window-manager-application-guide"><strong>Window Manager Application Guide</strong></h1>
+<div align="right">Revision: 0.5</div>
+<div align="right">TOYOTA MOTOR CORPORATION</div>
+<div align="right">20th/Mar/2018</div>
+
+<hr />
+<div id="Table\ of\ content"></div>
+
+<h1 id="table-of-content">Table of content</h1>
+<ul>
+  <li><a href="#Introduction">Introduction</a>
+    <ul>
+      <li><a href="#Intended\ audience">Intended audience</a></li>
+      <li><a href="#Scope\ of\ this\ Document">Scope of this Document</a></li>
+      <li><a href="#Known\ Issues">Known Issues</a></li>
+      <li><a href="#External\ libraries">External libraries</a></li>
+      <li><a href="#Client\ Library">Client Library</a></li>
+    </ul>
+  </li>
+  <li><a href="#Concepts">Concepts</a>
+    <ul>
+      <li><a href="#Layers">Layers</a></li>
+      <li><a href="#Surfaces">Surfaces</a></li>
+    </ul>
+  </li>
+  <li><a href="#Configuration">Configuration</a>
+    <ul>
+      <li><a href="#Configuration\ Items">Configuration Items</a></li>
+    </ul>
+  </li>
+  <li><a href="#Building\ and\ Running">Building and Running</a>
+    <ul>
+      <li><a href="#Dependencies">Dependencies</a></li>
+      <li><a href="#Build\ Configuration">Build Configuration</a></li>
+    </ul>
+  </li>
+  <li><a href="#Implementation\ Notes">Implementation Notes</a>
+    <ul>
+      <li><a href="#Structure">Structure</a></li>
+    </ul>
+  </li>
+  <li><a href="#Sequence">Sequence</a></li>
+  <li><a href="#Binding\ API">Binding API</a>
+    <ul>
+      <li><a href="#LibWindowmanager">LibWindowmanager</a></li>
+      <li><a href="#Methods">Methods</a></li>
+      <li><a href="#Errors">Errors</a></li>
+      <li><a href="#Usage">Usage</a></li>
+      <li><a href="#Events">Events</a></li>
+    </ul>
+  </li>
+  <li><a href="#Sample">Sample</a></li>
+</ul>
+
+<div id="Introduction"></div>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>This window manager implements simple layout switching of applications on
+multiple layers and with different layer layouts.</p>
+
+<div id="Intended\ audience"></div>
+
+<h2 id="intended-audience">Intended audience</h2>
+
+<p>This document is intended for developers and system integrators who
+need to know, how the window manager works and how it is to be used.</p>
+
+<div id="Scope\ of\ this\ Document"></div>
+
+<h2 id="scope-of-this-document">Scope of this Document</h2>
+
+<p>This document covers the window manager that was implemented for TMC and
+delivered to the Automotive Grade Linux (AGL) project. It includes its
+implementation details, concepts of operation, configuration and usage.</p>
+
+<p>It does not include</p>
+
+<ul>
+  <li>
+    <p>document of the underlying architecture, see
+<a href="https://wiki.automotivelinux.org/hmiframework">HMI-Framework</a>.</p>
+  </li>
+  <li>
+    <p>document of the AGL application framework and its technologies,
+see <a href="https://wiki.automotivelinux.org/agl-distro/app-framework">AGL Application
+Framework</a>.</p>
+  </li>
+</ul>
+
+<p>It is highly recommended to have a good understanding of these documents
+and projects before using the window manager.</p>
+
+<div id="Known\ Issues"></div>
+
+<h2 id="known-issues">Known Issues</h2>
+
+<p>Currently there is a one known issues:</p>
+
+<ul>
+  <li>Only single-surface Qt applications are support through the
+libwindowmanager library. This is a limitation of how Qt creates surface
+IDs for the ivi-application interface.</li>
+</ul>
+
+<div id="External\ libraries"></div>
+
+<h2 id="external-libraries">External libraries</h2>
+
+<p>This project includes a copy of version 2.1.1 the excellent <a href="https://github.com/nlohmann/json">C++11 JSON
+library by Niels Lohmann</a>.</p>
+
+<div id="Client\ Library"></div>
+
+<h2 id="client-library">Client Library</h2>
+
+<p>A client library implementation that internally uses the <em>libafbwsc</em>, is
+provided in the <code class="highlighter-rouge">libwindowmanager</code>.</p>
+
+<div id="Concepts"></div>
+
+<h1 id="concepts">Concepts</h1>
+
+<p>The window manager implements a couple of concepts in order to allow
+efficient implementation.</p>
+
+<div id="Layers"></div>
+
+<h2 id="layers">Layers</h2>
+
+<p>Layers are entities that are stacked on top of each other. Each layer
+has an ID which is used for the ivi-controller interface, but this ID
+also implicitly specifies its stacking order, from lowest to highest.</p>
+
+<p>Layers are always full-screen. We do not use layer dimensions as a way
+to setup the scene, rather - each layer has a layout attached to it,
+which specifies an area that is used by surfaces to draw on.</p>
+
+<p>Additionally, layers will generally leave surfaces on below layers
+activated, and only disable surfaces on layers the are above the
+currently used layer.</p>
+
+<p>It is possible to deactivate these surfaces on lower layers explicitly
+using the <code class="highlighter-rouge">DeactivateSurface</code> API call.</p>
+
+<div id="Surfaces"></div>
+
+<h2 id="surfaces">Surfaces</h2>
+
+<p>Surfaces are <em>placed</em> on layers according to their name. The surface
+will then be resized to dimensions, according to the layer’s layout
+configuration.</p>
+
+<div id="Configuration"></div>
+
+<h1 id="configuration">Configuration</h1>
+
+<p>The window manager is configured with the <em>layers.json</em> configuration
+file, by default it is searched in <code class="highlighter-rouge">${AFM_APP_INSTALL_DIR}/etc/layers.json</code>.
+However, if /etc/xdg/windowmanager/layers.json exists, it will be used instead.
+The window manager will use a default configuration unless a configuration file
+is found in one of these locations.</p>
+
+<p>A sample configuration is provided with the window manager
+implementation, this sample is installed to ${AFM_APP_INSTALL_DIR}/etc/layers.json.</p>
+
+<p>Note:
+Currently, window manager doesn’t block the application displaying because “Fallback” is set by default. If the “Fallback” is not set in layers.json, window manager blocks the application displaying. In such a situation, you have to add your role(application name) at “role” in layers.json.</p>
+
+<div id="Configuration\ Items"></div>
+
+<h2 id="configuration-items">Configuration Items</h2>
+
+<p>This section describes configuration items available through
+<code class="highlighter-rouge">layers.json</code>. It will do this, by first providing an example, and then
+going into its components.</p>
+
+<h3 id="mainsurface">main_surface</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"main_surface": {
+   "surface_role": "HomeScreen",
+},
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">main_surface</code> object describes a surface that will internally be
+treated as the main surface - usually this mean <em>HomeScreen</em>. The only
+special handling this surface receives, is that it is not allowed to
+deactivate it. Placement of this surface on an layer is done by the
+other configuration described below.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">surface_role</code> this configuration item specifies the name of the
+main surface. Set this to e.g. <code class="highlighter-rouge">HomeScreen</code>.</li>
+</ul>
+
+<h3 id="mappings">mappings</h3>
+
+<p>This configuration item is a list of surface-name to layer mappings.</p>
+
+<h4 id="surface-to-layer-mapping">surface to layer mapping</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"mappings": [
+  {
+     "role": "^HomeScreen$",
+     "name": "HomeScreen",
+     "layer_id": 1000,
+     "area": { "type": "full" },
+     "comment": "Single layer map for the HomeScreen"
+  },
+  {
+     "role": "MediaPlayer|Radio|Phone|Navigation|HVAC|Settings|Dashboard|POI|Mixer",
+     "name": "apps",
+     "layer_id": 1001,
+     "area": { "type": "rect", "rect": { "x": 0, "y": 218, "width": -1, "height": -433 } },
+     "comment": "Range of IDs that will always be placed on layer 1001, negative rect values are interpreted as output_size.dimension - $value",
+
+     "split_layouts": [
+        {
+           "name": "Navigation",
+           "main_match": "Navigation",
+           "sub_match": "HVAC|MediaPlayer",
+           "priority": 1000
+        }
+     ]
+  },
+  {
+     "role": "^OnScreen.*",
+     "name": "popups",
+     "layer_id": 9999,
+     "area": { "type": "rect", "rect": { "x": 0, "y": 760, "width": -1, "height": 400 } },
+     "comment": "Range of IDs that will always be placed on the popup layer, that gets a very high 'dummy' id of 9999"
+  }
+]
+</code></pre>
+</div>
+
+<p>Each mapping defines the following items to map corresponding surfaces
+to a layer.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">role</code> defines a regular expression that application drawing names
+are matched against. If applications match this regular expression,
+the surface will be visible on this layer.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">name</code> is just a name definition for this layer, it has no
+functional use apart from identifying a layer with a name.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">layer_id</code> specifies which ID this layer will use.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">area</code> is an object that defines the area assigned to surfaces.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">split_layouts</code> is an optional item, that - if present - defines a
+number of possible split-screen layouts for this layer.</p>
+  </li>
+</ul>
+
+<h4 id="area">Area</h4>
+
+<p>Areas can be either <code class="highlighter-rouge">full</code> or <code class="highlighter-rouge">rect</code>, whereas <code class="highlighter-rouge">full</code> means a full-screen
+layer, this is mostly useful for the main_surface or HomeScreen layer.
+<code class="highlighter-rouge">rect</code> declares a layer drawing area specified as a rectangle with start
+coordinates <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> as well as its dimensions <code class="highlighter-rouge">width</code> and <code class="highlighter-rouge">height</code>.</p>
+
+<p>The dimensions can be specified relative to the screen dimensions. For
+this negative values for width and height must be used.</p>
+
+<p>For example, a full-screen surface can have the following <code class="highlighter-rouge">rect</code>
+definition:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"rect": { "x": 0,
+          "y": 0,
+          "width": -1,
+          "height": -1 }
+</code></pre>
+</div>
+
+<p>A surface that leaves a 200pixel margin on the top and bottom can use
+the following <code class="highlighter-rouge">rect</code> definition:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"rect": { "x": 0,
+          "y": 200,
+          "width": -1,
+          "height": -401 }
+</code></pre>
+</div>
+
+<p>So the expression for the actual surface dimensions when using
+screen-size-relative values will be:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>actual_width = screen_width + 1 + width
+actual_height = screen_height + 1 + height
+</code></pre>
+</div>
+
+<p>Or in other words, to leave an <code class="highlighter-rouge">N</code> wide border around a surface, the
+actual value in the dimension configuration needs to be <code class="highlighter-rouge">-N - 1</code>, and
+appropriate offsets need to be set for <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code>.</p>
+
+<h4 id="splitlayouts">split_layouts</h4>
+
+<p>This configuration item allows the specification of split-screen layouts
+on layers for certain surfaces.</p>
+
+<p>A split screen layout always has a <em>main</em> surface and a <em>sub</em> surface.
+In order to enter a split screen layout, first the <em>main</em> surface of the
+layout must be activated, and then the <em>sub</em> surface. In order to
+disable the split layout, one of the two participating surface must be
+deactivated (or a surface on a layer below the current one must be
+activated).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"split_layouts": [
+   {
+       "name": "Navigation",
+       "main_match": "Navigation",
+       "sub_match": "HVAC|MediaPlayer",
+   }
+]
+</code></pre>
+</div>
+
+<p>A split layout object has the following attributes:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">name</code> defines its name, it has no actual function other then a way
+to identify this split layout.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">main_match</code> is a regular expression that matches for the <em>main</em>
+surface of this split layout.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">sub_match</code> is a regular expression that matches for the <em>sub</em>
+surface of this layout.</p>
+  </li>
+</ul>
+
+<p>In the above example only the surface with drawing name
+<code class="highlighter-rouge">Navigation</code> will be used as the <em>main</em> surface, and the surfaces
+with drawing name <code class="highlighter-rouge">HVAC</code> or <code class="highlighter-rouge">MediaPlayer</code> can be used as a <em>sub</em> surface for
+this layout.</p>
+
+<p>The names must still match the layer’s role match!</p>
+
+<div id="Building\ and\ Running"></div>
+
+<h1 id="building-and-running">Building and Running</h1>
+
+<div id="Dependencies"></div>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>Build dependencies are as follows:</p>
+
+<ul>
+  <li>
+    <p>afb-daemon &gt;= 1.0</p>
+  </li>
+  <li>
+    <p>libsystemd &gt;= 222</p>
+  </li>
+  <li>
+    <p>wayland-client &gt;= 1.11</p>
+  </li>
+  <li>
+    <p>wayland-ivi-extension &gt;= 2.0.2 (until eel, wayland-ivi-extension &gt;= 1.13)</p>
+  </li>
+  <li>
+    <p>cmake &gt;= 2.8</p>
+  </li>
+</ul>
+
+<div id="Supported environment"></div>
+
+<h2 id="supported-environment">Supported environment</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Item</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">AGL version</td>
+      <td style="text-align: left">Electric Eel</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Hardware</td>
+      <td style="text-align: left">Renesas R-Car Starter Kit Pro(M3)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="Build\ Configuration"></div>
+
+<h2 id="build-configuration">Build Configuration</h2>
+
+<p><strong>Download recipe</strong>
+If repo is already done, please start with git clone</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir WORK
+$ cd WORK
+$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ repo sync
+
+</code></pre>
+</div>
+
+<p>Then you can get the following recipe.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">meta-agl-devel/meta-hmi-framework/recipes-graphics/agl-service-windowmanager-2017</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">meta-agl-devel/meta-hmi-framework/recipes-graphics/libwindowmanager</code></p>
+  </li>
+</ul>
+
+<p><strong>Bitbake</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo
+$ bitbake agl-demo-platform
+</code></pre>
+</div>
+
+<div id="Implementation\ Notes"></div>
+
+<h1 id="implementation-notes">Implementation Notes</h1>
+
+<p>The window manager is implemented as a app-framework-binder binding.
+That means, the build produces one shared object that exports a binding
+interface.</p>
+
+<div id="Structure"></div>
+
+<h2 id="structure">Structure</h2>
+
+<p>The implementation is loosely split across the following source files:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">main.cpp</code>: The program entry point as used by the afb-daemon. This
+file defines the afbBindingV2 symbol that is used by the afb-daemon
+in order to load a binding. It also defines the wayland fd event
+dispatcher and some globals to be used (as context for the afb calls
+we receive).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">app.cpp</code> / <code class="highlighter-rouge">app.hpp</code>: This is the main window manager
+logic implementation.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">config.cpp</code> / <code class="highlighter-rouge">config.hpp</code>: Very simple configuration
+item interface.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">controller_hooks.hpp</code>: hook functions called by the wayland
+controller to call into the window manager instance. Only a very limited number
+of events are passed to the window manager, which allowed the usage of
+such a simple interface.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">json_helper.cpp</code> / <code class="highlighter-rouge">json_helper.hpp</code>: Smaller json related
+helper functions.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">layers.cpp</code> / <code class="highlighter-rouge">layers.hpp</code>: Actually hold all the data from
+layers.json configuration, do some transformations and service the
+window manager implementation.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">layout.cpp</code> / <code class="highlighter-rouge">layout.hpp</code>: Very simple layout state for the
+implementation of split layouts and tracking of the
+surfaces involved.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">policy.hpp</code>: PolicyManager implementation stub. Gets passed the
+current and new layout on layout switch and can decide upon it being
+valid or not.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">result.hpp</code>: Simple result class around
+<code class="highlighter-rouge">std::experimental::optional</code> that additionally can hold a
+<code class="highlighter-rouge">char const *</code> to describe the error.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">util.cpp</code> / <code class="highlighter-rouge">util.hpp</code>: general utility functions and structs - and
+preprocessor definitions (e.g. <code class="highlighter-rouge">log*()</code> to AFB logging functions.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">wayland_ivi_wm.cpp</code> / <code class="highlighter-rouge">wayland_ivi_wm.hpp</code>: A C++ object-oriented
+libwayland-client wrapper. It is instanced in <code class="highlighter-rouge">main.cpp</code> and handles
+all our wayland needs. These files are in master. In eel, the name
+of these files are <code class="highlighter-rouge">wayland.cpp</code> / <code class="highlighter-rouge">wayland.hpp</code></p>
+  </li>
+</ul>
+
+<div id="Sequence"></div>
+
+<h1 id="sequence">Sequence</h1>
+
+<p>To understand the sequence between application and window manager, refer to the <a href="https://wiki.automotivelinux.org/windowmanager">spec document</a>.</p>
+
+<div id="Binding\ API"></div>
+
+<h1 id="binding-api">Binding API</h1>
+
+<p>Each function returns a reply containing at least a failed or successful
+result of the call, additionally, when calls return something, it is
+noted.</p>
+
+<div id="LibWindowmanager"></div>
+
+<h2 id="libwindowmanager">LibWindowmanager</h2>
+
+<p>This is the public interface of the class <code class="highlighter-rouge">LibWindowmanager</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class LibWindowmanager
+{
+public:
+    LibWindowmanager();
+    ~LibWindowmanager();
+
+    enum EventType {
+       Event_Active = 0,
+       Event_Inactive,
+
+       Event_Visible,
+       Event_Invisible,
+
+       Event_SyncDraw,
+       Event_FlushDraw,
+    };
+
+    int init(int port, char const *token);
+
+    // Window manager API
+    int requestSurface(json_object *object);
+    int requestSurfaceXDG(json_object *object);
+    int activateSurface(json_object *object);
+    int deactivateSurface(json_object *object);
+    int endDraw(json_object *object);
+    int getDisplayInfo(json_object *object);
+    int getAreaInfo(json_object *in_obj, json_object *out_obj);
+
+    int getAreaInfo(const char *label, json_object *out_obj);
+
+    void set_event_handler(enum EventType et, handler_fun f);
+
+};
+</code></pre>
+</div>
+
+<div id="Methods"></div>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="initint-port-char-const-token">init(int port, char const *token)</h3>
+
+<p>Initialize the Binding communication.</p>
+
+<p>The <code class="highlighter-rouge">token</code> parameter is a string consisting of only alphanumeric characters.
+If these conditions are not met, the LibWindowmanager instance will not initialize,
+i.e. this call will return <code class="highlighter-rouge">-EINVAL</code>.</p>
+
+<p>The <code class="highlighter-rouge">port</code> parameter is the port the afb daemon is listening on, an
+invalid port will lead to a failure of the call and return <code class="highlighter-rouge">-EINVAL</code>.</p>
+
+<h3 id="requestsurfacejsonobject-object">requestSurface(json_object *object)</h3>
+
+<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
+This method requests a surface with the label given from the <em>Window Manager</em>.
+It will return <code class="highlighter-rouge">surface id</code> a client application can use, and
+<code class="highlighter-rouge">-errno</code> on failure. Additionally, on the standard error, messages are
+logged to help debugging the issue.</p>
+
+<h3 id="requestsurfacexdgjsonobject-object">requestSurfaceXDG(json_object *object)</h3>
+
+<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name',</span><span class="w"> </span><span class="err">'kKeyIviId':</span><span class="w"> </span><span class="err">'ivi</span><span class="w"> </span><span class="err">id'</span><span class="w"> </span><span class="p">}</span></code></strong>
+This method is mainly intended for <em>xdglauncher</em> that controls xdg application such as chromium.
+It will return <code class="highlighter-rouge">surface id</code> xdglauncher uses, and
+<code class="highlighter-rouge">-errno</code> on failure. Additionally, on the standard error, messages are
+logged to help debugging the issue.</p>
+
+<h3 id="activatesurfacejsonobject-object">activateSurface(json_object *object)</h3>
+
+<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name',</span><span class="w"> </span><span class="err">'kKeyDrawingArea':</span><span class="w"> </span><span class="err">'layout'</span><span class="w">  </span><span class="p">}</span></code></strong>
+This method is mainly intended for <em>manager</em> applications that control
+other applications (think an application manager or the <em>HomeScreen</em>).
+It instructs the window manager to activate the surface with the given
+<em>label</em>.</p>
+
+<p>This method only is effective after the actual window or surface was
+created by the application.</p>
+
+<h3 id="deactivatesurfacejsonobject-object">deactivateSurface(json_object *object)</h3>
+
+<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
+This method is mainly intended for <em>manager</em> applications that control other applications.
+In adition, this is for applications that overrides other applications such like popup message.
+In this case, popup surface requests to be hidden. It instructs the window manager to deactivate the surface associated with the given label. Note, that deactivating a surface also means to implicitly activate another (the last active or if not available <em>main surface</em> or <em>HomeScreen</em>.)</p>
+
+<p>This method only is effective after the actual window or surface was
+created by the application.</p>
+
+<h3 id="enddrawjsonobject-object">endDraw(json_object *object)</h3>
+
+<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
+This function is called from a client application when it is done
+drawing its surface content.</p>
+
+<p>It is not crucial to make this call at every time a drawing is finished
+- it is mainly intended to allow the window manager to synchronize
+drawing in case of layout switch. The exact semantics are explained in
+the next <a href="#_events">Events</a> Section.</p>
+
+<h3 id="getdisplayinfojsonobject-object">getDisplayInfo(json_object *object)</h3>
+
+<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code></strong>
+This function gets the display information as follows:
+ - width[pixel]
+ - height[pixel]
+ - width[mm]
+ - height[mm]</p>
+
+<p>It outputs the display information for json_object in the argument as follows:
+  <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"width_pixel"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">width</span><span class="p">[</span><span class="err">pixel</span><span class="p">],</span><span class="w"> </span><span class="nt">"height_pixel"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">height</span><span class="p">[</span><span class="err">pixel</span><span class="p">],</span><span class="w">
+    </span><span class="nt">"width_mm"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">width</span><span class="p">[</span><span class="err">mm</span><span class="p">],</span><span class="w"> </span><span class="nt">"height_mm"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">height</span><span class="p">[</span><span class="err">mm</span><span class="p">]}</span></code></p>
+
+<p>It should be called after calling init().
+It should not be called in the event handler because it occurs hang-up.</p>
+
+<h4 id="note">NOTE</h4>
+<p>It uses wl_output::geometry() for getting physical width[mm] and height[mm] of the display,
+but the value is different with measured value.</p>
+
+<ul>
+  <li>value from wl_output::geometry(): width:320 height:520</li>
+  <li>measured value                  : width:193 height:343</li>
+</ul>
+
+<h3 id="getareainfojsonobject-inobj-jsonobject-outobj">getAreaInfo(json_object *in_obj, json_object *out_obj)</h3>
+
+<p><strong>args1: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
+<strong>args2: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code></strong>
+This function gets the information of area drawn by the application as follows:
+ - x-coordinate
+ - y-coordinate
+ - width
+ - height</p>
+
+<p>It outputs the area information for json_object in the 2nd argument as follows:
+  <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">x-coordinate</span><span class="p">,</span><span class="w"> </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">y-coordinate</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">width</span><span class="p">,</span><span class="w"> </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">height</span><span class="p">}</span></code></p>
+
+<p>It should be called after calling activateSurface().
+It should not be called in the event handler because it occurs hang-up.</p>
+
+<h4 id="note-1">NOTE</h4>
+<p>The same information can given by SyncDraw event.</p>
+
+<h3 id="getareainfoconst-char-label-jsonobject-outobj">getAreaInfo(const char *label, json_object *out_obj)</h3>
+
+<p><strong>args1: String of application name</strong>
+<strong>args2: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code></strong>
+This function is same with <code class="highlighter-rouge">getAreaInfo(json_object *in_obj, json_object *out_obj)</code>,
+but only has difference of 1st argument.</p>
+
+<h3 id="seteventhandlerenum-eventtype-et-handlerfun-f">set_event_handler(enum EventType et, handler_fun f)</h3>
+
+<p>This method needs to be used to register event handlers for the WM
+events described in the EventType enum. Only one hendler for each
+EventType is possible, i.e. if it is called multiple times with the same
+EventType the previous handler will be replaced.</p>
+
+<p>The <code class="highlighter-rouge">func</code> handler functions will receive the label of the surface this
+event is targeted at.</p>
+
+<p>See Section <a href="#_events">Events</a> for more detailed information about event
+delivery to client applications.</p>
+
+<div id="Errors"></div>
+
+<h2 id="errors">Errors</h2>
+
+<p>Methods returning an <code class="highlighter-rouge">int</code> signal successful operation when returning
+<code class="highlighter-rouge">0</code>. In case of an error, an error value is returned as a negative errno
+value. E.g. <code class="highlighter-rouge">-EINVAL</code> to signal that some input value was invalid.</p>
+
+<p>Additionally, logging of error messages is done on the standard error
+file descriptor to help debugging the issue.</p>
+
+<div id="Usage"></div>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="initialization-of-libwindowmanager">Initialization of LibWindowmanager</h3>
+
+<p>Before usage of the LibWindowmanager, the method <code class="highlighter-rouge">init()</code> must be
+called once, it will return <code class="highlighter-rouge">-errno</code> in case of an error and log
+diagnostic messages to stderr.</p>
+
+<h3 id="request-a-surface">Request a surface</h3>
+
+<p>When creating a surface with <em>Qt</em> - it is necessary to request a surface
+from the WM, internally this will communicate with the window manager
+binding. Only after <code class="highlighter-rouge">requestSurface()</code> was successful, a surface should
+be created.</p>
+
+<p>This is also true for <em>QML</em> applications, where only after the
+<code class="highlighter-rouge">requestSurface()</code> should the load of the resource be done. The method
+returns <code class="highlighter-rouge">surface id</code> a client application can use
+after the surface was requested successfully.</p>
+
+<h4 id="workings-of-requestsurface">Workings of requestSurface()</h4>
+
+<p><code class="highlighter-rouge">LibWindowmanager::requestSurface()</code> calls the AFB binding verb
+<code class="highlighter-rouge">requestsurface</code> of the <code class="highlighter-rouge">windowmanager</code> API. This API call will return a
+numeric ID to be used when creating the surface. This ID is never
+explicitly returned to the client application, instead, it is set in the
+application environment in order for <em>Qt</em> to then use it when creating
+the surface.</p>
+
+<p>With the current <em>Qt</em> implementation this means, that only one surface
+will be available to client applications, as subsequent windows will
+increment this numeric ID internally - which then will lead to IDs that
+cannot be known by the window manager as there is no direct
+communication from <em>Qt</em> to the WM.</p>
+
+<div id="Events"></div>
+
+<h2 id="events">Events</h2>
+
+<p>Events are a way for the <em>Window Manager</em> to propagate information to
+client applications. It was vital for the project to implement a number
+of events, that mirror functionality that is already present in the
+wayland protocol.</p>
+
+<p>All events have the surface label as argument - a way to enable future
+multi-surface applications.</p>
+
+<p>As already stated above, this is currently not possible with the way
+<em>Qt</em> implements its surface ID setting.</p>
+
+<h3 id="active-and-inactive-events">Active and Inactive Events</h3>
+
+<p>These events signal an application that it was activated or deactivated
+respectively. Usually this means it was switched visible - which means
+the surface will now be on the screen and therefor continue to render.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Active(json_object *object)</code>
+args: { ‘kKeyDrawingName’: ‘application name’ }
+Signal that the surface with the name
+<code class="highlighter-rouge">kKeyDrawingName</code> is now active.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Inactive(json_object *object)</code>
+args: { ‘kKeyDrawingName’: ‘application name’ }
+Signal that the surface with the
+name <code class="highlighter-rouge">kKeyDrawingName</code> is now inactive. This usually means, the layout
+got changed, and the surface is now considered inactive
+(or sleeping).</p>
+  </li>
+</ul>
+
+<h3 id="visible-and-invisible">Visible and Invisible</h3>
+
+<p>These events signal an application that it was switched to be visible or
+invisible respectively. These events also are handled implicitly through
+the wayland protocol by means of <code class="highlighter-rouge">wl_surface::enter</code> and
+<code class="highlighter-rouge">wl_surface::leave</code> events to the client.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">Visible(json_object *object)</code>
+args: { ‘kKeyDrawingName’: ‘application name’ }
+Signal applications, that the
+surface with name <code class="highlighter-rouge">kKeyDrawingName</code> is now visible.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Invisible(json_object *object)</code>
+args: { ‘kKeyDrawingName’: ‘application name’ }
+Signal applications that the
+surface with name <code class="highlighter-rouge">kKeyDrawingName</code> is now invisible.</p>
+  </li>
+</ul>
+
+<h3 id="syncdraw-and-flushdraw">SyncDraw and FlushDraw</h3>
+
+<p>These events instruct applications that they should redraw their surface
+contents - again, this is handled implicitly by the wayland protocol.</p>
+
+<p><code class="highlighter-rouge">SyncDraw</code> is sent to the application when it has to redraw its surface.</p>
+
+<p><code class="highlighter-rouge">FlushDraw</code> is sent to the application when it should swap its buffers,
+that is <em>signal</em> the compositor that its surface contains new content.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">SyncDraw(json_object *object)</code>
+args: { ‘kKeyDrawingName’: ‘application name’, ‘kKeyDrawingArea’: ‘layout’,
+        ‘kKeyDrawingRect’: { “x”: int value of x-coordinate, “y”: int value of y-coordinate,
+                             “width”: int value of width, “height”: int value of height } }
+Signal applications, that the
+surface with name <code class="highlighter-rouge">kKeyDrawingArea</code> needs to redraw its content
+in the layout with name <code class="highlighter-rouge">kKeyDrawingArea</code> - this
+usually is sent when the surface geometry changed.
+And the area position and size are included with name <code class="highlighter-rouge">kKeyDrawingRect</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">FlushDraw(json_object *object)</code>
+args: { ‘kKeyDrawingName’: ‘application name’ }
+Signal applications, that the
+surface with name <code class="highlighter-rouge">kKeyDrawingArea</code> can now be swapped to its newly
+drawn content as the window manager is ready to activate a new
+layout (i.e. a new surface geometry).</p>
+  </li>
+</ul>
+
+<div id="Sample"></div>
+
+<h1 id="sample">Sample</h1>
+
+<p>In order to enable application to use the <code class="highlighter-rouge">WM</code> surface registration
+function the above described steps need to be implemented.</p>
+
+<p>As a minimal example the usage and initialization can look like the
+following.</p>
+
+<p>Repo: <code class="highlighter-rouge">apps/agl-service-homescreen-2017</code>
+Path: <code class="highlighter-rouge">sample/template/main.c</code></p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2019-05-22 04:36:53 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-windowmanager/plain/doc/ApplicationGuide.md?h=flounder">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

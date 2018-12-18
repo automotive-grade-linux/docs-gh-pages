@@ -1,0 +1,7049 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+
+<!-- posts -->
+
+
+<!-- pages -->
+
+    <url>
+    <loc>http://docs.automotivelinux.org/.htaccess</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/api-reference/0-api-introduction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/api-reference/0-api-introduction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/api-reference/0-api-introduction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/0-build-microservice-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/0-build-microservice-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/0-build-microservice-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-main/0-introduction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-main/0-introduction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-main/0-introduction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/annexes/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-7/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-8/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-1/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-6/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-3/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-4/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-2/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-9/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/annexes/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-7/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-8/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-1/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-6/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-3/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-4/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-2/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-9/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/annexes/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-7/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-8/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-1/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-6/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-3/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-4/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-2/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-9/0_Abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/0_BindingTestFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/0_BindingTestFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/0_BindingTestFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/0_Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/0_Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/0_Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/4_xds-gdb/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/3_xds-cli/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/2_xds-agent/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/1_xds-server/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/4_xds-gdb/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/3_xds-cli/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/2_xds-agent/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/1_xds-server/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/4_xds-gdb/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/3_xds-cli/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/2_xds-agent/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/1_xds-server/0_abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/1-1_install-xds-server-docker.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/1-2_install-xds-server-vm.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/1-3_install-xds-server-native.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/signaling/1-Architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/part-1/1-Architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/signaling/1-Architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/part-1/1-Architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/signaling/1-Architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/part-1/1-Architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-7/1-BusAndConnectors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-7/1-BusAndConnectors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-7/1-BusAndConnectors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-8/1-FOTA.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-8/1-FOTA.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-8/1-FOTA.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-4/1-General.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-4/1-General.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-4/1-General.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-2/1-Image.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-2/1-Image.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-2/1-Image.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-6/1-Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-6/1-Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-6/1-Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/1-MAC.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/1-MAC.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/1-MAC.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-main/1-afm-daemons.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-main/1-afm-daemons.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-main/1-afm-daemons.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/1-verify-build-host.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/1-verify-build-host.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/1-verify-build-host.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/1_BindingAssertFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/1_BindingAssertFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/1_BindingAssertFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/1_Prerequisites.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/1_Prerequisites.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/1_Prerequisites.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/candevstudio/1_Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/candevstudio/1_Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/candevstudio/1_Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/1_Write_the_tests.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/1_Write_the_tests.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/1_Write_the_tests.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/4_xds-gdb/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/3_xds-cli/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/2_xds-agent/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/1_xds-server/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/4_xds-gdb/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/3_xds-cli/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/2_xds-agent/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/1_xds-server/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/4_xds-gdb/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/3_xds-cli/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/2_xds-agent/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/1_xds-server/1_build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/1_install-xds-server.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-2/2-Communication-modes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-2/2-Communication-modes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-2/2-Communication-modes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/part-1/2-Configuration.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/part-1/2-Configuration.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/part-1/2-Configuration.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/signaling/2-Install-Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/signaling/2-Install-Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/signaling/2-Install-Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/signaling/2-Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/signaling/2-Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/signaling/2-Installation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-4/2-Memory.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-4/2-Memory.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-4/2-Memory.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-6/2-PrivilegeManagement.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-6/2-PrivilegeManagement.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-6/2-PrivilegeManagement.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-8/2-SOTA.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-8/2-SOTA.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-8/2-SOTA.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/2-SystemD.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/2-SystemD.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/2-SystemD.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-7/2-Wireless.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-7/2-Wireless.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-7/2-Wireless.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/2-download-packages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/2-download-packages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/2-download-packages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-main/2-widgets.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-main/2-widgets.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-main/2-widgets.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-main/2.1-widgets.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-main/2.1-widgets.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-main/2.1-widgets.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-main/2.2-config.xml.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-main/2.2-config.xml.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-main/2.2-config.xml.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/2_TestFrameworkFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/2_TestFrameworkFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/2_TestFrameworkFunctions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/2_The_test_widget.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/2_The_test_widget.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/2_The_test_widget.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/candevstudio/2_can_device_socketcan_backend.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/candevstudio/2_can_device_socketcan_backend.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/candevstudio/2_can_device_socketcan_backend.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/4_xds-gdb/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/3_xds-cli/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/2_xds-agent/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/1_xds-server/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/4_xds-gdb/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/3_xds-cli/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/2_xds-agent/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/1_xds-server/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/4_xds-gdb/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/3_xds-cli/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/2_xds-agent/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/1_xds-server/2_config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/2_install-client.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-7/3-Cloud.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-7/3-Cloud.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-7/3-Cloud.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-4/3-Consoles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-2/3-Consoles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-4/3-Consoles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-2/3-Consoles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-4/3-Consoles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-2/3-Consoles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/part-1/3-Plugins.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/part-1/3-Plugins.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/part-1/3-Plugins.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-6/3-Signature.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-6/3-Signature.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-6/3-Signature.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/3-SystemBus.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/3-SystemBus.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/3-SystemBus.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/signaling/3-Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/signaling/3-Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/signaling/3-Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/3-installing-binder-daemon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/3-installing-binder-daemon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/3-installing-binder-daemon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-main/3-permissions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-main/3-permissions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-main/3-permissions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/hmi-framework/3_3-SoundManager-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/hmi-framework/3_3-SoundManager-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/hmi-framework/3_3-SoundManager-Guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/candevstudio/3_Add_CAN_Device.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/candevstudio/3_Add_CAN_Device.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/candevstudio/3_Add_CAN_Device.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/3_Launch_the_tests.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/3_Launch_the_tests.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/3_Launch_the_tests.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/3_StringAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/3_StringAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/3_StringAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/3_xds-cli/3_commands.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/3_xds-cli/3_commands.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/3_xds-cli/3_commands.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/4_xds-gdb/3_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/4_xds-gdb/3_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/4_xds-gdb/3_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/1_xds-server/3_how-to-run.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/1_xds-server/3_how-to-run.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/1_xds-server/3_how-to-run.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/3_install-sdks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/2_xds-agent/3_start.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/2_xds-agent/3_start.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/2_xds-agent/3_start.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/4-1_build-first-app-setup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/4-2_build-first-app-cmd.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/4-3_build-first-app-dashboard.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/4-4_build-first-app-ide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-4/4-Debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-4/4-Debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-4/4-Debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/4-Services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-6/4-Services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/4-Services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-6/4-Services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/4-Services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-6/4-Services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/part-1/4-SignalComposerAPI.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/part-1/4-SignalComposerAPI.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/part-1/4-SignalComposerAPI.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/4-getting-source-files.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/4-getting-source-files.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/4-getting-source-files.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-main/4-quick-tutorial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-main/4-quick-tutorial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-main/4-quick-tutorial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/candevstudio/4_Configure_CanRawSender_Node.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/candevstudio/4_Configure_CanRawSender_Node.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/candevstudio/4_Configure_CanRawSender_Node.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/4_Tests_Examples.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/4_Tests_Examples.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/4_Tests_Examples.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/4_build-first-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/3_xds-cli/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/2_xds-agent/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/1_xds-server/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/3_xds-cli/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/2_xds-agent/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/1_xds-server/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/3_xds-cli/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/2_xds-agent/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/1_xds-server/4_debug.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/high-level-api/TipsAndTricks/4aTools.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/high-level-api/TipsAndTricks/4aTools.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/4aTools.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/5-1_debug-first-app-config.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/5-2_debug-first-app-cmd.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/5-3_debug-first-app-ide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/5-AppFw.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/5-AppFw.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/5-AppFw.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-4/5-FileSystems.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-4/5-FileSystems.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-4/5-FileSystems.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/5-building-and-running-service-natively.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/5-building-and-running-service-natively.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/5-building-and-running-service-natively.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/candevstudio/5_Using_CanRawView.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/candevstudio/5_Using_CanRawView.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/candevstudio/5_Using_CanRawView.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-1/5_debug-first-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/xds/part-2/1_xds-server/5_test.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-2/1_xds-server/5_test.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-2/1_xds-server/5_test.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/6-Utilities.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/6-Utilities.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/6-Utilities.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/6_TableAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/6_TableAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/6_TableAssertions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/part-5/7-Users.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/part-5/7-Users.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/part-5/7-Users.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/annexes/ConfigNotes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/annexes/ConfigNotes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/annexes/ConfigNotes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/high-level-api/TipsAndTricks/Devices.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/high-level-api/TipsAndTricks/Devices.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/Devices.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/hmi-framework/Display_Audio_Transition1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/hmi-framework/Display_Audio_Transition1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/hmi-framework/Display_Audio_Transition1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/hmi-framework/Display_Audio_Transition2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/hmi-framework/Display_Audio_Transition2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/hmi-framework/Display_Audio_Transition2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/high-level-api/TipsAndTricks/HALs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/high-level-api/TipsAndTricks/HALs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/high-level-api/TipsAndTricks/HALs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/high-level-api/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/4a-framework/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/high-level-api/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/4a-framework/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/2_4-Use-app-templates/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/high-level-api/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/4a-framework/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/README.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/REVISIONS.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/REVISIONS.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/REVISIONS.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/ctrler/Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/ctrler/Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/ctrler/Usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/howto/reference/handle-docs/abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/howto/reference/handle-docs/abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/howto/reference/handle-docs/abstract.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/advanced-customization.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/advanced-customization.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/advanced-usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/advanced-usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-application-writing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-application-writing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-application-writing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/legacy/afb-binding-v2-references.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/legacy/afb-binding-v2-references.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/legacy/afb-binding-v2-references.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-binding-writing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-binding-writing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-binding-writing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-daemon-debugging.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-daemon-debugging.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-debugging.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-daemon-options.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-daemon-options.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-options.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-daemon-vocabulary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-daemon-vocabulary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-daemon-vocabulary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-desktop-package.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-desktop-package.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-desktop-package.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-events-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-events-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-events-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-migration-to-binding-v3.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-migration-to-binding-v3.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-migration-to-binding-v3.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/legacy/afb-migration-v1-to-v2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/legacy/afb-migration-v1-to-v2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/legacy/afb-migration-v1-to-v2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/afb-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/afb-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/afb-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/afb-timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/afb-timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/agl-layers-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/agl-layers-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/agl-layers-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-boot.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-boot.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-boot.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-bootables.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-bootables.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-bootables.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-build-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-build-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-build-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-debug-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-debug-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-debug-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-deploy-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-deploy-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-deploy-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-image.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-image.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-image.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-intro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-intro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-intro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-prep-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-prep-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-prep-app.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/app-workflow-sdk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/app-workflow-sdk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/app-workflow-sdk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/signaling/signaling/architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/signaling/signaling/architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/signaling/signaling/architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/autobuild.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/autobuild.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/audio/bluez-alsa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/audio/bluez-alsa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/audio/bluez-alsa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/client-part.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/client-part.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/cmake-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/cmake-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/4a-framework/components.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/4a-framework/components.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/4a-framework/components.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/4a-framework/concepts.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/4a-framework/concepts.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/4a-framework/concepts.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/ctrler/configSample.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/ctrler/configSample.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/ctrler/configSample.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/configuring-cmake.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/configuring-cmake.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/contribute/contribute_guidelines.html</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/ctrler/controller.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/ctrler/controller.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/ctrler/controller.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/ctrler/controllerConfig.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/ctrler/controllerConfig.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/ctrler/controllerConfig.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/create-app-build-cmd-line.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/create-app-build-cmd-line.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/create-app-build-dashboard.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/create-app-build-dashboard.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/create-app-build-ide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/create-app-build-ide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/create-app-get-source-files.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/create-app-get-source-files.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/create-app-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/create-app-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/create-app-requirements.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/create-app-requirements.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/curl-wrap.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/curl-wrap.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/debug-cmd-line.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/debug-cmd-line.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/debug-configuration.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/debug-configuration.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/debug-ide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/debug-ide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/debug-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/debug-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/docker-container-setup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/docker-container-setup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/docker-container-setup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/docsearch.html</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/howto/reference/handle-docs/documentation-usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/howto/reference/handle-docs/documentation-usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/howto/reference/handle-docs/documentation-usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/escape.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/escape.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/misc/feed.xml</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/filescan-utils.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/filescan-utils.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/reference-v3/func-api.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/reference-v3/func-api.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-api.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/reference-v3/func-daemon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/reference-v3/func-daemon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-daemon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/reference-v3/func-event.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/reference-v3/func-event.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-event.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/reference-v3/func-req.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/reference-v3/func-req.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-req.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/reference-v3/func-service.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/reference-v3/func-service.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/reference-v3/func-service.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/hardware/reference/renesas-gen3/gen3.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/hardware/reference/renesas-gen3/gen3.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/getting-started-welcome.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/getting-started-welcome.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/getting-started-welcome.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/howto/reference/handle-docs/handle-docs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/howto/reference/handle-docs/handle-docs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/howto/reference/handle-docs/handle-docs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/signaling/high-viwi-architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/signaling/high-viwi-architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/signaling/high-viwi-architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/hmi-framework/homescreen_api.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/hmi-framework/homescreen_api.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/hmi-framework/homescreen_api.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/image-workflow-build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/image-workflow-build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/image-workflow-build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/image-workflow-cust-build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/image-workflow-cust-build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/image-workflow-cust-build.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/image-workflow-download-sw.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/image-workflow-download-sw.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/image-workflow-download-sw.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/image-workflow-intro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/image-workflow-intro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/image-workflow-intro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/image-workflow-prep-host.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/image-workflow-prep-host.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/image-workflow-prep-host.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/contact/</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/contribute/</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/hardware/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/reference/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/howto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/hardware/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/reference/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/howto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/hardware/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/reference/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/howto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/app-framework/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/homescreen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/app-framework/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/homescreen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/app-framework/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/homescreen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/install-sdk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/install-sdk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/installing-cmake.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/installing-cmake.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/machines/intel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/machines/intel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/machines/intel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/contribute/issues.html</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/json.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/json.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/high-level-api/kickstart.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/high-level-api/kickstart.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/high-level-api/kickstart.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/reference-v3/macro-log.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/reference-v3/macro-log.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/reference-v3/macro-log.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/static/styles/main.css</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/meta-agl-demo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/meta-agl-demo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/meta-agl-demo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/meta-agl-devel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/meta-agl-devel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/meta-agl-devel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/meta-agl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/meta-agl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/meta-agl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/static/js/process-uml.js</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/project-architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/project-architecture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/hardware/reference/renesas-gen3/proprietary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/hardware/reference/renesas-gen3/proprietary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/protocol-x-afb-ws-json1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/protocol-x-afb-ws-json1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/protocol-x-afb-ws-json1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/qafbwebsocketclient.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/qafbwebsocketclient.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/machines/qemu.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/machines/qemu.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/machines/qemu.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/machines/raspberrypi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/machines/raspberrypi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/audio/high-level-api/reference.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/audio/high-level-api/reference.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/audio/high-level-api/reference.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/machines/renesas.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/machines/renesas.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/machines/renesas.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/server-part.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/server-part.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/sitemap.xml</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/architecture/reference/security/annexes/todoNotes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/architecture/reference/security/annexes/todoNotes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/architecture/reference/security/annexes/todoNotes.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/getting_started/reference/getting-started/troubleshooting.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/troubleshooting.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/getting_started/reference/getting-started/troubleshooting.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/apis_services/reference/af-binder/reference-v3/types-and-globals.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/apis_services/reference/af-binder/reference-v3/types-and-globals.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/apis_services/reference/af-binder/reference-v3/types-and-globals.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/under-construction.html</loc>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/cmakeafbtemplates/dev_guide/using-cmake.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/cmakeafbtemplates/dev_guide/using-cmake.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/guppy/devguides/reference/afb-helpers/wrap-json.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/afb-helpers/wrap-json.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/master/devguides/reference/xds/part-1/xds-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
+    <loc>http://docs.automotivelinux.org/docs/en/flounder/devguides/reference/xds/part-1/xds-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+
+
+    
+    
+    
+
+</urlset>

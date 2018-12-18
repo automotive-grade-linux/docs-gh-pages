@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Build for Raspberry PI 2/3  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/master/getting_started/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: master master-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/en/master/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Welcome !
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/getting-started-welcome.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an AGL Image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-prep-host.html">
+                Preparing Your Build Host
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-download-sw.html">
+                Downloading AGL Software
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+                Initializing Your Build Environment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-cust-build.html">
+                Customizing Your Build
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-build.html">
+                Building the AGL Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/intel.html">
+                Building for Most Intel 64-Bit Hardware Platforms
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/qemu.html">
+                Building for Emulation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/renesas.html">
+                Build for R Car Starter Kit gen3 board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
+                Build for Raspberry PI 2/3
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/homescreen/index.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Troubleshooting
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/troubleshooting.html">
+                Generic issues
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Setting Up a Docker Container
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/docker-container-setup.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an Application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-image.html">
+                Download or Build Your Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-sdk.html">
+                Download or Build Your SDK Installer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-bootables.html">
+                Create Bootable Media
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-boot.html">
+                Boot the Image on the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-prep-app.html">
+                Get Ready to Create Your Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-build-app.html">
+                Create and Build the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-deploy-app.html">
+                Deploy the Application to the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-debug-app.html">
+                Debug the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/getting-started-welcome.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-prep-host.html">
+        Preparing Your Build Host
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-download-sw.html">
+        Downloading AGL Software
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+        Initializing Your Build Environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-cust-build.html">
+        Customizing Your Build
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-build.html">
+        Building the AGL Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/intel.html">
+        Building for Most Intel 64-Bit Hardware Platforms
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/qemu.html">
+        Building for Emulation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/renesas.html">
+        Build for R Car Starter Kit gen3 board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
+        Build for Raspberry PI 2/3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/homescreen/index.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/troubleshooting.html">
+        Generic issues
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/docker-container-setup.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-image.html">
+        Download or Build Your Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-sdk.html">
+        Download or Build Your SDK Installer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-bootables.html">
+        Create Bootable Media
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-boot.html">
+        Boot the Image on the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-prep-app.html">
+        Get Ready to Create Your Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-build-app.html">
+        Create and Build the Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-deploy-app.html">
+        Deploy the Application to the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-debug-app.html">
+        Debug the Application
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            master
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/master/getting_started/" class="missing-page">
+                                    
+                                        <span class="selected">
+                                            
+                                    master
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/guppy/getting_started/" class="missing-page">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/flounder/getting_started/" class="missing-page">
+                                    
+                                        
+                                    flounder
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/getting_started/master/image-development-workflow-getting-started-book.yml -->
+
+<h1 id="building-for-raspberry-pi-2-or-3">Building for Raspberry PI 2 or 3</h1>
+
+<p>The
+<a href="https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/">Raspberry PI</a> is a small
+computer that is ideal for learning computing and computer languages.
+The AGL Project supports building images for the
+<a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry PI 2</a> and the
+<a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-a-plus/">Raspberry PI 3</a> boards.
+Each of these boards comes in a variety of models.
+See the
+<a href="https://www.raspberrypi.org/products/">Raspberry PI Product Page</a> for more information.</p>
+
+<p>This section describes the steps you need to take to build the
+AGL demo image for both the Raspberry PI 2 and 3 boards.</p>
+
+<h2 id="making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
+
+<p>The
+“<a href="../image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
+section presented generic information for setting up your build environment
+using the <code class="highlighter-rouge">aglsetup.sh</code> script.
+If you are building the AGL demo image for a Raspberry PI board, you need to specify some
+specific options when you run the script.</p>
+
+<p>Use the following commands to initialize your build environment.
+In each case, the “-m” option specifies the machine and the
+list of AGL features used with script are appropriate for development of
+the AGL demo image suited for either Raspberry PI 2 or 3:</p>
+
+<p><strong>Raspberry PI 2</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m raspberrypi2 agl-demo agl-netboot agl-appfw-smack
+</code></pre>
+</div>
+
+<p><strong>Raspberry PI 3</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m raspberrypi3 agl-demo agl-netboot agl-appfw-smack
+</code></pre>
+</div>
+
+<h2 id="configuring-the-build-to-include-packages-under-a-commercial-license">2. Configuring the Build to Include Packages Under a Commercial License</h2>
+
+<p>Before launching the build, it is good to be sure your build
+configuration is set up correctly (<code class="highlighter-rouge">/build/conf/local.conf</code> file).
+The
+“<a href="../image-workflow-cust-build.html">Customizing Your Build</a>”
+section highlights some common configurations that are useful when
+building any AGL image.</p>
+
+<p>For the Raspberry PI platforms, you need to take an additional
+configuration step if you want to include any packages under a
+commercial license.</p>
+
+<p>For example, suppose you want to include an implementation of the
+<a href="https://www.khronos.org/openmax/">OpenMAX</a> Intagration Library
+(<code class="highlighter-rouge">libomxil</code>) under a commercial license as part of your AGL image.
+If so, you must include the following two lines in your
+<code class="highlighter-rouge">/build/conf/local.conf</code> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># For libomxil</span>
+LICENSE_FLAGS_WHITELIST <span class="o">=</span> <span class="s2">"commercial"</span>
+
+IMAGE_INSTALL_append <span class="o">=</span> <span class="s2">" libomxil"</span>
+</code></pre>
+</div>
+
+<h2 id="using-bitbake">3. Using BitBake</h2>
+
+<p>This section shows the <code class="highlighter-rouge">bitbake</code> command used to build the AGL image.</p>
+
+<p>Before running BitBake to start your build, it is good to be reminded that AGL
+does provide a pre-built image for developers that want to use the Raspberry PI 3
+board.
+You can find this pre-built image on the
+<a href="https://download.automotivelinux.org/AGL/release">AGL Download web site</a>.</p>
+
+<p>For the supported image, the filename has the following form:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/raspberrypi3/deploy/images/raspberrypi3/*
+</code></pre>
+</div>
+
+<p>Start the build using the <code class="highlighter-rouge">bitbake</code> command.</p>
+
+<p><strong>NOTE:</strong> An initial build can take many hours depending on your
+CPU and and Internet connection speeds.
+The build also takes approximately 100G-bytes of free disk space.</p>
+
+<p>For this example, the target is “agl-demo-platform”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>bitbake agl-demo-platform
+</code></pre>
+</div>
+
+<p>By default, the build process puts the resulting image in the Build Directory.
+Here is example for the Raspberry PI 3 board:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/raspberrypi3/agl-demo-platform-raspberrypi3.wic.xz
+</code></pre>
+</div>
+
+<p>If you build for the Raspberry PI 2 board, the location uses “raspberrypi2” in the path.</p>
+
+<h2 id="deploying-the-agl-demo-image">4. Deploying the AGL Demo Image</h2>
+
+<p>Deploying the AGL demo image consists of copying the image on a MicroSD card,
+plugging the card into the Raspberry PI board, and then booting the board.</p>
+
+<p>Follow these steps to copy the image to a MicroSD card and boot
+the image on the Raspberry PI 2 or 3 board:</p>
+
+<ol>
+  <li>
+    <p>Plug your MicroSD card into your Build Host (i.e. the system that has your build output).</p>
+  </li>
+  <li>
+    <p>Be sure you know the MicroSD device name.</p>
+
+    <p>Use the <code class="highlighter-rouge">dmesg</code> command as follows to discover the device name:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>dmesg | tail -4
+<span class="o">[</span> 1971.462160] sd 6:0:0:0: <span class="o">[</span>sdc] Mode Sense: 03 00 00 00
+<span class="o">[</span> 1971.462277] sd 6:0:0:0: <span class="o">[</span>sdc] No Caching mode page found
+<span class="o">[</span> 1971.462278] sd 6:0:0:0: <span class="o">[</span>sdc] Assuming drive cache: write through
+<span class="o">[</span> 1971.463870]  sdc: sdc1 sdc2
+</code></pre>
+    </div>
+
+    <p>In the previous example, the MicroSD card is attached to the device <code class="highlighter-rouge">/dev/sdc</code>.</p>
+
+    <p>You can also use the <code class="highlighter-rouge">lsblk</code> command to show all your devices.
+Here is an example that shows the MicroSD card as <code class="highlighter-rouge">/dev/sdc</code>:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>lsblk
+  NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+  sda      8:0    0 167,7G  0 disk
+  ├─sda1   8:1    0   512M  0 part /boot/efi
+  ├─sda2   8:2    0 159,3G  0 part /
+  └─sda3   8:3    0   7,9G  0 part <span class="o">[</span>SWAP]
+  sdb      8:16   0 931,5G  0 disk
+  └─sdb1   8:17   0 931,5G  0 part /media/storage
+  sdc      8:32   1  14,9G  0 disk
+  ├─sdc1   8:33   1    40M  0 part
+  └─sdc2   8:34   1   788M  0 part
+</code></pre>
+    </div>
+
+    <p><strong>IMPORTANT NOTE:</strong> Before re-writing any device on your Build Host, you need to
+be sure you are actually writing to the removable MicroSD card and not some other
+device.
+Each computer is different and removable devices can change from time to time.
+Consequently, you should repeat the previous operation with the MicroSD card to
+confirm the device name every time you write to the card.</p>
+
+    <p>To summarize this example so far, we have the following:</p>
+
+    <ul>
+      <li>
+        <p>The first SATA drive is <code class="highlighter-rouge">/dev/sda</code>.</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">/dev/sdc</code> corresponds to the MicroSD card, and is also marked as a removable device.
+You can see this in the output of the <code class="highlighter-rouge">lsblk</code> command where “1” appears in the “RM” column
+for that device.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Now that you know the device name, unmount the device and use the
+<code class="highlighter-rouge">xzcat</code> command to copy the image to the MicroSD card.</p>
+
+    <p><strong>NOTE:</strong> For Raspberry PI 2, the image is at <code class="highlighter-rouge">build/tmp/deploy/images/raspberrypi2/agl-demo-platform-raspberrypi2.wic.xz</code>.
+For Raspberry PI 3, the image is at <code class="highlighter-rouge">build/tmp/deploy/images/raspberrypi3/agl-demo-platform-raspberrypi3.wic.xz</code>.</p>
+
+    <p>Be sure you are root, provide the actual device name for <em>sdcard_device_name</em>, and the actual
+image name for <em>image_name</em>:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo umount &lt;sdcard_device_name&gt;
+<span class="gp">$ </span>xzcat &lt;image_name&gt; | sudo dd <span class="nv">of</span><span class="o">=</span>&lt;sdcard_device_name&gt; <span class="nv">bs</span><span class="o">=</span>4M
+<span class="gp">$ </span>sync
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Plug your MicroSD card into the Raspberry PI board and boot the device.</p>
+  </li>
+</ol>
+
+<h2 id="using-the-raspberry-pi-touch-display">5. Using the Raspberry PI Touch Display</h2>
+
+<p>If you have connected the official
+<a href="https://www.raspberrypi.org/products/raspberry-pi-touch-display/">Raspberry PI Touch Display</a>,
+you can configure the display by editing the <code class="highlighter-rouge">weston.ini</code> file.</p>
+
+<p>Plenty of information exists on how to configure and use this touchscreen.
+See the following references for more information:</p>
+
+<ul>
+  <li>
+    <p>For information on where the <code class="highlighter-rouge">weston.ini</code> file is located, see
+<a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5#DESCRIPTION">location</a>.</p>
+  </li>
+  <li>
+    <p>For information on the <code class="highlighter-rouge">weston.ini</code> file in general, see the
+<a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5">manpage</a>.</p>
+  </li>
+  <li>
+    <p>For information on Weston, which is the reference implementation of Wayland, see
+<a href="https://wiki.archlinux.org/index.php/wayland">Wayland</a>.</p>
+  </li>
+</ul>
+
+<p>As an example on how to configure and manipulate the touchscreen, consider
+the following edits to the <code class="highlighter-rouge">weston.ini</code> file used to rotate the
+display:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@raspberrypi3:/etc/xdg/weston# </span>cat weston.ini
+<span class="o">[</span>core]
+<span class="nv">backend</span><span class="o">=</span>drm-backend.so
+<span class="nv">shell</span><span class="o">=</span>desktop-shell.so
+
+<span class="o">[</span>shell]
+<span class="nv">locking</span><span class="o">=</span><span class="nb">true</span>
+<span class="c"># Uncomment below to hide panel</span>
+<span class="c">#panel-location=none</span>
+
+<span class="o">[</span>launcher]
+<span class="nv">icon</span><span class="o">=</span>/usr/share/weston/terminal.png
+<span class="nv">path</span><span class="o">=</span>/usr/bin/weston-terminal
+
+<span class="o">[</span>launcher]
+<span class="nv">icon</span><span class="o">=</span>/usr/share/weston/icon_flower.png
+<span class="nv">path</span><span class="o">=</span>/usr/bin/weston-flower
+
+<span class="o">[</span>output]
+<span class="nv">name</span><span class="o">=</span>DSI-1
+<span class="nv">transform</span><span class="o">=</span>270
+</code></pre>
+</div>
+
+<h2 id="debugging">6. Debugging</h2>
+
+<p>When things go wrong, you can take steps to debug your Raspberry PI.
+For debugging, you need a 3.3 Volt USB Serial cable to fascilitate
+communication between your Raspberry PI board and your build host.
+A good cable to use is the 3.3V USB-to-Serial cable
+<a href="https://www.olimex.com/Products/Components/Cables/USB-Serial-Cable/USB-Serial-Cable-F/">Olimex USB-Serial-Cable-F</a>.</p>
+
+<p><strong>NOTE:</strong> If you are using a USB console cable from Adafruit, see
+“<a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/connect-the-lead">Adafruit’s Raspberry Pi Lesson 5</a>”
+for connection information.</p>
+
+<p>Use the following steps, which assume you are using the previously mentioned
+Olimex cable.
+You can reference the following diagram for information on the following steps:</p>
+
+<p align="center">
+  <img src="./images/RaspberryPi2-ModelB-debug-serial-cable.png" />
+</p>
+
+<ol>
+  <li>
+    <p>Connect the Olimex cable to the Universal Asynchronous Receiver-Transmitter
+(UART) connection on your Raspberry PI board.
+Do not connect the USB side of the cable to your build host at this time.</p>
+
+    <p><strong>CAUTION:</strong> No warranty is provided using the following procedure.
+Pay particular attention to the collors of your cable as they could
+vary depending on the vendor.</p>
+  </li>
+  <li>
+    <p>Connect the cable’s BLUE wire to pin 6 (i.e. Ground) of the UART.</p>
+  </li>
+  <li>
+    <p>Connect the cable’s GREEN RX line to pin 8 (i.e. the TXD line) of
+the UART.</p>
+  </li>
+  <li>
+    <p>Connect the cable’s RED TX line to pin 10 (i.e. the RXD line) of
+the UART.</p>
+  </li>
+  <li>
+    <p>Plug the USB connector of the cable into your build host’s USB port.</p>
+  </li>
+  <li>
+    <p>Use your favorite tool for serial communication between your build host
+and your Raspberry PI.
+For example, if your build host is a native Linux machine (e.g. Ubuntu)
+you could use <code class="highlighter-rouge">screen</code> as follows from a terminal on the build host:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo screen /dev/ttyUSB0 115200
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2019-05-22 04:37:36 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/docs/getting-started/machines/raspberrypi.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

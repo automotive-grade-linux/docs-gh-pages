@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                How to add documentation to AGL  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/en/master/howto/reference/handle-docs/handle-docs.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/master/howto/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: master master-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/en/master/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/master/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                How to handle documentation
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/howto/reference/handle-docs/abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/howto/reference/handle-docs/documentation-usage.html">
+                Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/master/howto/reference/handle-docs/handle-docs.html">
+                How to add documentation to AGL
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/howto/reference/handle-docs/abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/howto/reference/handle-docs/documentation-usage.html">
+        Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="/docs/en/master/howto/reference/handle-docs/handle-docs.html">
+        How to add documentation to AGL
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/docs/en/master/howto/reference/handle-docs/handle-docs.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            master
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/master/howto/" class="missing-page">
+                                    
+                                        <span class="selected">
+                                            
+                                    master
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/guppy/howto/" class="missing-page">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/flounder/howto/" class="missing-page">
+                                    
+                                        
+                                    flounder
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/howto/master/howto-add-docs-handle-docs-book.yml -->
+
+<h1 id="how-to-add-a-new-documentation-section-into-agl-documentation">How to add a new documentation section into AGL documentation</h1>
+
+<p>They are two steps to add new markdown files to AGL documentation:</p>
+
+<ul>
+  <li>Add a book yaml file to the repository where the documentation sources are located (written in markdown files).</li>
+  <li>Add an entry into the global section yaml file that point to your book file. The section yaml file is in <a href="https://github.com/automotive-grade-linux/docs-webtemplate">docs-webtemplate</a> repository (<code class="highlighter-rouge">git@github.com:automotive-grade-linux/docs-webtemplate.git</code>) named <code class="highlighter-rouge">section_&lt;version&gt;.yml</code>.</li>
+</ul>
+
+<hr />
+
+<p><strong>Note</strong>: To generate a local documentation please refer to the <a href="https://github.com/automotive-grade-linux/docs-webtemplate/blob/master-next/README.md">README</a> of the docs-webtemplate (https://github.com/automotive-grade-linux/docs-webtemplate) and use <code class="highlighter-rouge">setupdocs.sh</code> script.</p>
+
+<hr />
+
+<h2 id="add-a-book-yaml-file-into-a-repository">Add a book yaml file into a repository</h2>
+
+<p>The book file is needed to describe how your documentation is structured and must be used to describe
+among others :</p>
+
+<ul>
+  <li>the global title of the doc</li>
+  <li>the chapter name when the doc will be part of the whole documentation website</li>
+  <li>subchapters list and consequently subchapters hierarchy</li>
+  <li>multi-language description</li>
+</ul>
+
+<hr />
+
+<p><strong>Note:</strong></p>
+
+<p>Multi-language is handled by key suffixes. That is to say, there are some keys that can be suffixed by a language: <code class="highlighter-rouge">&lt;key&gt;_&lt;lang&gt;</code>
+For the url to the markdown files, the prefix <code class="highlighter-rouge">%lang%</code> will match with suffixes. So, you have to create a subdirectory named <code class="highlighter-rouge">%lang%</code> where the markdown files are put.</p>
+
+<p>A example for the french:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>name: "My section in english"
+name_fr: "Ma section en français"
+url: "%lang/section.md"
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls -lR mydir
+book.yml
+section.md
+fr/section.md
+</code></pre>
+</div>
+
+<hr />
+
+<p>There are several types of book:</p>
+
+<ul>
+  <li>book</li>
+  <li>api</li>
+</ul>
+
+<h3 id="book-type">Book Type</h3>
+
+<p><code class="highlighter-rouge">book</code> type describes documentation structure and chapters.
+Below the generic way to include a book file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">type</span><span class="pi">:</span> <span class="s">books</span>
+<span class="s">books</span><span class="pi">:</span>
+<span class="pi">-</span>
+    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID1&gt;</span>
+    <span class="s">order</span><span class="pi">:</span> <span class="s">x</span> <span class="c1">#optional: between 0 in 100 default when not set is 50, it allows to define order in final</span>
+             <span class="c1">#documentation, more the order number is low more the documentation is first</span>
+    <span class="s">title</span><span class="pi">:</span> <span class="s">title of your chapter</span>  <span class="c1">#default title</span>
+    <span class="s">title_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">title in &lt;lang&gt;</span>
+    <span class="s">description</span><span class="pi">:</span> <span class="s">description of your book</span>
+    <span class="s">keywords</span><span class="pi">:</span> <span class="s">some keywords</span>
+    <span class="s">author</span><span class="pi">:</span> <span class="s">author of the documentation</span>
+    <span class="s">version</span><span class="pi">:</span> <span class="s">version of the documentation</span>
+    <span class="s">chapters</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
+          <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subchapter in &lt;lang&gt;</span>
+            <span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%lang%/relative-path/to/your/mardown.md"</span> <span class="c1">#%lang% will be replaced by the</span>
+                                                           <span class="c1">#available languages,</span>
+                                                           <span class="c1">#default language can be in the root directory</span>
+        <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
+          <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subchapter in &lt;lang&gt;</span>
+          <span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%lang%/relative-path/to/your/mardown.md"</span>
+        <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
+          <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subchapter in &lt;lang&gt;</span>
+            <span class="s">- name</span><span class="pi">:</span> <span class="s">Name of your subsubchapter</span>
+              <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subsubchapter in &lt;lang&gt;</span>
+              <span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%lang%/relative-path/to/your/mardown.md"</span>
+            <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subsubchapter</span>
+              <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subsubchapter in &lt;lang&gt;</span>
+              <span class="s">children</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="s">...</span>
+            <span class="pi">-</span> <span class="s">...</span>
+        <span class="pi">-</span> <span class="s">...</span>
+<span class="pi">-</span>
+    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID2&gt;</span>
+    <span class="s">...</span>
+</code></pre>
+</div>
+
+<p><a href="https://github.com/automotive-grade-linux/docs-sources/blob/master/docs/handle-docs/book.yml.in">book.yml.in</a>
+is a sort of schema of book.yml. This file contains all supported keys.</p>
+
+<p>Here a sample yaml file, you can start from :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master-next/docs/getting-started-book.yml -O my-new-book.yml
+</code></pre>
+</div>
+
+<h3 id="api-type">Api Type</h3>
+
+<p>In progress</p>
+
+<h2 id="add-an-entry-in-section-file">Add an entry in section file</h2>
+
+<p>There are 4 sections in docs: getting_started, architecture_guides, developer_guides, apis_services.</p>
+
+<p>They are located in <code class="highlighter-rouge">content/docs</code> in <a href="https://github.com/automotive-grade-linux/docs-webtemplate">docs-webtemplate</a> repository.
+In addition, each directory contains several section yaml file, one a version. For master version, it is <code class="highlighter-rouge">section_master.yml</code>.</p>
+
+<p>Below the structure of section yaml file.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">url_fetch</span> <span class="pi">:</span> <span class="s">DEFAULT_URL_FETCH</span> <span class="c1">#this the default url_fetch that can be overload further, there already are some default variables defined in docs-webtemplate/docs-tools</span>
+<span class="s">git_commit</span> <span class="pi">:</span> <span class="s">DEFAULT_VERSION</span> <span class="c1">#this is the default git_commit that can be overload further, there already are some default variables defined in docs-webtemplate/docs-tools</span>
+
+<span class="s">name</span><span class="pi">:</span> <span class="s">Name of the section</span>
+<span class="s">template</span><span class="pi">:</span> <span class="s">generated_index.html</span>
+<span class="s">books</span><span class="pi">:</span>
+<span class="pi">-</span>
+    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID1&gt;</span>
+    <span class="s">url_fetch</span><span class="pi">:</span> <span class="s">&lt;url_fetch&gt;</span> <span class="c1">#optional, overload the default one</span>
+    <span class="s">git_commit</span><span class="pi">:</span> <span class="s">&lt;git_commit&gt;</span> <span class="c1">#optional, overload the default one</span>
+    <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">relativepath/from/root/repository/to/the/book/yaml/file"</span>
+    <span class="s">books</span><span class="pi">:</span> <span class="c1">#optional: subbooks, will be a child of the above book</span>
+        <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;SUBID2&gt;</span>
+          <span class="s">url_fetch</span><span class="pi">:</span> <span class="s">&lt;url_fetch&gt;</span> <span class="c1">#optional, overload the default one</span>
+          <span class="s">git_commit</span><span class="pi">:</span> <span class="s">&lt;git_commit&gt;</span> <span class="c1">#optional, overload the default one</span>
+          <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">relativepath/from/root/repository/to/the/book/yaml/file"</span>
+        <span class="pi">-</span> <span class="s">...</span>
+<span class="pi">-</span>
+    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID2&gt;</span>
+    <span class="s">...</span>
+</code></pre>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2019-05-22 04:37:26 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/docs/handle-docs/handle-docs.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>
