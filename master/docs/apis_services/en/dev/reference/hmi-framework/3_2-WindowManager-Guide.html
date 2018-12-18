@@ -2536,15 +2536,7 @@
 
 <h1 id="window-manager-application-guide"><strong>Window Manager Application Guide</strong></h1>
 
-<div align="right">Revision: 0.7</div>
-<div align="right">TOYOTA MOTOR CORPORATION</div>
-<div align="right">12th/Oct/2018</div>
-
-<hr />
-
-<div id="Table\ of\ content"></div>
-
-<h1 id="table-of-content">Table of content</h1>
+<h2 id="table-of-content">Table of content</h2>
 
 <ul>
   <li><a href="#Target\ reader\ of\ this\ document">Target reader of this document</a></li>
@@ -2579,9 +2571,24 @@
   <li><a href="#Release\ Note">Release Note</a></li>
 </ul>
 
-<hr />
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Version</th>
+      <th style="text-align: center">Author</th>
+      <th style="text-align: center">Updated at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0.8</td>
+      <td style="text-align: center">TOYOTA MOTOR CORPORATION</td>
+      <td style="text-align: center">22th/Feb/2019</td>
+    </tr>
+  </tbody>
+</table>
 
-<div id="Target\ reader\ of\ this\ document"></div>
+<hr />
 
 <h2 id="target-reader-of-this-document">Target reader of this document</h2>
 
@@ -2617,8 +2624,6 @@ and projects before using Window manager.</p>
 
 <hr />
 
-<div id="Overview"></div>
-
 <h1 id="overview">Overview</h1>
 
 <p>Window Manager is the service process which provides <strong>window management based on policy</strong>.
@@ -2648,30 +2653,31 @@ In this example, there are two mode for window management.</p>
 <p>The important points are:</p>
 
 <ul>
-  <li>
-    <p><strong>Window transition should be done by Window Manager</strong><br />
- Window Manager switch application displayed on top layer by user operation(touch shortcut button).
+  <li><strong>Window transition should be done by Window Manager</strong></li>
+</ul>
+
+<p>Window Manager switch application displayed on top layer by user operation(touch shortcut button).
  In this example, when an user touches <code class="highlighter-rouge">navigation</code> shortcut button, Window Manager displays <code class="highlighter-rouge">navigation</code> and hide <code class="highlighter-rouge">launcher</code>. Next, when an user touches <code class="highlighter-rouge">videoplayer</code> shortcut button, Window Manager divides a screen into two parts and display two applications.</p>
-  </li>
-  <li>
-    <p><strong>There is a priority <code class="highlighter-rouge">role</code> for each application.</strong><br />
- Window Manager realizes state transition change based on the policy which consists of <code class="highlighter-rouge">role</code>.
+
+<ul>
+  <li><strong>There is a priority <code class="highlighter-rouge">role</code> for each application.</strong></li>
+</ul>
+
+<p>Window Manager realizes state transition change based on the policy which consists of <code class="highlighter-rouge">role</code>.
  According to the state transition table, it controls the visibility of application window, layout change, and so on.
  The reasons why this is necessary are</p>
 
-    <ul>
-      <li>to support user driving</li>
-      <li>not to disturb a driver concerns on driving for safety</li>
-    </ul>
+<ul>
+  <li>to support user driving</li>
+  <li>
+    <p>not to disturb a driver concerns on driving for safety</p>
 
     <p>In this example, for safety, when the car starts running, Window Manager set up the role <code class="highlighter-rouge">videoplayer</code>
 to be masked and uncontrollable by user not to disturb driver concerns.
-And, for supporting driving, set up <code class="highlighter-rouge">navigation</code> role to be displayed 3 seconds after the car ran.<br />
+And, for supporting driving, set up <code class="highlighter-rouge">navigation</code> role to be displayed 3 seconds after the car ran.
 In <code class="highlighter-rouge">Car Run</code> state, the user can’t switch to other application from Navigation application until car stops.</p>
   </li>
 </ul>
-
-<div id="Supported\ usecase"></div>
 
 <h2 id="supported-usecase">Supported usecase</h2>
 
@@ -2696,13 +2702,9 @@ In <code class="highlighter-rouge">Car Run</code> state, the user can’t switch
 
 <hr />
 
-<div id="Getting\ Started"></div>
+<h2 id="getting-started">Getting Started</h2>
 
-<h1 id="getting-started">Getting Started</h1>
-
-<div id="Build"></div>
-
-<h2 id="build">Build</h2>
+<h3 id="build-by-sdk">Build by SDK</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>git clone https://gerrit.automotivelinux.org/gerrit/apps/agl-service-windowmanager
 <span class="nb">cd </span>agl-service-windowmanager
@@ -2722,17 +2724,13 @@ root  windowmanager-service.wgt
 </code></pre>
 </div>
 
-<div id="Install"></div>
-
-<h2 id="install">Install</h2>
+<h3 id="install">Install</h3>
 
 <p>Copy windowmanager-service.wgt to the file system then execute the following command.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>afm-util install windowmanager-service.wgt
 </code></pre>
 </div>
-
-<div id="Bitbake"></div>
 
 <h2 id="bitbake">Bitbake</h2>
 
@@ -2756,11 +2754,9 @@ bitbake agl-demo-platform
 
 <hr />
 
-<div id="Enable\ to\ call\ Window\ Manager"></div>
-
 <h2 id="enable-to-call-window-manager">Enable to call Window Manager</h2>
 
-<p>To call Window Manager, it is important to enable the permission from security framework.<br />
+<p>To call Window Manager, it is important to enable the permission from security framework.
 To use Window Manager API, an application or a service shall add the following configuration definition into “config.xml” of your application.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-api"</span><span class="nt">&gt;</span>
@@ -2770,7 +2766,7 @@ To use Window Manager API, an application or a service shall add the following c
 </div>
 
 <p>To call Window Manager function easily, Window Manager provides a library which is called “libwindowmanager”.
-This library provides a function style API calling interface.<br />
+This library provides a function style API calling interface.
 So you can include the libwindowmanager.hpp header file, and can link against this library.
 Please also refer to the sample application.</p>
 
@@ -2778,47 +2774,41 @@ Please also refer to the sample application.</p>
 
 <hr />
 
-<div id="Software\ Architecture"></div>
-
-<h1 id="software-architecture">Software Architecture</h1>
+<h2 id="software-architecture">Software Architecture</h2>
 
 <p>The static relationship with other components is shown below.
 The actual logic of Window Manager is the binding in Binder(afb-daemon).
 Window Manager is based on AGL application framework,
 so the IPC via websocket is protected by AGL application framework.</p>
 
-<p>The upper binder is for the application side security context.<br />
+<p>The upper binder is for the application side security context.
 The lower binder is the Window Manager for the server side security context.
-Usually an application side binder has some business logic for each application, so the number of binders depend on the number of applications which use Window Manager.<br />
+Usually an application side binder has some business logic for each application, so the number of binders depend on the number of applications which use Window Manager.
 On the other hand, regarding lower binder there is only one module in the system. This binder receives messages from multiple applications.</p>
 
 <p>An application can use libwindowmanager.so to call Window Manager API simply.</p>
 
 <p>Window Manager is based on the GENIVI layer management system.</p>
 
-<p><img src="parts/wm_software-stack.png" alt="wm_software-stack.png" /></p>
+<p><img src="parts/wm_software_stack.png" alt="wm_software_stack.png" /></p>
 
-<h2 id="layers">Layers</h2>
+<h3 id="layers">Layers</h3>
 
 <p>Layers are entities that means the application stack group defined in <code class="highlighter-rouge">layers.json</code>.
 This doesn’t mean layer ID defined in GENIVI ivi layer.
 The layer ID is used for application itself in Window Manager.
 Currently, application can’t have multiple surfaces in Window Manager.</p>
 
-<div id="Layers"></div>
-
-<h2 id="surfaces">Surfaces</h2>
+<h3 id="surfaces">Surfaces</h3>
 
 <p>Surfaces are <em>placed</em> on layers . The surface
-will then be resized to dimensions, according to the name of <code class="highlighter-rouge">areas.db</code>
+will then be resized to dimensions, according to the name of <code class="highlighter-rouge">areas.json</code>
 application requests by <code class="highlighter-rouge">activateWindow</code> or policy management.
 As default, <code class="highlighter-rouge">normal.full</code> is set by libwindowmanager for native application.</p>
 
-<div id="Configuration"></div>
+<h3 id="configuration">Configuration</h3>
 
-<h2 id="configuration">Configuration</h2>
-
-<p>The window manager is configured with the <em>layers.json</em>, <em>areas.db</em>, <em>roles.db</em> configuration
+<p>The window manager is configured with the <em>layers.json</em>, <em>areas.json</em>, <em>roles.db</em> configuration
 files. By default they are searched in <code class="highlighter-rouge">${AFM_APP_INSTALL_DIR}/etc/</code>.</p>
 
 <p>Sample configurations are provided with the window manager
@@ -2826,12 +2816,15 @@ implementation, these samples are installed to ${AFM_APP_INSTALL_DIR}/etc/ .</p>
 
 <p>This configuration is supposed to be configured by policy designer which means OEM or Tier1.</p>
 
-<h3 id="layersjson">layers.json</h3>
+<h4 id="layersjson">layers.json</h4>
 
-<p><code class="highlighter-rouge">layers.json</code> has three roles.<br />
-First, to create application containers <code class="highlighter-rouge">Layer</code>.<br />
-Second, to set id range for applications.<br />
-Third, to attach application to <code class="highlighter-rouge">Layer</code> according to the role application requests.</p>
+<p><code class="highlighter-rouge">layers.json</code> has three roles.</p>
+
+<ol>
+  <li>Create application containers <code class="highlighter-rouge">Layer</code>.</li>
+  <li>Set id range for applications.</li>
+  <li>Attach application to <code class="highlighter-rouge">Layer</code> according to the role application requests.</li>
+</ol>
 
 <p>The sample configuration is here</p>
 
@@ -2888,8 +2881,9 @@ to a layer.</p>
   <li><code class="highlighter-rouge">layer_id</code> is the id used in GENIVI IVI layer management control.</li>
 </ul>
 
-<p><code class="highlighter-rouge">Layer</code> stacks from beginning to end.<br />
-The above <code class="highlighter-rouge">Layer</code> example image is below.</p>
+<p><code class="highlighter-rouge">Layer</code> stacks from beginning to end.</p>
+
+<p>The above <code class="highlighter-rouge">Layer</code> example image is below.</p>
 
 <p><img src="parts/wm_layer_stack.png" alt="wm_layer_stack.png" /></p>
 
@@ -2903,12 +2897,10 @@ In such a situation, you have to add your role(application name) at “role” i
 <code class="highlighter-rouge">BackGroundLayer</code> name of <code class="highlighter-rouge">Layer</code> is exception for work around. This layer is fallback layer not to stop event loop of application when it becomes invisible.
 The problem is issued in <a href="https://jira.automotivelinux.org/browse/SPEC-1484">https://jira.automotivelinux.org/browse/SPEC-1484</a>.</p>
 
-<div id="Configuration\ Items"></div>
+<h4 id="areasjson">areas.json</h4>
 
-<h3 id="areasdb">areas.db</h3>
-
-<p>Area means abstract expressions of 2-dimensional size and position.<br />
-areas.db defines the area which an application is set.</p>
+<p>Area means abstract expressions of 2-dimensional size and position.
+<code class="highlighter-rouge">areas.json</code> defines the area which an application is set.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -2953,8 +2945,9 @@ areas.db defines the area which an application is set.</p>
 </span></code></pre>
 </div>
 
-<p>The image of the above setting is described below.<br />
-<img src="parts/wm_area.png" alt="wm_area.png" /></p>
+<p>The image of the above setting is described below.</p>
+
+<p><img src="parts/wm_area.png" alt="wm_area.png" /></p>
 
 <ul>
   <li>
@@ -2967,21 +2960,21 @@ areas.db defines the area which an application is set.</p>
 
 <p>The dimensions can be specified absolute to the screen dimensions. But if <code class="highlighter-rouge">fullscreen</code> is not suitable to screen dimensions, Window Manager scales the area automatically.</p>
 
-<p>Note:<br />
-<code class="highlighter-rouge">fullscreen</code> must be set because this is the base size of scaling in Window Manger.</p>
+<p>Note:</p>
 
-<p>Note:<br />
-The direction of the coordinates depends on <code class="highlighter-rouge">transform</code> in weston.ini.
+<p><code class="highlighter-rouge">fullscreen</code> must be set because this is the base size of scaling in Window Manger.</p>
+
+<p>Note:</p>
+
+<p>The direction of the coordinates depends on <code class="highlighter-rouge">transform</code> in weston.ini.
 Currently, agl-demo-platform set <code class="highlighter-rouge">transform=270</code>.
 This suppose to use screen vertically.</p>
 
-<h3 id="rolesdb">roles.db</h3>
+<h4 id="rolesdb">roles.db</h4>
 
 <hr />
 
-<div id="Sequence"></div>
-
-<h1 id="sequence">Sequence</h1>
+<h2 id="sequence">Sequence</h2>
 
 <p>To understand the sequence between application and window manager, refer to the <a href="https://wiki.automotivelinux.org/hmiframework">spec document</a>.</p>
 
@@ -2995,11 +2988,11 @@ This suppose to use screen vertically.</p>
 
 <p>The above sequence is the initialization phase of your application to use Window Manager.
 An Application has to register your <code class="highlighter-rouge">role</code> to Window Manager. For ivi-shell application, Window Manager generates surfaceID to input it into the function
-to create surface.<br />
-And also it is important for synchronization to get <code class="highlighter-rouge">syncDraw</code> event for receiving the request for resize and redraw, and notifying Window Manager of <code class="highlighter-rouge">endDraw</code>, so register callback function with setEventHandler for <code class="highlighter-rouge">syncDraw</code>.</p>
+to create surface. And also it is important for synchronization to get <code class="highlighter-rouge">syncDraw</code> event for receiving the request for resize and redraw, and notifying Window Manager of <code class="highlighter-rouge">endDraw</code>, so register callback function with setEventHandler for <code class="highlighter-rouge">syncDraw</code>.</p>
 
-<p><a href="#requestSurface">requestSurface</a><br />
-<a href="#wm_subscribe">setEventHandler</a></p>
+<p><a href="#requestSurface">requestSurface</a></p>
+
+<p><a href="#wm_subscribe">setEventHandler</a></p>
 
 <p>setEventHandler is API of libwindowmanager. This calls wm_subscribe internally.</p>
 
@@ -3012,15 +3005,16 @@ And also it is important for synchronization to get <code class="highlighter-rou
 <p>To display your window, your application has to request <code class="highlighter-rouge">activateWindow</code> with <code class="highlighter-rouge">role</code> and <code class="highlighter-rouge">area</code> to Window Manager.
 Window Manager checks the app should be visible on the <code class="highlighter-rouge">area</code> according to the policy table using <code class="highlighter-rouge">role</code> .
 If it is accepted, afb_req_success will be returned, and next Window Manager
-will push the event <code class="highlighter-rouge">syncDraw</code> to applications which will be displayed.
-If it is denied, afb_req_fail will be returned.<br />
-In this sample sequence, <code class="highlighter-rouge">syncDraw</code> is emitted to the apps who requested only,
+will push the event <code class="highlighter-rouge">syncDraw</code> to applications which will be displayed. If it is denied, afb_req_fail will be returned. In this sample sequence, <code class="highlighter-rouge">syncDraw</code> is emitted to the apps who requested only,
 but this shall be emitted to other applications whose size shall be changed.</p>
 
-<p><a href="#activateWindow">activateWindow</a><br />
-<a href="#syncDraw">syncDraw</a><br />
-<a href="#endDraw">endDraw</a><br />
-<a href="#flushDraw">flushDraw</a></p>
+<p><a href="#activateWindow">activateWindow</a></p>
+
+<p><a href="#syncDraw">syncDraw</a></p>
+
+<p><a href="#endDraw">endDraw</a></p>
+
+<p><a href="#flushDraw">flushDraw</a></p>
 
 <ol>
   <li>Activate OnScreen Window</li>
@@ -3028,8 +3022,9 @@ but this shall be emitted to other applications whose size shall be changed.</p>
 
 <p><img src="parts/deactivate_window.png" alt="deactivate_window.png" /></p>
 
-<p><a href="#deactivateWindow">deactivateWindow</a><br />
-<a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps%2Fonscreenapp.git;a=summary">See sample code for more detail about OnScreen Window.</a></p>
+<p><a href="#deactivateWindow">deactivateWindow</a></p>
+
+<p><a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps%2Fonscreenapp.git;a=summary">See sample code for more detail about OnScreen Window.</a></p>
 
 <p>The above sequence shows the sample of OnScreen Window.
 If the role is high priority than NormapApp, Window Manager rejects NormalApp
@@ -3039,11 +3034,9 @@ request when OnScreenApp is displayed.</p>
 
 <hr />
 
-<div id="API\ reference"></div>
+<h2 id="api-reference">API reference</h2>
 
-<h1 id="api-reference">API reference</h1>
-
-<h2 id="request-to-window-manager">Request to Window Manager</h2>
+<h3 id="request-to-window-manager">Request to Window Manager</h3>
 
 <table>
   <thead>
@@ -3085,9 +3078,19 @@ request when OnScreenApp is displayed.</p>
       <td style="text-align: center">from 0.7</td>
     </tr>
     <tr>
+      <td style="text-align: center">Change area size</td>
+      <td style="text-align: center">changeAreaSize</td>
+      <td style="text-align: center">from 0.8</td>
+    </tr>
+    <tr>
       <td style="text-align: center">Get Infomation</td>
       <td style="text-align: center">getDisplayInfo</td>
       <td style="text-align: center">from 0.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">getAreaList</td>
+      <td style="text-align: center">from 0.8</td>
     </tr>
   </tbody>
 </table>
@@ -3098,17 +3101,11 @@ request when OnScreenApp is displayed.</p>
 This section describes the verb of API and key.
 Normally, the body of requesting API will be here.</p>
 
-<div id="Request\ to\ Widnow \Manager"></div>
+<h3 id="initialize">Initialize</h3>
 
-<h2 id="initialize">Initialize</h2>
+<h4 id="requestsurface"><em>requestSurface</em></h4>
 
-<div id="requestSurface"></div>
-
-<h3 id="requestsurface"><em>requestSurface</em></h3>
-
-<p>Register your role to Window Manager and get surfaceID for ivi-shell.
-The role is used for policy management.<br />
-SurfaceID is supposed to be set to the API  <code class="highlighter-rouge">ivi_application_surface_create</code> of ivi-application protocol or set it to environment variable <code class="highlighter-rouge">QT_IVI_SURFACE_ID</code> if your app is Qt and integrate ivi-shell.</p>
+<p>Register your role to Window Manager and get surfaceID for ivi-shell. The role is used for policy management. SurfaceID is supposed to be set to the API <code class="highlighter-rouge">ivi_application_surface_create</code> of ivi-application protocol or set it to environment variable <code class="highlighter-rouge">QT_IVI_SURFACE_ID</code> if your app is Qt and integrate ivi-shell.</p>
 
 <ul>
   <li>verb : “requestSurface”</li>
@@ -3125,16 +3122,14 @@ SurfaceID is supposed to be set to the API  <code class="highlighter-rouge">ivi_
 </span></code></pre>
 </div>
 
-<h3 id="requestsurfacexdg"><em>requestSurfaceXDG</em></h3>
+<h4 id="requestsurfacexdg"><em>requestSurfaceXDG</em></h4>
 
 <p>This API is for XDGLauncher, so it is not necessary for normal application.
 XDGLauncher is created for XDG application for desktop app without editing for HMI-Framework.
 Please see the repository in detail.
 <a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=staging%2Fxdg-launcher.git;a=summary">https://gerrit.automotivelinux.org/gerrit/gitweb?p=staging%2Fxdg-launcher.git;a=summary</a></p>
 
-<div id="wm_subscribe"></div>
-
-<h3 id="wmsubscribe"><em>wm_subscribe</em></h3>
+<h4 id="wmsubscribe"><em>wm_subscribe</em></h4>
 
 <p>Subscribe the Window Manager’s event.
 Application must subscribe <code class="highlighter-rouge">syncDraw</code> event.</p>
@@ -3193,11 +3188,9 @@ Application must subscribe <code class="highlighter-rouge">syncDraw</code> event
   </tbody>
 </table>
 
-<h2 id="activatedeactivate">Activate/Deactivate</h2>
+<h3 id="activatedeactivate">Activate/Deactivate</h3>
 
-<div id="activateWindow"></div>
-
-<h3 id="activatewindow"><em>activateWindow</em></h3>
+<h4 id="activatewindow"><em>activateWindow</em></h4>
 
 <p>Request to display your application with <code class="highlighter-rouge">role</code> on the <code class="highlighter-rouge">area</code> to Window Manager.
 Window Manager checks the app should be visible on the <code class="highlighter-rouge">area</code> and change layout according to the policy table using <code class="highlighter-rouge">role</code> .
@@ -3221,26 +3214,20 @@ If it is denied, afb_req_fail will be returned.</p>
 </span></code></pre>
 </div>
 
-<div id="deactivateWindow"></div>
-
-<h3 id="deactivatewindow"><em>deactivateWindow</em></h3>
+<h4 id="deactivatewindow"><em>deactivateWindow</em></h4>
 
 <p>Request to hide your application to Window Manager.
 This verb is supposed to be used by high priority application which
 are for example popup application or system UI application such like alert.
 If Window Manager set the priority of popup high in the policy, Window Manager may not hide the popup even if normal applications
-send <code class="highlighter-rouge">activateWindow</code> until popup application send <code class="highlighter-rouge">deactivateWindow</code> . This behavior depends on the policy table.<br />
-After this request, Window Manager checks which app should be visible
-and change layout according to the policy table.</p>
+send <code class="highlighter-rouge">activateWindow</code> until popup application send <code class="highlighter-rouge">deactivateWindow</code> . This behavior depends on the policy table. After this request, Window Manager checks which app should be visible and change layout according to the policy table.</p>
 
 <ul>
   <li>verb : “deactivateWindow”</li>
   <li>argument : None</li>
 </ul>
 
-<div id="endDraw"></div>
-
-<h3 id="enddraw"><em>endDraw</em></h3>
+<h4 id="enddraw"><em>endDraw</em></h4>
 
 <p>Notify Window Manager of application finishes drawing.
 This function must be sent in event <code class="highlighter-rouge">syncDraw</code>.
@@ -3259,9 +3246,30 @@ Otherwise, Window Manager will roll back to previous state and reject your reque
 </span></code></pre>
 </div>
 
-<h2 id="get-information">Get Information</h2>
+<h4 id="changeareasize"><em>changeAreaSize</em></h4>
 
-<h3 id="getdisplayinfo"><em>getDisplayInfo</em></h3>
+<p>Request to change the size of area and location. Then Window Manager sends <code class="highlighter-rouge">syncDraw</code> to the applications whose size and location will be changed.
+The caller has responsible of appearance of layouts.</p>
+
+<p>The use case of this function is shown in below.
+The system application such like HomeScreen call this function, then the layout changes. The trigger may be user request on GUI, or system events and so on.</p>
+
+<p><img src="parts/wm_change_layout.png" alt="chnage_layout_img" /></p>
+
+<p>The sequence is below.</p>
+
+<p><img src="parts/change_layout_seq.png" alt="change_layout_sequnce" /></p>
+
+<ul>
+  <li>verb : “changeAreaSize”</li>
+  <li>argument : {“areas” : [{“name”:”area_name”,”rect”:{“x”:int,”y”:int,”w”:int,”h”:int}, …}]}</li>
+</ul>
+
+<p>Note: Only the application whose role is written in whitelist is allowed to call this API. This is because marcious application can change the layouts. The layout should be controled by system application.</p>
+
+<h3 id="get-information">Get Information</h3>
+
+<h4 id="getdisplayinfo"><em>getDisplayInfo</em></h4>
 
 <p>Get screen information such as resolution.</p>
 
@@ -3270,8 +3278,9 @@ Otherwise, Window Manager will roll back to previous state and reject your reque
   <li>argument : None</li>
 </ul>
 
-<p>Return : The screen information will return.<br />
-Return example :</p>
+<p>Return : The screen information will return.</p>
+
+<p>Return example :</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"response"</span><span class="p">:{</span><span class="w">
@@ -3291,13 +3300,57 @@ Return example :</p>
 </span></code></pre>
 </div>
 
-<p>Note :<br />
-“width_mm”, “height_mm” is from output which is one of the wayland object.
+<p>Note :</p>
+
+<p>“width_mm”, “height_mm” is from output which is one of the wayland object.
 These items lack reliability, so recommend not to use.</p>
 
-<div id="Event\ from\ Window \Manager"></div>
+<h4 id="getarealist"><em>getAreaList</em></h4>
 
-<h2 id="event-from-window-manager">Event from Window Manager</h2>
+<p>Get area definition defined in areas.json.</p>
+
+<ul>
+  <li>verb : “getAreaList”</li>
+  <li>argument : None</li>
+</ul>
+
+<p>Return : The area definition list.</p>
+
+<p>Return example :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"response"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"areas"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"on_screen"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"rect"</span><span class="p">:{</span><span class="w">
+          </span><span class="nt">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"y"</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"w"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"h"</span><span class="p">:</span><span class="mi">1488</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"restriction.split.sub"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"rect"</span><span class="p">:{</span><span class="w">
+          </span><span class="nt">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"y"</span><span class="p">:</span><span class="mi">962</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"w"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"h"</span><span class="p">:</span><span class="mi">744</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"request"</span><span class="p">:{</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"0e6b8835-0df0-4a34-9718-125e6258b378"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="event-from-window-manager">Event from Window Manager</h3>
 
 <table>
   <thead>
@@ -3364,7 +3417,7 @@ The data of event is contained in <code class="highlighter-rouge">data</code> su
 the message of event.
 This section describes “event” and the contents of “data”.</p>
 
-<h3 id="active">active</h3>
+<h4 id="active">active</h4>
 
 <p>This event means when the application becomes active state.</p>
 
@@ -3381,7 +3434,7 @@ This section describes “event” and the contents of “data”.</p>
 </span></code></pre>
 </div>
 
-<h3 id="inactive">inactive</h3>
+<h4 id="inactive">inactive</h4>
 
 <p>This event means when the application becomes inactive state.</p>
 
@@ -3398,7 +3451,7 @@ This section describes “event” and the contents of “data”.</p>
 </span></code></pre>
 </div>
 
-<h3 id="visible">visible</h3>
+<h4 id="visible">visible</h4>
 
 <p>This event is issued when the application is visible state.</p>
 
@@ -3415,7 +3468,7 @@ This section describes “event” and the contents of “data”.</p>
 </span></code></pre>
 </div>
 
-<h3 id="invisible">invisible</h3>
+<h4 id="invisible">invisible</h4>
 
 <p>This event is issued when the application is invisible state.</p>
 
@@ -3432,9 +3485,7 @@ This section describes “event” and the contents of “data”.</p>
 </span></code></pre>
 </div>
 
-<div id="syncDraw"></div>
-
-<h3 id="syncdraw">syncDraw</h3>
+<h4 id="syncdraw">syncDraw</h4>
 
 <p>This event is issued by Window Manager state change operation in policy to the following cases.</p>
 
@@ -3475,12 +3526,9 @@ This section describes “event” and the contents of “data”.</p>
 <p>An application which gets this event must send <code class="highlighter-rouge">endDraw</code>.
 For details, please see the sequence.</p>
 
-<div id="flushDraw"></div>
+<h4 id="flushdraw">flushDraw</h4>
 
-<h3 id="flushdraw">flushDraw</h3>
-
-<p>This event is issued after Window Manager receives all <code class="highlighter-rouge">endDraw</code> from applications who recieved <code class="highlighter-rouge">syncDraw</code> .<br />
-After this event, Window Manager expects applications to update its surface.</p>
+<p>This event is issued after Window Manager receives all <code class="highlighter-rouge">endDraw</code> from applications who recieved <code class="highlighter-rouge">syncDraw</code> . After this event, Window Manager expects applications to update its surface.</p>
 
 <p>example :</p>
 
@@ -3495,10 +3543,9 @@ After this event, Window Manager expects applications to update its surface.</p>
 </span></code></pre>
 </div>
 
-<h3 id="screenupdated">screenUpdated</h3>
+<h4 id="screenupdated">screenUpdated</h4>
 
-<p>This event is issued after the visible application changes as a state transition change. This contains resized applications and visible applications. This event is issued to all subscriber.<br />
-Typical usecase is only for HomeScreen. If HomeScreen has an animation until the started application is visible such as progress bar, this signal may become a switch to stop the animation.</p>
+<p>This event is issued after the visible application changes as a state transition change. This contains resized applications and visible applications. This event is issued to all subscriber. Typical usecase is only for HomeScreen. If HomeScreen has an animation until the started application is visible such as progress bar, this signal may become a switch to stop the animation.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/screenUpdated"</span><span class="p">,</span><span class="w">
@@ -3515,9 +3562,7 @@ Typical usecase is only for HomeScreen. If HomeScreen has an animation until the
 
 <p>“ids” is the application_id described in config.xml of application.</p>
 
-<div id="Client library"></div>
-
-<h2 id="client-library">Client library</h2>
+<h3 id="client-library">Client library</h3>
 
 <p>A client library implementation that internally uses the <em>libafbwsc</em>, is
 provided in the <code class="highlighter-rouge">libwindowmanager</code>.
@@ -3527,9 +3572,7 @@ This library is for C++ native application.</p>
 
 <hr />
 
-<div id="Sample\ Code"></div>
-
-<h1 id="sample-code">Sample code</h1>
+<h2 id="sample-code">Sample code</h2>
 
 <p>In order to enable application to activate application(render on layer),
 above described steps need to be implemented.</p>
@@ -3537,21 +3580,28 @@ above described steps need to be implemented.</p>
 <p>As a minimal example the usage and initialization can look like the
 following.</p>
 
-<p>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/src/libhomescreen</code><br />
-Path: <code class="highlighter-rouge">sample/simple-egl/main.c</code><br />
-Typical implementation of C++ application.</p>
+<p>Typical implementation of C++ application.</p>
 
-<p>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/apps/radio</code><br />
-Typical implementation of Qt application.</p>
+<ul>
+  <li>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/src/libhomescreen</code>
+    <ul>
+      <li>Path: <code class="highlighter-rouge">sample/simple-egl/main.c</code></li>
+    </ul>
+  </li>
+</ul>
 
-<p>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/apps/videoplayer</code><br />
-This is the good example to write more simply for Qt application using QtAGLExtra.</p>
+<p>Typical implementation of Qt application.</p>
 
-<div id="Policy Manager"></div>
+<ul>
+  <li>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/apps/radio</code></li>
+  <li>Repo: <code class="highlighter-rouge">git clone https://gerrit.automotivelinux.org/gerrit/apps/videoplayer</code></li>
+</ul>
 
-<h1 id="policy-manager">Policy Manager</h1>
+<p>This is the good example to write more simply for Qt application using QtAGLExtra.</p>
 
-<h2 id="concepts">Concepts</h2>
+<h2 id="policy-manager">Policy Manager</h2>
+
+<h3 id="concepts">Concepts</h3>
 
 <p>Policy Manager decides next layout by using input event data and current state
 based on the policy table.</p>
@@ -3559,23 +3609,26 @@ based on the policy table.</p>
 <p>And PolicyManager is plugin for WindowManager.
 Therefore the OEMs can replace it.</p>
 
-<div id="Enabling\ split"></div>
+<h3 id="enabling-split">Enabling split</h3>
 
-<h2 id="enabling-split">Enabling split</h2>
-
-<p>Window Manager supports split layout to change policy and <code class="highlighter-rouge">areas.db</code>.
-This section describes how to play split layout.<br />
-The sample image is here.</p>
+<p>Window Manager supports split layout to change policy and <code class="highlighter-rouge">areas.json</code>.
+This section describes how to play split layout. The sample image is here.</p>
 
 <p><img src="parts/example_split.png" alt="example_split.png" /></p>
 
 <p>To play the split layout,</p>
 
 <ol>
-  <li>Edit in <code class="highlighter-rouge">policy_manager/CMakeLists.txt</code> as follows:<br />
-  #set(STM_DIR stub)<br />
-  set(STM_DIR zipc)<br />
-  This results in using source code generated by ZIPC.</li>
+  <li>Edit in <code class="highlighter-rouge">policy_manager/CMakeLists.txt</code> as follows:</li>
+</ol>
+
+<pre><code class="language-cmake:policy_manager/CMakeList.txt">  #set(STM_DIR stub)
+  set(STM_DIR zipc)
+</code></pre>
+
+<p>This results in using source code generated by ZIPC.</p>
+
+<ol>
   <li>Set bool value “ON” to TRY_SPLIT_LAYOUT at line 28 in policy_manager/CMakeLists.txt as follows:
   set(TRY_SPLIT_LAYOUT ON CACHE BOOL “Enable to show split layout”)</li>
   <li>compile</li>
@@ -3585,27 +3638,41 @@ The sample image is here.</p>
 
 <p>As a result, if application requests <code class="highlighter-rouge">navi</code> with <code class="highlighter-rouge">activateWindow</code> when current layout is <code class="highlighter-rouge">video</code> or <code class="highlighter-rouge">mediaplayer</code>, Window Manager change layout to split window. The reverse is true.</p>
 
-<p>Note:<br />
-Currently, the policy manager force application change the size even if the application which has the role doesn’t have the split design.<br />
-In that case, the view of application may be ugly.<br />
-Window Manager supposes that applications may have multi designs according to system design by OEM.
-For example, if OEM sets 2 pattern layout for <code class="highlighter-rouge">navi</code>, the application which requests <code class="highlighter-rouge">navi</code> should have 2 pattern designs.</p>
+<p>Note:</p>
+
+<p>Currently, the policy manager force application change the size even if the application which has the role doesn’t have the split design. In that case, the view of application may be ugly. Window Manager supposes that applications may have multi designs according to system design by OEM. For example, if OEM sets 2 pattern layout for <code class="highlighter-rouge">navi</code>, the application which requests <code class="highlighter-rouge">navi</code> should have 2 pattern designs.</p>
 
 <hr />
 
-<div id="Release\ Note"></div>
+<h2 id="release-note">Release Note</h2>
 
-<h1 id="release-note">Release Note</h1>
+<h3 id="version-08">version: 0.8</h3>
 
-<h2 id="version-07">version: 0.7</h2>
-
-<h3 id="new-feature">New Feature</h3>
+<h4 id="new-feature">New Feature</h4>
 
 <ul>
   <li>Add Policy Manager</li>
 </ul>
 
-<h3 id="limitation">Limitation</h3>
+<h3 id="version-07">version: 0.7</h3>
+
+<h4 id="new-features">New Features</h4>
+
+<ul>
+  <li>Add API of getting area list and changing area size on runtime</li>
+</ul>
+
+<h4 id="changes">Changes</h4>
+
+<ul>
+  <li>Reduce binary size to use ilmControl library.</li>
+  <li>Change layer management. Client has one ivi-layer and can have multi surfaces.</li>
+  <li>Stop conversion table which is compatible with old role to avoid complexity.</li>
+  <li>Upgrade bindings v3.</li>
+  <li>Add configuration file over-ride mechanism.</li>
+</ul>
+
+<h4 id="limitation">Limitation</h4>
 
 <ul>
   <li>
@@ -3698,7 +3765,7 @@ IDs for the ivi-application interface.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-17 07:54:31 +0000</small>
+		<small class="stats">Page rendered at:  2019-03-21 07:54:34 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-windowmanager/plain/doc/ApplicationGuide.md?h=master">Link to source document</small>
 		

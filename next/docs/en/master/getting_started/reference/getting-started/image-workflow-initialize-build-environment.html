@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Initializing Your Build Environment  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/next/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/next/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/next/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/next/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/next/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/next/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/next/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/master/getting_started/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: master master-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/next/"><img id="logo_top" src="/next/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/next/docs/en/master/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/next/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Welcome !
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/getting-started-welcome.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an AGL Image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-prep-host.html">
+                Preparing Your Build Host
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-download-sw.html">
+                Downloading AGL Software
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+                Initializing Your Build Environment
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-cust-build.html">
+                Customizing Your Build
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-build.html">
+                Building the AGL Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/intel.html">
+                Building for Most Intel 64-Bit Hardware Platforms
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/qemu.html">
+                Building for Emulation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/renesas.html">
+                Build for R Car Starter Kit gen3 board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
+                Build for Raspberry PI 2/3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/homescreen/index.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Troubleshooting
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/troubleshooting.html">
+                Generic issues
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Setting Up a Docker Container
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/docker-container-setup.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an Application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-image.html">
+                Download or Build Your Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-sdk.html">
+                Download or Build Your SDK Installer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-bootables.html">
+                Create Bootable Media
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-boot.html">
+                Boot the Image on the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-prep-app.html">
+                Get Ready to Create Your Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-build-app.html">
+                Create and Build the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-deploy-app.html">
+                Deploy the Application to the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-debug-app.html">
+                Debug the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/getting-started-welcome.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-prep-host.html">
+        Preparing Your Build Host
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-download-sw.html">
+        Downloading AGL Software
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/getting-started/image-workflow-initialize-build-environment.html">
+        Initializing Your Build Environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-cust-build.html">
+        Customizing Your Build
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-build.html">
+        Building the AGL Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/intel.html">
+        Building for Most Intel 64-Bit Hardware Platforms
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/qemu.html">
+        Building for Emulation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/renesas.html">
+        Build for R Car Starter Kit gen3 board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/raspberrypi.html">
+        Build for Raspberry PI 2/3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/index.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/troubleshooting.html">
+        Generic issues
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/docker-container-setup.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-image.html">
+        Download or Build Your Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-sdk.html">
+        Download or Build Your SDK Installer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-bootables.html">
+        Create Bootable Media
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-boot.html">
+        Boot the Image on the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-prep-app.html">
+        Get Ready to Create Your Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-build-app.html">
+        Create and Build the Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-deploy-app.html">
+        Deploy the Application to the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-debug-app.html">
+        Debug the Application
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/next/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            master
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html" class="">
+                                    
+                                        <span class="selected">
+                                            
+                                    master
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/guppy/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html" class="">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/flounder/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html" class="">
+                                    
+                                        
+                                    flounder
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        <a href="/next/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/getting_started/master/image-development-workflow-getting-started-book.yml -->
+
+<h1 id="initializing-your-build-environment">3. Initializing Your Build Environment</h1>
+
+<p>Part of the downloaded AGL software is a setup script that you must
+run to initialize the build environment.</p>
+
+<h2 id="aglsetupsh-script"><code class="highlighter-rouge">aglsetup.sh</code> Script</h2>
+
+<p>You can find this script here:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$AGL_TOP/meta-agl/scripts/aglsetup.sh
+</code></pre>
+</div>
+
+<p>The script accepts many options that allow you to define build parameters such
+as the target hardware (i.e. the machine), build directory, and so forth.
+Use the following commands to see the available options and script syntax:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ bash
+$ cd $AGL_TOP
+$ source meta-agl/scripts/aglsetup.sh -h
+</code></pre>
+</div>
+
+<h2 id="agl-features">AGL Features</h2>
+
+<p>Before running the <code class="highlighter-rouge">aglsetup.sh</code>, you should understand what AGL features you
+want to include as part of your image.
+The script’s help output lists available features and shows you the layers in
+which they reside.</p>
+
+<p>Following is a list of the available features:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Available features:
+   [meta-agl]
+       agl-all-features :( agl-demo  agl-appfw-smack  agl-devel  agl-hmi-framework  agl-netboot  agl-sota  agl-sdl )
+       agl-appfw-smack
+       agl-archiver
+       agl-ci
+       agl-ci-change-features :( agl-demo  agl-appfw-smack  agl-devel  agl-hmi-framework  agl-devel  agl-netboot  agl-appfw-smack  agl-sdl )
+       agl-ci-change-features-nogfx :( agl-devel  agl-netboot  agl-appfw-smack )
+       agl-ci-snapshot-features :( agl-demo  agl-appfw-smack  agl-devel  agl-hmi-framework  agl-devel  agl-netboot  agl-appfw-smack  agl-archiver  agl-sdl  agl-ptest )
+       agl-ci-snapshot-features-nogfx :( agl-devel  agl-netboot  agl-appfw-smack  agl-isafw  agl-archiver  agl-ptest )
+       agl-devel
+       agl-isafw
+       agl-netboot
+       agl-ptest
+       agl-sota
+   [meta-agl-demo]
+       agl-demo :( agl-appfw-smack  agl-devel  agl-hmi-framework )
+       agl-iotivity
+       agl-sdl
+   [meta-agl-devel]
+       agl-audio-4a-framework
+       agl-audio-soundmanager-framework
+       agl-egvirt
+       agl-hmi-framework
+       agl-oem-extra-libs
+       agl-renesas-kernel
+   [meta-agl-extra]
+       agl-localdev
+       eas
+</code></pre>
+</div>
+
+<p>To find out exactly what a feature provides, <strong>WE NEED SOME GUIDANCE HERE.  MAYBE SOME INDIVIDUAL README FILES LOCATED IN THE TEMPLATE AREAS FOR THE FEATURES</strong>.</p>
+
+<p>An AGL feature is a configuration that accounts for specific settings
+and dependencies needed for a particular build.
+For example, specifying the “agl-demo” feature makes sure that the
+<code class="highlighter-rouge">aglsetup.sh</code> script creates configuration files needed to build the
+image for the AGL demo.</p>
+
+<p>Following are brief descriptions of the AGL features you can specify on the
+<code class="highlighter-rouge">aglsetup.sh</code> command line:</p>
+
+<ul>
+  <li>
+    <p><strong>agl-all-features</strong>: A set of AGL default features.
+Do not think of this set of features as all the AGL features.</p>
+  </li>
+  <li>
+    <p><strong>agl-appfw-smack</strong>: Enables IoT.bzh Application Framework plus SMACK and
+Cynara.</p>
+  </li>
+  <li>
+    <p><strong>agl-archiver</strong>: Enables the archiver class for releases.</p>
+  </li>
+  <li>
+    <p><strong>agl-ci</strong>: Flags used for Continuous Integration (CI).
+Using this feature changes the value of the
+<a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#var-IMAGE_FSTYPES"><code class="highlighter-rouge">IMAGE_FSTYPES</code></a>
+variable.</p>
+  </li>
+  <li>
+    <p><strong>agl-ci-change-features</strong>: Enables features for CI builds for Gerrit changes.</p>
+  </li>
+  <li>
+    <p><strong>agl-ci-change-features-nogfx</strong>: Enables features for CI builds for Gerrit changes
+for targets that use binary graphics drivers (i.e. builds without graphics).</p>
+  </li>
+  <li>
+    <p><strong>agl-ci-snapshot-features</strong>: Enables features for CI daily snapshot builds.</p>
+  </li>
+  <li>
+    <p><strong>agl-ci-snapshot-features-nogfx</strong>: Enables features for CI daily snapshot builds for
+targets that use binary graphics drivers (i.e. builds without graphics).</p>
+  </li>
+  <li>
+    <p><strong>agl-devel</strong>: Activates development options such as an empty root password,
+debuggers, strace, valgrind, and so forth.</p>
+  </li>
+  <li>
+    <p><strong>agl-isafw</strong>: Enables an image security analysis framework.
+<strong>NOTE:</strong> This feature is deprecated.</p>
+  </li>
+  <li>
+    <p><strong>agl-netboot</strong>: Enables network boot support through Trivial File Transfer Protocol (TFTP) and Network Block Device (NBD) protocol.
+Netboot is needed for CI and useful for development to avoid writing
+sdcards. Needs additional setup.</p>
+  </li>
+</ul>
+
+<!--
+* **agl-profile**: A group or set of Layers and a Package Group as used
+  by the Yocto Project.
+  This feature helps define dependency for various profiles and layers
+  used during the build.
+  For example, "agl-demo" depends on "agl-profile-graphical-qt", which
+  in turn depends on "agl-profile-graphical", which in turn depends
+  on "agl-profile-core".
+
+  agl-profile-graphical
+  agl-profile-graphical-html5
+  agl-profile-graphical-qt5
+  agl-profile-hud
+  agl-profile-telematics
+
+  **NOTE:** For information on Package Groups, see the
+  "[Customizing Images Using Custom Package Groups](https://www.yoctoproject.org/docs/2.4.4/dev-manual/dev-manual.html#usingpoky-extend-customimage-customtasks)"
+  section in the Yocto Project Development Tasks Manual.
+  You can also find general information about Layers in the
+  "[Layers](https://www.yoctoproject.org/docs/2.4.4/dev-manual/dev-manual.html#yocto-project-layers)"
+  section in that same manual.
+-->
+
+<ul>
+  <li>
+    <p><strong>agl-ptest</strong>: Enables
+<a href="https://yoctoproject.org/docs/2.4.4/dev-manual/dev-manual.html#testing-packages-with-ptest">Ptest</a>
+as part of the build.</p>
+  </li>
+  <li>
+    <p><strong>agl-sota</strong>: Enables State of the Art (SOTA) components and dependencies.
+Includes meta-sota, meta-file systems, meta-ruby, and meta-rust.</p>
+  </li>
+  <li>
+    <p><strong>agl-demo</strong>: Enables the layers meta-agl-demo and meta-qt5.
+You need agl-demo if you are going to build the agl-demo-platform.</p>
+  </li>
+  <li>
+    <p><strong>agl-iotivity</strong>: Enables iotivity such as status unclear, needs check, and needs removal.</p>
+  </li>
+  <li>
+    <p><strong>agl-sdl</strong>: Enables or adds SDL to the build.</p>
+  </li>
+  <li>
+    <p><strong>agl-audio-4a-framework</strong>: Enables AGL advanced audio architecture, which is an exclusive switch for audio framework.</p>
+  </li>
+  <li>
+    <p><strong>agl-audio-soundmanager-framework</strong>: Enables Soundmanager framework, which is an exclusive switch for audio framework.</p>
+  </li>
+  <li>
+    <p><strong>agl-egvirt</strong>: Enables virtualization support for the R-Car.</p>
+  </li>
+  <li>
+    <p><strong>agl-hmi-framework</strong>: Enables HMI framework.
+HMI framework is enabled by default.</p>
+  </li>
+  <li>
+    <p><strong>agl-oem-extra-libs</strong>: Pulls in additional libraries.
+<strong>NOTE:</strong> This feature is under construction.
+It needs further work and testing.</p>
+  </li>
+  <li>
+    <p><strong>agl-renesas-kernel</strong>: Enables renesas-specific kernel options.</p>
+  </li>
+  <li>
+    <p><strong>agl-telemetry</strong>: Enables the telemetry demo.  To use this feature,
+you must convert it into agl-profile-telematics.
+<strong>NOTE:</strong> agl-telemetry is not in the layer.</p>
+  </li>
+  <li>
+    <p><strong>agl-localdev</strong>: Adds a local layer named “meta-localdev” in the
+meta directory and a local.dev.inc configuration file when that file
+is present.</p>
+
+    <p>This feature provides a shortcut for using the layer meta-localdev
+in the top-level folder for easy modifications to your own recipes.</p>
+  </li>
+  <li>
+    <p><strong>eas</strong>: I don’t know what this does.</p>
+  </li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>Following is an example that initializes the build environment, selects “beaglebone”
+for the machine, and chooses the “agl-demo” feature, which also includes the
+“agl-appfw-smack”, “agl-devel”, and “agl-hmi-framework” features:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source meta-agl/scripts/aglsetup.sh -m beaglebone agl-demo
+aglsetup.sh: Starting
+Generating configuration files:
+   Build dir: /home/scottrif/workspace_agl/build
+   Machine: beaglebone
+   Features: agl-appfw-smack agl-demo agl-devel agl-hmi-framework
+   Running /home/scottrif/workspace_agl/poky/oe-init-build-env
+   Templates dir: /home/scottrif/workspace_agl/meta-agl/templates/base
+   Config: /home/scottrif/workspace_agl/build/conf/bblayers.conf
+   Config: /home/scottrif/workspace_agl/build/conf/local.conf
+   Setup script: /home/scottrif/workspace_agl/build/conf/setup.sh
+   Executing setup script ... --- beginning of setup script
+ fragment /home/scottrif/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
+ fragment /home/scottrif/workspace_agl/meta-agl/templates/base/99_setup_EULAconf.sh
+ end of setup script
+OK
+Generating setup file: /home/scottrif/workspace_agl/build/agl-init-build-env ... OK
+aglsetup.sh: Done
+
+ Shell environment set up for builds.
+
+You can now run 'bitbake target'
+
+Common targets are:
+  - meta-agl:          (core system)
+    agl-image-minimal
+    agl-image-minimal-qa
+
+    agl-image-ivi
+    agl-image-ivi-qa
+    agl-image-ivi-crosssdk
+
+    agl-image-weston
+
+  - meta-agl-demo:     (demo with UI)
+    agl-demo-platform  (* default demo target)
+    agl-demo-platform-qa
+    agl-demo-platform-crosssdk
+
+    agl-demo-platform-html5
+$
+</code></pre>
+</div>
+
+<p>Running the script creates the Build Directory if it does not already exist.
+For this example, the Build Directory is “$AGL_TOP/workspace_agl/build”.</p>
+
+<p>The script’s output also indicates the machine and AGL features selected for the build.</p>
+
+<p>The script creates two primary configuration files used for the build: <code class="highlighter-rouge">local.conf</code> and <code class="highlighter-rouge">bblayers.conf</code>.
+Both these configuration files are located in the Build Directory in the <code class="highlighter-rouge">conf</code> folder.
+If you were to examine these files, you would find standard Yocto Project
+configurations along with AGL configuration fragments, which are driven by the
+machine (i.e. beaglebone) and the AGL features specified as part of the
+script’s command line.</p>
+
+<p>The end result is configuration files specific for your build in the AGL development environment.</p>
+
+<p>Finally, part of the <code class="highlighter-rouge">aglsetup.sh</code> script makes sure that any End User License Agreements (EULA)
+are considered.
+You can see that processing in the script’s output as well.</p>
+
+<p><strong>NOTE:</strong> Use of the <code class="highlighter-rouge">local.conf</code> and <code class="highlighter-rouge">bblayers.conf</code> configuration files is fundamental
+in the Yocto Project build environment.
+Consequently, it is fundamental in the AGL build environment.
+You can find lots of information on configuring builds in the Yocto Project
+documentation set.
+Here are some references if you want to dig into configuration further:</p>
+
+<ul>
+  <li><a href="https://yoctoproject.org/docs/2.4.4/dev-manual/dev-manual.html#usingpoky-extend-customimage-localconf">Customizing Images Using local.conf</a></li>
+  <li><a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#ref-varlocality-config-local">Local</a></li>
+  <li><a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#structure-build-conf-local.conf">build/conf/local.conf</a></li>
+  <li><a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#structure-build-conf-bblayers.conf">build/conf/bblayers.conf</a></li>
+  <li><a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#var-BBLAYERS">BBLAYERS</a></li>
+  <li><a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#user-configuration">User Configuration</a></li>
+  <li><a href="https://yoctoproject.org/docs/2.4.4/dev-manual/dev-manual.html#enabling-your-layer">Enabling Your Layer</a></li>
+</ul>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/next/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2019-03-22 04:33:32 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master-next/docs/getting-started/image-workflow-initialize-build-environment.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/next/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/next/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/next/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

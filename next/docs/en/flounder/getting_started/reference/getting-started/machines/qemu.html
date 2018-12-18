@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Building for Emulation  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/next/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/next/docs/en/flounder/getting_started/reference/getting-started/machines/qemu.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/next/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/next/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/next/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/next/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/next/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/flounder/getting_started/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: flounder flounder-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/next/"><img id="logo_top" src="/next/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/next/docs/en/flounder/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/flounder/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/flounder//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/flounder/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/flounder/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/flounder/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/flounder/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/next/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'flounder' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Welcome !
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/getting-started-welcome.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an AGL Image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/image-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/image-workflow-prep-host.html">
+                Preparing Your Build Host
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/image-workflow-download-sw.html">
+                Downloading AGL Software
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+                Initializing Your Build Environment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/image-workflow-cust-build.html">
+                Customizing Your Build
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/image-workflow-build.html">
+                Building the AGL Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/machines/intel.html">
+                Building for Most Intel 64-Bit Hardware Platforms
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/flounder/getting_started/reference/getting-started/machines/qemu.html">
+                Building for Emulation
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/machines/renesas.html">
+                Build for R Car Starter Kit gen3 board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/machines/raspberrypi.html">
+                Build for Raspberry PI 2/3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/homescreen/index.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Troubleshooting
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/troubleshooting.html">
+                Generic issues
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Setting Up a Docker Container
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/docker-container-setup.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an Application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-image.html">
+                Download or Build Your Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-sdk.html">
+                Download or Build Your SDK Installer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-bootables.html">
+                Create Bootable Media
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-boot.html">
+                Boot the Image on the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-prep-app.html">
+                Get Ready to Create Your Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-build-app.html">
+                Create and Build the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-deploy-app.html">
+                Deploy the Application to the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/flounder/getting_started/reference/getting-started/app-workflow-debug-app.html">
+                Debug the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/getting-started-welcome.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-prep-host.html">
+        Preparing Your Build Host
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-download-sw.html">
+        Downloading AGL Software
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-initialize-build-environment.html">
+        Initializing Your Build Environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-cust-build.html">
+        Customizing Your Build
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-build.html">
+        Building the AGL Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/intel.html">
+        Building for Most Intel 64-Bit Hardware Platforms
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/getting-started/machines/qemu.html">
+        Building for Emulation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/renesas.html">
+        Build for R Car Starter Kit gen3 board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/raspberrypi.html">
+        Build for Raspberry PI 2/3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/index.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/troubleshooting.html">
+        Generic issues
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/docker-container-setup.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-image.html">
+        Download or Build Your Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-sdk.html">
+        Download or Build Your SDK Installer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-bootables.html">
+        Create Bootable Media
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-boot.html">
+        Boot the Image on the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-prep-app.html">
+        Get Ready to Create Your Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-build-app.html">
+        Create and Build the Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-deploy-app.html">
+        Deploy the Application to the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-debug-app.html">
+        Debug the Application
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/next/docs/en/flounder/getting_started/reference/getting-started/machines/qemu.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            flounder
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/master/getting_started/reference/getting-started/machines/qemu.html" class="">
+                                    
+                                        
+                                    master
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/guppy/getting_started/reference/getting-started/machines/qemu.html" class="">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/flounder/getting_started/reference/getting-started/machines/qemu.html" class="">
+                                    
+                                        <span class="selected">
+                                            
+                                    flounder
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                -->
+
+                <!-- outdated warning
+                
+                    <div class="alert docs-alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        This version of the documentation is outdated!
+                        <a href="/next/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/getting_started/flounder/flounder-image-development-workflow-getting-started-book.yml -->
+
+<h1 id="building-for-emulation">Building for Emulation</h1>
+
+<p>Building an image for emulation allows you to simulate your
+image without actual target hardware.</p>
+
+<p>This section describes the steps you need to take to build the
+AGL demo image for emulation using either Quick EMUlator (QEMU) or
+VirtualBox.</p>
+
+<h2 id="making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
+
+<p>The
+“<a href="../image-workflow-initialize-build-environment.html/Initializing-your-build-environment">Initializing Your Build Environment</a>”
+section presented generic information for setting up your build environment
+using the <code class="highlighter-rouge">aglsetup.sh</code> script.
+If you are building the AGL demo image for emulation, you need to specify some
+specific options when you run the script:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -f -m qemux86-64 agl-demo agl-devel
+</code></pre>
+</div>
+
+<p>The “-m” option specifies the “qemux86-64” machine.
+The list of AGL features used with script are appropriate for development of
+the AGL demo image suited for either QEMU or VirtualBox.</p>
+
+<h2 id="using-bitbake">2. Using BitBake</h2>
+
+<p>This section shows the <code class="highlighter-rouge">bitbake</code> command used to build the AGL image.
+Before running BitBake to start your build, it is good to be reminded that AGL
+does provide pre-built images for developers that can be emulated
+using QEMU and VirtualBox.
+You can find these pre-built images on the
+<a href="https://download.automotivelinux.org/AGL/release">AGL Download web site</a>.</p>
+
+<p>For supported images, the filenames have the following forms:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/qemuarm/*
+&lt;release-name&gt;/&lt;release-number&gt;/qemuarm64/*
+&lt;release-name&gt;/&lt;release-number&gt;/qemux86-64/*
+</code></pre>
+</div>
+
+<p>Start the build using the <code class="highlighter-rouge">bitbake</code> command.</p>
+
+<p><strong>NOTE:</strong> An initial build can take many hours depending on your
+CPU and and Internet connection speeds.
+The build also takes approximately 100G-bytes of free disk space.</p>
+
+<p>For this example, the target is “agl-demo-platform”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  bitbake agl-demo-platform
+</code></pre>
+</div>
+
+<p>By default, the build process puts the resulting image in the Build Directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk.xz
+</code></pre>
+</div>
+
+<h2 id="deploying-the-agl-demo-image">3. Deploying the AGL Demo Image</h2>
+
+<p>Deploying the image consists of decompressing the image and then
+booting it using either QEMU or VirtualBox.</p>
+
+<h3 id="decompress-the-image">Decompress the image:</h3>
+
+<p>For Linux, use the following commands to decompress the image and prepare it for boot:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>tmp/deploy/images/qemux86-64
+xz -d agl-demo-platform-qemux86-64.vmdk.xz
+</code></pre>
+</div>
+
+<p>For Windows, download <a href="http://www.7-zip.org/">7-Zip</a> and then
+select <strong>agl-demo-platform-qemux86-64.vmdk.xz</strong> to decompress
+the image and prepare it for boot.</p>
+
+<h3 id="boot-the-image">Boot the Image:</h3>
+
+<p>The following steps show you how to boot the image with QEMU or VirtualBox.</p>
+
+<h4 id="qemu">QEMU</h4>
+
+<p>Depending on your Linux distribution, use these commands to install QEMU:</p>
+
+<p><strong>NOTE:</strong> if you have created an AGL crosssdk, it will contain a
+QEMU binary for the build host.
+This SDK QEMU binary does not support graphics.
+Consequently,  you cannot use it to boot the AGL image.</p>
+
+<p>If your build host is running
+<a href="https://www.archlinux.org/">Arch Linux</a>, use the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo pacman -S qemu
+</code></pre>
+</div>
+
+<p>If your build host is running Debian or Ubuntu, use the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install qemu-system-x86
+</code></pre>
+</div>
+
+<p>If you build host is running Fedora, use the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo yum install qemu-kvm
+</code></pre>
+</div>
+
+<p>Once QEMU is installed, boot the image with KVM support:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>qemu-system-x86_64 -enable-kvm -m 2048 <span class="se">\</span>
+    -hda agl-demo-platform-qemux86-64.vmdk <span class="se">\</span>
+    -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt <span class="se">\</span>
+    -vga virtio -show-cursor <span class="se">\</span>
+    -device virtio-rng-pci <span class="se">\</span>
+    -serial mon:stdio -serial null <span class="se">\</span>
+    -soundhw hda <span class="se">\</span>
+    -net nic,vlan<span class="o">=</span>0 <span class="se">\</span>
+    -net user,hostfwd<span class="o">=</span>tcp::2222-:22
+</code></pre>
+</div>
+
+<h4 id="virtualbox">VirtualBox</h4>
+
+<p>Start by downloading and installing <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> 5.2.0 or later.</p>
+
+<p>Once VirtualBox is installed, follow these steps to boot the image:</p>
+
+<ol>
+  <li>Start VirtualBox</li>
+  <li>Click <strong>New</strong> to create a new machine</li>
+  <li>Enter <strong>AGL QEMU</strong> as the <em>Name</em></li>
+  <li>Select <strong>Linux</strong> as the <em>Type</em></li>
+  <li>Select <strong>Other Linux (64-bit)</strong> as the <em>Version</em></li>
+  <li>Set <em>Memory size</em> to <strong>2 GB</strong></li>
+  <li>Click <strong>Use an existing virtual hard disk file</strong> under <em>Hard disk</em></li>
+  <li>Navigate to and select the <strong>agl-demo-platform-qemux86-64.vmdk</strong> image</li>
+  <li>Ensure that the newly created <strong>AGL QEMU</strong> machine is highlighted.</li>
+  <li>Click <strong>Start</strong></li>
+</ol>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/next/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2019-03-22 04:33:39 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master-next/docs/getting-started/machines/qemu.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/next/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/next/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/next/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>

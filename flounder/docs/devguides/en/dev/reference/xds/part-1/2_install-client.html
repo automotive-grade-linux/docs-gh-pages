@@ -339,6 +339,40 @@
     <li>
         
             <span class="toc-section-heading">
+                App-Templates Submodule
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/flounder/docs/devguides/en/dev/reference/app-templates/docs/0-App-templates-usage.html">
+                CMake templates Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
                 X(cross) Development System: User's Guide
             </span>
         
@@ -1386,6 +1420,22 @@
 
 
 <li>
+    <a class="" href="reference/app-templates/docs/0-App-templates-usage.html">
+        CMake templates Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
     <a class="" href="reference/xds/part-1/0_Abstract.html">
         Getting Started
     </a>
@@ -1985,7 +2035,7 @@ optional and depends of what you want to do:</p>
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_16.04"</span>
 
 <span class="c"># AGL_RELEASE can be set to {AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master}</span>
-<span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
+<span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_FunkyFlounder"</span>
 
 wget -O - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | sudo apt-key add -
 sudo bash -c <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
@@ -2005,7 +2055,7 @@ sudo apt-get install agl-xds-gdb
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"openSUSE_Leap_15.0"</span>
 
 <span class="c"># AGL_RELEASE can be set to {AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master}</span>
-<span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
+<span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_FunkyFlounder"</span>
 
 sudo zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>.repo
 
@@ -2162,7 +2212,7 @@ systemctl --user status xds-agent.service
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-17 07:54:58 +0000</small>
+		<small class="stats">Page rendered at:  2019-03-21 07:55:11 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/2_install-client.md?h=flounder">Link to source document</small>
 		

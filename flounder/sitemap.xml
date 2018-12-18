@@ -16,6 +16,17 @@
     
 
     <url>
+    <loc>http://docs.automotivelinux.org/docs/devguides/en/dev/reference/app-templates/docs/0-App-templates-usage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+
+
+    
+    
+    
+
+    <url>
     <loc>http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-main/0-introduction.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -501,17 +512,6 @@
 
     <url>
     <loc>http://docs.automotivelinux.org/docs/apis_services/en/dev/reference/af-main/2.2-config.xml.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-</url>
-
-
-    
-    
-    
-
-    <url>
-    <loc>http://docs.automotivelinux.org/docs/devguides/en/dev/reference/sdk-devkit/docs/part-2/2_4-Use-app-templates.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 </url>

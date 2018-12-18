@@ -1302,6 +1302,145 @@
     <li>
         
             <span class="toc-section-heading">
+                AFB Helper functions reference
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/usage.html">
+                Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/afb-timer.html">
+                AFB Timer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/curl-wrap.html">
+                CURL wrapper
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/escape.html">
+                URL escaping
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/filescan-utils.html">
+                Filescan Utils
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/qafbwebsocketclient.html">
+                Qt AFB Websocket client
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/json.html">
+                JSON library for modern C++
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/wrap-json.html">
+                C JSON Wrapper
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
                 Continuous Integration - Automated Testing (CIAT)
             </span>
         
@@ -2019,6 +2158,85 @@
 
 
 
+<li>
+    <a class="" href="reference/afb-helpers/usage.html">
+        Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/afb-timer.html">
+        AFB Timer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/curl-wrap.html">
+        CURL wrapper
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/escape.html">
+        URL escaping
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/filescan-utils.html">
+        Filescan Utils
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/qafbwebsocketclient.html">
+        Qt AFB Websocket client
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/json.html">
+        JSON library for modern C++
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/wrap-json.html">
+        C JSON Wrapper
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2129,18 +2347,21 @@
   <li>Status: Release Candidate</li>
   <li>Author: Fulup Ar Foll fulup@iot.bzh</li>
   <li>Date  : May-2018</li>
+  <li>Require : af-binder version &gt;= FF (handle only bindings v3)</li>
 </ul>
 
 <h2 id="features">Features</h2>
 
 <ul>
   <li>Create a controller application from a JSON config file</li>
-  <li>Each control (eg: navigation, multimedia, …) is a suite of actions. When all actions succeed control is granted, if one fails control access is denied.</li>
+  <li>Each control (eg: navigation, multimedia, …) is a suite of actions. When all actions succeed
+ control is granted, if one fails control access is denied.</li>
   <li>Actions can either be:
     <ul>
       <li>Invocation of an other binding API, either internal or external (eg: a policy service, Alsa UCM, …)</li>
       <li>C routines from a user provided plugin (eg: policy routine, proprietary code, …)</li>
-      <li>Lua script function. Lua provides access to every AGL appfw functionality and can be extended by plugins written in C.</li>
+      <li>Lua script function. Lua provides access to every AGL appfw functionality and can be extended by
+ plugins written in C.</li>
     </ul>
   </li>
 </ul>
@@ -2148,17 +2369,63 @@
 <h2 id="installation">Installation</h2>
 
 <ul>
-  <li>Controller can easily be included as a git submodule in any AGL service or application binder.</li>
-  <li>Dependencies: the only dependencies are AGL application framework (https://gerrit.automotivelinux.org/gerrit/p/src/app-framework-binder.git) and app-afb-helpers-submodule (https://gerrit.automotivelinux.org/gerrit/p/apps/app-afb-helpers-submodule.git).</li>
+  <li>Controller can easily be included as a separate library in any AGL service or application binder.</li>
+  <li>Dependencies: the only dependencies are <a href="https://gerrit.automotivelinux.org/gerrit/p/src/app-framework-binder.git">AGL application framework</a>
+ and <a href="https://gerrit.automotivelinux.org/gerrit/p/src/libafb-helpers.git">libafb-helpers</a>.</li>
   <li>Controller relies on Lua-5.3, when not needed Lua might be removed at compilation time.</li>
 </ul>
+
+<p>The controller library is integrated by default in the AGL SDK since the Guppy
+version (&gt;=7) and is also available as a package for the AGL supported linux
+distributions.</p>
+
+<p>You could find the SDK build from Yocto which embed the afb-helpers library
+here:</p>
+
+<ul>
+  <li>For <a href="https://download.automotivelinux.org/AGL/release/">releases</a> &gt;= Guppy, in
+ the latest machine’s deploy directory. (e.g for Guppy in
+ <code class="highlighter-rouge">latest/&lt;yourmachine&gt;/deploy/sdk</code> directory)</li>
+  <li>For the <a href="https://download.automotivelinux.org/AGL/snapshots/master/">master</a>
+ development branch, in the latest machine’s deploy directory. (e.g in
+ <code class="highlighter-rouge">latest/&lt;yourmachine&gt;/deploy/sdk</code> directory)</li>
+</ul>
+
+<p>To install the native package please refer to <a href="../host-configuration/docs/1_Prerequisites.md">this chapter</a>
+in the AGL documentation to install the AGL repository for your distribution.</p>
+
+<p>Then use your package manager to install the library.</p>
+
+<h3 id="opensuse">OpenSuse</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo zypper ref
+sudo zypper install agl-libappcontroller-devel
+</code></pre>
+</div>
+
+<h3 id="fedora">Fedora</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo dnf ref
+sudo dnf install agl-libappcontroller-devel
+</code></pre>
+</div>
+
+<h3 id="ubuntudebian">Ubuntu/Debian</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+sudo apt-get install agl-libappcontroller-dev
+</code></pre>
+</div>
 
 <h2 id="monitoring">Monitoring</h2>
 
 <ul>
-  <li>The default test HTML page expect the monitoring HTML page to be accessible under /monitoring with the –monitoring option.</li>
-  <li>The monitoring HTML pages are installed with the app framework binder in a subdirectory called monitoring.</li>
-  <li>You can add other HTML pages with the alias options e.g. afb-daemon –port=1234 –monitoring –alias=/path1/to/htmlpages:/path2/to/htmlpages –ldpaths=. –workdir=. –roothttp=../htdocs</li>
+  <li>The default test HTML page expect the monitoring HTML page to be accessible under /monitoring with
+ the –monitoring option.</li>
+  <li>The monitoring HTML pages are installed with the app framework binder in a subdirectory called
+ monitoring.</li>
+  <li>You can add other HTML pages with the alias options e.g:
+ afb-daemon –port=1234 –monitoring –alias=/path1/to/htmlpages:/path2/to/htmlpages –ldpaths=. –workdir=. –roothttp=../htdocs</li>
   <li>The monitoring is accessible at http://localhost:1234/monitoring.</li>
 </ul>
 
@@ -2241,9 +2508,9 @@
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-17 07:54:37 +0000</small>
+		<small class="stats">Page rendered at:  2019-03-21 07:54:39 +0000</small>
 		
-		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-controller-submodule/plain/docs/controller.md?h=master">Link to source document</small>
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libappcontroller/plain/docs/controller.md?h=master">Link to source document</small>
 		
 	</div>
 </div>

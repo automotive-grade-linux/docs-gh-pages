@@ -339,6 +339,40 @@
     <li>
         
             <span class="toc-section-heading">
+                App-Templates Submodule
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/flounder/docs/devguides/en/dev/reference/app-templates/docs/0-App-templates-usage.html">
+                CMake templates Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
                 X(cross) Development System: User's Guide
             </span>
         
@@ -1386,6 +1420,22 @@
 
 
 <li>
+    <a class="" href="reference/app-templates/docs/0-App-templates-usage.html">
+        CMake templates Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
     <a class="" href="reference/xds/part-1/0_Abstract.html">
         Getting Started
     </a>
@@ -1957,17 +2007,9 @@
 <p>There are different repos for AGL packages depending on the version, it is
 possible to install all of them and switching between them.</p>
 
-<p>The versions are:</p>
+<p>For flounder version you must set REVISION variable as follow :</p>
 
-<ul>
-  <li><a href="https://build.opensuse.org/project/show/isv:LinuxAutomotive:AGL_ElectricEel">ElectricEel</a></li>
-  <li><a href="https://build.opensuse.org/project/show/isv:LinuxAutomotive:AGL_FunkyFlounder">FunkyFlounder</a></li>
-  <li><a href="https://build.opensuse.org/project/show/isv:LinuxAutomotive:AGL_Master">Master</a></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>ElectricEel
-<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
-<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
 </code></pre>
 </div>
 
@@ -1977,7 +2019,7 @@ possible to install all of them and switching between them.</p>
 
 <h2 id="add-repo-for-debian-distro">Add repo for debian distro</h2>
 
-<p>Avalable distro values are</p>
+<p>Available distro values are</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"Debian_9.0"</span>
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_16.04"</span>
@@ -1989,7 +2031,7 @@ possible to install all of them and switching between them.</p>
 
 <p>Install the repository:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_18.04"</span>
 wget -O - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | sudo apt-key add -
 sudo bash -c <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
@@ -2003,7 +2045,7 @@ sudo apt-get update
 <h2 id="add-repo-for-opensuse-distro">Add repo for openSuse distro</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#available distro values are openSUSE_Leap_42.3 openSUSE_Tumbleweed</span>
-<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
+<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
 <span class="nb">source</span> /etc/os-release; <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$PRETTY_NAME</span> | sed <span class="s2">"s/ /_/g"</span><span class="k">)</span>
 sudo zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
 sudo zypper --gpg-auto-import-keys ref
@@ -2013,7 +2055,7 @@ sudo zypper --gpg-auto-import-keys ref
 <h2 id="add-repo-for-fedora-distro">Add repo for fedora distro</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#available distro values are Fedora_27 Fedora_28 Fedora_Rawhide</span>
-<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
+<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
 <span class="nb">source</span> /etc/os-release ; <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">NAME</span><span class="k">}</span><span class="s2">_</span><span class="k">${</span><span class="nv">VERSION_ID</span><span class="k">}</span><span class="s2">"</span>
 sudo wget -O /etc/yum.repos.d/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
 </code></pre>
@@ -2134,7 +2176,7 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
 </code></pre>
 </div>
 
-<p>Now you have to <a href="http://docs.automotivelinux.org/docs/devguides/en/dev/reference/host-configuration/docs/2_AGL_Application_Framework.html">install the app-framework-binder</a></p>
+<p>Now you have to <a href="http://docs.automotivelinux.org/flounder/docs/devguides/en/dev/reference/host-configuration/docs/2_AGL_Application_Framework.html">install the app-framework-binder</a></p>
 
 
 
@@ -2215,9 +2257,9 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-17 07:54:56 +0000</small>
+		<small class="stats">Page rendered at:  2019-03-21 07:55:10 +0000</small>
 		
-		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/master/host-configuration/docs/1_Prerequisites.md">Link to source document</small>
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/flounder/host-configuration/docs/1_Prerequisites.md">Link to source document</small>
 		
 	</div>
 </div>

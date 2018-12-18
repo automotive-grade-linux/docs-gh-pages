@@ -1302,6 +1302,145 @@
     <li>
         
             <span class="toc-section-heading">
+                AFB Helper functions reference
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/usage.html">
+                Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/afb-timer.html">
+                AFB Timer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/curl-wrap.html">
+                CURL wrapper
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/escape.html">
+                URL escaping
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/filescan-utils.html">
+                Filescan Utils
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/qafbwebsocketclient.html">
+                Qt AFB Websocket client
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/json.html">
+                JSON library for modern C++
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/master/docs/devguides/en/dev/reference/afb-helpers/wrap-json.html">
+                C JSON Wrapper
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
                 Continuous Integration - Automated Testing (CIAT)
             </span>
         
@@ -2019,6 +2158,85 @@
 
 
 
+<li>
+    <a class="" href="reference/afb-helpers/usage.html">
+        Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/afb-timer.html">
+        AFB Timer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/curl-wrap.html">
+        CURL wrapper
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/escape.html">
+        URL escaping
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/filescan-utils.html">
+        Filescan Utils
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/qafbwebsocketclient.html">
+        Qt AFB Websocket client
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/json.html">
+        JSON library for modern C++
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/afb-helpers/wrap-json.html">
+        C JSON Wrapper
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2124,22 +2342,164 @@
 
 <h1 id="usage">Usage</h1>
 
-<h2 id="add-app-controller-submodule-as-a-submodule-to-include-in-your-project">1) Add app-controller-submodule as a submodule to include in your project</h2>
+<h2 id="optional-migrate-from-the-git-submodule-version">(Optional) Migrate from the git submodule version</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git submodule add https://gerrit.automotivelinux.org/gerrit/apps/app-controller-submodule
+<h3 id="remove-the-git-submodule-version">Remove the git submodule version</h3>
+
+<p>If you already use the controller component but use the submodule version then
+you have to get rid of it to be sure to link and use the library version. To do
+so, you have to do the following:</p>
+
+<ul>
+  <li>deinitialize the submodule using <code class="highlighter-rouge">git</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># This example assumes that the git submodule is named app-controller-submodule</span>
+<span class="c"># and is located at your root project repository.</span>
+git submodule deinit app-controller-submodule
 </code></pre>
 </div>
 
-<h2 id="add-app-controller-submodule-as-a-static-library-to-your-binding">2) Add app-controller-submodule as a static library to your binding</h2>
+<ul>
+  <li>remove the relative submodule lines from the <code class="highlighter-rouge">.gitmodules</code> file</li>
+</ul>
 
-<pre><code class="language-cmake">    # Library dependencies (include updates automatically)
-    TARGET_LINK_LIBRARIES(${TARGET_NAME}
-        ctl-utilities
-        ... other dependencies ....
-    )
+<div class="highlighter-rouge"><pre class="highlight"><code>vim .gitmodules
+</code></pre>
+</div>
+
+<ul>
+  <li>remove the <code class="highlighter-rouge">ctl-utilities</code> target link from any CMake target you specified.
+ Those lines look like:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>TARGET_LINK_LIBRARIES<span class="o">(</span><span class="k">${</span><span class="nv">TARGET_NAME</span><span class="k">}</span>
+    ctl-utilities <span class="c"># REMOVE THIS LINE</span>
+    <span class="k">${</span><span class="nv">link_libraries</span><span class="k">}</span>
+    <span class="o">)</span>
+</code></pre>
+</div>
+
+<h3 id="use-the-native-af-binder-functions">Use the native af-binder functions</h3>
+
+<p>The controller redefined some binder’s functions to add an abstraction between
+several binding versions. But now, as the controller is binding v3 only, the
+abstraction layer from the controller has been removed and you should switch
+your functions from the old controller’s definitions to binder’s definitions.</p>
+
+<p>You have to replace any <code class="highlighter-rouge">include</code> statements of <code class="highlighter-rouge">afb-definitions.h</code> by
+<code class="highlighter-rouge">afb/afb-binding.h</code> if you included it somewhere. If you have only included
+<code class="highlighter-rouge">ctl-config.h</code> file then you are fine.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gd">- #include &lt;afb-definitions.h&gt;
+</span><span class="gi">+ #include &lt;afb/afb-binding.h&gt;
+</span></code></pre>
+</div>
+
+<p>To help migrating gracefully the old controller’s definitions, you could use the
+sed script to automate the migration for you. From your project root directory,
+executes the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget -O controller-migration.sed https://iot.bzh/download/public/tools/controller-migration.sed
+<span class="k">for </span>f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="k">*</span>.c -o -name <span class="k">*</span>.h<span class="k">)</span>
+<span class="k">do
+</span>sed -i -rf controller-migration.sed  <span class="k">${</span><span class="nv">f</span><span class="k">}</span>
+<span class="k">done</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>NOTE</strong>: <code class="highlighter-rouge">AFB_ServiceCall</code> and <code class="highlighter-rouge">AFB_ServiceSync</code> has been migrated to their
+homologue <code class="highlighter-rouge">afb_api_call_legacy</code> and <code class="highlighter-rouge">afb_api_call_sync_legacy</code> respectively
+but you have to be aware that they are <em>legacy</em> functions and you should use
+the news call functions <code class="highlighter-rouge">afb_api_call</code> and <code class="highlighter-rouge">afb_api_call_sync</code> instead.
+Cf <a href="../af-binder/reference-v3/func-api.html#calls-and-job-functions">Binder API functions reference</a>
+for more details on these functions.</p>
+</blockquote>
+
+<p>As a reminder, here are the old controller’s functions definitions that you
+should migrate:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="cp">#define AFB_ReqNone NULL
+</span>    <span class="k">typedef</span> <span class="n">afb_req_t</span>   <span class="n">AFB_ReqT</span><span class="p">;</span>
+    <span class="k">typedef</span> <span class="n">afb_api_t</span>   <span class="n">AFB_ApiT</span><span class="p">;</span>
+    <span class="k">typedef</span> <span class="n">afb_event_t</span> <span class="n">AFB_EventT</span><span class="p">;</span>
+
+    <span class="cp">#define AFB_EventIsValid(eventid) eventid
+</span>    <span class="cp">#define AFB_EventPush afb_event_push
+</span>    <span class="cp">#define AFB_ReqSubscribe afb_req_subscribe
+</span>    <span class="cp">#define AFB_EventMake(api, name) afb_api_make_event(api, name)
+</span>
+    <span class="cp">#define AFB_ReqJson(request) afb_req_json(request)
+</span>
+    <span class="cp">#define AFB_ReqSuccess  afb_req_success
+</span>    <span class="cp">#define AFB_ReqSuccessF afb_req_success_f
+</span>    <span class="cp">#define AFB_ReqFail     afb_req_fail
+</span>    <span class="cp">#define AFB_ReqFailF    afb_req_fail_f
+</span>
+    <span class="cp">#define AFB_ReqNotice(request, ...)   AFB_REQ_NOTICE (request, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ReqWarning(request, ...)  AFB_REQ_WARNING (request, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ReqDebug(request, ...)    AFB_REQ_DEBUG (request, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ReqError(request, ...)    AFB_REQ_ERROR (request, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ReqInfo(request, ...)     AFB_REQ_INFO (request, __VA_ARGS__)
+</span>
+    <span class="cp">#define AFB_ApiVerbose(api, level, ...) afb_api_verbose(api, level, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ApiNotice(api, ...)   AFB_API_NOTICE (api, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ApiWarning(api, ...)  AFB_API_WARNING (api, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ApiDebug(api, ...)    AFB_API_DEBUG (api, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ApiError(api, ...)    AFB_API_ERROR (api, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ApiInfo(api, ...)     AFB_API_INFO (api, __VA_ARGS__)
+</span>
+    <span class="cp">#define AFB_GetApiSettings afb_api_settings
+</span>
+    <span class="cp">#define AFB_ReqIsValid(request)   request
+</span>    <span class="cp">#define AFB_EvtIsValid(evtHandle) evtHandle
+</span>
+    <span class="cp">#define AFB_ServiceCall(api, ...) afb_api_call_legacy(api, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ServiceSync(api, ...) afb_api_call_sync_legacy(api, __VA_ARGS__)
+</span>
+    <span class="cp">#define AFB_ApiCall(api, ...) afb_api_call(api, __VA_ARGS__)
+</span>    <span class="cp">#define AFB_ApiSync(api, ...) afb_api_call_sync(api, __VA_ARGS__)
+</span>
+    <span class="cp">#define AFB_ReqVCBData           afb_req_get_vcbdata
+</span>    <span class="cp">#define AFB_ReqGetApi            afb_req_get_api
+</span>    <span class="cp">#define AFB_GetEventLoop(api)    afb_api_get_event_loop(api)
+</span>    <span class="cp">#define AFB_RootDirGetFD(api)    afb_api_rootdir_get_fd(api)
+</span>    <span class="cp">#define AFB_RequireApi(api, ...) afb_api_require_api(api, __VA_ARGS__)
+</span>
+    <span class="cp">#define AFB_ClientCtxSet(request, replace, createCB, freeCB, handle) afb_req_context(request, replace, createCB, freeCB, handle)
+</span>    <span class="cp">#define AFB_ClientCtxClear(request) afb_req_context_clear(request)
+</span>
+    <span class="cp">#define AFB_ReqSetLOA(request, level) afb_req_session_set_LOA(request, level)
+</span>
+    <span class="cp">#define AFB_NewApi afb_api_new_api
+</span>
+    <span class="cp">#define AFB_ApiAddVerb afb_api_add_verb
+</span>
+    <span class="cp">#define AFB_ApiSetUserData afb_api_set_userdata
+</span>    <span class="cp">#define AFB_ApiGetUserData afb_api_get_userdata
+</span>
+    <span class="cp">#define AFB_ApiOnEvent afb_api_on_event
+</span>    <span class="cp">#define AFB_ApiOnInit  afb_api_on_init
+</span>    <span class="cp">#define AFB_ApiSeal    afb_api_seal
+</span></code></pre>
+</div>
+
+<h2 id="add-libappcontroller-as-a-static-library-to-your-binding">Add libappcontroller as a static library to your binding</h2>
+
+<p>In your <code class="highlighter-rouge">config.cmake</code> file, add a dependency to the controller library, i.e:</p>
+
+<pre><code class="language-cmake">set(PKG_REQUIRED_LIST
+	json-c
+	afb-daemon
+	appcontroller --&gt; this is the controller library dependency name.
+)
 </code></pre>
 
-<h2 id="declare-your-controller-config-section-in-your-binding">3) Declare your controller config section in your binding</h2>
+<p>Or you can also use the <a href="https://cmake.org/cmake/help/v3.6/command/find_package.html?highlight=find_package">FIND_PACKAGE</a>
+CMake command to add it.</p>
+
+<h2 id="declare-your-controller-config-section-in-your-binding">Declare your controller config section in your binding</h2>
 
 <pre><code class="language-C">// CtlSectionT syntax:
 // key: "section name in config file"
@@ -2154,7 +2514,7 @@ static CtlSectionT ctlSections[]= {
 
 </code></pre>
 
-<h2 id="do-the-controller-config-parsing-at-binding-pre-init">4) Do the controller config parsing at binding pre-init</h2>
+<h2 id="do-the-controller-config-parsing-at-binding-pre-init">Do the controller config parsing at binding pre-init</h2>
 
 <pre><code class="language-C">   // check if config file exist
     const char *dirList= getenv("CTL_CONFIG_PATH");
@@ -2167,7 +2527,7 @@ static CtlSectionT ctlSections[]= {
     if (!ctlConfig) return -1;
 </code></pre>
 
-<h2 id="execute-the-controller-config-during-binding-init">5) Execute the controller config during binding init</h2>
+<h2 id="execute-the-controller-config-during-binding-init">Execute the controller config during binding init</h2>
 
 <pre><code class="language-C">  int err = CtlConfigExec (ctlConfig);
 </code></pre>
@@ -2251,9 +2611,9 @@ static CtlSectionT ctlSections[]= {
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2018-12-17 07:54:35 +0000</small>
+		<small class="stats">Page rendered at:  2019-03-21 07:54:38 +0000</small>
 		
-		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-controller-submodule/plain/docs/Usage.md?h=master">Link to source document</small>
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libappcontroller/plain/docs/Usage.md?h=master">Link to source document</small>
 		
 	</div>
 </div>

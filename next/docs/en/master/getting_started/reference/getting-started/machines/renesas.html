@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Build for R Car Starter Kit gen3 board  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/next/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/next/docs/en/master/getting_started/reference/getting-started/machines/renesas.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/next/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/next/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/next/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/next/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/next/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/master/getting_started/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: master master-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/next/"><img id="logo_top" src="/next/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/next/docs/en/master/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/next/docs/en/master/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/next/contribute">Contribute</a>
+                        </li>
+                        <li>
+                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Welcome !
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/getting-started-welcome.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an AGL Image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-prep-host.html">
+                Preparing Your Build Host
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-download-sw.html">
+                Downloading AGL Software
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+                Initializing Your Build Environment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-cust-build.html">
+                Customizing Your Build
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/image-workflow-build.html">
+                Building the AGL Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/intel.html">
+                Building for Most Intel 64-Bit Hardware Platforms
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/qemu.html">
+                Building for Emulation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/master/getting_started/reference/getting-started/machines/renesas.html">
+                Build for R Car Starter Kit gen3 board
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
+                Build for Raspberry PI 2/3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/homescreen/index.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Troubleshooting
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/troubleshooting.html">
+                Generic issues
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Setting Up a Docker Container
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/docker-container-setup.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an Application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-image.html">
+                Download or Build Your Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-sdk.html">
+                Download or Build Your SDK Installer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-bootables.html">
+                Create Bootable Media
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-boot.html">
+                Boot the Image on the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-prep-app.html">
+                Get Ready to Create Your Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-build-app.html">
+                Create and Build the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-deploy-app.html">
+                Deploy the Application to the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/getting_started/reference/getting-started/app-workflow-debug-app.html">
+                Debug the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/getting-started-welcome.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-prep-host.html">
+        Preparing Your Build Host
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-download-sw.html">
+        Downloading AGL Software
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-initialize-build-environment.html">
+        Initializing Your Build Environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-cust-build.html">
+        Customizing Your Build
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/image-workflow-build.html">
+        Building the AGL Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/intel.html">
+        Building for Most Intel 64-Bit Hardware Platforms
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/qemu.html">
+        Building for Emulation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="reference/getting-started/machines/renesas.html">
+        Build for R Car Starter Kit gen3 board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/machines/raspberrypi.html">
+        Build for Raspberry PI 2/3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/homescreen/index.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/troubleshooting.html">
+        Generic issues
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/docker-container-setup.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-image.html">
+        Download or Build Your Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-sdk.html">
+        Download or Build Your SDK Installer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-bootables.html">
+        Create Bootable Media
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-boot.html">
+        Boot the Image on the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-prep-app.html">
+        Get Ready to Create Your Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-build-app.html">
+        Create and Build the Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-deploy-app.html">
+        Deploy the Application to the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="reference/getting-started/app-workflow-debug-app.html">
+        Debug the Application
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/next/docs/en/master/getting_started/reference/getting-started/machines/renesas.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            master
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/master/getting_started/reference/getting-started/machines/renesas.html" class="">
+                                    
+                                        <span class="selected">
+                                            
+                                    master
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/guppy/getting_started/reference/getting-started/machines/renesas.html" class="">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+                                <a href="/next/docs/en/flounder/getting_started/reference/getting-started/machines/renesas.html" class="">
+                                    
+                                        
+                                    flounder
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                    <div class="alert docs-alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        <a href="/next/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+                <!-- outdated warning
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/getting_started/master/image-development-workflow-getting-started-book.yml -->
+
+<h1 id="building-for-supported-renesas-boards">Building for Supported Renesas Boards</h1>
+
+<p>AGL supports building for several automotive
+<a href="https://www.renesas.com/us/en/solutions/automotive.html">Renesas</a> board kits.
+Renesas is the number one supplier of vehicle control microcontrollers and
+System on a Chip (SoC) products for the automotive industry.</p>
+
+<p>This section provides the build and deploy steps you need to create an
+image for the following Renesas platforms:</p>
+
+<ul>
+  <li><a href="https://www.elinux.org/R-Car/Boards/M3SK">Renesas R-Car Starter Kit Pro Board</a></li>
+  <li><a href="https://www.elinux.org/R-Car/Boards/H3SK">Renesas R-Car Starter Kit Premier Board</a></li>
+  <li><a href="https://www.elinux.org/R-Car/Boards/Salvator-X">Renesas Salvator-X Board</a></li>
+  <li><a href="https://elinux.org/R-Car/Boards/Kingfisher">Renesas Kingfisher Infotainment Board</a></li>
+</ul>
+
+<p><strong>NOTE:</strong> You can find similar information for the Pro and Premier board kits on the
+<a href="https://elinux.org/R-Car/Boards/Yocto-Gen3">R-Car/Boards/Yocto-Gen3</a> page.
+The information on this page describes setup and build procedures for both these
+Renesas development kits.</p>
+
+<p>You can find more information on building images from these resources:</p>
+
+<p><strong>WRITER NOTE:</strong>
+This following list looks a bit dated.
+Do we want to update these PDFs or are they still useful?</p>
+
+<ul>
+  <li><a href="https://iot.bzh/download/public/2016/sdk/AGL-Devkit-Build-your-1st-AGL-Application.pdf">AGL-Devkit-Build-your-1st-AGL-Application.pdf</a>
+ Generic guide on how to build various application types (HTML5, native, Qt, QML, …) for AGL.
+ This is really about building an application and not the AGL image.</li>
+  <li><a href="https://iot.bzh/download/public/2016/bsp/AGL_Phase2-Devkit-HowTo_bake_a_service.pdf">AGL-Devkit-HowTo_bake_a_service.pdf</a>
+ Generic guide on how to add a new service in the BSP.
+ Goes back to 2015 and uses Yocto 2.x.
+ Includes stuff on building an image but looks like the focus is really the service.</li>
+  <li><a href="https://iot.bzh/download/public/2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf">AGL-Kickstart-on-Renesas-Porter-Board.pdf</a>
+ Guide on how to build an image for the Porter Board using AGL 2.0.</li>
+  <li><a href="https://iot.bzh/download/public/2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf">AGL-Devkit-Image-and-SDK-for-Porter.pdf</a>
+ Guide on building an AGL image and SDK for the Porter board.
+ Uses Yocto 2.x.</li>
+</ul>
+
+<h2 id="downloading-proprietary-drivers">1. Downloading Proprietary Drivers</h2>
+
+<p>Before setting up the build environment, you need to download proprietary drivers from the
+<a href="https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html">R-Car H3/M3 Software library and Technical document</a>
+site.
+This download site supports the Pro and Premier board starter kits.</p>
+
+<p><strong>NOTE:</strong> Not sure what you do if you are using the Salvator-X or Kingfisher Infotainment boards.</p>
+
+<p>Follow these steps to download the drivers you need:</p>
+
+<ol>
+  <li>
+    <p><strong>Determine the Files You Need:</strong></p>
+
+    <p>Run the <code class="highlighter-rouge">setup_mm_packages.sh</code> script as follows to
+  display the list of ZIP files containing the drivers you need.
+  Following is an example:</p>
+
+    <p><code class="highlighter-rouge">bash
+  grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
+  3:ZIP_1="R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip"
+  4:ZIP_2="R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip"
+ </code></p>
+
+    <p>The script’s output identifies the files you need to download from the page and the example above correspond to the Electric Eel AGL revision (v5.0.0). Note that since Flounder AGL revision (v6.0.0), both zip have been renamed.</p>
+  </li>
+  <li>
+    <p><strong>Find the Download Links:</strong></p>
+
+    <p>Find the appropriate download links on the
+<a href="https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html">R-Car H3/M3 Software library and Technical document</a>
+site.
+The file pairs are grouped according to the Yocto Project version you are
+using with the AGL software.
+The Flounder release of AGL uses the 2.4 version of the Yocto Project (i.e. “Rocko”).</p>
+  </li>
+  <li>
+    <p><strong>Download the Files:</strong></p>
+
+    <p>Start the download process by clicking the download link.
+If you do not have an account with Renesas, you will be asked to register a free account.
+You must register and follow the “Click Through” licensing process
+in order to download these proprietary files.</p>
+
+    <p>If needed, follow the instructions to create the free account by providing the required
+account information.
+Once the account is registered and you are logged in, you can download the files.</p>
+
+    <p><strong>NOTE:</strong>
+You might have to re-access the
+<a href="https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html">original page</a>
+that contains the download links you need after creating the account and logging in.</p>
+  </li>
+  <li>
+    <p><strong>Create an Environment Variable to Point to Your Download Area:</strong></p>
+
+    <p>Create and export an environment variable named <code class="highlighter-rouge">XDG_DOWNLOAD_DIR</code> that points to
+your download directory.
+Here is an example:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">XDG_DOWNLOAD_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/Downloads
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><strong>Be Sure the Files Have Rights:</strong></p>
+
+    <p>Be sure you have the necessary rights for the files you downloaded.
+You can use the following command:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>chmod a+4 <span class="nv">$XDG_DOWNLOAD_DIR</span>/<span class="k">*</span>.zip
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><strong>Check to be Sure the Files are Downloaded and Have the Correct Rights:</strong></p>
+
+    <p>Do a quick listing of the files to ensure they are in the download directory and
+they have the correct access rights.
+Here is an example:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls -l <span class="nv">$XDG_DOWNLOAD_DIR</span>/<span class="k">*</span>.zip
+-rw-rw-r-- 1 scottrif scottrif 4662080 Nov 19 14:48 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
+-rw-rw-r-- 1 scottrif scottrif 3137626 Nov 19 14:49 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="getting-more-software">2. Getting More Software</h2>
+
+<ol>
+  <li>
+    <p><strong>Get the <code class="highlighter-rouge">bmaptool</code>:</strong></p>
+
+    <p>Download this tool from the
+<a href="https://build.opensuse.org/package/show/isv:LinuxAutomotive:AGL_Master/bmap-tools">bmap-tools</a>
+repository.
+The site has pre-built packages (DEB or RPM) for the supported host
+operating systems.</p>
+  </li>
+  <li>
+    <p><strong>Get Your Board Support Package (BSP) Version:</strong></p>
+
+    <p>Be sure to have the correct BSP version of the R-Car Starter Kit
+based on the version of the AGL software you are using.
+Use the following table to map the Renesas version to your AGL software:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">AGL Version</th>
+          <th style="text-align: center">Renesas version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">AGL master</td>
+          <td style="text-align: center">3.15.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL 7.0.0</td>
+          <td style="text-align: center">3.9.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL 6.0.3, 6.0.4</td>
+          <td style="text-align: center">3.9.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL 6.0.0, 6.0.1, 6.0.2</td>
+          <td style="text-align: center">3.7.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL 5.0.x, 5.1.0</td>
+          <td style="text-align: center">2.23.1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL 4.0.x</td>
+          <td style="text-align: center">2.19.0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>NOTE:</strong>
+I don’t know how the user uses this information.
+I need more information.</p>
+  </li>
+</ol>
+
+<h2 id="getting-your-hardware-together">3. Getting Your Hardware Together</h2>
+
+<p>Gather together this list of hardware items, which is not exhaustive.
+   Having these items ahead of time saves you from having to try and
+   collect hardware during development:</p>
+
+<ul>
+  <li>Supported Starter Kit Gen3 board with its 5V power supply.</li>
+  <li>Micro USB-A cable for serial console.
+This cable is optional if you are using Ethernet and an SSH connection.</li>
+  <li>USB 2.0 Hub.  The hub is optional but makes it easy to connect multiple USB devices.</li>
+  <li>Ethernet cable.  The cable is optional if you are using a serial console.</li>
+  <li>HDMI type D (Micro connector) cable and an associated display.</li>
+  <li>4 Gbyte minimum MicroSD Card.  It is recommended that you use a class 10 type.</li>
+  <li>USB touch screen device such as the GeChic 1502i/1503i.  A touch screen device is optional.</li>
+</ul>
+
+<p><strong>NOTE:</strong> The Salvator-X Board has NDA restrictions.
+   Consequently, less documentation is available for this board both here and across the
+   Internet.</p>
+
+<h2 id="making-sure-your-build-environment-is-correct">4. Making Sure Your Build Environment is Correct</h2>
+
+<p>The
+   “<a href="../image-workflow-initialize-build-environment.html/Initializing-your-build-environment">Initializing Your Build Environment</a>”
+   section presented generic information for setting up your build environment
+   using the <code class="highlighter-rouge">aglsetup.sh</code> script.
+   If you are building an image for a supported Renesas board,
+   you need to take steps to make sure your build host is set up correctly.</p>
+
+<ol>
+  <li>
+    <p><strong>Define Your Board:</strong></p>
+
+    <p>Depending on your Renesas board, define and export a <code class="highlighter-rouge">MACHINE</code> variable as follows:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Board</th>
+          <th style="text-align: center"><code class="highlighter-rouge">MACHINE</code> Setting</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">Starter Kit Pro/M3</td>
+          <td style="text-align: center"><code class="highlighter-rouge">MACHINE</code>=m3ulcb</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">Starter Kit Premier/H3</td>
+          <td style="text-align: center"><code class="highlighter-rouge">MACHINE</code>=h3ulcb</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">Salvator-X</td>
+          <td style="text-align: center"><code class="highlighter-rouge">MACHINE</code>=h3-salvator-x</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>For example, the following command defines and exports the <code class="highlighter-rouge">MACHINE</code> variable
+for the Starter Kit Pro/M3 Board:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">MACHINE</span><span class="o">=</span>m3ulcb
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><strong>Run the <code class="highlighter-rouge">aglsetup.sh</code> Script:</strong></p>
+
+    <p>Use the following commands to run the AGL Setup script:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> <span class="nv">$AGL_TOP</span>
+<span class="gp">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m <span class="nv">$MACHINE</span> -b build agl-devel agl-demo agl-netboot agl-appfw-smack agl-localdev
+</code></pre>
+    </div>
+
+    <p><strong>NOTE:</strong>
+Running the <code class="highlighter-rouge">aglsetup.sh</code> script automatically places you in the
+working directory (i.e. <code class="highlighter-rouge">$AGL_TOP/build</code>).
+You can change this default behavior by adding the “-f” option to the
+script’s command line.</p>
+
+    <p>In the previous command, the “-m” option sets your machine to the previously
+defined <code class="highlighter-rouge">MACHINE</code> variable.
+The “-b” option defines your Build Directory, which is the
+default <code class="highlighter-rouge">$AGL_TOP/build</code>.
+Finally, the AGL features are provided to support building the AGL Demo image
+for the Renesas board.</p>
+
+    <p>You can learn more about the AGL Features in the
+“<a href="../image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
+section.</p>
+  </li>
+  <li>
+    <p><strong>Examine the Script’s Log:</strong></p>
+
+    <p>Running the <code class="highlighter-rouge">aglsetup.sh</code> script creates the <code class="highlighter-rouge">setup.log</code> file, which is in
+the <code class="highlighter-rouge">build/conf</code> folder.
+You can examine this log to see the results of the script.
+For example, suppose the graphics drivers were missing or could not be extracted
+when you ran the script.
+In case of missing graphics drivers, you could notice an error message
+similar to the following:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>snip]
+--- fragment /home/working/workspace_agl_master/meta-agl/templates/machine/h3ulcb/50_setup.sh
+/home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
+The graphics and multimedia acceleration packages <span class="k">for
+</span>the R-Car Gen3 board can be downloaded from:
+ https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
+
+These 2 files from there should be store <span class="k">in </span>your<span class="s1">'/home/devel/Downloads'</span> directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+/home/working/workspace_agl_master/build_gen3
+--- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
+--- end of setup script
+OK
+Generating setup file: /home/working/workspace_agl_master/build_gen3/agl-init-build-env ... OK
+------------ aglsetup.sh: Done
+<span class="o">[</span>snip]
+</code></pre>
+    </div>
+
+    <p>If you encounter this issue, or any other unwanted behavior, you can fix the error
+mentioned, remove the <code class="highlighter-rouge">$AGL_TOP/build</code> directory, and then re-launch the
+<code class="highlighter-rouge">aglsetup.sh</code> again.</p>
+
+    <p>Here is another example that indicates the driver files could not be extracted from
+the downloads directory:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>snip]
+
+~/workspace_agl/build/conf <span class="nv">$ </span>cat setup.log
+--- beginning of setup script
+--- fragment /home/thierry/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
+--- fragment /home/thierry/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
+~/workspace_agl ~/workspace_agl/build
+ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
+ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
+The graphics and multimedia acceleration packages <span class="k">for
+</span>the R-Car Gen3 board BSP can be downloaded from:
+&lt;https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html&gt;
+
+These 2 files from there should be stored <span class="k">in </span>your
+<span class="s1">'/home/thierry/Downloads'</span> directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
+ERROR: Script /home/thierry/workspace_agl/build/conf/setup.sh failed
+<span class="o">[</span>snip]
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="checking-your-configuration">5. Checking Your Configuration</h2>
+
+<p>Aside from environment variables and parameters you establish through
+running the <code class="highlighter-rouge">aglsetup.sh</code> script, you can ensure your build’s configuration
+is just how you want it by examining the <code class="highlighter-rouge">local.conf</code> configuration file.</p>
+
+<p>You can find this configuration file in the Build Directory (e.g.
+“$TOP_DIR/build/conf/local.conf”).</p>
+
+<p>In general, the defaults along with the configuration fragments the
+<code class="highlighter-rouge">aglsetup.sh</code> script applies in the <code class="highlighter-rouge">local.conf</code> file are good enough.
+However, you can customize aspects by editing the <code class="highlighter-rouge">local.conf</code> file.
+See the
+“<a href="../image-workflow-cust-build.html">Customizing Your Build</a>”
+section for common configurations you might want to consider.</p>
+
+<p><strong>NOTE:</strong> For detailed explanations of the configurations you can make
+in the <code class="highlighter-rouge">local.conf</code> file, consult the
+<a href="https://www.yoctoproject.org/docs/">Yocto Project Documentation</a>.</p>
+
+<p>A quick way to see if you have the <code class="highlighter-rouge">$MACHINE</code> variable set correctly
+is to use the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>grep -w -e <span class="s2">"^MACHINE ="</span> <span class="nv">$AGL_TOP</span>/build/conf/local.conf
+</code></pre>
+</div>
+
+<p>Depending on the Renesas board you are using, you should see output
+as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  MACHINE <span class="o">=</span> <span class="s2">"h3ulcb"</span>
+</code></pre>
+</div>
+<p>or
+<code class="highlighter-rouge">bash
+  MACHINE = "m3ulcb"
+</code>
+or
+<code class="highlighter-rouge">bash
+  MACHINE = "h3-salvator-x"
+</code></p>
+
+<p>If you ran the <code class="highlighter-rouge">aglsetup.sh</code> script as described in the
+“<a href="./renesas.html#4-making-sure-your-build-environment-is-correct">Making Sure Your Build Environment is Correct</a>”
+section earlier, the “agl-devel”, “agl-demo”, “agl-netboot”, “agl-appfw-smack”, and
+“agl-localdev” AGL features will be in effect.
+These features provide the following:</p>
+
+<ul>
+  <li>A debugger (gdb)</li>
+  <li>Some tweaks, including a disabled root password</li>
+  <li>A SFTP server</li>
+  <li>The TCF Agent for easier application deployment and remote debugging</li>
+  <li>Some extra system tools such as USB and bluetooth</li>
+  <li>Support for the AGL demo platform</li>
+  <li>Network boot support through TFTP and NBD protocols</li>
+  <li><a href="https://iot.bzh/en/">IoT.bzh</a> Application Framework plus
+<a href="https://en.wikipedia.org/wiki/Smack_(software)">SMACK</a> and
+<a href="https://wiki.tizen.org/Security:Cynara">Cynara</a></li>
+  <li>Support for local development including <code class="highlighter-rouge">localdev.inc</code> when present</li>
+</ul>
+
+<h2 id="using-bitbake">6. Using BitBake</h2>
+
+<p>This section shows the <code class="highlighter-rouge">bitbake</code> command used to build the AGL image.
+Before running BitBake to start your build, it is good to be reminded that AGL
+does provide pre-built images for developers that work with supported hardware.
+You can find these pre-built images on the
+<a href="https://download.automotivelinux.org/AGL/release">AGL Download web site</a>.</p>
+
+<p>For supported Renesas boards, the filenames have the following form:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/m3ulcb-nogfx/deploy/images/m3ulcb/Image-m3ulcb.bin
+</code></pre>
+</div>
+
+<p>Start the build using the <code class="highlighter-rouge">bitbake</code> command.</p>
+
+<p><strong>NOTE:</strong> An initial build can take many hours depending on your
+CPU and and Internet connection speeds.
+The build also takes approximately 100G-bytes of free disk space.</p>
+
+<p>For this example, the target is “agl-demo-platform”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  bitbake agl-demo-platform
+</code></pre>
+</div>
+
+<p>The build process puts the resulting image in the Build Directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/$MACHINE
+</code></pre>
+</div>
+
+<h2 id="booting-the-image-using-a-microsd-card">7. Booting the Image Using a MicroSD Card</h2>
+
+<p>To boot your image on the Renesas board, you need to do three things:</p>
+
+<ol>
+  <li>Update all firmware on the board.</li>
+  <li>Prepare the MicroSD card to you can boot from it.</li>
+  <li>Boot the board.</li>
+</ol>
+
+<p><strong>NOTE:</strong> For subsequent builds, you only have to re-write the MicroSD
+card with a new image.</p>
+
+<h3 id="updating-the-boards-firmware">Updating the Board’s Firmware</h3>
+
+<p>Follow these steps to update the firmware:</p>
+
+<ol>
+  <li>
+    <p><strong>Update the Sample Loader and MiniMonitor:</strong></p>
+
+    <p>You only need to make these updates one time per device.</p>
+
+    <p>Follow the procedure found on the
+eLinux.org wiki to update to at least version 3.02,
+which is mandatory to run the AGL image (<a href="https://elinux.org/R-Car/Boards/Kingfisher#How_to_update_of_Sample_Loader_and_MiniMonitor">R-car loader update</a>).</p>
+  </li>
+  <li>
+    <p><strong>Update the Firmware Stack:</strong></p>
+
+    <p>You only need to update the firmware stack if you are
+using the Eel or later (5.0) version of AGL software.</p>
+
+    <p>M3 and H3 Renesas board are AArch64 platforms.
+As such, they have a firmware stack that is divided across: <strong>ARM Trusted Firmware</strong>, <strong>OP-Tee</strong> and <strong>U-Boot</strong>.</p>
+
+    <p>If you are using the Eel (5.0) version or later of the AGL software, you must update
+the firmware using the <strong>[h3ulcb]<a href="http://elinux.org/R-Car/Boards/H3SK#Flashing_firmware">R-car h3ulcb firmware update</a></strong>
+or <strong>[m3ulcb]<a href="https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware">R-car m3ulcb firmware update</a></strong> links from the
+<a href="https://www.elinux.org/Main_Page">Embedded Linux Wiki</a> (i.e. <code class="highlighter-rouge">elinux.org</code>).</p>
+
+    <p>The table in the wiki lists the files you need to flash the firmware.
+You can find these files in the following directory:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nv">$AGL_TOP</span>/build/tmp/deploy/images/<span class="nv">$MACHINE</span>
+</code></pre>
+    </div>
+
+    <p><strong>NOTE:</strong> The Salvator-X firmware update process is not documented on eLinux.</p>
+  </li>
+</ol>
+
+<h3 id="preparing-the-microsd-card">Preparing the MicroSD Card</h3>
+
+<p>Plug the MicroSD card into your Build Host.
+After plugging in the device, use the <code class="highlighter-rouge">dmesg</code> command as follows to
+discover the device name:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>dmesg | tail -4
+<span class="o">[</span> 1971.462160] sd 6:0:0:0: <span class="o">[</span>sdc] Mode Sense: 03 00 00 00
+<span class="o">[</span> 1971.462277] sd 6:0:0:0: <span class="o">[</span>sdc] No Caching mode page found
+<span class="o">[</span> 1971.462278] sd 6:0:0:0: <span class="o">[</span>sdc] Assuming drive cache: write through
+<span class="o">[</span> 1971.463870]  sdc: sdc1 sdc2
+</code></pre>
+</div>
+
+<p>In the previous example, the MicroSD card is attached to the device <code class="highlighter-rouge">/dev/sdc</code>.</p>
+
+<p>You can also use the <code class="highlighter-rouge">lsblk</code> command to show all your devices.
+Here is an example that shows the MicroSD card as <code class="highlighter-rouge">/dev/sdc</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>lsblk
+  NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+  sda      8:0    0 167,7G  0 disk
+  ├─sda1   8:1    0   512M  0 part /boot/efi
+  ├─sda2   8:2    0 159,3G  0 part /
+  └─sda3   8:3    0   7,9G  0 part <span class="o">[</span>SWAP]
+  sdb      8:16   0 931,5G  0 disk
+  └─sdb1   8:17   0 931,5G  0 part /media/storage
+  sdc      8:32   1  14,9G  0 disk
+  ├─sdc1   8:33   1    40M  0 part
+  └─sdc2   8:34   1   788M  0 part
+</code></pre>
+</div>
+
+<p><strong>IMPORTANT NOTE:</strong> Before re-writing any device on your Build Host, you need to
+be sure you are actually writing to the removable MicroSD card and not some other
+device.
+Each computer is different and removable devices can change from time to time.
+Consequently, you should repeat the previous operation with the MicroSD card to
+confirm the device name every time you write to the card.</p>
+
+<p>To summarize this example so far, we have the following:</p>
+
+<ul>
+  <li>
+    <p>The first SATA drive is <code class="highlighter-rouge">/dev/sda</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">/dev/sdc</code> corresponds to the MicroSD card, and is also marked as a removable device.
+You can see this in the output of the <code class="highlighter-rouge">lsblk</code> command where “1” appears in the “RM” column
+for that device.</p>
+  </li>
+</ul>
+
+<p>Now that you have identified the device you are going to be writing the image on,
+you can use the <code class="highlighter-rouge">bmaptool</code> to copy the image to the MicroSD card.</p>
+
+<p>Your desktop system might offer a choice to mount the MicroSD automatically
+in some directory.
+For this example, assume that the MicroSD card mount directory is stored in the
+<code class="highlighter-rouge">$SDCARD</code> variable.</p>
+
+<p>Following are example commands that write the image to the MicroSD card:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$AGL_TOP</span>/build/tmp/deploy/images/<span class="nv">$MACHINE</span>
+bmaptool copy ./agl-demo-platform-<span class="nv">$MACHINE</span>.wic.xz <span class="nv">$SDCARD</span>
+</code></pre>
+</div>
+
+<p>Alternatively, you can leave the image in an uncompressed state and write it
+to the MicroSD card:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  sudo umount /dev/sdc
+  xzcat ./agl-demo-platform-<span class="nv">$MACHINE</span>.wic.xz | sudo dd <span class="nv">of</span><span class="o">=</span><span class="nv">$SDCARD</span> <span class="nv">bs</span><span class="o">=</span>4M
+  sync
+</code></pre>
+</div>
+
+<h3 id="booting-the-board">Booting the Board</h3>
+
+<p>Follow these steps to boot the board:</p>
+
+<ol>
+  <li>
+    <p>Use the board’s power switch to turn off the board.</p>
+  </li>
+  <li>
+    <p>Insert the MicroSD card into the board.</p>
+  </li>
+  <li>
+    <p>Verify that you have plugged in the following:</p>
+
+    <ul>
+      <li>
+        <p>An external monitor into the board’s HDMI port</p>
+      </li>
+      <li>
+        <p>An input device (e.g. keyboard, mouse, touchscreen, and so forth) into the board’s USB ports.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Use the board’s power switch to turn on the board.</p>
+  </li>
+</ol>
+
+<p>After a few seconds, you will see the AGL splash screen on the display and you
+will be able to log in at the console’s terminal or using the graphic screen.</p>
+
+<h2 id="setting-up-the-serial-console">8. Setting Up the Serial Console</h2>
+
+<p>Setting up the Serial Console involves the following:</p>
+
+<ul>
+  <li>Installing a serial client on your build host</li>
+  <li>Connecting your build host to your Renesas board’s serial port</li>
+  <li>Powering on the board to get a shell at the console</li>
+  <li>Configuring U-Boot parameters</li>
+  <li>Logging into the console</li>
+  <li>Determining the board’s IP address</li>
+</ul>
+
+<h3 id="installing-a-serial-client-on-your-build-host">Installing a Serial Client on Your Build Host</h3>
+
+<p>You need to install a serial client on your build host.
+Some examples are
+<a href="https://en.wikipedia.org/wiki/GNU_Screen">GNU Screen</a>,
+<a href="https://linux.die.net/man/8/picocom">picocom</a>,
+and
+<a href="https://en.wikipedia.org/wiki/Minicom">Minicom</a>.</p>
+
+<p>Of these three, “picocom” has less dependencies and is therefore
+considered the “lightest” solution.</p>
+
+<h3 id="connecting-your-build-host-to-your-renesas-boards-serial-port">Connecting Your Build Host to Your Renesas Board’s Serial Port</h3>
+
+<p>You need to physically connect your build host to the Renesas board using
+a USB cable from the host to the serial CP2102 USP port (i.e. Micro USB-A port)
+on the Renesas board.</p>
+
+<p>Once you connect the board, determine the device created for the serial link.
+Use the <code class="highlighter-rouge">dmesg</code> command on your build host.
+Here is an example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dmesg | tail 9
+<span class="o">[</span>2097783.287091] usb 2-1.5.3: new full-speed USB device number 24 using ehci-pci
+<span class="o">[</span>2097783.385857] usb 2-1.5.3: New USB device found, <span class="nv">idVendor</span><span class="o">=</span>0403, <span class="nv">idProduct</span><span class="o">=</span>6001
+<span class="o">[</span>2097783.385862] usb 2-1.5.3: New USB device strings: <span class="nv">Mfr</span><span class="o">=</span>1, <span class="nv">Product</span><span class="o">=</span>2, <span class="nv">SerialNumber</span><span class="o">=</span>3
+<span class="o">[</span>2097783.385864] usb 2-1.5.3: Product: FT232R USB UART
+<span class="o">[</span>2097783.385866] usb 2-1.5.3: Manufacturer: FTDI
+<span class="o">[</span>2097783.385867] usb 2-1.5.3: SerialNumber: AK04WWCE
+<span class="o">[</span>2097783.388288] ftdi_sio 2-1.5.3:1.0: FTDI USB Serial Device converter detected
+<span class="o">[</span>2097783.388330] usb 2-1.5.3: Detected FT232RL
+<span class="o">[</span>2097783.388658] usb 2-1.5.3: FTDI USB Serial Device converter now attached to ttyUSB0
+</code></pre>
+</div>
+
+<p>The device created is usually “/dev/ttyUSB0”.
+However, the number might vary depending on other USB serial ports connected to the host.</p>
+
+<p>To use the link, you need to launch the client.
+Here are three commands, which vary based on the serial client, that show
+how to launch the client:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>picocom -b 115200 /dev/ttyUSB0
+</code></pre>
+</div>
+
+<p>or</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>minicom -b 115200 -D /dev/ttyUSB0
+</code></pre>
+</div>
+
+<p>or</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>screen /dev/ttyUSB0 115200
+</code></pre>
+</div>
+
+<h3 id="powering-on-the-board-to-get-a-shell-at-the-console">Powering on the Board to Get a Shell at the Console</h3>
+
+<p>Both the Pro and Premier kits (e.g.
+<a href="https://elinux.org/R-Car/Boards/M3SK">m3ulcb</a> and
+<a href="https://elinux.org/R-Car/Boards/H3SK#Hardware">h3ulcb</a>) have nine
+switches (SW1 through SW9).
+To power on the board, “short-press” SW8, which is the power switch.</p>
+
+<p>Following, is console output for the power on process for each kit:</p>
+
+<p><strong>h3ulcb:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>NOTICE:  BL2: R-Car Gen3 Initial Program Loader<span class="o">(</span>CA57<span class="o">)</span> Rev.1.0.7
+NOTICE:  BL2: PRR is R-Car H3 ES1.1
+NOTICE:  BL2: LCM state is CM
+NOTICE:  BL2: DDR1600<span class="o">(</span>rev.0.15<span class="o">)</span>
+NOTICE:  BL2: DRAM Split is 4ch
+NOTICE:  BL2: QoS is Gfx Oriented<span class="o">(</span>rev.0.30<span class="o">)</span>
+NOTICE:  BL2: AVS setting succeeded. <span class="nv">DVFS_SetVID</span><span class="o">=</span>0x52
+NOTICE:  BL2: Lossy Decomp areas
+NOTICE:       Entry 0: DCMPAREACRAx:0x80000540 DCMPAREACRBx:0x570
+NOTICE:       Entry 1: DCMPAREACRAx:0x40000000 DCMPAREACRBx:0x0
+NOTICE:       Entry 2: DCMPAREACRAx:0x20000000 DCMPAREACRBx:0x0
+NOTICE:  BL2: v1.1<span class="o">(</span>release<span class="o">)</span>:41099f4
+NOTICE:  BL2: Built : 19:20:52, Jun  9 2016
+NOTICE:  BL2: Normal boot
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0xe63150c8 <span class="nv">src</span><span class="o">=</span>0x8180000 <span class="nv">len</span><span class="o">=</span>36<span class="o">(</span>0x24<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x43f00000 <span class="nv">src</span><span class="o">=</span>0x8180400 <span class="nv">len</span><span class="o">=</span>3072<span class="o">(</span>0xc00<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x44000000 <span class="nv">src</span><span class="o">=</span>0x81c0000 <span class="nv">len</span><span class="o">=</span>65536<span class="o">(</span>0x10000<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x44100000 <span class="nv">src</span><span class="o">=</span>0x8200000 <span class="nv">len</span><span class="o">=</span>524288<span class="o">(</span>0x80000<span class="o">)</span>
+NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x49000000 <span class="nv">src</span><span class="o">=</span>0x8640000 <span class="nv">len</span><span class="o">=</span>1048576<span class="o">(</span>0x100000<span class="o">)</span>
+
+
+U-Boot 2015.04 <span class="o">(</span>Jun 09 2016 - 19:21:52<span class="o">)</span>
+
+CPU: Renesas Electronics R8A7795 rev 1.1
+Board: H3ULCB
+I2C:   ready
+DRAM:  3.9 GiB
+MMC:   sh-sdhi: 0, sh-sdhi: 1
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Board Net Initialization Failed
+No ethernet found.
+Hit any key to stop autoboot:  0
+<span class="o">=</span>&gt;
+</code></pre>
+</div>
+
+<p><strong>m3ulcb:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.14
+NOTICE:  BL2: PRR is R-Car M3 Ver1.0
+NOTICE:  BL2: Board is Starter Kit Rev1.0
+NOTICE:  BL2: Boot device is HyperFlash(80MHz)
+NOTICE:  BL2: LCM state is CM
+NOTICE:  BL2: AVS setting succeeded. DVFS_SetVID=0x52
+NOTICE:  BL2: DDR1600(rev.0.22)NOTICE:  [COLD_BOOT]NOTICE:  ..0
+NOTICE:  BL2: DRAM Split is 2ch
+NOTICE:  BL2: QoS is default setting(rev.0.17)
+NOTICE:  BL2: Lossy Decomp areas
+NOTICE:       Entry 0: DCMPAREACRAx:0x80000540 DCMPAREACRBx:0x570
+NOTICE:       Entry 1: DCMPAREACRAx:0x40000000 DCMPAREACRBx:0x0
+NOTICE:       Entry 2: DCMPAREACRAx:0x20000000 DCMPAREACRBx:0x0
+NOTICE:  BL2: v1.3(release):4eef9a2
+NOTICE:  BL2: Built : 00:25:19, Aug 25 2017
+NOTICE:  BL2: Normal boot
+NOTICE:  BL2: dst=0xe631e188 src=0x8180000 len=512(0x200)
+NOTICE:  BL2: dst=0x43f00000 src=0x8180400 len=6144(0x1800)
+NOTICE:  BL2: dst=0x44000000 src=0x81c0000 len=65536(0x10000)
+NOTICE:  BL2: dst=0x44100000 src=0x8200000 len=524288(0x80000)
+NOTICE:  BL2: dst=0x50000000 src=0x8640000 len=1048576(0x100000)
+
+
+U-Boot 2015.04-dirty (Aug 25 2017 - 10:55:49)
+
+CPU: Renesas Electronics R8A7796 rev 1.0
+Board: M3ULCB
+I2C:   ready
+DRAM:  1.9 GiB
+MMC:   sh-sdhi: 0, sh-sdhi: 1
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ravb
+Hit any key to stop autoboot:  0
+=&gt;
+</code></pre>
+</div>
+
+<h3 id="configuring-u-boot-parameters">Configuring U-Boot Parameters</h3>
+
+<p>Follow these steps to configure the board to use the MicroSD card as the
+boot device and also to set the screen resolution:</p>
+
+<ol>
+  <li>
+    <p>As the board is powering up, press any key to stop the autoboot process.
+You need to press a key quickly as you have just a few seconds in which to
+press a key.</p>
+  </li>
+  <li>
+    <p>Once the autoboot process is interrupted, use the board’s serial console to
+enter <strong>printenv</strong> to check if you have correct parameters for booting your board:
+Here is an example using the <strong>h3ulcb</strong> board:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; printenv
+baudrate=115200
+bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
+bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+bootdelay=3
+fdt_high=0xffffffffffffffff
+initrd_high=0xffffffffffffffff
+load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
+stderr=serial
+stdin=serial
+stdout=serial
+ver=U-Boot 2015.04 (Jun 09 2016 - 19:21:52)
+
+Environment size: 648/131068 bytes
+</code></pre>
+    </div>
+
+    <p>Here is a second example using the <strong>m3ulcb</strong> board:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; printenv
+baudrate=115200
+bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
+bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
+bootdelay=3
+fdt_high=0xffffffffffffffff
+filesize=cdeb
+initrd_high=0xffffffffffffffff
+load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
+stderr=serial
+stdin=serial
+stdout=serial
+ver=U-Boot 2015.04 (Nov 30 2016 - 18:25:18)
+
+Environment size: 557/131068 bytes
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>To boot your board using the MicroSD card, be sure your environment is set up
+as follows:</p>
+
+    <p><code class="highlighter-rouge">
+ setenv bootargs console=ttySC0,115200 ignore_loglevel vmalloc=384M video=HDMI-A-1:1920x1080-32@60 root=/dev/mmcblk1p1 rw rootfstype=ext4 rootwait rootdelay=2
+ setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
+ setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
+</code></p>
+  </li>
+  <li>
+    <p>Depending on the board type, the BSP version, and the existence of
+a Kingfisher board, make sure your <code class="highlighter-rouge">load_dtb</code> is set as follows:</p>
+
+    <p><strong>h3ulcb with BSP version greater than or equal to 2.19</strong>:</p>
+
+    <p><code class="highlighter-rouge">
+ setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
+</code></p>
+
+    <p><strong>h3ulcb with BSP version less than 2.19</strong>:</p>
+
+    <p><code class="highlighter-rouge">
+ setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+</code></p>
+
+    <p><strong>m3ulcb</strong>:</p>
+
+    <p><code class="highlighter-rouge">bash
+ setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+</code></p>
+
+    <p><strong>m3ulcb with a Kingfisher board</strong>:</p>
+
+    <p><code class="highlighter-rouge">bash
+ setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb-kf.dtb
+</code></p>
+
+    <p><strong>h3ulcb with a Kingfisher board</strong>:</p>
+
+    <p><code class="highlighter-rouge">bash
+ setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb-kf.dtb
+</code></p>
+  </li>
+  <li>
+    <p>Save the boot environment:</p>
+
+    <p><code class="highlighter-rouge">bash
+ saveenv
+</code></p>
+  </li>
+  <li>
+    <p>Boot the board:</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>run bootcmd
+</code></pre>
+</div>
+
+<h3 id="logging-into-the-console">Logging Into the Console</h3>
+
+<p>Once the board boots, you should see the
+<a href="https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)">Wayland display</a>
+on the external monitor.
+A login prompt should appear as follows depending on your board:</p>
+
+<p><strong>h3ulcb</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Automotive Grade Linux <span class="k">${</span><span class="nv">AGL_VERSION</span><span class="k">}</span> h3ulcb ttySC0
+
+h3ulcb login: root
+</code></pre>
+</div>
+
+<p><strong>m3ulcb</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Automotive Grade Linux <span class="k">${</span><span class="nv">AGL_VERSION</span><span class="k">}</span> m3ulcb ttySC0
+
+m3ulcb login: root
+</code></pre>
+</div>
+
+<p>At the prompt, login by using <code class="highlighter-rouge">root</code> as the login.
+The password is “empty” so you should not be prompted for the password.</p>
+
+<h3 id="determining-the-boards-ip-address">Determining the Board’s IP Address</h3>
+
+<p>If your board is connected to a local network using Ethernet and
+if a DHCP server is able to distribute IP addresses,
+you can determine the board’s IP address and log in using <code class="highlighter-rouge">ssh</code>.</p>
+
+<p>Here is an example for the <strong>m3ulcb</strong> board:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>m3ulcb login: root
+Last login: Tue Dec  6 09:55:15 UTC 2016 on tty2
+<span class="gp">root@m3ulcb:~# </span>ip -4 a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+3: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 10.0.0.27/24 brd 10.0.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+root@m3ulcb:~#
+</code></pre>
+</div>
+
+<p>In the previous example, IP address is 10.0.0.27.
+Once you know the address, you can use <code class="highlighter-rouge">ssh</code> to login.
+Following is an example that shows logging into SSH and then
+displaying the contents of the <code class="highlighter-rouge">/etc/os-release</code> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@10.0.0.27
+Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
+<span class="gp">root@m3ulcb:~# </span>cat /etc/os-release
+<span class="nv">ID</span><span class="o">=</span><span class="s2">"poky-agl"</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="s2">"Automotive Grade Linux"</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="s2">"3.0.0+snapshot-20161202 (chinook)"</span>
+<span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">"3.0.0-snapshot-20161202"</span>
+<span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">"Automotive Grade Linux 3.0.0+snapshot-20161202 (chinook)"</span>
+</code></pre>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/next/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2019-03-22 04:33:39 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master-next/docs/getting-started/machines/renesas.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/next/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/next/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/next/static/js/twitter.js"></script>
+    
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
+        indexName: 'automotivelinux',
+        inputSelector: '#header-search-field',
+    });
+</script>
+
+            
+    
+
+</body>
+</html>
