@@ -19,7 +19,7 @@
 
 
   <link crossorigin="anonymous" media="all" integrity="sha512-3+HOqCwtQal5hOJQ+mdxiq5zmGOTjF6RhjDsPLxbKDYgGlLFeCwzoIanb7j5IiCuXKUqyC2q8FdkC4nmx2P2rA==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css" />
-  <link crossorigin="anonymous" media="all" integrity="sha512-gH+98Fpr/lalDdrpDSX3pwIw9kTCje5sanzdmIAawwZ9Ix/PGJ3RgwebMXEOO6MrTlvEUAIlTIhbupXCvOT8dw==" rel="stylesheet" href="https://github.githubassets.com/assets/site-493f41895ef8324b38b0c218ee16e01d.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-MRlTIqIyb8caK5+o8llXVntXovciHyAM4qE3kWU2S7SIjAPDxYp4mE0jQp4kP5UYegy+lG9y1I6VlsdzEjb5Qw==" rel="stylesheet" href="https://github.githubassets.com/assets/site-294181adec18ed639e160b96b45d17ac.css" />
     <link crossorigin="anonymous" media="all" integrity="sha512-ToYPvgHzI4ZZjTr09MR/O0FiK6r1vcaXfXi7yF0ir1LVdERr1jqIKCVNJh3066M95krXIBXU8qr5l2KJJnltNA==" rel="stylesheet" href="https://github.githubassets.com/assets/github-f02fff83bc0e5f99f33bbeaab977075c.css" />
     
     
@@ -41,7 +41,7 @@
   
   <meta name="pjax-timeout" content="1000">
   
-  <meta name="request-id" content="84A6:0AD6:63AE01:A4BC35:5CE4D1C6" data-pjax-transient>
+  <meta name="request-id" content="CF56:66BD:365FD5:595694:5CE6232E" data-pjax-transient>
 
 
   
@@ -52,7 +52,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="84A6:0AD6:63AE01:A4BC35:5CE4D1C6" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="CF56:66BD:365FD5:595694:5CE6232E" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -70,11 +70,11 @@
     <meta name="user-login" content="">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="Y2I1NWI2MmE1ZjZiOThlNzk5YjVmZjE3OGUyNjdlYWNhMGZjNWVmNThlNDFmODQ2NzQ3NmY3YTkxYWIyNzc1ZXx7InJlbW90ZV9hZGRyZXNzIjoiMTk5LjIwNC40NS4yOSIsInJlcXVlc3RfaWQiOiI4NEE2OjBBRDY6NjNBRTAxOkE0QkMzNTo1Q0U0RDFDNiIsInRpbWVzdGFtcCI6MTU1ODQ5OTc4NCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+    <meta name="js-proxy-site-detection-payload" content="OTlhNGY5NjI1YWZkZjkyMmY4MjdmNTRiMWUxMDlkYWRhZjI2ZjYyYjk0M2JjZmNjZjA5OGEwODFjMWFmM2Q1Nnx7InJlbW90ZV9hZGRyZXNzIjoiMTk5LjIwNC40NS4yOSIsInJlcXVlc3RfaWQiOiJDRjU2OjY2QkQ6MzY1RkQ1OjU5NTY5NDo1Q0U2MjMyRSIsInRpbWVzdGFtcCI6MTU1ODU4NjE1OCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
     <meta name="enabled-features" content="UNIVERSE_BANNER,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS">
 
-  <meta name="html-safe-nonce" content="acdc9c3a21cd7c0952e351356ebce3335eeea8ec">
+  <meta name="html-safe-nonce" content="803d01c0cef64b4578620d24cd186e208a82f7e9">
 
   <meta http-equiv="x-pjax-version" content="a49517628624fdfca9cc4efeaf9ed22f">
   
@@ -136,7 +136,7 @@
           </div>
 
         <div class="d-flex flex-items-center">
-            <a class="d-inline-block d-lg-none f5 text-white no-underline border border-gray-dark rounded-2 px-2 py-1 mr-3 mr-sm-5" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;84A6:0AD6:63AE01:A4BC35:5CE4D1C6&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="be9e58bdf524481be7cfa296facac69d452ae7c901ca8b31909e068e9e59cb87" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up" href="/join?source=header-repo">
+            <a class="d-inline-block d-lg-none f5 text-white no-underline border border-gray-dark rounded-2 px-2 py-1 mr-3 mr-sm-5" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;CF56:66BD:365FD5:595694:5CE6232E&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f013850c92d049bca7e9f130b34a8e42ad3aec2985b4c54d0b662ffe94efdfc0" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up" href="/join?source=header-repo">
               Sign&nbsp;up
 </a>
           <button class="btn-link d-lg-none mt-1 js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
@@ -275,7 +275,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=ZsGWHdVTMXs/2SpVlHrf/SXCAqD8LXai8TaS1jfMnPgfkSr7E01Qhv/QiTa5zie2ToMy6a51VLmNVETMOx5WFw=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=OtQ6i3e9vNhGz+LLPAFGJjcwszaAuo4qGQg8lWkoTMPLZ2NdLfsrF6OrgEIGiQabXisiZADzJoDMowK6xbtrmA=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -400,9 +400,9 @@
 
           </div>
 
-        <a class="HeaderMenu-link no-underline mr-3" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;84A6:0AD6:63AE01:A4BC35:5CE4D1C6&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5dcceb21c44d58d23ff45a7334138084cc6c4aece01156fedbf17566ac6a46d4" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre%2Fblob%2Fmaster%2FCIAT%2Ftraining%2FHow_to_write_your_own_tests_for_AGL.pdf">
+        <a class="HeaderMenu-link no-underline mr-3" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;CF56:66BD:365FD5:595694:5CE6232E&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="bc48983abad19c60cac43dcc413abe829caefd9aaebe0385e224ad9f5d87ee46" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre%2Fblob%2Fmaster%2FCIAT%2Ftraining%2FHow_to_write_your_own_tests_for_AGL.pdf">
           Sign&nbsp;in
-</a>          <a class="HeaderMenu-link d-inline-block no-underline border border-gray-dark rounded-1 px-2 py-1" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;84A6:0AD6:63AE01:A4BC35:5CE4D1C6&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="1cc0e3273a8def4610f52fbd8b272af53fcf6770a644a0e8c59bcda1f8700dee" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up" href="/join?source=header-repo">
+</a>          <a class="HeaderMenu-link d-inline-block no-underline border border-gray-dark rounded-1 px-2 py-1" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;CF56:66BD:365FD5:595694:5CE6232E&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="2318469eb003876eaef100a6655d81dbf86ab3b26cd9f5f1ab1fa8ebc504122c" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up" href="/join?source=header-repo">
             Sign&nbsp;up
 </a>      </div>
     </div>
@@ -445,7 +445,7 @@
 
   <li>
     
-  <a class="tooltipped tooltipped-s btn btn-sm btn-with-count" aria-label="You must be signed in to watch a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;84A6:0AD6:63AE01:A4BC35:5CE4D1C6&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="41bf9c7ba52a30bd9cfbc79fe19cf56acf17aa6fc3dd6407c1edff962d728c96" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre">
+  <a class="tooltipped tooltipped-s btn btn-sm btn-with-count" aria-label="You must be signed in to watch a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;CF56:66BD:365FD5:595694:5CE6232E&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="1e6513ab6916fe0732b6909558819244ce0a80dce28d6d8d7c35d2f0ae54b4e7" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre">
     <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
     Watch
 </a>    <a class="social-count" href="/BayLibre/agl-docs-baylibre/watchers"
@@ -456,7 +456,7 @@
   </li>
 
   <li>
-        <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:133432442,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;84A6:0AD6:63AE01:A4BC35:5CE4D1C6&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="2a3a893a68148d4b5be43851619439752a7e7c3410af44e60906b3b9bf3fea1a" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre">
+        <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:133432442,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;CF56:66BD:365FD5:595694:5CE6232E&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="d4921f50b866f22c95dc25f139e8c940fc9e076aed6c7fc2f3461394f84e3509" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre">
       <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
       Star
 </a>
@@ -468,7 +468,7 @@
   </li>
 
   <li>
-      <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to fork a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;repo details fork button&quot;,&quot;repository_id&quot;:133432442,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;84A6:0AD6:63AE01:A4BC35:5CE4D1C6&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="88024be2268a19a3487405776b3a1cd8ba66d4e0c8b184f15529dc2db3bee992" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre">
+      <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to fork a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;repo details fork button&quot;,&quot;repository_id&quot;:133432442,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;CF56:66BD:365FD5:595694:5CE6232E&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="c317878ba02bc358d683520e91a1efa87e7201455ae3150eedd48b707980db29" href="/login?return_to=%2FBayLibre%2Fagl-docs-baylibre">
         <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
         Fork
 </a>
@@ -593,13 +593,13 @@
           <div class="signup-prompt-bg rounded-1">
       <div class="signup-prompt p-4 text-center mb-4 rounded-1">
         <div class="position-relative">
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/prompt_dismissals/signup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="zpaP8sf5to4r7XqEKwzNK4avX3UT65i2PWOdKMlmzFUJQ+QU83HyV/PULm2KsA6GoWAAVklGexC6dJSPwdJeWA==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/prompt_dismissals/signup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="cycXEZ98IWIekHK7IYaYTT36IdOHrPgKwbP/2s3fVZJ39Dx9H9PrREz82HqbJpNJafRjIf18CdajoYpzLn6+0g==" />
             <button type="submit" class="position-absolute top-0 right-0 btn-link link-gray" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss">
               Dismiss
             </button>
 </form>          <h3 class="pt-2">Join GitHub today</h3>
           <p class="col-6 mx-auto">GitHub is home to over 36 million developers working together to host and review code, manage projects, and build software together.</p>
-          <a class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;files signup prompt&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;84A6:0AD6:63AE01:A4BC35:5CE4D1C6&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="270279f7e54d163fbe035cc4cd9e2ba096d310925a14b1529ce10e290edf29f5" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up" href="/join?source=prompt-blob-show">Sign up</a>
+          <a class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;files signup prompt&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;CF56:66BD:365FD5:595694:5CE6232E&quot;,&quot;originating_url&quot;:&quot;https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="10aba59c216d473ac0d950f51bfdc319864353a09a4a1483e521b298bcb1766b" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up" href="/join?source=prompt-blob-show">Sign up</a>
         </div>
       </div>
     </div>
@@ -688,7 +688,7 @@
 
     <div>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/BayLibre/agl-docs-baylibre/delete/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ysDvNOFfdHOguNnz0x4OPkfcpQPmk3XAfkRTPGPKdabUhkZVaf0ZmkjXf8xm0y7Wyv3aey8OopmRw52yKqXrgQ==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/BayLibre/agl-docs-baylibre/delete/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9DgB9ykF9CHKuARobBF3SXtnxSaaKKg2PG7zRgcnDTT+cDz1/jAejGHALuIecuqoRYrkOfXl6vg/ndjyX9FCsA==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="You must be signed in to make or propose changes" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -703,14 +703,14 @@
       
   <div class="render-wrapper ">
     <div class="render-container is-render-pending js-render-target  "
-      data-identity="72c53884-02e5-4ea0-9bf7-1b0fdfb55c99"
+      data-identity="2f0aa620-8152-4916-9812-57b7a88dbac6"
       data-host="https://render.githubusercontent.com"
       data-type="pdf">
       <img class="octospinner mx-auto" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" width="64" height="64" />
       <div class="render-viewer-error">Sorry, something went wrong. <a href="https://github.com/BayLibre/agl-docs-baylibre/blob/master/CIAT/training/How_to_write_your_own_tests_for_AGL.pdf">Reload?</a></div>
       <div class="render-viewer-fatal">Sorry, we cannot display this file.</div>
       <div class="render-viewer-invalid">Sorry, this file is invalid so it cannot be displayed.</div>
-      <iframe class="render-viewer " src="https://render.githubusercontent.com/view/pdf?commit=d347c8d5c4171394b1c72cec2e0b93e02583230b&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f4261794c696272652f61676c2d646f63732d6261796c696272652f643334376338643563343137313339346231633732636563326530623933653032353833323330622f434941542f747261696e696e672f486f775f746f5f77726974655f796f75725f6f776e5f74657374735f666f725f41474c2e706466&amp;nwo=BayLibre%2Fagl-docs-baylibre&amp;path=CIAT%2Ftraining%2FHow_to_write_your_own_tests_for_AGL.pdf&amp;repository_id=133432442&amp;repository_type=Repository#72c53884-02e5-4ea0-9bf7-1b0fdfb55c99" sandbox="allow-scripts allow-same-origin allow-top-navigation " title="File display">
+      <iframe class="render-viewer " src="https://render.githubusercontent.com/view/pdf?commit=d347c8d5c4171394b1c72cec2e0b93e02583230b&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f4261794c696272652f61676c2d646f63732d6261796c696272652f643334376338643563343137313339346231633732636563326530623933653032353833323330622f434941542f747261696e696e672f486f775f746f5f77726974655f796f75725f6f776e5f74657374735f666f725f41474c2e706466&amp;nwo=BayLibre%2Fagl-docs-baylibre&amp;path=CIAT%2Ftraining%2FHow_to_write_your_own_tests_for_AGL.pdf&amp;repository_id=133432442&amp;repository_type=Repository#2f0aa620-8152-4916-9812-57b7a88dbac6" sandbox="allow-scripts allow-same-origin allow-top-navigation " title="File display">
           Viewer requires iframe.
       </iframe>
     </div>
@@ -747,7 +747,7 @@
 <div class="footer container-lg width-full p-responsive" role="contentinfo">
   <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.39061s from unicorn-86c79c547b-l7zd5">GitHub</span>, Inc.</li>
+      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.25329s from unicorn-5596647d4c-8znpq">GitHub</span>, Inc.</li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>

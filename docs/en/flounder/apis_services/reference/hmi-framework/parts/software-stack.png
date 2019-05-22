@@ -1,58 +1,89 @@
-**HomeScreen GUI Application / HomeScreen Service Guide**
-====
-<div align="right">Revision: 0.1</div>
+# **Sound Manager Application Guide**
+
+<div align="right">Revision: 0.3alpha</div>
 <div align="right">TOYOTA MOTOR CORPORATION</div>
 <div align="right">Advanced Driver Information Technology</div>
-<div align="right">26th/Sep/2017</div>
+<div align="right">11th/Dec/2017</div>
 
 * * *
 
 <div id="Table\ of\ content"></div>
 
 ## Table of content
+
 - [Target reader of this document](#Target\ reader\ of\ this\ document)
 - [Overview](#Overview)
 - [Getting Start](#Getting\ Start)
 	- [Supported environment](#Supported\ environment)
 	- [Build](#Build)
 	- [Configuring](#Configuring)
-	- [How to call HomeScreen APIs from your Application?](#How\ to\ call\ HomeScreen\ APIs\ from\ your\ Application?)
+	- [Additional work](#Additional\ work)
+	- [How to call Sound Manager's APIs from your Application?](#How\ to\ call\ Sound\ Manager\ APIs\ from\ your\ Application?)
 - [Supported usecase](#Supported\ usecase)
 - [Software Architecture](#Software\ Architecture)
 - [API reference](#API\ reference)
+	- [APIs](#APIs)
+	- [Events](#Events)
 - [Sequence](#Sequence)
-	- [Initialize](#InitializeSequence)
-	- [Tap Shortcut](#TapShortcutSequence)
-	- [On Screen Message / Reply Sequence](#OnScreenMessageSequence)
+	- [StartUp](#StartUp)
+	- [Registration](#Registration)
+	- [Request Sound Right](#Request\ Sound\ Right)
+	- [Connect Sound Route](#Connect\ Sound\ Route)
+	- [Start Sound Streaming](#Start\ Sound\ Streaming)
+	- [Stop Sound Streaming](#Stop\ Sound\ Streaming)
+	- [Disconnect Sound Route](#Disconnect\ Sound\ Route)
+	- [Change Volume](#Change\ Volume)
+	- [Set Mute State](#Set\ Mute\ State)
+	- [Release Sound Right](#Release\ Sound\ Right)
+	- [Audio Domain](#Audio\ Domain)
 - [Sample code](#Sample\ code)
 - [Limitation](#Limitation)
-- [Next Plan](#Next\ Plan)
 
 * * *
 
 <div id="Target\ reader\ of\ this\ document"></div>
 
 ## Target reader of this document
-Application developer whose software uses HomeScreen.
+
+Application developer whose software uses sound output.
 
 * * *
 
 <div id="Overview"></div>
 
 ## Overview
-HomeScreen is built with a GUI application created with Qt(referred as HomeScreenGUI), and a service running on afb-daemon (referred as HomeScreenBinder).
-HomeScreen can start/switch applications run in AGL, also displays information such as onscreen messages.
 
-You can find these projects in AGL gerrit.
+The sound manager is the service which provides **sound-right management** for multiple sound sources.
+This service is based on GENIVI Audio Manager, and this package contains service binding and library for API calling.
+The reason why this service is based on GENIVI Audio Manager is because GENIVI Audio Manager supports highly strong and flexible sound-right management function.
 
-homescreen-2017(HomeScreenGUI):
-    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/staging/homescreen-2017
-agl-service-homescreen-2017(HomeScreenBinder's binding library):
-    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/apps/agl-service-homescreen-2017
-libhomescreen(library for application to communication with HomeScreenBinder):
-    https://gerrit.automotivelinux.org/gerrit/#/admin/projects/src/libhomescreen
+In order to understand, the below figure shows the one of typical usecases.
+In this example, there are four sound mode.
+1. Audio Off
+1. Media Player
+1. Tel (Ring and talking)
+1. TTS (Text To Speech; typically it's used by Navigation sound)
+![Figure: Typical usecase](parts/typical-usecase.png)
 
-Also HomeScreenGUI is using libwindowmanager.
+The important points are:
+
+- **There is a priority for each sound source.**
+ In this example, the priority of "Tel" and "TTS" is higher than "MediaPlayer". Therefore when the system got incoming call, all four outputs of MediaPlayer are muted automatically by Sound Manager. And in this timing, Sound Manager will issue the event to Media Player, then Media Player can stop the music. (Because depending on OEM's requirement, "Stop" is required.)
+ "Tel" and "TTS" have the same priority. So if TTS event happened on talking, each sound will output from independent speaker.
+ If on-hook button is touched, Sound Manager will resume previous sound mode. In this example, basically it's MediaPlayer sound. But if TTS still playing, three speaker will output MediaPlayer sound but one speaker will continue to output TTS sound.
+- **Sound mode transition should be done by Sound Manager not Applications.**
+ Actually application cannot recognize all sound source and its priority, so some centerized manager is required. Sound Manager provides this function. Sound Manager has a database for usecase and priority and in line with this policy Sound Manager controls proper sound mode.
+
+The below links show the example of Sound/Window mode transition.
+
+- [Single window application](Display_Audio_Transition1.html)
+ This transition assumes target IVI system support only one window on screen. It's a similar transition to CES2017 demo.
+- [Dual window application](Display_Audio_Transition2.html)
+ This transition assumes target IVI system support two window (split screen) on screen.
+
+Of course user can customize shortcut menu, but since it's too many states so this example limits shortcut menu as "Home", "MediaPlayer", "HVAC" and "Navigation".
+
+* * *
 
 <div id="Getting\ Start"></div>
 
@@ -67,83 +98,79 @@ Also HomeScreenGUI is using libwindowmanager.
 | AGL version | Electric Eel                      |
 | Hardware    | Renesas R-Car Starter Kit Pro(M3) |
 
-
 <div id="Build"></div>
 
 ### Build
 
+You can make Sound Manager object files by the following two stage operations.
+
 **Download recipe**
+If repo is already done, please start with git clone
 
+```bash
+mkdir WORK
+cd WORK
+repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo sync
 ```
-$ mkdir WORK
-$ cd WORK
-$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
-$ repo sync
-
-```
-
-Then you can find the following recipes.
-
-* `meta-agl-devel/meta-hmi-framework/homescreen-2017`
-
-* `meta-agl-devel/meta-hmi-framework/agl-service-homescreen-2017`
-
-* `meta-agl-demo/recipes-demo-hmi/libhomescreen`
-
 
 **Bitbake**
 
+```bash
+source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo agl-devel agl-appfw-smack agl-hmi-framework
+bitbake agl-demo-platform
 ```
-$ source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo agl-devel agl-appfw-smack agl-hmi-framework
-$ bitbake agl-demo-platform
-```
-
 
 * * *
 
 <div id="Configuring"></div>
 
 ### Configuring
-To use HomeScreen API, an application shall paste the following configuration definition into "config.xml" of application.
 
-```
+To use Sound Manager API, an application shall paste the following configuration definition into "config.xml" of application.
+
+```xml
 <feature name="urn:AGL:widget:required-api">
-	<param name="homescreen" value="ws" />
+    <param name="soundmanager" value="ws" />
 </feature>
 ```
 
 * * *
 
-<div id="How\ to\ call\ HomeScreen\ APIs\ from\ your\ Application?"></div>
+<div id="Additional\ work"></div>
 
-### How to call HomeScreen APIs from your Application?
-HomeScreen provides a library which is called "libhomescreen".
-This library treats "json format" as API calling.
-For example, if an application wants to call "tap_shortcut()" API, the you should implement as below.
+### Additional work
 
-At first the application should create the instance of libhomescreen.
+#### **Add Policy file**
 
+To add Sound Manager Domain into policy, put the following file to /etc/audiomanager/control on the target rootfs.
+
+`${SOUNDMANAGER_DIR}/conf/audiomanager-config-sample/configuration.xml`
+
+This is a sample configuration.
+
+#### **Remove Module router of Pulse Audio**
+
+Because the module rounter accesses Audio manager for getting sound right instead of application in CES2017, after you changed your application code for Sound manager, you shall modify the configuration for puluse audio not to load module router.
+To do this, you shall comment out line.143 of /etc/pulse/default.pa on the target rootfs as below.
+
+```conf
+.ifexists module-router.so
+#load-module module-router
+.endif
 ```
-LibHomeScreen* libhs;
-libhs = new LibHomeScreen();
-libhs->init(port, token);
-```
 
-The port and token is provided by Application Framework
+* * *
 
-Execute the "tapShortcut()" function.
+<div id="How\ to\ call\ Sound\ Manager\ APIs\ from\ your\ Application?"></div>
 
-```
-libhs->tapShortcut("application_name");
-```
+### How to call Sound Manager APIs from your Application?
 
-Regarding the detail of tap_shortcut() API, please refer [this](#HomeScreen\ API) section.
-The first parameter is the name of API, so in this case "tap_shortcut" is proper string.
-And the second parameter corresponds to arguments of "connect()" API.
-
+Sound Manager provides a library which is called "libsoundmanager".
+This library provides function style API calling interface. So you can include libsoundmanager.hpp headerfile, and can link this library.
+Please also refer sample application and template.
 
 See also our [Sample code](#Sample\ code).
-
 
 <br />
 
@@ -152,172 +179,75 @@ See also our [Sample code](#Sample\ code).
 <div id="Supported\ usecase"></div>
 
 ## Supported usecase
-1. HomeScreenGUI sending ShortCut Icon tapped event to applications
-	- Applications using libhomescreen to subscribe the tapShortcut event,
-        HomeScreenGUI will send ShortCut Icon tapped event to applications.
-2. Display OnScreen messages
-	- Applications sending OnScreen messages to homescreen-service, and OnScreenAPP
-        will get these message and display.
-3. Get OnSreen Reply event
-	- When OnScreen messages is displaying, OnScreenAPP will send a reply event to applications.
+
+1. Active source change
+- When user choose different audio source with current one, IVI system stop or pause current source and activate new one.
+- When user connect external device e.g. iPhone, USB memory IVI system change active source automatically to connected one.
+2. Active source locking
+- When user is in phone call, IVI restrict to change active source.
+3. Interrupt source mixing
+- When car close to cross road IVI system reduce the volume of current source and mix with interrupt source e.g. Navigation Guidance.
+4. Volume change
+- User can change the volume of active source or sink.
+- When user change volume during interruption e.g. Navigation Guidance, IVI system change its volume temporary or permanently.
+5. Mute/unmute
+- User can mute/unmute current active source.
+6. Volume management
+- When user change active source, IVI system mute/unmute to avoid distortion of sound.
+7. Volume acceleration
+- When road noise is increased by speed, IVI system automatically change the volume of active source.
+8. Routing sound
+- System needs to route sound stream to proper zones. (driver zone, passenger zone, rear seat zone)
+
+[See also this page](https://wiki.automotivelinux.org/eg-ui-graphics-req-audiorouting)
 
 * * *
 
 <div id="Software\ Architecture"></div>
 
 ## Software Architecture
-The architecture of HomeScreen is shown below.
-HomeScreen is the service designed to be used by multiple applications.
-Therefore HomeScreen framework consists on two binder layers. Please refer the following figure.
-The upper binder is for application side security context for applications. The lower binder is for servide side security context.
-Usually application side binder has some business logic for each application, so the number of binders depend on the number of applications which use HomeScreen.
-On the other hand, regarding lower binder there is only one module in the system. This binder receives all messages from multiple applications (in detail, it comes from upper layer binder).
 
-The communication protocols between libhomescreen and upper binder, upper binder and lower binder, lower binder (homescreen-binding) are WebSocket.
+The architecture of Sound Manager is shown below.
+Sound Manager is the service designed to be used by multiple applications.
+Therefore Sound Manager framework consists of two binder layers. Please refer the following figure.
+The upper binder is for application side security context. The lower binder is for server side security context.
+Usually an application side binder has some business logic for each application, so the number of binders depend on the number of applications which use Sound Manager.
+On the other hand, regarding lower binder there is only one module in the system. This binder receives messages from multiple applications (in detail, it comes from upper layer binder).
+
+The communication protocols between libsoundmanager and upper binder, upper binder and lower binder,  are WebSocket. The protocols between lower binder (soundmanager-binding) and AudioManager is D-Bus.
 
 ![software-stack.png](parts/software-stack.png)
 
 * * *
 
-<div id="API%20reference"></div>
+<div id="API\ reference"></div>
 
 ## API reference
-"libhomescreen" and "agl-service-homescreen-2017" provides several kinds of APIs.
 
-<div id="Home\ Screen\ Specific\ API"></div>
+"libsoundmanager" and "soundmanager_binding" provides several kinds of APIs, and these APIs basically correspond to GENIVI Audio Manager API. (Some APIs are Sound Manager original functions.)
 
-### HomeScreen Specific API
+For understanding, GENIVI Audio Manager stands for one core module and three plug-ins.
+1. AudioManagerDaemon
+	This is a core module of Audio Manager.
+2. AudioManagerCommandPlugin
+	This is a command interface for Audio Manager.
+3. AudioManagerController
+	This plug-in can be used for sound-right management.
+4. AudioManagerRountingPlugin
+	This plug-in abstracts the hardware and software. And sometimes there may be multiple plug-ins.
 
-- [LibHomeScreen ()](api-ref/html/de/dd0/class_lib_home_screen.html#a724bd949c4154fad041f96a15ef0f5dc)
-- [init (const int port, const std::string &token)](api-ref/html/de/dd0/class_lib_home_screen.html#a6a57b573cc767725762ba9beab032220)
-- [tapShortcut(const char *application_name)](api-ref/html/de/dd0/class_lib_home_screen.html#afb571c9577087b47065eb23e7fdbc903)
-- [onScreenMessage(const char *display_message)](api-ref/html/de/dd0/class_lib_home_screen.html#ac336482036a72b51a822725f1929523c)
-- [onScreenReply(const char *reply_message)](api-ref/html/de/dd0/class_lib_home_screen.html#a6c065f41f2c5d1f58d2763bfb4da9c37)
-- [registerCallback (void(*event_cb)(const std::string &event, struct json_object *event_contents), void(*reply_cb)(struct json_object *reply_contents), void(*hangup_cb)(void)=nullptr)](api-ref/html/de/dd0/class_lib_home_screen.html#a2789e8a5372202cc36f48e71dbb9b7cf)
-- [set\_event\_handler(enum EventType et, handler_func f)](api-ref/html/de/dd0/class_lib_home_screen.html#ab1b0e08bf35415de9064afed899e9f85)
-- [call (const string& verb, struct json_object* arg)](api-ref/html/de/dd0/class_lib_home_screen.html#a527b49dcfe581be6275d0eb2236ba37f)
-- [call (const char* verb, struct json_object* arg)](api-ref/html/de/dd0/class_lib_home_screen.html#ab5e8e8ab7d53e0f114e9e907fcbb7643)
-- [subscribe (const string& event_name)](api-ref/html/de/dd0/class_lib_home_screen.html#aa4c189807b75d070f567967f0d690738)
-- [unsubscribe (const string& event_name)](api-ref/html/de/dd0/class_lib_home_screen.html#aac03a45cbd453ba69ddb00c1016930a6)
+*) [See also GENIVI AudioManager Components](http://docs.projects.genivi.org/AudioManager/audiomanagercomponentspage.html)
 
-* * *
+![See also GENIVI AudioManager Components](parts/am-component.png)
+(This figure was copied from GENIVI Web page.)
 
-<div id="Sequence"></div>
+<div id="APIs"></div>
 
-## Sequence
+### APIs
 
-<div id="InitializeSequence"></div>
-
-### Initialize Sequence
-![initialize-registercallback.svg](parts/initialize-registercallback.svg) * deprecated
-![initialize-set-event-handler](parts/initialize-set-event-handler.svg)
-
-<div id="TapShortcutSequence"></div>
-
-### Tap Shortcut Sequence
-![tap_shortcut.svg](parts/tap_shortcut.svg)
-
-<div id="OnScreenMessageSequence"></div>
-
-### On Screen Message / Reply Sequence
-![on_screen_message.svg](parts/on_screen_message.svg)
-
-
-<div id="Sample\ code"></div>
-
-# Sample code
-You can find sample implementation of HomeScreen as below.
-
-* `libhomescreen/sample/simple-egl`
-
-* `libhomescreen/sample/template`
-
-### Appendix
-
-```
-@startuml
-title Application initialization phase (ex. registerCallback)
-entity App
-entity HomeScreenBinder
-entity HomeScreenGUI
-App->HomeScreenBinder: init(port, token)
-App->HomeScreenBinder: subscribe()
-
-note over HomeScreenBinder
-    Register the event the App wishes to receive
-    ・tap_shortcut
-    ・on_screen_message
-    ・on_screen_reply
-end note
-
-App->HomeScreenBinder: registerCallback()
-
-@enduml
-```
-
-```
-@startuml
-title Application initialization phase (ex. set_event_handler)
-entity App
-entity HomeScreenBinder
-entity HomeScreenGUI
-App->HomeScreenBinder: init(port, token)
-App->HomeScreenBinder: set_event_handler()
-
-note over HomeScreenBinder
-    setup event handler the App wishes to receive
-    ・LibHomeScreen::Event_TapShortcut
-    ・LibHomeScreen::Event_OnScreenMessage
-    ・LibHomeScreen::Event_OnScreenReply
-end note
-
-@enduml
-```
-
-```
-@startuml
-title Application Callback Event TapShortcut phase
-entity App
-entity HomeScreenBinder
-entity HomeScreenGUI
-App->HomeScreenBinder: set_event_handler()
-
-note over App
-    LibHomeScreen::Event_TapShortcut
-end note
-
-HomeScreenGUI->HomeScreenBinder: tapShortcut(application_name)
-HomeScreenBinder->App: event_handler(application_name)
-@enduml
-```
-
-```
-@startuml
-title Application Callback Event On Screen Message / Reply phase
-entity App
-entity HomeScreenBinder
-entity HomeScreenGUI
-
-HomeScreenGUI->HomeScreenBinder: set_event_handler()
-
-note over HomeScreenGUI
-    LibHomeScreen::Event_OnScreenMessage
-end note
-
-
-App->HomeScreenBinder: set_event_handler()
-
-note over App
-    LibHomeScreen::Event_OnScreenReply
-end note
-
-App->HomeScreenBinder: onScreenMessage(display_message)
-HomeScreenBinder->HomeScreenGUI: event_handler(display_message)
-HomeScreenGUI->HomeScreenBinder: onScreenReply(reply_message)
-HomeScreenBinder->App: event_handler(reply_message)
-@enduml
-```
-nkID)
+- init(int port, const std::string& token)
+- registerSource(const std::string& sourceName)
+- connect(int sourceID, int sinkID)
 - connect(int sourceID, const std::string& sinkName)
 - disconnect(int connectionID)
 - ackSetSourceState(int handle, int err)
