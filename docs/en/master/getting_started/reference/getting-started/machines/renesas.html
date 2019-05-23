@@ -1112,12 +1112,27 @@ This download site supports the Pro and Premier board starter kits.</p>
 
     <p><code class="highlighter-rouge">bash
   grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
-  3:ZIP_1="R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip"
-  4:ZIP_2="R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip"
+  3:ZIP_1="R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190212.zip"
+  4:ZIP_2="R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190212.zip"
  </code></p>
 
-    <p>The script’s output identifies the files you need to download from the page and the example above correspond to the Electric Eel AGL revision (v5.0.0). Note that since Flounder AGL revision (v6.0.0), both zip have been renamed.</p>
+    <p>The script’s output identifies the files you need to download from the page and the example above correspond to the Happy Hallibut AGL revision (v8.0.0).</p>
   </li>
+</ol>
+
+<!-- SPEC-2253 (gfx drivers copied from 3.19 on top of 3.15) - FIXME -->
+<div class="highlighter-rouge"><pre class="highlight"><code> ***2019/05/24 : Rcar Graphics HOTFIX for BSP v3.15***
+
+ On the agl master branch, since the Rcar BSP v3.15 driver update, some graphics issues appeared. They have been fixed within the new v3.19 Renesas GFX binaries. To built correctly and use them on your AGL image, you have to add the following zip file into your download area : `R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190516.zip`.
+
+ This graphic package will be used by the `setup_mm_packages.sh` and it is available to download on the    [R-Car H3/M3 Software library and Technical document](https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html)    website.
+
+  **NOTE:**
+  Be aware that **this package is added to the ones you need** (detected at step 1 just above) and only if you are using the 3.15 BSP of renesas.
+</code></pre>
+</div>
+
+<ol>
   <li>
     <p><strong>Find the Download Links:</strong></p>
 
@@ -1174,8 +1189,8 @@ they have the correct access rights.
 Here is an example:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls -l <span class="nv">$XDG_DOWNLOAD_DIR</span>/<span class="k">*</span>.zip
--rw-rw-r-- 1 scottrif scottrif 4662080 Nov 19 14:48 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
--rw-rw-r-- 1 scottrif scottrif 3137626 Nov 19 14:49 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+-rw-r--r-- 1 iot bzh 5492251  5 avril 14:37 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190212.zip
+-rw-r--r-- 1 iot bzh 3440842  5 avril 14:37 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190212.zip
 </code></pre>
     </div>
   </li>
@@ -1353,8 +1368,8 @@ The graphics and multimedia acceleration packages <span class="k">for
  https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 
 These 2 files from there should be store <span class="k">in </span>your<span class="s1">'/home/devel/Downloads'</span> directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190212.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190212.zip
 /home/working/workspace_agl_master/build_gen3
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
@@ -1376,20 +1391,20 @@ the downloads directory:</p>
 
 ~/workspace_agl/build/conf <span class="nv">$ </span>cat setup.log
 --- beginning of setup script
---- fragment /home/thierry/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
---- fragment /home/thierry/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
+--- fragment /home/iotbzh/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
+--- fragment /home/iotbzh/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
 ~/workspace_agl ~/workspace_agl/build
-ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
-ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
+ERROR: FILES <span class="s2">"+/home/iotbzh/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190212.zip+"</span> NOT EXTRACTING CORRECTLY
+ERROR: FILES <span class="s2">"+/home/iotbzh/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190212.zip+"</span> NOT EXTRACTING CORRECTLY
 The graphics and multimedia acceleration packages <span class="k">for
 </span>the R-Car Gen3 board BSP can be downloaded from:
 &lt;https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html&gt;
 
 These 2 files from there should be stored <span class="k">in </span>your
-<span class="s1">'/home/thierry/Downloads'</span> directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
-ERROR: Script /home/thierry/workspace_agl/build/conf/setup.sh failed
+<span class="s1">'/home/iotbzh/Downloads'</span> directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190212.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190212.zip
+ERROR: Script /home/iotbzh/workspace_agl/build/conf/setup.sh failed
 <span class="o">[</span>snip]
 </code></pre>
     </div>
@@ -2073,7 +2088,7 @@ Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-05-23 04:36:51 +0000</small>
+		<small class="stats">Page rendered at:  2019-06-19 05:21:37 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/docs/getting-started/machines/renesas.md">Link to source document</small>
 		

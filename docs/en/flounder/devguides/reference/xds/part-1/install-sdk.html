@@ -271,7 +271,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/1-verify-build-host.html">
-                1. Verify Your Build Host
+                Verify Your Build Host
             </a>
             
         
@@ -286,7 +286,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/2-download-packages.html">
-                2. Download Packages
+                Download Packages
             </a>
             
         
@@ -301,7 +301,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/3-installing-binder-daemon.html">
-                3. Installing the Binder Daemon
+                Installing the Binder Daemon
             </a>
             
         
@@ -316,7 +316,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/4-getting-source-files.html">
-                4. Getting Your Source Files
+                Getting Your Source Files
             </a>
             
         
@@ -331,7 +331,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/5-building-and-running-service-natively.html">
-                5. Building and Running Your Service Natively
+                Building and Running Your Service Natively
             </a>
             
         
@@ -1372,7 +1372,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/1-verify-build-host.html">
-        1. Verify Your Build Host
+        Verify Your Build Host
     </a>
 </li>
 
@@ -1381,7 +1381,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/2-download-packages.html">
-        2. Download Packages
+        Download Packages
     </a>
 </li>
 
@@ -1390,7 +1390,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/3-installing-binder-daemon.html">
-        3. Installing the Binder Daemon
+        Installing the Binder Daemon
     </a>
 </li>
 
@@ -1399,7 +1399,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/4-getting-source-files.html">
-        4. Getting Your Source Files
+        Getting Your Source Files
     </a>
 </li>
 
@@ -1408,7 +1408,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/5-building-and-running-service-natively.html">
-        5. Building and Running Your Service Natively
+        Building and Running Your Service Natively
     </a>
 </li>
 
@@ -2105,7 +2105,7 @@ section.</p>
 <p><strong>NOTES:</strong>
 - In order to use the command line or the XDS Dashboard
   to download an SDK Installer, you must
-  have the XDS UI set up in your toolchain (i.e. ‘xds-cli’).
+  have the XDS Client set up in your toolchain (i.e. ‘xds-cli’).
   If you did not install ‘xds-cli’, see the
   “<a href="client-part.html">Client Part</a>” section for instruction on how
   to install XDS UI.</p>
@@ -2178,8 +2178,16 @@ SDK ID d65fe750-d3a7-38f5-83d8-3d3806054f8d successfully installed.
 
 <h3 id="abort-an-installation-that-is-in-progress">Abort an Installation that is in Progress</h3>
 
-<p>If for some reason you need to abort an ongoing installation, you can
-use the <code class="highlighter-rouge">sdks abort</code> command:</p>
+<p>To abort an ongoing installation (i.e. the <code class="highlighter-rouge">xds-cli sdks install d65fe750</code>
+in this example), use
+the <code class="highlighter-rouge">ctrl-C</code> key sequence. <code class="highlighter-rouge">Ctrl-C</code> only stops the XDS Client (<code class="highlighter-rouge">xds-cli</code>).
+The download or installation process running in the background
+is not stopped.</p>
+
+<p>In such cases, the <code class="highlighter-rouge">xds-cli sdks ls</code> command results in an
+<code class="highlighter-rouge">Installing</code> appearing in the STATUS column for all running installations.</p>
+
+<p>If for some reason you need to abort, use the <code class="highlighter-rouge">sdks abort</code> command:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>xds-cli sdks abort -id d65fe750
 </code></pre>
@@ -2244,9 +2252,8 @@ Following is an example of the output:</p>
   </li>
 </ol>
 
-<h2 id="aborting-an-sdk-installation">Aborting an SDK Installation</h2>
-
-<p>If for some reason you need to abort an ongoing SDK installation,
+<p><strong>NOTE:</strong>&lt;\br&gt;
+If for some reason you need to abort an ongoing SDK installation,
 you can do so by clicking the <code class="highlighter-rouge">CANCEL</code> button.</p>
 
 
@@ -2328,7 +2335,7 @@ you can do so by clicking the <code class="highlighter-rouge">CANCEL</code> butt
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-05-23 04:36:44 +0000</small>
+		<small class="stats">Page rendered at:  2019-06-19 05:21:31 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/install-sdk.md?h=flounder">Link to source document</small>
 		

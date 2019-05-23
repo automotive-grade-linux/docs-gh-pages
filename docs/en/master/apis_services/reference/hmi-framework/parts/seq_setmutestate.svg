@@ -1,379 +1,115 @@
-# **Sound Manager Application Guide**
-
-<div align="right">Revision: 0.3alpha</div>
-<div align="right">TOYOTA MOTOR CORPORATION</div>
-<div align="right">Advanced Driver Information Technology</div>
-<div align="right">11th/Dec/2017</div>
-
-* * *
-
-<div id="Table\ of\ content"></div>
-
-## Table of content
-
-- [Target reader of this document](#Target\ reader\ of\ this\ document)
-- [Overview](#Overview)
-- [Getting Start](#Getting\ Start)
-  - [Supported environment](#Supported\ environment)
-  - [Build](#Build)
-  - [Configuring](#Configuring)
-  - [Additional work](#Additional\ work)
-  - [How to call Sound Manager's APIs from your Application?](#How\ to\ call\ Sound\ Manager\ APIs\ from\ your\ Application?)
-- [Supported usecase](#Supported\ usecase)
-- [Software Architecture](#Software\ Architecture)
-- [API reference](#API\ reference)
-  - [APIs](#APIs)
-  - [Events](#Events)
-- [Sequence](#Sequence)
-  - [StartUp](#StartUp)
-  - [Registration](#Registration)
-  - [Request Sound Right](#Request\ Sound\ Right)
-  - [Connect Sound Route](#Connect\ Sound\ Route)
-  - [Start Sound Streaming](#Start\ Sound\ Streaming)
-  - [Stop Sound Streaming](#Stop\ Sound\ Streaming)
-  - [Disconnect Sound Route](#Disconnect\ Sound\ Route)
-  - [Change Volume](#Change\ Volume)
-  - [Set Mute State](#Set\ Mute\ State)
-  - [Release Sound Right](#Release\ Sound\ Right)
-  - [Audio Domain](#Audio\ Domain)
-- [Sample code](#Sample\ code)
-- [Limitation](#Limitation)
-
-* * *
-
-<div id="Target\ reader\ of\ this\ document"></div>
-
-## Target reader of this document
-
-Application developer whose software uses sound output.
-
-* * *
-
-<div id="Overview"></div>
-
-## Overview
-
-The sound manager is the service which provides **sound-right management** for multiple sound sources.
-This service is based on GENIVI Audio Manager, and this package contains service binding and library for API calling.
-The reason why this service is based on GENIVI Audio Manager is because GENIVI Audio Manager supports highly strong and flexible sound-right management function.
-
-In order to understand, the below figure shows the one of typical usecases.
-In this example, there are four sound mode.
-
-1. Audio Off
-1. Media Player
-1. Tel (Ring and talking)
-1. TTS (Text To Speech; typically it's used by Navigation sound)
-
-![Figure: Typical usecase](parts/typical-usecase.png)
-
-The important points are:
-
-- **There is a priority for each sound source.**
- In this example, the priority of "Tel" and "TTS" is higher than "MediaPlayer". Therefore when the system got incoming call, all four outputs of MediaPlayer are muted automatically by Sound Manager. And in this timing, Sound Manager will issue the event to Media Player, then Media Player can stop the music. (Because depending on OEM's requirement, "Stop" is required.)
- "Tel" and "TTS" have the same priority. So if TTS event happened on talking, each sound will output from independent speaker.
- If on-hook button is touched, Sound Manager will resume previous sound mode. In this example, basically it's MediaPlayer sound. But if TTS still playing, three speaker will output MediaPlayer sound but one speaker will continue to output TTS sound.
-- **Sound mode transition should be done by Sound Manager not Applications.**
- Actually application cannot recognize all sound source and its priority, so some centerized manager is required. Sound Manager provides this function. Sound Manager has a database for usecase and priority and in line with this policy Sound Manager controls proper sound mode.
-
-The below links show the example of Sound/Window mode transition.
-
-- [Single window application](Display_Audio_Transition1.html)
- This transition assumes target IVI system support only one window on screen. It's a similar transition to CES2017 demo.
-- [Dual window application](Display_Audio_Transition2.html)
- This transition assumes target IVI system support two window (split screen) on screen.
-
-Of course user can customize shortcut menu, but since it's too many states so this example limits shortcut menu as "Home", "MediaPlayer", "HVAC" and "Navigation".
-
-* * *
-
-<div id="Getting\ Start"></div>
-
-## Getting Start
-
-<div id="Supported\ environment"></div>
-
-### Supported environment
-
-| Item        | Description                       |
-|:------------|:----------------------------------|
-| AGL version | Electric Eel                      |
-| Hardware    | Renesas R-Car Starter Kit Pro(M3) |
-
-<div id="Build"></div>
-
-### Build
-
-You can make Sound Manager object files by the following two stage operations.
-
-#### Download recipe
-
-If repo is already done, please start with git clone
-
-```bash
-mkdir WORK
-cd WORK
-repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
-repo sync
-```
-
-#### Bitbake
-
-```bash
-source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo agl-devel agl-appfw-smack agl-hmi-framework
-bitbake agl-demo-platform
-```
-
-* * *
-
-<div id="Configuring"></div>
-
-### Configuring
-
-To use Sound Manager API, an application shall paste the following configuration definition into "config.xml" of application.
-
-```xml
-<feature name="urn:AGL:widget:required-api">
-    <param name="soundmanager" value="ws" />
-</feature>
-```
-
-* * *
-
-<div id="Additional\ work"></div>
-
-### Additional work
-
-#### **Add Policy file**
-
-To add Sound Manager Domain into policy, put the following file to /etc/audiomanager/control on the target rootfs.
-
-`${SOUNDMANAGER_DIR}/conf/audiomanager-config-sample/configuration.xml`
-
-This is a sample configuration.
-
-#### **Remove Module router of Pulse Audio**
-
-Because the module rounter accesses Audio manager for getting sound right instead of application in CES2017, after you changed your application code for Sound manager, you shall modify the configuration for puluse audio not to load module router.
-To do this, you shall comment out line.143 of /etc/pulse/default.pa on the target rootfs as below.
-
-```conf
-.ifexists module-router.so
-#load-module module-router
-.endif
-```
-
-* * *
-
-<div id="How\ to\ call\ Sound\ Manager\ APIs\ from\ your\ Application?"></div>
-
-### How to call Sound Manager APIs from your Application?
-
-Sound Manager provides a library which is called "libsoundmanager".
-This library provides function style API calling interface. So you can include libsoundmanager.hpp headerfile, and can link this library.
-Please also refer sample application and template.
-
-See also our [Sample code](#Sample\ code).
-
-* * *
-
-<div id="Supported\ usecase"></div>
-
-## Supported usecase
-
-1. Active source change
-- When user choose different audio source with current one, IVI system stop or pause current source and activate new one.
-- When user connect external device e.g. iPhone, USB memory IVI system change active source automatically to connected one.
-2. Active source locking
-- When user is in phone call, IVI restrict to change active source.
-3. Interrupt source mixing
-- When car close to cross road IVI system reduce the volume of current source and mix with interrupt source e.g. Navigation Guidance.
-4. Volume change
-- User can change the volume of active source or sink.
-- When user change volume during interruption e.g. Navigation Guidance, IVI system change its volume temporary or permanently.
-5. Mute/unmute
-- User can mute/unmute current active source.
-6. Volume management
-- When user change active source, IVI system mute/unmute to avoid distortion of sound.
-7. Volume acceleration
-- When road noise is increased by speed, IVI system automatically change the volume of active source.
-8. Routing sound
-- System needs to route sound stream to proper zones. (driver zone, passenger zone, rear seat zone)
-
-[See also this page](https://wiki.automotivelinux.org/eg-ui-graphics-req-audiorouting)
-
-* * *
-
-<div id="Software\ Architecture"></div>
-
-## Software Architecture
-
-The architecture of Sound Manager is shown below.
-Sound Manager is the service designed to be used by multiple applications.
-Therefore Sound Manager framework consists of two binder layers. Please refer the following figure.
-The upper binder is for application side security context. The lower binder is for server side security context.
-Usually an application side binder has some business logic for each application, so the number of binders depend on the number of applications which use Sound Manager.
-On the other hand, regarding lower binder there is only one module in the system. This binder receives messages from multiple applications (in detail, it comes from upper layer binder).
-
-The communication protocols between libsoundmanager and upper binder, upper binder and lower binder,  are WebSocket. The protocols between lower binder (soundmanager-binding) and AudioManager is D-Bus.
-
-![software-stack.png](parts/software-stack.png)
-
-* * *
-
-<div id="API\ reference"></div>
-
-## API reference
-
-"libsoundmanager" and "soundmanager_binding" provides several kinds of APIs, and these APIs basically correspond to GENIVI Audio Manager API. (Some APIs are Sound Manager original functions.)
-
-For understanding, GENIVI Audio Manager stands for one core module and three plug-ins.
-
-1. AudioManagerDaemon
-  This is a core module of Audio Manager.
-2. AudioManagerCommandPlugin
-  This is a command interface for Audio Manager.
-3. AudioManagerController
-  This plug-in can be used for sound-right management.
-4. AudioManagerRountingPlugin
-  This plug-in abstracts the hardware and software. And sometimes there may be multiple plug-ins.
-
-*) [See also GENIVI AudioManager Components](http://docs.projects.genivi.org/AudioManager/audiomanagercomponentspage.html)
-
-![See also GENIVI AudioManager Components](parts/am-component.png)
-(This figure was copied from GENIVI Web page.)
-
-<div id="APIs"></div>
-
-### APIs
-
-- init(int port, const std::string& token)
-- registerSource(const std::string& sourceName)
-- connect(int sourceID, int sinkID)
-- connect(int sourceID, const std::string& sinkName)
-- disconnect(int connectionID)
-- ackSetSourceState(int handle, int err)
-- registerCallback( void (*event_cb)(const std::string& event, struct json_object* event_contents), void (*reply_cb)(struct json_object* reply_contents), void (*hangup_cb)(void) = nullptr)
-
-Regarding more detail, please refer doxygen documents.
-
-<div id="Events"></div>
-
-### Events
-
-"libsoundmanager" provides the feature which receives the events which an app subscribes with "subscribe" API.
-An application can get events to register a callback function with "registerCallback" API.
-
-And this event is subscribed automatically. (See below Note)
-
-- asyncSetSourceState
-
-The below events are available but not mandatory.
-
-- newMainConnection
-- removedMainConnection
-- mainConnectionStateChanged
-- volumeChanged
-- sinkMuteStateChanged
-- setRoutingReady
-- asyncConnect
-- asyncDisconnect
-
-Note:
-
-"asyncSetSourceState" is always subscribed in init phase because this is the most important event for audio policy management. This event indicates the approval/disapproval/pause.
-
-Regarding more detail, please refer doxygen documents.
-
-* * *
-
-<div id="Sequence"></div>
-
-## Sequence
-<div id="StartUp"></div>
-
-### StartUp
-
-![seq_startup.png](parts/seq_startup.svg)
-
-<div id="Registration"></div>
-
-### Registration
-
-![seq_registration.png](parts/seq_registration.svg)
-
-<div id="Request\ Sound\ Right"></div>
-
-### Request Sound Right
-
-![seq_requestsoundmode.png](parts/seq_requestsoundmode.svg)
-
-<div id="Connect\ Sound\ Route"></div>
-
-### Connect Sound Route
-![seq_connectsoundroute.png](parts/seq_connectsoundroute.svg)
-
-<div id="Start\ Sound\ Streaming"></div>
-
-### Start Sound Streaming
-
-![seq_startsoundstreaming.png](parts/seq_startsoundstreaming.svg)
-
-<div id="Stop\ Sound\ Streaming"></div>
-
-### Stop Sound Streaming
-
-![seq_stopsoundstreaming.png](parts/seq_stopsoundstreaming.svg)
-
-<div id="Disconnect\ Sound\ Route"></div>
-
-### Disconnect Sound Route
-
-![seq_disconnectsoundroute.png](parts/seq_disconnectsoundroute.svg)
-
-<div id="Change\ Volume"></div>
-
-### Change Volume
-
-![seq_changevolume.png](parts/seq_changevolume.svg)
-
-<div id="Set\ Mute\ State"></div>
-
-### Set Mute State
-
-![seq_setmutestate.png](parts/seq_setmutestate.svg)
-
-<div id="Release\ Sound\ Right"></div>
-
-### Release Sound Right
-
-![seq_releasesoundmode.png](parts/seq_releasesoundmode.svg)
-
-* * *
-
-<div id="Audio\ Domain"></div>
-
-### Audio Domain
-
-One of the most important concept of Audio Manager is Audio Domain.
-To use GENIVI Audio Manager based system, it may be better to understand this concept.
-The below document should bring good understanding.
-
-[GENIVI Audio Manager: Generic Controller Plug-in](http://events.linuxfoundation.org/sites/events/files/slides/AGL_AMM_presentation_A01.pdf)
-
-Although strongly recommended to read whole pages, but you can get quick understanding by page.10 to 14.
-
-<div id="Sample\ code"></div>
-
-## Sample code
-
-You can find samples using Sound Manager as below.
-
-- `apps/agl-service-homescreen-2017/sample/template`
-- `apps/radio (branch=sandbox/knimitz/hmi-framework)`
-
-<div id="Limitation"></div>
-
-## Limitation
-
-- Sound of application is not automatically muted for now because Audio Manager doesn't stop with current plugins. Just notify stop/pause/play.
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="738px" preserveAspectRatio="none" style="width:1313px;height:738px;background:#EEEBDC;" version="1.1" viewBox="0 0 1313 738" width="1313px" zoomAndPan="magnify"><defs><filter height="300%" id="f13x6ysrvu2fjr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#EEEBDC" height="716.2969" style="stroke: #DEB887; stroke-width: 1.0;" width="142" x="437.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="113" x="452" y="15.1387">CommandPlugIn</text><rect fill="#EEEBDC" height="716.2969" style="stroke: #DEB887; stroke-width: 1.0;" width="427" x="582" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="711" y="15.1387">Audio Manager Daemon</text><rect fill="#EEEBDC" height="716.2969" style="stroke: #DEB887; stroke-width: 1.0;" width="128" x="1081" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="99" x="1095.5" y="15.1387">RoutingPlugIn</text><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="160.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="93.9688"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="678.1641"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="139.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="268.5" y="114.9688"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="101.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="268.5" y="607.0313"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="96.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="503.5" y="144.1016"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="68.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="503.5" y="552.8984"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="53.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="173.2344"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="139.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="800" y="212.3672"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="136.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="800" y="498.8984"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="189.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="932" y="459.7656"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="68.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1140" y="283.3672"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="218.5313" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1140" y="430.6328"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="93.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1256" y="337.5"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="45" x2="45" y1="83.9688" y2="726.2969"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="273" x2="273" y1="83.9688" y2="726.2969"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="508.5" x2="508.5" y1="83.9688" y2="726.2969"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="663" x2="663" y1="83.9688" y2="726.2969"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="805" x2="805" y1="83.9688" y2="726.2969"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="937" x2="937" y1="83.9688" y2="726.2969"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1145" x2="1145" y1="83.9688" y2="726.2969"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1261" x2="1261" y1="83.9688" y2="726.2969"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="8" y="81.1387">Application</text><ellipse cx="45.5" cy="13" fill="#FFFACD" filter="url(#f13x6ysrvu2fjr)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M45.5,21 L45.5,48 M32.5,29 L58.5,29 M45.5,48 L32.5,63 M45.5,48 L58.5,63 " fill="#FFFACD" filter="url(#f13x6ysrvu2fjr)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="109" x="217" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="224" y="69.1387">SoundManager</text><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="130" x="441.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="448.5" y="69.1387">IAmCommandSend</text><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="151" x="586" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="137" x="593" y="69.1387">IAmCommandReceiver</text><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="104" x="751" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="90" x="758" y="69.1387">AudioManager</text><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="132" x="869" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="118" x="876" y="69.1387">IAmRoutingReceive</text><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="116" x="1085" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="102" x="1092" y="69.1387">IAmRoutingSend</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="1215" y="81.1387">Audio Domain</text><ellipse cx="1261" cy="13" fill="#FFFACD" filter="url(#f13x6ysrvu2fjr)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M1261,21 L1261,48 M1248,29 L1274,29 M1261,48 L1248,63 M1261,48 L1274,63 " fill="#FFFACD" filter="url(#f13x6ysrvu2fjr)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="160.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="93.9688"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="40.5" y="678.1641"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="139.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="268.5" y="114.9688"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="101.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="268.5" y="607.0313"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="96.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="503.5" y="144.1016"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="68.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="503.5" y="552.8984"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="53.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="658.5" y="173.2344"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="139.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="800" y="212.3672"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="136.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="800" y="498.8984"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="189.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="932" y="459.7656"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="68.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1140" y="283.3672"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="218.5313" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1140" y="430.6328"/><rect fill="#00FF00" filter="url(#f13x6ysrvu2fjr)" height="93.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="1256" y="337.5"/><polygon fill="#000000" points="256.5,110.9688,266.5,114.9688,256.5,118.9688,260.5,114.9688" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="50.5" x2="262.5" y1="114.9688" y2="114.9688"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="57.5" y="110.0356">SetSinkMuteState()</text><polygon fill="#000000" points="491.5,140.1016,501.5,144.1016,491.5,148.1016,495.5,144.1016" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="278.5" x2="497.5" y1="144.1016" y2="144.1016"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="285.5" y="139.1685">SetSinkMuteState()</text><polygon fill="#000000" points="646.5,169.2344,656.5,173.2344,646.5,177.2344,650.5,173.2344" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="513.5" x2="652.5" y1="173.2344" y2="173.2344"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="520.5" y="168.3013">SetSinkMuteState()</text><polygon fill="#000000" points="788,208.3672,798,212.3672,788,216.3672,792,212.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668.5" x2="794" y1="212.3672" y2="212.3672"/><polygon fill="#000000" points="524.5,222.3672,514.5,226.3672,524.5,230.3672,520.5,226.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="518.5" x2="662.5" y1="226.3672" y2="226.3672"/><polygon fill="#000000" points="289.5,236.3672,279.5,240.3672,289.5,244.3672,285.5,240.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="283.5" x2="507.5" y1="240.3672" y2="240.3672"/><polygon fill="#000000" points="56.5,250.3672,46.5,254.3672,56.5,258.3672,52.5,254.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="50.5" x2="272.5" y1="254.3672" y2="254.3672"/><polygon fill="#000000" points="1128,279.3672,1138,283.3672,1128,287.3672,1132,283.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="810" x2="1134" y1="283.3672" y2="283.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="145" x="817" y="278.4341">asyncSetSinkVolume()</text><polygon fill="#000000" points="1244,333.5,1254,337.5,1244,341.5,1248,337.5" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1150" x2="1250" y1="337.5" y2="337.5"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="1157" y="332.5669">SetMute()</text><polygon fill="#000000" points="816,347.6328,806,351.6328,816,355.6328,812,351.6328" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="810" x2="1144" y1="351.6328" y2="351.6328"/><polygon fill="#000000" points="1161,426.6328,1151,430.6328,1161,434.6328,1157,430.6328" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1155" x2="1260" y1="430.6328" y2="430.6328"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="86" x="1167" y="425.6997">ackSetMute()</text><polygon fill="#000000" points="953,455.7656,943,459.7656,953,463.7656,949,459.7656" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="947" x2="1139" y1="459.7656" y2="459.7656"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="179" x="959" y="454.8325">ackSetSinkVolumeChange()</text><polygon fill="#000000" points="821,494.8984,811,498.8984,821,502.8984,817,498.8984" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="815" x2="931" y1="498.8984" y2="498.8984"/><polygon fill="#000000" points="524.5,548.8984,514.5,552.8984,524.5,556.8984,520.5,552.8984" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="518.5" x2="799" y1="552.8984" y2="552.8984"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="166" x="530.5" y="547.9653">cbSinkMuteStateChanged</text><polygon fill="#000000" points="289.5,603.0313,279.5,607.0313,289.5,611.0313,285.5,607.0313" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="283.5" x2="502.5" y1="607.0313" y2="607.0313"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="206" x="295.5" y="602.0981">signal("sinkMuteStateChanged")</text><polygon fill="#000000" points="788,617.1641,798,621.1641,788,625.1641,792,621.1641" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="508.5" x2="794" y1="621.1641" y2="621.1641"/><polygon fill="#000000" points="920,631.1641,930,635.1641,920,639.1641,924,635.1641" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="805" x2="926" y1="635.1641" y2="635.1641"/><polygon fill="#000000" points="1133,645.1641,1143,649.1641,1133,653.1641,1137,649.1641" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="937" x2="1139" y1="649.1641" y2="649.1641"/><polygon fill="#000000" points="61.5,674.1641,51.5,678.1641,61.5,682.1641,57.5,678.1641" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="55.5" x2="267.5" y1="678.1641" y2="678.1641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="199" x="67.5" y="673.231">event [sinkMuteStateChanged]</text><!--
+@startuml
+hide footbox
+
+'skinparam defaultFontSize 10
+skinparam backgroundColor #EEEBDC
+skinparam sequenceGroupHeaderFontSize 12
+
+skinparam sequence {
+    ArrowColor black
+
+    ActorBorderColor black
+
+    LifeLineBorderColor #404040
+    LifeLineBackgroundColor #404040
+	
+    ParticipantBorderColor black
+    ParticipantBackgroundColor #00FF00
+    ParticipantFontSize 12
+    ParticipantFontColor black
+
+    ActorBackgroundColor #FFFACD
+    ActorFontColor black
+    ActorFontSize 12
+
+
+    BoxBorderColor #deb887
+    BoxFontSize 12
+    TitleFontSize 20
+}
+
+
+actor Application as AP
+participant SoundManager as SM
+box "CommandPlugIn" #EEEBDC
+    participant IAmCommandSend as CS
+end box
+box "Audio Manager Daemon" #EEEBDC
+    participant IAmCommandReceiver as CR
+    participant AudioManager as AM
+    participant IAmRoutingReceive as RR
+end box
+box "RoutingPlugIn" #EEEBDC
+    participant IAmRoutingSend as RS
+end box
+actor "Audio Domain" as AD
+
+
+activate AP #00ff00
+AP -> SM : SetSinkMuteState()
+activate SM #00ff00
+SM -> CS : SetSinkMuteState()
+activate CS #00ff00
+CS -> CR : SetSinkMuteState()
+activate CR #00ff00
+|||
+CR -> AM
+activate AM #00ff00
+CR - -> CS
+deactivate CR
+CS- ->SM
+deactivate CS
+SM- ->AP
+deactivate SM
+deactivate AP
+
+AM -> RS : asyncSetSinkVolume()
+activate RS #00ff00
+|||
+RS -> AD : SetMute()
+activate AD #00ff00
+RS - -> AM
+deactivate RS
+deactivate AM
+|||
+|||
+AD -> RS : ackSetMute()
+deactivate AD
+activate RS #00ff00
+
+RS -> RR : ackSetSinkVolumeChange()
+activate RR #00ff00
+|||
+RR -> AM
+activate AM #00ff00
+|||
+AM -> CS : cbSinkMuteStateChanged
+activate CS #00ff00
+|||
+CS -> SM : signal("sinkMuteStateChanged")
+activate SM #00ff00
+CS- ->AM
+deactivate CS
+AM- ->RR
+deactivate AM
+RR- ->RS
+deactivate RR
+deactivate RS
+
+SM -> AP : event [sinkMuteStateChanged]
+activate AP #00ff00
+deactivate SM
+deactivate AP
+@enduml
+
+PlantUML version 1.2017.18beta10(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

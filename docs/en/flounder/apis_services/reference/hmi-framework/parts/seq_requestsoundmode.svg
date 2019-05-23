@@ -1,381 +1,165 @@
-# **Sound Manager Application Guide**
-
-<div align="right">Revision: 0.3alpha</div>
-<div align="right">TOYOTA MOTOR CORPORATION</div>
-<div align="right">Advanced Driver Information Technology</div>
-<div align="right">11th/Dec/2017</div>
-
-* * *
-
-<div id="Table\ of\ content"></div>
-
-## Table of content
-
-- [Target reader of this document](#Target\ reader\ of\ this\ document)
-- [Overview](#Overview)
-- [Getting Start](#Getting\ Start)
-	- [Supported environment](#Supported\ environment)
-	- [Build](#Build)
-	- [Configuring](#Configuring)
-	- [Additional work](#Additional\ work)
-	- [How to call Sound Manager's APIs from your Application?](#How\ to\ call\ Sound\ Manager\ APIs\ from\ your\ Application?)
-- [Supported usecase](#Supported\ usecase)
-- [Software Architecture](#Software\ Architecture)
-- [API reference](#API\ reference)
-	- [APIs](#APIs)
-	- [Events](#Events)
-- [Sequence](#Sequence)
-	- [StartUp](#StartUp)
-	- [Registration](#Registration)
-	- [Request Sound Right](#Request\ Sound\ Right)
-	- [Connect Sound Route](#Connect\ Sound\ Route)
-	- [Start Sound Streaming](#Start\ Sound\ Streaming)
-	- [Stop Sound Streaming](#Stop\ Sound\ Streaming)
-	- [Disconnect Sound Route](#Disconnect\ Sound\ Route)
-	- [Change Volume](#Change\ Volume)
-	- [Set Mute State](#Set\ Mute\ State)
-	- [Release Sound Right](#Release\ Sound\ Right)
-	- [Audio Domain](#Audio\ Domain)
-- [Sample code](#Sample\ code)
-- [Limitation](#Limitation)
-
-* * *
-
-<div id="Target\ reader\ of\ this\ document"></div>
-
-## Target reader of this document
-
-Application developer whose software uses sound output.
-
-* * *
-
-<div id="Overview"></div>
-
-## Overview
-
-The sound manager is the service which provides **sound-right management** for multiple sound sources.
-This service is based on GENIVI Audio Manager, and this package contains service binding and library for API calling.
-The reason why this service is based on GENIVI Audio Manager is because GENIVI Audio Manager supports highly strong and flexible sound-right management function.
-
-In order to understand, the below figure shows the one of typical usecases.
-In this example, there are four sound mode.
-1. Audio Off
-1. Media Player
-1. Tel (Ring and talking)
-1. TTS (Text To Speech; typically it's used by Navigation sound)
-![Figure: Typical usecase](parts/typical-usecase.png)
-
-The important points are:
-
-- **There is a priority for each sound source.**
- In this example, the priority of "Tel" and "TTS" is higher than "MediaPlayer". Therefore when the system got incoming call, all four outputs of MediaPlayer are muted automatically by Sound Manager. And in this timing, Sound Manager will issue the event to Media Player, then Media Player can stop the music. (Because depending on OEM's requirement, "Stop" is required.)
- "Tel" and "TTS" have the same priority. So if TTS event happened on talking, each sound will output from independent speaker.
- If on-hook button is touched, Sound Manager will resume previous sound mode. In this example, basically it's MediaPlayer sound. But if TTS still playing, three speaker will output MediaPlayer sound but one speaker will continue to output TTS sound.
-- **Sound mode transition should be done by Sound Manager not Applications.**
- Actually application cannot recognize all sound source and its priority, so some centerized manager is required. Sound Manager provides this function. Sound Manager has a database for usecase and priority and in line with this policy Sound Manager controls proper sound mode.
-
-The below links show the example of Sound/Window mode transition.
-
-- [Single window application](Display_Audio_Transition1.html)
- This transition assumes target IVI system support only one window on screen. It's a similar transition to CES2017 demo.
-- [Dual window application](Display_Audio_Transition2.html)
- This transition assumes target IVI system support two window (split screen) on screen.
-
-Of course user can customize shortcut menu, but since it's too many states so this example limits shortcut menu as "Home", "MediaPlayer", "HVAC" and "Navigation".
-
-* * *
-
-<div id="Getting\ Start"></div>
-
-## Getting Start
-
-<div id="Supported\ environment"></div>
-
-### Supported environment
-
-| Item        | Description                       |
-|:------------|:----------------------------------|
-| AGL version | Electric Eel                      |
-| Hardware    | Renesas R-Car Starter Kit Pro(M3) |
-
-<div id="Build"></div>
-
-### Build
-
-You can make Sound Manager object files by the following two stage operations.
-
-**Download recipe**
-If repo is already done, please start with git clone
-
-```bash
-mkdir WORK
-cd WORK
-repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
-repo sync
-```
-
-**Bitbake**
-
-```bash
-source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo agl-devel agl-appfw-smack agl-hmi-framework
-bitbake agl-demo-platform
-```
-
-* * *
-
-<div id="Configuring"></div>
-
-### Configuring
-
-To use Sound Manager API, an application shall paste the following configuration definition into "config.xml" of application.
-
-```xml
-<feature name="urn:AGL:widget:required-api">
-    <param name="soundmanager" value="ws" />
-</feature>
-```
-
-* * *
-
-<div id="Additional\ work"></div>
-
-### Additional work
-
-#### **Add Policy file**
-
-To add Sound Manager Domain into policy, put the following file to /etc/audiomanager/control on the target rootfs.
-
-`${SOUNDMANAGER_DIR}/conf/audiomanager-config-sample/configuration.xml`
-
-This is a sample configuration.
-
-#### **Remove Module router of Pulse Audio**
-
-Because the module rounter accesses Audio manager for getting sound right instead of application in CES2017, after you changed your application code for Sound manager, you shall modify the configuration for puluse audio not to load module router.
-To do this, you shall comment out line.143 of /etc/pulse/default.pa on the target rootfs as below.
-
-```conf
-.ifexists module-router.so
-#load-module module-router
-.endif
-```
-
-* * *
-
-<div id="How\ to\ call\ Sound\ Manager\ APIs\ from\ your\ Application?"></div>
-
-### How to call Sound Manager APIs from your Application?
-
-Sound Manager provides a library which is called "libsoundmanager".
-This library provides function style API calling interface. So you can include libsoundmanager.hpp headerfile, and can link this library.
-Please also refer sample application and template.
-
-See also our [Sample code](#Sample\ code).
-
-<br />
-
-* * *
-
-<div id="Supported\ usecase"></div>
-
-## Supported usecase
-
-1. Active source change
-- When user choose different audio source with current one, IVI system stop or pause current source and activate new one.
-- When user connect external device e.g. iPhone, USB memory IVI system change active source automatically to connected one.
-2. Active source locking
-- When user is in phone call, IVI restrict to change active source.
-3. Interrupt source mixing
-- When car close to cross road IVI system reduce the volume of current source and mix with interrupt source e.g. Navigation Guidance.
-4. Volume change
-- User can change the volume of active source or sink.
-- When user change volume during interruption e.g. Navigation Guidance, IVI system change its volume temporary or permanently.
-5. Mute/unmute
-- User can mute/unmute current active source.
-6. Volume management
-- When user change active source, IVI system mute/unmute to avoid distortion of sound.
-7. Volume acceleration
-- When road noise is increased by speed, IVI system automatically change the volume of active source.
-8. Routing sound
-- System needs to route sound stream to proper zones. (driver zone, passenger zone, rear seat zone)
-
-[See also this page](https://wiki.automotivelinux.org/eg-ui-graphics-req-audiorouting)
-
-* * *
-
-<div id="Software\ Architecture"></div>
-
-## Software Architecture
-
-The architecture of Sound Manager is shown below.
-Sound Manager is the service designed to be used by multiple applications.
-Therefore Sound Manager framework consists of two binder layers. Please refer the following figure.
-The upper binder is for application side security context. The lower binder is for server side security context.
-Usually an application side binder has some business logic for each application, so the number of binders depend on the number of applications which use Sound Manager.
-On the other hand, regarding lower binder there is only one module in the system. This binder receives messages from multiple applications (in detail, it comes from upper layer binder).
-
-The communication protocols between libsoundmanager and upper binder, upper binder and lower binder,  are WebSocket. The protocols between lower binder (soundmanager-binding) and AudioManager is D-Bus.
-
-![software-stack.png](parts/software-stack.png)
-
-* * *
-
-<div id="API\ reference"></div>
-
-## API reference
-
-"libsoundmanager" and "soundmanager_binding" provides several kinds of APIs, and these APIs basically correspond to GENIVI Audio Manager API. (Some APIs are Sound Manager original functions.)
-
-For understanding, GENIVI Audio Manager stands for one core module and three plug-ins.
-1. AudioManagerDaemon
-	This is a core module of Audio Manager.
-2. AudioManagerCommandPlugin
-	This is a command interface for Audio Manager.
-3. AudioManagerController
-	This plug-in can be used for sound-right management.
-4. AudioManagerRountingPlugin
-	This plug-in abstracts the hardware and software. And sometimes there may be multiple plug-ins.
-
-*) [See also GENIVI AudioManager Components](http://docs.projects.genivi.org/AudioManager/audiomanagercomponentspage.html)
-
-![See also GENIVI AudioManager Components](parts/am-component.png)
-(This figure was copied from GENIVI Web page.)
-
-<div id="APIs"></div>
-
-### APIs
-
-- init(int port, const std::string& token)
-- registerSource(const std::string& sourceName)
-- connect(int sourceID, int sinkID)
-- connect(int sourceID, const std::string& sinkName)
-- disconnect(int connectionID)
-- ackSetSourceState(int handle, int err)
-- registerCallback( void (*event_cb)(const std::string& event, struct json_object* event_contents), void (*reply_cb)(struct json_object* reply_contents), void (*hangup_cb)(void) = nullptr)
-
-Regarding more detail, please refer doxygen documents.
-
-<div id="Events"></div>
-
-### Events
-
-"libsoundmanager" provides the feature which receives the events which an app subscribes with "subscribe" API.
-An application can get events to register a callback function with "registerCallback" API.
-
-And this event is subscribed automatically. (See below Note)
-
-- asyncSetSourceState
-
-The below events are available but not mandatory.
-
-- newMainConnection
-- removedMainConnection
-- mainConnectionStateChanged
-- volumeChanged
-- sinkMuteStateChanged
-- setRoutingReady
-- asyncConnect
-- asyncDisconnect
-
-Note:
-
-"asyncSetSourceState" is always subscribed in init phase because this is the most important event for audio policy management. This event indicates the approval/disapproval/pause.
-
-Regarding more detail, please refer doxygen documents.
-
-* * *
-
-<div id="Sequence"></div>
-
-## Sequence
-<div id="StartUp"></div>
-
-### StartUp
-
-![seq_startup.png](parts/seq_startup.svg)
-
-<div id="Registration"></div>
-
-### Registration
-
-![seq_registration.png](parts/seq_registration.svg)
-
-<div id="Request\ Sound\ Right"></div>
-
-### Request Sound Right
-
-![seq_requestsoundmode.png](parts/seq_requestsoundmode.svg)
-
-<div id="Connect\ Sound\ Route"></div>
-
-### Connect Sound Route
-![seq_connectsoundroute.png](parts/seq_connectsoundroute.svg)
-
-<div id="Start\ Sound\ Streaming"></div>
-
-### Start Sound Streaming
-
-![seq_startsoundstreaming.png](parts/seq_startsoundstreaming.svg)
-
-<div id="Stop\ Sound\ Streaming"></div>
-
-### Stop Sound Streaming
-
-![seq_stopsoundstreaming.png](parts/seq_stopsoundstreaming.svg)
-
-<div id="Disconnect\ Sound\ Route"></div>
-
-### Disconnect Sound Route
-
-![seq_disconnectsoundroute.png](parts/seq_disconnectsoundroute.svg)
-
-<div id="Change\ Volume"></div>
-
-### Change Volume
-
-![seq_changevolume.png](parts/seq_changevolume.svg)
-
-<div id="Set\ Mute\ State"></div>
-
-### Set Mute State
-
-![seq_setmutestate.png](parts/seq_setmutestate.svg)
-
-<div id="Release\ Sound\ Right"></div>
-
-### Release Sound Right
-
-![seq_releasesoundmode.png](parts/seq_releasesoundmode.svg)
-
-* * *
-
-<div id="Audio\ Domain"></div>
-
-### Audio Domain
-
-One of the most important concept of Audio Manager is Audio Domain.
-To use GENIVI Audio Manager based system, it may be better to understand this concept.
-The below document should bring good understanding.
-
-[GENIVI Audio Manager: Generic Controller Plug-in](http://events.linuxfoundation.org/sites/events/files/slides/AGL_AMM_presentation_A01.pdf)
-
-Although strongly recommended to read whole pages, but you can get quick understanding by page.10 to 14.
-
-<div id="Sample\ code"></div>
-
-# Sample code
-
-You can find samples using Sound Manager as below.
-
-- `apps/agl-service-homescreen-2017/sample/template`
-- `apps/radio (branch=sandbox/knimitz/hmi-framework)`
-
-<div id="Limitation"></div>
-
-# Limitation
-
-- Minimum APIs and Events are prepared for RC2, the following APIs will be available for final version of EE.
-
-- getListMainSinks
-
-- Sound of application is not automatically muted for now because Audio Manager doesn't automatically stop with current plugins.
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1701px" preserveAspectRatio="none" style="width:1368px;height:1701px;background:#EEEBDC;" version="1.1" viewBox="0 0 1368 1701" width="1368px" zoomAndPan="magnify"><defs><filter height="300%" id="f1lx8mwkk69qwd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#EEEBDC" height="1679.4453" style="stroke: #DEB887; stroke-width: 1.0;" width="142" x="538.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="113" x="553" y="15.1387">CommandPlugIn</text><rect fill="#EEEBDC" height="1679.4453" style="stroke: #DEB887; stroke-width: 1.0;" width="427" x="682.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="169" x="811.5" y="15.1387">Audio Manager Daemon</text><rect fill="#EEEBDC" height="1679.4453" style="stroke: #DEB887; stroke-width: 1.0;" width="128" x="1111.5" y="4"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="99" x="1126" y="15.1387">RoutingPlugIn</text><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="135.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="93.9688"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="503.1328"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="699.6641"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="1459.9141"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="1641.3125"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="114.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="114.9688"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="88.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="445"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="88.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="641.5313"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="1416.7813"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="1598.1797"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="71.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="144.1016"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="415.8672"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="612.3984"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="1387.6484"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="1569.0469"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="28.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="759" y="173.2344"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="1493.0781" style="stroke: #404040; stroke-width: 1.0;" width="10" x="900.5" y="187.3672"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="28" style="stroke: #404040; stroke-width: 1.0;" width="10" x="905.5" y="954.3984"/><rect fill="#EEEBDC" filter="url(#f1lx8mwkk69qwd)" height="359.0313" style="stroke: #000000; stroke-width: 2.0;" width="946.5" x="23" y="378.8984"/><rect fill="#EEEBDC" filter="url(#f1lx8mwkk69qwd)" height="498.1875" style="stroke: #000000; stroke-width: 2.0;" width="1344.5" x="13" y="861.4609"/><rect fill="#EEEBDC" filter="url(#f1lx8mwkk69qwd)" height="418.2188" style="stroke: #000000; stroke-width: 2.0;" width="1324.5" x="23" y="909.4297"/><rect fill="#EEEBDC" height="133.0078" style="stroke: none; stroke-width: 1.0;" width="1324.5" x="23" y="1115.7344"/><rect fill="#EEEBDC" height="78.9063" style="stroke: none; stroke-width: 1.0;" width="1324.5" x="23" y="1248.7422"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="70" x2="70" y1="83.9688" y2="1689.4453"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="337" x2="337" y1="83.9688" y2="1689.4453"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="609.5" x2="609.5" y1="83.9688" y2="1689.4453"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="763.5" x2="763.5" y1="83.9688" y2="1689.4453"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="905.5" x2="905.5" y1="83.9688" y2="1689.4453"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1037.5" x2="1037.5" y1="83.9688" y2="1689.4453"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1175.5" x2="1175.5" y1="83.9688" y2="1689.4453"/><line style="stroke: #404040; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="1291.5" x2="1291.5" y1="83.9688" y2="1689.4453"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="33" y="81.1387">Application</text><ellipse cx="70.5" cy="13" fill="#FFFACD" filter="url(#f1lx8mwkk69qwd)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M70.5,21 L70.5,48 M57.5,29 L83.5,29 M70.5,48 L57.5,63 M70.5,48 L83.5,63 " fill="#FFFACD" filter="url(#f1lx8mwkk69qwd)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="109" x="281" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="288" y="69.1387">SoundManager</text><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="130" x="542.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="549.5" y="69.1387">IAmCommandSend</text><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="151" x="686.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="137" x="693.5" y="69.1387">IAmCommandReceiver</text><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="104" x="851.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="90" x="858.5" y="69.1387">AudioManager</text><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="132" x="969.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="118" x="976.5" y="69.1387">IAmRoutingReceive</text><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="27.9688" style="stroke: #000000; stroke-width: 1.5;" width="116" x="1115.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="102" x="1122.5" y="69.1387">IAmRoutingSend</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="86" x="1245.5" y="81.1387">Audio Domain</text><ellipse cx="1291.5" cy="13" fill="#FFFACD" filter="url(#f1lx8mwkk69qwd)" rx="8" ry="8" style="stroke: #000000; stroke-width: 2.0;"/><path d="M1291.5,21 L1291.5,48 M1278.5,29 L1304.5,29 M1291.5,48 L1278.5,63 M1291.5,48 L1304.5,63 " fill="#FFFACD" filter="url(#f1lx8mwkk69qwd)" style="stroke: #000000; stroke-width: 2.0;"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="135.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="93.9688"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="503.1328"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="699.6641"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="1459.9141"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="30" style="stroke: #404040; stroke-width: 1.0;" width="10" x="65.5" y="1641.3125"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="114.3984" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="114.9688"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="88.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="445"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="88.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="641.5313"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="1416.7813"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="73.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="332.5" y="1598.1797"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="71.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="144.1016"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="415.8672"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="612.3984"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="1387.6484"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="43.2656" style="stroke: #404040; stroke-width: 1.0;" width="10" x="604.5" y="1569.0469"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="28.1328" style="stroke: #404040; stroke-width: 1.0;" width="10" x="759" y="173.2344"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="1493.0781" style="stroke: #404040; stroke-width: 1.0;" width="10" x="900.5" y="187.3672"/><rect fill="#00FF00" filter="url(#f1lx8mwkk69qwd)" height="28" style="stroke: #404040; stroke-width: 1.0;" width="10" x="905.5" y="954.3984"/><polygon fill="#000000" points="320.5,110.9688,330.5,114.9688,320.5,118.9688,324.5,114.9688" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="75.5" x2="326.5" y1="114.9688" y2="114.9688"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="82.5" y="110.0356">connect()</text><polygon fill="#000000" points="592.5,140.1016,602.5,144.1016,592.5,148.1016,596.5,144.1016" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="342.5" x2="598.5" y1="144.1016" y2="144.1016"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="349.5" y="139.1685">connect()</text><polygon fill="#000000" points="747,169.2344,757,173.2344,747,177.2344,751,173.2344" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="614.5" x2="753" y1="173.2344" y2="173.2344"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="621.5" y="168.3013">connect()</text><polygon fill="#000000" points="888.5,183.3672,898.5,187.3672,888.5,191.3672,892.5,187.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="769" x2="894.5" y1="187.3672" y2="187.3672"/><polygon fill="#000000" points="625.5,197.3672,615.5,201.3672,625.5,205.3672,621.5,201.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="619.5" x2="763" y1="201.3672" y2="201.3672"/><polygon fill="#000000" points="353.5,211.3672,343.5,215.3672,353.5,219.3672,349.5,215.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="347.5" x2="608.5" y1="215.3672" y2="215.3672"/><polygon fill="#000000" points="81.5,225.3672,71.5,229.3672,81.5,233.3672,77.5,229.3672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="75.5" x2="336.5" y1="229.3672" y2="229.3672"/><polygon fill="#FBFB77" filter="url(#f1lx8mwkk69qwd)" points="915,292.3672,915,362.3672,1195,362.3672,1195,302.3672,1185,292.3672,915,292.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="1185" x2="1185" y1="292.3672" y2="302.3672"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="1195" x2="1185" y1="302.3672" y2="302.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="230" x="921" y="309.4341">Please note that if same connection</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="249" x="921" y="324.5669">(source and sink are completely same)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="259" x="921" y="339.6997">has bee created already, Audio Manager</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="253" x="921" y="354.8325">does not notify cbNewMainConnection()</text><rect fill="none" height="359.0313" style="stroke: #000000; stroke-width: 2.0;" width="946.5" x="23" y="378.8984"/><polygon fill="#EEEEEE" points="23,378.8984,92,378.8984,92,383.8984,82,393.8984,23,393.8984,23,378.8984" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="24" x="38" y="391.0371">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="211" x="107" y="391.1089">[main connection is not existing]</text><polygon fill="#000000" points="625.5,411.8672,615.5,415.8672,625.5,419.8672,621.5,415.8672" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="619.5" x2="899.5" y1="415.8672" y2="415.8672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="631.5" y="410.9341">cbNewMainConnection</text><polygon fill="#000000" points="353.5,441,343.5,445,353.5,449,349.5,445" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="347.5" x2="603.5" y1="445" y2="445"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="186" x="359.5" y="440.0669">signal("NewMainConnection")</text><polygon fill="#000000" points="888.5,455.1328,898.5,459.1328,888.5,463.1328,892.5,459.1328" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="609.5" x2="894.5" y1="459.1328" y2="459.1328"/><polygon fill="#000000" points="86.5,499.1328,76.5,503.1328,86.5,507.1328,82.5,503.1328" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="80.5" x2="331.5" y1="503.1328" y2="503.1328"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="172" x="92.5" y="483.1997">event [newMainConnection</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="132" x="148.5" y="498.3325">(mainConnectionID)]</text><polygon fill="#000000" points="625.5,608.3984,615.5,612.3984,625.5,616.3984,621.5,612.3984" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="619.5" x2="899.5" y1="612.3984" y2="612.3984"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="201" x="631.5" y="607.4653">cbMainConnectionStateChange</text><polygon fill="#000000" points="353.5,637.5313,343.5,641.5313,353.5,645.5313,349.5,641.5313" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="347.5" x2="603.5" y1="641.5313" y2="641.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="243" x="359.5" y="636.5981">signal("MainConnectionStateChange")</text><polygon fill="#000000" points="888.5,651.6641,898.5,655.6641,888.5,659.6641,892.5,655.6641" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="609.5" x2="894.5" y1="655.6641" y2="655.6641"/><polygon fill="#000000" points="86.5,695.6641,76.5,699.6641,86.5,703.6641,82.5,699.6641" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="80.5" x2="331.5" y1="699.6641" y2="699.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="233" x="92.5" y="679.731">event [mainConnectionStateChange</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="143" x="148.5" y="694.8638">(CS_DISCONNECTED)]</text><polygon fill="#FBFB77" filter="url(#f1lx8mwkk69qwd)" points="915,774.9297,915,844.9297,1161,844.9297,1161,784.9297,1151,774.9297,915,774.9297" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="1151" x2="1151" y1="774.9297" y2="784.9297"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="1161" x2="1151" y1="784.9297" y2="784.9297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="218" x="921" y="791.9966">Once connection is requested and</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="200" x="921" y="807.1294">created in AudioManager, main</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="209" x="921" y="822.2622">connection continuously perform</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="225" x="921" y="837.395">transition caused by policy decision</text><rect fill="none" height="498.1875" style="stroke: #000000; stroke-width: 2.0;" width="1344.5" x="13" y="861.4609"/><polygon fill="#EEEEEE" points="13,861.4609,89,861.4609,89,866.4609,79,876.4609,13,876.4609,13,861.4609" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="31" x="28" y="873.5996">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="206" x="104" y="873.6714">[Lifecycle of a main connection]</text><rect fill="none" height="418.2188" style="stroke: #000000; stroke-width: 2.0;" width="1324.5" x="23" y="909.4297"/><polygon fill="#EEEEEE" points="23,909.4297,87,909.4297,87,914.4297,77,924.4297,23,924.4297,23,909.4297" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="19" x="38" y="921.5684">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="244" x="102" y="921.6401">[Transition of sound mode = Connect]</text><line style="stroke: #000000; stroke-width: 1.0;" x1="915.5" x2="957.5" y1="946.5313" y2="946.5313"/><line style="stroke: #000000; stroke-width: 1.0;" x1="957.5" x2="957.5" y1="946.5313" y2="959.5313"/><line style="stroke: #000000; stroke-width: 1.0;" x1="916.5" x2="957.5" y1="959.5313" y2="959.5313"/><polygon fill="#000000" points="926.5,955.5313,916.5,959.5313,926.5,963.5313,922.5,959.5313" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="107" x="922.5" y="941.4653">Policy_Decision()</text><rect fill="#FFFFFF" filter="url(#f1lx8mwkk69qwd)" height="39.1016" style="stroke: #000000; stroke-width: 2.0;" width="1306.5" x="30" y="1007.5313"/><polygon fill="#EEEEEE" points="30,1007.5313,95,1007.5313,95,1012.5313,85,1022.5313,30,1022.5313,30,1007.5313" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="43" y="1020.6699">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="139" x="615.75" y="1038.5981">Connect Sound Route</text><rect fill="#FFFFFF" filter="url(#f1lx8mwkk69qwd)" height="39.1016" style="stroke: #000000; stroke-width: 2.0;" width="1306.5" x="30" y="1061.6328"/><polygon fill="#EEEEEE" points="30,1061.6328,95,1061.6328,95,1066.6328,85,1076.6328,30,1076.6328,30,1061.6328" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="43" y="1074.7715">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="148" x="611.25" y="1092.6997">Start Sound Streaming</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="23" x2="1347.5" y1="1116.7344" y2="1116.7344"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="81" x="28" y="1126.9448">[Disconnect]</text><rect fill="#FFFFFF" filter="url(#f1lx8mwkk69qwd)" height="39.1016" style="stroke: #000000; stroke-width: 2.0;" width="1306.5" x="30" y="1140.5391"/><polygon fill="#EEEEEE" points="30,1140.5391,95,1140.5391,95,1145.5391,85,1155.5391,30,1155.5391,30,1140.5391" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="43" y="1153.6777">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="146" x="612.25" y="1171.606">Stop Sound Streaming</text><rect fill="#FFFFFF" filter="url(#f1lx8mwkk69qwd)" height="39.1016" style="stroke: #000000; stroke-width: 2.0;" width="1306.5" x="30" y="1194.6406"/><polygon fill="#EEEEEE" points="30,1194.6406,95,1194.6406,95,1199.6406,85,1209.6406,30,1209.6406,30,1194.6406" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="43" y="1207.7793">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="157" x="606.75" y="1225.7075">Disconnect Sound Route</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="23" x2="1347.5" y1="1249.7422" y2="1249.7422"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="65" x="28" y="1259.9526">[Suspend]</text><rect fill="#FFFFFF" filter="url(#f1lx8mwkk69qwd)" height="39.1016" style="stroke: #000000; stroke-width: 2.0;" width="1306.5" x="30" y="1273.5469"/><polygon fill="#EEEEEE" points="30,1273.5469,95,1273.5469,95,1278.5469,85,1288.5469,30,1288.5469,30,1273.5469" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="43" y="1286.6855">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="146" x="612.25" y="1304.6138">Stop Sound Streaming</text><polygon fill="#000000" points="625.5,1383.6484,615.5,1387.6484,625.5,1391.6484,621.5,1387.6484" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="619.5" x2="899.5" y1="1387.6484" y2="1387.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="152" x="631.5" y="1382.7153">cbMainConnectionState</text><polygon fill="#000000" points="353.5,1412.7813,343.5,1416.7813,353.5,1420.7813,349.5,1416.7813" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="347.5" x2="603.5" y1="1416.7813" y2="1416.7813"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="194" x="359.5" y="1411.8481">signal("MainConnectionState")</text><polygon fill="#000000" points="888.5,1426.9141,898.5,1430.9141,888.5,1434.9141,892.5,1430.9141" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="609.5" x2="894.5" y1="1430.9141" y2="1430.9141"/><polygon fill="#000000" points="86.5,1455.9141,76.5,1459.9141,86.5,1463.9141,82.5,1459.9141" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="80.5" x2="331.5" y1="1459.9141" y2="1459.9141"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="238" x="92.5" y="1454.981">event [mainConnectionStateChange]</text><polygon fill="#000000" points="625.5,1565.0469,615.5,1569.0469,625.5,1573.0469,621.5,1569.0469" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="619.5" x2="899.5" y1="1569.0469" y2="1569.0469"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="631.5" y="1564.1138">cbRemoveMainConnection</text><polygon fill="#000000" points="353.5,1594.1797,343.5,1598.1797,353.5,1602.1797,349.5,1598.1797" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="347.5" x2="603.5" y1="1598.1797" y2="1598.1797"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="211" x="359.5" y="1593.2466">signal("RemoveMainConnection")</text><polygon fill="#000000" points="888.5,1608.3125,898.5,1612.3125,888.5,1616.3125,892.5,1612.3125" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="609.5" x2="894.5" y1="1612.3125" y2="1612.3125"/><polygon fill="#000000" points="86.5,1637.3125,76.5,1641.3125,86.5,1645.3125,82.5,1641.3125" style="stroke: #000000; stroke-width: 1.0;"/><line style="stroke: #000000; stroke-width: 1.0;" x1="80.5" x2="331.5" y1="1641.3125" y2="1641.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="203" x="92.5" y="1636.3794">event [removemainConnection]</text><!--
+@startuml
+hide footbox
+
+'skinparam defaultFontSize 10
+skinparam backgroundColor #EEEBDC
+skinparam sequenceGroupHeaderFontSize 12
+
+skinparam sequence {
+    ArrowColor black
+
+    ActorBorderColor black
+
+    LifeLineBorderColor #404040
+    LifeLineBackgroundColor #404040
+	
+    ParticipantBorderColor black
+    ParticipantBackgroundColor #00FF00
+    ParticipantFontSize 12
+    ParticipantFontColor black
+
+    ActorBackgroundColor #FFFACD
+    ActorFontColor black
+    ActorFontSize 12
+
+
+    BoxBorderColor #deb887
+    BoxFontSize 12
+    TitleFontSize 20
+}
+
+
+actor Application as AP
+participant SoundManager as SM
+box "CommandPlugIn" #EEEBDC
+    participant IAmCommandSend as CS
+end box
+box "Audio Manager Daemon" #EEEBDC
+    participant IAmCommandReceiver as CR
+    participant AudioManager as AM
+    participant IAmRoutingReceive as RR
+end box
+box "RoutingPlugIn" #EEEBDC
+    participant IAmRoutingSend as RS
+end box
+actor "Audio Domain" as AD
+
+activate AP #00FF00
+AP -> SM : connect()
+activate SM #00FF00
+SM -> CS : connect()
+activate CS #00FF00
+
+CS ->CR : connect()
+activate CR #00FF00
+
+CR->AM
+activate AM #00FF00
+CR - -> CS
+deactivate CR
+
+CS - -> SM
+deactivate CS
+SM - -> AP
+deactivate SM
+deactivate AP
+|||
+|||
+note right of AM
+    Please note that if same connection
+    (source and sink are completely same)
+    has bee created already, Audio Manager
+    does not notify cbNewMainConnection()
+end note
+opt main connection is not existing
+    AM -> CS : cbNewMainConnection
+    activate CS #00FF00
+    CS -> SM : signal("NewMainConnection")
+    activate SM #00FF00
+    CS - -> AM
+    deactivate CS
+    SM -> AP : event [newMainConnection\n              (mainConnectionID)]
+    activate AP #00ff00
+    deactivate SM
+    deactivate AP
+    |||
+    |||
+    AM -> CS : cbMainConnectionStateChange
+    activate CS #00FF00
+    CS -> SM : signal("MainConnectionStateChange")
+    activate SM #00FF00
+    CS - -> AM
+    deactivate CS
+    SM -> AP : event [mainConnectionStateChange\n              (CS_DISCONNECTED)]
+    activate AP #00ff00
+    deactivate SM
+    deactivate AP
+end
+|||
+note right of AM
+    Once connection is requested and
+    created in AudioManager, main
+    connection continuously perform
+    transition caused by policy decision
+end note
+
+loop Lifecycle of a main connection
+    |||
+    alt Transition of sound mode = Connect
+        AM -> AM : Policy_Decision()
+        activate AM #00ff00
+        deactivate AM
+        ||10||
+        ref over AP,AD : Connect Sound Route
+        ||10||
+        ref over AP,AD : Start Sound Streaming
+        ||10||
+    else Disconnect
+        ||10||
+        ref over AP,AD : Stop Sound Streaming
+        ||10||
+        ref over AP,AD : Disconnect Sound Route
+        ||10||
+    else Suspend
+        ||10||
+        ref over AP,AD : Stop Sound Streaming
+        ||10||
+    end
+    |||
+end
+
+AM -> CS : cbMainConnectionState
+activate CS #00FF00
+CS -> SM : signal("MainConnectionState")
+activate SM #00FF00
+CS - -> AM
+deactivate CS
+SM -> AP : event [mainConnectionStateChange]
+activate AP #00ff00
+deactivate SM
+deactivate AP
+|||
+|||
+AM -> CS : cbRemoveMainConnection
+activate CS #00FF00
+CS -> SM : signal("RemoveMainConnection")
+activate SM #00FF00
+CS - -> AM
+deactivate CS
+SM -> AP : event [removemainConnection]
+activate AP #00ff00
+deactivate SM
+deactivate AP
+@enduml
+
+PlantUML version 1.2017.18beta10(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.7.0_25-b15
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

@@ -273,7 +273,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/1-verify-build-host.html">
-                1. Verify Your Build Host
+                Verify Your Build Host
             </a>
             
         
@@ -288,7 +288,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/2-download-packages.html">
-                2. Download Packages
+                Download Packages
             </a>
             
         
@@ -303,7 +303,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/3-installing-binder-daemon.html">
-                3. Installing the Binder Daemon
+                Installing the Binder Daemon
             </a>
             
         
@@ -318,7 +318,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/4-getting-source-files.html">
-                4. Getting Your Source Files
+                Getting Your Source Files
             </a>
             
         
@@ -333,7 +333,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/5-building-and-running-service-natively.html">
-                5. Building and Running Your Service Natively
+                Building and Running Your Service Natively
             </a>
             
         
@@ -1372,7 +1372,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/1-verify-build-host.html">
-        1. Verify Your Build Host
+        Verify Your Build Host
     </a>
 </li>
 
@@ -1381,7 +1381,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/2-download-packages.html">
-        2. Download Packages
+        Download Packages
     </a>
 </li>
 
@@ -1390,7 +1390,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/3-installing-binder-daemon.html">
-        3. Installing the Binder Daemon
+        Installing the Binder Daemon
     </a>
 </li>
 
@@ -1399,7 +1399,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/4-getting-source-files.html">
-        4. Getting Your Source Files
+        Getting Your Source Files
     </a>
 </li>
 
@@ -1408,7 +1408,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/5-building-and-running-service-natively.html">
-        5. Building and Running Your Service Natively
+        Building and Running Your Service Natively
     </a>
 </li>
 
@@ -2105,8 +2105,7 @@ Dependencies are grouped into base, hardware, and feature dependencies.</p>
 
     <ul>
       <li>URI: git://git.yoctoproject.org/poky</li>
-      <li>Branch: “rocko”</li>
-      <li>Tested Revision: TBD</li>
+      <li>Branch: “rocko”<br /><br /></li>
     </ul>
   </li>
   <li>
@@ -2114,36 +2113,34 @@ Dependencies are grouped into base, hardware, and feature dependencies.</p>
 
     <ul>
       <li>URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-agl</li>
-      <li>Branch: “flounder”</li>
+      <li>Branch: “flounder”<br /><br /></li>
     </ul>
   </li>
   <li>
     <p>OpenEmbedded <code class="highlighter-rouge">meta-openembedded</code> Layer:</p>
 
     <ul>
-      <li>Branch: “rocko”</li>
-      <li>Tested Revision: TBD</li>
-    </ul>
+      <li>
+        <p>Branch: “rocko”</p>
 
-    <p>Specifically, out of <code class="highlighter-rouge">meta-openembedded</code>, these sub-layers are used:</p>
+        <p>Specifically, out of <code class="highlighter-rouge">meta-openembedded</code>, these sub-layers are used:</p>
 
-    <ul>
-      <li><code class="highlighter-rouge">meta-oe</code></li>
-      <li><code class="highlighter-rouge">meta-multimedia</code></li>
-      <li><code class="highlighter-rouge">meta-efl</code></li>
-      <li><code class="highlighter-rouge">meta-networking</code></li>
-      <li><code class="highlighter-rouge">meta-python</code></li>
-      <li><code class="highlighter-rouge">meta-ruby</code></li>
+        <ul>
+          <li><code class="highlighter-rouge">meta-oe</code></li>
+          <li><code class="highlighter-rouge">meta-multimedia</code></li>
+          <li><code class="highlighter-rouge">meta-networking</code></li>
+          <li><code class="highlighter-rouge">meta-python</code><br /><br /></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>
-    <p>Yocto Project <code class="highlighter-rouge">meta-qt5</code> Layer from the 
+    <p>Yocto Project <code class="highlighter-rouge">meta-qt5</code> Layer from the
 <a href="https://layers.openembedded.org/layerindex/branch/master/layers/">OpenEmbedded Layer Index</a>:</p>
 
     <ul>
       <li>URI: https://github.com/meta-qt5/meta-qt5.git</li>
       <li>Branch:   “rocko”</li>
-      <li>Tested Revision: TBD</li>
     </ul>
   </li>
 </ul>
@@ -2151,7 +2148,7 @@ Dependencies are grouped into base, hardware, and feature dependencies.</p>
 <h3 id="hardware-dependencies">Hardware Dependencies</h3>
 
 <p>Aside from the previously listed base dependencies, if you are using a
-<a href="../../../../getting_started/en/dev/reference/machines/renesas.html">supported Renesas board</a>
+<a href="../getting_started/reference/getting-started/machines/renesas.html">supported Renesas board</a>
 supported Renesas board, these dependencies exist:</p>
 
 <ul>
@@ -2160,23 +2157,15 @@ supported Renesas board, these dependencies exist:</p>
 
     <ul>
       <li>URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-renesas</li>
-      <li>Branch: “agl-1.0-bsp-1.8.0”</li>
-      <li>Tested Revision: 82611ccadef36ab0b8a6fd6fb1cf055e115f1ef5 (or later)</li>
     </ul>
   </li>
 </ul>
 
 <h3 id="feature-dependencies">Feature Dependencies</h3>
 
-<p><strong>The <code class="highlighter-rouge">agl-appfw-smack</code> Feature:</strong></p>
-
-<!--
-* Yocto Project `meta-intel-iot-security` Layer from the OpenEmbedded Layer Index:
-
-  - URI: https://github.com/01org/meta-intel-iot-security
-  - Branch: "rocko"
-  - Tested Revision: TBD
--->
+<p>The <code class="highlighter-rouge">meta-agl-demo</code> layer has the following AGL
+<a href="../getting_started/reference/getting-started/image-workflow-initialize-build-environment.html#agl-features">feature</a>
+dependencies:</p>
 
 <ul>
   <li>
@@ -2184,16 +2173,15 @@ supported Renesas board, these dependencies exist:</p>
 
     <ul>
       <li>URI: https://git.yoctoproject.org/cgit/cgit.cgi/meta-security</li>
-      <li>Branch: “rocko”</li>
-      <li>Tested Revision: TBD</li>
+      <li>Branch: “rocko”<br /><br /></li>
     </ul>
   </li>
   <li>
-    <p>AGL’s <code class="highlighter-rouge">meta-app-framework</code> Layer Within the <code class="highlighter-rouge">meta-agl-extra</code> Layer:</p>
+    <p>AGL’s <code class="highlighter-rouge">meta-app-framework</code> Layer Within the <code class="highlighter-rouge">meta-agl</code> Layer:</p>
 
     <ul>
-      <li>URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl-extra.git</li>
-      <li>Branch: “master”</li>
+      <li>URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git</li>
+      <li>Branch: “flounder”</li>
     </ul>
   </li>
 </ul>
@@ -2206,7 +2194,7 @@ supported Renesas board, these dependencies exist:</p>
 
     <ul>
       <li>URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl-extra.git</li>
-      <li>Branch: “master”</li>
+      <li>Branch: “flounder”<br /><br /></li>
     </ul>
   </li>
   <li>
@@ -2214,27 +2202,12 @@ supported Renesas board, these dependencies exist:</p>
 
     <ul>
       <li>URI: https://github.com/openembedded/meta-openembedded</li>
-      <li>Branch: “rocko”</li>
       <li>
-        <p>Tested Version: TBD</p>
+        <p>Branch: “rocko”</p>
 
-        <p>In particular, the <code class="highlighter-rouge">meta-openembedded</code> layer depends on the following
-sub-layers:</p>
-
-        <ul>
-          <li><code class="highlighter-rouge">meta-filesystems</code></li>
-          <li><code class="highlighter-rouge">meta-ruby</code></li>
-        </ul>
+        <p>In particular, the <code class="highlighter-rouge">meta-openembedded</code> layer depends on the
+<code class="highlighter-rouge">meta-filesystems</code> sub-layer.</p>
       </li>
-    </ul>
-  </li>
-  <li>
-    <p>OpenEmbedded’s <code class="highlighter-rouge">meta-rust</code> Layer:</p>
-
-    <ul>
-      <li>URI: https://github.com/meta-rust/meta-rust</li>
-      <li>Branch: “rocko”</li>
-      <li>Tested Revision: TBE</li>
     </ul>
   </li>
 </ul>
@@ -2247,7 +2220,7 @@ sub-layers:</p>
 
     <ul>
       <li>URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git</li>
-      <li>Branch: “master”</li>
+      <li>Branch: “flounder”</li>
     </ul>
   </li>
 </ul>
@@ -2274,7 +2247,6 @@ only <code class="highlighter-rouge">packagegroup-agl-demo-platform</code> and t
 <ul>
   <li><code class="highlighter-rouge">packagegroup-agl-image-minimal</code></li>
   <li><code class="highlighter-rouge">packagegroup-agl-image-ivi</code></li>
-  <li><code class="highlighter-rouge">packagegroup-ivi-common-core</code></li>
   <li><code class="highlighter-rouge">packagegroup-agl-demo-platform</code></li>
 </ul>
 
@@ -2378,7 +2350,7 @@ to the layer’s <code class="highlighter-rouge">local.conf</code> file only whe
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-05-23 04:36:49 +0000</small>
+		<small class="stats">Page rendered at:  2019-06-19 05:21:35 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-agl-demo/plain/docs/../meta-agl-demo.md?h=flounder">Link to source document</small>
 		

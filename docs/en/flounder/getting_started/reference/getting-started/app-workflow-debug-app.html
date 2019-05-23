@@ -1065,37 +1065,45 @@ Or, is it better for you to use a remote user interface that is part of
 an Integrated Development Environment (IDE) such as Eclipse?</p>
 
 <p>For general information on debugging an application, see the
-“<a href="../../../devguides/reference/xds/part-1/5_debug-first-app.html">Debug your first AGL application</a>”
-section.</p>
+“<a href="../../../devguides/reference/xds/part-1/debug-overview.html">Overview</a>”
+topic under “Debugging Your First AGL Application”.</p>
 
-<p>Here are three methods:</p>
+<p>Three methods exist:</p>
 
 <ul>
   <li>
     <p>Use <code class="highlighter-rouge">gdb</code> on the target.</p>
 
-    <p><strong>NOTE:</strong> How to use <code class="highlighter-rouge">gdb</code> and other debugging tools such as <code class="highlighter-rouge">valgrind</code>, <code class="highlighter-rouge">strace</code>,
+    <!--section-note-->
+    <p><strong>NOTE:</strong></p>
+
+    <p>How to use <code class="highlighter-rouge">gdb</code> and other debugging tools such as <code class="highlighter-rouge">valgrind</code>, <code class="highlighter-rouge">strace</code>,
 and so forth is beyond the scope of the AGL Documentation.
-See the appropriate documentation for third-party debugging tools.</p>
+See the appropriate documentation for third-party debugging tools.
+<!--end-section-note--></p>
   </li>
   <li>
     <p>Use Core Dumps if you have set the <code class="highlighter-rouge">agl-devel</code> feature.
 Core Dumps are obviously more suited for post-mortem analysis.
 For features, see the
 “<a href="./image-workflow-initialize-build-environment.html#initializing-your-build-environment">Initializing Your Build Environment</a>”
-section.</p>
+topic.</p>
 
-    <p><strong>NOTE:</strong> Core Dumps are available only with the “Flunky Flounder” release (i.e. 6.x).</p>
+    <!--section-note-->
+    <p><strong>NOTE:</strong></p>
+
+    <p>Core Dumps are available only with the “Flunky Flounder” release (i.e. 6.x).
+<!--end-section-note--></p>
   </li>
   <li>
     <p>Use XDS remotely, which is based on <code class="highlighter-rouge">gdb</code> and
 <a href="https://en.wikipedia.org/wiki/Gdbserver"><code class="highlighter-rouge">gdbserver</code></a>.
 See the
-“<a href="../../../devguides/reference/xds/part-1/5-2_debug-first-app-cmd.html#xds-remote-debugging-mode">XDS remote debugging mode</a>”
-section for more information.</p>
+“<a href="../../../devguides/reference/xds/part-1/debug-cmd-line.html#xds-remote-debugging-mode">Using the XDS Command Line</a>”
+topic for more information.</p>
 
     <p>For information on how to remotely debug the application using XDS from within an IDE, see the
-“<a href="../../../devguides/reference/xds/part-1/5-3_debug-first-app-ide.html">Debug using <code class="highlighter-rouge">xds-gdb</code> within an IDE</a>”
+“<a href="../../../devguides/reference/xds/part-1/debug-ide.html">Using an IDE</a>”
 section.</p>
   </li>
 </ul>
@@ -1185,7 +1193,7 @@ section.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-05-23 04:36:34 +0000</small>
+		<small class="stats">Page rendered at:  2019-06-19 05:21:22 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/flounder/docs/getting-started/app-workflow-debug-app.md">Link to source document</small>
 		

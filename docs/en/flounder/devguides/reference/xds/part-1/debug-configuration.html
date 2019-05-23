@@ -271,7 +271,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/1-verify-build-host.html">
-                1. Verify Your Build Host
+                Verify Your Build Host
             </a>
             
         
@@ -286,7 +286,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/2-download-packages.html">
-                2. Download Packages
+                Download Packages
             </a>
             
         
@@ -301,7 +301,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/3-installing-binder-daemon.html">
-                3. Installing the Binder Daemon
+                Installing the Binder Daemon
             </a>
             
         
@@ -316,7 +316,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/4-getting-source-files.html">
-                4. Getting Your Source Files
+                Getting Your Source Files
             </a>
             
         
@@ -331,7 +331,7 @@
     <li>
         
             <a class="" href="/docs/en/flounder/devguides/reference/5-building-and-running-service-natively.html">
-                5. Building and Running Your Service Natively
+                Building and Running Your Service Natively
             </a>
             
         
@@ -1372,7 +1372,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/1-verify-build-host.html">
-        1. Verify Your Build Host
+        Verify Your Build Host
     </a>
 </li>
 
@@ -1381,7 +1381,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/2-download-packages.html">
-        2. Download Packages
+        Download Packages
     </a>
 </li>
 
@@ -1390,7 +1390,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/3-installing-binder-daemon.html">
-        3. Installing the Binder Daemon
+        Installing the Binder Daemon
     </a>
 </li>
 
@@ -1399,7 +1399,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/4-getting-source-files.html">
-        4. Getting Your Source Files
+        Getting Your Source Files
     </a>
 </li>
 
@@ -1408,7 +1408,7 @@
 
 <li>
     <a class="" href="/docs/en/flounder/devguides/reference/5-building-and-running-service-natively.html">
-        5. Building and Running Your Service Natively
+        Building and Running Your Service Natively
     </a>
 </li>
 
@@ -2084,36 +2084,112 @@
 
 <h1 id="configuration">Configuration</h1>
 
-<p><code class="highlighter-rouge">xds-gdb</code> configuration is defined by variables (see listed below).
- These variables may be set using :</p>
+<p>Debug configuration (i.e. <code class="highlighter-rouge">xds-gdb</code>) is defined by variables.
+You can see the variables used further down in this section.</p>
+
+<p>You can set these variables using a number of methods:</p>
 
 <ul>
-  <li>environment variables (inherited),</li>
-  <li>or a config file set with <code class="highlighter-rouge">XDS_CONFIG</code> environment variable, for example:
-<code class="highlighter-rouge">XDS_CONFIG=/tmp/my_xds_gdb_config.env xds-gdb</code></li>
-  <li>or by setting variables within a gdb ini file (see details below),</li>
-  <li>or a “user” config file located in following directory (first found is taken):
+  <li>
+    <p>Environment variables that are inherited.</p>
+  </li>
+  <li>
+    <p>Configuration file pointed to by the <code class="highlighter-rouge">XDS_CONFIG</code> environment variable
+(e.g. <code class="highlighter-rouge">XDS_CONFIG=/tmp/my_xds_gdb_config.env xds-gdb</code>).</p>
+  </li>
+  <li>
+    <p>A GDB “init” command file.</p>
+  </li>
+  <li>
+    <p>A “user” configuration file located in one of the following
+areas, which are order-dependent:</p>
+
     <ol>
-      <li>$(CURRENT_DIRECTORY)/.xds-gdb.env</li>
-      <li>$(CURRENT_DIRECTORY)/../xds-gdb.env</li>
-      <li>$(CURRENT_DIRECTORY)/target/xds-gdb.env</li>
-      <li>$(HOME)/.config/xds/xds-gdb.env</li>
+      <li>
+        <p><code class="highlighter-rouge">$(CURRENT_DIRECTORY)/.xds-gdb.env</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">$(CURRENT_DIRECTORY)/../xds-gdb.env</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">$(CURRENT_DIRECTORY)/target/xds-gdb.env</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">$(HOME)/.config/xds/xds-gdb.env</code></p>
+      </li>
     </ol>
   </li>
 </ul>
 
 <h2 id="configuration-variables">Configuration Variables</h2>
 
-<p><code class="highlighter-rouge">XDS_CONFIG</code> Config file defining <code class="highlighter-rouge">XDS_xxx</code> configuration variables.</p>
+<p>This section describes the <code class="highlighter-rouge">XDS_*</code> configuration variables.
+As previously mentioned, you can define these variables as
+described in the previous section.</p>
 
-<p>Variables of this file will overwrite inherited environment variables.</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">XDS_LOGLEVEL</code></p>
 
-<p>Variables definition may be  prefixed or not by “export” keyword.</p>
+    <p>Sets the logging level.
+Levels include “panic”, “fatal”, “error”, “warn”, “info”, and “debug”.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">XDS_LOGFILE</code></p>
 
-<p>Here is an example of configuration file:</p>
+    <p>Sets the logging file.
+The default is <code class="highlighter-rouge">/tmp/xds-gdb.log</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">XDS_NATIVE_GDB</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># for example:</span>
-<span class="c"># MY_PROJECT_DIR=/home/seb/xds-workspace/helloworld-native-application</span>
+    <p>Specifies to use native GDB mode rather than remote XDS mode.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">XDS_PROJECT_ID</code>  <em>(mandatory in XDS mode)</em></p>
+
+    <p>The project ID you want to build.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">XDS_RPATH</code></p>
+
+    <p>The relative path to the project.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">XDS_SDK_ID</code>   <em>(mandatory in XDS mode)</em></p>
+
+    <p>Cross SDK ID to use to build project</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">XDS_AGENT_URL</code></p>
+
+    <p>The local XDS agent URL.
+The default is <code class="highlighter-rouge">http://localhost:8800</code>.</p>
+  </li>
+</ul>
+
+<h2 id="configuration-using-xdsconfig">Configuration Using <code class="highlighter-rouge">XDS_CONFIG</code></h2>
+
+<p>As mentioned, you can define configuration variables in
+a file you point to with the <code class="highlighter-rouge">XDS_CONFIG</code> variable.
+Here is an example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nv">XDS_CONFIG</span><span class="o">=</span>/tmp/my_xds_gdb_config.env xds-gdb
+</code></pre>
+</div>
+
+<p>Variables defined in this file overwrite any inherited
+environment variables.
+When you define a variable in the file, you can prefix the
+assignment with the “export” string.
+Doing so causes the variable to be exported to the environment.</p>
+
+<p>Following is an example of a configuration file pointed
+to by the <code class="highlighter-rouge">XDS_CONFIG</code> variable.
+These commands create the <code class="highlighter-rouge">xds-gen3.conf</code> configuration file
+in the <code class="highlighter-rouge">$MY_PROJECT_DIR</code> directory:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># MY_PROJECT_DIR=/home/seb/xds-workspace/helloworld-native-application</span>
 cat &gt; <span class="nv">$MY_PROJECT_DIR</span>/xds-gen3.conf <span class="sh">&lt;&lt; EOF
 export XDS_AGENT_URL=localhost:8800
 export XDS_PROJECT_ID=4021617e-ced0-11e7-acd2-3c970e49ad9b
@@ -2122,42 +2198,34 @@ EOF
 </span></code></pre>
 </div>
 
-<p><code class="highlighter-rouge">XDS_LOGLEVEL</code></p>
+<h2 id="configuration-using-gdb-init">Configuration Using GDB Init</h2>
 
-<p>Set logging level (supported levels: panic, fatal, error, warn, info, debug)</p>
+<p>GDB is a versatile debugger and can be run with many options.
+One such option is to execute a GDB “init” file upon startup.
+You do this by using the “–command” or “-x” command-line options
+and providing the name of the init file.</p>
 
-<p><code class="highlighter-rouge">XDS_LOGFILE</code></p>
+<!-- section-note -->
+<p><strong>NOTES:</strong></p>
 
-<p>Set logging file, default <code class="highlighter-rouge">/tmp/xds-gdb.log</code>.</p>
+<ul>
+  <li>
+    <p>For information on debugging with GDB, see
+“<a href="https://www.sourceware.org/gdb/onlinedocs/gdb.html">Debugging with GDB</a>”.</p>
+  </li>
+  <li>
+    <p>For information on GDB init files, see
+“<a href="https://ftp.gnu.org/old-gnu/Manuals/gdb-5.1.1/html_node/gdb_190.html">Command files</a>”.
+<!-- end-section-note --></p>
+  </li>
+</ul>
 
-<p><code class="highlighter-rouge">XDS_NATIVE_GDB</code></p>
+<p>When you create an init file, it must conform to the following
+syntax (i.e. inclusion of what are normally commenting characters
+as well as use of the <code class="highlighter-rouge">:XDS-ENV:</code> tag).</p>
 
-<p>Use native gdb mode instead of remote XDS mode.</p>
-
-<p><code class="highlighter-rouge">XDS_PROJECT_ID</code>  <em>(mandatory in XDS mode)</em></p>
-
-<p>Project ID you want to build</p>
-
-<p><code class="highlighter-rouge">XDS_RPATH</code></p>
-
-<p>Relative path into project</p>
-
-<p><code class="highlighter-rouge">XDS_SDK_ID</code>   <em>(mandatory in XDS mode)</em></p>
-
-<p>Cross Sdk ID to use to build project</p>
-
-<p><code class="highlighter-rouge">XDS_AGENT_URL</code></p>
-
-<p>Local XDS agent url (default <code class="highlighter-rouge">http://localhost:8800</code>)</p>
-
-<h2 id="configuration-variables-set-within-gdb-init-command-file">Configuration variables set within gdb init command file</h2>
-
-<p>Above <code class="highlighter-rouge">XDS_xxx</code> variables may also be defined within gdb init command file
-(see –command or -x option of genuine Gdb).</p>
-
-<p>You must respect the following syntax: commented line including <code class="highlighter-rouge">:XDS-ENV:</code> tag</p>
-
-<p>Example of gdb init file where we define project and sdk ID:</p>
+<p>Following is an example init file that defines the <code class="highlighter-rouge">XDS_PROJECT_ID</code>
+and <code class="highlighter-rouge">XDS_SDK_ID</code> variables:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>     <span class="c"># :XDS-ENV: XDS_PROJECT_ID=4021617e-ced0-11e7-acd2-3c970e49ad9b</span>
      <span class="c"># :XDS-ENV: XDS_SDK_ID=c226821b-b5c0-386d-94fe-19f807946d03</span>
@@ -2243,7 +2311,7 @@ EOF
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-05-23 04:36:39 +0000</small>
+		<small class="stats">Page rendered at:  2019-06-19 05:21:26 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/debug-configuration.md?h=flounder">Link to source document</small>
 		

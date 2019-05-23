@@ -1615,6 +1615,21 @@
 
     <li>
         
+            <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+                Home Screen Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
             <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
                 Window Manager Developper Guide
             </a>
@@ -1662,21 +1677,6 @@
         
             <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/Display_Audio_Transition2.html">
                 Sound Manager Developper Guide 3
-            </a>
-            
-        
-
-        
-        
-
-        
-    </li>
-    
-
-    <li>
-        
-            <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
-                Home Screen Developper Guide
             </a>
             
         
@@ -2534,6 +2534,15 @@
 
 
 <li>
+    <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
     <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
         Window Manager Developper Guide
     </a>
@@ -2563,15 +2572,6 @@
 <li>
     <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/Display_Audio_Transition2.html">
         Sound Manager Developper Guide 3
-    </a>
-</li>
-
-
-
-
-<li>
-    <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
-        Home Screen Developper Guide
     </a>
 </li>
 
@@ -2764,7 +2764,8 @@
 
 <p>Configuration defines all in <strong>Signal composer</strong> each signals and sources has
 to be defined in it. At start, configuration will be searched in default
-binding configuration directory which should be <em>/var/lib/afm/applications/signal-composer/1.0/etc/</em>.
+binding configuration directory which should be <em>/var/local/lib/afm/applications/signal-composer/VER/etc/</em>,
+VER is the version of <strong>signal composer</strong>.
 Binding search for a file name as <em>init-daemon*.json</em>. Others files could be
 used to split sections and don’t have 1 big fat definitions file.</p>
 
@@ -2773,7 +2774,7 @@ used to split sections and don’t have 1 big fat definitions file.</p>
 <ul>
   <li><strong>metadata</strong>: Main parts and the only one that can’t be in a separates
  configuration. This must appears in the main configuration file.</li>
-  <li><strong>plugins</strong> (optionnal): Declare plugins that will be used by <em>sources</em> and
+  <li><strong>plugins</strong> (optional): Declare plugins that will be used by <em>sources</em> and
  <em>signals</em> for the subscription and composition.</li>
   <li><strong>sources</strong>: Declare <strong>low level</strong> signals sources (eg. low-can, gps, mraa,
  …).</li>
@@ -2787,21 +2788,21 @@ are :</p>
 
 <ul>
   <li><strong>uid</strong>: self-explanatory</li>
-  <li><strong>version</strong> (optionnal): self-explanatory</li>
-  <li><strong>api</strong> (optionnal): name that the binding will be initialized to and later
+  <li><strong>version</strong> (optional): self-explanatory</li>
+  <li><strong>api</strong> (optional): name that the binding will be initialized to and later
  be accessible by <strong>Application Framework</strong></li>
-  <li><strong>info</strong> (optionnal): self-explanatory</li>
-  <li><strong>require</strong> (optionnal): list of required external apis.</li>
+  <li><strong>info</strong> (optional): self-explanatory</li>
+  <li><strong>require</strong> (optional): list of required external apis.</li>
 </ul>
 
 <h2 id="plugins">Plugins</h2>
 
-<p>This section is the only which is optionnal, it is needed if you develop
+<p>This section is the only which is optional, it is needed if you develop
 specifics C/C++ plugins to be used with signal-composer. LUA and API
 consumption does not need plugins.</p>
 
 <p>Default path to search for a plugin is in the binding library directory
-in a subdirectory <em>plugins</em> <em>/var/lib/afm/applications/signal-composer/1.0/lib/plugins</em>.
+in a subdirectory <em>plugins</em> <em>/var/local/lib/afm/applications/signal-composer/VER/lib/plugins</em>.
 Else you could use the environment variable <em>CONTROL_PLUGIN_PATH</em> with a
 semicolon separated list of directory.</p>
 
@@ -2810,10 +2811,10 @@ semicolon separated list of directory.</p>
 <ul>
   <li><strong>uid</strong>: Define the plugin name. This is that label that will be used on
  <strong>sources</strong> and <strong>signals</strong> callbacks.</li>
-  <li><strong>ldpath</strong> (optionnal): path to the plugin directory</li>
-  <li><strong>info</strong> (optionnal): self-explanatory</li>
+  <li><strong>ldpath</strong> (optional): path to the plugin directory</li>
+  <li><strong>info</strong> (optional): self-explanatory</li>
   <li><strong>basename</strong>: shared library file name <strong>without</strong> the extension.</li>
-  <li><strong>files</strong> (optionnal): list of additionnals files. <strong>ONLY NAME</strong> or part of
+  <li><strong>files</strong> (optional): list of additionnals files. <strong>ONLY NAME</strong> or part of
  it, without extension. Don’t mix up section object with this key, either one
  or the other but avoid using both</li>
 </ul>
@@ -2829,14 +2830,14 @@ thinning,… and create new virtuals signals composed with basic raw signals.</p
 <ul>
   <li><strong>uid</strong>: An unique identifier name for thatuid source API.</li>
   <li><strong>api</strong>: Name of the source API.</li>
-  <li><strong>info</strong> (optionnal): self-explanatory</li>
-  <li><strong>init</strong> (optionnal): an <strong>action</strong> to take to initialize a source. May you
+  <li><strong>info</strong> (optional): self-explanatory</li>
+  <li><strong>init</strong> (optional): an <strong>action</strong> to take to initialize a source. May you
  have  to call a verb from that API, of create a files etc.</li>
-  <li><strong>getSignals</strong> (optionnal); an <strong>action</strong> to take to get signals from that
+  <li><strong>getSignals</strong> (optional); an <strong>action</strong> to take to get signals from that
  source. These callback will be used for each signals defined later in the
  <strong>signals</strong> section. Dedicated arguments for each signal could be defined in
  <strong>signals</strong>.</li>
-  <li><strong>files</strong> (optionnal): list of additionnals files. <strong>ONLY NAME</strong> or part of
+  <li><strong>files</strong> (optional): list of additionnals files. <strong>ONLY NAME</strong> or part of
  it, without extension. Don’t mix up section object with this key, either one
  or the other but avoid using both</li>
 </ul>
@@ -2855,9 +2856,9 @@ thinning,… and create new virtuals signals composed with basic raw signals.</p
   <li><strong>depends</strong>: specify others signals <strong>id</strong> that compose it (eg: heading is
  composed with longitude+latitude signals.). Couldn’t be used with <strong>event</strong>
  field at same time.</li>
-  <li><strong>retention</strong> (optionnal): retention duration in seconds</li>
-  <li><strong>unit</strong> (optionnal): Unit used to exprime the signal</li>
-  <li><strong>frequency</strong> (optionnal): Frequency maximum at which the signal could be
+  <li><strong>retention</strong> (optional): retention duration in seconds</li>
+  <li><strong>unit</strong> (optional): Unit used to exprime the signal</li>
+  <li><strong>frequency</strong> (optional): Frequency maximum at which the signal could be
  requested or sent. This is a thinning made at <strong>high level</strong> so not best
  suited for performance. Used <strong>low level</strong> native filtering capabilities when
  possible.</li>
@@ -2865,7 +2866,7 @@ thinning,… and create new virtuals signals composed with basic raw signals.</p
  filtering capabilities at subscription and to be able to customize in general
  a subcription request by signal if needed.</li>
   <li><strong>onReceived</strong>: an <strong>action</strong> to take when this signal is received!</li>
-  <li><strong>files</strong> (optionnal): list of additionnals files. <strong>ONLY NAME</strong> or part of
+  <li><strong>files</strong> (optional): list of additionnals files. <strong>ONLY NAME</strong> or part of
  it, without extension. Don’t mix up section object with this key, either one
  or the other but avoid using both</li>
 </ul>
@@ -2949,7 +2950,7 @@ thinning,… and create new virtuals signals composed with basic raw signals.</p
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-05-23 04:36:11 +0000</small>
+		<small class="stats">Page rendered at:  2019-06-19 05:21:00 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-signal-composer/plain/docs/part-1/2-Configuration.md?h=master">Link to source document</small>
 		
