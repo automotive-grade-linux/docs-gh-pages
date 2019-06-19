@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -346,7 +348,7 @@
     <li>
         
             <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-                Build for Raspberry PI 2/3
+                Build for Raspberry PI 3/4
             </a>
             
         
@@ -743,7 +745,7 @@
 
 <li>
     <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-        Build for Raspberry PI 2/3
+        Build for Raspberry PI 3/4
     </a>
 </li>
 
@@ -984,6 +986,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/getting_started/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/getting_started/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/getting_started/" class="missing-page">
                                     
                                         
@@ -1073,8 +1121,26 @@ You can explore that hierarchy and locate images based on the AGL release and th
 QEMU is a generic, open source machine emulator and virtualizer.
 You can use QEMU as your “hardware” when you run an image built for
 the emulator.
-AGL supports QEMU images for 32 and 64-bit architectures for ARM and Intel
+AGL supports QEMU images for ARM 32/64bit and Intel 64bit
 devices.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.elinux.org/R-Car/Boards/M3SK , https://www.elinux.org/R-Car/Boards/H3SK">R-Car Gen3 Ultra Low-Cost Board</a>:</strong>
+The M3ULCB/H3ULCB is a Renesas R-Car Gen3 SOC development board.
+Depending on the SOC specialization, Renesas provides several classes
+of these boards.
+The “M” classification is for the “middle-end” version as compared to the
+“H” classification, which is a “high-end” version.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.raspberrypi.org/products/">Raspberry Pi 4</a>:</strong>
+The Raspberry Pi 4 uses a 64-bit quad-core processor.
+The board features dual-band wireless LAN, Bluetooth 4.2/BLE,
+faster Ethernet, and Power-over-Ethernet support with separate PoE HAT.</p>
+  </li>
+  <li>
+    <p><strong>[x86-64]:</strong>
+Any x86-64 hardware is supported. We recommend e.g. the Up² board.</p>
   </li>
   <li>
     <p><strong><a href="http://www.ti.com/tool/J6EVM5777">DRA7xx Evaluation Module Platform</a>:</strong>
@@ -1082,36 +1148,6 @@ Texas Instruments Jacinto™ DRA7xx evaluation module platform helps speed up
 development efforts and reduces time-to-market for applications
 such as infotainment, reconfigurable digital cluster, or integrated digital
 cockpit.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://developer.qualcomm.com/hardware/dragonboard-410c">DragonBoard 410C Development Board</a>:</strong>
-QualComm’s DragonBoard™ 410c is its first development board based
-on a Qualcomm® Snapdragon™ 400 series processor.
-The credit-card sized board has advanced processing power, Wi-Fi, Bluetooth
-connectivity, and GPS.
-The board is based on the 64-bit Snapdragon 410E processor,</p>
-  </li>
-  <li>
-    <p><strong><a href="https://www.intel.com/content/www/us/en/nuc/nuc-kit-nuc7i7bnh-brief.html?wapkw=core+i7+boards">Intel Core i7 Boards</a>:</strong>
-Intel offers a wide array of devices and boards.
-One such device that uses the Intel Core i7 board supported by AGL
-is the Intel® NUC Kit NUC7i7BNH.
-The board in this device uses a dual-core 7th Generation Intel Core i7
-processor and Intel Turbo Boost Technology 2.0.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://www.elinux.org/R-Car/Boards/M3SK">M3 Ultra Low-Cost Board</a>:</strong>
-The MC3ULC is a Renesas R-Car Gen3 SOC development board.
-Depending on the SOC specialization, Renesas provides several classes
-of these boards.
-The “M” classification is for the “middle-end” version as compared to the
-“H” classification, which is a “high-end” version.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://www.raspberrypi.org/products/">Raspberry Pi 3</a>:</strong>
-The Raspberry Pi 3 uses a 1.4GHz 64-bit quad-core processor.
-The board features dual-band wireless LAN, Bluetooth 4.2/BLE,
-faster Ethernet, and Power-over-Ethernet support with separate PoE HAT.</p>
   </li>
 </ul>
 
@@ -1121,15 +1157,15 @@ step, which is described below, and just download your image.</p>
 
 <p>As an example, suppose you want to download the 64-bit ARM-based image
 that you can emulate using QEMU.
-Furthermore, you are using the “Flounder” 6.0.0 AGL release.
 Go to the <a href="https://download.automotivelinux.org/AGL/release/">AGL Download Website</a>
 site and follow these links:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>flounder -&gt; 6.0.0 -&gt; qemuarm64 -&gt; deploy -&gt; images -&gt; qemuarm64
+<div class="highlighter-rouge"><pre class="highlight"><code>icefish -&gt; 9.0.0 -&gt; qemuarm64 -&gt; deploy -&gt; images -&gt; qemuarm64
 </code></pre>
 </div>
 
-<p>From the list, you could download the <code class="highlighter-rouge">Image-qemuarm64.bin</code> image file.</p>
+<p>From the list, you could download the <code class="highlighter-rouge">Image-qemuarm64.bin</code> Kernel and the 
+<code class="highlighter-rouge">agl-demo-platform-crosssdk-qemuarm64.ext4.xz</code>Image file.</p>
 
 <h2 id="building-an-image">Building an image</h2>
 
@@ -1170,7 +1206,7 @@ section for the packages you need to install for your specific
 distribution.</p>
 
         <p><strong>NOTE:</strong> The definitive package requirements are documented in the
-“<a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#required-packages-for-the-host-development-system">Required Packages for the Host Development System</a>”
+“<a href="https://yoctoproject.org/docs/latest/ref-manual/ref-manual.html#required-packages-for-the-host-development-system">Required Packages for the Host Development System</a>”
 section of the Yocto Project Reference Manual.</p>
       </li>
     </ul>
@@ -1241,7 +1277,7 @@ BitBake takes advantage of cached artifacts.</p>
     <p>The build image resides in the deployment area of the build directory.
 For example, Assuming your top-level AGL directory is <code class="highlighter-rouge">~/workspace_agl</code>, you find the image here:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>~/workspace_agl/build/tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk.xz
+    <div class="highlighter-rouge"><pre class="highlight"><code>~/workspace_agl/build/tmp/deploy/images/qemux86-64/
 </code></pre>
     </div>
   </li>
@@ -1318,7 +1354,7 @@ For example, Assuming your top-level AGL directory is <code class="highlighter-r
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -1326,7 +1362,7 @@ For example, Assuming your top-level AGL directory is <code class="highlighter-r
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:22 +0000</small>
+		<small class="stats">Page rendered at:  2020-03-23 04:31:50 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/docs/getting-started/app-workflow-image.md">Link to source document</small>
 		
@@ -1344,19 +1380,19 @@ For example, Assuming your top-level AGL directory is <code class="highlighter-r
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

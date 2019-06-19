@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'guppy' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -348,7 +350,7 @@
     <li>
         
             <a class="" href="/docs/en/guppy/getting_started/reference/getting-started/machines/raspberrypi.html">
-                Build for Raspberry PI 2/3
+                Build for Raspberry PI 3/4
             </a>
             
         
@@ -743,7 +745,7 @@
 
 <li>
     <a class="" href="/docs/en/guppy/getting_started/reference/getting-started/machines/raspberrypi.html">
-        Build for Raspberry PI 2/3
+        Build for Raspberry PI 3/4
     </a>
 </li>
 
@@ -982,6 +984,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/getting_started/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/getting_started/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/getting_started/" class="missing-page">
                                     
                                         <span class="selected">
@@ -1084,11 +1132,6 @@ Renesas development kits.</p>
  Generic guide on how to add a new service in the BSP.
  Goes back to 2015 and uses Yocto 2.x.
  Includes stuff on building an image but looks like the focus is really the service.</li>
-  <li><a href="https://iot.bzh/download/public/2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf">AGL-Kickstart-on-Renesas-Porter-Board.pdf</a>
- Guide on how to build an image for the Porter Board using AGL 2.0.</li>
-  <li><a href="https://iot.bzh/download/public/2016/sdk/AGL-Devkit-Image-and-SDK-for-porter.pdf">AGL-Devkit-Image-and-SDK-for-Porter.pdf</a>
- Guide on building an AGL image and SDK for the Porter board.
- Uses Yocto 2.x.</li>
 </ul>
 
 <h2 id="downloading-proprietary-drivers">1. Downloading Proprietary Drivers</h2>
@@ -1112,21 +1155,82 @@ This download site supports the Pro and Premier board starter kits.</p>
 
     <p><code class="highlighter-rouge">bash
   grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
-  3:ZIP_1="R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip"
-  4:ZIP_2="R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip"
  </code></p>
 
-    <p>The script’s output identifies the files you need to download from the page and the example above correspond to the Electric Eel AGL revision (v5.0.0). Note that since Flounder AGL revision (v6.0.0), both zip have been renamed.</p>
+    <p>The script’s output identifies the files you need to download from the page.</p>
   </li>
   <li>
-    <p><strong>Find the Download Links:</strong></p>
+    <p><strong>Get Your Board Support Package (BSP) Version:</strong></p>
 
-    <p>Find the appropriate download links on the
+    <p>Be sure to have the correct BSP version of the R-Car Starter Kit
+based on the version of the AGL software you are using.
+Use the following table to map the Renesas version to your AGL software:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">AGL Version</th>
+          <th style="text-align: center">Renesas version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">AGL master</td>
+          <td style="text-align: center">3.21.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL icefish 9.0.0</td>
+          <td style="text-align: center">3.21.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL halibut 8.0.2 8.0.3 8.0.4 8.0.5</td>
+          <td style="text-align: center">3.21.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL halibut 8.0.1</td>
+          <td style="text-align: center">3.19.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL halibut 8.0.0</td>
+          <td style="text-align: center">3.15.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL guppy 7.0.4</td>
+          <td style="text-align: center">3.21.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL guppy 7.0.3</td>
+          <td style="text-align: center">3.19.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL guppy 7.0.0 7.0.1 7.0.2</td>
+          <td style="text-align: center">3.9.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL flounder 6.0.3, 6.0.4 6.0.5</td>
+          <td style="text-align: center">3.9.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL flounder 6.0.0, 6.0.1, 6.0.2</td>
+          <td style="text-align: center">3.7.0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL eel 5.0.x, 5.1.0</td>
+          <td style="text-align: center">2.23.1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">AGL dab 4.0.x</td>
+          <td style="text-align: center">2.19.0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>NOTE:</strong>
+Find the appropriate download links on the
 <a href="https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html">R-Car H3/M3 Software library and Technical document</a>
 site.
 The file pairs are grouped according to the Yocto Project version you are
-using with the AGL software.
-The Flounder release of AGL uses the 2.4 version of the Yocto Project (i.e. “Rocko”).</p>
+using with the AGL software.</p>
   </li>
   <li>
     <p><strong>Download the Files:</strong></p>
@@ -1174,8 +1278,8 @@ they have the correct access rights.
 Here is an example:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls -l <span class="nv">$XDG_DOWNLOAD_DIR</span>/<span class="k">*</span>.zip
--rw-rw-r-- 1 scottrif scottrif 4662080 Nov 19 14:48 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
--rw-rw-r-- 1 scottrif scottrif 3137626 Nov 19 14:49 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+-rw-r--r-- 1 iot bzh 5359864 sept. 16 21:07 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20190722.zip
+-rw-r--r-- 1 iot bzh 3441284 sept. 16 21:07 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20190722.zip
 </code></pre>
     </div>
   </li>
@@ -1192,52 +1296,6 @@ Here is an example:</p>
 repository.
 The site has pre-built packages (DEB or RPM) for the supported host
 operating systems.</p>
-  </li>
-  <li>
-    <p><strong>Get Your Board Support Package (BSP) Version:</strong></p>
-
-    <p>Be sure to have the correct BSP version of the R-Car Starter Kit
-based on the version of the AGL software you are using.
-Use the following table to map the Renesas version to your AGL software:</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center">AGL Version</th>
-          <th style="text-align: center">Renesas version</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">AGL master</td>
-          <td style="text-align: center">3.15.0</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">AGL 7.0.0</td>
-          <td style="text-align: center">3.9.0</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">AGL 6.0.3, 6.0.4</td>
-          <td style="text-align: center">3.9.0</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">AGL 6.0.0, 6.0.1, 6.0.2</td>
-          <td style="text-align: center">3.7.0</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">AGL 5.0.x, 5.1.0</td>
-          <td style="text-align: center">2.23.1</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">AGL 4.0.x</td>
-          <td style="text-align: center">2.19.0</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p><strong>NOTE:</strong>
-I don’t know how the user uses this information.
-I need more information.</p>
   </li>
 </ol>
 
@@ -1341,60 +1399,66 @@ section.</p>
 the <code class="highlighter-rouge">build/conf</code> folder.
 You can examine this log to see the results of the script.
 For example, suppose the graphics drivers were missing or could not be extracted
-when you ran the script.
-In case of missing graphics drivers, you could notice an error message
-similar to the following:</p>
+when you ran the script.</p>
+  </li>
+</ol>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>snip]
+<details>
+  <summary> In case of missing graphics drivers, you could notice an error message
+   similar to the following:</summary>
+  <pre>
+    <code>
+[snip]
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/machine/h3ulcb/50_setup.sh
 /home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
-The graphics and multimedia acceleration packages <span class="k">for
-</span>the R-Car Gen3 board can be downloaded from:
- https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
+The graphics and multimedia acceleration packages for
+the R-Car Gen3 board can be downloaded from:
+https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 
-These 2 files from there should be store <span class="k">in </span>your<span class="s1">'/home/devel/Downloads'</span> directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+These 2 files from there should be store in your'/home/devel/Downloads' directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190802.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190802.zip
 /home/working/workspace_agl_master/build_gen3
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
 OK
 Generating setup file: /home/working/workspace_agl_master/build_gen3/agl-init-build-env ... OK
 ------------ aglsetup.sh: Done
-<span class="o">[</span>snip]
-</code></pre>
-    </div>
+[snip]
+    </code>
+  </pre>
+</details>
 
-    <p>If you encounter this issue, or any other unwanted behavior, you can fix the error
-mentioned, remove the <code class="highlighter-rouge">$AGL_TOP/build</code> directory, and then re-launch the
-<code class="highlighter-rouge">aglsetup.sh</code> again.</p>
+<p>If you encounter this issue, or any other unwanted behavior, you can fix the error
+   mentioned, remove the <code class="highlighter-rouge">$AGL_TOP/build</code> directory, and then re-launch the
+   <code class="highlighter-rouge">aglsetup.sh</code> again.</p>
 
-    <p>Here is another example that indicates the driver files could not be extracted from
-the downloads directory:</p>
+<details>
+  <summary>Here is another example that indicates the driver files could not be extracted from the downloads directory:</summary>
+  <pre>
+    <code>
+[snip]
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>snip]
-
-~/workspace_agl/build/conf <span class="nv">$ </span>cat setup.log
+~/workspace_agl/build/conf $ cat setup.log
 --- beginning of setup script
---- fragment /home/thierry/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
---- fragment /home/thierry/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
+--- fragment /home/iotbzh/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
+--- fragment /home/iotbzh/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
 ~/workspace_agl ~/workspace_agl/build
-ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
-ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
-The graphics and multimedia acceleration packages <span class="k">for
-</span>the R-Car Gen3 board BSP can be downloaded from:
+ERROR: FILES "+/home/iotbzh/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190802.zip+" NOT EXTRACTING CORRECTLY
+ERROR: FILES "+/home/iotbzh/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190802.zip+" NOT EXTRACTING CORRECTLY
+The graphics and multimedia acceleration packages for
+the R-Car Gen3 board BSP can be downloaded from:
 &lt;https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html&gt;
 
-These 2 files from there should be stored <span class="k">in </span>your
-<span class="s1">'/home/thierry/Downloads'</span> directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
-ERROR: Script /home/thierry/workspace_agl/build/conf/setup.sh failed
-<span class="o">[</span>snip]
-</code></pre>
-    </div>
-  </li>
-</ol>
+These 2 files from there should be stored in your
+'/home/iotbzh/Downloads' directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston5-20190802.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston5-20190802.zip
+ERROR: Script /home/iotbzh/workspace_agl/build/conf/setup.sh failed
+[snip]
+    </code>
+  </pre>
+</details>
 
 <h2 id="checking-your-configuration">5. Checking Your Configuration</h2>
 
@@ -1544,36 +1608,46 @@ You can find these files in the following directory:</p>
 
 <h3 id="preparing-the-microsd-card">Preparing the MicroSD Card</h3>
 
-<p>Plug the MicroSD card into your Build Host.
-After plugging in the device, use the <code class="highlighter-rouge">dmesg</code> command as follows to
-discover the device name:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>dmesg | tail -4
-<span class="o">[</span> 1971.462160] sd 6:0:0:0: <span class="o">[</span>sdc] Mode Sense: 03 00 00 00
-<span class="o">[</span> 1971.462277] sd 6:0:0:0: <span class="o">[</span>sdc] No Caching mode page found
-<span class="o">[</span> 1971.462278] sd 6:0:0:0: <span class="o">[</span>sdc] Assuming drive cache: write through
-<span class="o">[</span> 1971.463870]  sdc: sdc1 sdc2
-</code></pre>
-</div>
+<details>
+  <summary>
+    Plug the MicroSD card into your Build Host.
+    After plugging in the device, use the `dmesg` command as follows to
+    discover the device name:
+  </summary>
+  <pre>
+    <code>
+$ dmesg | tail -4
+[ 1971.462160] sd 6:0:0:0: [sdc] Mode Sense: 03 00 00 00
+[ 1971.462277] sd 6:0:0:0: [sdc] No Caching mode page found
+[ 1971.462278] sd 6:0:0:0: [sdc] Assuming drive cache: write through
+[ 1971.463870]  sdc: sdc1 sdc2
+    </code>
+  </pre>
+</details>
 
 <p>In the previous example, the MicroSD card is attached to the device <code class="highlighter-rouge">/dev/sdc</code>.</p>
 
-<p>You can also use the <code class="highlighter-rouge">lsblk</code> command to show all your devices.
-Here is an example that shows the MicroSD card as <code class="highlighter-rouge">/dev/sdc</code>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>lsblk
+<details>
+  <summary>
+    You can also use the `lsblk` command to show all your devices.
+    Here is an example that shows the MicroSD card as `/dev/sdc`:
+  </summary>
+  <pre>
+    <code>
+$ lsblk
   NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
   sda      8:0    0 167,7G  0 disk
   ├─sda1   8:1    0   512M  0 part /boot/efi
   ├─sda2   8:2    0 159,3G  0 part /
-  └─sda3   8:3    0   7,9G  0 part <span class="o">[</span>SWAP]
+  └─sda3   8:3    0   7,9G  0 part [SWAP]
   sdb      8:16   0 931,5G  0 disk
   └─sdb1   8:17   0 931,5G  0 part /media/storage
   sdc      8:32   1  14,9G  0 disk
   ├─sdc1   8:33   1    40M  0 part
   └─sdc2   8:34   1   788M  0 part
-</code></pre>
-</div>
+    </code>
+  </pre>
+</details>
 
 <p><strong>IMPORTANT NOTE:</strong> Before re-writing any device on your Build Host, you need to
 be sure you are actually writing to the removable MicroSD card and not some other
@@ -1681,22 +1755,27 @@ considered the “lightest” solution.</p>
 a USB cable from the host to the serial CP2102 USP port (i.e. Micro USB-A port)
 on the Renesas board.</p>
 
-<p>Once you connect the board, determine the device created for the serial link.
-Use the <code class="highlighter-rouge">dmesg</code> command on your build host.
-Here is an example:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>dmesg | tail 9
-<span class="o">[</span>2097783.287091] usb 2-1.5.3: new full-speed USB device number 24 using ehci-pci
-<span class="o">[</span>2097783.385857] usb 2-1.5.3: New USB device found, <span class="nv">idVendor</span><span class="o">=</span>0403, <span class="nv">idProduct</span><span class="o">=</span>6001
-<span class="o">[</span>2097783.385862] usb 2-1.5.3: New USB device strings: <span class="nv">Mfr</span><span class="o">=</span>1, <span class="nv">Product</span><span class="o">=</span>2, <span class="nv">SerialNumber</span><span class="o">=</span>3
-<span class="o">[</span>2097783.385864] usb 2-1.5.3: Product: FT232R USB UART
-<span class="o">[</span>2097783.385866] usb 2-1.5.3: Manufacturer: FTDI
-<span class="o">[</span>2097783.385867] usb 2-1.5.3: SerialNumber: AK04WWCE
-<span class="o">[</span>2097783.388288] ftdi_sio 2-1.5.3:1.0: FTDI USB Serial Device converter detected
-<span class="o">[</span>2097783.388330] usb 2-1.5.3: Detected FT232RL
-<span class="o">[</span>2097783.388658] usb 2-1.5.3: FTDI USB Serial Device converter now attached to ttyUSB0
-</code></pre>
-</div>
+<details>
+  <summary>
+    Once you connect the board, determine the device created for the serial link.
+    Use the ``dmesg`` command on your build host.
+    Here is an example:
+  </summary>
+  <pre>
+    <code>
+dmesg | tail 9
+[2097783.287091] usb 2-1.5.3: new full-speed USB device number 24 using ehci-pci
+[2097783.385857] usb 2-1.5.3: New USB device found, idVendor=0403, idProduct=6001
+[2097783.385862] usb 2-1.5.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[2097783.385864] usb 2-1.5.3: Product: FT232R USB UART
+[2097783.385866] usb 2-1.5.3: Manufacturer: FTDI
+[2097783.385867] usb 2-1.5.3: SerialNumber: AK04WWCE
+[2097783.388288] ftdi_sio 2-1.5.3:1.0: FTDI USB Serial Device converter detected
+[2097783.388330] usb 2-1.5.3: Detected FT232RL
+[2097783.388658] usb 2-1.5.3: FTDI USB Serial Device converter now attached to ttyUSB0
+    </code>
+  </pre>
+</details>
 
 <p>The device created is usually “/dev/ttyUSB0”.
 However, the number might vary depending on other USB serial ports connected to the host.</p>
@@ -1731,30 +1810,35 @@ To power on the board, “short-press” SW8, which is the power switch.</p>
 
 <p>Following, is console output for the power on process for each kit:</p>
 
-<p><strong>h3ulcb:</strong></p>
+<details>
+  <summary>
+    h3ulcb:
+  </summary>
+  <pre>
+    <code>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>NOTICE:  BL2: R-Car Gen3 Initial Program Loader<span class="o">(</span>CA57<span class="o">)</span> Rev.1.0.7
+NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.7
 NOTICE:  BL2: PRR is R-Car H3 ES1.1
 NOTICE:  BL2: LCM state is CM
-NOTICE:  BL2: DDR1600<span class="o">(</span>rev.0.15<span class="o">)</span>
+NOTICE:  BL2: DDR1600(rev.0.15)
 NOTICE:  BL2: DRAM Split is 4ch
-NOTICE:  BL2: QoS is Gfx Oriented<span class="o">(</span>rev.0.30<span class="o">)</span>
-NOTICE:  BL2: AVS setting succeeded. <span class="nv">DVFS_SetVID</span><span class="o">=</span>0x52
+NOTICE:  BL2: QoS is Gfx Oriented(rev.0.30)
+NOTICE:  BL2: AVS setting succeeded. DVFS_SetVID=0x52
 NOTICE:  BL2: Lossy Decomp areas
 NOTICE:       Entry 0: DCMPAREACRAx:0x80000540 DCMPAREACRBx:0x570
 NOTICE:       Entry 1: DCMPAREACRAx:0x40000000 DCMPAREACRBx:0x0
 NOTICE:       Entry 2: DCMPAREACRAx:0x20000000 DCMPAREACRBx:0x0
-NOTICE:  BL2: v1.1<span class="o">(</span>release<span class="o">)</span>:41099f4
+NOTICE:  BL2: v1.1(release):41099f4
 NOTICE:  BL2: Built : 19:20:52, Jun  9 2016
 NOTICE:  BL2: Normal boot
-NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0xe63150c8 <span class="nv">src</span><span class="o">=</span>0x8180000 <span class="nv">len</span><span class="o">=</span>36<span class="o">(</span>0x24<span class="o">)</span>
-NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x43f00000 <span class="nv">src</span><span class="o">=</span>0x8180400 <span class="nv">len</span><span class="o">=</span>3072<span class="o">(</span>0xc00<span class="o">)</span>
-NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x44000000 <span class="nv">src</span><span class="o">=</span>0x81c0000 <span class="nv">len</span><span class="o">=</span>65536<span class="o">(</span>0x10000<span class="o">)</span>
-NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x44100000 <span class="nv">src</span><span class="o">=</span>0x8200000 <span class="nv">len</span><span class="o">=</span>524288<span class="o">(</span>0x80000<span class="o">)</span>
-NOTICE:  BL2: <span class="nv">dst</span><span class="o">=</span>0x49000000 <span class="nv">src</span><span class="o">=</span>0x8640000 <span class="nv">len</span><span class="o">=</span>1048576<span class="o">(</span>0x100000<span class="o">)</span>
+NOTICE:  BL2: dst=0xe63150c8 src=0x8180000 len=36(0x24)
+NOTICE:  BL2: dst=0x43f00000 src=0x8180400 len=3072(0xc00)
+NOTICE:  BL2: dst=0x44000000 src=0x81c0000 len=65536(0x10000)
+NOTICE:  BL2: dst=0x44100000 src=0x8200000 len=524288(0x80000)
+NOTICE:  BL2: dst=0x49000000 src=0x8640000 len=1048576(0x100000)
 
 
-U-Boot 2015.04 <span class="o">(</span>Jun 09 2016 - 19:21:52<span class="o">)</span>
+U-Boot 2015.04 (Jun 09 2016 - 19:21:52)
 
 CPU: Renesas Electronics R8A7795 rev 1.1
 Board: H3ULCB
@@ -1767,13 +1851,18 @@ Err:   serial
 Net:   Board Net Initialization Failed
 No ethernet found.
 Hit any key to stop autoboot:  0
-<span class="o">=</span>&gt;
-</code></pre>
-</div>
+=&gt;
+    </code>
+  </pre>
+</details>
 
-<p><strong>m3ulcb:</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.14
+<details>
+  <summary>
+    m3ulcb:
+  </summary>
+  <pre>
+    <code>
+NOTICE:  BL2: R-Car Gen3 Initial Program Loader(CA57) Rev.1.0.14
 NOTICE:  BL2: PRR is R-Car M3 Ver1.0
 NOTICE:  BL2: Board is Starter Kit Rev1.0
 NOTICE:  BL2: Boot device is HyperFlash(80MHz)
@@ -1809,33 +1898,58 @@ Err:   serial
 Net:   ravb
 Hit any key to stop autoboot:  0
 =&gt;
-</code></pre>
-</div>
-<p>## 9. Setting-up U-boot
-### Configuring U-Boot Parameters</p>
+    </code>
+  </pre>
+</details>
+
+<h2 id="setting-up-u-boot">9. Setting-up U-boot</h2>
+<p>### Configuring U-Boot Parameters</p>
 
 <p>Follow these steps to configure the board to use the MicroSD card as the
 boot device and also to set the screen resolution:</p>
 
 <ol>
-  <li>
-    <p>As the board is powering up, press any key to stop the autoboot process.
+  <li>As the board is powering up, press any key to stop the autoboot process.
 You need to press a key quickly as you have just a few seconds in which to
-press a key.</p>
-  </li>
-  <li>
-    <p>Once the autoboot process is interrupted, use the board’s serial console to
-enter <strong>printenv</strong> to check if you have correct parameters for booting your board:
-Here is an example using the <strong>h3ulcb</strong> board:</p>
+press a key.</li>
+</ol>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; printenv
+<p>«««&lt; HEAD
+2. Once the autoboot process is interrupted, use the board’s serial console to
+   enter <strong>printenv</strong> to check if you have correct parameters for booting your board:</p>
+
+<details>
+    <summary>
+      Here is an example using the **h3ulcb** board:
+    </summary>
+    <pre>
+      <code>
+=======
+  <li>Once the autoboot process is interrupted, use the board's serial console to
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+   enter **printenv** to check if you have correct parameters for booting your board:
+<details>
+  <summary>
+    Here is an example using the **h3ulcb** board:
+=======
+   enter <b>printenv</b> to check if you have correct parameters for booting your board:
+<details>
+  <summary>
+    Here is an example using the <b>h3ulcb</b> board:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; fe7e536... Update Renesas documentation
+  </summary>
+  <pre>
+    <code>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 9447a8c... Update Renesas documentation
+
+=&gt; printenv
 baudrate=115200
 bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
 bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
 bootdelay=3
 fdt_high=0xffffffffffffffff
 initrd_high=0xffffffffffffffff
-load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+load_dtb=ext4load mmc 0:1 0x48000000 /boot/r8a7795-h3ulcb.dtb
 load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
 stderr=serial
 stdin=serial
@@ -1843,12 +1957,32 @@ stdout=serial
 ver=U-Boot 2015.04 (Jun 09 2016 - 19:21:52)
 
 Environment size: 648/131068 bytes
-</code></pre>
-    </div>
-
-    <p>Here is a second example using the <strong>m3ulcb</strong> board:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>=&gt; printenv
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+      </code>
+    </pre>
+  </details>
+  <details>
+    <summary>
+      Here is a second example using the **m3ulcb** board:
+    </summary>
+    <pre>
+      <code>
+=======
+    </code>
+  </pre>
+</details>
+<details>
+  <summary>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    Here is a second example using the **m3ulcb** board:
+=======
+    Here is a second example using the <b>m3ulcb</b> board:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; fe7e536... Update Renesas documentation
+  </summary>
+  <pre>
+    <code>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 9447a8c... Update Renesas documentation
+=&gt; printenv
 baudrate=115200
 bootargs=console=ttySC0,115200 root=/dev/mmcblk1p1 rootwait ro rootfstype=ext4
 bootcmd=run load_ker; run load_dtb; booti 0x48080000 - 0x48000000
@@ -1856,7 +1990,7 @@ bootdelay=3
 fdt_high=0xffffffffffffffff
 filesize=cdeb
 initrd_high=0xffffffffffffffff
-load_dtb=ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+load_dtb=ext4load mmc 0:1 0x48000000 /boot/r8a7796-m3ulcb.dtb
 load_ker=ext4load mmc 0:1 0x48080000 /boot/Image
 stderr=serial
 stdin=serial
@@ -1864,133 +1998,187 @@ stdout=serial
 ver=U-Boot 2015.04 (Nov 30 2016 - 18:25:18)
 
 Environment size: 557/131068 bytes
-</code></pre>
-    </div>
+      </code>
+    </pre>
+  </details>
+
+3. To boot your board using the MicroSD card, be sure your environment is set up
+   as follows:
+
+    ```
+    setenv bootargs console=ttySC0,115200 ignore_loglevel vmalloc=384M video=HDMI-A-1:1920x1080-32@60 root=/dev/mmcblk1p1 rw rootfstype=ext4 rootwait rootdelay=2
+    setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
+    setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
+    ```
+
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+4. Depending on the board type, the BSP version, and the existence of
+   a Kingfisher board, make sure your ``load_dtb`` is set as follows:
+
+   **h3ulcb with BSP version greater than or equal to 2.19**:
+=======
+  <li>Depending on the board type, the BSP version, and the existence of
+   a Kingfisher board, make sure your ``load_dtb`` is set as follows:<br />
+
+  <b>h3ulcb with BSP version greater than or equal to 2.19</b>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 9447a8c... Update Renesas documentation
+
+    ```
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
+    ```
+
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    **h3ulcb with BSP version less than 2.19**:
+=======
+  <b>h3ulcb with BSP version less than 2.19</b>:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 9447a8c... Update Renesas documentation
+
+    ```
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
+    ```
+
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    **m3ulcb**:
+
+    ```bash
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
+    ```
+
+    **m3ulcb with a Kingfisher board**:
+
+    ```bash
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb-kf.dtb
+    ```
+
+    **h3ulcb with a Kingfisher board**:
+
+    ```bash
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb-kf.dtb
+    ```
+
+5. Save the boot environment:
+
+    ```bash
+    saveenv
+    ```
+
+6. Boot the board:
+=======
+  <b>m3ulcb</b>:
+  <pre>
+    <code>
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/r8a7796-m3ulcb.dtb
+    </code>
+  </pre>
+
+  <b>m3ulcb with a Kingfisher board</b>:
+  <pre>
+    <code>
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/r8a7796-m3ulcb-kf.dtb
+    </code>
+  </pre>
+
+  <b>h3ulcb with a Kingfisher board</b>:
+  <pre>
+    <code>
+    setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/r8a7795-es1-h3ulcb-kf.dtb
+    </code>
+  </pre>
   </li>
-  <li>
-    <p>To boot your board using the MicroSD card, be sure your environment is set up
-as follows:</p>
 
-    <p><code class="highlighter-rouge">
- setenv bootargs console=ttySC0,115200 ignore_loglevel vmalloc=384M video=HDMI-A-1:1920x1080-32@60 root=/dev/mmcblk1p1 rw rootfstype=ext4 rootwait rootdelay=2
- setenv bootcmd run load_ker\; run load_dtb\; booti 0x48080000 - 0x48000000
- setenv load_ker ext4load mmc 0:1 0x48080000 /boot/Image
-</code></p>
+  <li>Save the boot environment:<br />
+    <code>
+      saveenv
+    </code>
   </li>
-  <li>
-    <p>Depending on the board type, the BSP version, and the existence of
-a Kingfisher board, make sure your <code class="highlighter-rouge">load_dtb</code> is set as follows:</p>
 
-    <p><strong>h3ulcb with BSP version greater than or equal to 2.19</strong>:</p>
-
-    <p><code class="highlighter-rouge">
- setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb.dtb
-</code></p>
-
-    <p><strong>h3ulcb with BSP version less than 2.19</strong>:</p>
-
-    <p><code class="highlighter-rouge">
- setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-h3ulcb.dtb
-</code></p>
-
-    <p><strong>m3ulcb</strong>:</p>
-
-    <p><code class="highlighter-rouge">bash
- setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb.dtb
-</code></p>
-
-    <p><strong>m3ulcb with a Kingfisher board</strong>:</p>
-
-    <p><code class="highlighter-rouge">bash
- setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7796-m3ulcb-kf.dtb
-</code></p>
-
-    <p><strong>h3ulcb with a Kingfisher board</strong>:</p>
-
-    <p><code class="highlighter-rouge">bash
- setenv load_dtb ext4load mmc 0:1 0x48000000 /boot/Image-r8a7795-es1-h3ulcb-kf.dtb
-</code></p>
+  <li>Boot the board:<br />
+  <code>
+    run bootcmd
+  </code>
   </li>
-  <li>
-    <p>Save the boot environment:</p>
 
-    <p><code class="highlighter-rouge">bash
- saveenv
-</code></p>
-  </li>
-  <li>
-    <p>Boot the board:</p>
-  </li>
-</ol>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 9447a8c... Update Renesas documentation
 
-<div class="highlighter-rouge"><pre class="highlight"><code>run bootcmd
-</code></pre>
-</div>
-<p>## 10. Troubleshooting
-### Logging Into the Console</p>
+```
+run bootcmd
+```
+## 10. Troubleshooting
+### Logging Into the Console
 
-<p>Once the board boots, you should see the
-<a href="https://en.wikipedia.org/wiki/Wayland_(display_server_protocol)">Wayland display</a>
+Once the board boots, you should see the
+[Wayland display](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol))
 on the external monitor.
-A login prompt should appear as follows depending on your board:</p>
+A login prompt should appear as follows depending on your board:
 
-<p><strong>h3ulcb</strong>:</p>
+**h3ulcb**:
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Automotive Grade Linux <span class="k">${</span><span class="nv">AGL_VERSION</span><span class="k">}</span> h3ulcb ttySC0
+```bash
+Automotive Grade Linux ${AGL_VERSION} h3ulcb ttySC0
 
 h3ulcb login: root
-</code></pre>
-</div>
+```
 
-<p><strong>m3ulcb</strong>:</p>
+**m3ulcb**:
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Automotive Grade Linux <span class="k">${</span><span class="nv">AGL_VERSION</span><span class="k">}</span> m3ulcb ttySC0
+```bash
+Automotive Grade Linux ${AGL_VERSION} m3ulcb ttySC0
 
 m3ulcb login: root
-</code></pre>
-</div>
+```
 
-<p>At the prompt, login by using <code class="highlighter-rouge">root</code> as the login.
-The password is “empty” so you should not be prompted for the password.</p>
+At the prompt, login by using `root` as the login.
+The password is "empty" so you should not be prompted for the password.
 
-<h3 id="determining-the-boards-ip-address">Determining the Board’s IP Address</h3>
+### Determining the Board's IP Address
 
-<p>If your board is connected to a local network using Ethernet and
+If your board is connected to a local network using Ethernet and
 if a DHCP server is able to distribute IP addresses,
-you can determine the board’s IP address and log in using <code class="highlighter-rouge">ssh</code>.</p>
+you can determine the board's IP address and log in using `ssh`.
 
-<p>Here is an example for the <strong>m3ulcb</strong> board:</p>
+<details>
+  <summary>
+    Here is an example for the m3ulcb board:
+  </summary>
+  <pre>
+    <code>
+  m3ulcb login: root
+  Last login: Tue Dec  6 09:55:15 UTC 2016 on tty2
+  root@m3ulcb:~# ip -4 a
+  1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default
+      inet 127.0.0.1/8 scope host lo
+        valid_lft forever preferred_lft forever
+  3: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+      inet 10.0.0.27/24 brd 10.0.0.255 scope global eth0
+        valid_lft forever preferred_lft forever
+  root@m3ulcb:~#
+    </code>
+  </pre>
+</details>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>m3ulcb login: root
-Last login: Tue Dec  6 09:55:15 UTC 2016 on tty2
-<span class="gp">root@m3ulcb:~# </span>ip -4 a
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-3: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 10.0.0.27/24 brd 10.0.0.255 scope global eth0
-       valid_lft forever preferred_lft forever
-root@m3ulcb:~#
-</code></pre>
-</div>
+<details>
+  <summary>
+    In the previous example, IP address is 10.0.0.27.
+    Once you know the address, you can use `ssh` to login.
+    Following is an example that shows logging into SSH and then
+    displaying the contents of the `/etc/os-release` file:
+  </summary>
+  <pre>
+    <code>
+  $ ssh root@10.0.0.27
+  Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
+  root@m3ulcb:~# cat /etc/os-release
+  ID="poky-agl"
+  NAME="Automotive Grade Linux"
+  VERSION="3.0.0+snapshot-20161202 (chinook)"
+  VERSION_ID="3.0.0-snapshot-20161202"
+  PRETTY_NAME="Automotive Grade Linux 3.0.0+snapshot-20161202 (chinook)"
+    </code>
+  </pre>
+</details>
 
-<p>In the previous example, IP address is 10.0.0.27.
-Once you know the address, you can use <code class="highlighter-rouge">ssh</code> to login.
-Following is an example that shows logging into SSH and then
-displaying the contents of the <code class="highlighter-rouge">/etc/os-release</code> file:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@10.0.0.27
-Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
-<span class="gp">root@m3ulcb:~# </span>cat /etc/os-release
-<span class="nv">ID</span><span class="o">=</span><span class="s2">"poky-agl"</span>
-<span class="nv">NAME</span><span class="o">=</span><span class="s2">"Automotive Grade Linux"</span>
-<span class="nv">VERSION</span><span class="o">=</span><span class="s2">"3.0.0+snapshot-20161202 (chinook)"</span>
-<span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">"3.0.0-snapshot-20161202"</span>
-<span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">"Automotive Grade Linux 3.0.0+snapshot-20161202 (chinook)"</span>
-</code></pre>
-</div>
-
-<p><strong>NOTE:</strong> More generics troubleshooting can be found here : <a href="../troubleshooting.html">Generic issues</a></p>
+**NOTE:** More generics troubleshooting can be found here : [Generic issues](../troubleshooting.html)
+</summary></details></li></code></pre></details>
 
 
 
@@ -2063,7 +2251,7 @@ Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2071,7 +2259,7 @@ Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:37 +0000</small>
+		<small class="stats">Page rendered at:  2020-03-23 04:32:06 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/guppy/docs/getting-started/machines/renesas.md">Link to source document</small>
 		
@@ -2089,19 +2277,19 @@ Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

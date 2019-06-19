@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -2400,6 +2402,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/devguides/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/devguides/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/devguides/" class="missing-page">
                                     
                                         
@@ -2500,15 +2548,52 @@
 <p>Returns a json_object array of object with 2 parts a ‘fullpath’ describing the
 fullpath to reach the file and ‘filename’ containing the matched files.</p>
 
-<h2 id="char-getbindingdirpathafbapit-api">char *GetBindingDirPath_(afb_api_t api)</h2>
+<h2 id="char-getafbrootdirpathusingfdint-fd">char *GetAFBRootDirPathUsingFd(int fd)</h2>
 
-<p>For binding with a version &gt;= 3, get the root directory path.</p>
+<p>Get the binder root directory path (the path specified with ‘–rootdir’ option
+at binder launch, if the option is not used, the path from where the binder
+is launched) using binder root directory file descriptor.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">fd</code> : Binder root directory file descriptor.</li>
+</ul>
+
+<p>Returns a string representing the path to binder root directory.</p>
+
+<h2 id="char-getafbrootdirpathafbapit-apihandle">char *GetAFBRootDirPath(afb_api_t apiHandle)</h2>
+
+<p>For binding with a version &gt;= 3, same as ‘GetAFBRootDirPathUsingFd’ function,
+but use pointer to the AFB API as parameter instead of
+binder root directory file descriptor.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">apiHandle</code> : pointer to the AFB API.</li>
+</ul>
+
+<p>Returns a string representing the path to binder root directory.</p>
+
+<h2 id="char-getbindingdirpath">char* GetBindingDirPath()</h2>
+
+<p>For binding with a version &lt;= 2, same as ‘GetAFBRootDirPath’ function,
+but the pointer to the AFB API is not needed.
+Kept for compatibility issues.</p>
+
+<h2 id="char-getbindingdirpathafbapit-api">char* GetBindingDirPath(afb_api_t api)</h2>
+
+<p>For binding with a version &gt;= 3, same as ‘GetAFBRootDirPath’ function.
+Deprecated, please use ‘GetAFBRootDirPath’ function.
+Kept for compatibility issues.</p>
+
+<h2 id="char-getrunningbindingdirpathafbapit-api">char *GetRunningBindingDirPath(afb_api_t api)</h2>
+
+<p>For binding with a version &gt;= 3, get the binding directory path
+(the path to the directory that contains the binding).</p>
 
 <ul>
   <li><code class="highlighter-rouge">api</code> : pointer to the AFB API.</li>
 </ul>
 
-<p>Returns a string representing the path to binding root directory.</p>
+<p>Returns a string representing the path to the binding directory.</p>
 
 <h2 id="const-char-getenvdirlistconst-char-prefix-const-char-suffix">const char *getEnvDirList(const char *prefix, const char *suffix)</h2>
 
@@ -2595,7 +2680,7 @@ error or none environment variables found.</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2603,7 +2688,7 @@ error or none environment variables found.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:27 +0000</small>
+		<small class="stats">Page rendered at:  2020-03-23 04:31:57 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libafb-helpers/plain/docs/filescan-utils.md?h=master">Link to source document</small>
 		
@@ -2621,19 +2706,19 @@ error or none environment variables found.</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

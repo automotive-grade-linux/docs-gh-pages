@@ -1,0 +1,3152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Server Part  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/en/halibut/devguides/reference/xds/part-1/server-part.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/halibut/devguides/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: halibut halibut-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/en/halibut/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'halibut' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Layers
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/agl-layers-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/meta-agl.html">
+                meta-agl
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/meta-agl-demo.html">
+                meta-agl-demo
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/meta-agl-devel.html">
+                meta-agl-devel
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Building Microservices Natively
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/0-build-microservice-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/1-verify-build-host.html">
+                Verify Your Build Host
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/2-download-packages.html">
+                Download Packages
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/3-installing-binder-daemon.html">
+                Installing the Binder Daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/4-getting-source-files.html">
+                Getting Your Source Files
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/5-building-and-running-service-natively.html">
+                Building and Running Your Service Natively
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Using the CMAKE Applications Module
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/cmake-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/installing-cmake.html">
+                Installing CMake Templates
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/using-cmake.html">
+                Using CMake Templates
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/configuring-cmake.html">
+                Configuring AGL CMake Templates
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/project-architecture.html">
+                Project Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/advanced-usage.html">
+                Advanced Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/advanced-customization.html">
+                Advanced Customization
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/autobuild.html">
+                Autobuild
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: User's Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/xds-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Installing XDS
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/halibut/devguides/reference/xds/part-1/server-part.html">
+                Server Part
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/client-part.html">
+                Client Part
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/install-sdk.html">
+                AGL SDKs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Create your first AGL application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-requirements.html">
+                Requirements
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-get-source-files.html">
+                Get the Source Files
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-build-cmd-line.html">
+                Build Using the Command Line
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-build-dashboard.html">
+                Build Using the XDS Dashboard
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-build-ide.html">
+                Build Using an IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Debugging Your First AGL Application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-cmd-line.html">
+                Using the Command Line
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-ide.html">
+                Using an IDE
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                X(cross) Development System: Internals
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/0_Abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_Prerequisites.html">
+                Prerequisites
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-server
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/3_how-to-run.html">
+                How to run
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/5_test.html">
+                Test
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-agent
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/3_start.html">
+                Start
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-cli
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/3_commands.html">
+                CLI Commands
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/4_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                XDS-gdb
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/0_abstract.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/1_build.html">
+                Build from scratch
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/2_config.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/3_debug.html">
+                Debugging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AppFW - Privileges Management
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/iotbzh2016/03-AGL-AppFW-Privileges-Management.pdf">
+                AppFW - Privileges Management
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Controller Guides
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/ctrler/controller.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/ctrler/controllerConfig.html">
+                Controller Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/ctrler/Usage.html">
+                Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/ctrler/configSample.html">
+                Config Sample
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AFB Helper Guide
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/usage.html">
+                Usage
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/afb-timer.html">
+                AFB Timer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/curl-wrap.html">
+                CURL wrapper
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/escape.html">
+                URL escaping
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/filescan-utils.html">
+                Filescan Utils
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/qafbwebsocketclient.html">
+                Qt AFB Websocket client
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/json.html">
+                JSON library for modern C++
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/wrap-json.html">
+                C JSON Wrapper
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Continuous Integration - Automated Testing (CIAT)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                How to write tests (overview slides)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/How_to_write_your_own_tests_for_AGL.pdf">
+                How to write tests (overview slides)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                How to write tests (detailed)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/devguides/reference/Hands_on_lab_documentation.pdf">
+                How to write tests (detailed)
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/agl-layers-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/meta-agl.html">
+        meta-agl
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/meta-agl-demo.html">
+        meta-agl-demo
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/meta-agl-devel.html">
+        meta-agl-devel
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/0-build-microservice-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/1-verify-build-host.html">
+        Verify Your Build Host
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/2-download-packages.html">
+        Download Packages
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/3-installing-binder-daemon.html">
+        Installing the Binder Daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/4-getting-source-files.html">
+        Getting Your Source Files
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/5-building-and-running-service-natively.html">
+        Building and Running Your Service Natively
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/cmake-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/installing-cmake.html">
+        Installing CMake Templates
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/using-cmake.html">
+        Using CMake Templates
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/configuring-cmake.html">
+        Configuring AGL CMake Templates
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/project-architecture.html">
+        Project Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/advanced-usage.html">
+        Advanced Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/advanced-customization.html">
+        Advanced Customization
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/cmakeafbtemplates/dev_guide/autobuild.html">
+        Autobuild
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/xds-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="this-page" href="/docs/en/halibut/devguides/reference/xds/part-1/server-part.html">
+        Server Part
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/client-part.html">
+        Client Part
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/install-sdk.html">
+        AGL SDKs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-requirements.html">
+        Requirements
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-get-source-files.html">
+        Get the Source Files
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-build-cmd-line.html">
+        Build Using the Command Line
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-build-dashboard.html">
+        Build Using the XDS Dashboard
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/create-app-build-ide.html">
+        Build Using an IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-cmd-line.html">
+        Using the Command Line
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-1/debug-ide.html">
+        Using an IDE
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/0_Abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_Prerequisites.html">
+        Prerequisites
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/3_how-to-run.html">
+        How to run
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/1_xds-server/5_test.html">
+        Test
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/3_start.html">
+        Start
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/2_xds-agent/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/3_commands.html">
+        CLI Commands
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/3_xds-cli/4_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/0_abstract.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/1_build.html">
+        Build from scratch
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/2_config.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/xds/part-2/4_xds-gdb/3_debug.html">
+        Debugging
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/iotbzh2016/03-AGL-AppFW-Privileges-Management.pdf">
+        AppFW - Privileges Management
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/ctrler/controller.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/ctrler/controllerConfig.html">
+        Controller Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/ctrler/Usage.html">
+        Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/ctrler/configSample.html">
+        Config Sample
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/usage.html">
+        Usage
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/afb-timer.html">
+        AFB Timer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/curl-wrap.html">
+        CURL wrapper
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/escape.html">
+        URL escaping
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/filescan-utils.html">
+        Filescan Utils
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/qafbwebsocketclient.html">
+        Qt AFB Websocket client
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/json.html">
+        JSON library for modern C++
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/afb-helpers/wrap-json.html">
+        C JSON Wrapper
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/How_to_write_your_own_tests_for_AGL.pdf">
+        How to write tests (overview slides)
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/devguides/reference/Hands_on_lab_documentation.pdf">
+        How to write tests (detailed)
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/docs/en/halibut/devguides/reference/xds/part-1/server-part.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            halibut
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/master/devguides/" class="missing-page">
+                                    
+                                        
+                                    master
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/icefish/devguides/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/devguides/" class="missing-page">
+                                    
+                                        <span class="selected">
+                                            
+                                    halibut
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/guppy/devguides/" class="missing-page">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/flounder/devguides/" class="missing-page">
+                                    
+                                        
+                                    flounder
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                -->
+
+                <!-- outdated warning
+                
+                    <div class="alert docs-alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        This version of the documentation is outdated!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/devguides/halibut/xds-docs-guides-devguides-book.yml -->
+
+<h1 id="server-part">Server Part</h1>
+
+<p>Depending on your situation, you must either install the
+XDS server part or you can skip installation:</p>
+
+<ul>
+  <li>If you are a developer and plan to connect to and use an existing <code class="highlighter-rouge">xds-server</code>
+that is running on your local network (On-Premise) or is available from
+the Cloud (SaaS), you do not need to install the server part.</li>
+  <li>If you are configured for Standalone or you are an administrator
+that wants to install an On-Premise solution, you must install
+the server part.</li>
+</ul>
+
+<p>This section describes three types of server part installations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Install type</th>
+      <th>Supported OS</th>
+      <th>Section to refer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Container</td>
+      <td>Linux or MacOS</td>
+      <td><a href="#docker-container">Docker Container</a></td>
+    </tr>
+    <tr>
+      <td>Virtual Machine</td>
+      <td>Linux, MacOS or Windows</td>
+      <td><a href="#virtualbox-appliance">VirtualBox Appliance</a></td>
+    </tr>
+    <tr>
+      <td>Native</td>
+      <td>Linux</td>
+      <td><a href="#native">Native</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="docker-container">Docker Container</h2>
+
+<p>This section describes how to install the server part (<code class="highlighter-rouge">xds-server</code>)
+into a
+<a href="https://www.docker.com/resources/what-container">Docker Container</a>
+on a Linux-based system or a MacOS system.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>The system on which you are installing the server part
+must meet both the following prerequisites:</p>
+
+<ul>
+  <li>
+    <p>You must have Docker installed on the host machine.
+For information on installing Docker, see the
+<a href="https://docs.docker.com/engine/installation/">Docker documentation</a>.</p>
+  </li>
+  <li>
+    <p>Aside from having Docker installed, users must be part of a
+docker
+<a href="https://www.linux.com/learn/intro-to-linux/2017/12/how-manage-users-groups-linux">group</a>.
+Enter the following command to display the system’s groups and
+then search for and list the Docker groups:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>groups | grep docker
+</code></pre>
+    </div>
+
+    <p>If the users that plan on using the container are not part of the
+Docker group or the group does not exist, you must take steps.
+See the <a href="https://docs.docker.com/install/linux/linux-postinstall/">docker post install instructions</a>
+for details on creating a Docker group and adding users.</p>
+
+    <p>Following is a summary of the key commands:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo groupadd docker
+sudo usermod -aG docker <span class="nv">$USER</span>
+<span class="c"># Log out and re-login so the system can re-evaluate the group membership</span>
+<span class="c"># You might also need to start docker service manually</span>
+
+sudo service docker start
+<span class="c"># or</span>
+sudo systemctl start docker
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="get-the-container">Get the Container</h3>
+
+<p>Use the following command to load the pre-built AGL
+SDK Docker image, which includes <code class="highlighter-rouge">xds-server</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget -O - http://iot.bzh/download/public/XDS/docker/docker_agl_worker-xds-latest.tar.xz | docker load
+</code></pre>
+</div>
+
+<p>The following command lists and displays information about the image:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>docker images <span class="s2">"docker.automotivelinux.org/agl/worker-xds*"</span>
+
+REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
+docker.automotivelinux.org/agl/worker-xds   5.0                 877979e534ff        3 hours ago         106MB
+</code></pre>
+</div>
+
+<h3 id="create-and-start-a-new-container">Create and Start a New Container</h3>
+
+<p>Running the following script creates a new Docker image and starts a new container:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Get script</span>
+wget -O xds-docker-create-container.sh <span class="s1">'https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/xds/xds-server.git;a=blob_plain;f=scripts/xds-docker-create-container.sh;hb=master'</span>
+
+<span class="c"># Create new XDS worker container (change the -id option value if you get a port conflict error)</span>
+bash ./xds-docker-create-container.sh -id 0
+
+<span class="c"># Be sure the new container is running</span>
+docker ps | grep worker-xds
+f67079db4339        docker.automotivelinux.org/agl/worker-xds:5.0   <span class="s2">"/usr/bin/wait_for..."</span>   About a minute ago   Up 34 seconds       0.0.0.0:8000-&gt;8000/tcp,0.0.0.0:10809-&gt;10809/tcp, 0.0.0.0:2222-&gt;22/tcp   agl-xds-HOSTNAME-0-USERNAME
+</code></pre>
+</div>
+
+<p>In the previous example, the container exposes following ports:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Port number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>8000</td>
+      <td><code class="highlighter-rouge">xds-server</code>: serve XDS webapp and REST API</td>
+    </tr>
+    <tr>
+      <td>2222</td>
+      <td>ssh</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This container also creates the following volumes, which are shared folders between
+inside and outside Docker:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Directory on host</th>
+      <th>Directory inside docker</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$HOME/xds-workspace</td>
+      <td>/home/devel/xds-workspace</td>
+      <td>XDS projects workspace location</td>
+    </tr>
+    <tr>
+      <td>$HOME/xds-workspace/.xdt_0</td>
+      <td>/xdt</td>
+      <td>location to store SDKs</td>
+    </tr>
+    <tr>
+      <td>$USER_VOLUME</td>
+      <td>$USER_VOLUME</td>
+      <td>user path, see <code class="highlighter-rouge">--volume</code> option of <code class="highlighter-rouge">xds-docker-create-container.sh</code> script</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="optional-settings">Optional Settings</h4>
+
+<p>When you create the container, you can use optional settings.
+This section shows minimal settings to configure the container.
+For more detailed <code class="highlighter-rouge">xds-server</code> configuration information including settings, see the
+“<a href="../part-2/1_xds-server/2_config.html">xds-server configuration</a>” section.</p>
+
+<ul>
+  <li>
+    <p><strong><code class="highlighter-rouge">--volume</code></strong></p>
+
+    <p>Adds a new shared directory using the <code class="highlighter-rouge">--volume</code> option (e.g.
+used with Path-Mapping folder types):</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create new XDS worker container and share extra '$HOME/my-workspace' directory</span>
+bash ./xds-docker-create-container.sh --volume /my-workspace:<span class="nv">$HOME</span>/my-workspace
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><strong><code class="highlighter-rouge">--id</code></strong></p>
+
+    <p>Changes the port used by Docker:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create new XDS worker container with a different port number</span>
+<span class="nv">ID</span><span class="o">=</span>3
+bash ./xds-docker-create-container.sh -id <span class="k">${</span><span class="nv">ID</span><span class="k">}</span>
+
+<span class="c"># Check that new container is running (in example below id has been set to 3)</span>
+docker ps | grep worker-xds
+f67079db4339        docker.automotivelinux.org/agl/worker-xds:5.0   <span class="s2">"/usr/bin/wait_for..."</span>   About a   minute ago   Up 34 seconds       0.0.0.0:2225-&gt;22/tcp, 0.0.0.0:8003-&gt;8000/tcp, 0.0.0.0:10892-&gt;10809/tcp   agl-xds-3
+</code></pre>
+    </div>
+
+    <!-- section-note -->
+    <p><strong>WARNING:</strong>
+Changing the container id impacts the port number used to connect to <code class="highlighter-rouge">xds-server</code>.
+Consequently, you might need to adjust the <code class="highlighter-rouge">xds-agent</code> configuration in order
+to match the correct port number.</p>
+
+    <p>In the previous example where the container id is set to “3”, the export
+port number is <code class="highlighter-rouge">8003</code>.
+In this case, you must define “url” in the <code class="highlighter-rouge">xds-server</code> configuration as follows:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nt">"xdsServers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8003"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+    </div>
+
+    <p>For more information, see the
+<a href="../part-2/2_xds-agent/2_config.html">xds-agent configuration</a> section.
+<!-- end-section-note --></p>
+  </li>
+</ul>
+
+<h4 id="manually-setup-the-docker-user-id">Manually Setup the Docker User ID</h4>
+
+<p>If you are using path-mapping sharing type for your projects, you need to
+have the same user ID and group ID inside and outside Docker.</p>
+
+<p>By default, user and group names inside Docker are <code class="highlighter-rouge">devel</code> and <code class="highlighter-rouge">1664</code>,
+respectively.</p>
+
+<!-- section-note -->
+<p><strong>NOTE:</strong></p>
+
+<p>If you used the <code class="highlighter-rouge">xds-docker-create-container.sh</code> script to create the XDS
+Docker container, the user uid/gid inside Docker has already been changed.
+<!-- end-section-note --></p>
+
+<p>Use following commands to replace ID <code class="highlighter-rouge">1664</code> with your user and group ID:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set the Docker container name (e.g. agl-xds-xxx where xxx is USERNAME@MACHINENAME-IDX-NAME).</span>
+<span class="nb">export </span><span class="nv">CONTAINER_NAME</span><span class="o">=</span>agl-xds-seb@laptop-0-seb
+docker ps | grep -q <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"ERROR: No container name </span><span class="se">\"</span><span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span><span class="se">\"</span><span class="s2"> please set a valid CONTAINER_NAME before you continue"</span>
+
+<span class="c"># Kill all processes of with the user ID `devel`. This includes the running xds-server.</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"/bin/loginctl kill-user devel"</span>
+
+<span class="c"># Change user and group IDs inside Docker to match your user and group IDs.</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"usermod -u </span><span class="k">$(</span>id -u<span class="k">)</span><span class="s2"> devel"</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"groupmod -g </span><span class="k">$(</span>id -g<span class="k">)</span><span class="s2"> devel"</span>
+
+<span class="c"># Update file ownerships.</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"chown -R devel:devel /home/devel /tmp/xds*"</span>
+
+<span class="c"># Restart the devel autologin service.</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"systemctl restart autologin"</span>
+
+<span class="c"># Restart xds-server as a service. The ssh port 2222 might depend on your container ID.</span>
+ssh -p 2222 devel@localhost -- <span class="s2">"systemctl --user restart xds-server"</span>
+</code></pre>
+</div>
+
+<h3 id="check-if-xds-server-is-running-open-xds-webapp">Check if xds-server is Running (open XDS webapp)</h3>
+
+<p>When the container starts up, <code class="highlighter-rouge">xds-server</code> automatically starts as a
+user service.</p>
+
+<p>If the container is running on your localhost, you can access a basic web
+application to check on <code class="highlighter-rouge">xds-server</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>xdg-open http://localhost:8000
+</code></pre>
+</div>
+
+<p>From a shell prompt, you can check status, stop, and start <code class="highlighter-rouge">xds-server</code>
+using the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Status XDS server</span>
+ssh -p 2222 devel@localhost systemctl --user status xds-server.service
+
+<span class="c"># Stop XDS server</span>
+ssh -p 2222 devel@localhost systemctl --user stop xds-server.service
+
+<span class="c"># Start XDS server</span>
+ssh -p 2222 devel@localhost systemctl --user start xds-server.service
+
+<span class="c"># Get XDS server logs</span>
+ssh -p 2222 devel@localhost journalctl --user --unit<span class="o">=</span>xds-server.service --output<span class="o">=</span>cat
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">xds-server</code> should be up and running.
+You can now install AGL SDKs.
+See the
+“<a href="install-sdk.html">AGL SDKs</a>” section for more information.</p>
+
+<h2 id="virtualbox-appliance">VirtualBox Appliance</h2>
+
+<p>This section describes how to install the server part (<code class="highlighter-rouge">xds-server</code>)
+into a guest Virtual Machine (VM) supported by
+<a href="https://en.wikipedia.org/wiki/VirtualBox">VirtualBox</a>.
+VirtualBox allows the creation and management of guest virtual
+machines that run versions and derivations on many types of systems
+(e.g. Linux, Window, MacOS, and so forth).</p>
+
+<h3 id="prerequisites-1">Prerequisites</h3>
+
+<p>The system on which you are installing the server part must have
+VirtualBox installed.
+For information on how to install VirtualBox, see the
+<a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox documentation</a>.</p>
+
+<h3 id="get-the-appliance">Get the Appliance</h3>
+
+<p>Use the following command to load the pre-built AGL SDK
+appliance image, which includes <code class="highlighter-rouge">xds-server</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget http://iot.bzh/download/public/XDS/appliance/xds-vm-debian9_latest.ova
+</code></pre>
+</div>
+
+<h3 id="clean-the-old-appliance">Clean the Old Appliance</h3>
+
+<p>Only one appliance can exist on the machine.
+Consequently, you must remove any existing XDS appliance.
+Use the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Get the virtual machine name</span>
+<span class="nv">VDS_VMNAME</span><span class="o">=</span><span class="k">$(</span>VBoxManage list vms | grep xds-vm-debian | cut -d <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> -f2<span class="k">)</span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span>
+
+<span class="c"># Remove the old XDS appliance</span>
+<span class="o">[</span> -n <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage controlvm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> poweroff
+<span class="o">[</span> -n <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage unregistervm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> --delete
+</code></pre>
+</div>
+
+<h3 id="create-and-start-a-new-appliance">Create and Start a New Appliance</h3>
+
+<p>You can create a new appliance by using a provided script or by
+using the VirtualBox GUI:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Import image into VirtualBox</span>
+VBoxManage import ./xds-vm-debian9_latest.ova
+
+<span class="c"># Check import result</span>
+<span class="nv">VDS_VMNAME</span><span class="o">=</span><span class="k">$(</span>VBoxManage list vms | grep xds-vm-debian | cut -d <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> -f2<span class="k">)</span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span>
+</code></pre>
+</div>
+
+<p>Add a share folder to the appliance.
+You must use “path-mapping sharing type for projects”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create local share folder</span>
+mkdir -p <span class="nv">$HOME</span>/xds-workspace
+
+<span class="c">#Add share folder to appliance</span>
+VBoxManage sharedfolder add <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> --name XDS-workspace --hostpath <span class="nv">$HOME</span>/xds-workspace
+</code></pre>
+</div>
+
+<p>Use the following command to start the appliance:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Start XDS appliance</span>
+<span class="o">[</span> -n <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage startvm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span>
+</code></pre>
+</div>
+
+<h3 id="appliance-settings">Appliance Settings</h3>
+
+<p>The image exposes the following network ports, which are NAT mode:</p>
+
+<ul>
+  <li>8000 : <code class="highlighter-rouge">xds-server</code> to serve XDS basic web page</li>
+  <li>2222 : ssh</li>
+</ul>
+
+<h3 id="check-if-xds-server-is-running">Check if xds-server is Running</h3>
+
+<p>When the container in the virtual machine starts up, the <code class="highlighter-rouge">xds-server</code> automatically starts.</p>
+
+<p>To check if <code class="highlighter-rouge">xds-server</code> is correctly installed and running, you can access the
+XDS basic web page and refer to the instructions:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># If the container/appliance is running on your local host</span>
+<span class="c"># (else replace localhost with the name or the ip of the machine running the container)</span>
+xdg-open http://localhost:8000
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">xds-server</code> should be up and running.
+You can now install AGL SDKs.
+See the
+“<a href="install-sdk.html">AGL SDKs</a>” section for more information.</p>
+
+<h2 id="native">Native</h2>
+
+<p>This section describes how to install the server part (<code class="highlighter-rouge">xds-server</code>) ‘natively’
+on a Linux-based system.</p>
+
+<!-- section-note -->
+<p><strong>NOTE:</strong>
+Hosts running a Linux distribution are the only hosts that support native
+installation of the server part.
+<!-- end-section-note --></p>
+
+<h3 id="prerequisites-2">Prerequisites</h3>
+
+<p>The system on which you are installing the server part must have
+<code class="highlighter-rouge">python3</code> installed, which allows <code class="highlighter-rouge">xds-server</code> to manage AGL SDKs.</p>
+
+<h4 id="installing-packages-for-debian">Installing Packages for Debian</h4>
+
+<p>Use the following commands to install packages for
+<code class="highlighter-rouge">xds-server</code> on Debian-based systems:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set 'DISTRO' (e.g. xUbuntu_16.04, xUbuntu_16.10, xUbuntu_17.04, Debian_8.0, Debian_9.0)</span>
+<span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_16.04"</span>
+
+<span class="c"># Set AGL_RELEASE (e.g. AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master)</span>
+<span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
+
+wget -O - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | sudo apt-key add -
+sudo bash -c <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
+deb http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/</span><span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span><span class="s2">/ ./
+EOF"</span>
+
+sudo apt-get update
+sudo apt-get install agl-xds-server
+
+<span class="c"># Install python3</span>
+sudo apt-get install python3
+</code></pre>
+</div>
+
+<h4 id="install-packages-for-opensuse">Install Packages for OpenSUSE</h4>
+
+<p>Use the following commands to install packages for
+<code class="highlighter-rouge">xds-server</code> on OpenSUSE-based systems:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set DISTRO (openSUSE_Leap_42.3, openSUSE_Leap_15.0, openSUSE_Tumbleweed)</span>
+<span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"openSUSE_Leap_15.0"</span>
+
+<span class="c"># Set AGL_RELEASE (AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master)</span>
+<span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
+
+sudo zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>.repo
+
+sudo zypper ref
+sudo zypper install agl-xds-server
+
+<span class="c"># Install python3</span>
+sudo zypper install python3
+</code></pre>
+</div>
+
+<h4 id="configure-the-xds-server">Configure the xds-server</h4>
+
+<p>Configuring the <code class="highlighter-rouge">xds-server</code> occurs through a JSON configuration file
+named <code class="highlighter-rouge">server-config.json</code>.
+All fields in the JSON configuration file are optional.
+Consequently, you can skip this configuration step if you want to use
+the default settings in the JSON file.</p>
+
+<p>If you want to customize or alter the default configuration, see the
+“<a href="../part-2/1_xds-server/2_config.html">Configuration chapter of xds-server</a>”
+section for details on the JSON configuration file.</p>
+
+<h4 id="start-and-stop-xds-server">Start and Stop xds-server</h4>
+
+<p>You can manage <code class="highlighter-rouge">xds-server</code> as a
+<a href="https://en.wikipedia.org/wiki/Systemd">systemd</a> service by using
+the following commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Status XDS server:</span>
+systemctl --user status xds-server.service
+
+<span class="c"># Stop XDS server</span>
+systemctl --user stop xds-server.service
+
+<span class="c"># Start XDS server</span>
+systemctl --user start xds-server.service
+
+<span class="c"># Get XDS server logs</span>
+systemctl --user --unit<span class="o">=</span>xds-server.service --output<span class="o">=</span>cat
+</code></pre>
+</div>
+
+<p>To check if <code class="highlighter-rouge">xds-server</code> is correctly installed and running, you can access
+the XDS web interface through your browser:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>xdg-open http://localhost:8000
+</code></pre>
+</div>
+
+<p>Alternatively, you can use the following <code class="highlighter-rouge">curl</code> command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl http://localhost:8000/api/v1/version
+</code></pre>
+</div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2020-03-23 04:32:07 +0000</small>
+		
+		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/server-part.md?h=halibut">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    <!-- 
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: '',
+        indexName: '',
+        inputSelector: '#header-search-field',
+    });
+</script>
+ -->
+            
+    
+
+</body>
+</html>

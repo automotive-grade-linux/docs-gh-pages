@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -348,7 +350,7 @@
     <li>
         
             <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-                Build for Raspberry PI 2/3
+                Build for Raspberry PI 3/4
             </a>
             
         
@@ -743,7 +745,7 @@
 
 <li>
     <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-        Build for Raspberry PI 2/3
+        Build for Raspberry PI 3/4
     </a>
 </li>
 
@@ -984,6 +986,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/getting_started/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/getting_started/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/getting_started/" class="missing-page">
                                     
                                         
@@ -1075,6 +1123,42 @@ $ source meta-agl/scripts/aglsetup.sh -h
 </code></pre>
 </div>
 
+<h2 id="agl-machines--board-support">AGL Machines (= board support)</h2>
+
+<p>Your target platform will be selected with the <code class="highlighter-rouge">-m</code> flag.
+The MACHINE can be selected from the templates in <code class="highlighter-rouge">meta-agl/templates/machine/*</code>.
+Note: This is also the place where you can add new boards.</p>
+
+<p>Following is a list of the available machines (level of support varies!):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Available machines:
+   [meta-agl]
+       bbe                        # BeagleBoneEnhanced
+       beaglebone                 # BeagleBone
+       cubox-i                    # multiple i.MX6 boards
+       cyclone5                   # CycloneV
+       dra7xx-evm                 # TI DRA7xx-EVM 'vayu'
+       dragonboard-410c           # Qualcomm Dragonboard 410c
+       dragonboard-820c           # Qualcomm Dragonboard 820c
+       ebisu                      # Renesas RCar Ebisu
+       h3-salvator-x              # Renesas RCar Salvator/H3
+       h3ulcb                     # Renesas RCar H3
+       h3ulcb-nogfx               # Renesas RCar H3 w/o gfx blobs
+       hsdk                       # ARC HS
+       imx6qdlsabreauto           # i.MX6 sabreauto
+       intel-corei7-64            # x86-64 (Intel flavour)
+       m3ulcb                     # Renesas RCar M3
+       m3ulcb-nogfx               # Renesas RCAR M3 w/o gfx blobs
+       nitrogen6x                 # i.MX6 nitrogen board
+       qemuarm                    # Qemu ARM
+       qemuarm64                  # Qemu AArch 64 (ARM 64bit)
+     * qemux86-64                 # Qemu x86-64
+       raspberrypi3               # Raspberry Pi 3
+       raspberrypi4               # Raspberry Pi 4
+
+</code></pre>
+</div>
+
 <h2 id="agl-features">AGL Features</h2>
 
 <p>Before running the <code class="highlighter-rouge">aglsetup.sh</code>, you should understand what AGL features you
@@ -1086,37 +1170,59 @@ which they reside.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Available features:
    [meta-agl]
-       agl-all-features :( agl-demo  agl-appfw-smack  agl-devel  agl-hmi-framework  agl-netboot  agl-sota  agl-sdl )
+       agl-all-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-netboot )
        agl-appfw-smack
        agl-archiver
+       agl-buildstats
        agl-ci
-       agl-ci-change-features :( agl-demo  agl-appfw-smack  agl-devel  agl-hmi-framework  agl-devel  agl-netboot  agl-appfw-smack  agl-sdl )
-       agl-ci-change-features-nogfx :( agl-devel  agl-netboot  agl-appfw-smack )
-       agl-ci-snapshot-features :( agl-demo  agl-appfw-smack  agl-devel  agl-hmi-framework  agl-devel  agl-netboot  agl-appfw-smack  agl-archiver  agl-sdl  agl-ptest )
-       agl-ci-snapshot-features-nogfx :( agl-devel  agl-netboot  agl-appfw-smack  agl-isafw  agl-archiver  agl-ptest )
+       agl-ci-change-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-pipewire  agl-buildstats  agl-ptest )
+       agl-ci-change-features-nogfx :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-pipewire  agl-buildstats  agl-ptest )
+       agl-ci-snapshot-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-archiver  agl-pipewire  agl-buildstats  agl-ptest )
+       agl-ci-snapshot-features-nogfx :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-archiver  agl-pipewire  agl-buildstats  agl-ptest )
+       agl-compositor
        agl-devel
-       agl-isafw
+       agl-egvirt
+       agl-fossdriver
+       agl-gplv2
+       agl-hmi-framework
        agl-netboot
+       agl-profile-cluster :( agl-profile-graphical )
+       agl-profile-cluster-qt5 :( agl-profile-graphical-qt5  agl-profile-graphical )
+       agl-profile-graphical
+       agl-profile-graphical-qt5 :( agl-profile-graphical )
+       agl-profile-hud
+       agl-profile-telematics
        agl-ptest
        agl-sota
+       agl-virt
+       agl-virt-xen :( agl-virt )
+   [meta-agl-cluster-demo]
+       agl-cluster-demo :( agl-profile-cluster-qt5  agl-profile-graphical-qt5  agl-profile-graphical  agl-hmi-framework )
+       agl-cluster-demo-preload
    [meta-agl-demo]
-       agl-demo :( agl-appfw-smack  agl-devel  agl-hmi-framework )
-       agl-iotivity
+       agl-cluster-demo-support :( agl-gstrecorder )
+       agl-demo :( agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework )
+       agl-demo-preload
+       agl-demo-soundmanager :( agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-audio-soundmanager-framework )
        agl-sdl
    [meta-agl-devel]
-       agl-audio-4a-framework
        agl-audio-soundmanager-framework
-       agl-egvirt
-       agl-hmi-framework
+       agl-gstrecorder
        agl-oem-extra-libs
-       agl-renesas-kernel
+       agl-pipewire
+       agl-profile-graphical-html5 :( agl-profile-graphical )
+       agl-speech-framework
+       agl-voiceagent-alexa :( agl-speech-framework )
+       agl-voiceagent-alexa-wakeword :( agl-voiceagent-alexa  agl-speech-framework )
    [meta-agl-extra]
        agl-localdev
-       eas
+       blsched
+   [meta-agl-telematics-demo]
+       agl-telematics-demo :( agl-profile-telematics )
 </code></pre>
 </div>
 
-<p>To find out exactly what a feature provides, <strong>WE NEED SOME GUIDANCE HERE.  MAYBE SOME INDIVIDUAL README FILES LOCATED IN THE TEMPLATE AREAS FOR THE FEATURES</strong>.</p>
+<p>To find out exactly what a feature provides, check out the respective layer and its README.</p>
 
 <p>An AGL feature is a configuration that accounts for specific settings
 and dependencies needed for a particular build.
@@ -1164,10 +1270,6 @@ targets that use binary graphics drivers (i.e. builds without graphics).</p>
 debuggers, strace, valgrind, and so forth.</p>
   </li>
   <li>
-    <p><strong>agl-isafw</strong>: Enables an image security analysis framework.
-<strong>NOTE:</strong> This feature is deprecated.</p>
-  </li>
-  <li>
     <p><strong>agl-netboot</strong>: Enables network boot support through Trivial File Transfer Protocol (TFTP) and Network Block Device (NBD) protocol.
 Netboot is needed for CI and useful for development to avoid writing
 sdcards. Needs additional setup.</p>
@@ -1204,44 +1306,21 @@ sdcards. Needs additional setup.</p>
 as part of the build.</p>
   </li>
   <li>
-    <p><strong>agl-sota</strong>: Enables State of the Art (SOTA) components and dependencies.
-Includes meta-sota, meta-file systems, meta-ruby, and meta-rust.</p>
+    <p><strong>agl-sota</strong>: Enables Software Over-the-Air (SOTA) components and dependencies.
+Includes meta-updater, meta-updater-qemux86-64, meta-filesystems, and meta-python.</p>
   </li>
   <li>
     <p><strong>agl-demo</strong>: Enables the layers meta-agl-demo and meta-qt5.
 You need agl-demo if you are going to build the agl-demo-platform.</p>
   </li>
   <li>
-    <p><strong>agl-iotivity</strong>: Enables iotivity such as status unclear, needs check, and needs removal.</p>
-  </li>
-  <li>
     <p><strong>agl-sdl</strong>: Enables or adds SDL to the build.</p>
   </li>
   <li>
-    <p><strong>agl-audio-4a-framework</strong>: Enables AGL advanced audio architecture, which is an exclusive switch for audio framework.</p>
+    <p><strong>agl-pipewire</strong>: Enables AGLs pipewire support.</p>
   </li>
   <li>
     <p><strong>agl-audio-soundmanager-framework</strong>: Enables Soundmanager framework, which is an exclusive switch for audio framework.</p>
-  </li>
-  <li>
-    <p><strong>agl-egvirt</strong>: Enables virtualization support for the R-Car.</p>
-  </li>
-  <li>
-    <p><strong>agl-hmi-framework</strong>: Enables HMI framework.
-HMI framework is enabled by default.</p>
-  </li>
-  <li>
-    <p><strong>agl-oem-extra-libs</strong>: Pulls in additional libraries.
-<strong>NOTE:</strong> This feature is under construction.
-It needs further work and testing.</p>
-  </li>
-  <li>
-    <p><strong>agl-renesas-kernel</strong>: Enables renesas-specific kernel options.</p>
-  </li>
-  <li>
-    <p><strong>agl-telemetry</strong>: Enables the telemetry demo.  To use this feature,
-you must convert it into agl-profile-telematics.
-<strong>NOTE:</strong> agl-telemetry is not in the layer.</p>
   </li>
   <li>
     <p><strong>agl-localdev</strong>: Adds a local layer named “meta-localdev” in the
@@ -1251,9 +1330,6 @@ is present.</p>
     <p>This feature provides a shortcut for using the layer meta-localdev
 in the top-level folder for easy modifications to your own recipes.</p>
   </li>
-  <li>
-    <p><strong>eas</strong>: I don’t know what this does.</p>
-  </li>
 </ul>
 
 <h2 id="example">Example</h2>
@@ -1262,12 +1338,12 @@ in the top-level folder for easy modifications to your own recipes.</p>
 for the machine, and chooses the “agl-demo” feature, which also includes the
 “agl-appfw-smack”, “agl-devel”, and “agl-hmi-framework” features:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ source meta-agl/scripts/aglsetup.sh -m beaglebone agl-demo
+<div class="highlighter-rouge"><pre class="highlight"><code>$ source meta-agl/scripts/aglsetup.sh -m qemux86-64 agl-demo agl-devel
 aglsetup.sh: Starting
 Generating configuration files:
    Build dir: /home/scottrif/workspace_agl/build
-   Machine: beaglebone
-   Features: agl-appfw-smack agl-demo agl-devel agl-hmi-framework
+   Machine: qemux86-64
+   Features: agl-appfw-smack agl-demo agl-devel
    Running /home/scottrif/workspace_agl/poky/oe-init-build-env
    Templates dir: /home/scottrif/workspace_agl/meta-agl/templates/base
    Config: /home/scottrif/workspace_agl/build/conf/bblayers.conf
@@ -1412,7 +1488,7 @@ Here are some references if you want to dig into configuration further:</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -1420,7 +1496,7 @@ Here are some references if you want to dig into configuration further:</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:29 +0000</small>
+		<small class="stats">Page rendered at:  2020-03-23 04:31:59 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/docs/getting-started/image-workflow-initialize-build-environment.md">Link to source document</small>
 		
@@ -1438,19 +1514,19 @@ Here are some references if you want to dig into configuration further:</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

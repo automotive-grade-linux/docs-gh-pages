@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -2400,6 +2402,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/devguides/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/devguides/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/devguides/" class="missing-page">
                                     
                                         
@@ -2472,13 +2520,13 @@
 
 <p>The Application Framework Binder Daemon (<code class="highlighter-rouge">afb-daemon</code>), which is a part of
 the AGL Application Framework, provides a way to connect applications to
-required services.
+required services.\
 It provides a fast way to securely offer APIs to applications that are
 written in any language and that can run almost anywhere.</p>
 
 <p>You can learn more about the AGL Application Framework in the
 “<a href="../../apis_services/reference/af-main/0-introduction.html">AGL Framework Overview</a>”
-section.
+section.\
 You can learn more about the <code class="highlighter-rouge">aft-daemon</code> in the
 “<a href="../../apis_services/reference/af-binder/afb-overview.html">Binder Overview</a>”
 section.</p>
@@ -2488,7 +2536,7 @@ section.</p>
 <p>Use the following commands if your native Linux machine uses the Debian
 distribution:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo apt-get install agl-app-framework-binder-dev
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install agl-app-framework-binder-dev
 </code></pre>
 </div>
 
@@ -2497,18 +2545,18 @@ distribution:</p>
 <p>Use the following commands if your native Linux machine uses the OpenSUSE
 distribution:</p>
 
-<p><code class="highlighter-rouge">bash
-  $ sudo zypper install agl-app-framework-binder-devel
- </code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo zypper install agl-app-framework-binder-devel
+</code></pre>
+</div>
 
 <h2 id="installing-on-fedora">Installing on Fedora</h2>
 
 <p>Use the following commands if your native Linux machine uses the Fedora
 distribution:</p>
 
-<p><code class="highlighter-rouge">bash
-  $ sudo dnf install agl-app-framework-binder-devel
- </code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo dnf install agl-app-framework-binder-devel
+</code></pre>
+</div>
 
 <h2 id="setting-your-environment-variables">Setting Your Environment Variables</h2>
 
@@ -2516,17 +2564,20 @@ distribution:</p>
 variables correctly in order to use the daemon (i.e. <code class="highlighter-rouge">app-framework-binder</code>).</p>
 
 <p>Commands that define and export these environment variables exist in the
-<code class="highlighter-rouge">/etc/profile.d/AGL_app-framework-binder.sh</code> file, which is created when
+<code class="highlighter-rouge">agl-app-framework-binder.sh</code> file, which is created when
 you install the daemon:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/AGL/lib/x86_64-linux-gnu:<span class="k">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="k">}</span>
-<span class="nb">export </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span>/opt/AGL/lib/x86_64-linux-gnu:<span class="k">${</span><span class="nv">LIBRARY_PATH</span><span class="k">}</span>
-<span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/opt/AGL/lib/x86_64-linux-gnu/pkgconfig:<span class="k">${</span><span class="nv">PKG_CONFIG_PATH</span><span class="k">}</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/opt/AGL/bin:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#----------  AGL %{name} options Start ---------"</span>
+<span class="c"># Object: AGL cmake option for  binder/bindings</span>
+<span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/AGL/lib64:<span class="k">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="k">}</span>
+<span class="nb">export </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span>/opt/AGL/lib64:<span class="k">${</span><span class="nv">LIBRARY_PATH</span><span class="k">}</span>
+<span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/opt/AGL/lib64/pkgconfig:<span class="k">${</span><span class="nv">PKG_CONFIG_PATH</span><span class="k">}</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/opt/AGL/bin:<span class="nv">$PATH</span>
+<span class="c">#----------  AGL options End ---------</span>
 </code></pre>
 </div>
 
-<p>You can make sure thest environment variables are correctly set by doing
+<p>You can make sure these environment variables are correctly set by doing
 one of the following:</p>
 
 <ul>
@@ -2537,16 +2588,16 @@ one of the following:</p>
 variables.</p>
   </li>
   <li>
-    <p><strong>Manually Source the <code class="highlighter-rouge">AGL_app-framework-binder.sh</code> File:</strong></p>
+    <p><strong>Manually Source the <code class="highlighter-rouge">agl-app-framework-binder.sh</code> File:</strong></p>
 
     <p>Source the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">source</span> /etc/profile.d/AGL_app-framework-binder.sh
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source</span> /etc/profile.d/agl-app-framework-binder.sh
 </code></pre>
     </div>
 
     <p><strong>NOTE:</strong>
-Creating a new session automatically sources the <code class="highlighter-rouge">AGL_app-framework-binder.sh</code>
+Creating a new session automatically sources the <code class="highlighter-rouge">agl-app-framework-binder.sh</code>
 file.</p>
   </li>
 </ul>
@@ -2622,7 +2673,7 @@ file.</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2630,9 +2681,9 @@ file.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:05 +0000</small>
+		<small class="stats">Page rendered at:  2020-03-23 04:31:32 +0000</small>
 		
-		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/master/host-configuration/docs/3-installing-binder-daemon.md">Link to source document</small>
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/agl-documentation/host-configuration/docs/3-installing-binder-daemon.md">Link to source document</small>
 		
 	</div>
 </div>
@@ -2648,19 +2699,19 @@ file.</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 
