@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'guppy' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -982,6 +984,29 @@
                                 
 
                                 
+                                <a href="/docs/en/halibut/getting_started/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/getting_started/" class="missing-page">
                                     
                                         <span class="selected">
@@ -1112,11 +1137,11 @@ This download site supports the Pro and Premier board starter kits.</p>
 
     <p><code class="highlighter-rouge">bash
   grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
-  3:ZIP_1="R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip"
-  4:ZIP_2="R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip"
+  3:ZIP_1="R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20190722.zip"
+  4:ZIP_2="R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20190722.zip"
  </code></p>
 
-    <p>The script’s output identifies the files you need to download from the page and the example above correspond to the Electric Eel AGL revision (v5.0.0). Note that since Flounder AGL revision (v6.0.0), both zip have been renamed.</p>
+    <p>The script’s output identifies the files you need to download from the page and the example above correspond to the Grumpy Guppy AGL revision (v7.0.4).</p>
   </li>
   <li>
     <p><strong>Find the Download Links:</strong></p>
@@ -1174,8 +1199,8 @@ they have the correct access rights.
 Here is an example:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ls -l <span class="nv">$XDG_DOWNLOAD_DIR</span>/<span class="k">*</span>.zip
--rw-rw-r-- 1 scottrif scottrif 4662080 Nov 19 14:48 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
--rw-rw-r-- 1 scottrif scottrif 3137626 Nov 19 14:49 /home/scottrif/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+-rw-r--r-- 1 iot bzh 5359864 sept. 16 21:07 R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20190722.zip
+-rw-r--r-- 1 iot bzh 3441284 sept. 16 21:07 R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20190722.zip
 </code></pre>
     </div>
   </li>
@@ -1353,8 +1378,8 @@ The graphics and multimedia acceleration packages <span class="k">for
  https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 
 These 2 files from there should be store <span class="k">in </span>your<span class="s1">'/home/devel/Downloads'</span> directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston2-20170904.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston2-20170904.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20190722.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20190722.zip
 /home/working/workspace_agl_master/build_gen3
 --- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
@@ -1379,17 +1404,17 @@ the downloads directory:</p>
 --- fragment /home/thierry/workspace_agl/meta-agl/templates/base/01_setup_EULAfunc.sh
 --- fragment /home/thierry/workspace_agl/meta-agl/templates/machine/m3ulcb/50_setup.sh
 ~/workspace_agl ~/workspace_agl/build
-ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
-ERROR: FILES <span class="s2">"+/home/thierry/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip+"</span> NOT EXTRACTING CORRECTLY
+ERROR: FILES <span class="s2">"+/home/iotbzh/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20190722.zip+"</span> NOT EXTRACTING CORRECTLY
+ERROR: FILES <span class="s2">"+/home/iotbzh/Downloads/R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20190722.zip+"</span> NOT EXTRACTING CORRECTLY
 The graphics and multimedia acceleration packages <span class="k">for
 </span>the R-Car Gen3 board BSP can be downloaded from:
 &lt;https://www.renesas.com/us/en/solutions/automotive/rcar-download/rcar-demoboard-2.html&gt;
 
 These 2 files from there should be stored <span class="k">in </span>your
-<span class="s1">'/home/thierry/Downloads'</span> directory.
-  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20180423.zip
-  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20180423.zip
-ERROR: Script /home/thierry/workspace_agl/build/conf/setup.sh failed
+<span class="s1">'/home/iotbzh/Downloads'</span> directory.
+  R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-20190722.zip
+  R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-20190722.zip
+ERROR: Script /home/iotbzh/workspace_agl/build/conf/setup.sh failed
 <span class="o">[</span>snip]
 </code></pre>
     </div>
@@ -2063,7 +2088,7 @@ Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2071,7 +2096,7 @@ Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:37 +0000</small>
+		<small class="stats">Page rendered at:  2019-11-08 04:37:06 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/guppy/docs/getting-started/machines/renesas.md">Link to source document</small>
 		
@@ -2089,19 +2114,19 @@ Last login: Tue Dec  6 10:01:11 2016 from 10.0.0.13
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

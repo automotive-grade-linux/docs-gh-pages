@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Download or Build Your Image  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/en/halibut/getting_started/reference/getting-started/app-workflow-image.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/halibut/getting_started/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: halibut halibut-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/en/halibut/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'halibut' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Welcome !
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/getting-started-welcome.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an AGL Image
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-prep-host.html">
+                Preparing Your Build Host
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-download-sw.html">
+                Downloading AGL Software
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+                Initializing Your Build Environment
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-cust-build.html">
+                Customizing Your Build
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-build.html">
+                Building the AGL Image
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/intel.html">
+                Building for Most Intel 64-Bit Hardware Platforms
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/qemu.html">
+                Building for Emulation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/renesas.html">
+                Build for R Car Starter Kit gen3 board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/raspberrypi.html">
+                Build for Raspberry PI 2/3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/homescreen/index.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Troubleshooting
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/troubleshooting.html">
+                Generic issues
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Setting Up a Docker Container
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/docker-container-setup.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Developing an Application
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-intro.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-image.html">
+                Download or Build Your Image
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-sdk.html">
+                Download or Build Your SDK Installer
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-bootables.html">
+                Create Bootable Media
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-boot.html">
+                Boot the Image on the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-prep-app.html">
+                Get Ready to Create Your Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-build-app.html">
+                Create and Build the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-deploy-app.html">
+                Deploy the Application to the Board
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-debug-app.html">
+                Debug the Application
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/getting-started-welcome.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-prep-host.html">
+        Preparing Your Build Host
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-download-sw.html">
+        Downloading AGL Software
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">
+        Initializing Your Build Environment
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-cust-build.html">
+        Customizing Your Build
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/image-workflow-build.html">
+        Building the AGL Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/intel.html">
+        Building for Most Intel 64-Bit Hardware Platforms
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/qemu.html">
+        Building for Emulation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/renesas.html">
+        Build for R Car Starter Kit gen3 board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/machines/raspberrypi.html">
+        Build for Raspberry PI 2/3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/homescreen/index.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/troubleshooting.html">
+        Generic issues
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/docker-container-setup.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-intro.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="this-page" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-image.html">
+        Download or Build Your Image
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-sdk.html">
+        Download or Build Your SDK Installer
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-bootables.html">
+        Create Bootable Media
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-boot.html">
+        Boot the Image on the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-prep-app.html">
+        Get Ready to Create Your Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-build-app.html">
+        Create and Build the Application
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-deploy-app.html">
+        Deploy the Application to the Board
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-debug-app.html">
+        Debug the Application
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/docs/en/halibut/getting_started/reference/getting-started/app-workflow-image.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            halibut
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/master/getting_started/" class="missing-page">
+                                    
+                                        
+                                    master
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/getting_started/" class="missing-page">
+                                    
+                                        <span class="selected">
+                                            
+                                    halibut
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/guppy/getting_started/" class="missing-page">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/flounder/getting_started/" class="missing-page">
+                                    
+                                        
+                                    flounder
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                -->
+
+                <!-- outdated warning
+                
+                    <div class="alert docs-alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        This version of the documentation is outdated!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/getting_started/halibut/image-development-workflow-getting-started-book.yml -->
+
+<h1 id="download-or-build-your-image">1. Download or Build Your Image</h1>
+
+<p>You need to have an image that you can run on your hardware device.
+You can either build that image from scratch or, if you are going to use
+hardware supported by AGL, you can download a ready-made image from the
+<a href="https://download.automotivelinux.org/AGL/release/">AGL Download Website</a> site.</p>
+
+<h2 id="downloading-an-image">Downloading an image</h2>
+
+<p>For a look at the supported images, go to the
+<a href="https://download.automotivelinux.org/AGL/release/">AGL Download Website</a>.
+You can explore that hierarchy and locate images based on the AGL release and the supported hardware.</p>
+
+<p>The following list summarizes the pre-built image support:</p>
+
+<ul>
+  <li>
+    <p><strong><a href="https://www.qemu.org/">Quick EMUlator (QEMU)</a>:</strong>
+QEMU is a generic, open source machine emulator and virtualizer.
+You can use QEMU as your “hardware” when you run an image built for
+the emulator.
+AGL supports QEMU images for 32 and 64-bit architectures for ARM and Intel
+devices.</p>
+  </li>
+  <li>
+    <p><strong><a href="http://www.ti.com/tool/J6EVM5777">DRA7xx Evaluation Module Platform</a>:</strong>
+Texas Instruments Jacinto™ DRA7xx evaluation module platform helps speed up
+development efforts and reduces time-to-market for applications
+such as infotainment, reconfigurable digital cluster, or integrated digital
+cockpit.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://developer.qualcomm.com/hardware/dragonboard-410c">DragonBoard 410C Development Board</a>:</strong>
+QualComm’s DragonBoard™ 410c is its first development board based
+on a Qualcomm® Snapdragon™ 400 series processor.
+The credit-card sized board has advanced processing power, Wi-Fi, Bluetooth
+connectivity, and GPS.
+The board is based on the 64-bit Snapdragon 410E processor,</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.intel.com/content/www/us/en/nuc/nuc-kit-nuc7i7bnh-brief.html?wapkw=core+i7+boards">Intel Core i7 Boards</a>:</strong>
+Intel offers a wide array of devices and boards.
+One such device that uses the Intel Core i7 board supported by AGL
+is the Intel® NUC Kit NUC7i7BNH.
+The board in this device uses a dual-core 7th Generation Intel Core i7
+processor and Intel Turbo Boost Technology 2.0.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.elinux.org/R-Car/Boards/M3SK">M3 Ultra Low-Cost Board</a>:</strong>
+The MC3ULC is a Renesas R-Car Gen3 SOC development board.
+Depending on the SOC specialization, Renesas provides several classes
+of these boards.
+The “M” classification is for the “middle-end” version as compared to the
+“H” classification, which is a “high-end” version.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://www.raspberrypi.org/products/">Raspberry Pi 3</a>:</strong>
+The Raspberry Pi 3 uses a 1.4GHz 64-bit quad-core processor.
+The board features dual-band wireless LAN, Bluetooth 4.2/BLE,
+faster Ethernet, and Power-over-Ethernet support with separate PoE HAT.</p>
+  </li>
+</ul>
+
+<p>If you want to use QEMU or you are developing an application for one the
+supported hardware board types, you might consider skipping the build
+step, which is described below, and just download your image.</p>
+
+<p>As an example, suppose you want to download the 64-bit ARM-based image
+that you can emulate using QEMU.
+Furthermore, you are using the “Flounder” 6.0.0 AGL release.
+Go to the <a href="https://download.automotivelinux.org/AGL/release/">AGL Download Website</a>
+site and follow these links:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>flounder -&gt; 6.0.0 -&gt; qemuarm64 -&gt; deploy -&gt; images -&gt; qemuarm64
+</code></pre>
+</div>
+
+<p>From the list, you could download the <code class="highlighter-rouge">Image-qemuarm64.bin</code> image file.</p>
+
+<h2 id="building-an-image">Building an image</h2>
+
+<p>Building the image from scratch requires system preparation, build configuration, and then the build itself.
+Building an image for the first time can take many hours.</p>
+
+<p>The following procedure describes how to build your image:</p>
+
+<ol>
+  <li>
+    <p><strong>Prepare Your System:</strong>  Your system, known as a “build host” needs to meet some requirements
+in order to build images in the AGL environment.
+The “<a href="./image-workflow-prep-host.html">Preparing Your Build Host</a>”
+section describes in detail how to make sure your system meets
+these requirements.</p>
+
+    <p>In summary, do the following to prepare your system:</p>
+
+    <ul>
+      <li>
+        <p>Be sure that your build system runs a modern version of a supported Linux Distribution.
+For a list of supported distributions, see the
+“<a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#detailed-supported-distros">Supported Linux Distributions</a>”
+section in the Yocto Project Reference Manual.</p>
+
+        <p><strong>NOTE:</strong> Building images using AGL software leverages off the
+<a href="https://www.yoctoproject.org/">Yocto Project</a>, which is an Open Source project used to create small, embedded distributions.</p>
+      </li>
+      <li>
+        <p>Be sure that you have updated versions of Tar, Git, Python, and the GNU Compiler Collection (GCC).</p>
+      </li>
+      <li>
+        <p>Install required packages on the build host.
+This list of packages depends on the particular Linux Distribution your build host uses.
+See the
+“<a href="./image-workflow-prep-host.html">Preparing Your Build Host</a>”
+section for the packages you need to install for your specific
+distribution.</p>
+
+        <p><strong>NOTE:</strong> The definitive package requirements are documented in the
+“<a href="https://yoctoproject.org/docs/2.4.4/ref-manual/ref-manual.html#required-packages-for-the-host-development-system">Required Packages for the Host Development System</a>”
+section of the Yocto Project Reference Manual.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Download the AGL source code:</strong> Getting the AGL source code involves creating an
+isolated work directory, securing the “repo” tool, and finally
+using Git to download the source code into a cloned local repository.</p>
+
+    <p>Be sure to consider the source code version before downloading the source.
+If you want the cutting edge version of the AGL source code, download the “master” branch.
+Otherwise, download the latest stable AGL release.</p>
+
+    <p>You can see example steps in the
+“<a href="./image-workflow-download-sw.html">Download AGL source code</a>”
+section.</p>
+  </li>
+  <li>
+    <p><strong>Initialize the build environment:</strong> The build process assumes many environment
+variable settings, tools, tool locations, and file hierarchies.
+Once the AGL software is on your local system, you need to run the build
+setup script (i.e. <code class="highlighter-rouge">aglsetup.sh</code>) to establish environment variables
+and paths used during the build process.</p>
+
+    <p>Because the script accepts options that define the features used in your
+build environment, you need to understand what features you want
+before running the script.
+For information on running the script and on the features you can choose,
+see the
+“<a href="./image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
+section.</p>
+  </li>
+  <li>
+    <p><strong>Customize your build configuration:</strong> Aside from environment variables
+and parameters, build parameters and variables need to be defined before
+you start the build process.
+These parameters (configurations) are defined in the <code class="highlighter-rouge">local.conf</code>
+configuration file.
+In general, the defaults in that file are good enough.
+However, you can customize aspects by editing the <code class="highlighter-rouge">local.conf</code> file.
+See the
+“<a href="./image-workflow-cust-build.html">Customizing Your Build</a>”
+section for the location of the file and a list of common customizations.</p>
+
+    <p><strong>NOTE:</strong> For detailed explanations of the configurations you can make
+in the <code class="highlighter-rouge">local.conf</code> file, consult the
+<a href="https://www.yoctoproject.org/docs/">Yocto Project Documentation</a>.</p>
+  </li>
+  <li>
+    <p><strong>Building the image:</strong> You use
+<a href="https://yoctoproject.org/docs/2.4.4/bitbake-user-manual/bitbake-user-manual.html">BitBake</a>
+to build the image.
+BitBake is the engine used by the Yocto Project when building images.
+The command used to build the image is <code class="highlighter-rouge">bitbake</code>.</p>
+
+    <p>For example, the following command builds the image for the AGL demo platform,
+which is an image you can emulate using QEMU:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ bitbake agl-demo-platform
+</code></pre>
+    </div>
+
+    <p>As previously mentioned, building a new image can take a long time.
+An initial build could take hours.
+Once the image has been initially built, re-builds are much quicker as
+BitBake takes advantage of cached artifacts.</p>
+
+    <p>The build image resides in the deployment area of the build directory.
+For example, Assuming your top-level AGL directory is <code class="highlighter-rouge">~/workspace_agl</code>, you find the image here:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>~/workspace_agl/build/tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk.xz
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2019-11-08 04:36:48 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/halibut/docs/getting-started/app-workflow-image.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    <!-- 
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: '',
+        indexName: '',
+        inputSelector: '#header-search-field',
+    });
+</script>
+ -->
+            
+    
+
+</body>
+</html>

@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -1034,7 +1036,37 @@
 
     <li>
         
-            <a class="" href="/docs/en/master/apis_services/reference/signaling/3-Usage.html">
+            <a class="" href="/docs/en/master/apis_services/reference/signaling/3-Installation-J1939.html">
+                Installation Guide for J1939
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/apis_services/reference/signaling/4-Installation-ISOTP.html">
+                Installation Guide for ISOTP
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/master/apis_services/reference/signaling/5-Usage.html">
                 Usage Guide
             </a>
             
@@ -1615,7 +1647,7 @@
 
     <li>
         
-            <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+            <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/ApplicationGuide.html">
                 Home Screen Developper Guide
             </a>
             
@@ -1631,7 +1663,7 @@
     <li>
         
             <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
-                Window Manager Developper Guide
+                Window Manager Developer Guide
             </a>
             
         
@@ -2225,7 +2257,25 @@
 
 
 <li>
-    <a class="" href="/docs/en/master/apis_services/reference/signaling/3-Usage.html">
+    <a class="" href="/docs/en/master/apis_services/reference/signaling/3-Installation-J1939.html">
+        Installation Guide for J1939
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/apis_services/reference/signaling/4-Installation-ISOTP.html">
+        Installation Guide for ISOTP
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/master/apis_services/reference/signaling/5-Usage.html">
         Usage Guide
     </a>
 </li>
@@ -2534,7 +2584,7 @@
 
 
 <li>
-    <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_1-HomeScreen-Guide.html">
+    <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/ApplicationGuide.html">
         Home Screen Developper Guide
     </a>
 </li>
@@ -2544,7 +2594,7 @@
 
 <li>
     <a class="" href="/docs/en/master/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
-        Window Manager Developper Guide
+        Window Manager Developer Guide
     </a>
 </li>
 
@@ -2692,6 +2742,29 @@
                                 
 
                                 
+                                <a href="/docs/en/halibut/apis_services/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/apis_services/" class="missing-page">
                                     
                                         
@@ -2804,6 +2877,8 @@ files <code class="highlighter-rouge">conf.d/controller/lua.d/helloworld.lua</co
     <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbStatusSuccess</span><span class="p">(</span><span class="s1">'testEventSub'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'eventsub'</span><span class="p">,</span> <span class="p">{</span><span class="n">tag</span> <span class="o">=</span> <span class="s1">'evt'</span><span class="p">})</span>
     <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbStatusSuccess</span><span class="p">(</span><span class="s1">'testEventPush'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'eventpush'</span><span class="p">,</span> <span class="p">{</span><span class="n">tag</span> <span class="o">=</span> <span class="s1">'evt'</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">'weird others data'</span><span class="p">,</span> <span class="n">another_key</span> <span class="o">=</span> <span class="mi">123</span><span class="p">.</span><span class="mi">456</span><span class="p">}})</span>
 
+    <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbStatusSkipped</span><span class="p">(</span><span class="s1">'testEventSub'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'eventsub'</span><span class="p">,</span> <span class="p">{</span><span class="n">tag</span> <span class="o">=</span> <span class="s1">'evt'</span><span class="p">})</span>
+
     <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbStatusSuccess</span><span class="p">(</span><span class="s1">'testGenerateWarning'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'verbose'</span><span class="p">,</span> <span class="p">{</span><span class="n">level</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="s1">'My Warning message!'</span><span class="p">})</span>
 
     <span class="n">_AFT</span><span class="p">.</span><span class="n">testEvtGrpReceived</span><span class="p">(</span><span class="s2">"TestEventGroupReceived"</span><span class="p">,{</span><span class="s2">"hello/anEvent"</span><span class="p">,</span><span class="s2">"hello/anotherEvent"</span><span class="p">},</span><span class="mi">300000</span><span class="p">)</span>
@@ -2857,6 +2932,7 @@ files <code class="highlighter-rouge">conf.d/controller/lua.d/helloworld.lua</co
 <span class="k">function</span> <span class="nf">_callbackError</span><span class="p">(</span><span class="n">responseJ</span><span class="p">)</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertStrContains</span><span class="p">(</span><span class="n">responseJ</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">info</span><span class="p">,</span> <span class="s2">"Ping Binder Daemon fails"</span><span class="p">)</span> <span class="k">end</span>
 
 <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbStatusSuccess"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbStatusSuccess</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'ping'</span><span class="p">,</span> <span class="p">{})</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbStatusSkipped"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbStatusSkipped</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'ping'</span><span class="p">,</span> <span class="p">{})</span> <span class="k">end</span><span class="p">)</span>
 <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbResponseEquals"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbResponseEquals</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'ping'</span><span class="p">,</span> <span class="p">{},</span><span class="s2">"Some String"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
 <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbCb"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbCb</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'ping'</span><span class="p">,</span> <span class="p">{},</span><span class="n">_callback</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
 <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbStatusError"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbStatusError</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'pingfail'</span><span class="p">,</span> <span class="p">{})</span> <span class="k">end</span><span class="p">)</span>
@@ -2941,7 +3017,7 @@ then read the following chapter if needed to write more complex tests.</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2949,7 +3025,7 @@ then read the following chapter if needed to write more complex tests.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:10 +0000</small>
+		<small class="stats">Page rendered at:  2019-11-08 04:36:32 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-afb-test/plain/docs/4_Tests_Examples.md?h=master">Link to source document</small>
 		
@@ -2967,19 +3043,19 @@ then read the following chapter if needed to write more complex tests.</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 
