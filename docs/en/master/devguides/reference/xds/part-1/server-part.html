@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -2400,6 +2402,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/devguides/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/devguides/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/devguides/" class="missing-page">
                                     
                                         
@@ -2712,8 +2760,7 @@ In this case, you must define “url” in the <code class="highlighter-rouge">x
 <p>If you are using path-mapping sharing type for your projects, you need to
 have the same user ID and group ID inside and outside Docker.</p>
 
-<p>By default, user and group names inside Docker are <code class="highlighter-rouge">devel</code> and <code class="highlighter-rouge">1664</code>,
-respectively.</p>
+<p>By default, user, password and group names inside Docker are <code class="highlighter-rouge">devel</code>, <code class="highlighter-rouge">devel</code> and <code class="highlighter-rouge">1664</code>, respectively.</p>
 
 <!-- section-note -->
 <p><strong>NOTE:</strong></p>
@@ -2745,8 +2792,19 @@ docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CO
 ssh -p 2222 devel@localhost -- <span class="s2">"systemctl --user restart xds-server"</span>
 </code></pre>
 </div>
+<p>### Manually setup the Docker Password</p>
 
-<h3 id="check-if-xds-server-is-running-open-xds-webapp">Check if xds-server is Running (open XDS webapp)</h3>
+<p>If you forget the password set for the container , you wont be able to ssh into the container and check on the files created. 
+For such a time , you need to set up a new password for the container. Use the following commands to do just that:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># This will let you access the bash shell inside the container as root</span>
+docker <span class="nb">exec</span> -it <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> /bin/bash
+
+<span class="c"># Change the password of the user (root or devel)</span>
+passwd <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>
+</code></pre>
+</div>
+<p>### Check if xds-server is Running (open XDS webapp)</p>
 
 <p>When the container starts up, <code class="highlighter-rouge">xds-server</code> automatically starts as a
 user service.</p>
@@ -3013,7 +3071,7 @@ the XDS web interface through your browser:</p>
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -3058,7 +3116,7 @@ the XDS web interface through your browser:</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -3066,7 +3124,7 @@ the XDS web interface through your browser:</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:37 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:32:15 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/server-part.md?h=master">Link to source document</small>
 		
@@ -3084,19 +3142,19 @@ the XDS web interface through your browser:</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

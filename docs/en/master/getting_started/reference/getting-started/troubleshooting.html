@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -346,7 +348,7 @@
     <li>
         
             <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-                Build for Raspberry PI 2/3
+                Build for Raspberry PI 3/4
             </a>
             
         
@@ -743,7 +745,7 @@
 
 <li>
     <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-        Build for Raspberry PI 2/3
+        Build for Raspberry PI 3/4
     </a>
 </li>
 
@@ -984,6 +986,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/getting_started/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/getting_started/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/getting_started/" class="missing-page">
                                     
                                         
@@ -1070,8 +1118,10 @@ Simplified Mandatory Access Control kernel.</p>
   <a href="https://www.kernel.org/doc/Documentation/security/Smack.txt">https://www.kernel.org/doc/Documentation/security/Smack.txt</a>.
   for detailed information on Smack.</p>
 
+<p><strong>NOTE:</strong> SMACK is a required feature for the AGL Application Framework.</p>
+
 <p>Many methods exist that allow you to create bootable media (e.g. <code class="highlighter-rouge">dd</code>, <code class="highlighter-rouge">bmaptools</code>,
-<code class="highlighter-rouge">tar</code>, and AGL-provided scripts such as <code class="highlighter-rouge">mkabl-agl.sh</code> and <code class="highlighter-rouge">mkefi-agl.sh</code>).
+<code class="highlighter-rouge">tar</code>).
 It is recommended that you do not use <code class="highlighter-rouge">tar</code> to create bootable media.
 However, if you do, you must take these steps to copy <code class="highlighter-rouge">xattrs</code> to the media:</p>
 
@@ -1129,177 +1179,39 @@ Line: <span class="nv">transform</span><span class="o">=</span>90
 </code></pre>
 </div>
 
-<h2 id="disabling-homescreen-in-agl-40x-dd-release">Disabling Homescreen in AGL 4.0.x DD release</h2>
-
-<p><strong>Problem</strong>: new installed applications are not available on Homescreen and even if started manually through afm-util, the application starts but no surface appears.</p>
-
-<p><strong>Answer</strong>: this is due to IVI-Shell integration with Qt and Homescreen.</p>
-
-<p>To disable IVI-Shell and revert to the “plain old” weston desktop, you can follow the 4 steps below:</p>
-
-<ul>
-  <li>Modify <em>/etc/xdg/weston/weston.ini</em> and comment the line mentioning IVI-shell. For example on Porter board:</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>           <span class="o">[</span>core]
-           <span class="nv">backend</span><span class="o">=</span>drm-backend.so
-           <span class="c">#shell=ivi-shell.so</span>
-           ...
-</code></pre>
-</div>
-
-<ul>
-  <li>modify <em>/etc/afm/unit.env.d/qt-for-ivi-shell</em> and comment the line specifying QT Wayland backend:</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>           ...
-           <span class="c">#Environment=QT_WAYLAND_SHELL_INTEGRATION=ivi-shell</span>
-           ...
-</code></pre>
-</div>
-
-<p>(If you use vi, remove backup files by <code class="highlighter-rouge">rm /etc/afm/unit.env.d/*~</code>)</p>
-
-<ul>
-  <li>disable Homescreen services:</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>           <span class="c"># systemctl --user mask HomeScreen.service</span>
-</code></pre>
-</div>
-
-<ul>
-  <li>Reboot your target and you should then be able to start apps on the standard weston screen using afm-util</li>
-</ul>
-
 <h2 id="adding-media-files-to-play-with-mediaplayer">Adding media files to play with MediaPlayer</h2>
 
 <p>AGL include the default MediaPlayer sample app which can be used to play music. The <code class="highlighter-rouge">lightmediascanner.service</code> by default will search for media under the <code class="highlighter-rouge">/media</code> folder. So if you plug in any USB stick containing music, they would be recognized and showed in the playlist of the MediaPlayer app menu.</p>
 
 <p>The current supported format is OGG. Please convert your files to ogg to play with MediaPlayer.</p>
 
+<p><strong>NOTE</strong>: mp3 is not found by default. For this you need to enable the flags for mp3 support.</p>
+
 <p>In case you want to store music in another place, modify the <code class="highlighter-rouge">/usr/lib/systemd/user/lightmediascanner.service</code> file and change the <code class="highlighter-rouge">--directory</code> parameter to the path of that folder.</p>
 
-<p>If you don’t want to touch the ligthmediascanner service, you can also add a folder named “Music” under <code class="highlighter-rouge">/home/root</code> and put your music files there.</p>
+<p>If you don’t want to touch the ligthmediascanner service, you can also add a folder named “Music” under <code class="highlighter-rouge">/home/1001/Music</code> and put your music files there.</p>
 
 <h2 id="configuring-the-audio-hardware">Configuring the Audio hardware</h2>
 
 <p>AGL uses alsa as Audio configuration master. If the correct HW is not setup, the Audio system will fail to start what will also fails the demo Home Screen launch.
-You need to configure Audio in 2 places</p>
+You need to configure Audio in</p>
 
 <ul>
-  <li>alsa</li>
-  <li>4A HAL</li>
+  <li>pipewire</li>
 </ul>
 
-<h3 id="alsa">alsa</h3>
+<h3 id="pipewire">pipewire</h3>
 
-<p>The file /etc/asound.conf (at the beginning) tells which hardware will be used.
- For example on an Intel Minnow or UP board your need to enter the following configuration.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>   pcm.Speakers <span class="o">{</span>
-      <span class="nb">type </span>dmix
-      slave <span class="o">{</span>pcm <span class="s2">"hw:PCH,3"</span><span class="o">}</span>
-      ipc_key 1001          <span class="c"># ipc_key should be unique to each dmix</span>
-  <span class="o">}</span>
-</code></pre>
-</div>
-
-<p>The correct value (here hw:PCH,3) can be obtained with the command:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  aplay -l
-  <span class="k">****</span> List of PLAYBACK Hardware Devices <span class="k">****</span>
-  card 0: PCH <span class="o">[</span>HDA Intel PCH], device 3: HDMI 0 <span class="o">[</span>HDMI 0]
-    Subdevices: 1/1
-    Subdevice <span class="c">#0: subdevice #0</span>
-  card 0: PCH <span class="o">[</span>HDA Intel PCH], device 7: HDMI 1 <span class="o">[</span>HDMI 1]
-    Subdevices: 1/1
-    Subdevice <span class="c">#0: subdevice #0</span>
-</code></pre>
-</div>
-
-<p>Using hw:PCH rather than hw:0 will avoid you many trouble.\
-NOTE that the device number is not always 0. If you give no device number, alsa will assume device 0 (and the not the first available device), what can fail your configuration.\
-As the default is hw:0 (card 0 device 0), it will always fail on a Minnow or UP board.</p>
-
-<p>For info HW device for common configuration are:</p>
+<p>AGL does use the new pipewire infrastructure for sound.
+The configuration is in:</p>
 
 <ul>
-  <li>for USB Audio -&gt; hw:AUDIO,0</li>
-  <li>for Intel Analog output -&gt; hw:PCH,0 (not available on Minnow, Joule, Up boards, …)</li>
-  <li>for Intel via -&gt; HDMI hw:PCH,3</li>
-  <li>for MOST Unicens -&gt; hw:ep016ch,0</li>
+  <li><code class="highlighter-rouge">/etc/pipewire/</code>
+and</li>
+  <li><code class="highlighter-rouge">/etc/wireplumber/</code></li>
 </ul>
 
-<h3 id="a-hal-configuration">4A HAL configuration</h3>
-
-<p>AGL 4A needs to know which HAL shall be used. This is configured in the file:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>/usr/agl-service-audio-4a/ahl-agl-service-audio-4a-config.json
-</code></pre>
-</div>
-
-<p>At the beginning of that file you will find the slected HAL (note the there is no correct default value).</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">{</span>
-    <span class="s2">"version"</span>: <span class="s2">"0.2.0"</span>,
-    <span class="s2">"policy_module"</span>: <span class="s2">"AudioPolicy_v1"</span>,
-    <span class="s2">"description"</span>: <span class="s2">"High-level binding configuration file"</span>,
-    <span class="s2">"note"</span>: <span class="s2">"Devices and routings are always listed in order of priority (for device selection rules)"</span>,
-    <span class="s2">"hal_list"</span>: <span class="o">[</span><span class="s2">"intel-minnow"</span><span class="o">]</span>,
-    <span class="s2">"audio_roles"</span>: <span class="o">[</span>
-</code></pre>
-</div>
-
-<p>Here you see “intel-minnow” but common values are:</p>
-
-<ul>
-  <li>Intel laptop -&gt; intel-pc</li>
-  <li>Intel via HDMI -&gt; intel-minnow</li>
-  <li>Renesas -&gt; Rcar-M3</li>
-  <li>USB Audio Speaker -&gt; usb-audio</li>
-  <li>MOSTS Unicens -&gt; hal-most-unicens</li>
-</ul>
-
-<p>More HAL can be found on Gerrit (search projects named as 4a-hal*)</p>
-
-<h2 id="installing-the-map-for-the-navigation-application">Installing the Map for the Navigation Application</h2>
-
-<p>While the Navigation App is installed with all other demo Apps at first boot, the Maps required to be installed manually.</p>
-
-<h3 id="a-method-1-on-target-download">a) Method 1 on target download</h3>
-
-<ol>
-  <li>Install the new image on the target</li>
-  <li>boot a first time to install the demo Apps</li>
-  <li>via ssh or serial connection, execute the script
-    <ul>
-      <li>/usr/AGL/apps/download_mapdata_uk.sh\
-or</li>
-      <li>/usr/AGL/apps/download_mapdata_jp.sh</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="b-at-image-creation">b) At image creation</h3>
-
-<p>Download on your build machine the desired maps and uncompress them on your target image before 1st boot.
-This method is quicker and does not require to have the network enabled on the target device.
-Map can be found here.</p>
-
-<ul>
-  <li><a href="http://agl.wismobi.com/data/japan_TR9/navi_data.tar.gz">http://agl.wismobi.com/data/japan_TR9/navi_data.tar.gz</a></li>
-  <li><a href="http://agl.wismobi.com/data/UnitedKingdom_TR9/navi_data_UK.tar.gz">http://agl.wismobi.com/data/UnitedKingdom_TR9/navi_data_UK.tar.gz</a></li>
-</ul>
-
-<p>Once that you have built your image on the SD card, uncompress the desired map in on the SD card at the position /YourMountPoint/var/mapdata\
-(YourMountPoint will vary with your build system).</p>
-
-<p>You can also use the script from the image to install the Mapdata on your SD card but there is little adavange in using that method. e.g.</p>
-
-<ul>
-  <li>download_mapdata_jp.sh /YourMountPoint</li>
-</ul>
+<p>Please see https://git.automotivelinux.org/AGL/meta-agl-devel/tree/meta-pipewire/recipes-multimedia/wireplumber/wireplumber-board-config-agl .</p>
 
 
 
@@ -1327,7 +1239,7 @@ Map can be found here.</p>
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -1372,7 +1284,7 @@ Map can be found here.</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -1380,7 +1292,7 @@ Map can be found here.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:41 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:32:23 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/docs/getting-started/troubleshooting.md">Link to source document</small>
 		
@@ -1398,19 +1310,19 @@ Map can be found here.</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'guppy' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -2398,6 +2400,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/devguides/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/devguides/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/devguides/" class="missing-page">
                                     
                                         <span class="selected">
@@ -2470,14 +2518,14 @@
 
 <h1 id="download-packages">Download Packages</h1>
 
-<p>Different repositories exist for different AGL releases.
+<p>Different repositories exist for different AGL releases.\
 You need to download and install the packages based on your version
 of AGL.</p>
 
 <h2 id="set-the-revision-environment-variable">Set the <code class="highlighter-rouge">REVISION</code> Environment Variable</h2>
 
 <p>All the packages reside in repositories managed by the
-<a href="https://build.opensuse.org/">OpenSUSE Build Service (OBS)</a>.
+<a href="https://build.opensuse.org/">OpenSUSE Build Service (OBS)</a>.\
 You can see the packages
 <a href="https://build.opensuse.org/project/subprojects/isv:LinuxAutomotive#">here</a>.</p>
 
@@ -2487,23 +2535,25 @@ You can see the packages
   <li>ElectricEel</li>
   <li>FunkyFlounder</li>
   <li>GrumpyGuppy</li>
+  <li>HappyHalibut</li>
   <li>Master</li>
 </ul>
 
 <p>You need to set the <code class="highlighter-rouge">REVISION</code> environment variable to the AGL release you
-are using.
-For this example, set and export <code class="highlighter-rouge">REVISION</code> as “Funky Flounder”.</p>
+are using.\
+For this example, set and export <code class="highlighter-rouge">REVISION</code> as “Master”.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
 </code></pre>
 </div>
+
 <p>For additional details about OBS, see
 <a href="https://build.opensuse.org/project/show/isv:LinuxAutomotive">LinuxAutomotive page on OBS</a>.</p>
 
 <h2 id="make-sure-your-distro-environment-variable-is-set">Make Sure Your <code class="highlighter-rouge">DISTRO</code> Environment Variable is Set</h2>
 
 <p>The <code class="highlighter-rouge">DISTRO</code> environment variable needs to be correctly set for your
-Linux distribution.
+Linux distribution.\
 See the
 “<a href="./1-verify-build-host.html">Verify Your Build Host</a>”
 section for information on how to set this variable.</p>
@@ -2522,23 +2572,23 @@ Reading package lists... Done
 </code></pre>
 </div>
 
-<p>Not sure why you get the <code class="highlighter-rouge">Ign</code> on line 5.
+<p>Not sure why you get the <code class="highlighter-rouge">Ign</code> on line 5.\
 I guess InRelease does not exist.</p>
 
 <p>If you don’t have a <code class="highlighter-rouge">/etc/apt/sources.list.d/AGL.list</code> file to even start with,
 and you run through the whole thing, you get the following output:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo apt-get update
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo apt-get update
 Hit:1 https://deb.nodesource.com/node_10.x xenial InRelease
 Hit:2 https://download.docker.com/linux/ubuntu xenial InRelease
 Hit:3 http://us.archive.ubuntu.com/ubuntu xenial InRelease
-Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
-Get:5 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease <span class="o">[</span>109 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security InRelease <span class="o">[</span>107 kB]
 Ign:6 http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_FunkyFlounder/xUbuntu_16.04 ./ InRelease
 Hit:7 http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_FunkyFlounder/xUbuntu_16.04 ./ Release
-Get:9 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
-Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [902 kB]
-Fetched 1,225 kB in 1s (803 kB/s)
+Get:9 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease <span class="o">[</span>107 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages <span class="o">[</span>902 kB]
+Fetched 1,225 kB <span class="k">in </span>1s <span class="o">(</span>803 kB/s<span class="o">)</span>
 Reading package lists... Done
 </code></pre>
 </div>
@@ -2546,9 +2596,9 @@ Reading package lists... Done
 <p>Following are example commands that show how to install the package repository
 based on various values of <code class="highlighter-rouge">DISTRO</code> and <code class="highlighter-rouge">REVISION</code>:</p>
 
-<h3 id="ubuntu-and-funkyflounder">Ubuntu and “FunkyFlounder”</h3>
+<h3 id="ubuntu-and-master">Ubuntu and “Master”</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_18.04"</span>
 wget -O - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | sudo apt-key add -
 sudo bash -c <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
@@ -2565,10 +2615,10 @@ sudo apt-get update
 </code></pre>
 </div>
 
-<h3 id="opensuse-and-funkyflounder">OpenSUSE and “FunkyFlounder”</h3>
+<h3 id="opensuse-and-master">OpenSUSE and “Master”</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"OpenSUSE_lEAP_42.3"</span>
-<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"openSUSE_Leap_15.0"</span>
+<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
 <span class="nb">source</span> /etc/os-release; <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$PRETTY_NAME</span> | sed <span class="s2">"s/ /_/g"</span><span class="k">)</span>
 sudo zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
 sudo zypper --gpg-auto-import-keys ref
@@ -2581,10 +2631,10 @@ sudo zypper --gpg-auto-import-keys ref
 </code></pre>
 </div>
 
-<h3 id="fedora-and-funkyflounder">Fedora and “FunkyFlounder”</h3>
+<h3 id="fedora-and-master">Fedora and “Master”</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"Fedora_28"</span>
-<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>FunkyFlounder
+<span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
 <span class="nb">source</span> /etc/os-release ; <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">NAME</span><span class="k">}</span><span class="s2">_</span><span class="k">${</span><span class="nv">VERSION_ID</span><span class="k">}</span><span class="s2">"</span>
 sudo wget -O /etc/yum.repos.d/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
 </code></pre>
@@ -2725,7 +2775,7 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -2770,7 +2820,7 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2778,7 +2828,7 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:01 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:31:33 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/master/host-configuration/docs/2-download-packages.md">Link to source document</small>
 		
@@ -2796,19 +2846,19 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

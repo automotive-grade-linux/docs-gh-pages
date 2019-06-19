@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -350,6 +352,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/hardware/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/hardware/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/hardware/" class="missing-page">
                                     
                                         
@@ -428,6 +476,7 @@ Renesas Electronics, called the R-Car Generation 3.</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>    - Board: Salvator-X / SoC: R8A7795 <span class="o">(</span>R-Car H3<span class="o">)</span>, R8A7796 <span class="o">(</span>R-Car M3<span class="o">)</span>, R8A77965 <span class="o">(</span>R-Car M3N<span class="o">)</span>
     - Board: R-Car Starter Kit premier<span class="o">(</span>H3ULCB<span class="o">)</span> / SoC: R8A7795 <span class="o">(</span>R-Car H3<span class="o">)</span>
     - Board: R-Car Starter Kit pro<span class="o">(</span>M3ULCB<span class="o">)</span> / SoC: R8A7796 <span class="o">(</span>R-Car M3<span class="o">)</span>
+    - Board: R-Car Starter Kit pro<span class="o">(</span>M3NULCB<span class="o">)</span> / SoC: R8A77965 <span class="o">(</span>R-Car M3N<span class="o">)</span>
     - Board: Ebisu / SoC: R8A77990 <span class="o">(</span>R-Car E3<span class="o">)</span>
 </code></pre>
 </div>
@@ -454,11 +503,11 @@ Renesas Electronics, called the R-Car Generation 3.</p>
 rebased and released accordingly.</p>
   </li>
   <li>
-    <p>thud-X:</p>
+    <p>dunfell-X:</p>
 
     <ul>
-      <li>The versions used on thud (Yocto Project 2.6) will start on
-thud-Yocto-v3.15.0 to keep the major version numbers in sync.</li>
+      <li>The versions used on dunfell (Yocto Project 3.1) will start on
+dunfell-Yocto-v3.21.0 to keep the major version numbers in sync.</li>
     </ul>
   </li>
 </ul>
@@ -483,19 +532,8 @@ thud-Yocto-v3.15.0 to keep the major version numbers in sync.</li>
 </ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>    URI: git://git.yoctoproject.org/poky
-    layers: meta, meta-yocto, meta-yocto-bsp
-    branch: thud
-    revision: 84eecb017ef92ef36b4df730908828e54aeff85c
-</code></pre>
-</div>
-<ul>
-  <li>meta-linaro</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    URI: git://git.linaro.org/openembedded/meta-linaro.git
-    layers: meta-optee
-    branch: thud
-    revision: edb7ffc2a121df7596385595abe75180296103e0
+    layers: meta, meta-poky, meta-yocto-bsp
+    branch: dunfell
 </code></pre>
 </div>
 
@@ -504,9 +542,8 @@ thud-Yocto-v3.15.0 to keep the major version numbers in sync.</li>
 </ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>    URI: git://git.openembedded.org/meta-openembedded
-    layers: meta-oe
-    branch: thud
-    revision: cca27b5ea7569d2730ee5da7ee7f47b39d775d89
+    layers: meta-oe, meta-python
+    branch: dunfell
 </code></pre>
 </div>
 
@@ -538,10 +575,10 @@ e.g.:</li>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>    BBLAYERS ?<span class="o">=</span> <span class="s2">" </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/poky/meta </span><span class="se">\</span><span class="s2">
-        &lt;path to layer&gt;/poky/meta-yocto </span><span class="se">\</span><span class="s2">
+        &lt;path to layer&gt;/poky/meta-poky </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/poky/meta-yocto-bsp </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/meta-renesas/meta-rcar-gen3 </span><span class="se">\</span><span class="s2">
-        &lt;path to layer&gt;/meta-linaro/meta-optee </span><span class="se">\</span><span class="s2">
+        &lt;path to layer&gt;/meta-openembedded/meta-python </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/meta-openembedded/meta-oe </span><span class="se">\</span><span class="s2">
     "</span>
 </code></pre>
@@ -555,6 +592,37 @@ e.g.:</li>
 </code></pre>
 </div>
 
+<table>
+  <thead>
+    <tr>
+      <th>Board</th>
+      <th>MACHINE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Salvator-X/XS</td>
+      <td>MACHINE=”salvator-x”</td>
+    </tr>
+    <tr>
+      <td>Ebisu</td>
+      <td>MACHINE=”ebisu”</td>
+    </tr>
+    <tr>
+      <td>Starter Kit Pro (M3ULCB)</td>
+      <td>MACHINE=”m3ulcb”</td>
+    </tr>
+    <tr>
+      <td>Starter Kit Pro (M3NULCB)</td>
+      <td>MACHINE=”m3nulcb”</td>
+    </tr>
+    <tr>
+      <td>Starter Kit Premier (H3ULCB)</td>
+      <td>MACHINE=”h3ulcb”</td>
+    </tr>
+  </tbody>
+</table>
+
 <ul>
   <li>
     <p>Select the SOC</p>
@@ -562,39 +630,39 @@ e.g.:</li>
     <ul>
       <li>For H3: r8a7795</li>
     </ul>
-
-    <p><code class="highlighter-rouge">bash
-      SOC_FAMILY = "r8a7795"
- </code></p>
-
-    <ul>
-      <li>For M3: r8a7796</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-      SOC_FAMILY = "r8a7796"
- </code></p>
-
-    <ul>
-      <li>For M3N: r8a77965</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-      SOC_FAMILY = "r8a77965"
- </code></p>
-
-    <ul>
-      <li>For E3: r8a77990</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-      # Already added in machine config: ebisu.conf
-      SOC_FAMILY = "r8a77990"
- </code></p>
   </li>
-  <li>
-    <p>Configure for systemd init in local.conf:</p>
-  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7795"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For M3: r8a7796
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7796"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For M3N: r8a77965
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77965"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For E3: r8a77990
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77990"</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Configure for systemd init in local.conf:</li>
 </ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>    DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" systemd"</span>
@@ -627,7 +695,12 @@ e.g.:</li>
 </div>
 
 <ul>
-  <li>Build the target file system image using bitbake:</li>
+  <li>
+    <p>For a list of sample local.conf file, please refer to: <a href="https://git.automotivelinux.org/AGL/meta-renesas-rcar-gen3/tree/meta-rcar-gen3/docs/sample/conf">docs/sample/conf/</a></p>
+  </li>
+  <li>
+    <p>Build the target file system image using bitbake:</p>
+  </li>
 </ul>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nv">$ </span>bitbake core-image-minimal
@@ -644,13 +717,13 @@ output directory ‘tmp/deploy/images/<supported board="" name="">'.</supported>
     <p>Image (generic Linux Kernel binary image file)</p>
   </li>
   <li>
-    <p>Image-<machine name="">.dtb (DTB for target machine)</machine></p>
+    <p>&lt;SoC&gt;-&lt;machine name&gt;.dtb (DTB for target machine)</p>
   </li>
   <li>
-    <p>core-image-minimal-<machine name="">.tar.bz2 (rootfs tar+bzip2)</machine></p>
+    <p>core-image-minimal-&lt;machine name&gt;.tar.bz2 (rootfs tar+bzip2)</p>
   </li>
   <li>
-    <p>core-image-minimal-<machine name="">.ext4  (rootfs ext4 format)</machine></p>
+    <p>core-image-minimal-&lt;machine name&gt;.ext4  (rootfs ext4 format)</p>
   </li>
 </ul>
 
@@ -703,8 +776,9 @@ to SDK in local.conf.</p>
 
 <h2 id="r-car-generation-3-information">R-Car Generation 3 Information</h2>
 
-<p>Refer to the following for more information from eLinux website
-https://elinux.org/R-Car</p>
+<p>Refer to the following for more information from eLinux website</p>
+
+<p>https://elinux.org/R-Car</p>
 
 
 
@@ -732,7 +806,7 @@ https://elinux.org/R-Car</p>
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -777,7 +851,7 @@ https://elinux.org/R-Car</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -785,7 +859,7 @@ https://elinux.org/R-Car</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:28 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:32:05 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-renesas-rcar-gen3/plain/meta-rcar-gen3/README.md?h=master">Link to source document</small>
 		
@@ -803,19 +877,19 @@ https://elinux.org/R-Car</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

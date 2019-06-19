@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -350,6 +352,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/hardware/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/hardware/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/hardware/" class="missing-page">
                                     
                                         
@@ -428,6 +476,7 @@ libraries, proprietary library of multimedia, and ICCOM software.</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>    I/   Board configuration
     II/  Build with GLES
     III/ Build with Renesas multimedia libraries
+    IV/  Enable Linux ICCOM driver and Linux ICCOM library
 </code></pre>
 </div>
 
@@ -446,7 +495,7 @@ check section IV.</p>
 <ul>
   <li>
     <p>However, to have a completed local.conf, please also refer to Build
-Instruction in meta-renesas/meta-rcar-gen3/README.</p>
+Instruction in <a href="https://git.automotivelinux.org/AGL/meta-renesas-rcar-gen3/tree/meta-rcar-gen3/README.md">meta-renesas/meta-rcar-gen3/README.md</a>.</p>
   </li>
   <li>
     <p>In addition, these libraries are not provided with recipes. If you would like
@@ -463,72 +512,83 @@ to use, you will need to get them from Renesas.</p>
     <ul>
       <li>For Salvator-X board</li>
     </ul>
-
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "salvator-x"
- </code></p>
-
-    <ul>
-      <li>For R-Car Starter Kit Premier(H3ULCB) board</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "h3ulcb"
- </code></p>
-
-    <ul>
-      <li>For R-Car Starter Kit Pro(M3ULCB) board</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "m3ulcb"
- </code></p>
-
-    <ul>
-      <li>For Ebisu board</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "ebisu"
- </code></p>
   </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>       MACHINE <span class="o">=</span> <span class="s2">"salvator-x"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For R-Car Starter Kit Premier(H3ULCB) board
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>       MACHINE <span class="o">=</span> <span class="s2">"h3ulcb"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For R-Car Starter Kit Pro(M3ULCB) board
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>       MACHINE <span class="o">=</span> <span class="s2">"m3ulcb"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For R-Car Starter Kit Pro(M3NULCB) board
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        MACHINE <span class="o">=</span> <span class="s2">"m3nulcb"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For Ebisu board
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>       MACHINE <span class="o">=</span> <span class="s2">"ebisu"</span>
+</code></pre>
+</div>
+
+<ul>
   <li>
     <p>Set SOC family name</p>
 
     <ul>
       <li>For H3: r8a7795</li>
     </ul>
-
-    <p><code class="highlighter-rouge">bash
-     SOC_FAMILY = "r8a7795"
- </code></p>
-
-    <ul>
-      <li>For M3: r8a7796</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-     SOC_FAMILY = "r8a7796"
- </code></p>
-
-    <ul>
-      <li>For M3N: r8a77965</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-     SOC_FAMILY = "r8a77965"
- </code></p>
-
-    <ul>
-      <li>For E3: r8a77990</li>
-    </ul>
-
-    <p><code class="highlighter-rouge">bash
-      # Already added in machine config: ebisu.conf
-      SOC_FAMILY = "r8a77990"
- </code></p>
   </li>
 </ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>       SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7795"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For M3: r8a7796
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>       SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7796"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For M3N: r8a77965
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>       SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77965"</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* For E3: r8a77990
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="c"># Already added in machine config: ebisu.conf</span>
+        SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77990"</span>
+</code></pre>
+</div>
 
 <h2 id="ii-build-with-gles">II/ Build with GLES</h2>
 
@@ -636,10 +696,11 @@ to use, you will need to get them from Renesas.</p>
 </code></pre>
 </div>
 
-<p>Ex:
-<code class="highlighter-rouge">
-    DISTRO_FEATURES_append = " h264dec_lib h265dec_lib mpeg2dec_lib aaclcdec_lib aaclcdec_mdw"
-</code></p>
+<p>Ex:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    DISTRO_FEATURES_append = " h264dec_lib h265dec_lib mpeg2dec_lib aaclcdec_lib aaclcdec_mdw"
+</code></pre>
+</div>
 
 <h3 id="c-configuration-for-test-packages">C/ Configuration for test packages</h3>
 
@@ -701,7 +762,7 @@ to use, you will need to get them from Renesas.</p>
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -746,7 +807,7 @@ to use, you will need to get them from Renesas.</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -754,7 +815,7 @@ to use, you will need to get them from Renesas.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:35 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:32:13 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-renesas-rcar-gen3/plain/meta-rcar-gen3/README.proprietary.md?h=master">Link to source document</small>
 		
@@ -772,19 +833,19 @@ to use, you will need to get them from Renesas.</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

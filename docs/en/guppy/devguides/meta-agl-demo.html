@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'guppy' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -2398,6 +2400,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/devguides/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/devguides/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/devguides/" class="missing-page">
                                     
                                         <span class="selected">
@@ -2563,7 +2611,7 @@ dependencies:</p>
     </ul>
   </li>
   <li>
-    <p>AGL’s <code class="highlighter-rouge">meta-app-framework</code> Layer Within the <code class="highlighter-rouge">meta-agl</code> Layer:</p>
+    <p>AGL’s <code class="highlighter-rouge">meta-app-framework</code> Layer within the <code class="highlighter-rouge">meta-agl</code> Layer:</p>
 
     <ul>
       <li>URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git</li>
@@ -2576,11 +2624,19 @@ dependencies:</p>
 
 <ul>
   <li>
-    <p>AGL’s <code class="highlighter-rouge">meta-sota</code> Layer Within the <code class="highlighter-rouge">meta-agl-extra</code> Layer:</p>
+    <p>Here Technologies’ <code class="highlighter-rouge">meta-updater</code> Layer:</p>
 
     <ul>
-      <li>URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl-extra.git</li>
-      <li>Branch: “guppy”<br /><br /></li>
+      <li>URI: https://github.com/advancedtelematic/meta-updater/</li>
+      <li>Branch: “rocko”<br /><br /></li>
+    </ul>
+  </li>
+  <li>
+    <p>Here Technologies’ <code class="highlighter-rouge">meta-updater-qemux86-64</code> Layer:</p>
+
+    <ul>
+      <li>URI: https://github.com/advancedtelematic/meta-updater-qemux86-64/</li>
+      <li>Branch: “rocko”<br /><br /></li>
     </ul>
   </li>
   <li>
@@ -2591,8 +2647,12 @@ dependencies:</p>
       <li>
         <p>Branch: “rocko”</p>
 
-        <p>In particular, the <code class="highlighter-rouge">meta-openembedded</code> layer depends on the
-<code class="highlighter-rouge">meta-filesystems</code> sub-layer.</p>
+        <p>Specifically, out of <code class="highlighter-rouge">meta-openembedded</code>, these sub-layers are used:</p>
+
+        <ul>
+          <li><code class="highlighter-rouge">meta-filesystems</code></li>
+          <li><code class="highlighter-rouge">meta-oe</code><br /><br /></li>
+        </ul>
       </li>
     </ul>
   </li>
@@ -2602,7 +2662,7 @@ dependencies:</p>
 
 <ul>
   <li>
-    <p>AGL’s <code class="highlighter-rouge">meta-netboot</code> Layer Within the <code class="highlighter-rouge">meta-agl</code> Layer:</p>
+    <p>AGL’s <code class="highlighter-rouge">meta-netboot</code> Layer within the <code class="highlighter-rouge">meta-agl</code> Layer:</p>
 
     <ul>
       <li>URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git</li>
@@ -2683,7 +2743,7 @@ to the layer’s <code class="highlighter-rouge">local.conf</code> file only whe
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -2728,7 +2788,7 @@ to the layer’s <code class="highlighter-rouge">local.conf</code> file only whe
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2736,7 +2796,7 @@ to the layer’s <code class="highlighter-rouge">local.conf</code> file only whe
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:34 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:32:12 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-agl-demo/plain/docs/../meta-agl-demo.md?h=guppy">Link to source document</small>
 		
@@ -2754,19 +2814,19 @@ to the layer’s <code class="highlighter-rouge">local.conf</code> file only whe
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

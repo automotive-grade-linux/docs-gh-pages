@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -2400,6 +2402,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/devguides/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/devguides/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/devguides/" class="missing-page">
                                     
                                         
@@ -2480,15 +2528,15 @@ Manufacturers (OEMs) need but are not included in the AGL software.</p>
 <p>The <code class="highlighter-rouge">meta-agl-devel</code> layer contains the following files and sub-layers:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>.
-├── meta-agl-telemetry
-├── meta-audio-4a-framework
-├── meta-audio-soundmanager-framework
-├── meta-egvirt
-├── meta-gstrecorder-rcar-gen3
-├── meta-hmi-framework
-├── meta-oem-extra-libs
+├── docs
+├── LICENSE
+├── LICENSE.GPL-2.0-only
+├── LICENSE.MIT
+├── meta-agl-devel.md
+├── meta-agl-jailhouse
+├── meta-speech-framework
 ├── README.md
-├── templates
+└── templates
 </code></pre>
 </div>
 
@@ -2496,131 +2544,18 @@ Manufacturers (OEMs) need but are not included in the AGL software.</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">meta-agl-telemetry</code>: Provides the smallest AGL image.
-The image is designed to be used when a device requires restricted
-scope of responsibilites (e.g. collecting vehicle telemetry).</p>
+    <p><code class="highlighter-rouge">meta-speech-framework</code>: Provides libraries and software packages needed by
+for speech recognition.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">meta-audio-4a-framework</code>: A collection of recipes used for the
-first integration of 4A (i.e. Advanced AGL Audio Architecture).</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">meta-pipewire</code>: A collection of recipes used for the integration
-of the pipewire sound system.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">meta-audio-soundmanager-framework</code>: Supports the Soundmanager
-Audio Framework features, which maps to the <code class="highlighter-rouge">agl-audio-soundmanager-framework</code>
-AGL feature.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">meta-egvirt</code>: The AGL Virtualization Expert Group (EG-VIRT) layer.
-This layer supports the design, test, implementation, and assessment
-of virtualization technologies (e.g. containers, hypervisors, system
-partitioners, and so forth) aimed at AGL ARMv8 and Intel platforms.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">meta-gstrecorder-rcar-gen3</code>: Supports streaming audio and video for
-the Pro and Premier board kits (e.g.
-<a href="https://www.elinux.org/R-Car/Boards/M3SK">Renesas R-Car Starter Kit Pro Board</a>
-and
-<a href="https://www.elinux.org/R-Car/Boards/H3SK">Renesas R-Car Starter Kit Premier Board</a>).</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">meta-hmi-framework</code>: Provides AGL’s Human Machine Interface (HMI) framework
-through resource management consisting of sounds, windows, and input control.
-For more information, see the
-<a href="https://wiki.automotivelinux.org/hmiframework">HMI-Framework Page</a> of the
-AGL Wiki.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">meta-oem-extra-libs</code>: Provides libraries and software packages needed by
-OEMs but not provided by the AGL software.</p>
+    <p><code class="highlighter-rouge">meta-agl-jailhouse</code>: Provides Jailhouse partitioning hypervisor and
+supporting packages.</p>
   </li>
   <li>
     <p><code class="highlighter-rouge">templates</code>: Feature templates that support the <code class="highlighter-rouge">meta-agl-devel</code> layer.</p>
   </li>
 </ul>
 
-<h2 id="additional-sub-layer-information">Additional Sub-Layer Information</h2>
-
-<p>This section provides additional information for the <code class="highlighter-rouge">meta-egvirt</code>,
-<code class="highlighter-rouge">meta-oem-extra-libs</code>, and <code class="highlighter-rouge">meta-hmi-framework</code> layers.</p>
-
-<h3 id="virtualization-support">Virtualization Support</h3>
-
-<p>The <code class="highlighter-rouge">meta-egvirt</code> layer enables virtualization support in AGL.
-The AGL Virtualization Expert (EG-VIRT) group is responsible
-for design and implementation of AGL virtualization solutions
-(.e.g the Virtualization platform architecture of AGL).
-You can read about EG-VERT’s efforts on the
-“<a href="https://wiki.automotivelinux.org/eg-virt">Virtualization Expert Group’s</a>”
-page of the AGL wiki.</p>
-
-<p>Additionally, you can learn more about virtualization as it applies to AGL
-by reading
-“<a href="https://www.automotivelinux.org/wp-content/uploads/sites/4/2018/06/agl_software_defined_car_jun18.pdf">The Automotive Grade Linux Software Defined Connected Car Architecture</a>”
-whitepaper.</p>
-
-<h3 id="oem-extra-libraries">OEM Extra Libraries</h3>
-
-<p>The <code class="highlighter-rouge">meta-oem-extra-libs</code> layer provides additional software packages many OEMs need
-but are not part of the AGL source.
-Following is the list of packages this layer provides:</p>
-
-<ul>
-  <li>boost</li>
-  <li>fixesproto</li>
-  <li>imagemagick</li>
-  <li>iptables</li>
-  <li>Xorg-macros</li>
-  <li>zlib</li>
-  <li>eglibc = glibc</li>
-  <li>libcurl</li>
-  <li>libgif</li>
-  <li>libneon</li>
-  <li>mongoose</li>
-  <li>fuse</li>
-  <li>protocol buffers</li>
-  <li>bsdiff</li>
-  <li>module-init-tools</li>
-  <li>libcroco</li>
-  <li>libtiff</li>
-  <li>librsvg</li>
-  <li>libpcap</li>
-</ul>
-
-<p>To add these packages to your library, you need to include the
-<code class="highlighter-rouge">agl-oem-extra-libs</code> AGL feature when you initialize your build
-environment using the <code class="highlighter-rouge">aglsetup.sh</code> script.</p>
-
-<p>For information on how to use the <code class="highlighter-rouge">aglsetup.sh</code> script to initialize
-your build environment, see the
-“<a href="../getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
-section.</p>
-
-<p>Once you have included the AGL feature, you can build your image.</p>
-
-<h3 id="hmi-framework">HMI Framework</h3>
-
-<p>The <code class="highlighter-rouge">meta-hmi-framework</code> layer supports the Human-Machine Interface (HMI) Framework.
-The HMI-Framework is the User Interface (UI) to control the Infotainment System.
-Work continues to close the gap between the user experience of a smart phone
-and the Infotainment System in a vehicle, for example.</p>
-
-<p>You can find more out about HMI Framework progress on the
-“<a href="https://wiki.automotivelinux.org/hmiframework">HMI Framework</a>” page on the AGL Wiki.</p>
-
-<p>To add HMI Framework support to your image, you need to include the
-<code class="highlighter-rouge">hmi-framework</code> AGL feature when you initialize your build
-environment using the <code class="highlighter-rouge">aglsetup.sh</code> script.</p>
-
-<p>For information on how to use the <code class="highlighter-rouge">aglsetup.sh</code> script to initialize
-your build environment, see the
-“<a href="../getting_started/reference/getting-started/image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
-section.</p>
-
-<p>Once you have included the AGL feature, you can build your image.</p>
 
 
 
@@ -2648,7 +2583,7 @@ section.</p>
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -2693,7 +2628,7 @@ section.</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -2701,7 +2636,7 @@ section.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:35 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:32:12 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-agl-devel/plain/docs/../meta-agl-devel.md?h=master">Link to source document</small>
 		
@@ -2719,19 +2654,19 @@ section.</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 

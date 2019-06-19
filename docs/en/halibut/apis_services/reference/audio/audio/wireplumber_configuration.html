@@ -1,0 +1,3515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="description" content=" ">
+
+    <title>
+	    AGL Developer Site - 
+        
+            
+                Session Manager Configuration  -
+            
+        
+    </title>
+
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+
+    
+
+    
+    
+
+    <link rel="canonical" href="http://docs.automotivelinux.org/docs/en/halibut/apis_services/reference/audio/audio/wireplumber_configuration.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
+    <!-- Algolia Search CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
+
+    <!-- Fonts -->
+    <!-- For attribution information, see www/attributions.html -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300,700italic,400italic,300italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script defer type="text/javascript">
+        var disqus_developer = ; // this would set it to developer mode
+    </script>-->
+
+    <!-- JS -->
+    <script defer type="text/javascript" src="/static/js/lib/jquery-2.1.1.min.js"></script>
+    <script defer type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+<!--    <script defer type="text/javascript" src="/static/js/lib/ZeroClipboard.js"></script>-->
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    LANGUAGE_ROOT /docs/en/
+    VERSION_ROOT /docs/en/halibut/apis_services/
+    DOCSDIR /docs
+    page.language en
+-->
+
+
+
+<!-- LANGUAGE: en en -->
+<!-- VERSION: halibut halibut-->
+<header>
+    <a class="scroll-point pt-top" name="top"></a>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><img id="logo_top" src="/static/img/branding/agl_title_793x211.png"/></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav_bar_left">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/docs/en/halibut/getting_started/">Getting Started</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/architecture/">Architecture Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut//hardware/">Hardware Support</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/devguides/">Developer Guides</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/apis_services/">APIs & Services</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/howto/">How To</a>
+                        </li>
+
+                        <li >
+                            <a href="/docs/en/halibut/reference/">Reference</a>
+                        </li>
+					</ul>
+				</div>
+                <div class="nav_bar_right">
+                    <ul class="nav navbar-nav">
+
+                        <li >
+                            <a href="/contribute">Contribute</a>
+                        </li>
+                        <li>
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+                                <div class="input-group">
+                                    
+                                    <input id="header-search-field" type="text" placeholder="Search 'halibut' docs..." class="form-control hidden-xs" autocomplete="off">
+                                </div>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div id="_fixed_navbar_spacer" style="padding-top:50px"></div>
+</header>
+
+
+<div class="docs container">
+
+    <!-- Table of Contents -->
+    <div class="hidden-xs hidden-sm col-md-4 col-lg-3 site-toc-container">
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                API Reference
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/api-reference/0-api-introduction.html">
+                API Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-main/0-introduction.html">
+                Introduction
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-main/1-afm-daemons.html">
+                The afm daemons
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-main/2-widgets.html">
+                Widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-main/2.1-widgets.html">
+                Overview of widgets
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-main/2.2-config.xml.html">
+                Widget configuration file
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-main/3-permissions.html">
+                Permissions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-main/4-quick-tutorial.html">
+                Quick Tutorial
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Application Framework Binder
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-overview.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-daemon-vocabulary.html">
+                Binder daemon vocabulary
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-binding-writing.html">
+                How to write a binding ?
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Binder references
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/types-and-globals.html">
+                Types and globals
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/macro-log.html">
+                Macros for logging
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-api.html">
+                Functions of class afb_api
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-req.html">
+                Functions of class afb_req
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-event.html">
+                Functions of class afb_event
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-daemon.html">
+                Functions of class afb_daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-service.html">
+                Functions of class afb_service
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-events-guide.html">
+                Binder events guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-application-writing.html">
+                Binder Application writing guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Annexes
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-migration-to-binding-v3.html">
+                Migration to bindings v3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/protocol-x-afb-ws-json1.html">
+                WebSocket protocol x-afb-ws-json1
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-desktop-package.html">
+                Installing the binder on a desktop
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-daemon-options.html">
+                Options of afb-daemon
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-daemon-debugging.html">
+                Debugging binder and bindings
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+                LEGACY Migration from v1 to v2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/legacy/afb-binding-v2-references.html">
+                LEGACY Binding V2 references
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/REVISIONS.html">
+                Document revision
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Test Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/0_Installation.html">
+                Installation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/1_Write_the_tests.html">
+                Write the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/2_The_test_widget.html">
+                The test widget
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/3_Launch_the_tests.html">
+                Launch the tests
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/4_Tests_Examples.html">
+                Tests examples
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                References
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/0_BindingTestFunctions.html">
+                Binding Test Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/1_BindingAssertFunctions.html">
+                Binding Assert Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/2_TestFrameworkFunctions.html">
+                Test Framework Functions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                LuaUnit Assertion Functions
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.html">
+                General Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.html">
+                Value Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.html">
+                Scientific Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/3_StringAssertions.html">
+                String Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.html">
+                Error Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.html">
+                Type Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/6_TableAssertions.html">
+                Table Assertions
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Message Signaling
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/signaling/architecture.html">
+                Message Signaling
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Service CAN Low Level
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/1-Architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/2-Installation.html">
+                Installation Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/3-Installation-J1939.html">
+                Installation Guide for J1939
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/4-Installation-ISOTP.html">
+                Installation Guide for ISOTP
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/5-Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                High Leval VIWI Service
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/high-viwi-architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/signaling/2-Install-Usage.html">
+                Installation and Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                AGL Service Signal Composer
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/part-1/1-Architecture.html">
+                Architecture presentation
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/part-1/2-Configuration.html">
+                Configuration
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/part-1/3-Plugins.html">
+                Plugins
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/part-1/4-SignalComposerAPI.html">
+                Signal Composer API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/iotbzh2016/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+                Developer Guidelines
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/iotbzh2016/AGL-Message-Signaling-Developer-Guidelines.pdf">
+                CAN Signaling Benchmark
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                CanDevStudio Quickstart
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/1_Usage.html">
+                Usage Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/2_can_device_socketcan_backend.html">
+                Bringing up a CAN device using socketcan backend
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/3_Add_CAN_Device.html">
+                Add a CAN device in CANdevStudio
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/4_Configure_CanRawSender_Node.html">
+                Configure a CanRawSender node
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/5_Using_CanRawView.html">
+                Using CanRawView
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/app-framework/index.html">
+                Resources
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Audio Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/audio/pipewire.html">
+                Overview
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Pulse Audio Module 4a
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/README.html">
+                Pulseaudio - 4A Integration Module
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="this-page" href="/docs/en/halibut/apis_services/reference/audio/audio/wireplumber_configuration.html">
+                Session Manager Configuration
+            </a>
+            
+                <span class="entry-highlight"></span>
+            
+        
+
+        
+        <div id="page-toc" class="page-toc"></div>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                4a Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/4a-framework/README.html">
+                Architecture
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/4a-framework/concepts.html">
+                Concepts
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/4a-framework/components.html">
+                Components
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                high-level-api
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/README.html">
+                Abstract
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/kickstart.html">
+                Kickstart
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/reference.html">
+                Reference
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                Tips And Tricks
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+                Adjust volumes
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+                4a-tools
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+                Devices
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+                HALs
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/audio/audio/bluez-alsa.html">
+                Bluetooth
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HMI Framework
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/ApplicationGuide.html">
+                Home Screen Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
+                Window Manager Developer Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/3_3-SoundManager-Guide.html">
+                Sound Manager Developper Guide
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/Display_Audio_Transition1.html">
+                Sound Manager Developper Guide 2
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/Display_Audio_Transition2.html">
+                Sound Manager Developper Guide 3
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+
+    <li>
+        
+            <span class="toc-section-heading">
+                HomeScreen (old)
+            </span>
+        
+
+        
+        
+
+        
+        <ul class="site-toc">
+    
+
+    <li>
+        
+            <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/homescreen_api.html">
+                HomeScreen API
+            </a>
+            
+        
+
+        
+        
+
+        
+    </li>
+    
+</ul>
+
+        
+    </li>
+    
+</ul>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3 page-content-container container">
+        <div class="page-content row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="content-header">
+
+                    <!-- ToC Dropdown (for XS and SM sizes only) -->
+                    <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Table of Contents
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/api-reference/0-api-introduction.html">
+        API Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-main/0-introduction.html">
+        Introduction
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-main/1-afm-daemons.html">
+        The afm daemons
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-main/2-widgets.html">
+        Widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-main/2.1-widgets.html">
+        Overview of widgets
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-main/2.2-config.xml.html">
+        Widget configuration file
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-main/3-permissions.html">
+        Permissions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-main/4-quick-tutorial.html">
+        Quick Tutorial
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-overview.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-daemon-vocabulary.html">
+        Binder daemon vocabulary
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-binding-writing.html">
+        How to write a binding ?
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/types-and-globals.html">
+        Types and globals
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/macro-log.html">
+        Macros for logging
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-api.html">
+        Functions of class afb_api
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-req.html">
+        Functions of class afb_req
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-event.html">
+        Functions of class afb_event
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-daemon.html">
+        Functions of class afb_daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/reference-v3/func-service.html">
+        Functions of class afb_service
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-events-guide.html">
+        Binder events guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-application-writing.html">
+        Binder Application writing guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-migration-to-binding-v3.html">
+        Migration to bindings v3
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/protocol-x-afb-ws-json1.html">
+        WebSocket protocol x-afb-ws-json1
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-desktop-package.html">
+        Installing the binder on a desktop
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-daemon-options.html">
+        Options of afb-daemon
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/afb-daemon-debugging.html">
+        Debugging binder and bindings
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/legacy/afb-migration-v1-to-v2.html">
+        LEGACY Migration from v1 to v2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/legacy/afb-binding-v2-references.html">
+        LEGACY Binding V2 references
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/REVISIONS.html">
+        Document revision
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/0_Installation.html">
+        Installation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/1_Write_the_tests.html">
+        Write the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/2_The_test_widget.html">
+        The test widget
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/3_Launch_the_tests.html">
+        Launch the tests
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/4_Tests_Examples.html">
+        Tests examples
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/0_BindingTestFunctions.html">
+        Binding Test Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/1_BindingAssertFunctions.html">
+        Binding Assert Functions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/2_TestFrameworkFunctions.html">
+        Test Framework Functions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/0_GeneralAssertions.html">
+        General Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/1_ValueAssertions.html">
+        Value Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/2_ScientificAssertions.html">
+        Scientific Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/3_StringAssertions.html">
+        String Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/4_ErrorAssertions.html">
+        Error Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/5_TypeAssertions.html">
+        Type Assertions
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/afb-test/Reference/LuaUnitAssertionFunctions/6_TableAssertions.html">
+        Table Assertions
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/signaling/architecture.html">
+        Message Signaling
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/1-Architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/2-Installation.html">
+        Installation Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/3-Installation-J1939.html">
+        Installation Guide for J1939
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/4-Installation-ISOTP.html">
+        Installation Guide for ISOTP
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/5-Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/high-viwi-architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/signaling/2-Install-Usage.html">
+        Installation and Usage Guide
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/part-1/1-Architecture.html">
+        Architecture presentation
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/part-1/2-Configuration.html">
+        Configuration
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/part-1/3-Plugins.html">
+        Plugins
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/part-1/4-SignalComposerAPI.html">
+        Signal Composer API
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/iotbzh2016/AGL-AppFW-CAN-Signaling-Benchmark.pdf">
+        Developer Guidelines
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/iotbzh2016/AGL-Message-Signaling-Developer-Guidelines.pdf">
+        CAN Signaling Benchmark
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/1_Usage.html">
+        Usage Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/2_can_device_socketcan_backend.html">
+        Bringing up a CAN device using socketcan backend
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/3_Add_CAN_Device.html">
+        Add a CAN device in CANdevStudio
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/4_Configure_CanRawSender_Node.html">
+        Configure a CanRawSender node
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/candevstudio/5_Using_CanRawView.html">
+        Using CanRawView
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/af-binder/app-framework/index.html">
+        Resources
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/audio/pipewire.html">
+        Overview
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/README.html">
+        Pulseaudio - 4A Integration Module
+    </a>
+</li>
+
+
+
+
+
+
+
+<li>
+    <a class="this-page" href="/docs/en/halibut/apis_services/reference/audio/audio/wireplumber_configuration.html">
+        Session Manager Configuration
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/4a-framework/README.html">
+        Architecture
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/4a-framework/concepts.html">
+        Concepts
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/4a-framework/components.html">
+        Components
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/README.html">
+        Abstract
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/kickstart.html">
+        Kickstart
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/reference.html">
+        Reference
+    </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/AdjustVolumes.html">
+        Adjust volumes
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/4aTools.html">
+        4a-tools
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/Devices.html">
+        Devices
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/high-level-api/TipsAndTricks/HALs.html">
+        HALs
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/audio/audio/bluez-alsa.html">
+        Bluetooth
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/ApplicationGuide.html">
+        Home Screen Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/3_2-WindowManager-Guide.html">
+        Window Manager Developer Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/3_3-SoundManager-Guide.html">
+        Sound Manager Developper Guide
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/Display_Audio_Transition1.html">
+        Sound Manager Developper Guide 2
+    </a>
+</li>
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/Display_Audio_Transition2.html">
+        Sound Manager Developper Guide 3
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a class="" href="/docs/en/halibut/apis_services/reference/hmi-framework/homescreen_api.html">
+        HomeScreen API
+    </a>
+</li>
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+                    <!--
+                    
+                    
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+
+                    
+                    
+                    -->
+
+                    <!-- Language dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            English
+                            <span class="caret"></span>
+                        </button>
+
+                        <!-- List all languages -->
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+
+                            <li>
+                                <a href="/docs/en/halibut/apis_services/reference/audio/audio/wireplumber_configuration.html" class="">
+                                    
+                                        <span class="selected">
+                                            English
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Version dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="versionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            halibut
+                            
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="versionDropdown">
+
+                            <!-- List versions available in this language -->
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/master/apis_services/" class="missing-page">
+                                    
+                                        
+                                    master
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/icefish/apis_services/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/apis_services/" class="missing-page">
+                                    
+                                        <span class="selected">
+                                            
+                                    halibut
+                                    
+                                
+                                        </span>
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/guppy/apis_services/" class="missing-page">
+                                    
+                                        
+                                    guppy
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/flounder/apis_services/" class="missing-page">
+                                    
+                                        
+                                    flounder
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+                
+                
+
+                
+                
+
+                <!-- Show warnings for special versions -->
+                <!-- master warning
+                
+                -->
+
+                <!-- outdated warning
+                
+                    <div class="alert docs-alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        This version of the documentation is outdated!
+                        <a href="/docs/en/latest/">
+                            Click here for the latest released version.
+                        </a>
+                    </div>
+                
+                -->
+
+
+                <div id="page-toc-source">
+                    <!-- WARNING: This file is generated by fetch_docs.js using /w/workspace/daily-jjb-doc-update/docs-webtemplate/site/_data/tocs/apis_services/halibut/audio-developer-guides-audio-book.yml -->
+
+<h1 id="wireplumber-configuration">WirePlumber Configuration</h1>
+
+<p>WirePlumber is a heavily modular daemon. By itself, it doesn’t do anything
+except load the configured modules. All the rest of the logic is implemented
+inside those modules.</p>
+
+<p>Modular design ensures that it is possible to swap the implementation of
+specific functionality without having to re-implement the rest of it, allowing
+flexibility on target-sensitive parts, such as policy management and
+making use of non-standard hardware.</p>
+
+<h2 id="wireplumberconf"><code class="highlighter-rouge">wireplumber.conf</code></h2>
+
+<p>This is WirePlumber’s main configuration file. It is read at startup, before
+connecting to the PipeWire daemon. Its purpose is to list all the modules
+that need to be loaded by WirePlumber.</p>
+
+<p>The format of this file is custom and resembles a script with commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># comment
+command parameter1 parameter2 ...
+</code></pre>
+</div>
+
+<p>Lines are executed in the order they appear and each of them executes an
+action defined by the command. Lines starting with <code class="highlighter-rouge">#</code> are treated as comments
+and ignored. Possible commands are:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">add-spa-lib</code></p>
+
+    <p>Associates SPA plugin names with the names of the SPA modules that they
+can be loaded from. This takes 2 parameters: a name pattern and a library name.</p>
+
+    <p>This actually does not load the SPA plugin, it only calls <code class="highlighter-rouge">pw_core_add_spa_lib</code>
+with the 2 paramteres given as arguments. As a consequence, it is safe to
+call this even if the SPA module is not actually installed on the system.</p>
+
+    <p>Example:
+<code class="highlighter-rouge">
+add-spa-lib api.alsa.* alsa/libspa-alsa
+</code></p>
+
+    <p>In this example, we let <code class="highlighter-rouge">libpipewire</code> know that any SPA plugin whose name
+starts with <code class="highlighter-rouge">api.alsa.</code> can be loaded from the SPA module
+<code class="highlighter-rouge">alsa/libspa-alsa.so</code> (relative to the standard SPA modules directory).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">load-pipewire-module</code></p>
+
+    <p>Loads a <code class="highlighter-rouge">libpipewire</code> module. This is similar to the <code class="highlighter-rouge">load-module</code> commands
+that would appear on <code class="highlighter-rouge">pipewire.conf</code>, the configuration file of the PipeWire
+daemon.</p>
+
+    <p>This takes at least 1 parameter, the module name, and optionally any module
+arguments, in the format that they would be given in <code class="highlighter-rouge">pipewire.conf</code></p>
+
+    <p>Format:
+<code class="highlighter-rouge">
+load-pipewire-module module-name some-argument some-property=value
+</code>
+Example:
+<code class="highlighter-rouge">
+load-pipewire-module libpipewire-module-client-device
+</code></p>
+
+    <p>This command does not affect the PipeWire daemon by any means. It exists
+simply to allow loading <code class="highlighter-rouge">libpipewire</code> modules in the pipewire core that
+runs inside WirePlumber. This is usually useful to load pipewire protocol
+extensions, so that you can export custom objects to PipeWire and other
+clients.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">load-module</code></p>
+
+    <p>Loads a WirePlumber module. This takes 2 arguments and an optional parameter
+block.</p>
+
+    <p>Format:
+<code class="highlighter-rouge">
+load-module ABI module-name {
+  "parameter": &lt;"value"&gt;
+}
+</code></p>
+
+    <p>The <code class="highlighter-rouge">ABI</code> parameter specifies the binary interface that WirePlumber shall use
+to load this module. Currently, the only supported ABI is <code class="highlighter-rouge">C</code>. It exists to
+allow future expansion, writing modules in other languages.</p>
+
+    <p>The <code class="highlighter-rouge">module-name</code> should be the name of the <code class="highlighter-rouge">.so</code> file without the <code class="highlighter-rouge">.so</code>
+extension.</p>
+
+    <p>Optionally, if the <code class="highlighter-rouge">load-module</code> line ends with a <code class="highlighter-rouge"><span class="p">{</span></code>, the next lines up to
+and including the next matching <code class="highlighter-rouge">}</code> are treated as a parameter block.
+This block essentially is a
+<a href="https://developer.gnome.org/glib/stable/glib-GVariant.html">GVariant</a>
+of type
+<a href="https://developer.gnome.org/glib/stable/gvariant-format-strings.html"><code class="highlighter-rouge">a{sv}</code></a>
+in the
+<a href="https://developer.gnome.org/glib/stable/gvariant-text.html">GVariant Text Format</a>.
+As a rule of thumb, parameter names in this block must always be strings
+enclosed in double quotes, the separation between names and values is done
+with the <code class="highlighter-rouge">:</code> character and values, regardless of their inner type, must always
+be enclosed in <code class="highlighter-rouge">&lt;</code> <code class="highlighter-rouge">&gt;</code>.</p>
+
+    <p>Note that starting the parameter block on the next line is an error. The
+starting brace (<code class="highlighter-rouge"><span class="p">{</span></code>) must always be on the <code class="highlighter-rouge">load-module</code> line.</p>
+
+    <p>Example:
+<code class="highlighter-rouge">
+load-module C libwireplumber-module-monitor {
+  "factory": &lt;"api.alsa.enum.udev"&gt;,
+  "flags": &lt;["use-adapter", "activate-devices"]&gt;
+}
+</code></p>
+
+    <p>Parameters are module-dependent. They are passed as a GVariant in the
+module’s initialization function and it is up to the module to interpret
+their meaning. WirePlumber does not have any reserved parameters.</p>
+  </li>
+</ul>
+
+<h2 id="location-of-configuration-files">Location of configuration files</h2>
+
+<p>WirePlumber’s default location of its configuration files is determined at
+compile time by the build system. Typically, it ends up being <code class="highlighter-rouge">/etc/wireplumber</code>.</p>
+
+<p>In more detail, this is controlled by the <code class="highlighter-rouge">--sysconfdir</code> meson option. When
+this is set to an absolute path, such as <code class="highlighter-rouge">/etc</code>, the location of the
+configuration files is set to be <code class="highlighter-rouge">$sysconfdir/wireplumber</code>. When this is set
+to a relative path, such as <code class="highlighter-rouge">etc</code>, then the installation prefix (<code class="highlighter-rouge">--prefix</code>)
+is prepended to the path: <code class="highlighter-rouge">$prefix/$sysconfdir/wireplumber</code></p>
+
+<p>WirePlumber expects its <code class="highlighter-rouge">wireplumber.conf</code> to reside in that directory.
+It is possible to override that at runtime by setting the
+<code class="highlighter-rouge">WIREPLUMBER_CONFIG_FILE</code> environment variable:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>WIREPLUMBER_CONFIG_FILE=src/config/wireplumber.conf wireplumber
+</code></pre>
+</div>
+
+<p>It is also possible to override the whole configuration directory, so that
+all other configuration files are being read from a different location as well,
+by setting the <code class="highlighter-rouge">WIREPLUMBER_CONFIG_DIR</code> environment variable:
+<code class="highlighter-rouge">
+WIREPLUMBER_CONFIG_DIR=src/config wireplumber
+</code></p>
+
+<h2 id="location-of-modules">Location of modules</h2>
+
+<h3 id="wireplumber-modules">WirePlumber modules</h3>
+
+<p>Like with configuration files, WirePlumber’s default location of its modules is
+determined at compile time by the build system. Typically, it ends up being
+<code class="highlighter-rouge">/usr/lib/wireplumber-0.1</code> (or <code class="highlighter-rouge">/usr/lib/&lt;arch-triplet&gt;/wireplumber-0.1</code> on
+multiarch systems)</p>
+
+<p>In more detail, this is controlled by the <code class="highlighter-rouge">--libdir</code> meson option. When
+this is set to an absolute path, such as <code class="highlighter-rouge">/lib</code>, the location of the
+modules is set to be <code class="highlighter-rouge">$libdir/wireplumber-$abi_version</code>. When this is set
+to a relative path, such as <code class="highlighter-rouge">lib</code>, then the installation prefix (<code class="highlighter-rouge">--prefix</code>)
+is prepended to the path: <code class="highlighter-rouge">$prefix/$libdir/wireplumber-$abi_version</code>.</p>
+
+<p>It is possible to override this directory at runtime by setting the
+<code class="highlighter-rouge">WIREPLUMBER_MODULE_DIR</code> environment variable:
+<code class="highlighter-rouge">
+WIREPLUMBER_MODULE_DIR=build/modules wireplumber
+</code></p>
+
+<h3 id="pipewire-and-spa-modules">PipeWire and SPA modules</h3>
+
+<p>PipeWire and SPA modules are not loaded from the same location as WirePlumber’s
+modules. They are loaded from the location that PipeWire loads them.</p>
+
+<p>It is also possible to override these locations by using environment variables:
+<code class="highlighter-rouge">SPA_PLUGIN_DIR</code> and <code class="highlighter-rouge">PIPEWIRE_MODULE_DIR</code>. For more details, refer to
+PipeWire’s documentation.</p>
+
+<h1 id="module-monitor">module-monitor</h1>
+
+<p>This module internally loads a SPA “device” object which enumerates all the
+devices of a certain subsystem. Then it listens for “node” objects that are
+being created by this device and exports them to PipeWire, after adjusting
+their properties to provide enough context.</p>
+
+<p><code class="highlighter-rouge">module-monitor</code> does not read any configuration files, however, it supports
+configuration through parameters defined in the main <code class="highlighter-rouge">wireplumber.conf</code>.
+Possible parameters are:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">factory</code></p>
+
+    <p>A string that specifies the name of the SPA factory that loads the intial
+“device” object.</p>
+
+    <p>Well-known factories are:</p>
+
+    <ul>
+      <li>“api.alsa.enum.udev” - Discovers ALSA devices via udev</li>
+      <li>“api.v4l2.enum.udev” - Discovers V4L2 devices via udev</li>
+      <li>“api.bluez5.enum.dbus” - Discovers bluetooth devices by calling bluez5 API via D-Bus</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">flags</code></p>
+
+    <p>An array of strings that enable specific functionality in the monitor.
+ Possible flags include:</p>
+
+    <ul>
+      <li>
+        <p>“use-adapter”</p>
+
+        <p>Instructs the monitor to wrap all the created nodes in an “adapter”
+SPA node, which provides automatic port splitting/merging and format/rate
+conversion. This should be always enabled for audio device nodes.</p>
+      </li>
+      <li>
+        <p>“local-nodes”</p>
+
+        <p>Instructs the monitor to run all the created nodes locally in in the
+WirePlumber process, instead of the default behavior which is to create
+the nodes in the PipeWire process. This is useful for bluetooth nodes,
+which should run outside of the main PipeWire process for performance
+reasons.</p>
+      </li>
+      <li>
+        <p>“activate-devices”</p>
+
+        <p>Instructs the monitor to automatically set the device profile to “On”,
+so that the nodes are created. If not specified, the profile must be
+set externally by the user before any nodes appear.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="module-config-endpoint">module-config-endpoint</h1>
+
+<p>This module creates endpoints when WirePlumber detects new nodes in the
+pipewire graph. Nodes themselves can be created in two ways:
+Device modes are being created by “monitors” that watch a specific subsystem
+(udev, bluez, etc…) for devices. Client nodes are being created by client
+applications that try to stream to/from pipewire. As soon as a node is created,
+the <code class="highlighter-rouge">module-config-endpoint</code> iterates through all the <code class="highlighter-rouge">.endpoint</code> configuration
+files, in the order that is determined by the <code class="highlighter-rouge">match-node.priority</code> field,
+and tries to match the node to the node description in the <code class="highlighter-rouge">[match-node]</code> table.
+Upon a successful match, a new endpoint that follows the description in the
+<code class="highlighter-rouge">[endpoint]</code> table is created.</p>
+
+<h2 id="endpoint-configuration-files"><code class="highlighter-rouge">*.endpoint</code> configuration files</h2>
+
+<p>These files are TOML v0.5 files. At the top-level, they must contain exactly
+2 tables: <code class="highlighter-rouge">[match-node]</code> and <code class="highlighter-rouge">[endpoint]</code></p>
+
+<p>The <code class="highlighter-rouge">[match-node]</code> table contains properties that match a pipewire node that
+exists on the graph. Possible fields of this table are:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">priority</code></p>
+
+    <p>Specifies the order in which the <code class="highlighter-rouge">.endpoint</code> files are being searched for a
+match with a node. If a node matches the description of more than one
+<code class="highlighter-rouge">.endpoint</code> file, the one with the highest priority wins.</p>
+
+    <p>The type of this field is unsigned integer. Bigger numbers mean higher
+priority.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">properties</code></p>
+
+    <p>This is a TOML array of tables, where each table must contain two fields:
+<code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">value</code>, both being strings. Each table describes a match against
+one of the pipewire properties of the node. For a successful node match, all
+the described properties must match with the node.</p>
+
+    <p>The value of the <code class="highlighter-rouge">name</code> field must match exactly the name of the pipewire
+property, while the value of the <code class="highlighter-rouge">value</code> field can contain ‘*’ (wildcard)
+and ‘?’ (joker), adhering to the rules of the
+<a href="https://developer.gnome.org/glib/stable/glib-Glob-style-pattern-matching.html">GLib g_pattern_match() function</a>.</p>
+
+    <p>When writing <code class="highlighter-rouge">.endpoint</code> files, a useful utility that you can use to list
+device node properties is:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ wireplumber-cli device-node-props
+</code></pre>
+    </div>
+
+    <p>Another way to figure out some of these properties <em>for ALSA nodes</em> is
+by parsing the aplay/arecord output. For example, this line from <code class="highlighter-rouge">aplay -l</code>
+is interpreted as follows:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>card 0: PCH [HDA Intel PCH], device 2: ALC3246 [ALC3246 Analog]
+</code></pre>
+    </div>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.path"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"hw:0,2"</span><span class="w"> </span><span class="err">},</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.card"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"0"</span><span class="w"> </span><span class="err">},</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.card.id"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"PCH"</span><span class="w"> </span><span class="err">},</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.card.name"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"HDA Intel PCH"</span><span class="w"> </span><span class="err">},</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.pcm.device"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"2"</span><span class="w"> </span><span class="err">},</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.pcm.id"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"ALC3246"</span><span class="w"> </span><span class="err">},</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.pcm.name"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"ALC3246 Analog"</span><span class="w"> </span><span class="err">},</span><span class="w">
+</span></code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>The <code class="highlighter-rouge">[endpoint]</code> table contains a description of the endpoint to be created.
+Possible fields of this table are:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">type</code></p>
+
+    <p>Required. Specifies the factory to be used for construction.
+The only well-known factory at the moment of writing is: <code class="highlighter-rouge">pw-audio-softdsp-endpoint</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">direction</code></p>
+
+    <p>Required. Can be set to either <code class="highlighter-rouge">"sink"</code> or <code class="highlighter-rouge">"source"</code>. Specifies the
+direction of the media flow of this endpoint. A <code class="highlighter-rouge">source</code> is an endpoint that
+produces data (i.e. an audio capture device or a playback application) and
+a <code class="highlighter-rouge">sink</code> is an endpoint that consumes data (audio playback device or
+capture application).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">name</code></p>
+
+    <p>Optional. The name of the newly created endpoint. If not specified,
+the endpoint is named after the node (from the <code class="highlighter-rouge">node.name</code> property of the node).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">media_class</code></p>
+
+    <p>Optional. A string that specifies an override for the <code class="highlighter-rouge">media.class</code> property
+of the node. It can be used in special circumstances to declare that an
+endpoint is dealing with a different type of data. This is only useful in
+combination with a policy implementation that is aware of this media class.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">priority</code></p>
+
+    <p>Optional. An unsigned integer that specifies the order in which endpoints are
+chosen to be the default of a specific device group. Possible device groups
+are (determined by the endpoint’s <code class="highlighter-rouge">media.class</code>):</p>
+
+    <ul>
+      <li>Audio/Sink</li>
+      <li>Audio/Source</li>
+      <li>Video/Source</li>
+    </ul>
+
+    <p>Every time a new device endpoint is created, wireplumber picks the “default”
+of the group that it belongs to, based on this priority number: the endpoint
+with the biggest priority number wins.</p>
+
+    <p>If not specified, the default priority of an endpoint is equal to zero
+(i.e. the lowest priority).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">streams</code></p>
+
+    <p>Optional. Specifies the name of a <code class="highlighter-rouge">.streams</code> file that contains the
+descriptions of the streams to create for this endpoint. This currently
+specific to the implementation of the <code class="highlighter-rouge">pw-audio-softdsp-endpoint</code> and might
+change in the future.</p>
+  </li>
+</ul>
+
+<h2 id="streams-configuration-files"><code class="highlighter-rouge">*.streams</code> configuration files</h2>
+
+<p>These files contain lists of streams with their names and priorities.
+They are TOML v0.5 files.</p>
+
+<p>Each <code class="highlighter-rouge">.streams</code> file must contain exactly one top-level array of tables,
+called <code class="highlighter-rouge">streams</code>. Every table must contain exactly two fields:
+<code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">priority</code>.</p>
+
+<p>The <code class="highlighter-rouge">name</code> of each stream is used to create the streams on new endpoints.</p>
+
+<p>The <code class="highlighter-rouge">priority</code> of each stream is being interpreted by the policy module to
+apply restrictions on which app can use the stream at a given time.</p>
+
+<h1 id="module-config-policy">module-config-policy</h1>
+
+<p>This module implements demo-quality policy management that is partly driven
+by configuration files. The configuration files that this module reads are
+described below:</p>
+
+<h2 id="endpoint-link"><code class="highlighter-rouge">*.endpoint-link</code></h2>
+
+<p>These files contain rules to link endpoints with each other.
+They are TOML v0.5 files.</p>
+
+<p>Endpoints are normally created by another module, such
+as <code class="highlighter-rouge">module-config-endpoint</code> which is described above.
+As soon as an endpoint is created, the <code class="highlighter-rouge">module-config-policy</code> uses the
+information gathered from the <code class="highlighter-rouge">.endpoint-link</code> files in order to create a
+link to another endpoint.</p>
+
+<p><code class="highlighter-rouge">.endpoint-link</code> files can contain 3 top-level tables:
+* <code class="highlighter-rouge">[match-endpoint]</code>, required
+* <code class="highlighter-rouge">[target-endpoint]</code>, optional
+* <code class="highlighter-rouge">[endpoint-link]</code>, required</p>
+
+<p>The <code class="highlighter-rouge">[match-endpoint]</code> table contains properties that match an endpoint that
+exists on the graph. Possible fields of this table are:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">priority</code></p>
+
+    <p>Specifies the order in which the <code class="highlighter-rouge">.endpoint-link</code> files are being searched
+for a match with an endpoint. If an endpoint matches the description of more
+than one <code class="highlighter-rouge">.endpoint-link</code> file, the one with the highest priority wins.</p>
+
+    <p>The type of this field is unsigned integer. Bigger numbers mean higher
+priority.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">direction</code></p>
+
+    <p>Required. Can be set to either <code class="highlighter-rouge">"sink"</code> or <code class="highlighter-rouge">"source"</code>. Specifies the
+direction of the media flow of this endpoint. A <code class="highlighter-rouge">source</code> is an endpoint that
+produces data (i.e. an audio capture device or a playback application) and
+a <code class="highlighter-rouge">sink</code> is an endpoint that consumes data (audio playback device or
+capture application).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">name</code></p>
+
+    <p>Optional. The name of the endpoint. It is possible to use wildcards here to
+match only parts of the name.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">media_class</code></p>
+
+    <p>Optional. A string that specifies the <code class="highlighter-rouge">media.class</code> that the endpoint
+must have in order to match.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">properties</code></p>
+
+    <p>This is a TOML array of tables, where each table must contain two fields:
+<code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">value</code>, both being strings. Each table describes a match against
+one of the pipewire properties of the endpoint. For a successful endpoint
+match, all the described properties must match with the endpoint.</p>
+  </li>
+</ul>
+
+<p>The <code class="highlighter-rouge">[target-endpoint]</code> table contains properties that match an endpoint that
+exists on the graph. The purpose of this table is to match a second endpoint
+that the original matching endpoint from <code class="highlighter-rouge">[match-endpoint]</code> will be linked to.
+If not specified, <code class="highlighter-rouge">module-config-policy</code> will look for the session “default”
+endpoint for the type of media that the matching endpoint produces or consumes
+and will use that as a target. Possible fields of this table are:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">direction</code>, <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">media_class</code>, <code class="highlighter-rouge">properties</code></p>
+
+    <p>All these fields are permitted and behave exactly as described above for the
+<code class="highlighter-rouge">[match-endpoint]</code> table.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">stream</code></p>
+
+    <p>This field specifies a stream name that the link will use on the target
+endpoint. If it is not specified, the stream name is acquired from the
+<code class="highlighter-rouge">media.role</code> property of the matching endpoint. If specified, the value of
+this field overrides the <code class="highlighter-rouge">media.role</code>.</p>
+  </li>
+</ul>
+
+<p>The <code class="highlighter-rouge">[endpoint-link]</code> table specifies properties of the link. Possible fields
+of this table are:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">keep</code></p>
+
+    <p>A boolean field. If set to true, the link is always kept active and ignores
+policy rules regarding corking or stream priority. This link will also not
+affect the rules for other links. For example, if a keep=true link is
+activating a high priority stream, lower priority streams can still work on
+the same target endpoint for links with keep=false.</p>
+  </li>
+</ul>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="blue-divider"></div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+    <div class="col-sm-9">
+        <h1>More Resources</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>General</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">AGL Developer Community</a>
+                    </li>
+                    <li>
+                        <a href="https://www.automotivelinux.org/software/download/">Download Distribution</a>
+                    </li>
+                    <li>
+                        <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Development</h2>
+                <ul class="nav">
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/agl-distro/source-code">Source Code</a></li>
+                    <li><a target="_blank" href="https://jira.automotivelinux.org/browse/SPEC/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Issue Tracker</a></li>
+                    <li><a target="_blank" href="https://wiki.automotivelinux.org/">Wiki</a></li>
+                    <li><a href="https://www.automotivelinux.org/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>Automotive Grade Linux @ Linux Foundation</h2>
+                <ul class="nav">
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/">About AGL</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.linuxfoundation.org/">About Linux Foundation</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://wiki.automotivelinux.org/start/getting-started">Join AGL community</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.automotivelinux.org/about/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <h1>Contribute</h1>
+        <p style="padding-top:20px"><strong>Help AGL move forward!</strong></p>
+        <p>Report bugs, improve the docs, or contribute to the code.</p>
+        <a href="/contribute" class="btn btn-lg btn-primary">
+            Learn More
+        </a>
+        <p style="padding-top:20px"> <a href="https://twitter.com/autogradelinux" class="twitter-follow-button" data-show-count="false">Follow @autogradelinux</a></p>
+    </div>
+</div>
+<div class="row">
+	<div class="col-sm-9">
+		<p class="copyright_text">
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			<br/>
+			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
+			<br/>
+			Initial site design from <a href="https://cordova.apache.org/">Cordova website.</a> - warm thanks !
+		</p>
+	</div>
+    <div class="col-sm-3">
+		<small class="stats">Page rendered at:  2020-10-21 04:32:24 +0000</small>
+		
+		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/halibut/docs/audio/wireplumber_configuration.md">Link to source document</small>
+		
+	</div>
+</div>
+
+    </div>
+</footer>
+
+        </div>
+    </div>
+</div>
+
+<script defer type="text/javascript" src="/static/js/lib/toc.min.js"></script>
+<script defer type="text/javascript" src="/static/js/docs.js"></script>
+
+    <script defer type="text/javascript" src="/static/js/twitter.js"></script>
+    <!-- 
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: '',
+        indexName: '',
+        inputSelector: '#header-search-field',
+    });
+</script>
+ -->
+            
+    
+
+</body>
+</html>

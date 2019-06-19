@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/styles/syntax.css">
     <!-- Algolia Search CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" /> -->
 
     <!-- Fonts -->
     <!-- For attribution information, see www/attributions.html -->
@@ -137,12 +137,14 @@
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
-                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
+<!--                            <form class="navbar-form navbar-right" id="header-search-form" role="search">
                                 <div class="input-group">
                                     
                                     <input id="header-search-field" type="text" placeholder="Search 'master' docs..." class="form-control hidden-xs" autocomplete="off">
                                 </div>
-                            </form>
+                            </form> --> 
+                            <!--<script async src="https://cse.google.com/cse.js?cx=015035502323899441113:l83yxim-aao"></script>
+                            <div class="gcse-search"></div>-->
                         </li>
                     </ul>
                 </div>
@@ -348,7 +350,7 @@
     <li>
         
             <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-                Build for Raspberry PI 2/3
+                Build for Raspberry PI 3/4
             </a>
             
         
@@ -743,7 +745,7 @@
 
 <li>
     <a class="" href="/docs/en/master/getting_started/reference/getting-started/machines/raspberrypi.html">
-        Build for Raspberry PI 2/3
+        Build for Raspberry PI 3/4
     </a>
 </li>
 
@@ -984,6 +986,52 @@
                                 
 
                                 
+                                <a href="/docs/en/icefish/getting_started/" class="missing-page">
+                                    
+                                        
+                                    icefish
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
+                                <a href="/docs/en/halibut/getting_started/" class="missing-page">
+                                    
+                                        
+                                    halibut
+                                    
+                                
+                                    
+                                </a>
+                            </li>
+                            
+                            <li>
+                                
+                                
+
+                                
+
+                                
+                                
+                                
+
+                                
+
+                                
                                 <a href="/docs/en/guppy/getting_started/" class="missing-page">
                                     
                                         
@@ -1109,9 +1157,21 @@ The build also takes approximately 100G-bytes of free disk space.</p>
 
 <p>By default, the build process puts the resulting image in the Build Directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk.xz
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/qemux86-64/
+
+e.g.
+
+&lt;build_directory&gt;/tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk.xz
 </code></pre>
 </div>
+
+<p><strong>Note:</strong></p>
+
+<p>If you built your image with bitbake, you can now just use the <code class="highlighter-rouge">runqemu</code> wrapper.</p>
+
+<p><strong>Note:</strong>
+If you need to run it outside of the bitbake environment or need special settings for
+hardware pass-through or the like, read on:</p>
 
 <h2 id="deploying-the-agl-demo-image">3. Deploying the AGL Demo Image</h2>
 
@@ -1142,40 +1202,56 @@ the image and prepare it for boot.</p>
 <p><strong>NOTE:</strong> if you have created an AGL crosssdk, it will contain a
 QEMU binary for the build host.
 This SDK QEMU binary does not support graphics.
-Consequently,  you cannot use it to boot the AGL image.</p>
+Consequently,  you cannot use it to boot the AGL image and
+need to call your host’s qemu binary instead.</p>
+
+<p><strong>NOTE:</strong> the VM images need UEFI in the emulator to boot. Thus you need
+to install the necessary files with below commands (ovmf).</p>
 
 <p>If your build host is running
 <a href="https://www.archlinux.org/">Arch Linux</a>, use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo pacman -S qemu
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo pacman -S qemu ovmf
+<span class="nb">export </span><span class="nv">OVMF_PATH</span><span class="o">=</span>/usr/share/ovmf/x64/OVMF_CODE.fd
 </code></pre>
 </div>
 
 <p>If your build host is running Debian or Ubuntu, use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install qemu-system-x86
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install qemu-system-x86 ovmf
+<span class="nb">export </span><span class="nv">OVMF_PATH</span><span class="o">=</span>/usr/share/ovmf/OVMF.fd
 </code></pre>
 </div>
 
 <p>If you build host is running Fedora, use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo yum install qemu-kvm
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo yum install qemu qemu-kvm edk2-ovmf
+<span class="nb">export </span><span class="nv">OVMF_PATH</span><span class="o">=</span>/usr/share/edk2/ovmf/OVMF_CODE.fd
 </code></pre>
 </div>
 
 <p>Once QEMU is installed, boot the image with KVM support:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>qemu-system-x86_64 -enable-kvm -m 2048 <span class="se">\</span>
-    -hda agl-demo-platform-qemux86-64.vmdk <span class="se">\</span>
+    -bios <span class="k">${</span><span class="nv">OVMF_PATH</span><span class="k">}</span> <span class="se">\</span>
+    -hda agl-demo-platform-qemux86-64.wic.vmdk <span class="se">\</span>
     -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt <span class="se">\</span>
     -vga virtio -show-cursor <span class="se">\</span>
     -device virtio-rng-pci <span class="se">\</span>
     -serial mon:stdio -serial null <span class="se">\</span>
     -soundhw hda <span class="se">\</span>
-    -net nic,vlan<span class="o">=</span>0 <span class="se">\</span>
+    -net nic <span class="se">\</span>
     -net user,hostfwd<span class="o">=</span>tcp::2222-:22
 </code></pre>
 </div>
+
+<p><strong>NOTE:</strong> KVM may not be supported within a virtualized environment such as
+VirtualBox. This is indicated by the qemu command above giving the error
+message <code class="highlighter-rouge">Could not access KVM kernel module: No such file or directory</code> or
+the kernel log output contains the error message <code class="highlighter-rouge">kvm: no hardware support</code>.
+The image can be booted in such an environment by removing <code class="highlighter-rouge">-enable-kvm</code> from
+the qemu command line, however this will result in lower perfromance within
+the AGL demo.</p>
 
 <h4 id="virtualbox">VirtualBox</h4>
 
@@ -1192,8 +1268,9 @@ Consequently,  you cannot use it to boot the AGL image.</p>
   <li>Set <em>Memory size</em> to <strong>2 GB</strong></li>
   <li>Click <strong>Use an existing virtual hard disk file</strong> under <em>Hard disk</em></li>
   <li>Navigate to and select the <strong>agl-demo-platform-qemux86-64.vmdk</strong> image</li>
-  <li>Ensure that the newly created <strong>AGL QEMU</strong> machine is highlighted.</li>
-  <li>Click <strong>Start</strong></li>
+  <li>Select the newly created <strong>AGL QEMU</strong> machine and click <strong>Settings</strong></li>
+  <li>Go to the <strong>System</strong> tab and ensure <strong>Enable EFI (special OSes only)</strong> is enabled then click <strong>OK</strong></li>
+  <li>With the <strong>AGL QEMU</strong> machine still selected, click <strong>Start</strong> to boot the virtual machine</li>
 </ol>
 
 
@@ -1222,7 +1299,7 @@ Consequently,  you cannot use it to boot the AGL image.</p>
                         <a href="https://gerrit.automotivelinux.org/gerrit/#/admin/projects/">Source Code on Git</a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://lists.linuxfoundation.org/mailman/listinfo/automotive-discussions">Mailing List</a>
+                        <a target="_blank" href="https://lists.automotivelinux.org/g/agl-dev-community">Mailing List</a>
                     </li>
                 </ul>
             </div>
@@ -1267,7 +1344,7 @@ Consequently,  you cannot use it to boot the AGL image.</p>
 <div class="row">
 	<div class="col-sm-9">
 		<p class="copyright_text">
-			Copyright &copy; 2015-2018 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+			Copyright &copy; 2015-2019 Automotive Grade Linux Documentation, Licensed under the <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 			<br/>
 			Automotive Grade Linux and logos are <a target="_blank" href="http://www.linuxfoundation.org">trademarks</a> of The Linux Foundation.
 			<br/>
@@ -1275,7 +1352,7 @@ Consequently,  you cannot use it to boot the AGL image.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2019-06-19 05:21:36 +0000</small>
+		<small class="stats">Page rendered at:  2020-10-21 04:32:14 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master/docs/getting-started/machines/qemu.md">Link to source document</small>
 		
@@ -1293,19 +1370,19 @@ Consequently,  you cannot use it to boot the AGL image.</p>
 <script defer type="text/javascript" src="/static/js/docs.js"></script>
 
     <script defer type="text/javascript" src="/static/js/twitter.js"></script>
-    
+    <!-- 
 
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
     docsearch({
-        apiKey: 'edd30bcff9f6df4b095c41cba3e5a418',
-        indexName: 'automotivelinux',
+        apiKey: '',
+        indexName: '',
         inputSelector: '#header-search-field',
     });
 </script>
-
+ -->
             
     
 
