@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1384,7 +1384,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2047,7 +2047,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2215,9 +2215,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2229,22 +2229,21 @@
 
 <h1 id="usage">Usage</h1>
 
-<h2 id="add-app-controller-submodule-as-a-submodule-to-include-in-your-project">1) Add app-controller-submodule as a submodule to include in your project</h2>
+<h2 id="1-add-app-controller-submodule-as-a-submodule-to-include-in-your-project">1) Add app-controller-submodule as a submodule to include in your project</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git submodule add https://gerrit.automotivelinux.org/gerrit/apps/app-controller-submodule
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git submodule add https://gerrit.automotivelinux.org/gerrit/apps/app-controller-submodule
+</code></pre></div></div>
 
-<h2 id="add-app-controller-submodule-as-a-static-library-to-your-binding">2) Add app-controller-submodule as a static library to your binding</h2>
+<h2 id="2-add-app-controller-submodule-as-a-static-library-to-your-binding">2) Add app-controller-submodule as a static library to your binding</h2>
 
-<pre><code class="language-cmake">    # Library dependencies (include updates automatically)
-    TARGET_LINK_LIBRARIES(${TARGET_NAME}
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># Library dependencies (include updates automatically)</span>
+    <span class="nf">TARGET_LINK_LIBRARIES</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span>
         ctl-utilities
         ... other dependencies ....
-    )
-</code></pre>
+    <span class="p">)</span>
+</code></pre></div></div>
 
-<h2 id="declare-your-controller-config-section-in-your-binding">3) Declare your controller config section in your binding</h2>
+<h2 id="3-declare-your-controller-config-section-in-your-binding">3) Declare your controller config section in your binding</h2>
 
 <pre><code class="language-C">// CtlSectionT syntax:
 // key: "section name in config file"
@@ -2259,7 +2258,7 @@ static CtlSectionT ctlSections[]= {
 
 </code></pre>
 
-<h2 id="do-the-controller-config-parsing-at-binding-pre-init">4) Do the controller config parsing at binding pre-init</h2>
+<h2 id="4-do-the-controller-config-parsing-at-binding-pre-init">4) Do the controller config parsing at binding pre-init</h2>
 
 <pre><code class="language-C">   // check if config file exist
     const char *dirList= getenv("CTL_CONFIG_PATH");
@@ -2272,7 +2271,7 @@ static CtlSectionT ctlSections[]= {
     if (!ctlConfig) return -1;
 </code></pre>
 
-<h2 id="execute-the-controller-config-during-binding-init">5) Execute the controller config during binding init</h2>
+<h2 id="5-execute-the-controller-config-during-binding-init">5) Execute the controller config during binding init</h2>
 
 <pre><code class="language-C">  int err = CtlConfigExec (ctlConfig);
 </code></pre>
@@ -2356,7 +2355,7 @@ static CtlSectionT ctlSections[]= {
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:59 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:12 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-controller-submodule/plain/docs/Usage.md?h=flounder">Link to source document</small>
 		
@@ -2388,6 +2387,16 @@ static CtlSectionT ctlSections[]= {
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

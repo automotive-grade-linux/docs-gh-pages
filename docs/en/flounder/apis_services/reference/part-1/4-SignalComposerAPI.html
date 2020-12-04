@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2740,16 +2740,14 @@
 <p>Using subscribe you can get update on change for signals you chose and you can
 using wildcard to subscribe several signals in the same time.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">signal-composer</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="nt">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rear_left*"</span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="err">:signal-composer/subscribe:</span><span class="w"> </span><span class="p">{</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"3d4b743b-7ac6-4d3c-8fce-721107f9dee5"</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">signal-composer</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="s2">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rear_left*"</span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="err">signal-composer/subscribe</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"3d4b743b-7ac6-4d3c-8fce-721107f9dee5"</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Then event comes up like the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">ON-EVENT</span><span class="w"> </span><span class="err">signal-composer/</span><span class="mi">257</span><span class="err">b</span><span class="mi">343e-8</span><span class="err">ea</span><span class="mi">9-4</span><span class="err">cd</span><span class="mi">7-8</span><span class="err">f</span><span class="mi">9e-1904</span><span class="err">fa</span><span class="mi">77</span><span class="err">f</span><span class="mi">8</span><span class="err">f</span><span class="mi">2</span><span class="err">(</span><span class="p">{</span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"signal-composer\/257b343e-8ea9-4cd7-8f9e-1904fa77f8f2"</span><span class="p">,</span><span class="nt">"data"</span><span class="p">:{</span><span class="nt">"uid"</span><span class="p">:</span><span class="s2">"rear_left_door"</span><span class="p">,</span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"low-can\/messages.doors.rear_left.open"</span><span class="p">,</span><span class="nt">"timestamp"</span><span class="p">:</span><span class="mi">4833910845032292484</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="p">}</span><span class="err">)</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">ON-EVENT</span><span class="w"> </span><span class="err">signal-composer/</span><span class="mi">257</span><span class="err">b</span><span class="mi">343e-8</span><span class="err">ea</span><span class="mi">9-4</span><span class="err">cd</span><span class="mi">7-8</span><span class="err">f</span><span class="mi">9e-1904</span><span class="err">fa</span><span class="mi">77</span><span class="err">f</span><span class="mi">8</span><span class="err">f</span><span class="mi">2</span><span class="err">(</span><span class="p">{</span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"signal-composer</span><span class="se">\/</span><span class="s2">257b343e-8ea9-4cd7-8f9e-1904fa77f8f2"</span><span class="p">,</span><span class="s2">"data"</span><span class="p">:{</span><span class="s2">"uid"</span><span class="p">:</span><span class="s2">"rear_left_door"</span><span class="p">,</span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"low-can</span><span class="se">\/</span><span class="s2">messages.doors.rear_left.open"</span><span class="p">,</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="mi">4833910845032292484</span><span class="p">,</span><span class="s2">"value"</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="p">}</span><span class="err">)</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Unsubscribe happens the same way. When no more signals are holded by the client
 then it unsubscribe from the <em>AGL Application Framework</em> event handle.</p>
@@ -2760,12 +2758,11 @@ then it unsubscribe from the <em>AGL Application Framework</em> event handle.</p
 its initialization phase. Use this verb and specify the file as argument, you
 could use only the file name or the file name with its absolute path.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">signal-composer</span><span class="w"> </span><span class="err">addObjects</span><span class="w"> </span><span class="p">{</span><span class="nt">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sig_doors.json"</span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="err">:signal-composer/addObjects:</span><span class="w"> </span><span class="p">{</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"00d7a519-816e-486a-8163-3afb1face4fa"</span><span class="p">}}</span><span class="w">
-</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">addObjects</span><span class="w"> </span><span class="p">{</span><span class="nt">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tmp/sig_doors.json"</span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">2</span><span class="err">:signal-composer/addObjects:</span><span class="w"> </span><span class="p">{</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">signal-composer</span><span class="w"> </span><span class="err">addObjects</span><span class="w"> </span><span class="p">{</span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sig_doors.json"</span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="err">signal-composer/addObjects</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"00d7a519-816e-486a-8163-3afb1face4fa"</span><span class="p">}}</span><span class="w">
+</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">addObjects</span><span class="w"> </span><span class="p">{</span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/tmp/sig_doors.json"</span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="err">signal-composer/addObjects</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>You can follow the activity using the service log journal and check that the
 correct number of objects has been added.</p>
@@ -2779,12 +2776,11 @@ objects : <code class="highlighter-rouge">urn:AGL:permission::platform:composer:
 
 <p>You can get a signal value be requesting the API with the verb <em>get</em>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="nt">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"average"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}}</span><span class="w">
-</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="nt">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}}</span><span class="w">
-</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="nt">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}}</span><span class="w">
-</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="nt">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="s2">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">,</span><span class="w"> </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"average"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}}</span><span class="w">
+</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="s2">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">,</span><span class="w"> </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}}</span><span class="w">
+</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="s2">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">,</span><span class="w"> </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}}</span><span class="w">
+</span><span class="err">signal-composer</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="s2">"signal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle_speed"</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>You apply apply some simple mathematical function by default present in the
 binding, by default <strong>last</strong> is used:</p>
@@ -2879,7 +2875,7 @@ binding, by default <strong>last</strong> is used:</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:51 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:05 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-signal-composer/plain/docs/part-1/4-SignalComposerAPI.md?h=flounder">Link to source document</small>
 		
@@ -2911,6 +2907,16 @@ binding, by default <strong>last</strong> is used:</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

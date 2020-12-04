@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -225,7 +225,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -263,7 +263,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -431,9 +431,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -450,13 +450,12 @@ Renesas Electronics, called the R-Car Generation 3.</p>
 
 <p>Currently, this supports boards and the SoCs of the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    - Board: Salvator-X / SoC: R8A7795 <span class="o">(</span>R-Car H3<span class="o">)</span>, R8A7796 <span class="o">(</span>R-Car M3<span class="o">)</span>, R8A77965 <span class="o">(</span>R-Car M3N<span class="o">)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    - Board: Salvator-X / SoC: R8A7795 <span class="o">(</span>R-Car H3<span class="o">)</span>, R8A7796 <span class="o">(</span>R-Car M3<span class="o">)</span>, R8A77965 <span class="o">(</span>R-Car M3N<span class="o">)</span>
     - Board: R-Car Starter Kit premier<span class="o">(</span>H3ULCB<span class="o">)</span> / SoC: R8A7795 <span class="o">(</span>R-Car H3<span class="o">)</span>
     - Board: R-Car Starter Kit pro<span class="o">(</span>M3ULCB<span class="o">)</span> / SoC: R8A7796 <span class="o">(</span>R-Car M3<span class="o">)</span>
     - Board: R-Car Starter Kit pro<span class="o">(</span>M3NULCB<span class="o">)</span> / SoC: R8A77965 <span class="o">(</span>R-Car M3N<span class="o">)</span>
     - Board: Ebisu / SoC: R8A77990 <span class="o">(</span>R-Car E3<span class="o">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="branch-policy">Branch Policy</h2>
 
@@ -508,33 +507,30 @@ thud-Yocto-v3.19.0 to keep the major version numbers in sync.</li>
   <li>poky</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    URI: git://git.yoctoproject.org/poky
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    URI: git://git.yoctoproject.org/poky
     layers: meta, meta-yocto, meta-yocto-bsp
     branch: thud
     revision: e7f0177ef3b6e06b8bc1722fca0241fef08a1530
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li>meta-linaro</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    URI: git://git.linaro.org/openembedded/meta-linaro.git
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    URI: git://git.linaro.org/openembedded/meta-linaro.git
     layers: meta-optee
     branch: thud
     revision: 0a94decea3bd2504590d1637eadff9d502c19ee2
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>meta-openembedded</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    URI: git://git.openembedded.org/meta-openembedded
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    URI: git://git.openembedded.org/meta-openembedded
     layers: meta-oe
     branch: thud
     revision: 4cd3a39f22a2712bfa8fc657d09fe2c7765a4005
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="build-instructions">Build Instructions</h2>
 
@@ -544,25 +540,23 @@ thud-Yocto-v3.19.0 to keep the major version numbers in sync.</li>
   <li>This also needs git user name and email defined:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>   <span class="nv">$ </span>git config --global user.email <span class="s2">"you@example.com"</span>
-   <span class="nv">$ </span>git config --global user.name <span class="s2">"Your Name"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nv">$ </span>git config <span class="nt">--global</span> user.email <span class="s2">"you@example.com"</span>
+   <span class="nv">$ </span>git config <span class="nt">--global</span> user.name <span class="s2">"Your Name"</span>
+</code></pre></div></div>
 
 <ul>
   <li>Initialize a build using the ‘oe-init-build-env’ script in Poky. e.g.:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">source </span>poky/oe-init-build-env
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">source </span>poky/oe-init-build-env
+</code></pre></div></div>
 
 <ul>
   <li>After that, initialized configure bblayers.conf by adding meta-rcar-gen3 layer.
 e.g.:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    BBLAYERS ?<span class="o">=</span> <span class="s2">" </span><span class="se">\</span><span class="s2">
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    BBLAYERS ?<span class="o">=</span> <span class="s2">" </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/poky/meta </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/poky/meta-yocto </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/poky/meta-yocto-bsp </span><span class="se">\</span><span class="s2">
@@ -570,16 +564,14 @@ e.g.:</li>
         &lt;path to layer&gt;/meta-linaro/meta-optee </span><span class="se">\</span><span class="s2">
         &lt;path to layer&gt;/meta-openembedded/meta-oe </span><span class="se">\</span><span class="s2">
     "</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>To build a specific target BSP, configure the associated machine in local.conf:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    MACHINE ??<span class="o">=</span> <span class="s2">"&lt;supported board name&gt;"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    MACHINE ??<span class="o">=</span> <span class="s2">"&lt;supported board name&gt;"</span>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -620,68 +612,60 @@ e.g.:</li>
       <li>For H3: r8a7795</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-      SOC_FAMILY = "r8a7795"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7795"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For M3: r8a7796</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-      SOC_FAMILY = "r8a7796"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7796"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For M3N: r8a77965</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-      SOC_FAMILY = "r8a77965"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77965"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For E3: r8a77990</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-      # Already added in machine config: ebisu.conf
-      SOC_FAMILY = "r8a77990"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># Already added in machine config: ebisu.conf</span>
+      SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77990"</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Configure for systemd init in local.conf:</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" systemd"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" systemd"</span>
     VIRTUAL-RUNTIME_init_manager <span class="o">=</span> <span class="s2">"systemd"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Configure for ivi-shell and ivi-extension</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" ivi-shell"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" ivi-shell"</span>
+</code></pre></div></div>
 
 <ul>
   <li>Configure for USB 3.0</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    MACHINE_FEATURES_append <span class="o">=</span> <span class="s2">" usb3"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    MACHINE_FEATURES_append <span class="o">=</span> <span class="s2">" usb3"</span>
+</code></pre></div></div>
 
 <ul>
   <li>Enable tuning support for Capacity Aware migration Strategy (CAS)</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    MACHINE_FEATURES_append <span class="o">=</span> <span class="s2">" cas"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    MACHINE_FEATURES_append <span class="o">=</span> <span class="s2">" cas"</span>
+</code></pre></div></div>
 
 <ul>
   <li>
@@ -692,9 +676,8 @@ e.g.:</li>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nv">$ </span>bitbake core-image-minimal
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>bitbake core-image-minimal
+</code></pre></div></div>
 
 <p>After completing the images for the target machine will be available in the
 output directory ‘tmp/deploy/images/<supported board="" name="">'.</supported></p>
@@ -725,17 +708,15 @@ output directory ‘tmp/deploy/images/<supported board="" name="">'.</supported>
 <p>Should define the staticdev in SDK image feature for installing the static libs
 to SDK in local.conf.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    SDKIMAGE_FEATURES_append <span class="o">=</span> <span class="s2">" staticdev-pkgs"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    SDKIMAGE_FEATURES_append <span class="o">=</span> <span class="s2">" staticdev-pkgs"</span>
+</code></pre></div></div>
 
 <h3 id="for-64-bit-target-sdk-aarch64">For 64-bit target SDK (aarch64)</h3>
 
 <p>Use <code class="highlighter-rouge">bitbake -c populate_sdk</code> for generating the toolchain SDK</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nv">$ </span>bitbake core-image-minimal -c populate_sdk
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>bitbake core-image-minimal <span class="nt">-c</span> populate_sdk
+</code></pre></div></div>
 
 <p>The SDK can be found in the output directory <code class="highlighter-rouge">tmp/deploy/sdk</code></p>
 
@@ -751,17 +732,15 @@ to SDK in local.conf.</p>
   <li>For 64-bit target SDK</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nv">$ </span>sh poky-glibc-x86_64-core-image-minimal-aarch64-toolchain-x.x.sh
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span>sh poky-glibc-x86_64-core-image-minimal-aarch64-toolchain-x.x.sh
+</code></pre></div></div>
 
 <ul>
   <li>For 64-bit application, using environment script in <code class="highlighter-rouge">/opt/poky/x.x</code></li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">source</span> /opt/poky/x.x/environment-setup-aarch64-poky-linux
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nv">$ </span><span class="nb">source</span> /opt/poky/x.x/environment-setup-aarch64-poky-linux
+</code></pre></div></div>
 
 <h2 id="r-car-generation-3-information">R-Car Generation 3 Information</h2>
 
@@ -848,7 +827,7 @@ to SDK in local.conf.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:09 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:20 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-renesas-rcar-gen3/plain/meta-rcar-gen3/README.md?h=icefish">Link to source document</small>
 		
@@ -880,6 +859,16 @@ to SDK in local.conf.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

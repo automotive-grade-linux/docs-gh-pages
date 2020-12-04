@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -240,7 +240,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -287,7 +287,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -455,9 +455,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -503,18 +503,16 @@ For the url to the markdown files, the prefix <code class="highlighter-rouge">%l
 
 <p>A example for the french:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>name: "My section in english"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: "My section in english"
 name_fr: "Ma section en français"
 url: "%lang/section.md"
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ls -lR mydir
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -lR mydir
 book.yml
 section.md
 fr/section.md
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -530,52 +528,50 @@ fr/section.md
 <p><code class="highlighter-rouge">book</code> type describes documentation structure and chapters.
 Below the generic way to include a book file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">type</span><span class="pi">:</span> <span class="s">books</span>
-<span class="s">books</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">books</span>
+<span class="na">books</span><span class="pi">:</span>
 <span class="pi">-</span>
-    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID1&gt;</span>
-    <span class="s">order</span><span class="pi">:</span> <span class="s">x</span> <span class="c1">#optional: between 0 in 100 default when not set is 50, it allows to define order in final</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">&lt;ID1&gt;</span>
+    <span class="na">order</span><span class="pi">:</span> <span class="s">x</span> <span class="c1">#optional: between 0 in 100 default when not set is 50, it allows to define order in final</span>
              <span class="c1">#documentation, more the order number is low more the documentation is first</span>
-    <span class="s">title</span><span class="pi">:</span> <span class="s">title of your chapter</span>  <span class="c1">#default title</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s">title of your chapter</span>  <span class="c1">#default title</span>
     <span class="s">title_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">title in &lt;lang&gt;</span>
-    <span class="s">description</span><span class="pi">:</span> <span class="s">description of your book</span>
-    <span class="s">keywords</span><span class="pi">:</span> <span class="s">some keywords</span>
-    <span class="s">author</span><span class="pi">:</span> <span class="s">author of the documentation</span>
-    <span class="s">version</span><span class="pi">:</span> <span class="s">version of the documentation</span>
-    <span class="s">chapters</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">description of your book</span>
+    <span class="na">keywords</span><span class="pi">:</span> <span class="s">some keywords</span>
+    <span class="na">author</span><span class="pi">:</span> <span class="s">author of the documentation</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">version of the documentation</span>
+    <span class="na">chapters</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
           <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subchapter in &lt;lang&gt;</span>
             <span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%lang%/relative-path/to/your/mardown.md"</span> <span class="c1">#%lang% will be replaced by the</span>
                                                            <span class="c1">#available languages,</span>
                                                            <span class="c1">#default language can be in the root directory</span>
-        <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
           <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subchapter in &lt;lang&gt;</span>
-          <span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%lang%/relative-path/to/your/mardown.md"</span>
-        <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
+          <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%lang%/relative-path/to/your/mardown.md"</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Name of your subchapter</span>
           <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subchapter in &lt;lang&gt;</span>
             <span class="s">- name</span><span class="pi">:</span> <span class="s">Name of your subsubchapter</span>
               <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subsubchapter in &lt;lang&gt;</span>
               <span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%lang%/relative-path/to/your/mardown.md"</span>
-            <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Name of your subsubchapter</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Name of your subsubchapter</span>
               <span class="s">name_&lt;lang&gt;</span><span class="pi">:</span> <span class="s">Name of your subsubchapter in &lt;lang&gt;</span>
-              <span class="s">children</span><span class="pi">:</span>
+              <span class="na">children</span><span class="pi">:</span>
                 <span class="pi">-</span> <span class="s">...</span>
             <span class="pi">-</span> <span class="s">...</span>
         <span class="pi">-</span> <span class="s">...</span>
 <span class="pi">-</span>
-    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID2&gt;</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">&lt;ID2&gt;</span>
     <span class="s">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="https://github.com/automotive-grade-linux/docs-sources/blob/master/docs/handle-docs/book.yml.in">book.yml.in</a>
 is a sort of schema of book.yml. This file contains all supported keys.</p>
 
 <p>Here a sample yaml file, you can start from :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>wget https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master-next/docs/getting-started-book.yml -O my-new-book.yml
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/master-next/docs/getting-started-book.yml <span class="nt">-O</span> my-new-book.yml
+</code></pre></div></div>
 
 <h3 id="api-type">Api Type</h3>
 
@@ -590,28 +586,27 @@ In addition, each directory contains several section yaml file, one a version. F
 
 <p>Below the structure of section yaml file.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">url_fetch</span> <span class="pi">:</span> <span class="s">DEFAULT_URL_FETCH</span> <span class="c1">#this the default url_fetch that can be overload further, there already are some default variables defined in docs-webtemplate/docs-tools</span>
-<span class="s">git_commit</span> <span class="pi">:</span> <span class="s">DEFAULT_VERSION</span> <span class="c1">#this is the default git_commit that can be overload further, there already are some default variables defined in docs-webtemplate/docs-tools</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">url_fetch </span><span class="pi">:</span> <span class="s">DEFAULT_URL_FETCH</span> <span class="c1">#this the default url_fetch that can be overload further, there already are some default variables defined in docs-webtemplate/docs-tools</span>
+<span class="na">git_commit </span><span class="pi">:</span> <span class="s">DEFAULT_VERSION</span> <span class="c1">#this is the default git_commit that can be overload further, there already are some default variables defined in docs-webtemplate/docs-tools</span>
 
-<span class="s">name</span><span class="pi">:</span> <span class="s">Name of the section</span>
-<span class="s">template</span><span class="pi">:</span> <span class="s">generated_index.html</span>
-<span class="s">books</span><span class="pi">:</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Name of the section</span>
+<span class="na">template</span><span class="pi">:</span> <span class="s">generated_index.html</span>
+<span class="na">books</span><span class="pi">:</span>
 <span class="pi">-</span>
-    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID1&gt;</span>
-    <span class="s">url_fetch</span><span class="pi">:</span> <span class="s">&lt;url_fetch&gt;</span> <span class="c1">#optional, overload the default one</span>
-    <span class="s">git_commit</span><span class="pi">:</span> <span class="s">&lt;git_commit&gt;</span> <span class="c1">#optional, overload the default one</span>
-    <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">relativepath/from/root/repository/to/the/book/yaml/file"</span>
-    <span class="s">books</span><span class="pi">:</span> <span class="c1">#optional: subbooks, will be a child of the above book</span>
-        <span class="pi">-</span> <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;SUBID2&gt;</span>
-          <span class="s">url_fetch</span><span class="pi">:</span> <span class="s">&lt;url_fetch&gt;</span> <span class="c1">#optional, overload the default one</span>
-          <span class="s">git_commit</span><span class="pi">:</span> <span class="s">&lt;git_commit&gt;</span> <span class="c1">#optional, overload the default one</span>
-          <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">relativepath/from/root/repository/to/the/book/yaml/file"</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">&lt;ID1&gt;</span>
+    <span class="na">url_fetch</span><span class="pi">:</span> <span class="s">&lt;url_fetch&gt;</span> <span class="c1">#optional, overload the default one</span>
+    <span class="na">git_commit</span><span class="pi">:</span> <span class="s">&lt;git_commit&gt;</span> <span class="c1">#optional, overload the default one</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">relativepath/from/root/repository/to/the/book/yaml/file"</span>
+    <span class="na">books</span><span class="pi">:</span> <span class="c1">#optional: subbooks, will be a child of the above book</span>
+        <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">&lt;SUBID2&gt;</span>
+          <span class="na">url_fetch</span><span class="pi">:</span> <span class="s">&lt;url_fetch&gt;</span> <span class="c1">#optional, overload the default one</span>
+          <span class="na">git_commit</span><span class="pi">:</span> <span class="s">&lt;git_commit&gt;</span> <span class="c1">#optional, overload the default one</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">relativepath/from/root/repository/to/the/book/yaml/file"</span>
         <span class="pi">-</span> <span class="s">...</span>
 <span class="pi">-</span>
-    <span class="s">id</span><span class="pi">:</span> <span class="s">&lt;ID2&gt;</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">&lt;ID2&gt;</span>
     <span class="s">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -692,7 +687,7 @@ In addition, each directory contains several section yaml file, one a version. F
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:10 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:21 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/icefish/docs/handle-docs/handle-docs.md">Link to source document</small>
 		
@@ -724,6 +719,16 @@ In addition, each directory contains several section yaml file, one a version. F
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

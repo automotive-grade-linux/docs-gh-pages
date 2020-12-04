@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2848,85 +2848,83 @@ The action <code class="highlighter-rouge">lua://AFT#_evt_catcher_</code> is the
 
 <p>Here is a simple example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello_Test"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aft-example"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binding made to test other bindings"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello_Test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aft-example"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binding made to test other bindings"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"hello"</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"testVerb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testing-hello"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Launch the tests against hello api"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_launch_test"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"trace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"aftTest.lua"</span><span class="p">,</span><span class="s2">"helloworld.lua"</span><span class="p">]</span><span class="w">
+    </span><span class="s2">"testVerb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testing-hello"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Launch the tests against hello api"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_launch_test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"trace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"aftTest.lua"</span><span class="p">,</span><span class="s2">"helloworld.lua"</span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Following is another example that uses a mocked up <code class="highlighter-rouge">low-can</code> API:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other_Tests"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aft-example"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binding made to test other bindings"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json#"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other_Tests"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aft-example"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binding made to test other bindings"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"tested-api"</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"testVerb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Complete"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Launch all the tests"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_launch_test"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"trace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"aftTest.lua"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mapis-tests.lua"</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"testVerb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Complete"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Launch all the tests"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_launch_test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"trace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"aftTest.lua"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mapis-tests.lua"</span><span class="w"> </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"mapis"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Faked low-can API"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"libs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mapi_low-can.lua"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"verbs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"mapis"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Faked low-can API"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"libs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mapi_low-can.lua"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"verbs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribe"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscribe to CAN signals events"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://low-can#_subscribe"</span><span class="w">
+                </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscribe"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscribe to CAN signals events"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://low-can#_subscribe"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"write"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Write a CAN messages to the CAN bus."</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://low-can#_write"</span><span class="w">
+                </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"write"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Write a CAN messages to the CAN bus."</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://low-can#_write"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can/diagnostic_messages"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_evt_catcher_"</span><span class="w">
+        </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can/diagnostic_messages"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_evt_catcher_"</span><span class="w">
         </span><span class="p">},{</span><span class="w">
-            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can/messages_engine_speed"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_evt_catcher_"</span><span class="w">
+            </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can/messages_engine_speed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_evt_catcher_"</span><span class="w">
         </span><span class="p">},{</span><span class="w">
-            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can/messages_vehicle_speed"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_evt_catcher_"</span><span class="w">
+            </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"low-can/messages_vehicle_speed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lua://AFT#_evt_catcher_"</span><span class="w">
         </span><span class="p">}]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h2 id="the-lua-test-files">The LUA test files</h2>
 
@@ -2954,7 +2952,7 @@ comprehensive list of available <em>tests</em> and <em>assertions</em> functions
 
 <h3 id="tests-example">Tests example</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="k">function</span> <span class="nf">_callback</span><span class="p">(</span><span class="n">responseJ</span><span class="p">)</span>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">function</span> <span class="nf">_callback</span><span class="p">(</span><span class="n">responseJ</span><span class="p">)</span>
     <span class="n">_AFT</span><span class="p">.</span><span class="n">assertStrContains</span><span class="p">(</span><span class="n">responseJ</span><span class="p">.</span><span class="n">response</span><span class="p">,</span> <span class="s2">"Some String"</span><span class="p">)</span>
     <span class="k">end</span>
 
@@ -2997,8 +2995,7 @@ comprehensive list of available <em>tests</em> and <em>assertions</em> functions
     <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"myTestLabel"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
       <span class="n">_AFT</span><span class="p">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
     <span class="k">end</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -3079,7 +3076,7 @@ comprehensive list of available <em>tests</em> and <em>assertions</em> functions
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:41 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:57 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-afb-test/plain/docs/1_Write_the_tests.md?h=flounder">Link to source document</small>
 		
@@ -3111,6 +3108,16 @@ comprehensive list of available <em>tests</em> and <em>assertions</em> functions
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

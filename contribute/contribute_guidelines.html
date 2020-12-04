@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -114,7 +114,7 @@
                 <div class="nav_bar_right">
                     <ul class="nav navbar-nav">
 
-                        <li class="active">
+                        <li >
                             <a href="/contribute">Contribute</a>
                         </li>
                         <li>
@@ -198,13 +198,12 @@
 
 <p>Here is a brief summary of the values:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>-2: This must not be merged.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-2: This must not be merged.
 -1: I would prefer that this is not merged as is.
 0: I am not making any statement about this change at the moment.
 +1: Looks good to me, but someone else must approve it.
 +2: Looks good to me, approved.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>These values do not get added together by Gerrit, so two +1s do not lead to an automatic merge.</p>
 
@@ -269,7 +268,7 @@
 
 <p>For example, here is a good commit message:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Fixed the whizbang widget
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fixed the whizbang widget
 
 Bug-AGL: SPEC-0000
 
@@ -277,8 +276,7 @@ Bug-AGL: SPEC-0000
 - fixed the API to return the correct value in the scenario where there
   aren't any whizbangs present.
 - corrected the documentation.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>As an alternate to a bullet list, you could put long text here in paragraph form, with each line wrapped at 72 chars and blank lines between paragraphs.</p>
 
@@ -316,17 +314,16 @@ Bug-AGL: SPEC-0000
 
 <p>First time:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>   meta-agl&gt; git push gerrit testsandbox:refs/heads/sandbox/jsmoeller/test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   meta-agl&gt; git push gerrit testsandbox:refs/heads/sandbox/jsmoeller/test
   Total 0 (delta 0), reused 0 (delta 0)
   remote: Processing changes: closed: 114, refs: 1, done
   To ssh://jsmoeller@gerrit.automotivelinux.org:29418/AGL/meta-agl
    * [new branch]      testsandbox -&gt; sandbox/jsmoeller/test''
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Push to personal branch:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  git push gerrit testsandbox:refs/for/sandbox/jsmoeller/test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git push gerrit testsandbox:refs/for/sandbox/jsmoeller/test
   Counting objects: 2, Fertig.
   Delta compression using up to 8 threads.
   Compressing: 100% (2/2), Fertig.
@@ -340,40 +337,36 @@ Bug-AGL: SPEC-0000
   remote:
   To ssh://jsmoeller@gerrit.automotivelinux.org:29418/AGL/meta-agl
    * [new branch]      testsandbox -&gt; refs/for/sandbox/jsmoeller/test
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
 <hr />
 
 <h4 id="notes-on-use-cases">Notes on Use Cases</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code>* In this context a subsystem is part of the AGL platform code (meta-agl, meta-ivi-common, meta-oe, etc.). A subsystem may have a meta-data repository and/or multiple Code repositories
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* In this context a subsystem is part of the AGL platform code (meta-agl, meta-ivi-common, meta-oe, etc.). A subsystem may have a meta-data repository and/or multiple Code repositories
 * In this context an App is any code that runs on the AGL platform and will generally be part of Code Repositories
 * A role of App Maintainer can be envisioned, but since the App Developer has the power of +2 an App Maintainer was not included
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="use-cases">Use Cases</h4>
 
 <h3 id="app-developer-use-cases">App Developer Use Cases</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- As an AD I want to write App code and approve code (+2) without getting +2 from anyone else.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- As an AD I want to write App code and approve code (+2) without getting +2 from anyone else.
 - As an AD I want to write App code and request reviews from any other developers
 - As an AD I want to submit patches to the AGL subsystems for review by SDs and SMs.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="subsystem-developer-use-cases">Subsystem Developer Use Cases</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- On further review the SD role is identical to the RD and can be removed (Walt 21 Mar 2016)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- On further review the SD role is identical to the RD and can be removed (Walt 21 Mar 2016)
 - &lt;del&gt;As a SD I want to write code and submit it for review by other developers. They can be RDs, SDs and/or SMs&lt;del&gt;
 - &lt;del&gt;As a SD I want to review code and approve or reject it. (+1, -1)&lt;/del&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="subsystem-maintainer-use-cases">Subsystem Maintainer Use Cases</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>- As a SM I want to review and approve code (+1,+2) submitted to my subsystem
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- As a SM I want to review and approve code (+1,+2) submitted to my subsystem
 - As a SM I want to review and reject code (-1,-2) submitted to my subsystem
 - &lt;del&gt;As a SM I want to review and approve code (+1) submitted to my subsystem&lt;/del&gt;
 - As a SM I want to write code for my subsystem and submit for review by other developers (+1) and SMs (+1 or +2)
@@ -383,11 +376,10 @@ Bug-AGL: SPEC-0000
 - As a SM I want to push changes upstream for the packages that are part of the subsystem
 - As a SM I want to back port new features (code) to AGL code from upstream. In some cases this will be patches and in some cases this is source code.
 - As a SM I want to create branches to test changes prior to merging to the master branch.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="registered-developer-use-cases">Registered Developer Use Cases</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>- As a RD I want to download AGL pre-built binaries
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- As a RD I want to download AGL pre-built binaries
 - As a RD I want to write code for a subsystem and submit it for review (+1, +2) by SMs or RDs (+1)
 - As a RD I want to write code for an existing app and submit it for review (+1, +2) by the ADs for the particular app.
 - As a RD I want to review code and approve or reject it. (+1, -1)
@@ -395,8 +387,7 @@ Bug-AGL: SPEC-0000
 - As a RD I do not want other RDs to push to my sandbox branch
 - As a RD I want to build other RDs sandbox branches in my environment and add changes using to it using my own sandbox branch.
 - As a RD I want to push sandbox code into the AGL platform and have it maintained as part of the regular process. Once this is accomplished the AGL platform becomes the upstream for the formerly sandboxed code
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="unregistered-developer-use-cases">Unregistered Developer Use Cases</h3>
 <ul>
@@ -534,7 +525,7 @@ Bug-AGL: SPEC-0000
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:05 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:17 +0000</small>
 		
 	</div>
 </div>

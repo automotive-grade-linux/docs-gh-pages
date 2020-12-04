@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2747,9 +2747,8 @@
   (if set) functions, <em>tearDown</em> will be ran after your <em>testFunction</em> and
   <strong>_AFT.afterEach()</strong>  (if set) functions.</p>
 
-    <p><code class="highlighter-rouge">lua
-      _AFT.testVerbStatusSuccess('testPingSuccess','hello', 'ping', {})
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbStatusSuccess</span><span class="p">(</span><span class="s1">'testPingSuccess'</span><span class="p">,</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'ping'</span><span class="p">,</span> <span class="p">{})</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testVerbStatusError(testName, api, verb, args, setUp, tearDown)</strong></p>
@@ -2762,9 +2761,8 @@
   (if set) functions, <em>tearDown</em> will be ran after your <em>testFunction</em> and
   <strong>_AFT.afterEach()</strong>  (if set) functions.</p>
 
-    <p><code class="highlighter-rouge">lua
-      _AFT.testVerbStatusSuccess('testPingError', 'hello', 'pingfail', {})
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbStatusSuccess</span><span class="p">(</span><span class="s1">'testPingError'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'pingfail'</span><span class="p">,</span> <span class="p">{})</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testVerbResponseEquals(testName, api, verb, args, expectedResponse, setUp, tearDown)</strong></p>
@@ -2778,9 +2776,8 @@
   functions, <em>tearDown</em> will be ran after your <em>testFunction</em> and
   <strong>_AFT.afterEach()</strong>  (if set) functions.</p>
 
-    <p><code class="highlighter-rouge">lua
-      _AFT.testVerbResponseEquals('testPingSuccess','hello', 'ping', {}, "Some String")
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbResponseEquals</span><span class="p">(</span><span class="s1">'testPingSuccess'</span><span class="p">,</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'ping'</span><span class="p">,</span> <span class="p">{},</span> <span class="s2">"Some String"</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testVerbResponseEqualsError(testName, api, verb, args, expectedResponse, setUp, tearDown)</strong></p>
@@ -2793,9 +2790,8 @@
   <em>tearDown</em> will be ran after your <em>testFunction</em> and <strong>_AFT.afterEach()</strong>  (if
   set) functions.</p>
 
-    <p><code class="highlighter-rouge">lua
-      _AFT.testVerbResponseEqualsError('testPingError', 'hello', 'pingfail', {}, "Ping Binder Daemon fails")
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbResponseEqualsError</span><span class="p">(</span><span class="s1">'testPingError'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'pingfail'</span><span class="p">,</span> <span class="p">{},</span> <span class="s2">"Ping Binder Daemon fails"</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testVerbCb(testName, api, verb, args, expectedResponse, callback, setUp, tearDown)</strong></p>
@@ -2812,12 +2808,11 @@
   <em>tearDown</em> will be ran after your <em>testFunction</em> and <strong>_AFT.afterEach()</strong>  (if
   set) functions.</p>
 
-    <p><code class="highlighter-rouge">lua
-  function _callback(responseJ)
-      _AFT.assertStrContains(responseJ.response, "Some String")
-  end
-  _AFT.testVerbCb('testPingSuccess','hello', 'ping', {}, _callback)
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">function</span> <span class="nf">_callback</span><span class="p">(</span><span class="n">responseJ</span><span class="p">)</span>
+      <span class="n">_AFT</span><span class="p">.</span><span class="n">assertStrContains</span><span class="p">(</span><span class="n">responseJ</span><span class="p">.</span><span class="n">response</span><span class="p">,</span> <span class="s2">"Some String"</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbCb</span><span class="p">(</span><span class="s1">'testPingSuccess'</span><span class="p">,</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'ping'</span><span class="p">,</span> <span class="p">{},</span> <span class="n">_callback</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testVerbCbError(testName, api, verb, args, expectedResponse, callback, setUp, tearDown)</strong></p>
@@ -2830,13 +2825,12 @@
   <em>tearDown</em> will be ran after your <em>testFunction</em> and <strong>_AFT.afterEach()</strong>  (if
   set) functions.</p>
 
-    <p>```lua
-  function _callbackError(responseJ)
-          _AFT.assertStrContains(responseJ.request.info, “Ping Binder Daemon fails”)
-  end</p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">function</span> <span class="nf">_callbackError</span><span class="p">(</span><span class="n">responseJ</span><span class="p">)</span>
+          <span class="n">_AFT</span><span class="p">.</span><span class="n">assertStrContains</span><span class="p">(</span><span class="n">responseJ</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">info</span><span class="p">,</span> <span class="s2">"Ping Binder Daemon fails"</span><span class="p">)</span>
+  <span class="k">end</span>
 
-    <p>_AFT.testVerbCbError(‘testPingError’, ‘hello’, ‘pingfail’, {}, _callbackError)
-  ```</p>
+  <span class="n">_AFT</span><span class="p">.</span><span class="n">testVerbCbError</span><span class="p">(</span><span class="s1">'testPingError'</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'pingfail'</span><span class="p">,</span> <span class="p">{},</span> <span class="n">_callbackError</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testEvtReceived(testName, eventName, timeout, setUp, tearDown)</strong></p>
@@ -2848,9 +2842,8 @@
     <p>Check if an event has been correctly received in time (timeout in µs). An event
   name use the application framework naming scheme: <strong>api/event_name</strong>.</p>
 
-    <p><code class="highlighter-rouge">lua
-      _AFT.testEvtReceived("testEvent", "hello/anEvent",300000)
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="n">_AFT</span><span class="p">.</span><span class="n">testEvtReceived</span><span class="p">(</span><span class="s2">"testEvent"</span><span class="p">,</span> <span class="s2">"hello/anEvent"</span><span class="p">,</span><span class="mi">300000</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testEvtNotReceived(testName, eventName, timeout, setUp, tearDown)</strong></p>
@@ -2862,9 +2855,8 @@
     <p>Check if an event has not been correctly received in time (timeout in µs). An
   event name use the application framework naming scheme: <strong>api/event_name</strong>.</p>
 
-    <p><code class="highlighter-rouge">lua
-      _AFT.testEvtNotReceived("testEventCb", "hello/anotherEvent",300000)
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="n">_AFT</span><span class="p">.</span><span class="n">testEvtNotReceived</span><span class="p">(</span><span class="s2">"testEventCb"</span><span class="p">,</span> <span class="s2">"hello/anotherEvent"</span><span class="p">,</span><span class="mi">300000</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>_AFT.testGrpEvtReceived(testName, eventGrp, timeout, setUp, tearDown)</strong></p>
@@ -2873,19 +2865,17 @@
   received, you have to register the events with the test framework using
   <strong>_AFT.addEventToMonitor</strong> function.</p>
 
-    <p>The table has to have this format:
-  <code class="highlighter-rouge">lua
-  eventGrp = {["api/event_name_1"]=1, ["api/event_name_2"]=2, ["api/event_name_3"]=5}
- </code>
-  As you can see in the table, event names are table keys and the value stored are
+    <p>The table has to have this format:</p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">eventGrp</span> <span class="o">=</span> <span class="p">{[</span><span class="s2">"api/event_name_1"</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s2">"api/event_name_2"</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s2">"api/event_name_3"</span><span class="p">]</span><span class="o">=</span><span class="mi">5</span><span class="p">}</span>
+</code></pre></div>    </div>
+    <p>As you can see in the table, event names are table keys and the value stored are
   the number of time that the events have to be received.</p>
 
     <p>Check if events has been correctly received in time (timeout in µs). An
   event name use the application framework naming scheme: <strong>api/event_name</strong>.</p>
 
-    <p><code class="highlighter-rouge">lua
-  _AFT.testEvtGrpReceived("TestEventGroupReceived",{["hello/anEvent"]=3,["hello/anotherEvent"]=1}, 300000)
- </code></p>
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">_AFT</span><span class="p">.</span><span class="n">testEvtGrpReceived</span><span class="p">(</span><span class="s2">"TestEventGroupReceived"</span><span class="p">,{[</span><span class="s2">"hello/anEvent"</span><span class="p">]</span><span class="o">=</span><span class="mi">3</span><span class="p">,[</span><span class="s2">"hello/anotherEvent"</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">},</span> <span class="mi">300000</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -2968,7 +2958,7 @@
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:38 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:53 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-afb-test/plain/docs/Reference/0_BindingTestFunctions.md?h=flounder">Link to source document</small>
 		
@@ -3000,6 +2990,16 @@
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

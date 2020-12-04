@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2520,9 +2520,8 @@ You can see the packages
 are using.\
 For this example, set and export <code class="highlighter-rouge">REVISION</code> as “Master”.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
+</code></pre></div></div>
 
 <p>For additional details about OBS, see
 <a href="https://build.opensuse.org/project/show/isv:LinuxAutomotive">LinuxAutomotive page on OBS</a>.</p>
@@ -2537,7 +2536,7 @@ section for information on how to set this variable.</p>
 
 <h2 id="install-the-repository">Install the Repository</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Hit:1 https://deb.nodesource.com/node_10.x xenial InRelease
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hit:1 https://deb.nodesource.com/node_10.x xenial InRelease
 Hit:2 https://download.docker.com/linux/ubuntu xenial InRelease
 Hit:3 http://security.ubuntu.com/ubuntu xenial-security InRelease
 Hit:4 http://us.archive.ubuntu.com/ubuntu xenial InRelease
@@ -2546,8 +2545,7 @@ Hit:6 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
 Hit:7 http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_FunkyFlounder/xUbuntu_16.04 ./ Release
 Hit:8 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
 Reading package lists... Done
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Not sure why you get the <code class="highlighter-rouge">Ign</code> on line 5.\
 I guess InRelease does not exist.</p>
@@ -2555,7 +2553,7 @@ I guess InRelease does not exist.</p>
 <p>If you don’t have a <code class="highlighter-rouge">/etc/apt/sources.list.d/AGL.list</code> file to even start with,
 and you run through the whole thing, you get the following output:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo apt-get update
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get update
 Hit:1 https://deb.nodesource.com/node_10.x xenial InRelease
 Hit:2 https://download.docker.com/linux/ubuntu xenial InRelease
 Hit:3 http://us.archive.ubuntu.com/ubuntu xenial InRelease
@@ -2567,61 +2565,54 @@ Get:9 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease <span class
 Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages <span class="o">[</span>902 kB]
 Fetched 1,225 kB <span class="k">in </span>1s <span class="o">(</span>803 kB/s<span class="o">)</span>
 Reading package lists... Done
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Following are example commands that show how to install the package repository
 based on various values of <code class="highlighter-rouge">DISTRO</code> and <code class="highlighter-rouge">REVISION</code>:</p>
 
 <h3 id="ubuntu-and-master">Ubuntu and “Master”</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_18.04"</span>
-wget -O - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | sudo apt-key add -
-sudo bash -c <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
+wget <span class="nt">-O</span> - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>bash <span class="nt">-c</span> <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
 #AGL
 deb http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_</span><span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span><span class="s2">/ ./
 EOF"</span>
-sudo apt-get update
-</code></pre>
-</div>
+<span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
 
 <p>You can see the installed repository using the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cat /etc/apt/sources.list.d/AGL.list
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /etc/apt/sources.list.d/AGL.list
+</code></pre></div></div>
 
 <h3 id="opensuse-and-master">OpenSUSE and “Master”</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"openSUSE_Leap_15.0"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"openSUSE_Leap_15.0"</span>
 <span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
-<span class="nb">source</span> /etc/os-release; <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$PRETTY_NAME</span> | sed <span class="s2">"s/ /_/g"</span><span class="k">)</span>
-sudo zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
-sudo zypper --gpg-auto-import-keys ref
-</code></pre>
-</div>
+<span class="nb">source</span> /etc/os-release<span class="p">;</span> <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$PRETTY_NAME</span> | sed <span class="s2">"s/ /_/g"</span><span class="k">)</span>
+<span class="nb">sudo </span>zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
+<span class="nb">sudo </span>zypper <span class="nt">--gpg-auto-import-keys</span> ref
+</code></pre></div></div>
 
 <p>You can see the installed repository using the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>zypper repos | grep AGL
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zypper repos | <span class="nb">grep </span>AGL
+</code></pre></div></div>
 
 <h3 id="fedora-and-master">Fedora and “Master”</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"Fedora_28"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"Fedora_28"</span>
 <span class="nb">export </span><span class="nv">REVISION</span><span class="o">=</span>Master
-<span class="nb">source</span> /etc/os-release ; <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">NAME</span><span class="k">}</span><span class="s2">_</span><span class="k">${</span><span class="nv">VERSION_ID</span><span class="k">}</span><span class="s2">"</span>
-sudo wget -O /etc/yum.repos.d/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
-</code></pre>
-</div>
+<span class="nb">source</span> /etc/os-release <span class="p">;</span> <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">NAME</span><span class="k">}</span><span class="s2">_</span><span class="k">${</span><span class="nv">VERSION_ID</span><span class="k">}</span><span class="s2">"</span>
+<span class="nb">sudo </span>wget <span class="nt">-O</span> /etc/yum.repos.d/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:AGL_<span class="k">${</span><span class="nv">REVISION</span><span class="k">}</span>.repo
+</code></pre></div></div>
 
 <p>You can see the installed repository using the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dnf repolist --all | grep AGL
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dnf repolist <span class="nt">--all</span> | <span class="nb">grep </span>AGL
+</code></pre></div></div>
 
 <h2 id="switching-between-repositories">Switching Between Repositories</h2>
 
@@ -2638,93 +2629,86 @@ designated for the switch.</p>
 
 <p>Suppose you are on “master” and you want the “ElectricEel” AGL revision.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">OLDR</span><span class="o">=</span>Master
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">OLDR</span><span class="o">=</span>Master
 <span class="nb">export </span><span class="nv">NEWR</span><span class="o">=</span>ElectricEel
-sudo sed -i <span class="s2">"s/</span><span class="k">${</span><span class="nv">OLDR</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">NEWR</span><span class="k">}</span><span class="s2">/g"</span> /etc/apt/sources.list.d/AGL.list
-sudo apt-get update
-</code></pre>
-</div>
+<span class="nb">sudo </span>sed <span class="nt">-i</span> <span class="s2">"s/</span><span class="k">${</span><span class="nv">OLDR</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">NEWR</span><span class="k">}</span><span class="s2">/g"</span> /etc/apt/sources.list.d/AGL.list
+<span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
 
 <h3 id="example-for-opensuse-distro">Example for openSuse distro</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#  | Alias                               | Name                                                                                      | Enabled | GPG Check | Refresh</span>
----+-------------------------------------+-------------------------------------------------------------------------------------------+---------+-----------+--------
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#  | Alias                               | Name                                                                                      | Enabled | GPG Check | Refresh</span>
+<span class="nt">---</span>+-------------------------------------+-------------------------------------------------------------------------------------------+---------+-----------+--------
  1 | Atom                                | Atom Editor                                                                               | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | No
  2 | code                                | Visual Studio Code                                                                        | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | No
  3 | http-ftp.uni-erlangen.de-e3cebb6d   | Packman Repository                                                                        | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
  4 | isv_LinuxAutomotive_AGL_ElectricEel | isv:LinuxAutomotive:AGL_ElectricEel <span class="o">(</span>openSUSE_Leap_15.0<span class="o">)</span>                                  | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | No
- 5 | isv_LinuxAutomotive_AGL_Master      | Automotive Grade Linux Application Development tools - master branch <span class="o">(</span>openSUSE_Leap_15.0<span class="o">)</span> | No      | ----      | ----
- 6 | openSUSE-Leap-15.0-1                | openSUSE-Leap-15.0-1                                                                      | No      | ----      | ----
- 7 | repo-debug                          | openSUSE-Leap-15.0-Debug                                                                  | No      | ----      | ----
- 8 | repo-debug-non-oss                  | openSUSE-Leap-15.0-Debug-Non-Oss                                                          | No      | ----      | ----
- 9 | repo-debug-update                   | openSUSE-Leap-15.0-Update-Debug                                                           | No      | ----      | ----
-10 | repo-debug-update-non-oss           | openSUSE-Leap-15.0-Update-Debug-Non-Oss                                                   | No      | ----      | ----
+ 5 | isv_LinuxAutomotive_AGL_Master      | Automotive Grade Linux Application Development tools - master branch <span class="o">(</span>openSUSE_Leap_15.0<span class="o">)</span> | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+ 6 | openSUSE-Leap-15.0-1                | openSUSE-Leap-15.0-1                                                                      | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+ 7 | repo-debug                          | openSUSE-Leap-15.0-Debug                                                                  | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+ 8 | repo-debug-non-oss                  | openSUSE-Leap-15.0-Debug-Non-Oss                                                          | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+ 9 | repo-debug-update                   | openSUSE-Leap-15.0-Update-Debug                                                           | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+10 | repo-debug-update-non-oss           | openSUSE-Leap-15.0-Update-Debug-Non-Oss                                                   | No      | <span class="nt">----</span>      | <span class="nt">----</span>
 11 | repo-non-oss                        | openSUSE-Leap-15.0-Non-Oss                                                                | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
 12 | repo-oss                            | openSUSE-Leap-15.0-Oss                                                                    | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
-13 | repo-source                         | openSUSE-Leap-15.0-Source                                                                 | No      | ----      | ----
-14 | repo-source-non-oss                 | openSUSE-Leap-15.0-Source-Non-Oss                                                         | No      | ----      | ----
+13 | repo-source                         | openSUSE-Leap-15.0-Source                                                                 | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+14 | repo-source-non-oss                 | openSUSE-Leap-15.0-Source-Non-Oss                                                         | No      | <span class="nt">----</span>      | <span class="nt">----</span>
 15 | repo-update                         | openSUSE-Leap-15.0-Update                                                                 | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
 16 | repo-update-non-oss                 | openSUSE-Leap-15.0-Update-Non-Oss                                                         | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now, you want your “master” repository enabled.
 In the above output, the “ElectricEel” repository is at the fourth line
 and the “master” repository is at the fifth line.
 Thus, enter the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo zypper mr -d 4 <span class="o">&amp;&amp;</span> sudo zypper mr -e 5
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>zypper mr <span class="nt">-d</span> 4 <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>zypper mr <span class="nt">-e</span> 5
 Repository <span class="s1">'isv_LinuxAutomotive_AGL_ElectricEel'</span> has been successfully disabled.
 Repository <span class="s1">'isv_LinuxAutomotive_AGL_Master'</span> has been successfully enabled.
-sudo zypper refresh
-</code></pre>
-</div>
+<span class="nb">sudo </span>zypper refresh
+</code></pre></div></div>
 
 <p><strong>NOTE:</strong> In the previous command, the “-d” option is used for “disable” and the
 “-e” option is used for “enable”.</p>
 
 <p>Following are the results:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#  | Alias                               | Name                                                                                      | Enabled | GPG Check | Refresh</span>
----+-------------------------------------+-------------------------------------------------------------------------------------------+---------+-----------+--------
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#  | Alias                               | Name                                                                                      | Enabled | GPG Check | Refresh</span>
+<span class="nt">---</span>+-------------------------------------+-------------------------------------------------------------------------------------------+---------+-----------+--------
  1 | Atom                                | Atom Editor                                                                               | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | No
  2 | code                                | Visual Studio Code                                                                        | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | No
  3 | http-ftp.uni-erlangen.de-e3cebb6d   | Packman Repository                                                                        | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
- 4 | isv_LinuxAutomotive_AGL_ElectricEel | isv:LinuxAutomotive:AGL_ElectricEel <span class="o">(</span>openSUSE_Leap_15.0<span class="o">)</span>                                  | No      | ----      | ----
+ 4 | isv_LinuxAutomotive_AGL_ElectricEel | isv:LinuxAutomotive:AGL_ElectricEel <span class="o">(</span>openSUSE_Leap_15.0<span class="o">)</span>                                  | No      | <span class="nt">----</span>      | <span class="nt">----</span>
  5 | isv_LinuxAutomotive_AGL_Master      | Automotive Grade Linux Application Development tools - master branch <span class="o">(</span>openSUSE_Leap_15.0<span class="o">)</span> | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | No
- 6 | openSUSE-Leap-15.0-1                | openSUSE-Leap-15.0-1                                                                      | No      | ----      | ----
- 7 | repo-debug                          | openSUSE-Leap-15.0-Debug                                                                  | No      | ----      | ----
- 8 | repo-debug-non-oss                  | openSUSE-Leap-15.0-Debug-Non-Oss                                                          | No      | ----      | ----
- 9 | repo-debug-update                   | openSUSE-Leap-15.0-Update-Debug                                                           | No      | ----      | ----
-10 | repo-debug-update-non-oss           | openSUSE-Leap-15.0-Update-Debug-Non-Oss                                                   | No      | ----      | ----
+ 6 | openSUSE-Leap-15.0-1                | openSUSE-Leap-15.0-1                                                                      | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+ 7 | repo-debug                          | openSUSE-Leap-15.0-Debug                                                                  | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+ 8 | repo-debug-non-oss                  | openSUSE-Leap-15.0-Debug-Non-Oss                                                          | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+ 9 | repo-debug-update                   | openSUSE-Leap-15.0-Update-Debug                                                           | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+10 | repo-debug-update-non-oss           | openSUSE-Leap-15.0-Update-Debug-Non-Oss                                                   | No      | <span class="nt">----</span>      | <span class="nt">----</span>
 11 | repo-non-oss                        | openSUSE-Leap-15.0-Non-Oss                                                                | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
 12 | repo-oss                            | openSUSE-Leap-15.0-Oss                                                                    | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
-13 | repo-source                         | openSUSE-Leap-15.0-Source                                                                 | No      | ----      | ----
-14 | repo-source-non-oss                 | openSUSE-Leap-15.0-Source-Non-Oss                                                         | No      | ----      | ----
+13 | repo-source                         | openSUSE-Leap-15.0-Source                                                                 | No      | <span class="nt">----</span>      | <span class="nt">----</span>
+14 | repo-source-non-oss                 | openSUSE-Leap-15.0-Source-Non-Oss                                                         | No      | <span class="nt">----</span>      | <span class="nt">----</span>
 15 | repo-update                         | openSUSE-Leap-15.0-Update                                                                 | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
 16 | repo-update-non-oss                 | openSUSE-Leap-15.0-Update-Non-Oss                                                         | Yes     | <span class="o">(</span>r <span class="o">)</span> Yes  | Yes
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="example-for-fedora-distro">Example for Fedora distro</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>isv_LinuxAutomotive_AGL_FunkyFlounder       isv:LinuxAutomotive:AGL disabled
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>isv_LinuxAutomotive_AGL_FunkyFlounder       isv:LinuxAutomotive:AGL disabled
 isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  enabled
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The following commands enable the “ElectricEel” repository:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dnf config-manager --set-disabled isv_LinuxAutomotive_AGL_Master
-dnf config-manager --set-enabled isv_LinuxAutomotive_AGL_FunkyFlounder
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dnf config-manager <span class="nt">--set-disabled</span> isv_LinuxAutomotive_AGL_Master
+dnf config-manager <span class="nt">--set-enabled</span> isv_LinuxAutomotive_AGL_FunkyFlounder
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>dnf repolist --all | grep AGL
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dnf repolist <span class="nt">--all</span> | <span class="nb">grep </span>AGL
 isv_LinuxAutomotive_AGL_FunkyFlounder       isv:LinuxAutomotive:AGL enabled
 isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -2805,7 +2789,7 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:44 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:59 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/icefish/agl-documentation/host-configuration/docs/2-download-packages.md">Link to source document</small>
 		
@@ -2837,6 +2821,16 @@ isv_LinuxAutomotive_AGL_Master            Automotive Grade Linux  disabled
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1384,7 +1384,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2047,7 +2047,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2215,9 +2215,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2247,19 +2247,22 @@ For information on how to build an SDK Installer, see the
 section.</p>
 
 <!-- section-note -->
-<p><strong>NOTES:</strong>
-- In order to use the command line or the XDS Dashboard
-  to download an SDK Installer, you must
-  have the XDS Client set up in your toolchain (i.e. ‘xds-cli’).
-  If you did not install ‘xds-cli’, see the
-  “<a href="client-part.html">Client Part</a>” section for instruction on how
-  to install XDS UI.</p>
-
+<p><strong>NOTES:</strong></p>
 <ul>
-  <li>See the
+  <li>
+    <p>In order to use the command line or the XDS Dashboard
+to download an SDK Installer, you must
+have the XDS Client set up in your toolchain (i.e. ‘xds-cli’).
+If you did not install ‘xds-cli’, see the
+“<a href="client-part.html">Client Part</a>” section for instruction on how
+to install XDS UI.</p>
+  </li>
+  <li>
+    <p>See the
 “<a href="../part-2/1_xds-server/0_abstract.html">xds-server</a>” chapter
 for more information on SDK management.
-<!-- end-section-note --></li>
+<!-- end-section-note --></p>
+  </li>
 </ul>
 
 <h2 id="command-line-operations">Command Line Operations</h2>
@@ -2273,8 +2276,8 @@ and view all installed SDKs.</p>
 <p>Use the following commands to choose and install a pre-built SDK
 Installer:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># List all available SDKs</span>
-xds-cli sdks ls -a
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># List all available SDKs</span>
+xds-cli sdks <span class="nb">ls</span> <span class="nt">-a</span>
 
 List of available SDKs:
 ID            NAME                                            STATUS          VERSION         ARCH
@@ -2292,7 +2295,7 @@ xds-cli sdks install d65fe750
 
 Installation of <span class="s1">'AGL-release-eel-latest-qemux86-64'</span> SDK successfully started.
 Downloading poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-toolchain-4.99.5.sh ...
---2018-01-02 11:22:23--  https://download.automotivelinux.org/AGL/release/eel/latest/qemux86-64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-toolchain-4.99.5.sh
+<span class="nt">--2018-01-02</span> 11:22:23--  https://download.automotivelinux.org/AGL/release/eel/latest/qemux86-64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-toolchain-4.99.5.sh
 Resolving download.automotivelinux.org <span class="o">(</span>download.automotivelinux.org<span class="o">)</span>... 199.19.213.77
 Connecting to download.automotivelinux.org <span class="o">(</span>download.automotivelinux.org<span class="o">)</span>|199.19.213.77|:443... connected.
 HTTP request sent, awaiting response... 200 OK
@@ -2310,16 +2313,15 @@ Saving to: ‘/tmp/tmp.wuQzLdImCS/poky-agl-glibc-x86_64-agl-demo-platform-crosss
 
 Automotive Grade Linux SDK installer version 4.99.5
 <span class="o">===================================================</span>
-You are about to install the SDK to <span class="s2">"/xdt/sdk/poky-agl/4.99.5/corei7-64"</span>. Proceed[Y/n]? Y
+You are about to install the SDK to <span class="s2">"/xdt/sdk/poky-agl/4.99.5/corei7-64"</span><span class="nb">.</span> Proceed[Y/n]? Y
 Extracting SDK....................................................................................................................done
 Setting it up...done
 SDK has been successfully <span class="nb">set </span>up and is ready to be used.
 Each <span class="nb">time </span>you wish to use the SDK <span class="k">in </span>a new shell session, you need to <span class="nb">source </span>the environment setup script e.g.
- <span class="nv">$ </span>. /xdt/sdk/poky-agl/4.99.5/corei7-64/environment-setup-corei7-64-agl-linux
+ <span class="nv">$ </span><span class="nb">.</span> /xdt/sdk/poky-agl/4.99.5/corei7-64/environment-setup-corei7-64-agl-linux
 
 SDK ID d65fe750-d3a7-38f5-83d8-3d3806054f8d successfully installed.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="abort-an-installation-that-is-in-progress">Abort an Installation that is in Progress</h3>
 
@@ -2334,18 +2336,16 @@ is not stopped.</p>
 
 <p>If for some reason you need to abort, use the <code class="highlighter-rouge">sdks abort</code> command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli sdks abort -id d65fe750
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli sdks abort <span class="nt">-id</span> d65fe750
+</code></pre></div></div>
 
 <h3 id="install-an-sdk-using-a-local-sdk-package-or-file">Install an SDK Using a Local SDK Package or File</h3>
 
 <p>If you have an SDK Installer that is already local to your system,
 you can use the command line to install it from your local directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli sdks install --file <span class="nv">$HOME</span>/xds-workspace/sdks/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-toolchain-4.99.5.sh
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli sdks install <span class="nt">--file</span> <span class="nv">$HOME</span>/xds-workspace/sdks/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-toolchain-4.99.5.sh
+</code></pre></div></div>
 
 <!-- section-note -->
 <p><strong>NOTE:</strong>
@@ -2357,14 +2357,13 @@ SDK Installer is in the <code class="highlighter-rouge">$HOME/xds-workspace/sdks
 
 <p>To list the installed SDKs, use the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli sdks ls
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli sdks <span class="nb">ls
 
-List of installed SDKs:
+</span>List of installed SDKs:
 ID       NAME                                            STATUS          VERSION ARCH
 e45ac787 AGL-corei7-64-4.99.5+snapshot                   Installed       4.99.5  x86_64
 d65fe750 AGL-release-eel-latest-qemux86-64               Installed       4.99.3  corei7-64
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="install-an-sdk-using-the-xds-dashboard">Install an SDK Using the XDS Dashboard</h2>
 
@@ -2480,7 +2479,7 @@ you can do so by clicking the <code class="highlighter-rouge">CANCEL</code> butt
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:12 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:23 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/install-sdk.md?h=flounder">Link to source document</small>
 		
@@ -2512,6 +2511,16 @@ you can do so by clicking the <code class="highlighter-rouge">CANCEL</code> butt
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

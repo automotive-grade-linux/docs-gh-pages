@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2551,24 +2551,21 @@ in the AGL documentation to install the AGL repository for your distribution.</p
 
 <h3 id="opensuse">OpenSuse</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo zypper ref
-sudo zypper install agl-libappcontroller-devel
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>zypper ref
+<span class="nb">sudo </span>zypper install agl-libappcontroller-devel
+</code></pre></div></div>
 
 <h3 id="fedora">Fedora</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo dnf ref
-sudo dnf install agl-libappcontroller-devel
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf ref
+<span class="nb">sudo </span>dnf install agl-libappcontroller-devel
+</code></pre></div></div>
 
 <h3 id="ubuntudebian">Ubuntu/Debian</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
-sudo apt-get install agl-libappcontroller-dev
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get install agl-libappcontroller-dev
+</code></pre></div></div>
 
 <h2 id="monitoring">Monitoring</h2>
 
@@ -2661,7 +2658,7 @@ sudo apt-get install agl-libappcontroller-dev
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:05 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:17 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libappcontroller/plain/docs/controller.md?h=guppy">Link to source document</small>
 		
@@ -2693,6 +2690,16 @@ sudo apt-get install agl-libappcontroller-dev
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

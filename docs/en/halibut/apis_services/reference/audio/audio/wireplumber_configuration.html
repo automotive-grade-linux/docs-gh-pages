@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1801,7 +1801,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2701,7 +2701,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2869,9 +2869,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2900,10 +2900,9 @@ that need to be loaded by WirePlumber.</p>
 
 <p>The format of this file is custom and resembles a script with commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># comment
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># comment
 command parameter1 parameter2 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Lines are executed in the order they appear and each of them executes an
 action defined by the command. Lines starting with <code class="highlighter-rouge">#</code> are treated as comments
@@ -2920,10 +2919,9 @@ can be loaded from. This takes 2 parameters: a name pattern and a library name.<
 with the 2 paramteres given as arguments. As a consequence, it is safe to
 call this even if the SPA module is not actually installed on the system.</p>
 
-    <p>Example:
-<code class="highlighter-rouge">
-add-spa-lib api.alsa.* alsa/libspa-alsa
-</code></p>
+    <p>Example:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add-spa-lib api.alsa.* alsa/libspa-alsa
+</code></pre></div>    </div>
 
     <p>In this example, we let <code class="highlighter-rouge">libpipewire</code> know that any SPA plugin whose name
 starts with <code class="highlighter-rouge">api.alsa.</code> can be loaded from the SPA module
@@ -2939,14 +2937,12 @@ daemon.</p>
     <p>This takes at least 1 parameter, the module name, and optionally any module
 arguments, in the format that they would be given in <code class="highlighter-rouge">pipewire.conf</code></p>
 
-    <p>Format:
-<code class="highlighter-rouge">
-load-pipewire-module module-name some-argument some-property=value
-</code>
-Example:
-<code class="highlighter-rouge">
-load-pipewire-module libpipewire-module-client-device
-</code></p>
+    <p>Format:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>load-pipewire-module module-name some-argument some-property=value
+</code></pre></div>    </div>
+    <p>Example:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>load-pipewire-module libpipewire-module-client-device
+</code></pre></div>    </div>
 
     <p>This command does not affect the PipeWire daemon by any means. It exists
 simply to allow loading <code class="highlighter-rouge">libpipewire</code> modules in the pipewire core that
@@ -2960,12 +2956,11 @@ clients.</p>
     <p>Loads a WirePlumber module. This takes 2 arguments and an optional parameter
 block.</p>
 
-    <p>Format:
-<code class="highlighter-rouge">
-load-module ABI module-name {
+    <p>Format:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>load-module ABI module-name {
   "parameter": &lt;"value"&gt;
 }
-</code></p>
+</code></pre></div>    </div>
 
     <p>The <code class="highlighter-rouge">ABI</code> parameter specifies the binary interface that WirePlumber shall use
 to load this module. Currently, the only supported ABI is <code class="highlighter-rouge">C</code>. It exists to
@@ -2974,7 +2969,7 @@ allow future expansion, writing modules in other languages.</p>
     <p>The <code class="highlighter-rouge">module-name</code> should be the name of the <code class="highlighter-rouge">.so</code> file without the <code class="highlighter-rouge">.so</code>
 extension.</p>
 
-    <p>Optionally, if the <code class="highlighter-rouge">load-module</code> line ends with a <code class="highlighter-rouge"><span class="p">{</span></code>, the next lines up to
+    <p>Optionally, if the <code class="highlighter-rouge">load-module</code> line ends with a <code class="highlighter-rouge">{</code>, the next lines up to
 and including the next matching <code class="highlighter-rouge">}</code> are treated as a parameter block.
 This block essentially is a
 <a href="https://developer.gnome.org/glib/stable/glib-GVariant.html">GVariant</a>
@@ -2988,15 +2983,14 @@ with the <code class="highlighter-rouge">:</code> character and values, regardle
 be enclosed in <code class="highlighter-rouge">&lt;</code> <code class="highlighter-rouge">&gt;</code>.</p>
 
     <p>Note that starting the parameter block on the next line is an error. The
-starting brace (<code class="highlighter-rouge"><span class="p">{</span></code>) must always be on the <code class="highlighter-rouge">load-module</code> line.</p>
+starting brace (<code class="highlighter-rouge">{</code>) must always be on the <code class="highlighter-rouge">load-module</code> line.</p>
 
-    <p>Example:
-<code class="highlighter-rouge">
-load-module C libwireplumber-module-monitor {
+    <p>Example:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>load-module C libwireplumber-module-monitor {
   "factory": &lt;"api.alsa.enum.udev"&gt;,
   "flags": &lt;["use-adapter", "activate-devices"]&gt;
 }
-</code></p>
+</code></pre></div>    </div>
 
     <p>Parameters are module-dependent. They are passed as a GVariant in the
 module’s initialization function and it is up to the module to interpret
@@ -3019,16 +3013,14 @@ is prepended to the path: <code class="highlighter-rouge">$prefix/$sysconfdir/wi
 It is possible to override that at runtime by setting the
 <code class="highlighter-rouge">WIREPLUMBER_CONFIG_FILE</code> environment variable:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>WIREPLUMBER_CONFIG_FILE=src/config/wireplumber.conf wireplumber
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WIREPLUMBER_CONFIG_FILE=src/config/wireplumber.conf wireplumber
+</code></pre></div></div>
 
 <p>It is also possible to override the whole configuration directory, so that
 all other configuration files are being read from a different location as well,
-by setting the <code class="highlighter-rouge">WIREPLUMBER_CONFIG_DIR</code> environment variable:
-<code class="highlighter-rouge">
-WIREPLUMBER_CONFIG_DIR=src/config wireplumber
-</code></p>
+by setting the <code class="highlighter-rouge">WIREPLUMBER_CONFIG_DIR</code> environment variable:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WIREPLUMBER_CONFIG_DIR=src/config wireplumber
+</code></pre></div></div>
 
 <h2 id="location-of-modules">Location of modules</h2>
 
@@ -3046,10 +3038,9 @@ to a relative path, such as <code class="highlighter-rouge">lib</code>, then the
 is prepended to the path: <code class="highlighter-rouge">$prefix/$libdir/wireplumber-$abi_version</code>.</p>
 
 <p>It is possible to override this directory at runtime by setting the
-<code class="highlighter-rouge">WIREPLUMBER_MODULE_DIR</code> environment variable:
-<code class="highlighter-rouge">
-WIREPLUMBER_MODULE_DIR=build/modules wireplumber
-</code></p>
+<code class="highlighter-rouge">WIREPLUMBER_MODULE_DIR</code> environment variable:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WIREPLUMBER_MODULE_DIR=build/modules wireplumber
+</code></pre></div></div>
 
 <h3 id="pipewire-and-spa-modules">PipeWire and SPA modules</h3>
 
@@ -3168,27 +3159,24 @@ and ‘?’ (joker), adhering to the rules of the
     <p>When writing <code class="highlighter-rouge">.endpoint</code> files, a useful utility that you can use to list
 device node properties is:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>$ wireplumber-cli device-node-props
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wireplumber-cli device-node-props
+</code></pre></div>    </div>
 
     <p>Another way to figure out some of these properties <em>for ALSA nodes</em> is
 by parsing the aplay/arecord output. For example, this line from <code class="highlighter-rouge">aplay -l</code>
 is interpreted as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>card 0: PCH [HDA Intel PCH], device 2: ALC3246 [ALC3246 Analog]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>card 0: PCH [HDA Intel PCH], device 2: ALC3246 [ALC3246 Analog]
+</code></pre></div>    </div>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.path"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"hw:0,2"</span><span class="w"> </span><span class="err">},</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.card"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"0"</span><span class="w"> </span><span class="err">},</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.card.id"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"PCH"</span><span class="w"> </span><span class="err">},</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.card.name"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"HDA Intel PCH"</span><span class="w"> </span><span class="err">},</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.pcm.device"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"2"</span><span class="w"> </span><span class="err">},</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.pcm.id"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"ALC3246"</span><span class="w"> </span><span class="err">},</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"api.alsa.pcm.name"</span><span class="err">,</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"ALC3246 Analog"</span><span class="w"> </span><span class="err">},</span><span class="w">
-</span></code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ name = "api.alsa.path", value = "hw:0,2" },
+{ name = "api.alsa.card", value = "0" },
+{ name = "api.alsa.card.id", value = "PCH" },
+{ name = "api.alsa.card.name", value = "HDA Intel PCH" },
+{ name = "api.alsa.pcm.device", value = "2" },
+{ name = "api.alsa.pcm.id", value = "ALC3246" },
+{ name = "api.alsa.pcm.name", value = "ALC3246 Analog" },
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -3286,10 +3274,12 @@ As soon as an endpoint is created, the <code class="highlighter-rouge">module-co
 information gathered from the <code class="highlighter-rouge">.endpoint-link</code> files in order to create a
 link to another endpoint.</p>
 
-<p><code class="highlighter-rouge">.endpoint-link</code> files can contain 3 top-level tables:
-* <code class="highlighter-rouge">[match-endpoint]</code>, required
-* <code class="highlighter-rouge">[target-endpoint]</code>, optional
-* <code class="highlighter-rouge">[endpoint-link]</code>, required</p>
+<p><code class="highlighter-rouge">.endpoint-link</code> files can contain 3 top-level tables:</p>
+<ul>
+  <li><code class="highlighter-rouge">[match-endpoint]</code>, required</li>
+  <li><code class="highlighter-rouge">[target-endpoint]</code>, optional</li>
+  <li><code class="highlighter-rouge">[endpoint-link]</code>, required</li>
+</ul>
 
 <p>The <code class="highlighter-rouge">[match-endpoint]</code> table contains properties that match an endpoint that
 exists on the graph. Possible fields of this table are:</p>
@@ -3454,7 +3444,7 @@ the same target endpoint for links with keep=false.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:23 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:33 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/halibut/docs/audio/wireplumber_configuration.md">Link to source document</small>
 		
@@ -3486,6 +3476,16 @@ the same target endpoint for links with keep=false.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2738,7 +2738,7 @@
 <h1 id="structure-for-declaring-binding">Structure for declaring binding</h1>
 <hr />
 
-<h3 id="struct-afbbindingv2">struct afb_binding_v2</h3>
+<h3 id="struct-afb_binding_v2">struct afb_binding_v2</h3>
 
 <p>The main structure, of type <strong>afb_binding_v2</strong>, for describing the binding
 must be exported under the name <strong>afbBindingV2</strong>.</p>
@@ -2761,7 +2761,7 @@ struct afb_binding_v2
 };
 </code></pre>
 
-<h3 id="struct-afbverbv2">struct afb_verb_v2</h3>
+<h3 id="struct-afb_verb_v2">struct afb_verb_v2</h3>
 
 <p>Each verb is described with a structure of type <strong>afb_verb_v2</strong>
 defined below:</p>
@@ -2795,7 +2795,7 @@ struct afb_verb_v2
 
 <p>The LOA (Level Of Assurance) is set, by binding, using the function <strong>afb_req_session_set_LOA</strong>.</p>
 
-<h3 id="struct-afbauth-and-enum-afbauthtype">struct afb_auth and enum afb_auth_type</h3>
+<h3 id="struct-afb_auth-and-enum-afb_auth_type">struct afb_auth and enum afb_auth_type</h3>
 
 <p>The structure <strong>afb_auth</strong> is used within verb description to
 set security requirements.
@@ -2840,7 +2840,7 @@ enum afb_auth_type
 };
 </code></pre>
 
-<h2 id="functions-of-class-afbdaemon">Functions of class afb_daemon</h2>
+<h2 id="functions-of-class-afb_daemon">Functions of class afb_daemon</h2>
 
 <p>The 3 following functions are linked to libsystemd.
 They allow use of <strong>sd_event</strong> features and access
@@ -2978,7 +2978,7 @@ It can be called during pre-init.</p>
 int afb_daemon_rename_api(const char *name);
 </code></pre>
 
-<h2 id="functions-of-class-afbservice">Functions of class afb_service</h2>
+<h2 id="functions-of-class-afb_service">Functions of class afb_service</h2>
 
 <p>The following functions allow services to call verbs of other
 bindings for themselves.</p>
@@ -3035,7 +3035,7 @@ int afb_service_call_sync(
     struct json_object **result);
 </code></pre>
 
-<h2 id="functions-of-class-afbevent">Functions of class afb_event</h2>
+<h2 id="functions-of-class-afb_event">Functions of class afb_event</h2>
 
 <p>This function checks whether the event is valid.
 It must be used when creating events.</p>
@@ -3094,7 +3094,7 @@ void afb_event_drop(struct afb_event event);
 const char *afb_event_name(struct afb_event event);
 </code></pre>
 
-<h2 id="functions-of-class-afbreq">Functions of class afb_req</h2>
+<h2 id="functions-of-class-afb_req">Functions of class afb_req</h2>
 
 <p>This function checks the validity of the <strong>req</strong>.</p>
 
@@ -3546,7 +3546,7 @@ indication.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:00 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:13 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/legacy/afb-binding-v2-references.md?h=flounder">Link to source document</small>
 		
@@ -3578,6 +3578,16 @@ indication.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

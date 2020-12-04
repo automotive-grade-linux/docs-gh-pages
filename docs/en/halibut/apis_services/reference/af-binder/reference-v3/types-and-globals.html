@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1801,7 +1801,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2701,7 +2701,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2869,9 +2869,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2905,7 +2905,7 @@ but allows log messages.</p>
 <p>If <strong>afbBindingExport</strong> is defined and exported, it must be of the type 
 <strong>const afb_binding_t</strong> and must describe the <em>root</em> api of the binding.</p>
 
-<h2 id="the-type-afbapit">The type afb_api_t</h2>
+<h2 id="the-type-afb_api_t">The type afb_api_t</h2>
 
 <p>Bindings now can declare more than one api. The counter part is that
 a new handle is needed to manage apis. These handles are of the type
@@ -2916,7 +2916,7 @@ a new handle is needed to manage apis. These handles are of the type
 <pre><code class="language-C">typedef struct afb_api_x3 afb_api_t;
 </code></pre>
 
-<h2 id="the-type-afbbindingt">The type afb_binding_t</h2>
+<h2 id="the-type-afb_binding_t">The type afb_binding_t</h2>
 
 <p>The main structure, of type <strong>afb_binding_t</strong>, for describing the binding
 must be exported under the name <strong>afbBindingExport</strong>.</p>
@@ -2971,7 +2971,7 @@ struct afb_binding_v3
 };
 </code></pre>
 
-<h2 id="the-type-afbverbt">The type afb_verb_t</h2>
+<h2 id="the-type-afb_verb_t">The type afb_verb_t</h2>
 
 <p>Each verb is described with a structure of type <strong>afb_verb_t</strong>
 defined below:</p>
@@ -3056,7 +3056,7 @@ struct afb_verb_v3
 
 <p>The session can be closed, by binding api, using the function <strong>afb_req_session_close</strong>.</p>
 
-<h2 id="the-types-afbautht-and-afbauthtypet">The types afb_auth_t and afb_auth_type_t</h2>
+<h2 id="the-types-afb_auth_t-and-afb_auth_type_t">The types afb_auth_t and afb_auth_type_t</h2>
 
 <p>The structure <strong>afb_auth_t</strong> is used within verb description to
 set security requirements.<br />
@@ -3135,7 +3135,7 @@ enum afb_auth_type
 };
 </code></pre>
 
-<h2 id="the-type-afbreqsubcallflagst">The type afb_req_subcall_flags_t</h2>
+<h2 id="the-type-afb_req_subcall_flags_t">The type afb_req_subcall_flags_t</h2>
 
 <p>This is an enumeration that defines bit’s positions for setting behaviour
 of subcalls.</p>
@@ -3252,7 +3252,7 @@ of subcalls.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:22 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:33 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/reference-v3/types-and-globals.md?h=halibut">Link to source document</small>
 		
@@ -3284,6 +3284,16 @@ of subcalls.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

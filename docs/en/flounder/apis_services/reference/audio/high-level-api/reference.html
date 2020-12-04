@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2737,17 +2737,16 @@
 
 <h2 id="verbs">Verbs</h2>
 
-<h3 id="ahl-4agetroles">ahl-4a/get_roles</h3>
+<h3 id="ahl-4aget_roles">ahl-4a/get_roles</h3>
 
 <p>Get the list of available audio roles. By default it returns the list of roles
 that are bound to a stream. To get a list of all defined roles, regardless if
 they are bound to a stream or not, you can pass the following parameter.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"verbose"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"verbose"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="ahl-4arole">ahl-4a/[role]</h3>
 
@@ -2758,9 +2757,8 @@ the parameter.</p>
 
 <h4 id="open">Open</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"open"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Request to open the role.</p>
 
@@ -2775,9 +2773,8 @@ lower priority.</p>
 
 <h4 id="close">Close</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"close"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"close"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Request to close the role.</p>
 
@@ -2787,12 +2784,11 @@ opened.</p>
 
 <h4 id="volume">Volume</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Request to get or set the volume.</p>
 
@@ -2801,31 +2797,28 @@ opened.</p>
 
 <h4 id="mute">Mute</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mute"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mute"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Mute the volume of this.</p>
 
 <h4 id="unmute">Unmute</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unmute"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unmute"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Unmute the volume of this role.</p>
 
 <h4 id="interrupt">Interrupt</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interrupt"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interrupt"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Ask the policy engine to execute an interruption.</p>
 
@@ -2908,7 +2901,7 @@ opened.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:17 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:27 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-audio-4a/plain/docs/high-level-api/reference.md?h=flounder">Link to source document</small>
 		
@@ -2940,6 +2933,16 @@ opened.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1684,7 +1684,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2527,7 +2527,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2695,9 +2695,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2709,8 +2709,8 @@
 
 <h1 id="sound-mode-transition-for-single-window-application">Sound mode transition for single window application</h1>
 <table>
-<tr bgcolor="lightskyblue">&lt;td colspan=7&gt;State&lt;td colspan=21&gt;Event</tr>
-<tr bgcolor="lightskyblue">&lt;td rowspan=2&gt;State ID&lt;td colspan=2&gt;Display&lt;td colspan=4&gt;Audio&lt;td colspan=2&gt;Power&lt;td colspan=6&gt;Push HomeScreen button&lt;td rowspan=2&gt;Start BTA&lt;td rowspan=2&gt;Incoming call&lt;td colspan=4&gt;Push Shortcut button&lt;td colspan=2&gt;TTS&lt;td colspan=3&gt;Push Phone control button&lt;td colspan=2&gt;Safety hazard</tr>
+<tr bgcolor="lightskyblue">&lt;td colspan=7&gt;State&lt;/td&gt;&lt;td colspan=21&gt;Event&lt;/td&gt;</tr>
+<tr bgcolor="lightskyblue">&lt;td rowspan=2&gt;State ID&lt;/td&gt;&lt;td colspan=2&gt;Display&lt;/td&gt;&lt;td colspan=4&gt;Audio&lt;/td&gt;&lt;td colspan=2&gt;Power&lt;/td&gt;&lt;td colspan=6&gt;Push HomeScreen button&lt;/td&gt;&lt;td rowspan=2&gt;Start BTA&lt;/td&gt;&lt;td rowspan=2&gt;Incoming call&lt;/td&gt;&lt;td colspan=4&gt;Push Shortcut button&lt;/td&gt;&lt;td colspan=2&gt;TTS&lt;/td&gt;&lt;td colspan=3&gt;Push Phone control button&lt;/td&gt;&lt;td colspan=2&gt;Safety hazard&lt;/td&gt;</tr>
 <tr bgcolor="lightskyblue"><td>Win#1</td><td>PopUp</td><td>FL</td><td>FR</td><td>RL</td><td>RR</td><td>On</td><td>Off</td><td>Media Player</td><td>Radio</td><td>Navi</td><td>HVAC</td><td>Phone</td><td>Other button</td><td>Home</td><td>Media Player</td><td>HVAC</td><td>Navi</td><td>Navi INT TTS</td><td>Ended</td><td>Reject</td><td>Off hook</td><td>On hook</td><td>Detected</td><td>Recovered</td></tr>
 <tr><td>S1</td><td>-</td><td>-</td><td>off</td><td>off</td><td>off</td><td>off</td><td>S2</td><td bgcolor="gray">-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td bgcolor="gray">-</td><td bgcolor="gray">-</td></tr>
 <tr><td>S2</td><td>Home</td><td>-</td><td>off</td><td>off</td><td>off</td><td>off</td><td>-</td><td bgcolor="gray">S1</td><td>S22</td><td>S27</td><td>S37</td><td>S57</td><td>S77</td><td>S97</td><td>S17</td><td>S4</td><td>-</td><td>S22</td><td>S57</td><td>S37</td><td>S3</td><td>-</td><td>-</td><td>-</td><td>-</td><td bgcolor="gray">S117</td><td bgcolor="gray">-</td></tr>
@@ -2910,7 +2910,7 @@
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:56 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:09 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-soundmanager/plain/doc/Display_Audio_Transition1.md?h=guppy">Link to source document</small>
 		
@@ -2942,6 +2942,16 @@
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

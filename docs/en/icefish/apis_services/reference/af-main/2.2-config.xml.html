@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1560,7 +1560,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2333,7 +2333,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2501,9 +2501,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2541,7 +2541,7 @@ to the framework:</p>
 
 <p>Here is the example of the config file for the QML application SmartHome.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;widget</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/ns/widgets"</span> <span class="na">id=</span><span class="s">"smarthome"</span> <span class="na">version=</span><span class="s">"0.1"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;name&gt;</span>SmartHome<span class="nt">&lt;/name&gt;</span>
   <span class="nt">&lt;icon</span> <span class="na">src=</span><span class="s">"smarthome.png"</span><span class="nt">/&gt;</span>
@@ -2551,8 +2551,7 @@ automated house. The user interface is completely done with QML.<span class="nt"
   <span class="nt">&lt;author&gt;</span>Qt team<span class="nt">&lt;/author&gt;</span>
   <span class="nt">&lt;license&gt;</span>GPL<span class="nt">&lt;/license&gt;</span>
 <span class="nt">&lt;/widget&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The most important items are:</p>
 
@@ -2649,22 +2648,20 @@ is called the “main” unit.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-api"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-api"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"main"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"gps"</span> <span class="na">value=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"afm-main"</span> <span class="na">value=</span><span class="s">"link"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"required-api"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gps"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="w"> </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afm-main"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"required-api"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gps"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="w"> </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afm-main"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link"</span><span class="w"> </span><span class="p">}</span><span class="w">
  </span><span class="p">]</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="required-api-param-nametarget">required-api: param name=”#target”</h4>
 
@@ -2732,21 +2729,19 @@ the ability to use bindings exported by other widgets.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-binding"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-binding"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"libexec/binding-gps.so"</span> <span class="na">value=</span><span class="s">"local"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"extra"</span> <span class="na">value=</span><span class="s">"extern"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"required-binding"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"libexec/binding-gps.so"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"local"</span><span class="w"> </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extra"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extern"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"required-binding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"libexec/binding-gps.so"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"local"</span><span class="w"> </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extra"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extern"</span><span class="w"> </span><span class="p">}</span><span class="w">
  </span><span class="p">]</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="required-binding-param-namename-or-path">required-binding: param name=[name or path]</h4>
 
@@ -2779,19 +2774,17 @@ other binders under the given name.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-binding"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-binding"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"extra"</span> <span class="na">value=</span><span class="s">"export/binding-gps.so"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"provided-binding"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-   </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extra"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"export/binding-gps.so"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"provided-binding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extra"</span><span class="p">,</span><span class="w"> </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"export/binding-gps.so"</span><span class="w"> </span><span class="p">}</span><span class="w">
  </span><span class="p">]</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="provided-binding-param-nameexported-name">provided-binding: param name=[exported name]</h4>
 
@@ -2807,28 +2800,26 @@ other binders under the given name.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-permission"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-permission"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"geoloc"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"urn:AGL:permission:real-time"</span> <span class="na">value=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"urn:AGL:permission:syscall:*"</span> <span class="na">value=</span><span class="s">"required"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"required-permission"</span><span class="err">:</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"urn:AGL:permission:real-time"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"urn:AGL:permission:real-time"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"required"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"required-permission"</span><span class="p">:{</span><span class="w">
+  </span><span class="s2">"urn:AGL:permission:real-time"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"urn:AGL:permission:real-time"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"required"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"urn:AGL:permission:syscall:*"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"urn:AGL:permission:syscall:*"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"required"</span><span class="w">
+  </span><span class="s2">"urn:AGL:permission:syscall:*"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"urn:AGL:permission:syscall:*"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"required"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="required-permission-param-nametarget">required-permission: param name=”#target”</h4>
 
@@ -2858,28 +2849,26 @@ can provide more than one application in the same widget.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-unit"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-unit"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"geoloc"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">value=</span><span class="s">"binding of name geoloc"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"content.src"</span> <span class="na">value=</span><span class="s">"index.html"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"content.type"</span> <span class="na">value=</span><span class="s">"application/vnd.agl.service"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"#target"</span><span class="p">:</span><span class="s2">"geoloc"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"binding of name geoloc"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"content"</span><span class="p">:{</span><span class="w">
-        </span><span class="nt">"src"</span><span class="p">:</span><span class="s2">"index.html"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"application\/vnd.agl.service"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"#target"</span><span class="p">:</span><span class="s2">"geoloc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"binding of name geoloc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"src"</span><span class="p">:</span><span class="s2">"index.html"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"application</span><span class="se">\/</span><span class="s2">vnd.agl.service"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="err">...</span><span class="w">
-    </span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="provided-unit-param-nametarget">provided-unit: param name=”#target”</h4>
 
@@ -2925,28 +2914,26 @@ to other widgets of the platform.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-api"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:provided-api"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"#target"</span> <span class="na">value=</span><span class="s">"geoloc"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"geoloc"</span> <span class="na">value=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"moonloc"</span> <span class="na">value=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This will be <em>virtually</em> translated for mustaches to the JSON</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">      </span><span class="s2">"provided-api"</span><span class="err">:</span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="s2">"provided-api"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"geoloc"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"auto"</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"geoloc"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"auto"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"moonloc"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"auto"</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"moonloc"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"auto"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="err">,</span><span class="w">
-</span></code></pre>
-</div>
+      </span><span class="p">],</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="provided-api-param-nametarget">provided-api: param name=”#target”</h4>
 
@@ -2993,12 +2980,11 @@ for making companion program executable explicitly.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:file-properties"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:file-properties"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"flite"</span> <span class="na">value=</span><span class="s">"executable"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"jtalk"</span> <span class="na">value=</span><span class="s">"executable"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="file-properties-param-namepath">file-properties: param name=”path”</h4>
 
@@ -3211,7 +3197,7 @@ record the allocated port for applications.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:44 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:59 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-main/plain/docs/2.2-config.xml.md?h=icefish">Link to source document</small>
 		
@@ -3243,6 +3229,16 @@ record the allocated port for applications.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

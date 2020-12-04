@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2541,43 +2541,41 @@ optional:</p>
 <p>Use the following commands to install packages for the client part
 on Debian-based systems:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set DISTRO (e.g. xUbuntu_16.04, xUbuntu_16.10, xUbuntu_17.04, xUbuntu_18.04, Debian_8.0, Debian_9.0)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set DISTRO (e.g. xUbuntu_16.04, xUbuntu_16.10, xUbuntu_17.04, xUbuntu_18.04, Debian_8.0, Debian_9.0)</span>
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_18.04"</span>
 
 <span class="c"># Set AGL_RELEASE (AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master)</span>
 <span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
 
-wget -O - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | sudo apt-key add -
-sudo bash -c <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
+wget <span class="nt">-O</span> - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>bash <span class="nt">-c</span> <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
 deb http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/</span><span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span><span class="s2">/ ./
 EOF"</span>
 
-sudo apt-get update
-sudo apt-get install agl-xds-agent
-sudo apt-get install agl-xds-cli
-sudo apt-get install agl-xds-gdb
-</code></pre>
-</div>
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get install agl-xds-agent
+<span class="nb">sudo </span>apt-get install agl-xds-cli
+<span class="nb">sudo </span>apt-get install agl-xds-gdb
+</code></pre></div></div>
 
 <h2 id="install-packages-for-opensuse">Install Packages for OpenSUSE</h2>
 
 <p>Use the following commands to install packages for the client part
 on OpenSUSE-based systems:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set DISTRO (openSUSE_Leap_42.3, openSUSE_Leap_15.0, openSUSE_Tumbleweed)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set DISTRO (openSUSE_Leap_42.3, openSUSE_Leap_15.0, openSUSE_Tumbleweed)</span>
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"openSUSE_Leap_15.0"</span>
 
 <span class="c"># Set AGL_RELEASE (AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master)</span>
 <span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
 
-sudo zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>.repo
+<span class="nb">sudo </span>zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>.repo
 
-sudo zypper ref
-sudo zypper install agl-xds-agent
-sudo zypper install agl-xds-cli
-sudo zypper install agl-xds-gdb
-</code></pre>
-</div>
+<span class="nb">sudo </span>zypper ref
+<span class="nb">sudo </span>zypper install agl-xds-agent
+<span class="nb">sudo </span>zypper install agl-xds-cli
+<span class="nb">sudo </span>zypper install agl-xds-gdb
+</code></pre></div></div>
 
 <h2 id="install-packages-for-other-platforms-eg-windows--macos">Install Packages for Other Platforms (e.g. Windows / MacOS)</h2>
 
@@ -2628,21 +2626,19 @@ Depending on your development host, use the following commands:</p>
     <p>To start this service automatically when your host boots, enable
 the service using the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Enable xds-agent service at boot</span>
-systemctl --user <span class="nb">enable </span>xds-agent.service
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Enable xds-agent service at boot</span>
+systemctl <span class="nt">--user</span> <span class="nb">enable </span>xds-agent.service
+</code></pre></div>    </div>
 
     <p>To start the XDS-agent service and display its log, use these
 commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Manually start xds-agent service</span>
-systemctl --user start xds-agent.service
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Manually start xds-agent service</span>
+systemctl <span class="nt">--user</span> start xds-agent.service
 
 <span class="c"># Get status and log of xds-agent service</span>
-systemctl --user status xds-agent.service
-</code></pre>
-    </div>
+systemctl <span class="nt">--user</span> status xds-agent.service
+</code></pre></div>    </div>
   </li>
   <li>
     <p>For a MacOS-based host, use the following command to
@@ -2739,7 +2735,7 @@ manually start <code class="highlighter-rouge">xds-agent</code>:</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:04 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:16 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/client-part.md?h=halibut">Link to source document</small>
 		
@@ -2771,6 +2767,16 @@ manually start <code class="highlighter-rouge">xds-agent</code>:</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2745,7 +2745,7 @@ files <code class="highlighter-rouge">conf.d/controller/lua.d/helloworld.lua</co
 
 <h2 id="helloworldlua">helloworld.lua</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="k">function</span> <span class="nf">_callback</span><span class="p">(</span><span class="n">responseJ</span><span class="p">)</span>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">function</span> <span class="nf">_callback</span><span class="p">(</span><span class="n">responseJ</span><span class="p">)</span>
     <span class="n">_AFT</span><span class="p">.</span><span class="n">assertStrContains</span><span class="p">(</span><span class="n">responseJ</span><span class="p">.</span><span class="n">response</span><span class="p">,</span> <span class="s2">"Some String"</span><span class="p">)</span>
     <span class="k">end</span>
 
@@ -2788,12 +2788,11 @@ files <code class="highlighter-rouge">conf.d/controller/lua.d/helloworld.lua</co
     <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"myTestLabel"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
       <span class="n">_AFT</span><span class="p">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
     <span class="k">end</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="afttestlua">aftTest.lua</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">_AFT</span><span class="p">.</span><span class="n">setBeforeEach</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"~~~~~ Begin Test ~~~~~"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_AFT</span><span class="p">.</span><span class="n">setBeforeEach</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"~~~~~ Begin Test ~~~~~"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
 <span class="n">_AFT</span><span class="p">.</span><span class="n">setAfterEach</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"~~~~~ End Test ~~~~~"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
 
 <span class="n">_AFT</span><span class="p">.</span><span class="n">setBeforeAll</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"~~~~~~~~~~ BEGIN ALL TESTS ~~~~~~~~~~"</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
@@ -2835,8 +2834,7 @@ files <code class="highlighter-rouge">conf.d/controller/lua.d/helloworld.lua</co
 <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbStatusError"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbStatusError</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'pingfail'</span><span class="p">,</span> <span class="p">{})</span> <span class="k">end</span><span class="p">)</span>
 <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbResponseEqualsError"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbResponseEqualsError</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'pingfail'</span><span class="p">,</span> <span class="p">{},</span><span class="s2">"Ping Binder Daemon fails"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
 <span class="n">_AFT</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"testAssertVerbCbError"</span><span class="p">,</span><span class="k">function</span><span class="p">()</span> <span class="n">_AFT</span><span class="p">.</span><span class="n">assertVerbCbError</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'pingfail'</span><span class="p">,</span> <span class="p">{},</span><span class="n">_callbackError</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>NOTE</strong>: I suggest you to take this lua file example to make your own test
@@ -2922,7 +2920,7 @@ then read the following chapter if needed to write more complex tests.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:52 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:05 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-afb-test/plain/docs/4_Tests_Examples.md?h=flounder">Link to source document</small>
 		
@@ -2954,6 +2952,16 @@ then read the following chapter if needed to write more complex tests.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1560,7 +1560,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2333,7 +2333,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2501,9 +2501,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2528,97 +2528,95 @@ framework binder</code> to be able to execute your tests.</p>
 <p>Assuming you already installed those components on your development host, then
 proceed as the following from the project root directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>build
-cmake -DBUILD_TEST_WGT<span class="o">=</span>TRUE ..
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>build
+cmake <span class="nt">-DBUILD_TEST_WGT</span><span class="o">=</span>TRUE ..
 make
 make widget
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To prepare all files needed for the test launch then use the <code class="highlighter-rouge">afm-test</code> script:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Usage of afm-test command line utility</span>
-afm-test --help
-Usage: /opt/AGL/bin/afm-test &lt;binding-wgt-rootdir&gt; &lt;<span class="nb">test</span>-wgt-rootdir&gt; <span class="o">[</span>-m|--mode &lt;SOLO|SERVICE&gt;] <span class="o">[</span>-t|--timeout &lt;X&gt;] <span class="o">[</span>-l|--lavaoutput]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Usage of afm-test command line utility</span>
+afm-test <span class="nt">--help</span>
+Usage: /opt/AGL/bin/afm-test &lt;binding-wgt-rootdir&gt; &lt;test-wgt-rootdir&gt; <span class="o">[</span><span class="nt">-m</span>|--mode &lt;SOLO|SERVICE&gt;] <span class="o">[</span><span class="nt">-t</span>|--timeout &lt;X&gt;] <span class="o">[</span><span class="nt">-l</span>|--lavaoutput]
 binding-wgt-rootdir: path to the <span class="nb">test </span>wgt file
-<span class="nb">test</span>-wgt-rootdir: path to the <span class="nb">test </span>folder file
--m|--mode: SOLO <span class="o">(</span>1 binder<span class="o">)</span> or SERVICE <span class="o">(</span>2 binders<span class="o">)</span> <span class="o">(</span>Default: SOLO<span class="o">)</span>
--t|--timeout: timeout <span class="k">in </span>second. <span class="o">(</span>Default 3 seconds<span class="o">)</span>
--l|--lavaoutput: Flags indicating the binding to add Lava special <span class="nb">test </span>markers.
+test-wgt-rootdir: path to the <span class="nb">test </span>folder file
+<span class="nt">-m</span>|--mode: SOLO <span class="o">(</span>1 binder<span class="o">)</span> or SERVICE <span class="o">(</span>2 binders<span class="o">)</span> <span class="o">(</span>Default: SOLO<span class="o">)</span>
+<span class="nt">-t</span>|--timeout: timeout <span class="k">in </span>second. <span class="o">(</span>Default 3 seconds<span class="o">)</span>
+<span class="nt">-l</span>|--lavaoutput: Flags indicating the binding to add Lava special <span class="nb">test </span>markers.
 Error: Test launch failed. Code: 1
 <span class="c"># Launching the test from your build project directory</span>
 afm-test package package-test
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="example-with-the-afb-test-selftest-suite">Example with the afb-test selftest suite</h3>
 
 <p>Prepare the launch building the <code class="highlighter-rouge">test widget</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd </span>build
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>build
 <span class="c"># Cleaning the previous build files</span>
-<span class="gp">$ </span>rm -rf <span class="k">*</span>
+<span class="nv">$ </span>rm <span class="nt">-rf</span> <span class="k">*</span>
 <span class="c"># Configuration step</span>
-<span class="gp">$ </span>cmake -DBUILD_TEST_WGT<span class="o">=</span>TRUE ..
--- The C compiler identification is GNU 8.2.1
--- The CXX compiler identification is GNU 8.2.1
--- Check <span class="k">for </span>working C compiler: /usr/lib64/ccache/cc
--- Check <span class="k">for </span>working C compiler: /usr/lib64/ccache/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - <span class="k">done</span>
--- Detecting C compile features
--- Detecting C compile features - <span class="k">done</span>
--- Check <span class="k">for </span>working CXX compiler: /usr/lib64/ccache/c++
--- Check <span class="k">for </span>working CXX compiler: /usr/lib64/ccache/c++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - <span class="k">done</span>
--- Detecting CXX compile features
--- Detecting CXX compile features - <span class="k">done
+<span class="nv">$ </span>cmake <span class="nt">-DBUILD_TEST_WGT</span><span class="o">=</span>TRUE ..
+<span class="nt">--</span> The C compiler identification is GNU 8.2.1
+<span class="nt">--</span> The CXX compiler identification is GNU 8.2.1
+<span class="nt">--</span> Check <span class="k">for </span>working C compiler: /usr/lib64/ccache/cc
+<span class="nt">--</span> Check <span class="k">for </span>working C compiler: /usr/lib64/ccache/cc <span class="nt">--</span> works
+<span class="nt">--</span> Detecting C compiler ABI info
+<span class="nt">--</span> Detecting C compiler ABI info - <span class="k">done</span>
+<span class="nt">--</span> Detecting C compile features
+<span class="nt">--</span> Detecting C compile features - <span class="k">done</span>
+<span class="nt">--</span> Check <span class="k">for </span>working CXX compiler: /usr/lib64/ccache/c++
+<span class="nt">--</span> Check <span class="k">for </span>working CXX compiler: /usr/lib64/ccache/c++ <span class="nt">--</span> works
+<span class="nt">--</span> Detecting CXX compiler ABI info
+<span class="nt">--</span> Detecting CXX compiler ABI info - <span class="k">done</span>
+<span class="nt">--</span> Detecting CXX compile features
+<span class="nt">--</span> Detecting CXX compile features - <span class="k">done
 </span>Distribution detected <span class="o">(</span>separated by <span class="s1">';'</span> choose one of them<span class="o">)</span> fedora
 Include: /home/claneys/.config/app-templates/cmake.d/00-common-var.cmake
 Include: /home/claneys/Workspace/Sources/IOTbzh/gerrit.automotivelinux.org/apps/app-afb-test/conf.d/cmake/00-default-osconfig.cmake
 Include: /usr/share/cmake/Modules/CMakeAfbTemplates/cmake/cmake.d/01-build_options.cmake
--- Found PkgConfig: /usr/bin/pkg-config <span class="o">(</span>found version <span class="s2">"1.4.2"</span><span class="o">)</span>
--- Checking <span class="k">for </span>module <span class="s1">'json-c'</span>
---   Found json-c, version 0.13.1
--- Checking <span class="k">for </span>module <span class="s1">'libsystemd&gt;=222'</span>
---   Found libsystemd, version 238
--- Checking <span class="k">for </span>module <span class="s1">'afb-daemon&gt;=4.0'</span>
---   Found afb-daemon, version 6.90.0
--- Checking <span class="k">for </span>module <span class="s1">'lua&gt;=5.3'</span>
---   Found lua, version 5.3.4
+<span class="nt">--</span> Found PkgConfig: /usr/bin/pkg-config <span class="o">(</span>found version <span class="s2">"1.4.2"</span><span class="o">)</span>
+<span class="nt">--</span> Checking <span class="k">for </span>module <span class="s1">'json-c'</span>
+<span class="nt">--</span>   Found json-c, version 0.13.1
+<span class="nt">--</span> Checking <span class="k">for </span>module <span class="s1">'libsystemd&gt;=222'</span>
+<span class="nt">--</span>   Found libsystemd, version 238
+<span class="nt">--</span> Checking <span class="k">for </span>module <span class="s1">'afb-daemon&gt;=4.0'</span>
+<span class="nt">--</span>   Found afb-daemon, version 6.90.0
+<span class="nt">--</span> Checking <span class="k">for </span>module <span class="s1">'lua&gt;=5.3'</span>
+<span class="nt">--</span>   Found lua, version 5.3.4
 Include: /usr/share/cmake/Modules/CMakeAfbTemplates/cmake/cmake.d/02-variables.cmake
--- Check gcc_minimal_version <span class="o">(</span>found gcc version 8.2.1<span class="o">)</span>  <span class="o">(</span>found g++ version 8.2.1<span class="o">)</span>
+<span class="nt">--</span> Check gcc_minimal_version <span class="o">(</span>found gcc version 8.2.1<span class="o">)</span>  <span class="o">(</span>found g++ version 8.2.1<span class="o">)</span>
 Include: /usr/share/cmake/Modules/CMakeAfbTemplates/cmake/cmake.d/03-macros.cmake
 Include: /usr/share/cmake/Modules/CMakeAfbTemplates/cmake/cmake.d/04-extra_targets.cmake
--- Overwrite the CMAKE default install prefix with /opt/AGL
--- Found CURL: /usr/lib64/libcurl.so <span class="o">(</span>found version <span class="s2">"7.59.0"</span><span class="o">)</span>
--- Qt<span class="s1">'s WebSocket AFB Client: Disabled!
+<span class="nt">--</span> Overwrite the CMAKE default install prefix with /opt/AGL
+<span class="nt">--</span> Found CURL: /usr/lib64/libcurl.so <span class="o">(</span>found version <span class="s2">"7.59.0"</span><span class="o">)</span>
+<span class="nt">--</span> Qt<span class="s1">'s WebSocket AFB Client: Disabled!
 -- CURL wrapping helpers: Enabled!
 -- Notice: LUA Controler Support Selected
 -- Notice: Using default test widget configuration'</span>s file.
--- If you want to use a customized <span class="nb">test</span>-config.xml template <span class="k">then </span>specify TEST_WIDGET_CONFIG_TEMPLATE <span class="k">in </span>your config.cmake file.
--- Configuring <span class="k">done</span>
--- Generating <span class="k">done</span>
--- Build files have been written to: /home/claneys/Workspace/Sources/IOTbzh/gerrit.automotivelinux.org/apps/app-afb-test/build
+<span class="nt">--</span> If you want to use a customized test-config.xml template <span class="k">then </span>specify TEST_WIDGET_CONFIG_TEMPLATE <span class="k">in </span>your config.cmake file.
+<span class="nt">--</span> Configuring <span class="k">done</span>
+<span class="nt">--</span> Generating <span class="k">done</span>
+<span class="nt">--</span> Build files have been written to: /home/claneys/Workspace/Sources/IOTbzh/gerrit.automotivelinux.org/apps/app-afb-test/build
 <span class="c"># Build the binding</span>
-<span class="gp">$ </span>make
-Scanning dependencies of target <span class="nb">test</span>-files
-<span class="o">[</span>  3%] Generating <span class="nb">test</span>-files
-<span class="o">[</span>  3%] Built target <span class="nb">test</span>-files
+<span class="nv">$ </span>make
+Scanning dependencies of target test-files
+<span class="o">[</span>  3%] Generating test-files
+<span class="o">[</span>  3%] Built target test-files
 Scanning dependencies of target project_populate_test-files
 <span class="o">[</span>  6%] Generating package-test/var/test-files
 <span class="o">[</span>  6%] Built target project_populate_test-files
 Scanning dependencies of target afb-test-config
 <span class="o">[</span>  9%] Generating afb-test-config
-Warning: JSON_CHECKER not found. Not verification made on files !
+Warning: JSON_CHECKER not found. Not verification made on files <span class="o">!</span>
 <span class="o">[</span>  9%] Built target afb-test-config
 Scanning dependencies of target project_populate_afb-test-config
 <span class="o">[</span> 12%] Generating package-test/etc/afb-test-config
 <span class="o">[</span> 12%] Built target project_populate_afb-test-config
 Scanning dependencies of target aftest-config
 <span class="o">[</span> 16%] Generating aftest-config
-Warning: JSON_CHECKER not found. Not verification made on files !
+Warning: JSON_CHECKER not found. Not verification made on files <span class="o">!</span>
 <span class="o">[</span> 16%] Built target aftest-config
 Scanning dependencies of target project_populate_aftest-config
 <span class="o">[</span> 19%] Generating package/etc/aftest-config
@@ -2666,24 +2664,24 @@ Scanning dependencies of target populate
 <span class="o">[</span> 96%] Generating package/bin, package/etc, package/lib, package/htdocs, package/var, package-test/bin, package-test/etc, package-test/lib, package-test/htdocs, package-test/var
 <span class="o">[</span> 96%] Built target populate
 Scanning dependencies of target afTest_build_done
-++ Typical binding launch: afb-daemon --name afTest --port<span class="o">=</span>1234 --workdir<span class="o">=</span>package-test --ldpaths<span class="o">=</span>/opt/AGL/lib64/afb:../package/lib --token<span class="o">=</span>
+++ Typical binding launch: afb-daemon <span class="nt">--name</span> afTest <span class="nt">--port</span><span class="o">=</span>1234 <span class="nt">--workdir</span><span class="o">=</span>package-test <span class="nt">--ldpaths</span><span class="o">=</span>/opt/AGL/lib64/afb:../package/lib <span class="nt">--token</span><span class="o">=</span>
 <span class="o">[</span> 96%] Built target afTest_build_done
 Scanning dependencies of target autobuild
 <span class="o">[</span>100%] Built target autobuild
 <span class="c"># Build both widgets classic and test</span>
-<span class="gp">$ </span>make widget
-<span class="o">[</span>  2%] Built target <span class="nb">test</span>-files
+<span class="nv">$ </span>make widget
+<span class="o">[</span>  2%] Built target test-files
 Scanning dependencies of target packaging_wgt
 <span class="o">[</span>  5%] Generating package/config.xml
 <span class="o">[</span>  8%] Generating package-test/config.xml, package-test/bin/launcher
 <span class="o">[</span>  8%] Built target packaging_wgt
 <span class="o">[</span> 11%] Generating package-test/var/test-files
 <span class="o">[</span> 11%] Built target project_populate_test-files
-Warning: JSON_CHECKER not found. Not verification made on files !
+Warning: JSON_CHECKER not found. Not verification made on files <span class="o">!</span>
 <span class="o">[</span> 14%] Built target afb-test-config
 <span class="o">[</span> 17%] Generating package-test/etc/afb-test-config
 <span class="o">[</span> 17%] Built target project_populate_afb-test-config
-Warning: JSON_CHECKER not found. Not verification made on files !
+Warning: JSON_CHECKER not found. Not verification made on files <span class="o">!</span>
 <span class="o">[</span> 20%] Built target aftest-config
 <span class="o">[</span> 23%] Generating package/etc/aftest-config
 <span class="o">[</span> 23%] Built target project_populate_aftest-config
@@ -2700,19 +2698,18 @@ Warning: JSON_CHECKER not found. Not verification made on files !
 <span class="o">[</span> 94%] Built target populate
 Scanning dependencies of target widget
 <span class="o">[</span> 97%] Generating aftest.wgt
-NOTICE: -- PACKING widget aftest.wgt from directory /home/claneys/Workspace/Sources/IOTbzh/gerrit.automotivelinux.org/apps/app-afb-test/build/package
+NOTICE: <span class="nt">--</span> PACKING widget aftest.wgt from directory /home/claneys/Workspace/Sources/IOTbzh/gerrit.automotivelinux.org/apps/app-afb-test/build/package
 <span class="o">[</span>100%] Generating aftest-test.wgt
-NOTICE: -- PACKING widget aftest-test.wgt from directory /home/claneys/Workspace/Sources/IOTbzh/gerrit.automotivelinux.org/apps/app-afb-test/build/package-test
+NOTICE: <span class="nt">--</span> PACKING widget aftest-test.wgt from directory /home/claneys/Workspace/Sources/IOTbzh/gerrit.automotivelinux.org/apps/app-afb-test/build/package-test
 ++ Install widget file using <span class="k">in </span>the target : afm-util install afTest.wgt
 <span class="o">[</span>100%] Built target widget
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Launch the test using the mode SERVICE for the <code class="highlighter-rouge">afb-test</code> because of a recursion
 problem which loads 2 times the same binding and causes conflict. So it is
 needed to uses 2 binders then each ones loads its binding properly:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>afm-test package package-test/ -m SERVICE
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>afm-test package package-test/ <span class="nt">-m</span> SERVICE
 1..4
 <span class="c"># Started on Tue Oct 30 10:32:46 2018</span>
 <span class="c"># Starting class: TestListverb</span>
@@ -2753,8 +2750,7 @@ ok     59       testAssertVerbCbError.testFunction
 <span class="c"># Ran 59 tests in 0.003 seconds, 59 successes, 0 failures</span>
 ~~~~~~~~~~ END ALL TESTS ~~~~~~~~~~
 Tests correctly launched.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="launch-test-on-a-target-board">Launch test on a target board</h2>
 
@@ -2762,13 +2758,12 @@ Tests correctly launched.
 a test widget which contains test files, fixture and configuration.
 Then use <strong>afm-test</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># afm-test -h</span>
-Usage: /usr/bin/afm-test <span class="o">[</span>-l|--lava] <span class="o">[</span>-v|--verb &lt;verb&gt;] &lt;path&gt;
--l|--lavaoutput: flag that <span class="nb">enable </span>Lava <span class="nb">test </span>marker to the output. <span class="o">(</span>Default: disabled<span class="o">)</span>
--v|--verb: <span class="k">select </span>a specific verb to launch from the <span class="nb">test </span>API. <span class="o">(</span>Default: all<span class="o">)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># afm-test -h</span>
+Usage: /usr/bin/afm-test <span class="o">[</span><span class="nt">-l</span>|--lava] <span class="o">[</span><span class="nt">-v</span>|--verb &lt;verb&gt;] &lt;path&gt;
+<span class="nt">-l</span>|--lavaoutput: flag that <span class="nb">enable </span>Lava <span class="nb">test </span>marker to the output. <span class="o">(</span>Default: disabled<span class="o">)</span>
+<span class="nt">-v</span>|--verb: <span class="k">select </span>a specific verb to launch from the <span class="nb">test </span>API. <span class="o">(</span>Default: all<span class="o">)</span>
 path: path to the <span class="nb">test </span>wgt file
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>By default, the test widgets should be located in /usr/AGL/apps/testwgt. This
 will install the widget, launch the tests then display the result on standard
@@ -2778,7 +2773,7 @@ output. After that it will kill test binding and remove it.</p>
 
 <p>Here is an example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">qemux86-64:~# </span>afm-test /usr/AGL/apps/testwgt/aftest-test.wgt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemux86-64:~# afm-test /usr/AGL/apps/testwgt/aftest-test.wgt
 afm-test /tmp/aftest-test.wgt
 PASS: aftest-test@6.90 started with <span class="nv">pid</span><span class="o">=</span>1649
 1..59
@@ -2829,8 +2824,7 @@ PASS: 63 testLockWait.testFunction
 <span class="c"># Ran 63 tests in 0.003 seconds, 63 successes, 0 failures</span>
 ~~~~~~~~~~ END ALL TESTS ~~~~~~~~~~
 PASS: aftest-test@6.90 killed and removed
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The command being : <code class="highlighter-rouge">afm-test /usr/AGL/apps/testwgt/aftest-test.wgt</code></p>
 
@@ -2920,7 +2914,7 @@ beforeEach and afterEach functions and
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:49 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:03 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-afb-test/plain/docs/3_Launch_the_tests.md?h=icefish">Link to source document</small>
 		
@@ -2952,6 +2946,16 @@ beforeEach and afterEach functions and
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

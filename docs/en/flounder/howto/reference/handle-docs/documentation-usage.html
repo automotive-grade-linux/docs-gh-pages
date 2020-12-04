@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -240,7 +240,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -287,7 +287,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -455,9 +455,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -479,36 +479,31 @@ This website relies on the generator located in
 
 <p>Get the <code class="highlighter-rouge">setupdocs.sh</code> script to initialize your environment.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>wget https://raw.githubusercontent.com/automotive-grade-linux/docs-webtemplate/master/setupdocs.sh
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://raw.githubusercontent.com/automotive-grade-linux/docs-webtemplate/master/setupdocs.sh
+</code></pre></div></div>
 
 <p>This script fetches <a href="https://github.com/automotive-grade-linux/docs-tools">docs-tools</a>, install npm modules.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir docs-webtemplate
-bash setupdocs.sh --directory<span class="o">=</span>docs-webtemplate
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir docs-webtemplate
+bash setupdocs.sh <span class="nt">--directory</span><span class="o">=</span>docs-webtemplate
+</code></pre></div></div>
 
 <p>For consulting help, do:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bash setupdocs.sh --help
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash setupdocs.sh <span class="nt">--help</span>
+</code></pre></div></div>
 
 <h2 id="building-a-local-site">Building a local site</h2>
 
 <p>In docs-webtemplate directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>make serve
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make serve
+</code></pre></div></div>
 
 <p>For cleaning your work, use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>make clean
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make clean
+</code></pre></div></div>
 
 <h2 id="documentation-from-local-repositories">Documentation from local repositories</h2>
 
@@ -523,7 +518,7 @@ in order to use local repositories on not remote ones.</version></p>
 <p>Thus, this file is needed to be added in the docs-webtemplate root,
 see an example below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">############__fetched_files_local.yml##############</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">############__fetched_files_local.yml##############</span>
 -
     url_fetch : &lt;pathToDocsSources&gt;/docs-sources/
     git_name   : automotive-grade-linux/docs-sources
@@ -534,8 +529,7 @@ see an example below:</p>
     git_name: AGL/meta-renesas-rcar-gen3
     url_fetch: &lt;pathToMetaRenesas&gt;/meta-renesas-rcar-gen3
 <span class="c">###################################################</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It is also possible to use <code class="highlighter-rouge">id</code> instead of <code class="highlighter-rouge">git_name</code>.</p>
 
@@ -545,15 +539,13 @@ see an example below:</p>
 
 <p>For testing hyperlinks as soon as the local site is running, do:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>make linkchecker
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make linkchecker
+</code></pre></div></div>
 
 <p>or</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>linkchecker http://localhost:4000
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>linkchecker http://localhost:4000
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">linkchecker</code> output will display the broken link and there location
 in the site.</p>
@@ -637,7 +629,7 @@ in the site.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:08 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:19 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/flounder/docs/handle-docs/documentation-usage.md">Link to source document</small>
 		
@@ -669,6 +661,16 @@ in the site.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2516,9 +2516,8 @@ command.
 
 <p>Use the <code class="highlighter-rouge">projects add</code> command to declare your project:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli prj add --label<span class="o">=</span><span class="s2">"Project_helloworld-native-application"</span> --type<span class="o">=</span>pm --path<span class="o">=</span>/home/seb/xds-workspace/helloworld-native-application --server-path<span class="o">=</span>/home/devel/xds-workspace/helloworld-native-application
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli prj add <span class="nt">--label</span><span class="o">=</span><span class="s2">"Project_helloworld-native-application"</span> <span class="nt">--type</span><span class="o">=</span>pm <span class="nt">--path</span><span class="o">=</span>/home/seb/xds-workspace/helloworld-native-application <span class="nt">--server-path</span><span class="o">=</span>/home/devel/xds-workspace/helloworld-native-application
+</code></pre></div></div>
 
 <p>When you declare the project, XDS creates the <code class="highlighter-rouge">xds-project.conf</code>
 configuration file if one does not already exist.
@@ -2542,12 +2541,11 @@ unique ID of your project.</p>
 <p>From the command line, use the <code class="highlighter-rouge">prj ls</code> command, which is an abbreviation
 for the <code class="highlighter-rouge">projects list</code> command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli prj ls
-ID                                       Label                                   LocalPath
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli prj <span class="nb">ls
+</span>ID                                       Label                                   LocalPath
 f9904f70-d441-11e7-8c59-3c970e49ad9b     Project_helloworld-service              /home/seb/xds-workspace/helloworld-service
 4021617e-ced0-11e7-acd2-3c970e49ad9b     Project_helloworld-native-application   /home/seb/xds-workspace/helloworld-native-application
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Once you have the ID of the project, you can use the <code class="highlighter-rouge">--id</code> option
 or the <code class="highlighter-rouge">XDS_PROJECT_ID</code> environment variable to refer to your project.</p>
@@ -2569,14 +2567,13 @@ your application.</p>
 
 <p>To list installed SDKs, use the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli sdks ls
-List of installed SDKs:
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli sdks <span class="nb">ls
+</span>List of installed SDKs:
   ID                                    NAME
   7aa19224-b769-3463-98b1-4c029d721766  aarch64  <span class="o">(</span>3.99.1+snapshot<span class="o">)</span>
   41a1efc4-8443-3fb0-afe5-8313e0c96efd  corei7-64  <span class="o">(</span>3.99.2+snapshot<span class="o">)</span>
   c226821b-b5c0-386d-94fe-19f807946d03  aarch64  <span class="o">(</span>3.99.3<span class="o">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>SDK IDs are returned by architecture and version.
 Be sure to identify the SDK you need.</p>
@@ -2586,14 +2583,13 @@ Be sure to identify the SDK you need.</p>
 <p>You can now use XDS to cross-build your project.
 Following is an example that builds a project that is based on CMake:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># First, export the target IP address, or it's DNS name</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># First, export the target IP address, or it's DNS name</span>
 <span class="nb">export </span><span class="nv">TARGET_ADDRESS</span><span class="o">=</span>&lt;target_adress&gt;
 
 <span class="c"># Go into your project directory and create a build directory</span>
 <span class="nb">cd</span> <span class="nv">$MY_PROJECT_DIR</span>
 mkdir build
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Before using the command line to build the project, you should be
 sure the project’s configuration file is correct.
@@ -2602,16 +2598,14 @@ as needed.</p>
 
 <p>Generate the build system using CMake:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># You must set RSYNC_* variables so that you deploy and populate widgets on the target
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># You must set RSYNC_* variables so that you deploy and populate widgets on the target
 xds-cli exec --id=4021617e --sdkid=c226821b -- "export RSYNC_TARGET=root@${TARGET_ADDRESS} ; export RSYNC_PREFIX=/opt ; cd build &amp;&amp; cmake .."
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now you can build the project:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli exec --id=4021617e --sdkid=c226821b -- "cd build &amp;&amp; make widget"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli exec --id=4021617e --sdkid=c226821b -- "cd build &amp;&amp; make widget"
+</code></pre></div></div>
 
 <!-- section-note -->
 <p><strong>NOTE:</strong></p>
@@ -2631,31 +2625,29 @@ use the <code class="highlighter-rouge">--config</code> option.
 For example, the equivalent of the previous build command but
 with a specified configuration file is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># MY_PROJECT_DIR=/home/seb/xds-workspace/helloworld-native-application</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MY_PROJECT_DIR=/home/seb/xds-workspace/helloworld-native-application</span>
 <span class="nb">cd</span> <span class="nv">$MY_PROJECT_DIR</span>
 
 <span class="c"># Edit and potentially adapt xds-project.conf file that has been created</span>
 <span class="c"># automatically on project declaration using XDS Dashboard</span>
-cat xds-project.conf
+<span class="nb">cat </span>xds-project.conf
   <span class="c"># XDS project settings</span>
   <span class="nb">export </span><span class="nv">XDS_AGENT_URL</span><span class="o">=</span>localhost:8800
   <span class="nb">export </span><span class="nv">XDS_PROJECT_ID</span><span class="o">=</span>4021617e-ced0-11e7-acd2-3c970e49ad9b
   <span class="nb">export </span><span class="nv">XDS_SDK_ID</span><span class="o">=</span>c226821b-b5c0-386d-94fe-19f807946d03
 
 <span class="c"># Create build directory and invoke cmake and then build project</span>
-xds-cli <span class="nb">exec</span> --config<span class="o">=</span>./xds-project.conf -- <span class="s2">"mkdir -p build &amp;&amp; cd build &amp;&amp; cmake .."</span>
-<span class="nb">cd </span>build <span class="o">&amp;&amp;</span> xds-cli <span class="nb">exec</span> --config<span class="o">=</span>../xds-project.conf -- <span class="s2">"make all"</span>
-</code></pre>
-</div>
+xds-cli <span class="nb">exec</span> <span class="nt">--config</span><span class="o">=</span>./xds-project.conf <span class="nt">--</span> <span class="s2">"mkdir -p build &amp;&amp; cd build &amp;&amp; cmake .."</span>
+<span class="nb">cd </span>build <span class="o">&amp;&amp;</span> xds-cli <span class="nb">exec</span> <span class="nt">--config</span><span class="o">=</span>../xds-project.conf <span class="nt">--</span> <span class="s2">"make all"</span>
+</code></pre></div></div>
 
 <p>Alternatively, you could first source the configuration file to avoid using the
 <code class="highlighter-rouge">--config</code> option as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>source xds-project.conf
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source xds-project.conf
 xds-cli exec "mkdir -p build &amp;&amp; cd build &amp;&amp; cmake .."
 cd build &amp;&amp; xds-cli exec "make all"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <!-- section-note -->
 <p><strong>NOTE:</strong></p>
@@ -2743,7 +2735,7 @@ to execute.
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:06 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:17 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/create-app-build-cmd-line.md?h=icefish">Link to source document</small>
 		
@@ -2775,6 +2767,16 @@ to execute.
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

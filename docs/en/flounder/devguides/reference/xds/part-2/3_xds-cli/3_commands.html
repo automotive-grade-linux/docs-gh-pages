@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1384,7 +1384,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2047,7 +2047,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2215,9 +2215,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2235,26 +2235,24 @@
 
 <p>This command supports following sub-commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>add, a      Add a new project
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add, a      Add a new project
 get         Get a property of a project
-list, ls    List existing projects
+list, <span class="nb">ls    </span>List existing projects
 remove, rm  Remove an existing project
 sync        Force synchronization of project sources
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here are some usage examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create/declare a new project</span>
-xds-cli prj add --label <span class="s2">"myProjectName"</span> --type pm -p /home/seb/xds-workspace/myProject -sp /home/devel/xds-workspace/myProject
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create/declare a new project</span>
+xds-cli prj add <span class="nt">--label</span> <span class="s2">"myProjectName"</span> <span class="nt">--type</span> pm <span class="nt">-p</span> /home/seb/xds-workspace/myProject <span class="nt">-sp</span> /home/devel/xds-workspace/myProject
 
 <span class="c"># List projects</span>
-xds-cli prj ls
+xds-cli prj <span class="nb">ls</span>
 
 <span class="c"># Delete an existing project</span>
 xds-cli prj rm 8e49
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="sdks">sdks</h2>
 
@@ -2262,23 +2260,21 @@ xds-cli prj rm 8e49
 
 <p>This command supports following sub-commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>get            Get a property of a SDK
-list, ls       List installed SDKs
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>get            Get a property of a SDK
+list, <span class="nb">ls       </span>List installed SDKs
 install, i     Install a SDK
 uninstall, rm  UnInstall an existing SDK
 abort, a       Abort an install action
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here are some usage examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># List existing SDKs</span>
-xds-cli sdks ls
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># List existing SDKs</span>
+xds-cli sdks <span class="nb">ls</span>
 
 <span class="c"># Get SDK info</span>
 xds-cli sdks get c64d
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <!-- section-note -->
 <p><strong>Note:</strong></p>
@@ -2313,41 +2309,37 @@ topic for details about SDK installation.</p>
 
 <p>Here are some usage examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$MY_PROJECT_DIR</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$MY_PROJECT_DIR</span>
 mkdir build
 
 <span class="c"># Generate build system using cmake</span>
-xds-cli <span class="nb">exec</span> --id<span class="o">=</span>4021 --sdkid<span class="o">=</span>c226 -- <span class="s2">"cd build &amp;&amp; cmake .."</span>
+xds-cli <span class="nb">exec</span> <span class="nt">--id</span><span class="o">=</span>4021 <span class="nt">--sdkid</span><span class="o">=</span>c226 <span class="nt">--</span> <span class="s2">"cd build &amp;&amp; cmake .."</span>
 
 <span class="c"># Build the project</span>
-xds-cli <span class="nb">exec</span> --id<span class="o">=</span>4021 --sdkid<span class="o">=</span>c226 -- <span class="s2">"cd build &amp;&amp; make all"</span>
-</code></pre>
-</div>
+xds-cli <span class="nb">exec</span> <span class="nt">--id</span><span class="o">=</span>4021 <span class="nt">--sdkid</span><span class="o">=</span>c226 <span class="nt">--</span> <span class="s2">"cd build &amp;&amp; make all"</span>
+</code></pre></div></div>
 
 <p>In case of <code class="highlighter-rouge">xds-agent</code> is not running on default url:port (that is <code class="highlighter-rouge">localhost:8800</code>)</p>
 
 <p>You can specify the url using <code class="highlighter-rouge">--url</code> option :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli --url<span class="o">=</span>http://localhost:8800 <span class="nb">exec</span> --id<span class="o">=</span>4021 --sdkid<span class="o">=</span>c226 -- <span class="s2">"cd build &amp;&amp; make all"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli <span class="nt">--url</span><span class="o">=</span>http://localhost:8800 <span class="nb">exec</span> <span class="nt">--id</span><span class="o">=</span>4021 <span class="nt">--sdkid</span><span class="o">=</span>c226 <span class="nt">--</span> <span class="s2">"cd build &amp;&amp; make all"</span>
+</code></pre></div></div>
 
 <h2 id="misc">misc</h2>
 
 <p><code class="highlighter-rouge">misc</code> command allows to execute miscellaneous sub-commands such as:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>version, v   Get version of XDS agent and XDS server
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version, v   Get version of XDS agent and XDS server
 status, sts  Get XDS configuration status <span class="o">(</span>including XDS server connection<span class="o">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here are some usage examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xds-cli misc version --verbose
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-cli misc version <span class="nt">--verbose</span>
 
 xds-cli misc sts
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -2428,7 +2420,7 @@ xds-cli misc sts
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:49 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:03 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-2/3_xds-cli/3_commands.md?h=flounder">Link to source document</small>
 		
@@ -2460,6 +2452,16 @@ xds-cli misc sts
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

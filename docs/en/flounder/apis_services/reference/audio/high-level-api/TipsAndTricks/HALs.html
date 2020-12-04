@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2746,7 +2746,7 @@ one folder to the other.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">user@machine$ </span>ls etc etc.available/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>user@machine<span class="nv">$ </span><span class="nb">ls </span>etc etc.available/
 etc:
 hal-4a-csl-cm106-8ch-usb.json
 
@@ -2756,10 +2756,10 @@ hal-4a-ensoniq.json          hal-4a-jabra.json
 hal-4a-intel-minnow.json     hal-4a-rcar-m3.json
 hal-4a-intel-qemu.json       hal-4a-rcar-m3kf.json
 
-<span class="gp">user@machine$ </span>mv etc/hal-4a-csl-cm106-8ch-usb.json  etc.available
-<span class="gp">user@machine$ </span>mv etc.available/hal-4a-2ch-generic-usb.json etc
+user@machine<span class="nv">$ </span>mv etc/hal-4a-csl-cm106-8ch-usb.json  etc.available
+user@machine<span class="nv">$ </span>mv etc.available/hal-4a-2ch-generic-usb.json etc
 
-<span class="gp">user@machine$ </span>ls etc etc.available/
+user@machine<span class="nv">$ </span><span class="nb">ls </span>etc etc.available/
 etc:
 hal-4a-2ch-generic-usb.json
 
@@ -2769,10 +2769,9 @@ hal-4a-ensoniq.json            hal-4a-jabra.json
 hal-4a-intel-minnow.json       hal-4a-rcar-m3.json
 hal-4a-intel-qemu.json         hal-4a-rcar-m3kf.json
 
-<span class="gp">user@machine$ </span>sync
-<span class="gp">user@machine$ </span>reboot
-</code></pre>
-</div>
+user@machine<span class="nv">$ </span>sync
+user@machine<span class="nv">$ </span>reboot
+</code></pre></div></div>
 
 <blockquote>
   <p>NOTE: Even if multiple HAL are allowed, you have to make sure that they don’t
@@ -2861,7 +2860,7 @@ level API. The first HAL providing the stream is used, any other are ignored.</p
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:58 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:11 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-audio-4a/plain/docs/high-level-api/TipsAndTricks/HALs.md?h=flounder">Link to source document</small>
 		
@@ -2893,6 +2892,16 @@ level API. The first HAL providing the stream is used, any other are ignored.</p
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

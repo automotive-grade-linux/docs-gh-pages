@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2497,14 +2497,12 @@
 
 <p>By default the controller searches for a config filename with the same ‘middlename’ as the daemon process. As an example if your process name is afb-daemon then middle name is ‘daemon’. In addition, if your process name is afb-daemon-audio the middle name is also ‘daemon’. Moreover the prefix is chosen when you call the <a href="#4)_Do_controller_config_parsing_at_binding_pre-init">CtlConfigSearch</a> function, see below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>CtlConfigSearch<span class="o">(</span>AFB_ApiT apiHandle, const char <span class="k">*</span>dirList, const char <span class="k">*</span>prefix<span class="o">)</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CtlConfigSearch<span class="o">(</span>AFB_ApiT apiHandle, const char <span class="k">*</span>dirList, const char <span class="k">*</span>prefix<span class="o">)</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Middlename is taken from process middlename.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Middlename is taken from process middlename.</span>
 <span class="o">(</span>prefix-<span class="o">)</span>middlename<span class="k">*</span>.json
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You may overload the config search path with environment variables</p>
 
@@ -2515,9 +2513,8 @@
 
 <p>Example: to load a config named ‘(prefix-)myconfig-test.json’ do</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-daemon --name myconfig --verbose ...<span class="s1">'
-</span></code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-daemon <span class="nt">--name</span> myconfig <span class="nt">--verbose</span> ...<span class="s1">'
+</span></code></pre></div></div>
 
 <p>The configuration is loaded dynamically during startup time. The controller scans <strong>CONTROL_CONFIG_PATH</strong> for a file corresponding to the pattern
 “(prefix-)bindermiddlename*.json”. The first file found in the path is loaded,
@@ -2785,9 +2782,8 @@ input parameters. When funcname is not given by default, the controller tries to
 
 <p>The controller is a standard binding. It can be started with the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-daemon --name<span class="o">=</span>yourname --port<span class="o">=</span>1234 --workdir<span class="o">=</span>. --roothttp<span class="o">=</span>./htdocs --tracereq<span class="o">=</span>common --token<span class="o">=</span> --verbose --binding<span class="o">=</span>pathtoyourbinding.so --monitoring
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-daemon <span class="nt">--name</span><span class="o">=</span>yourname <span class="nt">--port</span><span class="o">=</span>1234 <span class="nt">--workdir</span><span class="o">=</span><span class="nb">.</span> <span class="nt">--roothttp</span><span class="o">=</span>./htdocs <span class="nt">--tracereq</span><span class="o">=</span>common <span class="nt">--token</span><span class="o">=</span> <span class="nt">--verbose</span> <span class="nt">--binding</span><span class="o">=</span>pathtoyourbinding.so <span class="nt">--monitoring</span>
+</code></pre></div></div>
 
 <p>Afb-Daemon only loads controller bindings without searching for the other
 binding. In this case, the controller binding will search for a configuration file
@@ -2873,7 +2869,7 @@ purpose or simply to act as the glue between a UI and other binder/services.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:05 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:17 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libappcontroller/plain/docs/controllerConfig.md?h=icefish">Link to source document</small>
 		
@@ -2905,6 +2901,16 @@ purpose or simply to act as the glue between a UI and other binder/services.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

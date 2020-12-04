@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2910,13 +2910,12 @@ Currently, window manager doesn’t block the application displaying because “
 <code class="highlighter-rouge">layers.json</code>. It will do this, by first providing an example, and then
 going into its components.</p>
 
-<h3 id="mainsurface">main_surface</h3>
+<h3 id="main_surface">main_surface</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"main_surface": {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"main_surface": {
    "surface_role": "HomeScreen",
 },
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">main_surface</code> object describes a surface that will internally be
 treated as the main surface - usually this mean <em>HomeScreen</em>. The only
@@ -2935,7 +2934,7 @@ main surface. Set this to e.g. <code class="highlighter-rouge">HomeScreen</code>
 
 <h4 id="surface-to-layer-mapping">surface to layer mapping</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"mappings": [
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"mappings": [
   {
      "role": "^HomeScreen$",
      "name": "HomeScreen",
@@ -2967,8 +2966,7 @@ main surface. Set this to e.g. <code class="highlighter-rouge">HomeScreen</code>
      "comment": "Range of IDs that will always be placed on the popup layer, that gets a very high 'dummy' id of 9999"
   }
 ]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Each mapping defines the following items to map corresponding surfaces
 to a layer.</p>
@@ -3008,36 +3006,33 @@ this negative values for width and height must be used.</p>
 <p>For example, a full-screen surface can have the following <code class="highlighter-rouge">rect</code>
 definition:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"rect": { "x": 0,
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"rect": { "x": 0,
           "y": 0,
           "width": -1,
           "height": -1 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A surface that leaves a 200pixel margin on the top and bottom can use
 the following <code class="highlighter-rouge">rect</code> definition:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"rect": { "x": 0,
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"rect": { "x": 0,
           "y": 200,
           "width": -1,
           "height": -401 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>So the expression for the actual surface dimensions when using
 screen-size-relative values will be:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>actual_width = screen_width + 1 + width
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>actual_width = screen_width + 1 + width
 actual_height = screen_height + 1 + height
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Or in other words, to leave an <code class="highlighter-rouge">N</code> wide border around a surface, the
 actual value in the dimension configuration needs to be <code class="highlighter-rouge">-N - 1</code>, and
 appropriate offsets need to be set for <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code>.</p>
 
-<h4 id="splitlayouts">split_layouts</h4>
+<h4 id="split_layouts">split_layouts</h4>
 
 <p>This configuration item allows the specification of split-screen layouts
 on layers for certain surfaces.</p>
@@ -3049,15 +3044,14 @@ disable the split layout, one of the two participating surface must be
 deactivated (or a surface on a layer below the current one must be
 activated).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"split_layouts": [
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"split_layouts": [
    {
        "name": "Navigation",
        "main_match": "Navigation",
        "sub_match": "HVAC|MediaPlayer",
    }
 ]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A split layout object has the following attributes:</p>
 
@@ -3141,13 +3135,12 @@ this layout.</p>
 <p><strong>Download recipe</strong>
 If repo is already done, please start with git clone</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir WORK
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir WORK
 $ cd WORK
 $ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 $ repo sync
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then you can get the following recipe.</p>
 
@@ -3162,10 +3155,9 @@ $ repo sync
 
 <p><strong>Bitbake</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo
 $ bitbake agl-demo-platform
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div id="Implementation\ Notes"></div>
 
@@ -3259,7 +3251,7 @@ noted.</p>
 
 <p>This is the public interface of the class <code class="highlighter-rouge">LibWindowmanager</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class LibWindowmanager
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class LibWindowmanager
 {
 public:
     LibWindowmanager();
@@ -3292,8 +3284,7 @@ public:
     void set_event_handler(enum EventType et, handler_fun f);
 
 };
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div id="Methods"></div>
 
@@ -3310,25 +3301,25 @@ i.e. this call will return <code class="highlighter-rouge">-EINVAL</code>.</p>
 <p>The <code class="highlighter-rouge">port</code> parameter is the port the afb daemon is listening on, an
 invalid port will lead to a failure of the call and return <code class="highlighter-rouge">-EINVAL</code>.</p>
 
-<h3 id="requestsurfacejsonobject-object">requestSurface(json_object *object)</h3>
+<h3 id="requestsurfacejson_object-object">requestSurface(json_object *object)</h3>
 
-<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
+<p><strong>args: <code class="highlighter-rouge">{ 'kKeyDrawingName': 'application name' }</code></strong>
 This method requests a surface with the label given from the <em>Window Manager</em>.
 It will return <code class="highlighter-rouge">surface id</code> a client application can use, and
 <code class="highlighter-rouge">-errno</code> on failure. Additionally, on the standard error, messages are
 logged to help debugging the issue.</p>
 
-<h3 id="requestsurfacexdgjsonobject-object">requestSurfaceXDG(json_object *object)</h3>
+<h3 id="requestsurfacexdgjson_object-object">requestSurfaceXDG(json_object *object)</h3>
 
-<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name',</span><span class="w"> </span><span class="err">'kKeyIviId':</span><span class="w"> </span><span class="err">'ivi</span><span class="w"> </span><span class="err">id'</span><span class="w"> </span><span class="p">}</span></code></strong>
+<p><strong>args: <code class="highlighter-rouge">{ 'kKeyDrawingName': 'application name', 'kKeyIviId': 'ivi id' }</code></strong>
 This method is mainly intended for <em>xdglauncher</em> that controls xdg application such as chromium.
 It will return <code class="highlighter-rouge">surface id</code> xdglauncher uses, and
 <code class="highlighter-rouge">-errno</code> on failure. Additionally, on the standard error, messages are
 logged to help debugging the issue.</p>
 
-<h3 id="activatesurfacejsonobject-object">activateSurface(json_object *object)</h3>
+<h3 id="activatesurfacejson_object-object">activateSurface(json_object *object)</h3>
 
-<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name',</span><span class="w"> </span><span class="err">'kKeyDrawingArea':</span><span class="w"> </span><span class="err">'layout'</span><span class="w">  </span><span class="p">}</span></code></strong>
+<p><strong>args: <code class="highlighter-rouge">{ 'kKeyDrawingName': 'application name', 'kKeyDrawingArea': 'layout'  }</code></strong>
 This method is mainly intended for <em>manager</em> applications that control
 other applications (think an application manager or the <em>HomeScreen</em>).
 It instructs the window manager to activate the surface with the given
@@ -3337,9 +3328,9 @@ It instructs the window manager to activate the surface with the given
 <p>This method only is effective after the actual window or surface was
 created by the application.</p>
 
-<h3 id="deactivatesurfacejsonobject-object">deactivateSurface(json_object *object)</h3>
+<h3 id="deactivatesurfacejson_object-object">deactivateSurface(json_object *object)</h3>
 
-<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
+<p><strong>args: <code class="highlighter-rouge">{ 'kKeyDrawingName': 'application name' }</code></strong>
 This method is mainly intended for <em>manager</em> applications that control other applications.
 In adition, this is for applications that overrides other applications such like popup message.
 In this case, popup surface requests to be hidden. It instructs the window manager to deactivate the surface associated with the given label. Note, that deactivating a surface also means to implicitly activate another (the last active or if not available <em>main surface</em> or <em>HomeScreen</em>.)</p>
@@ -3347,29 +3338,33 @@ In this case, popup surface requests to be hidden. It instructs the window manag
 <p>This method only is effective after the actual window or surface was
 created by the application.</p>
 
-<h3 id="enddrawjsonobject-object">endDraw(json_object *object)</h3>
+<h3 id="enddrawjson_object-object">endDraw(json_object *object)</h3>
 
-<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
+<p><strong>args: <code class="highlighter-rouge">{ 'kKeyDrawingName': 'application name' }</code></strong>
 This function is called from a client application when it is done
 drawing its surface content.</p>
 
-<p>It is not crucial to make this call at every time a drawing is finished
-- it is mainly intended to allow the window manager to synchronize
+<p>It is not crucial to make this call at every time a drawing is finished</p>
+<ul>
+  <li>it is mainly intended to allow the window manager to synchronize
 drawing in case of layout switch. The exact semantics are explained in
-the next <a href="#_events">Events</a> Section.</p>
+the next <a href="#_events">Events</a> Section.</li>
+</ul>
 
-<h3 id="getdisplayinfojsonobject-object">getDisplayInfo(json_object *object)</h3>
+<h3 id="getdisplayinfojson_object-object">getDisplayInfo(json_object *object)</h3>
 
-<p><strong>args: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code></strong>
-This function gets the display information as follows:
- - width[pixel]
- - height[pixel]
- - width[mm]
- - height[mm]</p>
+<p><strong>args: <code class="highlighter-rouge">{ }</code></strong>
+This function gets the display information as follows:</p>
+<ul>
+  <li>width[pixel]</li>
+  <li>height[pixel]</li>
+  <li>width[mm]</li>
+  <li>height[mm]</li>
+</ul>
 
 <p>It outputs the display information for json_object in the argument as follows:
-  <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"width_pixel"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">width</span><span class="p">[</span><span class="err">pixel</span><span class="p">],</span><span class="w"> </span><span class="nt">"height_pixel"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">height</span><span class="p">[</span><span class="err">pixel</span><span class="p">],</span><span class="w">
-    </span><span class="nt">"width_mm"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">width</span><span class="p">[</span><span class="err">mm</span><span class="p">],</span><span class="w"> </span><span class="nt">"height_mm"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">height</span><span class="p">[</span><span class="err">mm</span><span class="p">]}</span></code></p>
+  <code class="highlighter-rouge">{"width_pixel": int value of width[pixel], "height_pixel": int value of height[pixel],
+    "width_mm": int value of width[mm], "height_mm": int value of height[mm]}</code></p>
 
 <p>It should be called after calling init().
 It should not be called in the event handler because it occurs hang-up.</p>
@@ -3383,19 +3378,21 @@ but the value is different with measured value.</p>
   <li>measured value                  : width:193 height:343</li>
 </ul>
 
-<h3 id="getareainfojsonobject-inobj-jsonobject-outobj">getAreaInfo(json_object *in_obj, json_object *out_obj)</h3>
+<h3 id="getareainfojson_object-in_obj-json_object-out_obj">getAreaInfo(json_object *in_obj, json_object *out_obj)</h3>
 
-<p><strong>args1: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">'kKeyDrawingName':</span><span class="w"> </span><span class="err">'application</span><span class="w"> </span><span class="err">name'</span><span class="w"> </span><span class="p">}</span></code></strong>
-<strong>args2: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code></strong>
-This function gets the information of area drawn by the application as follows:
- - x-coordinate
- - y-coordinate
- - width
- - height</p>
+<p><strong>args1: <code class="highlighter-rouge">{ 'kKeyDrawingName': 'application name' }</code></strong>
+<strong>args2: <code class="highlighter-rouge">{ }</code></strong>
+This function gets the information of area drawn by the application as follows:</p>
+<ul>
+  <li>x-coordinate</li>
+  <li>y-coordinate</li>
+  <li>width</li>
+  <li>height</li>
+</ul>
 
 <p>It outputs the area information for json_object in the 2nd argument as follows:
-  <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">x-coordinate</span><span class="p">,</span><span class="w"> </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">y-coordinate</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">width</span><span class="p">,</span><span class="w"> </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">height</span><span class="p">}</span></code></p>
+  <code class="highlighter-rouge">{"x": int value of x-coordinate, "y": int value of y-coordinate,
+    "width": int value of width, "height": int value of height}</code></p>
 
 <p>It should be called after calling activateSurface().
 It should not be called in the event handler because it occurs hang-up.</p>
@@ -3403,14 +3400,14 @@ It should not be called in the event handler because it occurs hang-up.</p>
 <h4 id="note-1">NOTE</h4>
 <p>The same information can given by SyncDraw event.</p>
 
-<h3 id="getareainfoconst-char-label-jsonobject-outobj">getAreaInfo(const char *label, json_object *out_obj)</h3>
+<h3 id="getareainfoconst-char-label-json_object-out_obj">getAreaInfo(const char *label, json_object *out_obj)</h3>
 
 <p><strong>args1: String of application name</strong>
-<strong>args2: <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code></strong>
+<strong>args2: <code class="highlighter-rouge">{ }</code></strong>
 This function is same with <code class="highlighter-rouge">getAreaInfo(json_object *in_obj, json_object *out_obj)</code>,
 but only has difference of 1st argument.</p>
 
-<h3 id="seteventhandlerenum-eventtype-et-handlerfun-f">set_event_handler(enum EventType et, handler_fun f)</h3>
+<h3 id="set_event_handlerenum-eventtype-et-handler_fun-f">set_event_handler(enum EventType et, handler_fun f)</h3>
 
 <p>This method needs to be used to register event handlers for the WM
 events described in the EventType enum. Only one hendler for each
@@ -3656,7 +3653,7 @@ Path: <code class="highlighter-rouge">sample/template/main.c</code></p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:48 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:02 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-windowmanager/plain/doc/ApplicationGuide.md?h=flounder">Link to source document</small>
 		
@@ -3688,6 +3685,16 @@ Path: <code class="highlighter-rouge">sample/template/main.c</code></p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

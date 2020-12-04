@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2495,7 +2495,7 @@
 
 <h1 id="curl-wrapping-functions-reference">CURL wrapping functions reference.</h1>
 
-<h2 id="int-curlwrapperform-curl--curl-char-result-sizet--size">int curl_wrap_perform (CURL * curl, char **result, size_t * size)</h2>
+<h2 id="int-curl_wrap_perform-curl--curl-char-result-size_t--size">int curl_wrap_perform (CURL * curl, char **result, size_t * size)</h2>
 
 <p>Perform the CURL operation for ‘curl’ and put the result in memory. If ‘result’
 isn’t NULL it receives the returned content that then must be freed. If ‘size’
@@ -2504,29 +2504,29 @@ the real content is one byte greater than the read size and the last byte
 zero. This facility allows to handle the returned content as a null terminated
 C-string.</p>
 
-<h2 id="void-curlwrapdocurl-curl-void-callbackvoid-closure-int-status-curl-curl-const-char-result-sizet-size-void-closure">void curl_wrap_do(CURL <em>curl, void (</em>callback)(void *closure, int status, CURL *curl, const char *result, size_t size), void *closure)</h2>
+<h2 id="void-curl_wrap_docurl-curl-void-callbackvoid-closure-int-status-curl-curl-const-char-result-size_t-size-void-closure">void curl_wrap_do(CURL <em>curl, void (</em>callback)(void *closure, int status, CURL *curl, const char *result, size_t size), void *closure)</h2>
 
 <p>Will perform the CURL operation and on success invokes the callback with the
 result and size of the operation or error on a failure.</p>
 
-<h2 id="int-curlwrapcontenttypeis-curl--curl-const-char-value">int curl_wrap_content_type_is (CURL * curl, const char *value)</h2>
+<h2 id="int-curl_wrap_content_type_is-curl--curl-const-char-value">int curl_wrap_content_type_is (CURL * curl, const char *value)</h2>
 
 <p>Request <code class="highlighter-rouge">Content-Type</code> information from the curl session with this function</p>
 
 <p>Returns non-zero value if the CURL content type match the <code class="highlighter-rouge">value</code> and 0 otherwize</p>
 
-<h2 id="long-curlwrapresponsecodegetcurl-curl">long curl_wrap_response_code_get(CURL *curl)</h2>
+<h2 id="long-curl_wrap_response_code_getcurl-curl">long curl_wrap_response_code_get(CURL *curl)</h2>
 
 <p>Request the response code to a CURL operation.</p>
 
 <p>Returns the response code received on success or 0 on failure.</p>
 
-<h2 id="curl-curlwrappreparegeturlconst-char-url">CURL *curl_wrap_prepare_get_url(const char *url)</h2>
+<h2 id="curl-curl_wrap_prepare_get_urlconst-char-url">CURL *curl_wrap_prepare_get_url(const char *url)</h2>
 
 <p>Prepare a GET CURL operation on the url given as parameter and Returns the CURL
 pointer.</p>
 
-<h2 id="curl-curlwrappreparegetconst-char-base-const-char-path-const-char--const-args">CURL *curl_wrap_prepare_get(const char *base, const char *path, const char * const *args)</h2>
+<h2 id="curl-curl_wrap_prepare_getconst-char-base-const-char-path-const-char--const-args">CURL *curl_wrap_prepare_get(const char *base, const char *path, const char * const *args)</h2>
 
 <p>Prepare a GET CURL operation on the decomposed url and escape it. The <code class="highlighter-rouge">url</code> has been
 decomposed in 3 parts:</p>
@@ -2539,19 +2539,19 @@ decomposed in 3 parts:</p>
 
 <p>Returns the prepared CURL request.</p>
 
-<h2 id="int-curlwrapaddheadercurl-curl-const-char-header">int curl_wrap_add_header(CURL *curl, const char *header)</h2>
+<h2 id="int-curl_wrap_add_headercurl-curl-const-char-header">int curl_wrap_add_header(CURL *curl, const char *header)</h2>
 
 <p>Add a header to a CURL operation.</p>
 
 <p>Returns the prepared CURL request.</p>
 
-<h2 id="int-curlwrapaddheadervaluecurl-curl-const-char-name-const-char-value">int curl_wrap_add_header_value(CURL *curl, const char *name, const char *value)</h2>
+<h2 id="int-curl_wrap_add_header_valuecurl-curl-const-char-name-const-char-value">int curl_wrap_add_header_value(CURL *curl, const char *name, const char *value)</h2>
 
 <p>Add a tuple <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">value</code> to the header of a CURL operation.</p>
 
 <p>Returns the prepared CURL request.</p>
 
-<h2 id="curl-curlwrapprepareposturldataconst-char-url-const-char-datatype-const-char-data-sizet-szdata">CURL *curl_wrap_prepare_post_url_data(const char *url, const char *datatype, const char *data, size_t szdata)</h2>
+<h2 id="curl-curl_wrap_prepare_post_url_dataconst-char-url-const-char-datatype-const-char-data-size_t-szdata">CURL *curl_wrap_prepare_post_url_data(const char *url, const char *datatype, const char *data, size_t szdata)</h2>
 
 <p>Prepare a POST CURL operation on the provided <code class="highlighter-rouge">url</code>.</p>
 
@@ -2564,7 +2564,7 @@ decomposed in 3 parts:</p>
 
 <p>Returns the prepared CURL request.</p>
 
-<h2 id="curl-curlwrappreparepostsimpleunescapedconst-char-base-const-char-path-const-char-args">CURL *curl_wrap_prepare_post_simple_unescaped(const char *base, const char *path, const char *args)</h2>
+<h2 id="curl-curl_wrap_prepare_post_simple_unescapedconst-char-base-const-char-path-const-char-args">CURL *curl_wrap_prepare_post_simple_unescaped(const char *base, const char *path, const char *args)</h2>
 
 <p>Prepare a POST CURL operation on an unescaped <code class="highlighter-rouge">url</code> with arguments provided as
 a simple string.</p>
@@ -2577,7 +2577,7 @@ a simple string.</p>
 
 <p>Returns the prepared CURL request.</p>
 
-<h2 id="curl-curlwrappreparepostsimpleescapedconst-char-base-const-char-path-char-args">CURL *curl_wrap_prepare_post_simple_escaped(const char *base, const char *path, char *args)</h2>
+<h2 id="curl-curl_wrap_prepare_post_simple_escapedconst-char-base-const-char-path-char-args">CURL *curl_wrap_prepare_post_simple_escaped(const char *base, const char *path, char *args)</h2>
 
 <p>Prepare a POST CURL operation on an escaped <code class="highlighter-rouge">url</code> with arguments provided as
 a simple string.</p>
@@ -2590,7 +2590,7 @@ a simple string.</p>
 
 <p>Returns the prepared CURL request.</p>
 
-<h2 id="curl-curlwrappreparepostunescapedconst-char-base-const-char-path-const-char-separator-const-char--const-args">CURL *curl_wrap_prepare_post_unescaped(const char *base, const char *path, const char *separator, const char * const *args)</h2>
+<h2 id="curl-curl_wrap_prepare_post_unescapedconst-char-base-const-char-path-const-char-separator-const-char--const-args">CURL *curl_wrap_prepare_post_unescaped(const char *base, const char *path, const char *separator, const char * const *args)</h2>
 
 <p>Prepare a POST CURL operation on an unescaped <code class="highlighter-rouge">url</code> with arguments provided as
 an array of string concatened with a provided separator string.</p>
@@ -2604,7 +2604,7 @@ an array of string concatened with a provided separator string.</p>
 
 <p>Returns the prepared CURL request.</p>
 
-<h2 id="curl-curlwrappreparepostescapedconst-char-base-const-char-path-const-char--const-args">CURL *curl_wrap_prepare_post_escaped(const char *base, const char *path, const char * const *args)</h2>
+<h2 id="curl-curl_wrap_prepare_post_escapedconst-char-base-const-char-path-const-char--const-args">CURL *curl_wrap_prepare_post_escaped(const char *base, const char *path, const char * const *args)</h2>
 
 <p>Prepare a POST CURL operation on an unescaped <code class="highlighter-rouge">url</code> with arguments provided as
 an array of string concatened without any separator.</p>
@@ -2696,7 +2696,7 @@ an array of string concatened without any separator.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:07 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:18 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libafb-helpers/plain/docs/curl-wrap.md?h=icefish">Link to source document</small>
 		
@@ -2728,6 +2728,16 @@ an array of string concatened without any separator.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

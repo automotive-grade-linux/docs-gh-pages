@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -635,7 +635,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -897,7 +897,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -1065,9 +1065,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -1092,7 +1092,7 @@ See the
 <p>This section describes the steps you need to take to build the
 AGL demo image for both the Raspberry PI 3 and 4 boards.</p>
 
-<h2 id="making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
+<h2 id="1-making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
 
 <p>The
 “<a href="../image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
@@ -1108,17 +1108,15 @@ the AGL demo image suited for either Raspberry PI 3 or 4:</p>
 
 <p><strong>Raspberry PI 3</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m raspberrypi3 agl-demo agl-netboot agl-appfw-smack
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh <span class="nt">-m</span> raspberrypi3 agl-demo agl-netboot agl-appfw-smack
+</code></pre></div></div>
 
 <p><strong>Raspberry PI 4</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m raspberrypi4 agl-demo agl-netboot agl-appfw-smack
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh <span class="nt">-m</span> raspberrypi4 agl-demo agl-netboot agl-appfw-smack
+</code></pre></div></div>
 
-<h2 id="configuring-the-build-to-include-packages-under-a-commercial-license">2. Configuring the Build to Include Packages Under a Commercial License</h2>
+<h2 id="2-configuring-the-build-to-include-packages-under-a-commercial-license">2. Configuring the Build to Include Packages Under a Commercial License</h2>
 
 <p>Before launching the build, it is good to be sure your build
 configuration is set up correctly (<code class="highlighter-rouge">/build/conf/local.conf</code> file).
@@ -1137,14 +1135,13 @@ commercial license.</p>
 If so, you must include the following two lines in your
 <code class="highlighter-rouge">/build/conf/local.conf</code> file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># For libomxil</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For libomxil</span>
 LICENSE_FLAGS_WHITELIST <span class="o">=</span> <span class="s2">"commercial"</span>
 
 IMAGE_INSTALL_append <span class="o">=</span> <span class="s2">" libomxil"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="using-bitbake">3. Using BitBake</h2>
+<h2 id="3-using-bitbake">3. Using BitBake</h2>
 
 <p>This section shows the <code class="highlighter-rouge">bitbake</code> command used to build the AGL image.</p>
 
@@ -1156,9 +1153,8 @@ You can find this pre-built image on the
 
 <p>For the supported image, the filename has the following form:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/raspberrypi3/deploy/images/raspberrypi3/*
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/raspberrypi3/deploy/images/raspberrypi3/*
+</code></pre></div></div>
 
 <p>Start the build using the <code class="highlighter-rouge">bitbake</code> command.</p>
 
@@ -1168,20 +1164,18 @@ The build also takes approximately 100G-bytes of free disk space.</p>
 
 <p>For this example, the target is “agl-demo-platform”:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>bitbake agl-demo-platform
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bitbake agl-demo-platform
+</code></pre></div></div>
 
 <p>By default, the build process puts the resulting image in the Build Directory.
 Here is example for the Raspberry PI 4 board:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/raspberrypi4/agl-demo-platform-raspberrypi4.wic.xz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/raspberrypi4/agl-demo-platform-raspberrypi4.wic.xz
+</code></pre></div></div>
 
 <p>If you build for the Raspberry PI 3 board, the location uses “raspberrypi3” in the path.</p>
 
-<h2 id="deploying-the-agl-demo-image">4. Deploying the AGL Demo Image</h2>
+<h2 id="4-deploying-the-agl-demo-image">4. Deploying the AGL Demo Image</h2>
 
 <p>Deploying the AGL demo image consists of copying the image on a MicroSD card,
 plugging the card into the Raspberry PI board, and then booting the board.</p>
@@ -1198,20 +1192,19 @@ the image on the Raspberry PI 3 or 4 board:</p>
 
     <p>Use the <code class="highlighter-rouge">dmesg</code> command as follows to discover the device name:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>dmesg | tail -4
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dmesg | tail <span class="nt">-4</span>
 <span class="o">[</span> 1971.462160] sd 6:0:0:0: <span class="o">[</span>sdc] Mode Sense: 03 00 00 00
 <span class="o">[</span> 1971.462277] sd 6:0:0:0: <span class="o">[</span>sdc] No Caching mode page found
 <span class="o">[</span> 1971.462278] sd 6:0:0:0: <span class="o">[</span>sdc] Assuming drive cache: write through
 <span class="o">[</span> 1971.463870]  sdc: sdc1 sdc2
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>In the previous example, the MicroSD card is attached to the device <code class="highlighter-rouge">/dev/sdc</code>.</p>
 
     <p>You can also use the <code class="highlighter-rouge">lsblk</code> command to show all your devices.
 Here is an example that shows the MicroSD card as <code class="highlighter-rouge">/dev/sdc</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>lsblk
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>lsblk
   NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
   sda      8:0    0 167,7G  0 disk
   ├─sda1   8:1    0   512M  0 part /boot/efi
@@ -1222,8 +1215,7 @@ Here is an example that shows the MicroSD card as <code class="highlighter-rouge
   sdc      8:32   1  14,9G  0 disk
   ├─sdc1   8:33   1    40M  0 part
   └─sdc2   8:34   1   788M  0 part
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p><strong>IMPORTANT NOTE:</strong> Before re-writing any device on your Build Host, you need to
 be sure you are actually writing to the removable MicroSD card and not some other
@@ -1255,18 +1247,17 @@ For Raspberry PI 4, the image is at <code class="highlighter-rouge">build/tmp/de
     <p>Be sure you are root, provide the actual device name for <em>sdcard_device_name</em>, and the actual
 image name for <em>image_name</em>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo umount &lt;sdcard_device_name&gt;
-<span class="gp">$ </span>xzcat &lt;image_name&gt; | sudo dd <span class="nv">of</span><span class="o">=</span>&lt;sdcard_device_name&gt; <span class="nv">bs</span><span class="o">=</span>4M
-<span class="gp">$ </span>sync
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>umount &lt;sdcard_device_name&gt;
+<span class="nv">$ </span>xzcat &lt;image_name&gt; | <span class="nb">sudo </span>dd <span class="nv">of</span><span class="o">=</span>&lt;sdcard_device_name&gt; <span class="nv">bs</span><span class="o">=</span>4M
+<span class="nv">$ </span>sync
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Plug your MicroSD card into the Raspberry PI board and boot the device.</p>
   </li>
 </ol>
 
-<h2 id="using-the-raspberry-pi-touch-display">5. Using the Raspberry PI Touch Display</h2>
+<h2 id="5-using-the-raspberry-pi-touch-display">5. Using the Raspberry PI Touch Display</h2>
 
 <p>If you have connected the official
 <a href="https://www.raspberrypi.org/products/raspberry-pi-touch-display/">Raspberry PI Touch Display</a>,
@@ -1294,7 +1285,7 @@ See the following references for more information:</p>
 the following edits to the <code class="highlighter-rouge">weston.ini</code> file used to rotate the
 display:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@raspberrypi3:/etc/xdg/weston# </span>cat weston.ini
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@raspberrypi3:/etc/xdg/weston# <span class="nb">cat </span>weston.ini
 <span class="o">[</span>core]
 <span class="nv">backend</span><span class="o">=</span>drm-backend.so
 <span class="nv">shell</span><span class="o">=</span>desktop-shell.so
@@ -1315,10 +1306,9 @@ display:</p>
 <span class="o">[</span>output]
 <span class="nv">name</span><span class="o">=</span>DSI-1
 <span class="nv">transform</span><span class="o">=</span>270
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="debugging">6. Debugging</h2>
+<h2 id="6-debugging">6. Debugging</h2>
 
 <p>When things go wrong, you can take steps to debug your Raspberry PI.
 For debugging, you need a 3.3 Volt USB Serial cable to fascilitate
@@ -1368,9 +1358,8 @@ and your Raspberry PI.
 For example, if your build host is a native Linux machine (e.g. Ubuntu)
 you could use <code class="highlighter-rouge">screen</code> as follows from a terminal on the build host:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo screen /dev/ttyUSB0 115200
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>screen /dev/ttyUSB0 115200
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1453,7 +1442,7 @@ you could use <code class="highlighter-rouge">screen</code> as follows from a te
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:16 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:27 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/halibut/docs/getting-started/machines/raspberrypi.md">Link to source document</small>
 		
@@ -1485,6 +1474,16 @@ you could use <code class="highlighter-rouge">screen</code> as follows from a te
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2512,7 +2512,7 @@
  to release the context pointer by example.</li>
 </ul>
 
-<h2 id="void-timerevtstartafbapit-api-timerhandlet-timerhandle-timercallbackt-callback-void-context">void TimerEvtStart(afb_api_t api, TimerHandleT *timerHandle, timerCallbackT callback, void *context)</h2>
+<h2 id="void-timerevtstartafb_api_t-api-timerhandlet-timerhandle-timercallbackt-callback-void-context">void TimerEvtStart(afb_api_t api, TimerHandleT *timerHandle, timerCallbackT callback, void *context)</h2>
 
 <p>Start a timer which invokes the callback when the delay expires for <code class="highlighter-rouge">count</code>
 times.</p>
@@ -2533,7 +2533,7 @@ the timer and no other runs will occur.</p>
   <li><code class="highlighter-rouge">timerHandle</code>: pointer to struct representing a timer.</li>
 </ul>
 
-<h2 id="uint64t-lockwaitafbapit-api-uint64t-utimeout">uint64_t LockWait(afb_api_t api, uint64_t utimeout)</h2>
+<h2 id="uint64_t-lockwaitafb_api_t-api-uint64_t-utimeout">uint64_t LockWait(afb_api_t api, uint64_t utimeout)</h2>
 
 <p>It is function acting like a non-blocking sleep for an API. It lets the main API
 event loop runs while you are waiting and will unlock at the first received
@@ -2629,7 +2629,7 @@ events occured and timeout hits</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:02 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:14 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libafb-helpers/plain/docs/afb-timer.md?h=icefish">Link to source document</small>
 		
@@ -2661,6 +2661,16 @@ events occured and timeout hits</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1384,7 +1384,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2047,7 +2047,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2215,9 +2215,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2295,9 +2295,8 @@ docker
 Enter the following command to display the system’s groups and
 then search for and list the Docker groups:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>groups | grep docker
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>groups | <span class="nb">grep </span>docker
+</code></pre></div>    </div>
 
     <p>If the users that plan on using the container are not part of the
 Docker group or the group does not exist, you must take steps.
@@ -2306,16 +2305,15 @@ for details on creating a Docker group and adding users.</p>
 
     <p>Following is a summary of the key commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>sudo groupadd docker
-sudo usermod -aG docker <span class="nv">$USER</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>groupadd docker
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
 <span class="c"># Log out and re-login so the system can re-evaluate the group membership</span>
 <span class="c"># You might also need to start docker service manually</span>
 
-sudo service docker start
+<span class="nb">sudo </span>service docker start
 <span class="c"># or</span>
-sudo systemctl start docker
-</code></pre>
-    </div>
+<span class="nb">sudo </span>systemctl start docker
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -2324,34 +2322,31 @@ sudo systemctl start docker
 <p>Use the following command to load the pre-built AGL
 SDK Docker image, which includes <code class="highlighter-rouge">xds-server</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>wget -O - http://iot.bzh/download/public/XDS/docker/docker_agl_worker-xds-latest.tar.xz | docker load
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-O</span> - http://iot.bzh/download/public/XDS/docker/docker_agl_worker-xds-latest.tar.xz | docker load
+</code></pre></div></div>
 
 <p>The following command lists and displays information about the image:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker images <span class="s2">"docker.automotivelinux.org/agl/worker-xds*"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker images <span class="s2">"docker.automotivelinux.org/agl/worker-xds*"</span>
 
 REPOSITORY                                  TAG                 IMAGE ID            CREATED             SIZE
 docker.automotivelinux.org/agl/worker-xds   5.0                 877979e534ff        3 hours ago         106MB
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="create-and-start-a-new-container">Create and Start a New Container</h3>
 
 <p>Running the following script creates a new Docker image and starts a new container:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Get script</span>
-wget -O xds-docker-create-container.sh <span class="s1">'https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/xds/xds-server.git;a=blob_plain;f=scripts/xds-docker-create-container.sh;hb=master'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get script</span>
+wget <span class="nt">-O</span> xds-docker-create-container.sh <span class="s1">'https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/xds/xds-server.git;a=blob_plain;f=scripts/xds-docker-create-container.sh;hb=master'</span>
 
 <span class="c"># Create new XDS worker container (change the -id option value if you get a port conflict error)</span>
-bash ./xds-docker-create-container.sh -id 0
+bash ./xds-docker-create-container.sh <span class="nt">-id</span> 0
 
 <span class="c"># Be sure the new container is running</span>
-docker ps | grep worker-xds
+docker ps | <span class="nb">grep </span>worker-xds
 f67079db4339        docker.automotivelinux.org/agl/worker-xds:5.0   <span class="s2">"/usr/bin/wait_for..."</span>   About a minute ago   Up 34 seconds       0.0.0.0:8000-&gt;8000/tcp,0.0.0.0:10809-&gt;10809/tcp, 0.0.0.0:2222-&gt;22/tcp   agl-xds-HOSTNAME-0-USERNAME
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In the previous example, the container exposes following ports:</p>
 
@@ -2418,25 +2413,23 @@ For more detailed <code class="highlighter-rouge">xds-server</code> configuratio
     <p>Adds a new shared directory using the <code class="highlighter-rouge">--volume</code> option (e.g.
 used with Path-Mapping folder types):</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create new XDS worker container and share extra '$HOME/my-workspace' directory</span>
-bash ./xds-docker-create-container.sh --volume /my-workspace:<span class="nv">$HOME</span>/my-workspace
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create new XDS worker container and share extra '$HOME/my-workspace' directory</span>
+bash ./xds-docker-create-container.sh <span class="nt">--volume</span> /my-workspace:<span class="nv">$HOME</span>/my-workspace
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong><code class="highlighter-rouge">--id</code></strong></p>
 
     <p>Changes the port used by Docker:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create new XDS worker container with a different port number</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create new XDS worker container with a different port number</span>
 <span class="nv">ID</span><span class="o">=</span>3
-bash ./xds-docker-create-container.sh -id <span class="k">${</span><span class="nv">ID</span><span class="k">}</span>
+bash ./xds-docker-create-container.sh <span class="nt">-id</span> <span class="k">${</span><span class="nv">ID</span><span class="k">}</span>
 
 <span class="c"># Check that new container is running (in example below id has been set to 3)</span>
-docker ps | grep worker-xds
+docker ps | <span class="nb">grep </span>worker-xds
 f67079db4339        docker.automotivelinux.org/agl/worker-xds:5.0   <span class="s2">"/usr/bin/wait_for..."</span>   About a   minute ago   Up 34 seconds       0.0.0.0:2225-&gt;22/tcp, 0.0.0.0:8003-&gt;8000/tcp, 0.0.0.0:10892-&gt;10809/tcp   agl-xds-3
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <!-- section-note -->
     <p><strong>WARNING:</strong>
@@ -2448,17 +2441,16 @@ to match the correct port number.</p>
 port number is <code class="highlighter-rouge">8003</code>.
 In this case, you must define “url” in the <code class="highlighter-rouge">xds-server</code> configuration as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
-    </span><span class="nt">"xdsServers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"xdsServers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8003"</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8003"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="err">...</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-    </div>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
 
     <p>For more information, see the
 <a href="../part-2/2_xds-agent/2_config.html">xds-agent configuration</a> section.
@@ -2483,27 +2475,26 @@ Docker container, the user uid/gid inside Docker has already been changed.
 
 <p>Use following commands to replace ID <code class="highlighter-rouge">1664</code> with your user and group ID:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set the Docker container name (e.g. agl-xds-xxx where xxx is USERNAME@MACHINENAME-IDX-NAME).</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set the Docker container name (e.g. agl-xds-xxx where xxx is USERNAME@MACHINENAME-IDX-NAME).</span>
 <span class="nb">export </span><span class="nv">CONTAINER_NAME</span><span class="o">=</span>agl-xds-seb@laptop-0-seb
-docker ps | grep -q <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"ERROR: No container name </span><span class="se">\"</span><span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span><span class="se">\"</span><span class="s2"> please set a valid CONTAINER_NAME before you continue"</span>
+docker ps | <span class="nb">grep</span> <span class="nt">-q</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"ERROR: No container name </span><span class="se">\"</span><span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span><span class="se">\"</span><span class="s2"> please set a valid CONTAINER_NAME before you continue"</span>
 
 <span class="c"># Kill all processes of with the user ID `devel`. This includes the running xds-server.</span>
-docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"/bin/loginctl kill-user devel"</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash <span class="nt">-c</span> <span class="s2">"/bin/loginctl kill-user devel"</span>
 
 <span class="c"># Change user and group IDs inside Docker to match your user and group IDs.</span>
-docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"usermod -u </span><span class="k">$(</span>id -u<span class="k">)</span><span class="s2"> devel"</span>
-docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"groupmod -g </span><span class="k">$(</span>id -g<span class="k">)</span><span class="s2"> devel"</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash <span class="nt">-c</span> <span class="s2">"usermod -u </span><span class="k">$(</span>id <span class="nt">-u</span><span class="k">)</span><span class="s2"> devel"</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash <span class="nt">-c</span> <span class="s2">"groupmod -g </span><span class="k">$(</span>id <span class="nt">-g</span><span class="k">)</span><span class="s2"> devel"</span>
 
 <span class="c"># Update file ownerships.</span>
-docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"chown -R devel:devel /home/devel /tmp/xds*"</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash <span class="nt">-c</span> <span class="s2">"chown -R devel:devel /home/devel /tmp/xds*"</span>
 
 <span class="c"># Restart the devel autologin service.</span>
-docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash -c <span class="s2">"systemctl restart autologin"</span>
+docker <span class="nb">exec</span> <span class="k">${</span><span class="nv">CONTAINER_NAME</span><span class="k">}</span> bash <span class="nt">-c</span> <span class="s2">"systemctl restart autologin"</span>
 
 <span class="c"># Restart xds-server as a service. The ssh port 2222 might depend on your container ID.</span>
-ssh -p 2222 devel@localhost -- <span class="s2">"systemctl --user restart xds-server"</span>
-</code></pre>
-</div>
+ssh <span class="nt">-p</span> 2222 devel@localhost <span class="nt">--</span> <span class="s2">"systemctl --user restart xds-server"</span>
+</code></pre></div></div>
 
 <h3 id="check-if-xds-server-is-running-open-xds-webapp">Check if xds-server is Running (open XDS webapp)</h3>
 
@@ -2513,26 +2504,24 @@ user service.</p>
 <p>If the container is running on your localhost, you can access a basic web
 application to check on <code class="highlighter-rouge">xds-server</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xdg-open http://localhost:8000
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xdg-open http://localhost:8000
+</code></pre></div></div>
 
 <p>From a shell prompt, you can check status, stop, and start <code class="highlighter-rouge">xds-server</code>
 using the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Status XDS server</span>
-ssh -p 2222 devel@localhost systemctl --user status xds-server.service
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Status XDS server</span>
+ssh <span class="nt">-p</span> 2222 devel@localhost systemctl <span class="nt">--user</span> status xds-server.service
 
 <span class="c"># Stop XDS server</span>
-ssh -p 2222 devel@localhost systemctl --user stop xds-server.service
+ssh <span class="nt">-p</span> 2222 devel@localhost systemctl <span class="nt">--user</span> stop xds-server.service
 
 <span class="c"># Start XDS server</span>
-ssh -p 2222 devel@localhost systemctl --user start xds-server.service
+ssh <span class="nt">-p</span> 2222 devel@localhost systemctl <span class="nt">--user</span> start xds-server.service
 
 <span class="c"># Get XDS server logs</span>
-ssh -p 2222 devel@localhost journalctl --user --unit<span class="o">=</span>xds-server.service --output<span class="o">=</span>cat
-</code></pre>
-</div>
+ssh <span class="nt">-p</span> 2222 devel@localhost journalctl <span class="nt">--user</span> <span class="nt">--unit</span><span class="o">=</span>xds-server.service <span class="nt">--output</span><span class="o">=</span><span class="nb">cat</span>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">xds-server</code> should be up and running.
 You can now install AGL SDKs.
@@ -2560,9 +2549,8 @@ For information on how to install VirtualBox, see the
 <p>Use the following command to load the pre-built AGL SDK
 appliance image, which includes <code class="highlighter-rouge">xds-server</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>wget http://iot.bzh/download/public/XDS/appliance/xds-vm-debian9_latest.ova
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://iot.bzh/download/public/XDS/appliance/xds-vm-debian9_latest.ova
+</code></pre></div></div>
 
 <h3 id="clean-the-old-appliance">Clean the Old Appliance</h3>
 
@@ -2570,47 +2558,43 @@ appliance image, which includes <code class="highlighter-rouge">xds-server</code
 Consequently, you must remove any existing XDS appliance.
 Use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Get the virtual machine name</span>
-<span class="nv">VDS_VMNAME</span><span class="o">=</span><span class="k">$(</span>VBoxManage list vms | grep xds-vm-debian | cut -d <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> -f2<span class="k">)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get the virtual machine name</span>
+<span class="nv">VDS_VMNAME</span><span class="o">=</span><span class="k">$(</span>VBoxManage list vms | <span class="nb">grep </span>xds-vm-debian | cut <span class="nt">-d</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> <span class="nt">-f2</span><span class="k">)</span>
 <span class="nb">echo</span> <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span>
 
 <span class="c"># Remove the old XDS appliance</span>
-<span class="o">[</span> -n <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage controlvm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> poweroff
-<span class="o">[</span> -n <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage unregistervm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> --delete
-</code></pre>
-</div>
+<span class="o">[</span> <span class="nt">-n</span> <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage controlvm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> poweroff
+<span class="o">[</span> <span class="nt">-n</span> <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage unregistervm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="nt">--delete</span>
+</code></pre></div></div>
 
 <h3 id="create-and-start-a-new-appliance">Create and Start a New Appliance</h3>
 
 <p>You can create a new appliance by using a provided script or by
 using the VirtualBox GUI:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Import image into VirtualBox</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Import image into VirtualBox</span>
 VBoxManage import ./xds-vm-debian9_latest.ova
 
 <span class="c"># Check import result</span>
-<span class="nv">VDS_VMNAME</span><span class="o">=</span><span class="k">$(</span>VBoxManage list vms | grep xds-vm-debian | cut -d <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> -f2<span class="k">)</span>
+<span class="nv">VDS_VMNAME</span><span class="o">=</span><span class="k">$(</span>VBoxManage list vms | <span class="nb">grep </span>xds-vm-debian | cut <span class="nt">-d</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> <span class="nt">-f2</span><span class="k">)</span>
 <span class="nb">echo</span> <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Add a share folder to the appliance.
 You must use “path-mapping sharing type for projects”:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create local share folder</span>
-mkdir -p <span class="nv">$HOME</span>/xds-workspace
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create local share folder</span>
+mkdir <span class="nt">-p</span> <span class="nv">$HOME</span>/xds-workspace
 
 <span class="c">#Add share folder to appliance</span>
-VBoxManage sharedfolder add <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> --name XDS-workspace --hostpath <span class="nv">$HOME</span>/xds-workspace
-</code></pre>
-</div>
+VBoxManage sharedfolder add <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="nt">--name</span> XDS-workspace <span class="nt">--hostpath</span> <span class="nv">$HOME</span>/xds-workspace
+</code></pre></div></div>
 
 <p>Use the following command to start the appliance:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Start XDS appliance</span>
-<span class="o">[</span> -n <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage startvm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start XDS appliance</span>
+<span class="o">[</span> <span class="nt">-n</span> <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> VBoxManage startvm <span class="k">${</span><span class="nv">VDS_VMNAME</span><span class="k">}</span>
+</code></pre></div></div>
 
 <h3 id="appliance-settings">Appliance Settings</h3>
 
@@ -2628,11 +2612,10 @@ VBoxManage sharedfolder add <span class="k">${</span><span class="nv">VDS_VMNAME
 <p>To check if <code class="highlighter-rouge">xds-server</code> is correctly installed and running, you can access the
 XDS basic web page and refer to the instructions:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># If the container/appliance is running on your local host</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If the container/appliance is running on your local host</span>
 <span class="c"># (else replace localhost with the name or the ip of the machine running the container)</span>
 xdg-open http://localhost:8000
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">xds-server</code> should be up and running.
 You can now install AGL SDKs.
@@ -2660,45 +2643,43 @@ installation of the server part.
 <p>Use the following commands to install packages for
 <code class="highlighter-rouge">xds-server</code> on Debian-based systems:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set 'DISTRO' (e.g. xUbuntu_16.04, xUbuntu_16.10, xUbuntu_17.04, Debian_8.0, Debian_9.0)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set 'DISTRO' (e.g. xUbuntu_16.04, xUbuntu_16.10, xUbuntu_17.04, Debian_8.0, Debian_9.0)</span>
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"xUbuntu_16.04"</span>
 
 <span class="c"># Set AGL_RELEASE (e.g. AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master)</span>
 <span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
 
-wget -O - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | sudo apt-key add -
-sudo bash -c <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
+wget <span class="nt">-O</span> - http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/Release.key | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>bash <span class="nt">-c</span> <span class="s2">"cat &gt;&gt; /etc/apt/sources.list.d/AGL.list &lt;&lt;EOF
 deb http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/</span><span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span><span class="s2">/ ./
 EOF"</span>
 
-sudo apt-get update
-sudo apt-get install agl-xds-server
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get install agl-xds-server
 
 <span class="c"># Install python3</span>
-sudo apt-get install python3
-</code></pre>
-</div>
+<span class="nb">sudo </span>apt-get install python3
+</code></pre></div></div>
 
 <h4 id="install-packages-for-opensuse">Install Packages for OpenSUSE</h4>
 
 <p>Use the following commands to install packages for
 <code class="highlighter-rouge">xds-server</code> on OpenSUSE-based systems:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Set DISTRO (openSUSE_Leap_42.3, openSUSE_Leap_15.0, openSUSE_Tumbleweed)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set DISTRO (openSUSE_Leap_42.3, openSUSE_Leap_15.0, openSUSE_Tumbleweed)</span>
 <span class="nb">export </span><span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"openSUSE_Leap_15.0"</span>
 
 <span class="c"># Set AGL_RELEASE (AGL_ElectricEel, AGL_FunkyFlounder, AGL_Master)</span>
 <span class="nb">export </span><span class="nv">AGL_RELEASE</span><span class="o">=</span><span class="s2">"AGL_Master"</span>
 
-sudo zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>.repo
+<span class="nb">sudo </span>zypper ar http://download.opensuse.org/repositories/isv:/LinuxAutomotive:/<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>/<span class="k">${</span><span class="nv">DISTRO</span><span class="k">}</span>/isv:LinuxAutomotive:<span class="k">${</span><span class="nv">AGL_RELEASE</span><span class="k">}</span>.repo
 
-sudo zypper ref
-sudo zypper install agl-xds-server
+<span class="nb">sudo </span>zypper ref
+<span class="nb">sudo </span>zypper install agl-xds-server
 
 <span class="c"># Install python3</span>
-sudo zypper install python3
-</code></pre>
-</div>
+<span class="nb">sudo </span>zypper install python3
+</code></pre></div></div>
 
 <h4 id="configure-the-xds-server">Configure the xds-server</h4>
 
@@ -2718,32 +2699,29 @@ section for details on the JSON configuration file.</p>
 <a href="https://en.wikipedia.org/wiki/Systemd">systemd</a> service by using
 the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Status XDS server:</span>
-systemctl --user status xds-server.service
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Status XDS server:</span>
+systemctl <span class="nt">--user</span> status xds-server.service
 
 <span class="c"># Stop XDS server</span>
-systemctl --user stop xds-server.service
+systemctl <span class="nt">--user</span> stop xds-server.service
 
 <span class="c"># Start XDS server</span>
-systemctl --user start xds-server.service
+systemctl <span class="nt">--user</span> start xds-server.service
 
 <span class="c"># Get XDS server logs</span>
-systemctl --user --unit<span class="o">=</span>xds-server.service --output<span class="o">=</span>cat
-</code></pre>
-</div>
+systemctl <span class="nt">--user</span> <span class="nt">--unit</span><span class="o">=</span>xds-server.service <span class="nt">--output</span><span class="o">=</span><span class="nb">cat</span>
+</code></pre></div></div>
 
 <p>To check if <code class="highlighter-rouge">xds-server</code> is correctly installed and running, you can access
 the XDS web interface through your browser:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>xdg-open http://localhost:8000
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xdg-open http://localhost:8000
+</code></pre></div></div>
 
 <p>Alternatively, you can use the following <code class="highlighter-rouge">curl</code> command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl http://localhost:8000/api/v1/version
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://localhost:8000/api/v1/version
+</code></pre></div></div>
 
 
 
@@ -2825,7 +2803,7 @@ the XDS web interface through your browser:</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:17 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:28 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/server-part.md?h=flounder">Link to source document</small>
 		
@@ -2857,6 +2835,16 @@ the XDS web interface through your browser:</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

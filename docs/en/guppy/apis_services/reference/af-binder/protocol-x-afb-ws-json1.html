@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1684,7 +1684,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2527,7 +2527,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2695,9 +2695,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2738,24 +2738,21 @@ A more formal description has to be done.</p>
 
 <p>Valid messages are:</p>
 
-<p>Calls:
-<code class="highlighter-rouge">
-[ 2, ID, PROCN, ARGS ]
+<p>Calls:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 2, ID, PROCN, ARGS ]
 [ 2, ID, PROCN, ARGS, TOKEN ]
-</code></p>
+</code></pre></div></div>
 
-<p>Replies (3: OK, 4: ERROR):
-<code class="highlighter-rouge">
-[ 3, ID, RESP ]
+<p>Replies (3: OK, 4: ERROR):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 3, ID, RESP ]
 [ 3, ID, RESP, TOKEN ]
 [ 4, ID, RESP ]
 [ 4, ID, RESP, TOKEN ]
-</code></p>
+</code></pre></div></div>
 
-<p>Events:
-<code class="highlighter-rouge">
-[ 5, EVTN, OBJ ]
-</code></p>
+<p>Events:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ 5, EVTN, OBJ ]
+</code></pre></div></div>
 
 <p>Where:</p>
 
@@ -2808,10 +2805,9 @@ A more formal description has to be done.</p>
 
 <p>Below, an example of exchange:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>C-&gt;S:   [2,"156","hello/ping",null]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C-&gt;S:   [2,"156","hello/ping",null]
 S-&gt;C:   [3,"156",{"response":"Some String","jtype":"afb-reply","request":{"status":"success","info":"Ping Binder Daemon tag=pingSample count=1 query=\"null\"","uuid":"ec30120c-6997-4529-9d63-c0de0cce56c0"}}]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="future">Future</h2>
 
@@ -2831,7 +2827,7 @@ allowing the binder to accept either protocol including the new ones.</p>
 
 <p>Here is that code:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cm">/*
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
  * Copyright (C) 2017, 2018 "IoT.bzh"
  * Author: José Bollo &lt;jose.bollo@iot.bzh&gt;
  *
@@ -2877,10 +2873,10 @@ allowing the binder to accept either protocol including the new ones.</p>
 	<span class="p">}</span>
 
 	<span class="nx">context</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-		<span class="nx">get</span> <span class="nx">token</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">TOKEN</span><span class="p">;},</span>
-		<span class="nx">set</span> <span class="nx">token</span><span class="p">(</span><span class="nx">tok</span><span class="p">)</span> <span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="nx">tok</span><span class="p">)</span> <span class="nx">TOKEN</span><span class="o">=</span><span class="nx">tok</span><span class="p">;},</span>
-		<span class="nx">get</span> <span class="nx">uuid</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">UUID</span><span class="p">;},</span>
-		<span class="nx">set</span> <span class="nx">uuid</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="nx">UUID</span><span class="o">=</span><span class="nx">id</span><span class="p">;}</span>
+		<span class="kd">get</span> <span class="nx">token</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">TOKEN</span><span class="p">;},</span>
+		<span class="kd">set</span> <span class="nx">token</span><span class="p">(</span><span class="nx">tok</span><span class="p">)</span> <span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="nx">tok</span><span class="p">)</span> <span class="nx">TOKEN</span><span class="o">=</span><span class="nx">tok</span><span class="p">;},</span>
+		<span class="kd">get</span> <span class="nx">uuid</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nx">UUID</span><span class="p">;},</span>
+		<span class="kd">set</span> <span class="nx">uuid</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span><span class="k">if</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="nx">UUID</span><span class="o">=</span><span class="nx">id</span><span class="p">;}</span>
 	<span class="p">};</span>
 
 	<span class="nx">AFB_context</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">context</span><span class="p">();</span>
@@ -2998,7 +2994,7 @@ allowing the binder to accept either protocol including the new ones.</p>
 	<span class="p">}</span>
 
 	<span class="kd">function</span> <span class="nx">call</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">request</span><span class="p">,</span> <span class="nx">callid</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">){</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">){</span>
 			<span class="kd">var</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">arr</span><span class="p">;</span>
 			<span class="k">if</span> <span class="p">(</span><span class="nx">callid</span><span class="p">)</span> <span class="p">{</span>
 				<span class="nx">id</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">callid</span><span class="p">);</span>
@@ -3038,8 +3034,7 @@ allowing the binder to accept either protocol including the new ones.</p>
 	<span class="na">ws</span><span class="p">:</span> <span class="nx">AFB_websocket</span>
 <span class="p">};</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -3120,7 +3115,7 @@ allowing the binder to accept either protocol including the new ones.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:16 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:27 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/protocol-x-afb-ws-json1.md?h=guppy">Link to source document</small>
 		
@@ -3152,6 +3147,16 @@ allowing the binder to accept either protocol including the new ones.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

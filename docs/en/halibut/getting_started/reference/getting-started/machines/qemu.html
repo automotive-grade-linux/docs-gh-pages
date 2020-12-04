@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -635,7 +635,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -897,7 +897,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -1065,9 +1065,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -1086,7 +1086,7 @@ image without actual target hardware.</p>
 AGL demo image for emulation using either Quick EMUlator (QEMU) or
 VirtualBox.</p>
 
-<h2 id="making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
+<h2 id="1-making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
 
 <p>The
 “<a href="../image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
@@ -1095,15 +1095,14 @@ using the <code class="highlighter-rouge">aglsetup.sh</code> script.
 If you are building the AGL demo image for emulation, you need to specify some
 specific options when you run the script:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -f -m qemux86-64 agl-demo agl-devel
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source </span>meta-agl/scripts/aglsetup.sh <span class="nt">-f</span> <span class="nt">-m</span> qemux86-64 agl-demo agl-devel
+</code></pre></div></div>
 
 <p>The “-m” option specifies the “qemux86-64” machine.
 The list of AGL features used with script are appropriate for development of
 the AGL demo image suited for either QEMU or VirtualBox.</p>
 
-<h2 id="using-bitbake">2. Using BitBake</h2>
+<h2 id="2-using-bitbake">2. Using BitBake</h2>
 
 <p>This section shows the <code class="highlighter-rouge">bitbake</code> command used to build the AGL image.
 Before running BitBake to start your build, it is good to be reminded that AGL
@@ -1114,11 +1113,10 @@ You can find these pre-built images on the
 
 <p>For supported images, the filenames have the following forms:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/qemuarm/*
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/qemuarm/*
 &lt;release-name&gt;/&lt;release-number&gt;/qemuarm64/*
 &lt;release-name&gt;/&lt;release-number&gt;/qemux86-64/*
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Start the build using the <code class="highlighter-rouge">bitbake</code> command.</p>
 
@@ -1128,17 +1126,15 @@ The build also takes approximately 100G-bytes of free disk space.</p>
 
 <p>For this example, the target is “agl-demo-platform”:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  bitbake agl-demo-platform
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bitbake agl-demo-platform
+</code></pre></div></div>
 
 <p>By default, the build process puts the resulting image in the Build Directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk.xz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/qemux86-64/agl-demo-platform-qemux86-64.vmdk.xz
+</code></pre></div></div>
 
-<h2 id="deploying-the-agl-demo-image">3. Deploying the AGL Demo Image</h2>
+<h2 id="3-deploying-the-agl-demo-image">3. Deploying the AGL Demo Image</h2>
 
 <p>Deploying the image consists of decompressing the image and then
 booting it using either QEMU or VirtualBox.</p>
@@ -1147,10 +1143,9 @@ booting it using either QEMU or VirtualBox.</p>
 
 <p>For Linux, use the following commands to decompress the image and prepare it for boot:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>tmp/deploy/images/qemux86-64
-xz -d agl-demo-platform-qemux86-64.vmdk.xz
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>tmp/deploy/images/qemux86-64
+xz <span class="nt">-d</span> agl-demo-platform-qemux86-64.vmdk.xz
+</code></pre></div></div>
 
 <p>For Windows, download <a href="http://www.7-zip.org/">7-Zip</a> and then
 select <strong>agl-demo-platform-qemux86-64.vmdk.xz</strong> to decompress
@@ -1172,35 +1167,31 @@ Consequently,  you cannot use it to boot the AGL image.</p>
 <p>If your build host is running
 <a href="https://www.archlinux.org/">Arch Linux</a>, use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo pacman -S qemu
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> qemu
+</code></pre></div></div>
 
 <p>If your build host is running Debian or Ubuntu, use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install qemu-system-x86
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install qemu-system-x86
+</code></pre></div></div>
 
 <p>If you build host is running Fedora, use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo yum install qemu-kvm
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum install qemu-kvm
+</code></pre></div></div>
 
 <p>Once QEMU is installed, boot the image with KVM support:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>qemu-system-x86_64 -enable-kvm -m 2048 <span class="se">\</span>
-    -hda agl-demo-platform-qemux86-64.vmdk <span class="se">\</span>
-    -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt <span class="se">\</span>
-    -vga virtio -show-cursor <span class="se">\</span>
-    -device virtio-rng-pci <span class="se">\</span>
-    -serial mon:stdio -serial null <span class="se">\</span>
-    -soundhw hda <span class="se">\</span>
-    -net nic,vlan<span class="o">=</span>0 <span class="se">\</span>
-    -net user,hostfwd<span class="o">=</span>tcp::2222-:22
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemu-system-x86_64 <span class="nt">-enable-kvm</span> <span class="nt">-m</span> 2048 <span class="se">\</span>
+    <span class="nt">-hda</span> agl-demo-platform-qemux86-64.vmdk <span class="se">\</span>
+    <span class="nt">-cpu</span> kvm64 <span class="nt">-cpu</span> qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt <span class="se">\</span>
+    <span class="nt">-vga</span> virtio <span class="nt">-show-cursor</span> <span class="se">\</span>
+    <span class="nt">-device</span> virtio-rng-pci <span class="se">\</span>
+    <span class="nt">-serial</span> mon:stdio <span class="nt">-serial</span> null <span class="se">\</span>
+    <span class="nt">-soundhw</span> hda <span class="se">\</span>
+    <span class="nt">-net</span> nic,vlan<span class="o">=</span>0 <span class="se">\</span>
+    <span class="nt">-net</span> user,hostfwd<span class="o">=</span>tcp::2222-:22
+</code></pre></div></div>
 
 <h4 id="virtualbox">VirtualBox</h4>
 
@@ -1300,7 +1291,7 @@ Consequently,  you cannot use it to boot the AGL image.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:16 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:27 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/halibut/docs/getting-started/machines/qemu.md">Link to source document</small>
 		
@@ -1332,6 +1323,16 @@ Consequently,  you cannot use it to boot the AGL image.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2740,20 +2740,18 @@
 <p>Connected to the target, here is how to load the virtual CAN device driver and
 set up a new vcan device :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>modprobe vcan
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>modprobe vcan
 ip link add vcan0 <span class="nb">type </span>vcan
 ip link <span class="nb">set </span>vcan0 up
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You also can named your linux CAN device like you want and if you need name it
 <code class="highlighter-rouge">can0</code> :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>modprobe vcan
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>modprobe vcan
 ip link add can0 <span class="nb">type </span>vcan
 ip link <span class="nb">set </span>can0 up
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="can-device-using-the-usb-can-adapter">CAN device using the USB CAN adapter</h2>
 
@@ -2762,7 +2760,7 @@ connected to the OBD2 connector.</p>
 
 <p>Once connected, launch <code class="highlighter-rouge">dmesg</code> command and search which device to use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dmesg
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmesg
 <span class="o">[</span>...]
 <span class="o">[</span>  131.871441] usb 1-3: new full-speed USB device number 4 using ohci-pci
 <span class="o">[</span>  161.860504] can: controller area network core <span class="o">(</span>rev 20120528 abi 9<span class="o">)</span>
@@ -2775,15 +2773,14 @@ connected to the OBD2 connector.</p>
 <span class="o">[</span> 1872.551543] usb 1-2: new full-speed USB device number 6 using ohci-pci
 <span class="o">[</span> 1872.809302] usb_8dev 1-2:1.0 can0: firmware: 1.7, hardware: 1.0
 <span class="o">[</span> 1872.809356] usbcore: registered new interface driver usb_8dev
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here device is named <code class="highlighter-rouge">can0</code>.</p>
 
 <p>This instruction assuming a speed of 500000kbps for your CAN bus, you can try
 others supported bitrate like 125000, 250000 if 500000 doesn’t work:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ip link <span class="nb">set </span>can0 <span class="nb">type </span>can bitrate 500000
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip link <span class="nb">set </span>can0 <span class="nb">type </span>can bitrate 500000
 ip link <span class="nb">set </span>can0 up
 ip link show can0
   can0: &lt;NOARP,UP,LOWER_UP,ECHO&gt; mtu 16 qdisc pfifo_fast state UNKNOWN qlen 10
@@ -2793,15 +2790,14 @@ ip link show can0
     tq 125 prop-seg 6 phase-seg1 7 phase-seg2 2 sjw 1
     sja1000: tseg1 1..16 tseg2 1..8 sjw 1..4 brp 1..64 brp-inc 1
     clock 16000000
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>On a Rcar Gen3 board, you’ll have your CAN device as <code class="highlighter-rouge">can1</code> because <code class="highlighter-rouge">can0</code>
 already exists as an embedded device.</p>
 
 <p>The instructions will be the same:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ip link <span class="nb">set </span>can1 <span class="nb">type </span>can bitrate 500000
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip link <span class="nb">set </span>can1 <span class="nb">type </span>can bitrate 500000
 ip link <span class="nb">set </span>can1 up
 ip link show can1
   can0: &lt;NOARP,UP,LOWER_UP,ECHO&gt; mtu 16 qdisc pfifo_fast state UNKNOWN qlen 10
@@ -2811,8 +2807,7 @@ ip link show can1
     tq 125 prop-seg 6 phase-seg1 7 phase-seg2 2 sjw 1
     sja1000: tseg1 1..16 tseg2 1..8 sjw 1..4 brp 1..64 brp-inc 1
     clock 16000000
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="rename-an-existing-can-device">Rename an existing CAN device</h2>
 
@@ -2820,11 +2815,10 @@ ip link show can1
 an existing <code class="highlighter-rouge">can0</code> device to anything else and then use another device as <code class="highlighter-rouge">can0</code>
 . For a Rcar Gen3 board do the following by example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo ip link <span class="nb">set </span>can0 down
-sudo ip link <span class="nb">set </span>can0 name bsp-can0
-sudo ip link <span class="nb">set </span>bsp-can0 up
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>ip link <span class="nb">set </span>can0 down
+<span class="nb">sudo </span>ip link <span class="nb">set </span>can0 name bsp-can0
+<span class="nb">sudo </span>ip link <span class="nb">set </span>bsp-can0 up
+</code></pre></div></div>
 
 <p>Then connect your USB CAN device that will be named <code class="highlighter-rouge">can0</code> by default.</p>
 
@@ -2843,30 +2837,27 @@ the real one, here are some examples:</p>
   <li>Using virtual CAN device as described in the previous chapter:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nn">[CANbus-mapping]</span>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[CANbus-mapping]</span>
 <span class="py">hs</span><span class="p">=</span><span class="s">"vcan0"</span>
 <span class="py">ls</span><span class="p">=</span><span class="s">"vcan1"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Using real CAN device, this example assume CAN bus traffic will be on can0.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nn">[CANbus-mapping]</span>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[CANbus-mapping]</span>
 <span class="py">hs</span><span class="p">=</span><span class="s">"can0"</span>
 <span class="py">ls</span><span class="p">=</span><span class="s">"can1"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>On a Rcar Gen3 board there is an embedded CAN device so <code class="highlighter-rouge">can0</code> already exists. So you might want to use your USB CAN adapter plugged to the OBD2 connector, in this case use <code class="highlighter-rouge">can1</code>:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nn">[CANbus-mapping]</span>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[CANbus-mapping]</span>
 <span class="py">hs</span><span class="p">=</span><span class="s">"can1"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>CAUTION VERY IMPORTANT:</strong> Make sure the CAN bus(es) you specify in your
@@ -2878,10 +2869,9 @@ the <code class="highlighter-rouge">CAN-config-generator</code>.</p>
 
 <p>You can run the binding using <strong>afm-util</strong> tool, here is the classic way to go :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afm-util run low-can-service@4.0
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afm-util run low-can-service@4.0
 1
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can find instructions to use afm-util tool
 <a href="../../reference/af-main/1-afm-daemons.html#using-afm-util">here</a>,
@@ -2894,7 +2884,7 @@ token that <strong>Application Framework</strong> gaves it at launch.</p>
 example, it will use port <strong>1234</strong> and left empty security token for testing
 purpose:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-daemon --binding<span class="o">=</span>/var/lib/afm/applications/low-can-service/4.0/lib/afb-low-can.so --rootdir<span class="o">=</span>/var/lib/afm/applications/low-can-service/4.0/ --port<span class="o">=</span>1234 --token<span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-daemon <span class="nt">--binding</span><span class="o">=</span>/var/lib/afm/applications/low-can-service/4.0/lib/afb-low-can.so <span class="nt">--rootdir</span><span class="o">=</span>/var/lib/afm/applications/low-can-service/4.0/ <span class="nt">--port</span><span class="o">=</span>1234 <span class="nt">--token</span><span class="o">=</span>1
 NOTICE: binding <span class="o">[</span>/usr/lib/afb/afb-dbus-binding.so] calling registering <span class="k">function </span>afbBindingV1Register
 NOTICE: binding /usr/lib/afb/afb-dbus-binding.so loaded with API prefix dbus
 NOTICE: binding <span class="o">[</span>/usr/lib/afb/authLogin.so] calling registering <span class="k">function </span>afbBindingV1Register
@@ -2903,15 +2893,13 @@ NOTICE: binding <span class="o">[</span>/var/lib/afm/applications/low-can-servic
 NOTICE: binding /var/lib/afm/applications/low-can-service/4.0/libs//low-can-binding.so loaded with API prefix low-can
 NOTICE: Waiting <span class="nv">port</span><span class="o">=</span>1234 <span class="nv">rootdir</span><span class="o">=</span>/var/lib/afm/applications/low-can-service/4.0/
 NOTICE: Browser <span class="nv">URL</span><span class="o">=</span> http:/<span class="k">*</span>localhost:1234
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>On another terminal, connect to the binding using previously installed
 <strong>AFB Websocket CLI</strong> tool:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>1
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>1
+</code></pre></div></div>
 
 <p>You will be on an interactive session where you can communicate directly with
 the binding API.</p>
@@ -2925,9 +2913,8 @@ JSON file used to generate cpp file for the binding.</p>
 <p>To use the <em><strong>AFB Websocket CLI</strong></em> tool, a command line will be like the
 following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;api&gt; &lt;verb&gt; &lt;arguments&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;api&gt; &lt;verb&gt; &lt;arguments&gt;
+</code></pre></div></div>
 
 <p>Where:</p>
 
@@ -2949,26 +2936,23 @@ at once.</p>
 
 <p>For example from a websocket session:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doors.driver.open"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="err">:low-can/subscribe:</span><span class="w"> </span><span class="p">{</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"a18fd375-b6fa-4c0e-a1d4-9d3955975ae8"</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doors.driver.open"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="err">low-can/subscribe</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"a18fd375-b6fa-4c0e-a1d4-9d3955975ae8"</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Subscription and unsubscription can take wildcard in their <em>event</em> value.</p>
 
 <p>To receive all doors events :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"doors*"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="err">:low-can/subscribe:</span><span class="w"> </span><span class="p">{</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"511c872e-d7f3-4f3b-89c2-aa9a3e9fbbdb"</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"doors*"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="err">low-can/subscribe</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"511c872e-d7f3-4f3b-89c2-aa9a3e9fbbdb"</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Then you will receive an event each time a CAN message is decoded for the event
 named <em>doors.driver.open</em> with its received timestamp if available:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">ON-EVENT</span><span class="w"> </span><span class="err">low-can/messages.doors.driver.open(</span><span class="p">{</span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"low-can\/messages.doors.driver.open"</span><span class="p">,</span><span class="nt">"data"</span><span class="p">:{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"messages.doors.driver.open"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1505812906020023</span><span class="p">},</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="p">}</span><span class="err">)</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">ON-EVENT</span><span class="w"> </span><span class="err">low-can/messages.doors.driver.open(</span><span class="p">{</span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"low-can</span><span class="se">\/</span><span class="s2">messages.doors.driver.open"</span><span class="p">,</span><span class="s2">"data"</span><span class="p">:{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"messages.doors.driver.open"</span><span class="p">,</span><span class="s2">"value"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1505812906020023</span><span class="p">},</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="p">}</span><span class="err">)</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Notice that event shows you that the CAN event is named
 <em>messages.doors.driver.open</em> but you ask for event about
@@ -2981,23 +2965,21 @@ JSON parent node name, <strong>messages</strong> for CAN messages and
 <p>This will let you subscribe or unsubcribe to all signals at once, not
 recommended, and better make filter on subscribe operation based upon their type. Examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"*speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">make</span><span class="w"> </span><span class="err">without</span><span class="w"> </span><span class="err">prefix</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">it.</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">begin</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">make</span><span class="w"> </span><span class="err">without</span><span class="w"> </span><span class="err">prefix</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">it.</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"messages*speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">CAN</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"messages*speed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">CAN</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">ending</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"diagnostic*speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">diagnostic</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"diagnostic*speed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">diagnostic</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">ending</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"*speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">make</span><span class="w"> </span><span class="err">without</span><span class="w"> </span><span class="err">prefix</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">it.</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">begin</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">make</span><span class="w"> </span><span class="err">without</span><span class="w"> </span><span class="err">prefix</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">it.</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"messages*speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">CAN</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"messages*speed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">CAN</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">ending</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"diagnostic*speed*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">diagnostic</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"diagnostic*speed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="err">--&gt;</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">diagnostic</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">ending</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">speed</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">their</span><span class="w"> </span><span class="err">name.</span><span class="w"> </span><span class="err">Search</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">prefixed</span><span class="w"> </span><span class="err">messages</span><span class="w"> </span><span class="err">here.</span><span class="w">
+</span></code></pre></div></div>
 
 <p>You can stop receiving event from it by unsubscribe the signal the same way you did for subscribe</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doors.driver.open"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">2</span><span class="err">:low-can/unsubscribe:</span><span class="w"> </span><span class="p">{</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"doors*"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">3</span><span class="err">:low-can/unsubscribe:</span><span class="w"> </span><span class="p">{</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doors.driver.open"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="err">low-can/unsubscribe</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"doors*"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span><span class="err">low-can/unsubscribe</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="filtering-capabilities">Filtering capabilities</h3>
 
@@ -3021,21 +3003,19 @@ or all of them at once.</p>
 
 <p>Usage examples :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.engine.speed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">1250</span><span class="p">,</span><span class="w"> </span><span class="nt">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500</span><span class="p">}}</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.engine.load"</span><span class="p">,</span><span class="w"> </span><span class="nt">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="nt">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">}}</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.vehicle.speed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.engine.speed"</span><span class="p">,</span><span class="w"> </span><span class="s2">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">1250</span><span class="p">,</span><span class="w"> </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">3500</span><span class="p">}}</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.engine.load"</span><span class="p">,</span><span class="w"> </span><span class="s2">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">}}</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">subscribe</span><span class="w"> </span><span class="p">{</span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.vehicle.speed"</span><span class="p">,</span><span class="w"> </span><span class="s2">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="get-last-signal-value-and-list-of-configured-signals">Get last signal value and list of configured signals</h2>
 
 <p>You can also ask for a particular signal value on one shot using <strong>get</strong> verb, like
 this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.engine.speed"</span><span class="p">}</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="err">:low-can/get:</span><span class="w"> </span><span class="p">{</span><span class="nt">"response"</span><span class="p">:[{</span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"messages.engine.speed"</span><span class="p">,</span><span class="nt">"value"</span><span class="p">:</span><span class="mi">0</span><span class="p">}],</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">get</span><span class="w"> </span><span class="p">{</span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"messages.engine.speed"</span><span class="p">}</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="err">low-can/get</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"response"</span><span class="p">:[{</span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"messages.engine.speed"</span><span class="p">,</span><span class="s2">"value"</span><span class="p">:</span><span class="mi">0</span><span class="p">}],</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <blockquote>
   <p><strong>CAUTION</strong> Only one event could be requested.</p>
@@ -3044,10 +3024,9 @@ this:</p>
 <p>Also, if you want to know the supported CAN signals loaded by <strong>low-can</strong>, use
 verb <strong>list</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">list</span><span class="w">
-</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">2</span><span class="err">:low-can/list:</span><span class="w"> </span><span class="p">{</span><span class="nt">"response"</span><span class="p">:[</span><span class="s2">"messages.hvac.fan.speed"</span><span class="p">,</span><span class="s2">"messages.hvac.temperature.left"</span><span class="p">,</span><span class="s2">"messages.hvac.temperature.right"</span><span class="p">,</span><span class="s2">"messages.hvac.temperature.average"</span><span class="p">,</span><span class="s2">"messages.engine.speed"</span><span class="p">,</span><span class="s2">"messages.fuel.level.low"</span><span class="p">,</span><span class="s2">"messages.fuel.level"</span><span class="p">,</span><span class="s2">"messages.vehicle.average.speed"</span><span class="p">,</span><span class="s2">"messages.engine.oil.temp"</span><span class="p">,</span><span class="s2">"messages.engine.oil.temp.high"</span><span class="p">,</span><span class="s2">"messages.doors.boot.open"</span><span class="p">,</span><span class="s2">"messages.doors.front_left.open"</span><span class="p">,</span><span class="s2">"messages.doors.front_right.open"</span><span class="p">,</span><span class="s2">"messages.doors.rear_left.open"</span><span class="p">,</span><span class="s2">"messages.doors.rear_right.open"</span><span class="p">,</span><span class="s2">"messages.windows.front_left.open"</span><span class="p">,</span><span class="s2">"messages.windows.front_right.open"</span><span class="p">,</span><span class="s2">"messages.windows.rear_left.open"</span><span class="p">,</span><span class="s2">"messages.windows.rear_right.open"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.load"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.coolant.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.fuel.pressure"</span><span class="p">,</span><span class="s2">"diagnostic_messages.intake.manifold.pressure"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.speed"</span><span class="p">,</span><span class="s2">"diagnostic_messages.vehicle.speed"</span><span class="p">,</span><span class="s2">"diagnostic_messages.intake.air.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.mass.airflow"</span><span class="p">,</span><span class="s2">"diagnostic_messages.throttle.position"</span><span class="p">,</span><span class="s2">"diagnostic_messages.running.time"</span><span class="p">,</span><span class="s2">"diagnostic_messages.EGR.error"</span><span class="p">,</span><span class="s2">"diagnostic_messages.fuel.level"</span><span class="p">,</span><span class="s2">"diagnostic_messages.barometric.pressure"</span><span class="p">,</span><span class="s2">"diagnostic_messages.ambient.air.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.commanded.throttle.position"</span><span class="p">,</span><span class="s2">"diagnostic_messages.ethanol.fuel.percentage"</span><span class="p">,</span><span class="s2">"diagnostic_messages.accelerator.pedal.position"</span><span class="p">,</span><span class="s2">"diagnostic_messages.hybrid.battery-pack.remaining.life"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.oil.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.fuel.rate"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.torque"</span><span class="p">],</span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="nt">"request"</span><span class="p">:{</span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"32df712a-c7fa-4d58-b70b-06a87f03566b"</span><span class="p">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">low-can</span><span class="w"> </span><span class="err">list</span><span class="w">
+</span><span class="err">ON-REPLY</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="err">low-can/list</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"response"</span><span class="p">:[</span><span class="s2">"messages.hvac.fan.speed"</span><span class="p">,</span><span class="s2">"messages.hvac.temperature.left"</span><span class="p">,</span><span class="s2">"messages.hvac.temperature.right"</span><span class="p">,</span><span class="s2">"messages.hvac.temperature.average"</span><span class="p">,</span><span class="s2">"messages.engine.speed"</span><span class="p">,</span><span class="s2">"messages.fuel.level.low"</span><span class="p">,</span><span class="s2">"messages.fuel.level"</span><span class="p">,</span><span class="s2">"messages.vehicle.average.speed"</span><span class="p">,</span><span class="s2">"messages.engine.oil.temp"</span><span class="p">,</span><span class="s2">"messages.engine.oil.temp.high"</span><span class="p">,</span><span class="s2">"messages.doors.boot.open"</span><span class="p">,</span><span class="s2">"messages.doors.front_left.open"</span><span class="p">,</span><span class="s2">"messages.doors.front_right.open"</span><span class="p">,</span><span class="s2">"messages.doors.rear_left.open"</span><span class="p">,</span><span class="s2">"messages.doors.rear_right.open"</span><span class="p">,</span><span class="s2">"messages.windows.front_left.open"</span><span class="p">,</span><span class="s2">"messages.windows.front_right.open"</span><span class="p">,</span><span class="s2">"messages.windows.rear_left.open"</span><span class="p">,</span><span class="s2">"messages.windows.rear_right.open"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.load"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.coolant.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.fuel.pressure"</span><span class="p">,</span><span class="s2">"diagnostic_messages.intake.manifold.pressure"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.speed"</span><span class="p">,</span><span class="s2">"diagnostic_messages.vehicle.speed"</span><span class="p">,</span><span class="s2">"diagnostic_messages.intake.air.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.mass.airflow"</span><span class="p">,</span><span class="s2">"diagnostic_messages.throttle.position"</span><span class="p">,</span><span class="s2">"diagnostic_messages.running.time"</span><span class="p">,</span><span class="s2">"diagnostic_messages.EGR.error"</span><span class="p">,</span><span class="s2">"diagnostic_messages.fuel.level"</span><span class="p">,</span><span class="s2">"diagnostic_messages.barometric.pressure"</span><span class="p">,</span><span class="s2">"diagnostic_messages.ambient.air.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.commanded.throttle.position"</span><span class="p">,</span><span class="s2">"diagnostic_messages.ethanol.fuel.percentage"</span><span class="p">,</span><span class="s2">"diagnostic_messages.accelerator.pedal.position"</span><span class="p">,</span><span class="s2">"diagnostic_messages.hybrid.battery-pack.remaining.life"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.oil.temperature"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.fuel.rate"</span><span class="p">,</span><span class="s2">"diagnostic_messages.engine.torque"</span><span class="p">],</span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="s2">"request"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"32df712a-c7fa-4d58-b70b-06a87f03566b"</span><span class="p">}}</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="write-on-can-buses">Write on CAN buses</h2>
 
@@ -3057,13 +3036,12 @@ Two modes could be used for that which is either specifying the CAN bus and a
 
 <p>Examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="err">#</span><span class="w"> </span><span class="err">Write</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">raw</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">frame</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">CAN</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="mi">0</span><span class="err">x</span><span class="mi">620</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">write</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"bus_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hs"</span><span class="p">,</span><span class="w"> </span><span class="nt">"frame"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"can_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1568</span><span class="p">,</span><span class="w"> </span><span class="nt">"can_dlc"</span><span class="p">:</span><span class="w">
-</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="nt">"can_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="w"> </span><span class="err">Write</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">raw</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">frame</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">CAN</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="mi">0</span><span class="err">x</span><span class="mi">620</span><span class="w">
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">write</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"bus_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"frame"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"can_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1568</span><span class="p">,</span><span class="w"> </span><span class="s2">"can_dlc"</span><span class="p">:</span><span class="w">
+</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s2">"can_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span><span class="err">#</span><span class="w"> </span><span class="err">Write</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">signal's</span><span class="w"> </span><span class="err">value.</span><span class="w">
-</span><span class="err">low-can</span><span class="w"> </span><span class="err">write</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"signal_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engine.speed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"signal_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1256</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span><span class="err">low-can</span><span class="w"> </span><span class="err">write</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"signal_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engine.speed"</span><span class="p">,</span><span class="w"> </span><span class="s2">"signal_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1256</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>To be able to use write capability, you need to add the permission
  <code class="highlighter-rouge">urn:AGL:permission::platform:can:write</code> to your package configuration
@@ -3080,21 +3058,18 @@ preinstalled on AGL target.</p>
 
 <p>To watch watch going on a CAN bus use:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>candump can0
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>candump can0
+</code></pre></div></div>
 
 <p>Or for an USB CAN adapter connected to porter board:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>candump can1
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>candump can1
+</code></pre></div></div>
 
 <p>Send a custom message:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cansend can0 ID#DDDDAAAATTTTAAAA
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cansend can0 ID#DDDDAAAATTTTAAAA
+</code></pre></div></div>
 
 <p>You can also replay a previously dumped CAN logfiles. These logfiles can be
 found in <em>can_samples</em> directory under Git repository. Following examples use
@@ -3105,21 +3080,18 @@ correct one you use for your tests.</p>
 
 <p>Replay on a virtual CAN device <code class="highlighter-rouge">vcan0</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>canplayer -I trip_test_with_obd2_vehicle_speed_requests <span class="nv">vcan0</span><span class="o">=</span>can0
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>canplayer <span class="nt">-I</span> trip_test_with_obd2_vehicle_speed_requests <span class="nv">vcan0</span><span class="o">=</span>can0
+</code></pre></div></div>
 
 <p>Replay on a CAN device <code class="highlighter-rouge">can0</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>canplayer -I trip_test_with_obd2_vehicle_speed_requests can0
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>canplayer <span class="nt">-I</span> trip_test_with_obd2_vehicle_speed_requests can0
+</code></pre></div></div>
 
 <p>Replay on a CAN device <code class="highlighter-rouge">can1</code> (porter by example):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>canplayer -I trip_test_with_obd2_vehicle_speed_requests <span class="nv">can1</span><span class="o">=</span>can0
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>canplayer <span class="nt">-I</span> trip_test_with_obd2_vehicle_speed_requests <span class="nv">can1</span><span class="o">=</span>can0
+</code></pre></div></div>
 
 
 
@@ -3200,7 +3172,7 @@ correct one you use for your tests.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:47 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:02 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-can-low-level/plain/docs/3-Usage.md?h=flounder">Link to source document</small>
 		
@@ -3232,6 +3204,16 @@ correct one you use for your tests.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

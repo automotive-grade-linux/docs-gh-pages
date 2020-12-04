@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2821,21 +2821,19 @@ returns a dbus error that is a string.</p>
 <p>Here are examples using <em>dbus-send</em>, here to install an application from a
 widget file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dbus-send --session --print-reply <span class="se">\</span>
-    --dest<span class="o">=</span>org.AGL.afm.system <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dbus-send <span class="nt">--session</span> <span class="nt">--print-reply</span> <span class="se">\</span>
+    <span class="nt">--dest</span><span class="o">=</span>org.AGL.afm.system <span class="se">\</span>
     /org/AGL/afm/system <span class="se">\</span>
     org.AGL.afm.system.install <span class="s1">'string:"/tmp/appli.wgt"
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>And here, to query data on installed applications that can be run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dbus-send --session --print-reply <span class="se">\</span>
-    --dest<span class="o">=</span>org.AGL.afm.user <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dbus-send <span class="nt">--session</span> <span class="nt">--print-reply</span> <span class="se">\</span>
+    <span class="nt">--dest</span><span class="o">=</span>org.AGL.afm.user <span class="se">\</span>
     /org/AGL/afm/user <span class="se">\</span>
     org.AGL.afm.user.runnables string:true
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="the-protocol-over-d-bus">The protocol over D-Bus</h3>
 
@@ -2900,28 +2898,25 @@ a flag to <em>force</em> reinstallation, and, optionally, a <em>root</em> direct
 
 <p>Either just a string being the absolute path of the widget file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"/a/path/driving/to/the/widget"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"/a/path/driving/to/the/widget"</span>
+</code></pre></div></div>
 
 <p>Or an object:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"wgt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/widget"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"force"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"wgt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/widget"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"force"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>“wgt” and “root” must be absolute paths.</p>
 
 <p><strong>output</strong>: An object with the field “added” being the string for
 the id of the added application.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"added"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"added"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <hr />
 
@@ -2939,18 +2934,16 @@ the id of the added application.</p>
 
 <p>Either a string:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
+</code></pre></div></div>
 
 <p>Or an object:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appli@x.y"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appli@x.y"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p><strong>output</strong>: the value ‘true’.</p>
 
@@ -2964,31 +2957,28 @@ the id of the added application.</p>
 
 <p>Either just a string:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
+</code></pre></div></div>
 
 <p>Or an object having the field “id” of type string:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Output</strong>: A JSON object describing the application containing
 the fields described below.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w">          </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">(id@version)</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w">     </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">version</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
-  </span><span class="nt">"width"</span><span class="p">:</span><span class="w">       </span><span class="err">integer</span><span class="p">,</span><span class="w"> </span><span class="err">requested</span><span class="w"> </span><span class="err">width</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
-  </span><span class="nt">"height"</span><span class="p">:</span><span class="w">      </span><span class="err">integer</span><span class="p">,</span><span class="w"> </span><span class="err">requested</span><span class="w"> </span><span class="err">height</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w">        </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
-  </span><span class="nt">"shortname"</span><span class="p">:</span><span class="w">   </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
-  </span><span class="nt">"author"</span><span class="p">:</span><span class="w">      </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">author</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w">          </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">(id@version)</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w">     </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">version</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
+  </span><span class="s2">"width"</span><span class="p">:</span><span class="w">       </span><span class="err">integer</span><span class="p">,</span><span class="w"> </span><span class="err">requested</span><span class="w"> </span><span class="err">width</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
+  </span><span class="s2">"height"</span><span class="p">:</span><span class="w">      </span><span class="err">integer</span><span class="p">,</span><span class="w"> </span><span class="err">requested</span><span class="w"> </span><span class="err">height</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w">        </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
+  </span><span class="s2">"shortname"</span><span class="p">:</span><span class="w">   </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
+  </span><span class="s2">"author"</span><span class="p">:</span><span class="w">      </span><span class="err">string</span><span class="p">,</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">author</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <hr />
 
@@ -3028,27 +3018,24 @@ a flag to <em>force</em> reinstallation and/or a <em>root</em> directory.</p>
 
 <p>Simple form a simple string containing the absolute widget path:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"/a/path/driving/to/the/widget"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"/a/path/driving/to/the/widget"</span>
+</code></pre></div></div>
 
 <p>Or an object:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"wgt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/widget"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"force"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"wgt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/widget"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"force"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p><strong><em>wgt</em></strong> and <strong><em>root</em></strong> MUST be absolute paths.</p>
 
 <p><strong>output</strong>: An object containing field “added” to use as application ID.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"added"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"added"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <hr />
 
@@ -3067,18 +3054,16 @@ application <em>root</em>.</p>
 
 <p>Either a string:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
+</code></pre></div></div>
 
 <p>Or an object:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appli@x.y"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appli@x.y"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/a/path/to/the/root"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p><strong>output</strong>: the value ‘true’.</p>
 
@@ -3093,16 +3078,14 @@ start <em>mode</em> as below.</p>
 
 <p>Either just a string:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
+</code></pre></div></div>
 
 <p>Or an object containing field “id” of type string and
 optionally a field mode:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">,</span><span class="nt">"mode"</span><span class="p">:</span><span class="s2">"local"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">,</span><span class="s2">"mode"</span><span class="p">:</span><span class="s2">"local"</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>The field “mode” is a string equal to either “local” or “remote”.</p>
 
@@ -3120,15 +3103,13 @@ optionally a field mode:</p>
 
 <p>Either just a string:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"appli@x.y"</span>
+</code></pre></div></div>
 
 <p>Or an object containing field “id” of type string.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"appli@x.y"</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>output</strong>: The <em>state</em> of the application retrieved or launched.
 See <em>org.AGL.afm.user.state</em> to get a description of the returned
@@ -3207,14 +3188,13 @@ It contains:</p>
 
 <p>Example of returned state:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"runid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"pids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">435</span><span class="p">,</span><span class="w"> </span><span class="mi">436</span><span class="w"> </span><span class="p">],</span><span class="w">
-      </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appli@x.y"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"runid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">435</span><span class="p">,</span><span class="w"> </span><span class="mi">436</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"running"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appli@x.y"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <hr />
 
@@ -3238,42 +3218,41 @@ Normally, service files are locatedat <em>/lib/systemd/system/afm-system-daemon.
 
 <p>The options for launching <strong>afm-system-daemon</strong> are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    -r
-    --root directory
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">-r</span>
+    <span class="nt">--root</span> directory
 
          Set the root application directory.
 
          Note that the default root directory is defined
-         to be /usr/share/afm/applications <span class="o">(</span>may change<span class="o">)</span>.
+         to be /usr/share/afm/applications <span class="o">(</span>may change<span class="o">)</span><span class="nb">.</span>
 
-    -d
-    --daemon
+    <span class="nt">-d</span>
+    <span class="nt">--daemon</span>
 
          Daemonizes the process. It is not needed by systemd.
 
-    -q
-    --quiet
+    <span class="nt">-q</span>
+    <span class="nt">--quiet</span>
 
-         Reduces the verbosity <span class="o">(</span>can be repeated<span class="o">)</span>.
+         Reduces the verbosity <span class="o">(</span>can be repeated<span class="o">)</span><span class="nb">.</span>
 
-    -v
-    --verbose
+    <span class="nt">-v</span>
+    <span class="nt">--verbose</span>
 
-         Increases the verbosity <span class="o">(</span>can be repeated<span class="o">)</span>.
+         Increases the verbosity <span class="o">(</span>can be repeated<span class="o">)</span><span class="nb">.</span>
 
-    -h
-    --help
+    <span class="nt">-h</span>
+    <span class="nt">--help</span>
 
          Prints a short help.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="afm-user-daemon-options"><strong><em>afm-user-daemon</em></strong> options</h3>
 
 <p>The options for launching <strong>afm-user-daemon</strong> are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    -a
-    --application directory
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">-a</span>
+    <span class="nt">--application</span> directory
 
          <span class="o">[</span>Currently not available <span class="k">in </span>the systemd version]
 
@@ -3282,8 +3261,8 @@ Normally, service files are locatedat <em>/lib/systemd/system/afm-system-daemon.
 
          Can be repeated.
 
-    -r
-    --root directory
+    <span class="nt">-r</span>
+    <span class="nt">--root</span> directory
 
          <span class="o">[</span>Currently not available <span class="k">in </span>the systemd version]
 
@@ -3295,35 +3274,34 @@ Normally, service files are locatedat <em>/lib/systemd/system/afm-system-daemon.
          </span>applications is always added. In current version
          /usr/share/afm/applications is used as default.
 
-    -m
-    --mode <span class="o">(</span><span class="nb">local</span>|remote<span class="o">)</span>
+    <span class="nt">-m</span>
+    <span class="nt">--mode</span> <span class="o">(</span><span class="nb">local</span>|remote<span class="o">)</span>
 
          <span class="o">[</span>Currently not available <span class="k">in </span>the systemd version]
 
          Set the default launch mode.
          The default value is <span class="s1">'local'</span>
 
-    -d
-    --daemon
+    <span class="nt">-d</span>
+    <span class="nt">--daemon</span>
 
          Daemonizes the process. It is not needed by systemd.
 
-    -q
-    --quiet
+    <span class="nt">-q</span>
+    <span class="nt">--quiet</span>
 
-         Reduces the verbosity <span class="o">(</span>can be repeated<span class="o">)</span>.
+         Reduces the verbosity <span class="o">(</span>can be repeated<span class="o">)</span><span class="nb">.</span>
 
-    -v
-    --verbose
+    <span class="nt">-v</span>
+    <span class="nt">--verbose</span>
 
-         Increases the verbosity <span class="o">(</span>can be repeated<span class="o">)</span>.
+         Increases the verbosity <span class="o">(</span>can be repeated<span class="o">)</span><span class="nb">.</span>
 
-    -h
-    --help
+    <span class="nt">-h</span>
+    <span class="nt">--help</span>
 
          Prints a short help.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="tasks-of-afm-user-daemon">Tasks of <strong>afm-user-daemon</strong></h2>
 
@@ -3426,9 +3404,8 @@ get status of the running instance rid</p>
 
 <p>Here is how to list applications using <strong><em>afm-util</em></strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    afm-util runnables
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    afm-util runnables
+</code></pre></div></div>
 
 
 
@@ -3510,7 +3487,7 @@ get status of the running instance rid</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:40 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:56 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-main/plain/docs/1-afm-daemons.md?h=flounder">Link to source document</small>
 		
@@ -3542,6 +3519,16 @@ get status of the running instance rid</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

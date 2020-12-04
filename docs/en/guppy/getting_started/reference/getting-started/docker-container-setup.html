@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -635,7 +635,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -897,7 +897,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -1065,9 +1065,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -1104,7 +1104,7 @@ system.
 However, as previously mentioned, you could set up a Docker container
 that works using Windows or MacOS.</p>
 
-<h2 id="installing-docker-community-edition-ce">1. Installing Docker Community Edition (CE)</h2>
+<h2 id="1-installing-docker-community-edition-ce">1. Installing Docker Community Edition (CE)</h2>
 
 <p>If your build host does not already have
 <a href="https://docs.docker.com/install/">Docker CE</a> installed, you must install it.</p>
@@ -1127,7 +1127,7 @@ distribution.</p>
 <p>Successful Docker installation is measured by the results of running a “hello world”
 application:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo docker run hello-world
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -1141,17 +1141,16 @@ To generate this message, Docker took the following steps:
     to your terminal.
 
 To try something more ambitious, you can run an Ubuntu container with:
- <span class="nv">$ </span>docker run -it ubuntu bash
+ <span class="nv">$ </span>docker run <span class="nt">-it</span> ubuntu bash
 
 Share images, automate workflows, and more with a free Docker ID:
  https://hub.docker.com/
 
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="setting-up-to-use-docker-as-a-non-root-user">2. Setting Up to Use Docker as a Non-Root User</h2>
+<h2 id="2-setting-up-to-use-docker-as-a-non-root-user">2. Setting Up to Use Docker as a Non-Root User</h2>
 
 <p>For Linux machines, Docker runs as a root user by default.
 You can create a docker group and add yourself to it so that you do not
@@ -1165,7 +1164,7 @@ page for information on how to create a Docker group and add yourself to the gro
 system, log back in, and run the “hello world” application again to verify you
 do not have to use root:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>docker run hello-world
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run hello-world
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -1179,17 +1178,16 @@ To generate this message, Docker took the following steps:
     to your terminal.
 
 To try something more ambitious, you can run an Ubuntu container with:
- <span class="nv">$ </span>docker run -it ubuntu bash
+ <span class="nv">$ </span>docker run <span class="nt">-it</span> ubuntu bash
 
 Share images, automate workflows, and more with a free Docker ID:
  https://hub.docker.com/
 
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="setting-up-a-persistent-workspace">3. Setting Up a Persistent Workspace</h2>
+<h2 id="3-setting-up-a-persistent-workspace">3. Setting Up a Persistent Workspace</h2>
 
 <p>Docker images are pre-configured to use a particular User Identifier (uid) and
 Group Identifier (gid) that allow the Container to use the Yocto Project
@@ -1226,10 +1224,9 @@ by all containers.</p>
 to be accessible from the container environment.
 You can make sure permissions are in order using the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>mkdir ~/ssd ~/devel
-<span class="gp">$ </span>chmod a+w ~/ssd ~/devel
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mkdir ~/ssd ~/devel
+<span class="nv">$ </span>chmod a+w ~/ssd ~/devel
+</code></pre></div></div>
 
 <p><strong>Note</strong>:</p>
 
@@ -1238,7 +1235,7 @@ You can make sure permissions are in order using the following commands:</p>
  host account requires to be added to group id 1664.</li>
 </ul>
 
-<h2 id="getting-the-generic-agl-worker-docker-image">4. Getting the Generic AGL Worker Docker Image</h2>
+<h2 id="4-getting-the-generic-agl-worker-docker-image">4. Getting the Generic AGL Worker Docker Image</h2>
 
 <p>You can either locate and install a pre-built image or rebuild the image.</p>
 
@@ -1248,21 +1245,19 @@ You can make sure permissions are in order using the following commands:</p>
 into your local Docker instance.
 Here is an example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>wget -O - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-latest.tar.xz | docker load
-<span class="gp">$ </span>docker images
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wget <span class="nt">-O</span> - https://download.automotivelinux.org/AGL/snapshots/sdk/docker/docker_agl_worker-latest.tar.xz | docker load
+<span class="nv">$ </span>docker images
       REPOSITORY                                      TAG                 IMAGE ID            CREATED             SIZE
       docker.automotivelinux.org/agl/worker-generic   5.99-95             6fcc19b4e0d7        2 weeks ago         1.56GB
       jenkins                                         latest              55720d63e328        5 weeks ago         711.9 MB
       hello-world                                     latest              c54a2cc56cbb        5 months ago        1.848 kB
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After loading the image, identify and export the <code class="highlighter-rouge">IMAGE_ID</code>.
 For example, the <code class="highlighter-rouge">IMAGE_ID</code> given the previous command is “6fcc19b4e0d7”.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">IMAGE_ID</span><span class="o">=</span>6fcc19b4e0d7
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">IMAGE_ID</span><span class="o">=</span>6fcc19b4e0d7
+</code></pre></div></div>
 
 <h3 id="building-an-image">Building an Image</h3>
 
@@ -1270,7 +1265,7 @@ For example, the <code class="highlighter-rouge">IMAGE_ID</code> given the previ
 <a href="https://git.automotivelinux.org/AGL/docker-worker-generator/">docker-worker-generator</a>
 scripts.</p>
 
-<h2 id="starting-the-container">5. Starting the Container</h2>
+<h2 id="5-starting-the-container">5. Starting the Container</h2>
 
 <p>After you have the image available, use the
 <code class="highlighter-rouge">create_container</code> script to start a new, fresh container that is
@@ -1279,16 +1274,15 @@ based on the AGL Worker image:</p>
 <p><strong>NOTE:</strong>
 The password for the ID “devel” inside the docker image is “devel”.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://git.automotivelinux.org/AGL/docker-worker-generator
-<span class="gp">$ </span><span class="nb">cd </span>docker-worker-generator
-<span class="gp">$ </span>./contrib/create_container 0 <span class="nv">$IMAGE_ID</span>
-<span class="gp">$ </span>docker ps
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://git.automotivelinux.org/AGL/docker-worker-generator
+<span class="nv">$ </span><span class="nb">cd </span>docker-worker-generator
+<span class="nv">$ </span>./contrib/create_container 0 <span class="nv">$IMAGE_ID</span>
+<span class="nv">$ </span>docker ps
 CONTAINER ID        IMAGE                                       COMMAND                  CREATED             STATUS              PORTS                                                                                        NAMES
 4fb7c550ad75        6fcc19b4e0d7   <span class="s2">"/usr/bin/wait_for_ne"</span>   33 hours ago        Up 33 hours         0.0.0.0:2222-&gt;22/tcp, 0.0.0.0:69-&gt;69/udp, 0.0.0.0:8000-&gt;8000/tcp, 0.0.0.0:10809-&gt;10809/tcp   agl-worker-odin-0-sdx
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="installing-the-agl-sdk-for-your-target">6. Installing the AGL SDK for Your Target</h2>
+<h2 id="6-installing-the-agl-sdk-for-your-target">6. Installing the AGL SDK for Your Target</h2>
 
 <p>Once you have a new container that is based on the AGL Worker Image, you
 can copy the SDK Installer to the container and then install
@@ -1323,22 +1317,20 @@ bitbake agl-demo-platform-crosssdk;
 ```
 -->
 
-<p><code class="highlighter-rouge">
-   $ cp /xdt/build/tmp/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf-neon-toolchain-3.0.0+snapshot.sh ~/share
-  </code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ cp /xdt/build/tmp/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf-neon-toolchain-3.0.0+snapshot.sh ~/share
+</code></pre></div></div>
 
 <ol>
   <li>
     <p>Log into your “SDK Container” and install the SDK:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh -p 2222 devel@mysdk.local
-<span class="gp">$ </span>install_sdk ~/share/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf-neon-toolchain-3.0.0+snapshot.sh
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh <span class="nt">-p</span> 2222 devel@mysdk.local
+<span class="nv">$ </span>install_sdk ~/share/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-cortexa15hf-neon-toolchain-3.0.0+snapshot.sh
+</code></pre></div>    </div>
   </li>
 </ol>
 
-<h2 id="build-your-application">7. Build Your Application</h2>
+<h2 id="7-build-your-application">7. Build Your Application</h2>
 
 <p>Once you have the SDK installed in your container, you are ready
 to develop your application.
@@ -1446,7 +1438,7 @@ cmake; make; make package;
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:08 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:19 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/guppy/docs/getting-started/docker-container-setup.md">Link to source document</small>
 		
@@ -1478,6 +1470,16 @@ cmake; make; make package;
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

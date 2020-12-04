@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2853,7 +2853,7 @@ For this reason, to avoid duplication of descriptions, only one description is e
 
 <p>The remaining chapters explain these task with more details.</p>
 
-<h2 id="enforce-use-of-binding-v2-by-setting-afbbindingversion">Enforce use of binding v2 by setting AFB_BINDING_VERSION</h2>
+<h2 id="enforce-use-of-binding-v2-by-setting-afb_binding_version">Enforce use of binding v2 by setting AFB_BINDING_VERSION</h2>
 
 <p>By defining <strong>AFB_BINDING_VERSION</strong> to <strong>2</strong> you switch to version 2.<br />
 This is done as below.</p>
@@ -3295,7 +3295,7 @@ typedef struct afb_service              afb_service;
 <p>The first <strong><em>binding</em></strong> that migrated from v1 to v2 was the sample <strong>HelloWorld</strong>.<br />
 Here is shown the differences between the version 1 and the version 2.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gh">diff --git a/bindings/samples/HelloWorld.c b/bindings/samples/HelloWorld.c
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/bindings/samples/HelloWorld.c b/bindings/samples/HelloWorld.c
 index c6fa779..505aee3 100644
 </span><span class="gd">--- a/bindings/samples/HelloWorld.c
 </span><span class="gi">+++ b/bindings/samples/HelloWorld.c
@@ -3401,8 +3401,7 @@ index c6fa779..505aee3 100644
 -    NOTICE(interface, "hello plugin comes to live");
 -    return &amp;plugin_desc;
 -}
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 
 
@@ -3483,7 +3482,7 @@ index c6fa779..505aee3 100644
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:02 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:14 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/legacy/afb-migration-v1-to-v2.md?h=flounder">Link to source document</small>
 		
@@ -3515,6 +3514,16 @@ index c6fa779..505aee3 100644
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

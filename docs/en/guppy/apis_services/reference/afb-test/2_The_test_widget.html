@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1684,7 +1684,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2527,7 +2527,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2695,9 +2695,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2728,17 +2728,17 @@ directory:</p>
 
 <p>i.e for the <code class="highlighter-rouge">etc</code> folder:</p>
 
-<pre><code class="language-cmake">PROJECT_TARGET_ADD(afb-test-config)
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">PROJECT_TARGET_ADD</span><span class="p">(</span>afb-test-config<span class="p">)</span>
 
-    file(GLOB CONF_FILES "*.json")
+    <span class="nb">file</span><span class="p">(</span>GLOB CONF_FILES <span class="s2">"*.json"</span><span class="p">)</span>
 
-    add_input_files("${CONF_FILES}")
+    <span class="nf">add_input_files</span><span class="p">(</span><span class="s2">"</span><span class="si">${</span><span class="nv">CONF_FILES</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-    SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
-        LABELS "TEST-CONFIG"
-        OUTPUT_NAME ${TARGET_NAME}
-    )
-</code></pre>
+    <span class="nf">SET_TARGET_PROPERTIES</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span> PROPERTIES
+        LABELS <span class="s2">"TEST-CONFIG"</span>
+        OUTPUT_NAME <span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span>
+    <span class="p">)</span>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>CAUTION</strong>: make sure that you have CMakeLists files that include your
@@ -2756,12 +2756,11 @@ build it or use a special target.</p>
 
 <p>ie:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>build
-cmake -DBUILD_TEST_WGT<span class="o">=</span>TRUE ..
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>build
+cmake <span class="nt">-DBUILD_TEST_WGT</span><span class="o">=</span>TRUE ..
 make
 make widget
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="building-separately-only-the-test-widget">Building separately only the test widget</h3>
 
@@ -2769,12 +2768,11 @@ make widget
 
 <p>ie:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>build
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>build
 cmake ..
 make
 make test_widget
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -2855,7 +2853,7 @@ make test_widget
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:45 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:00 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-afb-test/plain/docs/2_The_test_widget.md?h=guppy">Link to source document</small>
 		
@@ -2887,6 +2885,16 @@ make test_widget
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

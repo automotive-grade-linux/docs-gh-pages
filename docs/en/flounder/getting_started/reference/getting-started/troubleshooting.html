@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -635,7 +635,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -897,7 +897,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -1065,9 +1065,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -1104,11 +1104,10 @@ However, if you do, you must take these steps to copy <code class="highlighter-r
   <li>
     <p>Verify your <code class="highlighter-rouge">tar</code> version is 1.28 or newer:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>tar --version
-tar <span class="o">(</span>GNU tar<span class="o">)</span> 1.28
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar</span> <span class="nt">--version</span>
+<span class="nb">tar</span> <span class="o">(</span>GNU <span class="nb">tar</span><span class="o">)</span> 1.28
 <span class="o">[</span>snip]
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Optionally update <code class="highlighter-rouge">tar</code> if required.
@@ -1121,19 +1120,17 @@ section for instructions.</p>
 <code class="highlighter-rouge">tar</code> is created.
 Use the following command to see that version:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>tmp/sysroots/x86_64-linux/usr/bin/tar-native/tar --version
-tar <span class="o">(</span>GNU tar<span class="o">)</span> 1.28
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tmp/sysroots/x86_64-linux/usr/bin/tar-native/tar <span class="nt">--version</span>
+<span class="nb">tar</span> <span class="o">(</span>GNU <span class="nb">tar</span><span class="o">)</span> 1.28
 <span class="o">[</span>snip]
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Copy the AGL files and Extended Attributes Set to your bootable media:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>tar --extract --xz --numeric-owner --preserve-permissions --preserve-order --totals <span class="se">\</span>
-           --xattrs-include<span class="o">=</span><span class="s1">'*'</span> --directory<span class="o">=</span>DESTINATION_DIRECTORY --file<span class="o">=</span>agl-demo-platform.....tar.xz
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar</span> <span class="nt">--extract</span> <span class="nt">--xz</span> <span class="nt">--numeric-owner</span> <span class="nt">--preserve-permissions</span> <span class="nt">--preserve-order</span> <span class="nt">--totals</span> <span class="se">\</span>
+           <span class="nt">--xattrs-include</span><span class="o">=</span><span class="s1">'*'</span> <span class="nt">--directory</span><span class="o">=</span>DESTINATION_DIRECTORY <span class="nt">--file</span><span class="o">=</span>agl-demo-platform.....tar.xz
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1142,17 +1139,15 @@ tar <span class="o">(</span>GNU tar<span class="o">)</span> 1.28
 <p>Depending of your scren mounting the default orientation of the UI an/or splash screen might be incorrect.
 To change the orientation of the splash screen patch</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>File: /etc/systemd/system/sysinit.target.wants/psplash-start.service
-Line:  <span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/psplash -n -a 90
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>File: /etc/systemd/system/sysinit.target.wants/psplash-start.service
+Line:  <span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/psplash <span class="nt">-n</span> <span class="nt">-a</span> 90
+</code></pre></div></div>
 
 <p>To change the orientation of the UI in Weston patch</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>File: /etc/xdg/weston/weston.ini
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>File: /etc/xdg/weston/weston.ini
 Line: <span class="nv">transform</span><span class="o">=</span>90
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="disabling-homescreen-in-agl-40x-dd-release">Disabling Homescreen in AGL 4.0.x DD release</h2>
 
@@ -1166,22 +1161,20 @@ Line: <span class="nv">transform</span><span class="o">=</span>90
   <li>Modify <em>/etc/xdg/weston/weston.ini</em> and comment the line mentioning IVI-shell. For example on Porter board:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>           <span class="o">[</span>core]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           <span class="o">[</span>core]
            <span class="nv">backend</span><span class="o">=</span>drm-backend.so
            <span class="c">#shell=ivi-shell.so</span>
            ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>modify <em>/etc/afm/unit.env.d/qt-for-ivi-shell</em> and comment the line specifying QT Wayland backend:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>           ...
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           ...
            <span class="c">#Environment=QT_WAYLAND_SHELL_INTEGRATION=ivi-shell</span>
            ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>(If you use vi, remove backup files by <code class="highlighter-rouge">rm /etc/afm/unit.env.d/*~</code>)</p>
 
@@ -1189,9 +1182,8 @@ Line: <span class="nv">transform</span><span class="o">=</span>90
   <li>disable Homescreen services:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>           <span class="c"># systemctl --user mask HomeScreen.service</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           <span class="c"># systemctl --user mask HomeScreen.service</span>
+</code></pre></div></div>
 
 <ul>
   <li>Reboot your target and you should then be able to start apps on the standard weston screen using afm-util</li>
@@ -1222,17 +1214,16 @@ You need to configure Audio in 2 places</p>
 <p>The file /etc/asound.conf (at the beginning) tells which hardware will be used.
  For example on an Intel Minnow or UP board your need to enter the following configuration.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>   pcm.Speakers <span class="o">{</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   pcm.Speakers <span class="o">{</span>
       <span class="nb">type </span>dmix
       slave <span class="o">{</span>pcm <span class="s2">"hw:PCH,3"</span><span class="o">}</span>
       ipc_key 1001          <span class="c"># ipc_key should be unique to each dmix</span>
   <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The correct value (here hw:PCH,3) can be obtained with the command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  aplay -l
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  aplay <span class="nt">-l</span>
   <span class="k">****</span> List of PLAYBACK Hardware Devices <span class="k">****</span>
   card 0: PCH <span class="o">[</span>HDA Intel PCH], device 3: HDMI 0 <span class="o">[</span>HDMI 0]
     Subdevices: 1/1
@@ -1240,8 +1231,7 @@ You need to configure Audio in 2 places</p>
   card 0: PCH <span class="o">[</span>HDA Intel PCH], device 7: HDMI 1 <span class="o">[</span>HDMI 1]
     Subdevices: 1/1
     Subdevice <span class="c">#0: subdevice #0</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Using hw:PCH rather than hw:0 will avoid you many trouble.\
 NOTE that the device number is not always 0. If you give no device number, alsa will assume device 0 (and the not the first available device), what can fail your configuration.\
@@ -1256,25 +1246,23 @@ As the default is hw:0 (card 0 device 0), it will always fail on a Minnow or UP 
   <li>for MOST Unicens -&gt; hw:ep016ch,0</li>
 </ul>
 
-<h3 id="a-hal-configuration">4A HAL configuration</h3>
+<h3 id="4a-hal-configuration">4A HAL configuration</h3>
 
 <p>AGL 4A needs to know which HAL shall be used. This is configured in the file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/usr/agl-service-audio-4a/ahl-agl-service-audio-4a-config.json
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/agl-service-audio-4a/ahl-agl-service-audio-4a-config.json
+</code></pre></div></div>
 
 <p>At the beginning of that file you will find the slected HAL (note the there is no correct default value).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="o">{</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
     <span class="s2">"version"</span>: <span class="s2">"0.2.0"</span>,
     <span class="s2">"policy_module"</span>: <span class="s2">"AudioPolicy_v1"</span>,
     <span class="s2">"description"</span>: <span class="s2">"High-level binding configuration file"</span>,
     <span class="s2">"note"</span>: <span class="s2">"Devices and routings are always listed in order of priority (for device selection rules)"</span>,
     <span class="s2">"hal_list"</span>: <span class="o">[</span><span class="s2">"intel-minnow"</span><span class="o">]</span>,
     <span class="s2">"audio_roles"</span>: <span class="o">[</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here you see “intel-minnow” but common values are:</p>
 
@@ -1405,7 +1393,7 @@ Map can be found here.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:22 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:32 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/flounder/docs/getting-started/troubleshooting.md">Link to source document</small>
 		
@@ -1437,6 +1425,16 @@ Map can be found here.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

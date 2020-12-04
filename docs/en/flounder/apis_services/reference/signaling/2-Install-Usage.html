@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2739,9 +2739,8 @@
 
 <p>Low level CAN service (&gt;=4.0) must be installed. Prerequisites are the same.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone --recursive https://gerrit.automotivelinux.org/gerrit/apps/low-level-can-service
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone <span class="nt">--recursive</span> https://gerrit.automotivelinux.org/gerrit/apps/low-level-can-service
+</code></pre></div></div>
 
 <h2 id="clone-and-build-high-level-binding">Clone and build high level binding</h2>
 
@@ -2754,20 +2753,18 @@
 
 <h3 id="clone">Clone</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">WD</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
-<span class="gp">$ </span>git clone --recusive https://github.com/iotbzh/high-level-viwi-service.git
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">WD</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+<span class="nv">$ </span>git clone <span class="nt">--recusive</span> https://github.com/iotbzh/high-level-viwi-service.git
+</code></pre></div></div>
 
 <h3 id="build">Build</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> <span class="nv">$WD</span>/high-level-viwi-service
-<span class="gp">$ </span>mkdir build
-<span class="gp">$ </span><span class="nb">cd </span>build
-<span class="gp">$ </span>cmake ..
-<span class="gp">$ </span>make
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$WD</span>/high-level-viwi-service
+<span class="nv">$ </span>mkdir build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>cmake ..
+<span class="nv">$ </span>make
+</code></pre></div></div>
 
 <h1 id="usage">Usage</h1>
 
@@ -2788,45 +2785,44 @@ Type can be boolean, double, string, or int. Properties “id”, “uri” and 
 
 <p>For instance:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-	</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/car/demoboard/"</span><span class="p">,</span><span class="w">
-	</span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identifier"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/car/demoboard/"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identifier"</span><span class="w">
 		</span><span class="p">},</span><span class="w">
-		</span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object uri"</span><span class="w">
+		</span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object uri"</span><span class="w">
 		</span><span class="p">},</span><span class="w">
-		</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="w">
+		</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="w">
 		</span><span class="p">},</span><span class="w">
-		</span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"units"</span><span class="w">
+		</span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"units"</span><span class="w">
 		</span><span class="p">},</span><span class="w">
-		</span><span class="nt">"speed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle centerpoint speed as shown by the instrument cluster"</span><span class="w">
+		</span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle centerpoint speed as shown by the instrument cluster"</span><span class="w">
 		</span><span class="p">},</span><span class="w">
-		</span><span class="nt">"rpm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engine rotations per minute"</span><span class="w">
+		</span><span class="s2">"rpm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engine rotations per minute"</span><span class="w">
 		</span><span class="p">},</span><span class="w">
-		</span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level of tankage"</span><span class="w">
+		</span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"level of tankage"</span><span class="w">
 		</span><span class="p">},</span><span class="w">
-		</span><span class="nt">"load"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engine load"</span><span class="w">
+		</span><span class="s2">"load"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engine load"</span><span class="w">
 		</span><span class="p">}</span><span class="w">
 	</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <!-- pagebreak -->
 
@@ -2840,29 +2836,28 @@ The link to the definitions section is made through the name of the resource.</p
 <p>In case a value is linked to a low-level request, the value will start with “${“ and end with “}”. In that case the value will consist in the name of the low-level signal, followed
 with the frequency of the signal in ms. -1 in the frequency means that high level binding should subscribe to low level binding for all changes, without specifying a frequency.</p>
 
-<p>For instance:
-<code class="highlighter-rouge">json
-{
-	"name": "/car/demoboard/",
-	"values": [{
-		"name": "vehicleSpeed",
-		"unit": "km/h",
-		"speed": "${diagnostic_messages.vehicle.speed,1000}"
-	}, {
-		"name": "engineSpeed",
-		"unit": "rpm",
-		"rpm": "${diagnostic_messages.engine.speed,1000}"
-	}, {
-		"name": "fuelLevel",
-		"unit": "litre",
-		"level": "${diagnostic_messages.fuel.level,1000}"
-	}, {
-		"name": "engineLoad",
-		"unit": "Nm",
-		"load": "${diagnostic_messages.engine.load,1000}"
-	}]
-}
-</code></p>
+<p>For instance:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/car/demoboard/"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+		</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicleSpeed"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"km/h"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"speed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${diagnostic_messages.vehicle.speed,1000}"</span><span class="w">
+	</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engineSpeed"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rpm"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"rpm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${diagnostic_messages.engine.speed,1000}"</span><span class="w">
+	</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fuelLevel"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"litre"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${diagnostic_messages.fuel.level,1000}"</span><span class="w">
+	</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"engineLoad"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nm"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"load"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${diagnostic_messages.engine.load,1000}"</span><span class="w">
+	</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <!-- pagebreak -->
 
@@ -2872,25 +2867,22 @@ with the frequency of the signal in ms. -1 in the frequency means that high leve
 
 <p>The Json high level configuration file <em>high.json</em> must be placed in the directory where you launch afb-daemon.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>cp <span class="nv">$WD</span>/high-level-viwi-service/high.json <span class="nv">$WD</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cp <span class="nv">$WD</span>/high-level-viwi-service/high.json <span class="nv">$WD</span>
  <span class="nb">cd</span> <span class="nv">$WD</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then you can natively under linux you can launch afb-daemon with the low-level and high-level bindings with a command like:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> <span class="nv">$WD</span>
-<span class="gp">$ </span>afb-daemon --rootdir<span class="o">=</span><span class="nv">$WD</span>/low-level-can-service/CAN-binder/build/package --binding<span class="o">=</span><span class="nv">$WD</span>/low-level-can-service/CAN-binder/build/package/lib/afb-low-can.so --binding<span class="o">=</span><span class="nv">$WD</span>/high-level-viwi-service/build/package/lib/afb-high-viwi.so --port<span class="o">=</span>1234 --tracereq<span class="o">=</span>common --token<span class="o">=</span>1 --verbose
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$WD</span>
+<span class="nv">$ </span>afb-daemon <span class="nt">--rootdir</span><span class="o">=</span><span class="nv">$WD</span>/low-level-can-service/CAN-binder/build/package <span class="nt">--binding</span><span class="o">=</span><span class="nv">$WD</span>/low-level-can-service/CAN-binder/build/package/lib/afb-low-can.so <span class="nt">--binding</span><span class="o">=</span><span class="nv">$WD</span>/high-level-viwi-service/build/package/lib/afb-high-viwi.so <span class="nt">--port</span><span class="o">=</span>1234 <span class="nt">--tracereq</span><span class="o">=</span>common <span class="nt">--token</span><span class="o">=</span>1 <span class="nt">--verbose</span>
+</code></pre></div></div>
 
 <h3 id="use-afb-client-demo-to-test-high-level-binding">Use afb-client-demo to test high level binding</h3>
 
 <p>On another terminal, connect to the binding using previously installed <em><strong>AFB Websocket CLI</strong></em> tool:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>1
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>1
+</code></pre></div></div>
 
 <p>You will be on an interactive session where you can communicate directly with the binding API.</p>
 
@@ -2898,9 +2890,8 @@ with the frequency of the signal in ms. -1 in the frequency means that high leve
 
 <p>To use the <em><strong>AFB Websocket CLI</strong></em> tool, a command line will be like the following :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;api&gt; &lt;verb&gt; &lt;arguments&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;api&gt; &lt;verb&gt; &lt;arguments&gt;
+</code></pre></div></div>
 
 <p>Where:</p>
 
@@ -2912,28 +2903,25 @@ with the frequency of the signal in ms. -1 in the frequency means that high leve
 
 <p>You can therefore use commands such as:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>high-viwi subscribe {"name":"/car/doors/","interval":10000}
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>high-viwi subscribe {"name":"/car/doors/","interval":10000}
 high-viwi unsubscribe {"name":"/car/doors/","interval":10000}
 high-viwi get {"name":"/car/demoboard/"}
 high-viwi get {"name":"/car/demoboard/","fields":["fuelLevel","engineLoad"]}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For instance the output of the third command should be:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>high-viwi get {"name":"/car/demoboard/"}
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>high-viwi get {"name":"/car/demoboard/"}
 ON-REPLY 1:high-viwi/get: {"response":{"\/car\/demoboard\/2159e2-5b638a-39e242-7a2f5":{"id":"2159e2-5b638a-39e242-7a2f5","name":"vehicleSpeed","speed":0.000000,"unit":"km\/h","uri":"\/car\/demoboard\/2159e2-5b638a-39e242-7a2f5"},"\/car\/demoboard\/22ad2c-5a3c2b-50fabb-324c82":{"id":"22ad2c-5a3c2b-50fabb-324c82","level":0.000000,"name":"fuelLevel","unit":"litre","uri":"\/car\/demoboard\/22ad2c-5a3c2b-50fabb-324c82"},"\/car\/demoboard\/3a3ab9-2bd52c-11d30-689acf":{"id":"3a3ab9-2bd52c-11d30-689acf","name":"engineSpeed","rpm":0.000000,"unit":"rpm","uri":"\/car\/demoboard\/3a3ab9-2bd52c-11d30-689acf"},"\/car\/demoboard\/5ae808-8093cb-99716-30a605":{"id":"5ae808-8093cb-99716-30a605","load":0.000000,"name":"engineLoad","unit":"Nm","uri":"\/car\/demoboard\/5ae808-8093cb-99716-30a605"}},"jtype":"afb-reply","request":{"status":"success","uuid":"44ce03f9-a7ca-49e1-a62a-40c74db0caa0"}}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>As you can see for the moment all values are 0, because we didn’t inject any CAN data in the binder. To do this, you can use <strong>canplayer</strong> to feed the bindings with some data.
 You can find an example of data in high level binding, “samples” directory.</p>
 
 <p>For instance, on a third terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>canplayer -I candata
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>canplayer <span class="nt">-I</span> candata
+</code></pre></div></div>
 
 
 
@@ -3015,7 +3003,7 @@ You can find an example of data in high level binding, “samples” directory.<
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:43 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:58 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/high-level-viwi-service/flounder/docs/2-Install-Usage.md">Link to source document</small>
 		
@@ -3047,6 +3035,16 @@ You can find an example of data in high level binding, “samples” directory.<
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

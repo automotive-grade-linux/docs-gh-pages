@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -225,7 +225,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -263,7 +263,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -431,9 +431,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -450,12 +450,11 @@ libraries, proprietary library of multimedia, and ICCOM software.</p>
 
 <p>This README describes how to use these features and setting to local.conf.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    I/   Board configuration
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    I/   Board configuration
     II/  Build with GLES
     III/ Build with Renesas multimedia libraries
     IV/  Enable Linux ICCOM driver and Linux ICCOM library
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>There are 2 main paths:</p>
 
@@ -490,41 +489,36 @@ to use, you will need to get them from Renesas.</p>
       <li>For Salvator-X board</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "salvator-x"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     MACHINE <span class="o">=</span> <span class="s2">"salvator-x"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For R-Car Starter Kit Premier(H3ULCB) board</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "h3ulcb"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     MACHINE <span class="o">=</span> <span class="s2">"h3ulcb"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For R-Car Starter Kit Pro(M3ULCB) board</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "m3ulcb"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     MACHINE <span class="o">=</span> <span class="s2">"m3ulcb"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For R-Car Starter Kit Pro(M3NULCB) board</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-      MACHINE = "m3nulcb"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      MACHINE <span class="o">=</span> <span class="s2">"m3nulcb"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For Ebisu board</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-     MACHINE = "ebisu"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     MACHINE <span class="o">=</span> <span class="s2">"ebisu"</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Set SOC family name</p>
@@ -533,34 +527,30 @@ to use, you will need to get them from Renesas.</p>
       <li>For H3: r8a7795</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-     SOC_FAMILY = "r8a7795"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7795"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For M3: r8a7796</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-     SOC_FAMILY = "r8a7796"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a7796"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For M3N: r8a77965</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-     SOC_FAMILY = "r8a77965"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77965"</span>
+</code></pre></div>    </div>
 
     <ul>
       <li>For E3: r8a77990</li>
     </ul>
 
-    <p><code class="highlighter-rouge">bash
-      # Already added in machine config: ebisu.conf
-      SOC_FAMILY = "r8a77990"
- </code></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># Already added in machine config: ebisu.conf</span>
+      SOC_FAMILY <span class="o">=</span> <span class="s2">"r8a77990"</span>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -577,7 +567,7 @@ to use, you will need to get them from Renesas.</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="c"># Enable Gfx Pkgs</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># Enable Gfx Pkgs</span>
     MACHINE_FEATURES_append <span class="o">=</span> <span class="s2">" gsx"</span>
     MULTI_PROVIDER_WHITELIST +<span class="o">=</span> <span class="s2">"virtual/libgl virtual/egl virtual/libgles1 virtual/libgles2"</span>
 
@@ -592,8 +582,7 @@ to use, you will need to get them from Renesas.</p>
     PREFERRED_PROVIDER_libgbm <span class="o">=</span> <span class="s2">"libgbm"</span>
     PREFERRED_PROVIDER_libgbm-dev <span class="o">=</span> <span class="s2">"libgbm"</span>
     BBMASK <span class="o">=</span> <span class="s2">"mesa-gl"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Run <code class="highlighter-rouge">bitbake core-image-weston</code></li>
@@ -614,13 +603,12 @@ to use, you will need to get them from Renesas.</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="c"># Enable multimedia features.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># Enable multimedia features.</span>
     <span class="c"># This provides package group of plug-ins of the GStreamer, multimedia</span>
     <span class="c"># libraries and kernel drivers.</span>
 
         MACHINE_FEATURES_append <span class="o">=</span> <span class="s2">" multimedia"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="b-configuration-for-optional-codecs-and-middleware">B/ Configuration for optional codecs and middleware</h3>
 
@@ -633,7 +621,7 @@ to use, you will need to get them from Renesas.</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="c"># Additional configuration in OMX module</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># Additional configuration in OMX module</span>
     <span class="s2">" h263dec_lib"</span>       - <span class="k">for </span>OMX Media Component H263 Decoder Library
     <span class="s2">" h264dec_lib"</span>       - <span class="k">for </span>OMX Media Component H264 Decoder Library
     <span class="s2">" h264enc_lib"</span>       - <span class="k">for </span>OMX Media Component H.264 Encoder Library
@@ -667,13 +655,11 @@ to use, you will need to get them from Renesas.</p>
     <span class="s2">" dvd"</span>               - <span class="k">for </span>DVD Core-Middleware <span class="k">for </span>Linux
     <span class="s2">" adsp"</span>              - <span class="k">for </span>ADSP driver, ADSP interface and ADSP framework <span class="k">for </span>Linux
     <span class="s2">" avb"</span>               - <span class="k">for </span>AVB Software Package <span class="k">for </span>Linux
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Ex:
-<code class="highlighter-rouge">
-    DISTRO_FEATURES_append = " h264dec_lib h265dec_lib mpeg2dec_lib aaclcdec_lib aaclcdec_mdw"
-</code></p>
+<p>Ex:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    DISTRO_FEATURES_append = " h264dec_lib h265dec_lib mpeg2dec_lib aaclcdec_lib aaclcdec_mdw"
+</code></pre></div></div>
 
 <h3 id="c-configuration-for-test-packages">C/ Configuration for test packages</h3>
 
@@ -684,11 +670,10 @@ to use, you will need to get them from Renesas.</p>
   <li>Please add feature to DISTRO_FEATURES_append to local.conf.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="c"># Configuration for multimedia test package</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># Configuration for multimedia test package</span>
 
         DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" mm-test"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="iv-enable-linux-iccom-driver-and-linux-iccom-library">IV/ Enable Linux ICCOM driver and Linux ICCOM library</h2>
 
@@ -703,9 +688,8 @@ to use, you will need to get them from Renesas.</p>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" iccom"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    DISTRO_FEATURES_append <span class="o">=</span> <span class="s2">" iccom"</span>
+</code></pre></div></div>
 <p>END.</p>
 
 
@@ -788,7 +772,7 @@ to use, you will need to get them from Renesas.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:16 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:27 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/AGL/meta-renesas-rcar-gen3/plain/meta-rcar-gen3/README.proprietary.md?h=icefish">Link to source document</small>
 		
@@ -820,6 +804,16 @@ to use, you will need to get them from Renesas.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

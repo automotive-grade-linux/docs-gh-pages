@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1684,7 +1684,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2527,7 +2527,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2695,9 +2695,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2807,9 +2807,8 @@ This document explain how to write bindings version 3.</p>
 
 <p>Compiling:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>gcc -fPIC -shared tuto-1.c -o tuto-1.so <span class="k">$(</span>pkg-config --cflags-only-I afb-daemon<span class="k">)</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-fPIC</span> <span class="nt">-shared</span> tuto-1.c <span class="nt">-o</span> tuto-1.so <span class="k">$(</span>pkg-config <span class="nt">--cflags-only-I</span> afb-daemon<span class="k">)</span>
+</code></pre></div></div>
 
 <blockquote>
   <p>Note: the variable environment variable PKG_CONFIG_PATH might be necessary
@@ -2818,24 +2817,22 @@ tuned to get <strong>pkg-config</strong> working properly</p>
 
 <p>Running:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-daemon --binding tuto-1.so --port 3333 --token <span class="s1">''</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-daemon <span class="nt">--binding</span> tuto-1.so <span class="nt">--port</span> 3333 <span class="nt">--token</span> <span class="s1">''</span>
+</code></pre></div></div>
 
 <p>At this point, afb-daemon has started, it loaded the binding tuto-1.so and now
 listen at localhost on the port 3333.</p>
 
 <p>Testing using <strong>curl</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://localhost:3333/api/tuto-1/hello
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:3333/api/tuto-1/hello
 <span class="o">{</span><span class="s2">"jtype"</span>:<span class="s2">"afb-reply"</span>,<span class="s2">"request"</span>:<span class="o">{</span><span class="s2">"status"</span>:<span class="s2">"success"</span>,<span class="s2">"info"</span>:<span class="s2">"hello world"</span>,<span class="s2">"uuid"</span>:<span class="s2">"1e587b54-900b-49ab-9940-46141bc2e1d6"</span><span class="o">}}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Testing using <strong>afb-client-demo</strong> (with option -H for
 getting a human readable output):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>afb-client-demo -H ws://localhost:3333/api?token<span class="o">=</span>x tuto-1 hello
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>afb-client-demo <span class="nt">-H</span> ws://localhost:3333/api?token<span class="o">=</span>x tuto-1 hello
 ON-REPLY 1:tuto-1/hello: OK
 <span class="o">{</span>
   <span class="s2">"jtype"</span>:<span class="s2">"afb-reply"</span>,
@@ -2845,8 +2842,7 @@ ON-REPLY 1:tuto-1/hello: OK
     <span class="s2">"uuid"</span>:<span class="s2">"03a84ad1-458a-4ace-af74-b1da917391b9"</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This shows basic things:</p>
 
@@ -2876,9 +2872,8 @@ should be set correctly if needed (not needed only if installed in
 
 <p>Setting the include path is easy using <strong>pkg-config</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>pkg-config --cflags-only-I afb-daemon
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkg-config <span class="nt">--cflags-only-I</span> afb-daemon
+</code></pre></div></div>
 
 <blockquote>
   <p>Note for <strong>C++</strong> developers:</p>
@@ -3068,19 +3063,17 @@ commonly be used when writing a <strong><em>binding</em></strong>:</p>
 
 <p>Compiling:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>gcc -fPIC -shared tuto-2.c -o tuto-2.so <span class="k">$(</span>pkg-config --cflags --libs afb-daemon<span class="k">)</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-fPIC</span> <span class="nt">-shared</span> tuto-2.c <span class="nt">-o</span> tuto-2.so <span class="k">$(</span>pkg-config <span class="nt">--cflags</span> <span class="nt">--libs</span> afb-daemon<span class="k">)</span>
+</code></pre></div></div>
 
 <p>Running:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-daemon --binding tuto-2.so --port 3333 --token <span class="s1">''</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-daemon <span class="nt">--binding</span> tuto-2.so <span class="nt">--port</span> 3333 <span class="nt">--token</span> <span class="s1">''</span>
+</code></pre></div></div>
 
 <p>Testing:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>afb-client-demo -H localhost:3333/api?token<span class="o">=</span>toto
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>afb-client-demo <span class="nt">-H</span> localhost:3333/api?token<span class="o">=</span>toto
 tuto-2 login <span class="o">{</span><span class="s2">"help"</span>:true<span class="o">}</span>
 ON-REPLY 1:tuto-2/login: ERROR
 <span class="o">{</span>
@@ -3117,12 +3110,11 @@ ON-REPLY 4:tuto-2/action: OK
     <span class="s2">"status"</span>:<span class="s2">"success"</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In an other terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>afb-client-demo -H localhost:3333/api?token<span class="o">=</span>toto
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>afb-client-demo <span class="nt">-H</span> localhost:3333/api?token<span class="o">=</span>toto
 tuto-2 login <span class="o">{</span><span class="s2">"user"</span>:<span class="s2">"jobol"</span>,<span class="s2">"password"</span>:<span class="s2">"please"</span><span class="o">}</span>
 ON-REPLY 1:tuto-2/login: OK
 <span class="o">{</span>
@@ -3140,12 +3132,11 @@ tuto-2 <span class="nb">logout true
     <span class="s2">"status"</span>:<span class="s2">"success"</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It produced in the first terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ON-EVENT tuto-2/login:
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ON-EVENT tuto-2/login:
 <span class="o">{</span>
   <span class="s2">"event"</span>:<span class="s2">"tuto-2</span><span class="se">\/</span><span class="s2">login"</span>,
   <span class="s2">"data"</span>:<span class="s2">"jobol"</span>,
@@ -3157,8 +3148,7 @@ ON-EVENT tuto-2/logout:
   <span class="s2">"data"</span>:<span class="s2">"jobol"</span>,
   <span class="s2">"jtype"</span>:<span class="s2">"afb-event"</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -3239,7 +3229,7 @@ ON-EVENT tuto-2/logout:
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:00 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:13 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/afb-binding-writing.md?h=guppy">Link to source document</small>
 		
@@ -3271,6 +3261,16 @@ ON-EVENT tuto-2/logout:
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

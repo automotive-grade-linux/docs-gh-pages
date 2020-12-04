@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1801,7 +1801,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2701,7 +2701,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2869,9 +2869,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2887,47 +2887,40 @@
 
 <h5 id="clone-repository-linux-kernel-module-for-iso-15765-22016-can-transport-protocol">Clone repository Linux Kernel Module for ISO 15765-2:2016 CAN transport protocol</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/hartkopp/can-isotp.git
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/hartkopp/can-isotp.git
+</code></pre></div></div>
 
 <h5 id="move-into-the-new-repository">Move into the new repository</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>can-isotp
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>can-isotp
+</code></pre></div></div>
 
 <h5 id="install-packages-to-build">Install packages to build</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install build-essential linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install build-essential linux-headers-<span class="k">$(</span>uname <span class="nt">-r</span><span class="k">)</span>
+</code></pre></div></div>
 
 <h5 id="compile">Compile</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>make
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div></div>
 
 <h5 id="install">Install</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo make modules_install
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>make modules_install
+</code></pre></div></div>
 
 <h5 id="load-module">Load module</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>modprobe can
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>modprobe can
 modprobe vcan
-sudo insmod ./net/can/can-isotp.ko
-</code></pre>
-</div>
+<span class="nb">sudo </span>insmod ./net/can/can-isotp.ko
+</code></pre></div></div>
 
 <h2 id="include-headers--files">Include headers  files</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo cp include/uapi/linux/can/isotp.h /usr/include/linux/can/
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>cp include/uapi/linux/can/isotp.h /usr/include/linux/can/
+</code></pre></div></div>
 
 
 
@@ -3008,7 +3001,7 @@ sudo insmod ./net/can/can-isotp.ko
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:50 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:04 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-can-low-level/plain/docs/4-Installation-ISOTP.md?h=halibut">Link to source document</small>
 		
@@ -3040,6 +3033,16 @@ sudo insmod ./net/can/can-isotp.ko
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

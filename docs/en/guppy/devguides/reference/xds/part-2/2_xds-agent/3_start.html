@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2499,22 +2499,20 @@
 
 <p>For <strong>Linux</strong> distro, XDS agent can be started as a user service by Systemd.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/usr/lib/systemd/user/xds-agent.service
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/systemd/user/xds-agent.service
+</code></pre></div></div>
 
 <p>Use well-known systemd commands to control <code class="highlighter-rouge">xds-agent.service</code> service.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Status XDS agent:</span>
-systemctl --user status xds-agent
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Status XDS agent:</span>
+systemctl <span class="nt">--user</span> status xds-agent
 
 <span class="c"># Start XDS agent</span>
-systemctl --user start xds-agent
+systemctl <span class="nt">--user</span> start xds-agent
 
 <span class="c"># Stop XDS agent</span>
-systemctl --user stop xds-agent
-</code></pre>
-</div>
+systemctl <span class="nt">--user</span> stop xds-agent
+</code></pre></div></div>
 
 <p>Default settings are defined in  <code class="highlighter-rouge">/etc/default/xds-agent</code> file but these
 settings you can overwritten by <code class="highlighter-rouge">$HOME/.xds/agent/agent-config.json</code> file,
@@ -2524,9 +2522,8 @@ see <a href="./2_config.html">Configuration chapter</a> for more details.</p>
 
 <p>On <strong>Linux or MacOS</strong>, simply execute <code class="highlighter-rouge">xds-agent</code> executable:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/opt/AGL/bin/xds-agent
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/AGL/bin/xds-agent
+</code></pre></div></div>
 
 <p>On <strong>Windows</strong>, simply execute <code class="highlighter-rouge">xds-agent</code> executable (root path may change
 depending where you installed/unzipped xds-agent tarball):</p>
@@ -2624,7 +2621,7 @@ for example to change logging level or select a specific configuration file.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:50 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:04 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-2/2_xds-agent/3_start.md?h=guppy">Link to source document</small>
 		
@@ -2656,6 +2653,16 @@ for example to change logging level or select a specific configuration file.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

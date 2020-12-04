@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1801,7 +1801,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2701,7 +2701,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2869,9 +2869,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -3053,7 +3053,7 @@ In <code class="highlighter-rouge">Car Run</code> state, the user can’t switch
 
 <h3 id="build-by-sdk">Build by SDK</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://gerrit.automotivelinux.org/gerrit/apps/agl-service-windowmanager
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://gerrit.automotivelinux.org/gerrit/apps/agl-service-windowmanager
 <span class="nb">cd </span>agl-service-windowmanager
 mkdir build
 <span class="nb">cd </span>build
@@ -3061,23 +3061,20 @@ mkdir build
 cmake ..
 make
 make package
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The widget package is populated in the ‘package’ directory.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ls package/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls </span>package/
 root  windowmanager-service.wgt
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="install">Install</h3>
 
 <p>Copy windowmanager-service.wgt to the file system then execute the following command.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afm-util install windowmanager-service.wgt
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afm-util install windowmanager-service.wgt
+</code></pre></div></div>
 
 <h2 id="bitbake">Bitbake</h2>
 
@@ -3085,19 +3082,17 @@ root  windowmanager-service.wgt
 
 <h3 id="download-recipe">Download recipe</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir WORK
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir WORK
 <span class="nb">cd </span>WORK
-repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init <span class="nt">-u</span> https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="execute-bitbake">Execute Bitbake</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source </span>meta-agl/scripts/aglsetup.sh -m m3ulcb agl-demo hmi-framework
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source </span>meta-agl/scripts/aglsetup.sh <span class="nt">-m</span> m3ulcb agl-demo hmi-framework
 bitbake agl-demo-platform
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -3106,11 +3101,10 @@ bitbake agl-demo-platform
 <p>To call Window Manager, it is important to enable the permission from security framework.
 To use Window Manager API, an application or a service shall add the following configuration definition into “config.xml” of your application.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-api"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"urn:AGL:widget:required-api"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"windowmanager"</span> <span class="na">value=</span><span class="s">"ws"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/feature&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To call Window Manager function easily, Window Manager provides a library which is called “libwindowmanager”.
 This library provides a function style API calling interface.
@@ -3175,43 +3169,42 @@ implementation, these samples are installed to ${AFM_APP_INSTALL_DIR}/etc/ .</p>
 
 <p>The sample configuration is here</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface ID to Layer ID mapping"</span><span class="p">,</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface ID to Layer ID mapping"</span><span class="p">,</span><span class="w">
 
-   </span><span class="nt">"main_surface"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"surface_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HomeScreen"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This surface should never be made invisible (The HomeScreen)"</span><span class="w">
+   </span><span class="s2">"main_surface"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"surface_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HomeScreen"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This surface should never be made invisible (The HomeScreen)"</span><span class="w">
    </span><span class="p">},</span><span class="w">
 
-   </span><span class="nt">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="s2">"mappings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BackGroundLayer"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BackGroundLayer"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single BackGround layer map for the map, radio, music and video"</span><span class="w">
+         </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BackGroundLayer"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BackGroundLayer"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">999</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single BackGround layer map for the map, radio, music and video"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"homescreen"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FarHomeScreen"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FarHomeScreen is the part of HomeScreen. The z order of this layer is lower than NearHomeScreen"</span><span class="w">
+         </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"homescreen"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FarHomeScreen"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FarHomeScreen is the part of HomeScreen. The z order of this layer is lower than NearHomeScreen"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"music|video|browser|radio|phone|map|hvac|settings|dashboard|poi|mixer|sdl|launcher|fallback"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apps"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range of IDs that will always be placed on layer 1001"</span><span class="w">
+         </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"music|video|browser|radio|phone|map|hvac|settings|dashboard|poi|mixer|sdl|launcher|fallback"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apps"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range of IDs that will always be placed on layer 1001"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^on_screen.*"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OnScreen"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range of IDs that will always be placed on the OnScreen layer, that gets a very high 'dummy' id of 9999"</span><span class="w">
+         </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^on_screen.*"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OnScreen"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"layer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Range of IDs that will always be placed on the OnScreen layer, that gets a very high 'dummy' id of 9999"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Each mapping defines the following items to map corresponding surfaces
 to a layer.</p>
@@ -3249,48 +3242,47 @@ The problem is issued in <a href="https://jira.automotivelinux.org/browse/SPEC-1
 <p>Area means abstract expressions of 2-dimensional size and position.
 <code class="highlighter-rouge">areas.json</code> defines the area which an application is set.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fullscreen"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fullscreen"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">1920</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal.full"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">1488</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal.full"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">1488</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"split.main"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">744</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"split.main"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">744</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"split.sub"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">962</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">744</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"split.sub"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rect"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">962</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"w"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"h"</span><span class="p">:</span><span class="w"> </span><span class="mi">744</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>The image of the above setting is described below.</p>
 
@@ -3463,11 +3455,10 @@ Normally, the body of requesting API will be here.</p>
 
 <p>argument example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="requestsurfacexdg"><em>requestSurfaceXDG</em></h4>
 
@@ -3476,7 +3467,7 @@ XDGLauncher is created for XDG application for desktop app without editing for H
 Please see the repository in detail.
 <a href="https://gerrit.automotivelinux.org/gerrit/gitweb?p=staging%2Fxdg-launcher.git;a=summary">https://gerrit.automotivelinux.org/gerrit/gitweb?p=staging%2Fxdg-launcher.git;a=summary</a></p>
 
-<h4 id="wmsubscribe"><em>wm_subscribe</em></h4>
+<h4 id="wm_subscribe"><em>wm_subscribe</em></h4>
 
 <p>Subscribe the Window Manager’s event.
 Application must subscribe <code class="highlighter-rouge">syncDraw</code> event.</p>
@@ -3488,11 +3479,10 @@ Application must subscribe <code class="highlighter-rouge">syncDraw</code> event
 
 <p>argument example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>The event is abstracted with a number (enumeration).</p>
 
@@ -3554,12 +3544,11 @@ If it is denied, afb_req_fail will be returned.</p>
 
 <p>argument example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"drawing_area"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"normal.full"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"drawing_area"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"normal.full"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="deactivatewindow"><em>deactivateWindow</em></h4>
 
@@ -3587,11 +3576,10 @@ Otherwise, Window Manager will roll back to previous state and reject your reque
 
 <p>argument example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"drawing_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="changeareasize"><em>changeAreaSize</em></h4>
 
@@ -3629,23 +3617,22 @@ The system application such like HomeScreen call this function, then the layout 
 
 <p>Return example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"response"</span><span class="p">:{</span><span class="w">
-        </span><span class="nt">"width_pixel"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"height_pixel"</span><span class="p">:</span><span class="mi">1920</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"width_mm"</span><span class="p">:</span><span class="mi">320</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"height_mm"</span><span class="p">:</span><span class="mi">520</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"scale"</span><span class="p">:</span><span class="mi">1</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"width_pixel"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height_pixel"</span><span class="p">:</span><span class="mi">1920</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"width_mm"</span><span class="p">:</span><span class="mi">320</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height_mm"</span><span class="p">:</span><span class="mi">520</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"scale"</span><span class="p">:</span><span class="mi">1</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"jtype"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"request"</span><span class="p">:{</span><span class="w">
-        </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"info"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"05ae219a-0e56-4f46-af9f-3186a18cb110"</span><span class="w">
+    </span><span class="s2">"jtype"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"05ae219a-0e56-4f46-af9f-3186a18cb110"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Note :</p>
 
@@ -3665,37 +3652,36 @@ These items lack reliability, so recommend not to use.</p>
 
 <p>Return example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"response"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"areas"</span><span class="p">:[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"areas"</span><span class="p">:[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"on_screen"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"rect"</span><span class="p">:{</span><span class="w">
-          </span><span class="nt">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"y"</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"w"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"h"</span><span class="p">:</span><span class="mi">1488</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"on_screen"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rect"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"y"</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"w"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"h"</span><span class="p">:</span><span class="mi">1488</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"restriction.split.sub"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"rect"</span><span class="p">:{</span><span class="w">
-          </span><span class="nt">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"y"</span><span class="p">:</span><span class="mi">962</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"w"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"h"</span><span class="p">:</span><span class="mi">744</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"restriction.split.sub"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rect"</span><span class="p">:{</span><span class="w">
+          </span><span class="s2">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"y"</span><span class="p">:</span><span class="mi">962</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"w"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"h"</span><span class="p">:</span><span class="mi">744</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"request"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"uuid"</span><span class="p">:</span><span class="s2">"0e6b8835-0df0-4a34-9718-125e6258b378"</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"request"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uuid"</span><span class="p">:</span><span class="s2">"0e6b8835-0df0-4a34-9718-125e6258b378"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="event-from-window-manager">Event from Window Manager</h3>
 
@@ -3749,15 +3735,14 @@ These items lack reliability, so recommend not to use.</p>
 <p>Events also consists of JSON.
 The data of event is contained in <code class="highlighter-rouge">data</code> such like</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/active"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"date"</span><span class="p">:{</span><span class="w">
-        </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"navigation"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="s2">"navigation"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+    </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>“event” is the event name.
 “data” is the data object from Window Manager and contains
@@ -3770,16 +3755,15 @@ This section describes “event” and the contents of “data”.</p>
 
 <p>example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/active"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="err">,</span><span class="w">
-  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="inactive">inactive</h4>
 
@@ -3787,16 +3771,15 @@ This section describes “event” and the contents of “data”.</p>
 
 <p>example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/inactive"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">inactive"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="err">,</span><span class="w">
-  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="visible">visible</h4>
 
@@ -3804,16 +3787,15 @@ This section describes “event” and the contents of “data”.</p>
 
 <p>example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/visible"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">visible"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="err">,</span><span class="w">
-  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="invisible">invisible</h4>
 
@@ -3821,16 +3803,15 @@ This section describes “event” and the contents of “data”.</p>
 
 <p>example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/invisible"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">invisible"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="err">,</span><span class="w">
-  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="syncdraw">syncDraw</h4>
 
@@ -3853,22 +3834,21 @@ This section describes “event” and the contents of “data”.</p>
 
 <p>example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/syncDraw"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"drawing_area"</span><span class="p">:</span><span class="s2">"normal.full"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"drawing_rect"</span><span class="p">:{</span><span class="w">
-      </span><span class="nt">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"y"</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"width"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"height"</span><span class="p">:</span><span class="mi">1488</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">syncDraw"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drawing_area"</span><span class="p">:</span><span class="s2">"normal.full"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drawing_rect"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"x"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"y"</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"width"</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="mi">1488</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>An application which gets this event must send <code class="highlighter-rouge">endDraw</code>.
 For details, please see the sequence.</p>
@@ -3879,33 +3859,31 @@ For details, please see the sequence.</p>
 
 <p>example :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/flushDraw"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">flushDraw"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="s2">"launcher"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="err">,</span><span class="w">
-  </span><span class="s2">"jtype"</span><span class="err">:</span><span class="s2">"afb-event"</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h4 id="screenupdated">screenUpdated</h4>
 
 <p>This event is issued after the visible application changes as a state transition change. This contains resized applications and visible applications. This event is issued to all subscriber. Typical usecase is only for HomeScreen. If HomeScreen has an animation until the started application is visible such as progress bar, this signal may become a switch to stop the animation.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"event"</span><span class="p">:</span><span class="s2">"windowmanager\/screenUpdated"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="nt">"ids"</span><span class="p">:[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="s2">"windowmanager</span><span class="se">\/</span><span class="s2">screenUpdated"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"ids"</span><span class="p">:[</span><span class="w">
       </span><span class="s2">"mediaplayer"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"navi"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
+  </span><span class="s2">"jtype"</span><span class="p">:</span><span class="s2">"afb-event"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>“ids” is the application_id described in config.xml of application.</p>
 
@@ -4112,7 +4090,7 @@ IDs for the ivi-application interface.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:48 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:02 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-windowmanager/plain/doc/ApplicationGuide.md?h=halibut">Link to source document</small>
 		
@@ -4144,6 +4122,16 @@ IDs for the ivi-application interface.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

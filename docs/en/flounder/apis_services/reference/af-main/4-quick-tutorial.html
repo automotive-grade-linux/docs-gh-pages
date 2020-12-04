@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2756,9 +2756,8 @@ available in the main git repository:</p>
 
 <p>You can get them by cloning this git repository on your desktop (will be useful later in this tutorial):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/iotbzh/afm-widget-examples
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/iotbzh/afm-widget-examples
+</code></pre></div></div>
 
 <h2 id="using-the-cli-tool">Using the CLI tool</h2>
 
@@ -2766,21 +2765,19 @@ available in the main git repository:</p>
 
 <p>Connect your AGL target board to the network and copy some sample widgets on it through SSH (set BOARDIP with your board IP address) :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>afm-widget-examples
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>afm-widget-examples
 <span class="nv">BOARDIP</span><span class="o">=</span>1.2.3.4
 scp <span class="k">*</span>.wgt root@<span class="nv">$BOARDIP</span>:~/
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Connect through SSH on the target board and check for Application Framework daemons:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh root@<span class="nv">$BOARDIP</span>
-<span class="gp">root@porter:~# </span>ps -ef|grep bin/afm
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh root@<span class="nv">$BOARDIP</span>
+root@porter:~# ps <span class="nt">-ef</span>|grep bin/afm
 afm        409     1  0 13:00 ?        00:00:00 /usr/bin/afm-system-daemon
 root       505   499  0 13:01 ?        00:00:00 /usr/bin/afm-user-daemon
-root       596   550  0 13:22 pts/0    00:00:00 grep afm
-</code></pre>
-</div>
+root       596   550  0 13:22 pts/0    00:00:00 <span class="nb">grep </span>afm
+</code></pre></div></div>
 
 <p>We can see that there are two daemons running:</p>
 
@@ -2798,14 +2795,13 @@ Using the <strong>afm-util</strong> command, you can install, uninstall, list, r
 
 <p>To begin, run ‘<strong>afm-util help</strong>’ to get a quick help on commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util <span class="nb">help
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util <span class="nb">help
 </span>usage: afm-util <span class="nb">command</span> <span class="o">[</span>arg]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The commands are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>list
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list
 runnables      list the runnable widgets installed
 
 add wgt
@@ -2828,24 +2824,21 @@ terminate rid  terminate the running instance rid
 
 status rid
 state rid      get status of the running instance rid
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="install-an-application">Install an application</h3>
 
 <p>You can then install your first application:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util install /home/root/annex.wgt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util install /home/root/annex.wgt
 <span class="o">{</span> <span class="s2">"added"</span>: <span class="s2">"webapps-annex@0.0"</span> <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Let’s install a second application:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util install /home/root/memory-match.wgt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util install /home/root/memory-match.wgt
 <span class="o">{</span> <span class="s2">"added"</span>: <span class="s2">"webapps-memory-match@1.1"</span> <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note that usually, <strong>afm-util</strong> will return a <strong>JSON result</strong>, which is the common format for messages returned by the Application Framework daemons.</p>
 
@@ -2853,11 +2846,10 @@ state rid      get status of the running instance rid
 
 <p>You can then list all installed applications:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util list
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util list
 <span class="o">[</span> <span class="o">{</span> <span class="s2">"id"</span>: <span class="s2">"webapps-annex@0.0"</span>, <span class="s2">"version"</span>: <span class="s2">"0.0.10"</span>, <span class="s2">"width"</span>: 0, <span class="s2">"height"</span>: 0, <span class="s2">"name"</span>: <span class="s2">"Annex"</span>, <span class="s2">"description"</span>: <span class="s2">"Reversi</span><span class="se">\/</span><span class="s2">Othello"</span>, <span class="s2">"shortname"</span>: <span class="s2">""</span>, <span class="s2">"author"</span>: <span class="s2">"Todd Brandt &lt;todd.e.brandt@intel.com&gt;"</span> <span class="o">}</span>,
 <span class="o">{</span> <span class="s2">"id"</span>: <span class="s2">"webapps-memory-match@1.1"</span>, <span class="s2">"version"</span>: <span class="s2">"1.1.7"</span>, <span class="s2">"width"</span>: 0, <span class="s2">"height"</span>: 0, <span class="s2">"name"</span>: <span class="s2">"MemoryMatch"</span>, <span class="s2">"description"</span>: <span class="s2">"Memory match"</span>, <span class="s2">"shortname"</span>: <span class="s2">""</span>, <span class="s2">"author"</span>: <span class="s2">"Todd Brandt &lt;todd.e.brandt@intel.com&gt;"</span> <span class="o">}</span> <span class="o">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here, we can see the two previously installed applications.</p>
 
@@ -2865,10 +2857,9 @@ state rid      get status of the running instance rid
 
 <p>Let’s get some details about the first application:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util info webapps-annex@0.0
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util info webapps-annex@0.0
 <span class="o">{</span> <span class="s2">"id"</span>: <span class="s2">"webapps-annex@0.0"</span>, <span class="s2">"version"</span>: <span class="s2">"0.0.10"</span>, <span class="s2">"width"</span>: 0, <span class="s2">"height"</span>: 0, <span class="s2">"name"</span>: <span class="s2">"Annex"</span>, <span class="s2">"description"</span>: <span class="s2">"Reversi</span><span class="se">\/</span><span class="s2">Othello"</span>, <span class="s2">"shortname"</span>: <span class="s2">""</span>, <span class="s2">"author"</span>: <span class="s2">"Todd Brandt &lt;todd.e.brandt@intel.com&gt;"</span> <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note: that AGL applications are mostly handled by afm-util through their IDs.<br />
 In our example, the application ID is ‘webapps-annex@0.0’.</p>
@@ -2877,10 +2868,9 @@ In our example, the application ID is ‘webapps-annex@0.0’.</p>
 
 <p>Let’s start the first application Annex:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util start webapps-annex@0.0
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util start webapps-annex@0.0
 1
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>As the application is a HTML5 game, you should then get a webview running with QML on the board display.</p>
 
@@ -2889,11 +2879,10 @@ In our example, the application ID is ‘webapps-annex@0.0’.</p>
 <p>The application has been started in the user session, with a dedicated security context, enforced by SMACK.<br />
 To illustrate this, we can take a look at the running processes and their respective SMACK labels:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>ps -efZ |grep webapps-annex | grep -v grep
-User::App::webapps-annex        root       716   491  0 13:19 ?        00:00:00 /usr/bin/afb-daemon --mode<span class="o">=</span><span class="nb">local</span> --readyfd<span class="o">=</span>8 --alias<span class="o">=</span>/icons /usr/share/afm/icons --port<span class="o">=</span>12348 --rootdir<span class="o">=</span>/usr/share/afm/applications/webapps-annex/0.0 --token<span class="o">=</span>7D6D2F16 --sessiondir<span class="o">=</span>/home/root/app-data/webapps-annex/.afb-daemon
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# ps <span class="nt">-efZ</span> |grep webapps-annex | <span class="nb">grep</span> <span class="nt">-v</span> <span class="nb">grep
+</span>User::App::webapps-annex        root       716   491  0 13:19 ?        00:00:00 /usr/bin/afb-daemon <span class="nt">--mode</span><span class="o">=</span><span class="nb">local</span> <span class="nt">--readyfd</span><span class="o">=</span>8 <span class="nt">--alias</span><span class="o">=</span>/icons /usr/share/afm/icons <span class="nt">--port</span><span class="o">=</span>12348 <span class="nt">--rootdir</span><span class="o">=</span>/usr/share/afm/applications/webapps-annex/0.0 <span class="nt">--token</span><span class="o">=</span>7D6D2F16 <span class="nt">--sessiondir</span><span class="o">=</span>/home/root/app-data/webapps-annex/.afb-daemon
 User::App::webapps-annex        root       717   491  0 13:19 ?        00:00:00 /usr/bin/qt5/qmlscene http://localhost:12348/index.html?token<span class="o">=</span>7D6D2F16 /usr/bin/web-runtime-webkit.qml
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In the previous result, we see that the application is composed of two processes:</p>
 
@@ -2915,10 +2904,9 @@ to all other user or system resources.</p>
 
 <p>To check for running applications, just run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util ps
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util ps
 <span class="o">[</span> <span class="o">{</span> <span class="s2">"runid"</span>: 1, <span class="s2">"state"</span>: <span class="s2">"running"</span>, <span class="s2">"id"</span>: <span class="s2">"webapps-annex@0.0"</span> <span class="o">}</span> <span class="o">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The ‘runid’ is the application instance ID and is used as an argument for the 
 subcommands controlling the application runtime state (kill/pause/resume/status)</p>
@@ -2927,17 +2915,15 @@ subcommands controlling the application runtime state (kill/pause/resume/status)
 
 <p>To uninstall an application, simply use its ID:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util uninstall webapps-annex@0.0
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util uninstall webapps-annex@0.0
 <span class="nb">true</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then list the installed apps to confirm the removal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>afm-util list
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# afm-util list
 <span class="o">[</span> <span class="o">{</span> <span class="s2">"id"</span>: <span class="s2">"webapps-memory-match@1.1"</span>, <span class="s2">"version"</span>: <span class="s2">"1.1.7"</span>, <span class="s2">"width"</span>: 0, <span class="s2">"height"</span>: 0, <span class="s2">"name"</span>: <span class="s2">"MemoryMatch"</span>, <span class="s2">"description"</span>: <span class="s2">"Memory match"</span>, <span class="s2">"shortname"</span>: <span class="s2">""</span>, <span class="s2">"author"</span>: <span class="s2">"Todd Brandt &lt;todd.e.brandt@intel.com&gt;"</span> <span class="o">}</span> <span class="o">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="afm-client-a-sample-html5-homescreen">afm-client: a sample HTML5 ‘Homescreen’</h2>
 
@@ -2992,9 +2978,8 @@ It can be used by developers as a template to start writing real AGL Application
 
 <p>This application is not available as WGT file yet and it should be started manually without any specific security context:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">root@porter:~# </span>/usr/bin/afb-daemon --port<span class="o">=</span>1235 --token<span class="o">=</span><span class="s1">''</span> --sessiondir<span class="o">=</span>/home/root/.afm-daemon --rootdir<span class="o">=</span>/usr/share/agl/afb-client --alias<span class="o">=</span>/icons:/usr/share/afm/icons
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@porter:~# /usr/bin/afb-daemon <span class="nt">--port</span><span class="o">=</span>1235 <span class="nt">--token</span><span class="o">=</span><span class="s1">''</span> <span class="nt">--sessiondir</span><span class="o">=</span>/home/root/.afm-daemon <span class="nt">--rootdir</span><span class="o">=</span>/usr/share/agl/afb-client <span class="nt">--alias</span><span class="o">=</span>/icons:/usr/share/afm/icons
+</code></pre></div></div>
 
 <p>Then you can access it from a browser:
 <a href="http://[board_ip]:1235/opa/?token=132456789">http://[board_ip]:1235/opa/?token=132456789</a></p>
@@ -3081,7 +3066,7 @@ It can be used by developers as a template to start writing real AGL Application
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:51 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:05 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-main/plain/docs/4-quick-tutorial.md?h=flounder">Link to source document</small>
 		
@@ -3113,6 +3098,16 @@ It can be used by developers as a template to start writing real AGL Application
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

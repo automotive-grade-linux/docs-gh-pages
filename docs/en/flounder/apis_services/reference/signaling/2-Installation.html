@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2757,10 +2757,9 @@ framework version &gt;= 0.6.</p>
   <p><strong>NOTE</strong> These commands assume that proprietary graphic drivers for Renesas Porter board are located in <em>/home/devel/share/proprietary-renesas-rcar</em> directory.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>prepare_meta -f iotbzh -o /xdt -l /home/devel/mirror -p /home/devel/share/proprietary-renesas-rcar/ -t m3ulcb -e wipeconfig -e rm_work -e cleartemp
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prepare_meta <span class="nt">-f</span> iotbzh <span class="nt">-o</span> /xdt <span class="nt">-l</span> /home/devel/mirror <span class="nt">-p</span> /home/devel/share/proprietary-renesas-rcar/ <span class="nt">-t</span> m3ulcb <span class="nt">-e</span> wipeconfig <span class="nt">-e</span> rm_work <span class="nt">-e</span> cleartemp
 /xdt/build/m3ulcb/agl-init-build-env
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>(Optionnal) An <a href="http://shop.8devices.com/usb2can">USB CAN adapter</a> connected to connector through the <a href="http://www.mouser.fr/ProductDetail/EasySync/OBD-M-DB9-F-ES/">right cable</a>) if you want to connect to a real car through the OBD2 connector.</li>
@@ -2781,18 +2780,17 @@ framework version &gt;= 0.6.</p>
 
 <h3 id="compile">Compile</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">source</span> /xdt/sdk/environment-setup-aarch64-agl-linux
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /xdt/sdk/environment-setup-aarch64-agl-linux
 <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/xdt/sdk/sysroots/x86_64-aglsdk-linux/usr/bin
 <span class="nb">export </span><span class="nv">WD</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
-git clone --recursive https://gerrit.automotivelinux.org/gerrit/apps/agl-service-can-low-level -b Renesas_delivery_Q2
-git clone --recursive https://gerrit.automotivelinux.org/gerrit/apps/low-level-can-generator
+git clone <span class="nt">--recursive</span> https://gerrit.automotivelinux.org/gerrit/apps/agl-service-can-low-level <span class="nt">-b</span> Renesas_delivery_Q2
+git clone <span class="nt">--recursive</span> https://gerrit.automotivelinux.org/gerrit/apps/low-level-can-generator
 <span class="nb">cd</span> <span class="k">${</span><span class="nv">WD</span><span class="k">}</span>/low-level-can-generator
-mkdir -p build
+mkdir <span class="nt">-p</span> build
 <span class="nb">cd </span>build
-cmake -G <span class="s2">"Unix Makefiles"</span> ..
+cmake <span class="nt">-G</span> <span class="s2">"Unix Makefiles"</span> ..
 make
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="naming-convention">Naming convention</h3>
 
@@ -2802,7 +2800,7 @@ make
 
 <p>Let’s take an example, here is an example about standard PID name following this convention:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>engine.load
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>engine.load
 engine.coolant.temperature
 fuel.pressure
 intake.manifold.pressure
@@ -2821,8 +2819,7 @@ accelerator.pedal.position
 hybrid.battery-pack.remaining.life
 engine.oil.temperature
 engine.torque
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>NOTE</strong> It’s recommended that you follow this naming convention to named your CAN signals.</p>
@@ -2858,16 +2855,14 @@ engine.torque
 
 <p>To install the OpenXC utilities and runs <code class="highlighter-rouge">xml_to_json.py</code> script:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo pip install openxc
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pip install openxc
 <span class="nb">cd</span> /usr/local/lib/python2.7/dist-packages/openxc/generator
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Assuming the data exported from Vector is in <code class="highlighter-rouge">signals.xml</code> and your minimal mapping file is <code class="highlighter-rouge">mapping.json</code>, run the script:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>python -m openxc.utils ./xml_to_json.py signals.xml mapping.json signals.json
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> openxc.utils ./xml_to_json.py signals.xml mapping.json signals.json
+</code></pre></div></div>
 
 <p>The script scans <code class="highlighter-rouge">mapping.json</code> to identify the CAN messages and signals that you want to use from the XML file. It pulls the neccessary details of the messages (bit position, bit size, offset, etc) and outputs the resulting subset as JSON into the output file, <code class="highlighter-rouge">signals.json</code>.</p>
 
@@ -2877,9 +2872,8 @@ engine.torque
 
 <p>To generate your config file you just have to run the generator using the <code class="highlighter-rouge">-m</code> option to specify your JSON file.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>./can-config-generator -m ../tests/basic.json -o application-generated.cpp
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./can-config-generator <span class="nt">-m</span> ../tests/basic.json <span class="nt">-o</span> application-generated.cpp
+</code></pre></div></div>
 
 <p>If you omit the <code class="highlighter-rouge">-o</code> option, then code is generated on the stdout.
 You also can specify a header and a footer file.
@@ -2917,36 +2911,32 @@ Use the <code class="highlighter-rouge">-h</code> option to display help.</p>
 
 <p>Execute the following commands from this repository:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">WD</span><span class="k">}</span>/agl-service-can-low-level
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">WD</span><span class="k">}</span>/agl-service-can-low-level
 cp <span class="k">${</span><span class="nv">WD</span><span class="k">}</span>/low-level-can-generator/build/application-generated.cpp ../low-can-binding/binding
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="installation">Installation</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">WD</span><span class="k">}</span>/agl-service-can-low-level
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">WD</span><span class="k">}</span>/agl-service-can-low-level
 mkdir build
 <span class="nb">cd </span>build
 cmake ..
 make
 make widget
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To install it manually, you need to copy the <em>low-can-service.wgt</em> file on your target, then from it execute the following commands :</p>
 
 <p>On your host, to copy over the network :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>scp low-can-service.wgt root@&lt;target_IP&gt;:~
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp low-can-service.wgt root@&lt;target_IP&gt;:~
+</code></pre></div></div>
 
 <p>On the target, assuming <em><strong>wgt</strong></em> file is in the root home directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afm-util install low-can-service.wgt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afm-util install low-can-service.wgt
 <span class="o">{</span> <span class="s2">"added"</span>: <span class="s2">"low-can-service@4.0"</span> <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -3027,7 +3017,7 @@ make widget
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:43 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:58 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-can-low-level/plain/docs/2-Installation.md?h=flounder">Link to source document</small>
 		
@@ -3059,6 +3049,16 @@ make widget
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

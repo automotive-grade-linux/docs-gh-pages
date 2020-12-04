@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1560,7 +1560,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2333,7 +2333,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2501,9 +2501,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2527,9 +2527,8 @@ framework to keep installed permissions in a database.</p>
 
 <p>The permission names are <a href="https://tools.ietf.org/rfc/rfc2141.txt" title="RFC 2141: URN Syntax">URN</a> of the form:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    urn:AGL:permission:&lt;api&gt;:&lt;level&gt;:&lt;hierarchical-name&gt;
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    urn:AGL:permission:&lt;api&gt;:&lt;level&gt;:&lt;hierarchical-name&gt;
+</code></pre></div></div>
 
 <p>where “AGL” is the NID (the namespace identifier) dedicated to AGL.<br />
 (note: a RFC should be produced to standardize this name space)</p>
@@ -2540,15 +2539,14 @@ fields.<br />
 The 2 first fields are <code class="highlighter-rouge">&lt;api&gt;</code> and <code class="highlighter-rouge">&lt;level&gt;</code> and the remaining
 fields are grouped to form the <code class="highlighter-rouge">&lt;hierarchical-name&gt;</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;api&gt; ::<span class="o">=</span> <span class="o">[</span> &lt;pname&gt; <span class="o">]</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;api&gt; ::<span class="o">=</span> <span class="o">[</span> &lt;pname&gt; <span class="o">]</span>
 
     &lt;pname&gt; ::<span class="o">=</span> 1<span class="k">*</span>&lt;pchars&gt;
 
     &lt;pchars&gt; ::<span class="o">=</span> &lt;upper&gt; | &lt;lower&gt; | &lt;number&gt; | &lt;extra&gt;
 
     &lt;extra&gt; ::<span class="o">=</span> <span class="s2">"-"</span> | <span class="s2">"."</span> | <span class="s2">"_"</span> | <span class="s2">"@"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The field <code class="highlighter-rouge">&lt;api&gt;</code> can be made of any valid character for NSS except
 the characters colon and star (:*).<br />
@@ -2566,9 +2564,8 @@ in addition to a permission not bound to any binding, represents a
 permission that must be set at installation and that can not be
 revoked later.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;level&gt; ::= 1*&lt;lower&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;level&gt; ::= 1*&lt;lower&gt;
+</code></pre></div></div>
 
 <p>The field <code class="highlighter-rouge">&lt;level&gt;</code> is made only of letters in lower case.<br />
 The field <code class="highlighter-rouge">&lt;level&gt;</code> can only take some predefined values:</p>
@@ -2585,9 +2582,8 @@ The field <code class="highlighter-rouge">&lt;level&gt;</code> can only take som
 <p>The field <code class="highlighter-rouge">&lt;hierarchical-name&gt;</code> is made of <code class="highlighter-rouge">&lt;pname&gt;</code> separated
 by colons.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;hierarchical-name&gt; ::= &lt;pname&gt; 0*(":" &lt;pname&gt;)
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;hierarchical-name&gt; ::= &lt;pname&gt; 0*(":" &lt;pname&gt;)
+</code></pre></div></div>
 
 <p>The names at left are hierarchically grouping the
 names at right.<br />
@@ -2729,7 +2725,7 @@ Permission to use D-Bus.</li>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:48 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:02 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-main/plain/docs/3-permissions.md?h=icefish">Link to source document</small>
 		
@@ -2761,6 +2757,16 @@ Permission to use D-Bus.</li>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2530,9 +2530,8 @@ Two methods exist for you to locate these ID values:</p>
 This command returns the list of all existing project and SDK
 IDs:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>xds-gdb --list
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xds-gdb <span class="nt">--list</span>
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
@@ -2554,7 +2553,7 @@ Once you refer the project, you are ready to use <code class="highlighter-rouge"
 based on a CMakefile and the
 <a href="https://git.automotivelinux.org/src/cmake-apps-module/">cmake-apps-module</a>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Go into your project directory (e.g. helloworld-native-application)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Go into your project directory (e.g. helloworld-native-application)</span>
 <span class="nb">cd</span> ~/xds-workspace
 <span class="c"># Clone the project files into your local directory.</span>
 git clone https://github.com/iotbzh/helloworld-native-application.git
@@ -2567,11 +2566,11 @@ git clone https://github.com/iotbzh/helloworld-native-application.git
 <span class="c"># First Application" topic.</span>
 
 <span class="c"># Define XDS configuration variables by creating a "xds-config.env" file.</span>
-cat <span class="sh">&lt;&lt;EOF &gt;./xds-config.env
+<span class="nb">cat</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh"> &gt;./xds-config.env
 #optional if not default value: XDS_AGENT_URL=http://localhost:8800
 XDS_PROJECT_ID=IW7B4EE-DBY4Z74_myProject
 XDS_SDK_ID=poky-agl_aarch64_4.0.1
-EOF
+</span><span class="no">EOF
 
 </span><span class="c"># Define the configuration file to use.</span>
 <span class="nb">export </span><span class="nv">XDS_CONFIG</span><span class="o">=</span>../xds-gen3.conf
@@ -2580,14 +2579,13 @@ EOF
 mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
 
 <span class="c"># Start remote cross-build</span>
-xds-cli <span class="nb">exec</span> -- cmake -DRSYNC_TARGET<span class="o">=</span>root@myTarget ..
-xds-cli <span class="nb">exec</span> -- make
-xds-cli <span class="nb">exec</span> -- make remote-target-populate
+xds-cli <span class="nb">exec</span> <span class="nt">--</span> cmake <span class="nt">-DRSYNC_TARGET</span><span class="o">=</span>root@myTarget ..
+xds-cli <span class="nb">exec</span> <span class="nt">--</span> make
+xds-cli <span class="nb">exec</span> <span class="nt">--</span> make remote-target-populate
 
 <span class="c"># Start debugging</span>
-xds-gdb -x target/gdb-on-root@myTarget.ini
-</code></pre>
-</div>
+xds-gdb <span class="nt">-x</span> target/gdb-on-root@myTarget.ini
+</code></pre></div></div>
 
 <!-- section-note -->
 <p><strong>NOTE:</strong></p>
@@ -2699,7 +2697,7 @@ piece of hardware.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:07 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:19 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-1/debug-cmd-line.md?h=halibut">Link to source document</small>
 		
@@ -2731,6 +2729,16 @@ piece of hardware.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

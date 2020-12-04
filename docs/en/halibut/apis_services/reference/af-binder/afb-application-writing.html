@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1801,7 +1801,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2701,7 +2701,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2869,9 +2869,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2995,9 +2995,8 @@ connection using parameter <strong>token</strong> or <strong>x-afb-token</strong
 <p>In following examples, we suppose that <strong>afb-daemon</strong> is launched with something
 equivalent to:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-daemon --port<span class="o">=</span>1234 --token<span class="o">=</span>123456 <span class="o">[</span>...]
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-daemon <span class="nt">--port</span><span class="o">=</span>1234 <span class="nt">--token</span><span class="o">=</span>123456 <span class="o">[</span>...]
+</code></pre></div></div>
 
 <p>making the expectation that <strong>AuthLogin</strong> binding is requested as default.</p>
 
@@ -3005,7 +3004,7 @@ equivalent to:</p>
 
 <p>First, connects with the initial token, 123456:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://localhost:1234/api/auth/connect?token<span class="o">=</span>123456
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:1234/api/auth/connect?token<span class="o">=</span>123456
 <span class="o">{</span>
   <span class="s2">"jtype"</span>: <span class="s2">"afb-reply"</span>,
   <span class="s2">"request"</span>: <span class="o">{</span>
@@ -3015,26 +3014,24 @@ equivalent to:</p>
   <span class="o">}</span>,
   <span class="s2">"response"</span>: <span class="o">{</span><span class="s2">"token"</span>: <span class="s2">"A New Token and Session Context Was Created"</span><span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It returns an answer containing session UUID, 850c4594-1be1-4e9b-9fcc-38cc3e6ff015,
 and a refreshed token, 850c4594-1be1-4e9b-9fcc-38cc3e6ff015.</p>
 
 <p>Check if session and token is valid:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://localhost:1234/api/auth/check?token<span class="o">=</span>0aef6841-2ddd-436d-b961-ae78da3b5c5f<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:1234/api/auth/check?token<span class="o">=</span>0aef6841-2ddd-436d-b961-ae78da3b5c5f<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
 <span class="o">{</span>
   <span class="s2">"jtype"</span>: <span class="s2">"afb-reply"</span>,
   <span class="s2">"request"</span>: <span class="o">{</span><span class="s2">"status"</span>:<span class="s2">"success"</span><span class="o">}</span>,
   <span class="s2">"response"</span>: <span class="o">{</span><span class="s2">"isvalid"</span>:true<span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Refresh the token:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://localhost:1234/api/auth/refresh?token<span class="o">=</span>0aef6841-2ddd-436d-b961-ae78da3b5c5f<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:1234/api/auth/refresh?token<span class="o">=</span>0aef6841-2ddd-436d-b961-ae78da3b5c5f<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
 <span class="o">{</span>
   <span class="s2">"jtype"</span>: <span class="s2">"afb-reply"</span>,
   <span class="s2">"request"</span>: <span class="o">{</span>
@@ -3043,23 +3040,21 @@ and a refreshed token, 850c4594-1be1-4e9b-9fcc-38cc3e6ff015.</p>
   <span class="o">}</span>,
   <span class="s2">"response"</span>: <span class="o">{</span><span class="s2">"token"</span>:<span class="s2">"Token was refreshed"</span><span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Close the session:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://localhost:1234/api/auth/logout?token<span class="o">=</span>b8ec3ec3-6ffe-448c-9a6c-efda69ad7bd9<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:1234/api/auth/logout?token<span class="o">=</span>b8ec3ec3-6ffe-448c-9a6c-efda69ad7bd9<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
 <span class="o">{</span>
   <span class="s2">"jtype"</span>: <span class="s2">"afb-reply"</span>,
   <span class="s2">"request"</span>: <span class="o">{</span><span class="s2">"status"</span>: <span class="s2">"success"</span><span class="o">}</span>,
   <span class="s2">"response"</span>: <span class="o">{</span><span class="s2">"info"</span>:<span class="s2">"Token and all resources are released"</span><span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Checking on closed session for uuid should be refused:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://localhost:1234/api/auth/check?token<span class="o">=</span>b8ec3ec3-6ffe-448c-9a6c-efda69ad7bd9<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:1234/api/auth/check?token<span class="o">=</span>b8ec3ec3-6ffe-448c-9a6c-efda69ad7bd9<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>850c4594-1be1-4e9b-9fcc-38cc3e6ff015
 <span class="o">{</span>
   <span class="s2">"jtype"</span>: <span class="s2">"afb-reply"</span>,
   <span class="s2">"request"</span>: <span class="o">{</span>
@@ -3067,8 +3062,7 @@ and a refreshed token, 850c4594-1be1-4e9b-9fcc-38cc3e6ff015.</p>
     <span class="s2">"info"</span>: <span class="s2">"invalid token's identity"</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="using-afb-client-demo">Using afb-client-demo</h4>
 
@@ -3078,7 +3072,7 @@ and a refreshed token, 850c4594-1be1-4e9b-9fcc-38cc3e6ff015.</p>
 
 <p>Here is an example of exchange using <strong>afb-client-demo</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>123456
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>123456
 auth connect
 ON-REPLY 1:auth/connect: <span class="o">{</span><span class="s2">"jtype"</span>:<span class="s2">"afb-reply"</span>,<span class="s2">"request"</span>:<span class="o">{</span><span class="s2">"status"</span>:<span class="s2">"success"</span>,
    <span class="s2">"token"</span>:<span class="s2">"63f71a29-8b52-4f9b-829f-b3028ba46b68"</span>,<span class="s2">"uuid"</span>:<span class="s2">"5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1"</span><span class="o">}</span>,
@@ -3093,22 +3087,19 @@ ON-REPLY 5:auth/check: <span class="o">{</span><span class="s2">"jtype"</span>:<
 auth refresh
 ON-REPLY 6:auth/refresh: <span class="o">{</span><span class="s2">"jtype"</span>:<span class="s2">"afb-reply"</span>,<span class="s2">"request"</span>:<span class="o">{</span><span class="s2">"status"</span>:<span class="s2">"success"</span>,
    <span class="s2">"token"</span>:<span class="s2">"e83b36f8-d945-463d-b983-5d8ed73ba529"</span><span class="o">}</span>,<span class="s2">"response"</span>:<span class="o">{</span><span class="s2">"token"</span>:<span class="s2">"Token was refreshed"</span><span class="o">}}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After closing connection, reconnect as here after:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>e83b36f8-d945-463d-b983-5d8ed73ba529<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1 auth check
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>afb-client-demo ws://localhost:1234/api?token<span class="o">=</span>e83b36f8-d945-463d-b983-5d8ed73ba529<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1 auth check
 ON-REPLY 1:auth/check: <span class="o">{</span><span class="s2">"jtype"</span>:<span class="s2">"afb-reply"</span>,<span class="s2">"request"</span>:<span class="o">{</span><span class="s2">"status"</span>:<span class="s2">"success"</span><span class="o">}</span>,<span class="s2">"response"</span>:<span class="o">{</span><span class="s2">"isvalid"</span>:true<span class="o">}}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Same connection check using <strong>curl</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://localhost:1234/api/auth/check?token<span class="o">=</span>e83b36f8-d945-463d-b983-5d8ed73ba529<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:1234/api/auth/check?token<span class="o">=</span>e83b36f8-d945-463d-b983-5d8ed73ba529<span class="se">\&amp;</span><span class="nv">uuid</span><span class="o">=</span>5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1
 <span class="o">{</span><span class="s2">"jtype"</span>:<span class="s2">"afb-reply"</span>,<span class="s2">"request"</span>:<span class="o">{</span><span class="s2">"status"</span>:<span class="s2">"success"</span><span class="o">}</span>,<span class="s2">"response"</span>:<span class="o">{</span><span class="s2">"isvalid"</span>:true<span class="o">}}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="format-of-replies">Format of replies</h3>
 
@@ -3121,19 +3112,18 @@ ON-REPLY 1:auth/check: <span class="o">{</span><span class="s2">"jtype"</span>:<
 
 <p>This is a template of replies:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"jtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"informationnal text"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e83b36f8-d945-463d-b983-5d8ed73ba52"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"reqid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application-generated-id-23456"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"jtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-reply"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"informationnal text"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e83b36f8-d945-463d-b983-5d8ed73ba52"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5fcc3f3d-4b84-4fc7-ba66-2d8bd34ae7d1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reqid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application-generated-id-23456"</span><span class="w">
    </span><span class="p">},</span><span class="w">
-   </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="err">....any</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">object....</span><span class="w">
+   </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="err">....any</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">object....</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="field-jtype-of-replies">Field jtype of replies</h4>
 
@@ -3186,13 +3176,12 @@ and one optional field of name <strong>data</strong>.</p>
 
 <p>Here is a template of event:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"jtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-event"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample_api_name/sample_event_name"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">...any</span><span class="w"> </span><span class="err">event</span><span class="w"> </span><span class="err">data...</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"jtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afb-event"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample_api_name/sample_event_name"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">...any</span><span class="w"> </span><span class="err">event</span><span class="w"> </span><span class="err">data...</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="field-jtype-of-event">Field jtype of event</h4>
 
@@ -3289,7 +3278,7 @@ and the name of event within the API.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:00 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:12 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/app-framework-binder/plain/docs/afb-application-writing.md?h=halibut">Link to source document</small>
 		
@@ -3321,6 +3310,16 @@ and the name of event within the API.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

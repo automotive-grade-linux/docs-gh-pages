@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1684,7 +1684,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2527,7 +2527,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2695,9 +2695,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2715,62 +2715,61 @@
 
 <p>Here is a sample configuration.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4a-policy"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4a-policy"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="nt">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basic Audio Policy Control for Audio-4a - Sample 1"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loïc Collignon &lt;loic.collignon@iot.bzh&gt;"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-25"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://iot.bzh/download/public/schema/json/ctl-schema.json"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4a-policy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"api"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4a-policy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basic Audio Policy Control for Audio-4a - Sample 1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loïc Collignon &lt;loic.collignon@iot.bzh&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-25"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"onload"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nt">"controls"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="nt">"roles"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"onload"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"controls"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"roles"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radio (tuner)"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio_stream"</span><span class="w">
+            </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radio (tuner)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"radio_stream"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multimedia"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multimedia content (e.g. media player, etc.)"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multimedia"</span><span class="w">
+            </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multimedia"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multimedia content (e.g. media player, etc.)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multimedia"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emergency"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safety-relevant or critical alerts/alarms"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emergency"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"interrupts"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emergency"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safety-relevant or critical alerts/alarms"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"emergency"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"interrupts"</span><span class="p">:[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp"</span><span class="p">,</span><span class="w">
-                    </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp-slow"</span><span class="p">,</span><span class="w"> </span><span class="nt">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp-slow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Navigation instructions (GPS, directions, etc.)"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"interrupts"</span><span class="p">:[</span><span class="w">
+            </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Navigation instructions (GPS, directions, etc.)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"stream"</span><span class="p">:</span><span class="w"> </span><span class="s2">"navigation"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"interrupts"</span><span class="p">:[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp"</span><span class="p">,</span><span class="w">
-                    </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp-slow"</span><span class="p">,</span><span class="w"> </span><span class="nt">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramp-slow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Each defined roles should have a stream associated. This stream will be
 provided by HALs. If no HAL provides the stream, then the audio role will have
@@ -2869,7 +2868,7 @@ Currently, the sample policy engine only support the <strong>ramp</strong> inter
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:58 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:11 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/agl-service-audio-4a/plain/docs/high-level-api/README.md?h=guppy">Link to source document</small>
 		
@@ -2901,6 +2900,16 @@ Currently, the sample policy engine only support the <strong>ramp</strong> inter
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

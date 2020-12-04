@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2552,12 +2552,11 @@
 
 <p>The single required source, file <code class="highlighter-rouge">json.hpp</code> is in the <code class="highlighter-rouge">src</code> directory or <a href="https://github.com/nlohmann/json/releases">released here</a>. All you need to do is add</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#include "json.hpp"
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "json.hpp"
 </span>
 <span class="c1">// for convenience
 </span><span class="k">using</span> <span class="n">json</span> <span class="o">=</span> <span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>to the files you want to use JSON objects. That’s it. Do not forget to set the necessary switches to enable C++11 (e.g., <code class="highlighter-rouge">-std=c++11</code> for GCC and Clang).</p>
 
@@ -2581,26 +2580,25 @@
 
 <p>Assume you want to create the JSON object</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"pi"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.141</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"happy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Niels"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"nothing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"everything"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"pi"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.141</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"happy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Niels"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nothing"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"everything"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w">
-  </span><span class="nt">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">42.99</span><span class="w">
+  </span><span class="s2">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">42.99</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>With the JSON class, you could write:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// create an empty structure (null)
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// create an empty structure (null)
 </span><span class="n">json</span> <span class="n">j</span><span class="p">;</span>
 
 <span class="c1">// add a number that is stored as double (note the implicit conversion of j to an object)
@@ -2613,7 +2611,7 @@
 </span><span class="n">j</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Niels"</span><span class="p">;</span>
 
 <span class="c1">// add another null object by passing nullptr
-</span><span class="n">j</span><span class="p">[</span><span class="s">"nothing"</span><span class="p">]</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+</span><span class="n">j</span><span class="p">[</span><span class="s">"nothing"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
 
 <span class="c1">// add an object inside the object
 </span><span class="n">j</span><span class="p">[</span><span class="s">"answer"</span><span class="p">][</span><span class="s">"everything"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
@@ -2629,7 +2627,7 @@
   <span class="p">{</span><span class="s">"pi"</span><span class="p">,</span> <span class="mf">3.141</span><span class="p">},</span>
   <span class="p">{</span><span class="s">"happy"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span>
   <span class="p">{</span><span class="s">"name"</span><span class="p">,</span> <span class="s">"Niels"</span><span class="p">},</span>
-  <span class="p">{</span><span class="s">"nothing"</span><span class="p">,</span> <span class="n">nullptr</span><span class="p">},</span>
+  <span class="p">{</span><span class="s">"nothing"</span><span class="p">,</span> <span class="nb">nullptr</span><span class="p">},</span>
   <span class="p">{</span><span class="s">"answer"</span><span class="p">,</span> <span class="p">{</span>
     <span class="p">{</span><span class="s">"everything"</span><span class="p">,</span> <span class="mi">42</span><span class="p">}</span>
   <span class="p">}},</span>
@@ -2639,12 +2637,11 @@
     <span class="p">{</span><span class="s">"value"</span><span class="p">,</span> <span class="mf">42.99</span><span class="p">}</span>
   <span class="p">}}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note that in all these cases, you never need to “tell” the compiler which JSON value you want to use. If you want to be explicit or express some edge cases, the functions <code class="highlighter-rouge">json::array</code> and <code class="highlighter-rouge">json::object</code> will help:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// a way to express the empty array []
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// a way to express the empty array []
 </span><span class="n">json</span> <span class="n">empty_array_explicit</span> <span class="o">=</span> <span class="n">json</span><span class="o">::</span><span class="n">array</span><span class="p">();</span>
 
 <span class="c1">// ways to express the empty object {}
@@ -2653,8 +2650,7 @@
 
 <span class="c1">// a way to express an _array_ of key/value pairs [["currency", "USD"], ["value", 42.99]]
 </span><span class="n">json</span> <span class="n">array_not_object</span> <span class="o">=</span> <span class="p">{</span> <span class="n">json</span><span class="o">::</span><span class="n">array</span><span class="p">({</span><span class="s">"currency"</span><span class="p">,</span> <span class="s">"USD"</span><span class="p">}),</span> <span class="n">json</span><span class="o">::</span><span class="n">array</span><span class="p">({</span><span class="s">"value"</span><span class="p">,</span> <span class="mf">42.99</span><span class="p">})</span> <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="serialization--deserialization">Serialization / Deserialization</h3>
 
@@ -2662,31 +2658,29 @@
 
 <p>You can create an object (deserialization) by appending <code class="highlighter-rouge">_json</code> to a string literal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// create object from string literal
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// create object from string literal
 </span><span class="n">json</span> <span class="n">j</span> <span class="o">=</span> <span class="s">"{ </span><span class="se">\"</span><span class="s">happy</span><span class="se">\"</span><span class="s">: true, </span><span class="se">\"</span><span class="s">pi</span><span class="se">\"</span><span class="s">: 3.141 }"</span><span class="n">_json</span><span class="p">;</span>
 
 <span class="c1">// or even nicer with a raw string literal
-</span><span class="k">auto</span> <span class="n">j2</span> <span class="o">=</span> <span class="n">R</span><span class="s">"(</span><span class="err">
-</span><span class="s">  {</span><span class="err">
-</span><span class="s">    "</span><span class="n">happy</span><span class="s">": true,</span><span class="err">
-</span><span class="s">    "</span><span class="n">pi</span><span class="s">": 3.141</span><span class="err">
-</span><span class="s">  }</span><span class="err">
-</span><span class="s">)"</span><span class="n">_json</span><span class="p">;</span>
-</code></pre>
-</div>
+</span><span class="k">auto</span> <span class="n">j2</span> <span class="o">=</span> <span class="s">R"(
+  {
+    "happy": true,
+    "pi": 3.141
+  }
+)"</span><span class="n">_json</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>Note that without appending the <code class="highlighter-rouge">_json</code> suffix, the passed string literal is not parsed, but just used as JSON string value. That is, <code class="highlighter-rouge">json j = "{ \"happy\": true, \"pi\": 3.141 }"</code> would just store the string <code class="highlighter-rouge">"{ "happy": true, "pi": 3.141 }"</code> rather than parsing the actual object.</p>
 
 <p>The above example can also be expressed explicitly using <code class="highlighter-rouge">json::parse()</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// parse explicitly
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// parse explicitly
 </span><span class="k">auto</span> <span class="n">j3</span> <span class="o">=</span> <span class="n">json</span><span class="o">::</span><span class="n">parse</span><span class="p">(</span><span class="s">"{ </span><span class="se">\"</span><span class="s">happy</span><span class="se">\"</span><span class="s">: true, </span><span class="se">\"</span><span class="s">pi</span><span class="se">\"</span><span class="s">: 3.141 }"</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can also get a string representation (serialize):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// explicit conversion to string
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// explicit conversion to string
 </span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="n">j</span><span class="p">.</span><span class="n">dump</span><span class="p">();</span>    <span class="c1">// {\"happy\":true,\"pi\":3.141}
 </span>
 <span class="c1">// serialization with pretty printing
@@ -2696,14 +2690,13 @@
 //     "happy": true,
 //     "pi": 3.141
 // }
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h4 id="tofrom-streams-eg-files-string-streams">To/from streams (e.g. files, string streams)</h4>
 
 <p>You can also use streams to serialize and deserialize:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// deserialize from standard input
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// deserialize from standard input
 </span><span class="n">json</span> <span class="n">j</span><span class="p">;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">j</span><span class="p">;</span>
 
@@ -2712,12 +2705,11 @@
 
 <span class="c1">// the setw manipulator was overloaded to set the indentation for pretty printing
 </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>These operators work for any subclasses of <code class="highlighter-rouge">std::istream</code> or <code class="highlighter-rouge">std::ostream</code>. Here is the same example with files:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// read a JSON file
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// read a JSON file
 </span><span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">i</span><span class="p">(</span><span class="s">"file.json"</span><span class="p">);</span>
 <span class="n">json</span> <span class="n">j</span><span class="p">;</span>
 <span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="n">j</span><span class="p">;</span>
@@ -2725,8 +2717,7 @@
 <span class="c1">// write prettified JSON to another file
 </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">o</span><span class="p">(</span><span class="s">"pretty.json"</span><span class="p">);</span>
 <span class="n">o</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Please note that setting the exception bit for <code class="highlighter-rouge">failbit</code> is inappropriate for this use case. It will result in program termination due to the <code class="highlighter-rouge">noexcept</code> specifier in use.</p>
 
@@ -2734,23 +2725,21 @@
 
 <p>You can also read JSON from an iterator range; that is, from any container accessible by iterators whose content is stored as contiguous byte sequence, for instance a <code class="highlighter-rouge">std::vector&lt;std::uint8_t&gt;</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'t'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'u'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'t'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'u'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
 <span class="n">json</span> <span class="n">j</span> <span class="o">=</span> <span class="n">json</span><span class="o">::</span><span class="n">parse</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You may leave the iterators for the range [begin, end):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'t'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'u'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'t'</span><span class="p">,</span> <span class="sc">'r'</span><span class="p">,</span> <span class="sc">'u'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
 <span class="n">json</span> <span class="n">j</span> <span class="o">=</span> <span class="n">json</span><span class="o">::</span><span class="n">parse</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="stl-like-access">STL-like access</h3>
 
 <p>We designed the JSON class to behave just like an STL container. In fact, it satisfies the <a href="http://en.cppreference.com/w/cpp/concept/ReversibleContainer"><strong>ReversibleContainer</strong></a> requirement.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// create an array using push_back
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// create an array using push_back
 </span><span class="n">json</span> <span class="n">j</span><span class="p">;</span>
 <span class="n">j</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span>
 <span class="n">j</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -2772,7 +2761,7 @@
 <span class="c1">// getter/setter
 </span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 <span class="n">j</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="n">bool</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">j</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">j</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
 <span class="c1">// comparison
 </span><span class="n">j</span> <span class="o">==</span> <span class="s">"[</span><span class="se">\"</span><span class="s">foo</span><span class="se">\"</span><span class="s">, 1, true]"</span><span class="n">_json</span><span class="p">;</span>  <span class="c1">// true
@@ -2816,14 +2805,13 @@
 </span>
 <span class="c1">// delete an entry
 </span><span class="n">o</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="conversion-from-stl-containers">Conversion from STL containers</h3>
 
 <p>Any sequence container (<code class="highlighter-rouge">std::array</code>, <code class="highlighter-rouge">std::vector</code>, <code class="highlighter-rouge">std::deque</code>, <code class="highlighter-rouge">std::forward_list</code>, <code class="highlighter-rouge">std::list</code>) whose values can be used to construct JSON types (e.g., integers, floating point numbers, Booleans, string types, or again STL containers described in this section) can be used to create a JSON array. The same holds for similar associative containers (<code class="highlighter-rouge">std::set</code>, <code class="highlighter-rouge">std::multiset</code>, <code class="highlighter-rouge">std::unordered_set</code>, <code class="highlighter-rouge">std::unordered_multiset</code>), but in these cases the order of the elements of the array depends how the elements are ordered in the respective STL container.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">c_vector</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">c_vector</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
 <span class="n">json</span> <span class="n">j_vec</span><span class="p">(</span><span class="n">c_vector</span><span class="p">);</span>
 <span class="c1">// [1, 2, 3, 4]
 </span>
@@ -2831,7 +2819,7 @@
 <span class="n">json</span> <span class="n">j_deque</span><span class="p">(</span><span class="n">c_deque</span><span class="p">);</span>
 <span class="c1">// [1.2, 2.3, 3.4, 5.6]
 </span>
-<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span> <span class="n">c_list</span> <span class="p">{</span><span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="nb">true</span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">c_list</span> <span class="p">{</span><span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="nb">true</span><span class="p">};</span>
 <span class="n">json</span> <span class="n">j_list</span><span class="p">(</span><span class="n">c_list</span><span class="p">);</span>
 <span class="c1">// [true, true, false, true]
 </span>
@@ -2858,12 +2846,11 @@
 <span class="n">std</span><span class="o">::</span><span class="n">unordered_multiset</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">c_umset</span> <span class="p">{</span><span class="s">"one"</span><span class="p">,</span> <span class="s">"two"</span><span class="p">,</span> <span class="s">"one"</span><span class="p">,</span> <span class="s">"four"</span><span class="p">};</span>
 <span class="n">json</span> <span class="n">j_umset</span><span class="p">(</span><span class="n">c_umset</span><span class="p">);</span> <span class="c1">// both entries for "one" are used
 // maybe ["one", "two", "one", "four"]
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Likewise, any associative key-value containers (<code class="highlighter-rouge">std::map</code>, <code class="highlighter-rouge">std::multimap</code>, <code class="highlighter-rouge">std::unordered_map</code>, <code class="highlighter-rouge">std::unordered_multimap</code>) whose keys can construct an <code class="highlighter-rouge">std::string</code> and whose values can be used to construct JSON types (see examples above) can be used to create a JSON object. Note that in case of multimaps only one key is used in the JSON object and the value depends on the internal order of the STL container.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">c_map</span> <span class="p">{</span> <span class="p">{</span><span class="s">"one"</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s">"two"</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="p">};</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">c_map</span> <span class="p">{</span> <span class="p">{</span><span class="s">"one"</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s">"two"</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="p">};</span>
 <span class="n">json</span> <span class="n">j_map</span><span class="p">(</span><span class="n">c_map</span><span class="p">);</span>
 <span class="c1">// {"one": 1, "three": 3, "two": 2 }
 </span>
@@ -2871,36 +2858,35 @@
 <span class="n">json</span> <span class="n">j_umap</span><span class="p">(</span><span class="n">c_umap</span><span class="p">);</span>
 <span class="c1">// {"one": 1.2, "two": 2.3, "three": 3.4}
 </span>
-<span class="n">std</span><span class="o">::</span><span class="n">multimap</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">bool</span><span class="o">&gt;</span> <span class="n">c_mmap</span> <span class="p">{</span> <span class="p">{</span><span class="s">"one"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"two"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">false</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">true</span><span class="p">}</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">multimap</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">c_mmap</span> <span class="p">{</span> <span class="p">{</span><span class="s">"one"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"two"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">false</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">true</span><span class="p">}</span> <span class="p">};</span>
 <span class="n">json</span> <span class="n">j_mmap</span><span class="p">(</span><span class="n">c_mmap</span><span class="p">);</span> <span class="c1">// only one entry for key "three" is used
 // maybe {"one": true, "two": true, "three": true}
 </span>
-<span class="n">std</span><span class="o">::</span><span class="n">unordered_multimap</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">bool</span><span class="o">&gt;</span> <span class="n">c_ummap</span> <span class="p">{</span> <span class="p">{</span><span class="s">"one"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"two"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">false</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">true</span><span class="p">}</span> <span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unordered_multimap</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">c_ummap</span> <span class="p">{</span> <span class="p">{</span><span class="s">"one"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"two"</span><span class="p">,</span> <span class="nb">true</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">false</span><span class="p">},</span> <span class="p">{</span><span class="s">"three"</span><span class="p">,</span> <span class="nb">true</span><span class="p">}</span> <span class="p">};</span>
 <span class="n">json</span> <span class="n">j_ummap</span><span class="p">(</span><span class="n">c_ummap</span><span class="p">);</span> <span class="c1">// only one entry for key "three" is used
 // maybe {"one": true, "two": true, "three": true}
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="json-pointer-and-json-patch">JSON Pointer and JSON Patch</h3>
 
 <p>The library supports <strong>JSON Pointer</strong> (<a href="https://tools.ietf.org/html/rfc6901">RFC 6901</a>) as alternative means to address structured values. On top of this, <strong>JSON Patch</strong> (<a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a>) allows to describe differences between two JSON values - effectively allowing patch and diff operations known from Unix.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// a JSON value
-</span><span class="n">json</span> <span class="n">j_original</span> <span class="o">=</span> <span class="n">R</span><span class="s">"({</span><span class="err">
-</span><span class="s">  "</span><span class="n">baz</span><span class="s">": ["</span><span class="n">one</span><span class="s">", "</span><span class="n">two</span><span class="s">", "</span><span class="n">three</span><span class="s">"],</span><span class="err">
-</span><span class="s">  "</span><span class="n">foo</span><span class="s">": "</span><span class="n">bar</span><span class="s">"</span><span class="err">
-</span><span class="s">})"</span><span class="n">_json</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// a JSON value
+</span><span class="n">json</span> <span class="n">j_original</span> <span class="o">=</span> <span class="s">R"({
+  "baz": ["one", "two", "three"],
+  "foo": "bar"
+})"</span><span class="n">_json</span><span class="p">;</span>
 
 <span class="c1">// access members with a JSON pointer (RFC 6901)
 </span><span class="n">j_original</span><span class="p">[</span><span class="s">"/baz/1"</span><span class="n">_json_pointer</span><span class="p">];</span>
 <span class="c1">// "two"
 </span>
 <span class="c1">// a JSON patch (RFC 6902)
-</span><span class="n">json</span> <span class="n">j_patch</span> <span class="o">=</span> <span class="n">R</span><span class="s">"([</span><span class="err">
-</span><span class="s">  { "</span><span class="n">op</span><span class="s">": "</span><span class="n">replace</span><span class="s">", "</span><span class="n">path</span><span class="s">": "</span><span class="o">/</span><span class="n">baz</span><span class="s">", "</span><span class="n">value</span><span class="s">": "</span><span class="n">boo</span><span class="s">" },</span><span class="err">
-</span><span class="s">  { "</span><span class="n">op</span><span class="s">": "</span><span class="n">add</span><span class="s">", "</span><span class="n">path</span><span class="s">": "</span><span class="o">/</span><span class="n">hello</span><span class="s">", "</span><span class="n">value</span><span class="s">": ["</span><span class="n">world</span><span class="s">"] },</span><span class="err">
-</span><span class="s">  { "</span><span class="n">op</span><span class="s">": "</span><span class="n">remove</span><span class="s">", "</span><span class="n">path</span><span class="s">": "</span><span class="o">/</span><span class="n">foo</span><span class="s">"}</span><span class="err">
-</span><span class="s">])"</span><span class="n">_json</span><span class="p">;</span>
+</span><span class="n">json</span> <span class="n">j_patch</span> <span class="o">=</span> <span class="s">R"([
+  { "op": "replace", "path": "/baz", "value": "boo" },
+  { "op": "add", "path": "/hello", "value": ["world"] },
+  { "op": "remove", "path": "/foo"}
+])"</span><span class="n">_json</span><span class="p">;</span>
 
 <span class="c1">// apply the patch
 </span><span class="n">json</span> <span class="n">j_result</span> <span class="o">=</span> <span class="n">j_original</span><span class="p">.</span><span class="n">patch</span><span class="p">(</span><span class="n">j_patch</span><span class="p">);</span>
@@ -2916,22 +2902,21 @@
 //   { "op": "remove","path": "/hello" },
 //   { "op": "add", "path": "/foo", "value": "bar" }
 // ]
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="implicit-conversions">Implicit conversions</h3>
 
 <p>The type of the JSON object is determined automatically by the expression to store. Likewise, the stored value is implicitly converted.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// strings
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// strings
 </span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
 <span class="n">json</span> <span class="n">js</span> <span class="o">=</span> <span class="n">s1</span><span class="p">;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">js</span><span class="p">;</span>
 
 <span class="c1">// Booleans
-</span><span class="n">bool</span> <span class="n">b1</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span><span class="kt">bool</span> <span class="n">b1</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="n">json</span> <span class="n">jb</span> <span class="o">=</span> <span class="n">b1</span><span class="p">;</span>
-<span class="n">bool</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">jb</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">jb</span><span class="p">;</span>
 
 <span class="c1">// numbers
 </span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
@@ -2939,24 +2924,22 @@
 <span class="kt">double</span> <span class="n">f</span> <span class="o">=</span> <span class="n">jn</span><span class="p">;</span>
 
 <span class="c1">// etc.
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>You can also explicitly ask for the value:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">vs</span> <span class="o">=</span> <span class="n">js</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">bool</span> <span class="n">vb</span> <span class="o">=</span> <span class="n">jb</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span><span class="p">();</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">vs</span> <span class="o">=</span> <span class="n">js</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="kt">bool</span> <span class="n">vb</span> <span class="o">=</span> <span class="n">jb</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="kt">int</span> <span class="n">vi</span> <span class="o">=</span> <span class="n">jn</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
 
 <span class="c1">// etc.
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="arbitrary-types-conversions">Arbitrary types conversions</h3>
 
 <p>Every type can be serialized in JSON, not just STL-containers and scalar types. Usually, you would do something along those lines:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">namespace</span> <span class="n">ns</span> <span class="p">{</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="n">ns</span> <span class="p">{</span>
     <span class="c1">// a simple struct to model a person
 </span>    <span class="k">struct</span> <span class="n">person</span> <span class="p">{</span>
         <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
@@ -2981,12 +2964,11 @@
     <span class="n">j</span><span class="p">[</span><span class="s">"address"</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(),</span>
     <span class="n">j</span><span class="p">[</span><span class="s">"age"</span><span class="p">].</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">()</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>It works, but that’s quite a lot of boilerplate… Fortunately, there’s a better way:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// create a person
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// create a person
 </span><span class="n">ns</span><span class="o">::</span><span class="n">person</span> <span class="n">p</span> <span class="p">{</span><span class="s">"Ned Flanders"</span><span class="p">,</span> <span class="s">"744 Evergreen Terrace"</span><span class="p">,</span> <span class="mi">60</span><span class="p">};</span>
 
 <span class="c1">// conversion: person -&gt; json
@@ -3000,14 +2982,13 @@
 
 <span class="c1">// that's it
 </span><span class="n">assert</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">p2</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="basic-usage">Basic usage</h4>
 
 <p>To make this work with one of your types, you only need to provide two functions:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">using</span> <span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">nlohmann</span><span class="o">::</span><span class="n">json</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="n">ns</span> <span class="p">{</span>
     <span class="kt">void</span> <span class="n">to_json</span><span class="p">(</span><span class="n">json</span><span class="o">&amp;</span> <span class="n">j</span><span class="p">,</span> <span class="k">const</span> <span class="n">person</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
@@ -3020,8 +3001,7 @@
         <span class="n">p</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">j</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="s">"age"</span><span class="p">).</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span> <span class="c1">// namespace ns
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>That’s all! When calling the <code class="highlighter-rouge">json</code> constructor with your type, your custom <code class="highlighter-rouge">to_json</code> method will be automatically called.
 Likewise, when calling <code class="highlighter-rouge">get&lt;your_type&gt;()</code>, the <code class="highlighter-rouge">from_json</code> method will be called.</p>
@@ -3045,7 +3025,7 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
 
 <p>It is implemented like this (simplified):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="n">adl_serializer</span> <span class="p">{</span>
     <span class="k">static</span> <span class="kt">void</span> <span class="n">to_json</span><span class="p">(</span><span class="n">json</span><span class="o">&amp;</span> <span class="n">j</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// calls the "to_json" method in T's namespace
@@ -3055,20 +3035,19 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
         <span class="c1">// same thing, but with the "from_json" method
 </span>    <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This serializer works fine when you have control over the type’s namespace. However, what about <code class="highlighter-rouge">boost::optional</code>, or <code class="highlighter-rouge">std::filesystem::path</code> (C++17)? Hijacking the <code class="highlighter-rouge">boost</code> namespace is pretty bad, and it’s illegal to add something other than template specializations to <code class="highlighter-rouge">std</code>…</p>
 
 <p>To solve this, you need to add a specialization of <code class="highlighter-rouge">adl_serializer</code> to the <code class="highlighter-rouge">nlohmann</code> namespace, here’s an example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// partial specialization (full specialization works too)
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// partial specialization (full specialization works too)
 </span><span class="k">namespace</span> <span class="n">nlohmann</span> <span class="p">{</span>
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
     <span class="k">struct</span> <span class="n">adl_serializer</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
         <span class="k">static</span> <span class="kt">void</span> <span class="n">to_json</span><span class="p">(</span><span class="n">json</span><span class="o">&amp;</span> <span class="n">j</span><span class="p">,</span> <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">opt</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">opt</span> <span class="o">==</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">j</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
               <span class="n">j</span> <span class="o">=</span> <span class="o">*</span><span class="n">opt</span><span class="p">;</span> <span class="c1">// this will call adl_serializer&lt;T&gt;::to_json which will
 </span>                        <span class="c1">// find the free function to_json in T's namespace!
@@ -3085,14 +3064,13 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
         <span class="p">}</span>
     <span class="p">};</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="how-can-i-use-get-for-non-default-constructiblenon-copyable-types">How can I use <code class="highlighter-rouge">get()</code> for non-default constructible/non-copyable types?</h4>
 
 <p>There is a way, if your type is <a href="http://en.cppreference.com/w/cpp/concept/MoveConstructible">MoveConstructible</a>. You will need to specialize the <code class="highlighter-rouge">adl_serializer</code> as well, but with a special <code class="highlighter-rouge">from_json</code> overload:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">struct</span> <span class="n">move_only_type</span> <span class="p">{</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">move_only_type</span> <span class="p">{</span>
     <span class="n">move_only_type</span><span class="p">()</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
     <span class="n">move_only_type</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">)</span><span class="o">:</span> <span class="n">i</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span> <span class="p">{}</span>
     <span class="n">move_only_type</span><span class="p">(</span><span class="k">const</span> <span class="n">move_only_type</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
@@ -3118,8 +3096,7 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
         <span class="p">}</span>
     <span class="p">};</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="can-i-write-my-own-serializer-advanced-use">Can I write my own serializer? (Advanced use)</h4>
 
@@ -3135,7 +3112,7 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
 
 <p>Here is an example, without simplifications, that only accepts types with a size &lt;= 32, and uses ADL.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// You should use void as a second template argument
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// You should use void as a second template argument
 // if you don't need compile-time checks on T
 </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">SFINAE</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">32</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="n">less_than_32_serializer</span> <span class="p">{</span>
@@ -3154,12 +3131,11 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
         <span class="n">from_json</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Be <strong>very</strong> careful when reimplementing your serializer, you can stack overflow if you don’t pay attention:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">&gt;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="kt">void</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="n">bad_serializer</span>
 <span class="p">{</span>
     <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">BasicJsonType</span><span class="o">&gt;</span>
@@ -3176,15 +3152,14 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
 </span>      <span class="n">value</span> <span class="o">=</span> <span class="n">j</span><span class="p">.</span><span class="k">template</span> <span class="n">get</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// oops!
 </span>    <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="binary-formats-cbor-and-messagepack">Binary formats (CBOR and MessagePack)</h3>
 
 <p>Though JSON is a ubiquitous data format, it is not a very compact format suitable for data exchange, for instance over a network. Hence, the library supports <a href="http://cbor.io">CBOR</a> (Concise Binary Object Representation) and <a href="http://msgpack.org">MessagePack</a> to efficiently encode JSON values to byte vectors and to decode such vectors.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// create a JSON value
-</span><span class="n">json</span> <span class="n">j</span> <span class="o">=</span> <span class="n">R</span><span class="s">"({"</span><span class="n">compact</span><span class="s">": true, "</span><span class="n">schema</span><span class="s">": 0})"</span><span class="n">_json</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// create a JSON value
+</span><span class="n">json</span> <span class="n">j</span> <span class="o">=</span> <span class="s">R"({"compact": true, "schema": 0})"</span><span class="n">_json</span><span class="p">;</span>
 
 <span class="c1">// serialize to CBOR
 </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">v_cbor</span> <span class="o">=</span> <span class="n">json</span><span class="o">::</span><span class="n">to_cbor</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
@@ -3201,8 +3176,7 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
 </span>
 <span class="c1">// roundtrip
 </span><span class="n">json</span> <span class="n">j_from_msgpack</span> <span class="o">=</span> <span class="n">json</span><span class="o">::</span><span class="n">from_msgpack</span><span class="p">(</span><span class="n">v_msgpack</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="supported-compilers">Supported compilers</h2>
 
@@ -3450,7 +3424,7 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
   <li><a href="https://github.com/WebProdPP">WebProdPP</a> fixed a subtle error in a precondition check.</li>
 </ul>
 
-<p>Thanks a lot for helping out! Please <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#097;&#105;&#108;&#064;&#110;&#108;&#111;&#104;&#109;&#097;&#110;&#110;&#046;&#109;&#101;">let me know</a> if I forgot someone.</p>
+<p>Thanks a lot for helping out! Please <a href="mailto:mail@nlohmann.me">let me know</a> if I forgot someone.</p>
 
 <h2 id="used-third-party-tools">Used third-party tools</h2>
 
@@ -3508,23 +3482,21 @@ The default serializer for <code class="highlighter-rouge">nlohmann::json</code>
 
 <p>To compile and run the tests, you need to execute</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>make json_unit -Ctest
-<span class="gp">$ </span>./test/json_unit <span class="s2">"*"</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make json_unit <span class="nt">-Ctest</span>
+<span class="nv">$ </span>./test/json_unit <span class="s2">"*"</span>
 
 <span class="o">===============================================================================</span>
 All tests passed <span class="o">(</span>14504461 assertions <span class="k">in </span>48 <span class="nb">test </span>cases<span class="o">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Alternatively, you can use <a href="https://cmake.org">CMake</a> and run</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir build
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir build
 <span class="nb">cd </span>build
 cmake ..
 make
 ctest
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For more information, have a look at the file <a href="https://github.com/nlohmann/json/blob/master/.travis.yml">.travis.yml</a>.</p>
 
@@ -3607,7 +3579,7 @@ ctest
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:13 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:24 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libafb-helpers/plain/docs/json.md?h=halibut">Link to source document</small>
 		
@@ -3639,6 +3611,16 @@ ctest
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

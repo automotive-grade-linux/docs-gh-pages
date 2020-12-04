@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -635,7 +635,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -897,7 +897,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -1065,9 +1065,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -1116,7 +1116,7 @@ ABL firmware.</p>
   </li>
 </ul>
 
-<h2 id="making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
+<h2 id="1-making-sure-your-build-environment-is-correct">1. Making Sure Your Build Environment is Correct</h2>
 
 <p>The
 “<a href="../image-workflow-initialize-build-environment.html">Initializing Your Build Environment</a>”
@@ -1125,11 +1125,10 @@ using the <code class="highlighter-rouge">aglsetup.sh</code> script.
 If you are building for an Intel 64-bit platform, you need to specify some
 specific options when you run the script:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh <span class="se">\</span>
-    -m intel-corei7-64 <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source </span>meta-agl/scripts/aglsetup.sh <span class="se">\</span>
+    <span class="nt">-m</span> intel-corei7-64 <span class="se">\</span>
     agl-devel agl-demo agl-appfw-smack agl-netboot agl-pipewire
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The “-m” option specifies the “intel-corei7-64” machine.
 If you were building for a Joule developer kit, you would use the
@@ -1140,7 +1139,7 @@ for the Intel 64-bit target.
 The “agl-netboot” option creates the correct Initial RAM Filesystem (initramfs)
 image even if you do not boot from a network.</p>
 
-<h2 id="using-bitbake">2. Using BitBake</h2>
+<h2 id="2-using-bitbake">2. Using BitBake</h2>
 
 <p>This section shows the <code class="highlighter-rouge">bitbake</code> command used to build the AGL image.
 Before running BitBake to start your build, it is good to be reminded that AGL
@@ -1150,9 +1149,8 @@ You can find these pre-built images on the
 
 <p>For supported Intel images, the filenames have the following form:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/intel-core17-64/deploy/images/intel-core17-64/bzImage-intel-corei7-64.bin
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;release-name&gt;/&lt;release-number&gt;/intel-core17-64/deploy/images/intel-core17-64/bzImage-intel-corei7-64.bin
+</code></pre></div></div>
 
 <p>Start the build using the <code class="highlighter-rouge">bitbake</code> command.</p>
 
@@ -1162,15 +1160,13 @@ The build also takes approximately 100G-bytes of free disk space.</p>
 
 <p>For this example, the target is “agl-demo-platform”:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  bitbake agl-demo-platform
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  bitbake agl-demo-platform
+</code></pre></div></div>
 
 <p>The build process puts the resulting image in the Build Directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/intel-corei7-64/
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;build_directory&gt;/tmp/deploy/images/intel-corei7-64/
+</code></pre></div></div>
 
 <p>An alternative method for building an image is to use the AGL SDK delivered in a Docker container.</p>
 
@@ -1178,7 +1174,7 @@ The build also takes approximately 100G-bytes of free disk space.</p>
 
 <p>See chapter 2 of <a href="http://iot.bzh/download/public/2016/sdk/AGL-Kickstart-on-Renesas-Porter-board.pdf" title="wikilink">Porter QuickStart</a>.</p>
 
-<h2 id="creating-bootable-media">3. Creating Bootable Media</h2>
+<h2 id="3-creating-bootable-media">3. Creating Bootable Media</h2>
 
 <p>Typically, you use a USB stick, SD card, or HDD/SDD to create bootable media.
 It is possible, however, to install the AGL image onto Embedded MultiMediaCard
@@ -1231,11 +1227,10 @@ Insert your removable media into the corresponding interface.</p>
     <p><strong>Determine the Name of Your Media Device:</strong>
 Use the <code class="highlighter-rouge">lsblk</code> command to make sure you know the name of the device to which you will be writing.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  lsblk
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  lsblk
   <span class="c"># You want the name of the raw device and not the name of a partition on the media.</span>
   <span class="c">#(e.g. /dev/sdc or /dev/mmcblk0)</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>Download the <code class="highlighter-rouge">mkefi-agl.sh</code> Script:</strong>
@@ -1249,19 +1244,17 @@ You can find the script in the “meta-agl/scripts” folder of your AGL source 
     <p><strong>Create Your Bootable Media:</strong>
 Run the following to see <code class="highlighter-rouge">mkefi-agl.sh</code> usage information:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  ./mkefi-agl.sh -v
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ./mkefi-agl.sh <span class="nt">-v</span>
+</code></pre></div>    </div>
 
     <p>Supply the name of your actual image and device name and run the script.
 The following example assumes a USB device (e.g. <code class="highlighter-rouge">/dev/sdb</code>) and the image
 <code class="highlighter-rouge">intel-corei7-64.hdd</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo ./mkefi-agl.sh intel-corei7-64.hdd /dev/sdb
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo</span> ./mkefi-agl.sh intel-corei7-64.hdd /dev/sdb
 <span class="c"># /dev/sdX is common for USB stick where "X" is "b".</span>
 <span class="c"># /dev/mmcblk0 is common for an integrated SD card reader in a notebook computer.</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1278,12 +1271,11 @@ To do so, requires the following steps:</p>
     <p>Add a file named <code class="highlighter-rouge">site.conf</code> in your <code class="highlighter-rouge">build/conf</code> directory.
 Make sure the file has the following content:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>INHERIT += "rm_work"
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INHERIT += "rm_work"
 IMAGE_INSTALL_append = " linux-firmware-iwlwifi-7265d"
 IMAGE_INSTALL_append = " parted e2fsprogs dosfstools"
 IMAGE_INSTALL_append = " linux-firmware-i915 linux-firmware-ibt linux-firmware-iwlwifi-8000c"
-</code></pre>
-    </div>
+</code></pre></div>    </div>
     <p>In addition to the previous statements, you need to add the
 Intel Wireless WiFi Link (<code class="highlighter-rouge">iwlifi</code>) driver for your own device
 as needed.</p>
@@ -1311,9 +1303,8 @@ eMMC.
 For example, copy the image file created using the Yocto Project from
 the build directory to your home directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>cp build/tmp/deploy/images/intel-corei7-64/agl-demo-platform-intel-corei7-64.wic.xz ~/
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cp build/tmp/deploy/images/intel-corei7-64/agl-demo-platform-intel-corei7-64.wic.xz ~/
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>Boot the AGL Image from the Removable Device</strong></p>
@@ -1338,9 +1329,8 @@ Use the <code class="highlighter-rouge">lsblk</code> command.</p>
 
     <p>Use the <code class="highlighter-rouge">mkefi-agl.sh</code> Script to install the image into the eMMC.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cat /proc/partitions
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /proc/partitions
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>Remove the USB or SD Boot Device</strong></p>
@@ -1356,7 +1346,7 @@ eMMC.</p>
   </li>
 </ol>
 
-<h2 id="booting-the-image-on-the-target-device">4. Booting the Image on the Target Device</h2>
+<h2 id="4-booting-the-image-on-the-target-device">4. Booting the Image on the Target Device</h2>
 
 <p>Be aware of the following when booting your device:</p>
 
@@ -1420,7 +1410,7 @@ It is common with USB sticks that you need to boot a couple of times.</p>
   </li>
 </ol>
 
-<h2 id="miscellaneous-information">5. Miscellaneous Information</h2>
+<h2 id="5-miscellaneous-information">5. Miscellaneous Information</h2>
 
 <p>Following is information regarding serial debug ports, serial cables, and
 port names for connected displays.</p>
@@ -1460,9 +1450,8 @@ The simplest way to determine the port name used for a connected display
 is to check the after the initial boot process completes.
 You can make this check in the <code class="highlighter-rouge">systemd</code> journal as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>journalctl | grep Output
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>journalctl | <span class="nb">grep </span>Output
+</code></pre></div></div>
 
 <p><strong>NOTE:</strong> Output for the
 <a href="https://www.freedesktop.org/software/systemd/man/journalctl.html"><code class="highlighter-rouge">journalctl</code></a>
@@ -1557,7 +1546,7 @@ The file holding that configuration is <code class="highlighter-rouge">/etc/xdg/
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:12 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:23 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/halibut/docs/getting-started/machines/intel.md">Link to source document</small>
 		
@@ -1589,6 +1578,16 @@ The file holding that configuration is <code class="highlighter-rouge">/etc/xdg/
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

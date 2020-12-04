@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2511,13 +2511,12 @@ expected arguments.</p>
 while the format string <code class="highlighter-rouge">"[ssb]"</code> or the equivalent <code class="highlighter-rouge">"[s, s, b]"</code>
 specifies an array value with two strings and a boolean as its items:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/* Create the JSON integer 42 */
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Create the JSON integer 42 */
 wrap_json_pack(&amp;result, "i", 42);
 
 /* Create the JSON array ["foo", "bar", true] */
 wrap_json_pack(&amp;result, "[ssb]", "foo", "bar", 1);
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Here’s the full list of format specifiers. The type in parentheses
 denotes the resulting JSON type, and the type in brackets (if any)
@@ -2635,7 +2634,7 @@ additionally suppressed. See below for an example.</p>
 contain objects and arrays, i.e. recursive value building is
 supported.</p>
   </dd>
-  <dt><code class="highlighter-rouge"><span class="p">{</span><span class="err">fmt</span><span class="p">}</span></code> (object)</dt>
+  <dt><code class="highlighter-rouge">{fmt}</code> (object)</dt>
   <dd>
     <p>Build an object with contents from the inner format string <code class="highlighter-rouge">fmt</code>.
 The first, third, etc. format specifier represent a key, and must be
@@ -2650,7 +2649,7 @@ building is supported.</p>
 
 <p>More examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/* Build an empty JSON object */
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Build an empty JSON object */
 wrap_json_pack(&amp;result, "{}");
 
 /* Build the JSON object {"foo": 42, "bar": 7} */
@@ -2672,8 +2671,7 @@ wrap_json_pack(&amp;result, "s++", "foo", "bar", "baz");
 /* Create an empty object or array when optional members are missing */
 wrap_json_pack(&amp;result, "{s:s*,s:o*,s:O*}", "foo", NULL, "bar", NULL, "baz", NULL);
 wrap_json_pack(&amp;result, "[s*,o*,O*]", NULL, NULL, NULL);
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="parsing-and-validating-values">Parsing and Validating Values</h2>
 
@@ -2754,7 +2752,7 @@ to 1 and <code class="highlighter-rouge">false</code> to 0.</p>
 string. <code class="highlighter-rouge">fmt</code> may contain objects and arrays, i.e. recursive value
 extraction is supported.</p>
   </dd>
-  <dt><code class="highlighter-rouge"><span class="p">{</span><span class="err">fmt</span><span class="p">}</span></code> (object)</dt>
+  <dt><code class="highlighter-rouge">{fmt}</code> (object)</dt>
   <dd>
     <p>Convert each item in the JSON object according to the inner format
 string <code class="highlighter-rouge">fmt</code>. The first, third, etc. format specifier represent a
@@ -2786,7 +2784,7 @@ before the closing bracket or brace.</p>
 
 <p>Examples:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/* root is the JSON integer 42 */
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* root is the JSON integer 42 */
 int myint;
 wrap_json_unpack(root, "i", &amp;myint);
 assert(myint == 42);
@@ -2812,12 +2810,11 @@ wrap_json_unpack(root, "{s?i, s?[ii]}",
             "foo", &amp;myint1,
             "bar", &amp;myint2, &amp;myint3);
 /* myint1, myint2 or myint3 is no touched as "foo" and "bar" don't exist */
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="copyright">Copyright</h2>
 
-<p>Copyright (c) 2009-2016 Petri Lehtinen <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#112;&#101;&#116;&#114;&#105;&#064;&#100;&#105;&#103;&#105;&#112;&#046;&#111;&#114;&#103;">&#112;&#101;&#116;&#114;&#105;&#064;&#100;&#105;&#103;&#105;&#112;&#046;&#111;&#114;&#103;</a></p>
+<p>Copyright (c) 2009-2016 Petri Lehtinen <a href="mailto:petri@digip.org">petri@digip.org</a></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
@@ -2916,7 +2913,7 @@ THE SOFTWARE.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:23 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:33 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/libafb-helpers/plain/docs/wrap-json.md?h=guppy">Link to source document</small>
 		
@@ -2948,6 +2945,16 @@ THE SOFTWARE.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

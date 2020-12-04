@@ -5,9 +5,9 @@
     <description>AGL (Automotive Grade Linux) Developer Website</description>
     <link>http://docs.automotivelinux.org/</link>
     <atom:link href="http://docs.automotivelinux.org/misc/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Dec 2020 04:33:35 +0000</pubDate>
-    <lastBuildDate>Fri, 04 Dec 2020 04:33:35 +0000</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Mon, 10 May 2021 04:33:51 +0000</pubDate>
+    <lastBuildDate>Mon, 10 May 2021 04:33:51 +0000</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
 
   </channel>
 </rss>

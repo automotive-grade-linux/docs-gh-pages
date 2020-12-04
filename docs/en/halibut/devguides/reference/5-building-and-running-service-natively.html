@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2510,19 +2510,17 @@ using either of the following methods:</p>
 
 <ul>
   <li>
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>helloworld-service
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>helloworld-service
 ./conf.d/autobuild/linux/autobuild package
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>helloworld-service
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>helloworld-service
 mkdir build
 <span class="nb">cd </span>build
 cmake ..
 make
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -2533,9 +2531,8 @@ bind one instance of an application or service to the rest of the system.
 In this example, you are binding an instance of <code class="highlighter-rouge">helloworld-service</code>
 to the rest of the system:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>afb-daemon --binding helloworld.so --port 3333 --token <span class="s1">''</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>afb-daemon <span class="nt">--binding</span> helloworld.so <span class="nt">--port</span> 3333 <span class="nt">--token</span> <span class="s1">''</span>
+</code></pre></div></div>
 
 <p>The previous command starts <code class="highlighter-rouge">afb-daemon</code> and loads the <code class="highlighter-rouge">helloworld.so</code>
 binding.
@@ -2583,8 +2580,8 @@ section.</p>
 <p>If you encounter an error message similar to the following,
 you need to make some changes to your <code class="highlighter-rouge">cmake</code> file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>-- Checking <span class="k">for </span>module <span class="s1">'libmicrohttpd&gt;=0.9.60'</span>
---   No package <span class="s1">'libmicrohttpd'</span> found
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--</span> Checking <span class="k">for </span>module <span class="s1">'libmicrohttpd&gt;=0.9.60'</span>
+<span class="nt">--</span>   No package <span class="s1">'libmicrohttpd'</span> found
 CMake Error at /usr/share/cmake/Modules/FindPkgConfig.cmake:415 <span class="o">(</span>message<span class="o">)</span>:
   A required package was not found
 Call Stack <span class="o">(</span>most recent call first<span class="o">)</span>:
@@ -2593,8 +2590,7 @@ Call Stack <span class="o">(</span>most recent call first<span class="o">)</span
   conf.d/app-templates/cmake/common.cmake:77 <span class="o">(</span>include<span class="o">)</span>
   conf.d/cmake/config.cmake:184 <span class="o">(</span>include<span class="o">)</span>
   CMakeLists.txt:3 <span class="o">(</span>include<span class="o">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Open the <code class="highlighter-rouge">config.cmake</code> file located in <code class="highlighter-rouge">helloworld-service/conf.d/cmake/</code> directory
 and add a hash character (i.e. #) to the beginning of the “libsystemd&gt;=222”
@@ -2692,7 +2688,7 @@ section previously on this page.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:53 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:07 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/halibut/host-configuration/docs/5-building-and-running-service-natively.md">Link to source document</small>
 		
@@ -2724,6 +2720,16 @@ section previously on this page.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

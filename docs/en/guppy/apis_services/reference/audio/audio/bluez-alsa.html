@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1684,7 +1684,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2527,7 +2527,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2695,9 +2695,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2728,21 +2728,19 @@
 
 <p>You can check the bluez-alsa status by running:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>systemctl status bluez-alsa.service
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl status bluez-alsa.service
+</code></pre></div></div>
 
 <h2 id="stop-pulseaudio">Stop pulseaudio</h2>
 
 <p>You must disable pulseaudio if you want to use bluez-alsa</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>systemctl --user stop pulseaudio
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="nt">--user</span> stop pulseaudio
+</code></pre></div></div>
 
 <p>or disable pulseaudio bluetooth support</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vi /etc/pulse/default.pa
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/pulse/default.pa
 <span class="c">#.ifexists module-bluetooth-policy.so</span>
 <span class="c">#load-module module-bluetooth-policy</span>
 <span class="c">#.endif</span>
@@ -2750,19 +2748,17 @@
 <span class="c">#.ifexists module-bluetooth-discover.so</span>
 <span class="c">#load-module module-bluetooth-discover</span>
 <span class="c">#.endif</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="connect-your-bluetooth-device">Connect your Bluetooth device</h2>
 
 <p>You need to connect a bluetooth device</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>bluetoothctl
-<span class="gp">[bluetooth]# </span>pair <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
-<span class="gp">[bluetooth]# </span>connect <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
-<span class="gp">[bluetooth]# </span>info <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bluetoothctl
+<span class="o">[</span>bluetooth]# pair <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
+<span class="o">[</span>bluetooth]# connect <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
+<span class="o">[</span>bluetooth]# info <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
+</code></pre></div></div>
 
 <p>Here somes documentation links:</p>
 
@@ -2775,15 +2771,14 @@
 
 <h2 id="test-bluez-alsa-speacker">Test bluez-alsa speacker</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>wget http://www.kozco.com/tech/piano2.wav
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://www.kozco.com/tech/piano2.wav
 
-aplay -D bluealsa:HCI<span class="o">=</span>hci0,DEV<span class="o">=</span><span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>,PROFILE<span class="o">=</span>a2dp ./piano2.wav
-</code></pre>
-</div>
+aplay <span class="nt">-D</span> bluealsa:HCI<span class="o">=</span>hci0,DEV<span class="o">=</span><span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>,PROFILE<span class="o">=</span>a2dp ./piano2.wav
+</code></pre></div></div>
 
 <h2 id="add-bluez-alsa-pcm-config-to-alsa">Add bluez-alsa pcm config to alsa</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vi /etc/asound.conf
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/asound.conf
 <span class="c"># Bluetooth headset</span>
 pcm.btheadset <span class="o">{</span>
         <span class="nb">type </span>plug
@@ -2797,30 +2792,26 @@ pcm.btheadset <span class="o">{</span>
                 description <span class="s2">"Bluetooth Audio ALSA Backend"</span>
         <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Doc <a href="https://alsa.opensrc.org/Asoundrc">asoundrc</a></p>
 
 <p>Test bluez-alsa pcm</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>aplay -D btheadset ./piano2.wav
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aplay <span class="nt">-D</span> btheadset ./piano2.wav
+</code></pre></div></div>
 
 <h2 id="test-gstreamer-player">Test gstreamer player</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>gst-launch-1.0 uridecodebin <span class="nv">uri</span><span class="o">=</span>file:///mnt/Holy-Mountain.mp3  ! alsasink <span class="nv">device</span><span class="o">=</span>btheadset
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gst-launch-1.0 uridecodebin <span class="nv">uri</span><span class="o">=</span>file:///mnt/Holy-Mountain.mp3  <span class="o">!</span> alsasink <span class="nv">device</span><span class="o">=</span>btheadset
+</code></pre></div></div>
 
 <h2 id="test-bluez-alsa-phone">Test bluez-alsa phone</h2>
 
 <p>After connected your phone with bluez:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bluealsa-aplay <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bluealsa-aplay <span class="k">${</span><span class="nv">BT_ADDR</span><span class="k">}</span>
+</code></pre></div></div>
 
 
 
@@ -2901,7 +2892,7 @@ pcm.btheadset <span class="o">{</span>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:34:04 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:16 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/guppy/docs/audio/bluez-alsa.md">Link to source document</small>
 		
@@ -2933,6 +2924,16 @@ pcm.btheadset <span class="o">{</span>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1560,7 +1560,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2333,7 +2333,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2501,9 +2501,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2519,16 +2519,15 @@
   <li><a href="https://www.elinux.org/CAN_Bus">Using a supported Linux CAN device</a>:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Find your interface name (e.g. can0)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Find your interface name (e.g. can0)</span>
 ip link
 <span class="c"># Configure bitrate</span>
-sudo ip link <span class="nb">set </span>can0 <span class="nb">type </span>can bitrate 1000000
+<span class="nb">sudo </span>ip link <span class="nb">set </span>can0 <span class="nb">type </span>can bitrate 1000000
 <span class="c"># Bring the device up</span>
-sudo ip link <span class="nb">set </span>can0 up
+<span class="nb">sudo </span>ip link <span class="nb">set </span>can0 up
 <span class="c"># Optionally configure CAN termination</span>
-sudo ip link <span class="nb">set </span>can0 <span class="nb">type </span>can termination 1
-</code></pre>
-</div>
+<span class="nb">sudo </span>ip link <span class="nb">set </span>can0 <span class="nb">type </span>can termination 1
+</code></pre></div></div>
 
 <h2 id="using-slcand">Using slcand</h2>
 
@@ -2538,20 +2537,18 @@ sudo ip link <span class="nb">set </span>can0 <span class="nb">type </span>can t
   <li>Officially supported in Linux Kernel v2.6.38</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Create SocketCAN device from serial interface</span>
-sudo slcand -o -c -s8 -S1000000 /dev/ttyUSB0 can0
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create SocketCAN device from serial interface</span>
+<span class="nb">sudo </span>slcand <span class="nt">-o</span> <span class="nt">-c</span> <span class="nt">-s8</span> <span class="nt">-S1000000</span> /dev/ttyUSB0 can0
 <span class="c"># Bring the device up</span>
-sudo ip link <span class="nb">set </span>can0 up
-</code></pre>
-</div>
+<span class="nb">sudo </span>ip link <span class="nb">set </span>can0 up
+</code></pre></div></div>
 
 <h2 id="using-builtin-linux-kernel-virtual-can-module-vcan">Using builtin Linux kernel virtual CAN module vcan</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo modprobe vcan
-sudo ip link add dev can0 <span class="nb">type </span>vcan
-sudo ip link <span class="nb">set </span>can0 up
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>modprobe vcan
+<span class="nb">sudo </span>ip link add dev can0 <span class="nb">type </span>vcan
+<span class="nb">sudo </span>ip link <span class="nb">set </span>can0 up
+</code></pre></div></div>
 
 
 
@@ -2632,7 +2629,7 @@ sudo ip link <span class="nb">set </span>can0 up
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:45 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:00 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/automotive-grade-linux/docs-sources/icefish/agl-documentation/candevstudio/docs/2_can_device_socketcan_backend.md">Link to source document</small>
 		
@@ -2664,6 +2661,16 @@ sudo ip link <span class="nb">set </span>can0 up
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

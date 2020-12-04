@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1703,7 +1703,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2553,7 +2553,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2721,9 +2721,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2752,7 +2752,7 @@ and open its <strong><em>Properties</em></strong>. Here you have to set the <str
 
 <p><strong><em>Interface</em></strong> is the name of the device you want to use. Bring up your CAN device and use the following command to find out which one are available:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ip link
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip link
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 2: enp0s25: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
@@ -2765,8 +2765,7 @@ and open its <strong><em>Properties</em></strong>. Here you have to set the <str
     link/ether 02:42:81:38:a8:75 brd ff:ff:ff:ff:ff:ff
 12: can0: &lt;NOARP,UP,LOWER_UP&gt; mtu 72 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
     link/can
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 
@@ -2847,7 +2846,7 @@ and open its <strong><em>Properties</em></strong>. Here you have to set the <str
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:49 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:03 +0000</small>
 		
 		<br/><small class="stats"><a href="https://raw.githubusercontent.com/iotbzh/agl-documentation/master/candevstudio/docs/3_Add_CAN_Device.md">Link to source document</small>
 		
@@ -2879,6 +2878,16 @@ and open its <strong><em>Properties</em></strong>. Here you have to set the <str
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

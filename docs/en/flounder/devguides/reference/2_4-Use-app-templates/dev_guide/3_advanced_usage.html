@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1384,7 +1384,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2047,7 +2047,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2215,9 +2215,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2353,11 +2353,11 @@ stand for **Application Framework Binding</strong>.</p>
 
 <p>Example:</p>
 
-<pre><code class="language-cmake">SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
-		LABELS "HTDOCS"
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">SET_TARGET_PROPERTIES</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span> PROPERTIES
+		LABELS <span class="s2">"HTDOCS"</span>
 		OUTPUT_NAME dist.prod
-	)
-</code></pre>
+	<span class="p">)</span>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>NOTE</strong>: You doesn’t need to specify an <strong>INSTALL</strong> command for these
@@ -2390,30 +2390,30 @@ documentation site</a>.</p>
 <p>Example to include <code class="highlighter-rouge">mxml</code> library for <a href="https://github.com/iotbzh/unicens2-binding">unicens2-binding</a>
 project:</p>
 
-<pre><code class="language-cmake">set(MXML external-mxml)
-set(MXML_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/mxml)
-ExternalProject_Add(${MXML}
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set</span><span class="p">(</span>MXML external-mxml<span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span>MXML_SOURCE_DIR <span class="si">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="si">}</span>/mxml<span class="p">)</span>
+<span class="nf">ExternalProject_Add</span><span class="p">(</span><span class="si">${</span><span class="nv">MXML</span><span class="si">}</span>
     GIT_REPOSITORY https://github.com/michaelrsweet/mxml.git
     GIT_TAG release-2.10
-    SOURCE_DIR ${MXML_SOURCE_DIR}
+    SOURCE_DIR <span class="si">${</span><span class="nv">MXML_SOURCE_DIR</span><span class="si">}</span>
     CONFIGURE_COMMAND ./configure --build x86_64 --host aarch64
     BUILD_COMMAND make libmxml.so.1.5
     BUILD_IN_SOURCE 1
-    INSTALL_COMMAND ""
-)
+    INSTALL_COMMAND <span class="s2">""</span>
+<span class="p">)</span>
 
-PROJECT_TARGET_ADD(mxml)
+<span class="nf">PROJECT_TARGET_ADD</span><span class="p">(</span>mxml<span class="p">)</span>
 
-add_library(${TARGET_NAME} SHARED IMPORTED GLOBAL)
+<span class="nb">add_library</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span> SHARED IMPORTED GLOBAL<span class="p">)</span>
 
-SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
+<span class="nf">SET_TARGET_PROPERTIES</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span> PROPERTIES
     LABELS LIBRARY
-    IMPORTED_LOCATION ${MXML_SOURCE_DIR}/libmxml.so.1
-    INTERFACE_INCLUDE_DIRECTORIES ${MXML_SOURCE_DIR}
-)
+    IMPORTED_LOCATION <span class="si">${</span><span class="nv">MXML_SOURCE_DIR</span><span class="si">}</span>/libmxml.so.1
+    INTERFACE_INCLUDE_DIRECTORIES <span class="si">${</span><span class="nv">MXML_SOURCE_DIR</span><span class="si">}</span>
+<span class="p">)</span>
 
-add_dependencies(${TARGET_NAME} ${MXML})
-</code></pre>
+<span class="nb">add_dependencies</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span> <span class="si">${</span><span class="nv">MXML</span><span class="si">}</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Here we define an external project that drive the build of the library then we
 define new CMake target of type <strong>IMPORTED</strong>. Meaning that this target hasn’t
@@ -2442,31 +2442,31 @@ library target.</p>
 
 <p>So, taking the above example, <code class="highlighter-rouge">mxml</code> library inclusion would be:</p>
 
-<pre><code class="language-cmake">PROJECT_TARGET_ADD(mxml)
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">PROJECT_TARGET_ADD</span><span class="p">(</span>mxml<span class="p">)</span>
 
-add_library(${TARGET_NAME} SHARED IMPORTED GLOBAL)
+<span class="nb">add_library</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span> SHARED IMPORTED GLOBAL<span class="p">)</span>
 
-SET_TARGET_PROPERTIES(${TARGET_NAME} PROPERTIES
+<span class="nf">SET_TARGET_PROPERTIES</span><span class="p">(</span><span class="si">${</span><span class="nv">TARGET_NAME</span><span class="si">}</span> PROPERTIES
     LABELS LIBRARY
     IMPORTED_LOCATION /path/to/library/libmxml.so.1
     INTERFACE_INCLUDE_DIRECTORIES /path/to/mxml/include/dir
-)
-</code></pre>
+<span class="p">)</span>
+</code></pre></div></div>
 
 <p>Finally, you can link any other lib or executable target with this imported
 library like any other target.</p>
 
 <h2 id="macro-reference">Macro reference</h2>
 
-<h3 id="projecttargetadd">PROJECT_TARGET_ADD</h3>
+<h3 id="project_target_add">PROJECT_TARGET_ADD</h3>
 
 <p>Typical usage would be to add the target to your project using macro
 <code class="highlighter-rouge">PROJECT_TARGET_ADD</code> with the name of your target as parameter.</p>
 
 <p>Example:</p>
 
-<pre><code class="language-cmake">PROJECT_TARGET_ADD(low-can-demo)
-</code></pre>
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">PROJECT_TARGET_ADD</span><span class="p">(</span>low-can-demo<span class="p">)</span>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong><em>NOTE</em></strong>: This will make available the variable <code class="highlighter-rouge">${TARGET_NAME}</code>
@@ -2474,7 +2474,7 @@ set with the specificied name. This variable will change at the next call
 to this macros.</p>
 </blockquote>
 
-<h3 id="projectsubdirsadd">project_subdirs_add</h3>
+<h3 id="project_subdirs_add">project_subdirs_add</h3>
 
 <p>This macro will search in all subfolder any <code class="highlighter-rouge">CMakeLists.txt</code> file. If found then
 it will be added to your project. This could be use in an hybrid application by
@@ -2482,8 +2482,8 @@ example where the binding lay in a sub directory.</p>
 
 <p>Usage :</p>
 
-<pre><code class="language-cmake">project_subdirs_add()
-</code></pre>
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">project_subdirs_add</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>You also can specify a globbing pattern as argument to filter which folders
 will be looked for.</p>
@@ -2491,10 +2491,10 @@ will be looked for.</p>
 <p>To filter all directories that begin with a number followed by a dash the
 anything:</p>
 
-<pre><code class="language-cmake">project_subdirs_add("[0-9]-*")
-</code></pre>
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">project_subdirs_add</span><span class="p">(</span><span class="s2">"[0-9]-*"</span><span class="p">)</span>
+</code></pre></div></div>
 
-<h3 id="setopenapifilename">set_openapi_filename</h3>
+<h3 id="set_openapi_filename">set_openapi_filename</h3>
 
 <p>Used with a target labelized <strong>BINDINGV2</strong> to define the file name, and
 possibly a relative path with the current <em>CMakeLists.txt</em>.</p>
@@ -2507,10 +2507,10 @@ then the default one will be used, <em>${OUTPUT_NAME}-apidef</em> with
   <p><strong>CAUTION</strong> you must only specify the name <strong>WITHOUT</strong> the extension.</p>
 </blockquote>
 
-<pre><code class="language-cmake">set_openapi_filename('binding/mybinding_definition')
-</code></pre>
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">set_openapi_filename</span><span class="p">(</span>'binding/mybinding_definition'<span class="p">)</span>
+</code></pre></div></div>
 
-<h3 id="addinputfiles">add_input_files</h3>
+<h3 id="add_input_files">add_input_files</h3>
 
 <p>Create custom target dedicated for HTML5 and data resource files. This macro
 provides syntax and schema verification for differents languages which are
@@ -2524,8 +2524,8 @@ about now: LUA, JSON and XML.</p>
   <li>JSON_CHECKER: no tools found at the moment.</li>
 </ul>
 
-<pre><code class="language-cmake">add_input_file("${MY_FILES_LIST}")
-</code></pre>
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">add_input_file</span><span class="p">(</span><span class="s2">"</span><span class="si">${</span><span class="nv">MY_FILES_LIST</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>NOTE</strong>: an issue at the check step on a file will stop at the build step.</p>
@@ -2610,7 +2610,7 @@ about now: LUA, JSON and XML.</p>
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:49 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:34:03 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/apps/app-templates/plain/docs/dev_guide/3_advanced_usage.md?h=flounder">Link to source document</small>
 		
@@ -2642,6 +2642,16 @@ about now: LUA, JSON and XML.</p>
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>

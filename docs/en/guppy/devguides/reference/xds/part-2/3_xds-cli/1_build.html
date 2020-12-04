@@ -55,7 +55,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', '{}', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -1553,7 +1553,7 @@
                     <!-- ToC Dropdown (for XS and SM sizes only) -->
                     <div class="toc-dropdown dropdown visible-xs-block visible-sm-block">
                         <button class="btn btn-default dropdown-toggle" type="button" id="tocDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Table of Contents
+                            
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -2313,7 +2313,7 @@
                     <!--
                     
                     
-                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
+                        <a class="edit" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 
                     
                     
@@ -2481,9 +2481,9 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        This version of the documentation is outdated!
+                        
                         <a href="/docs/en/latest/">
-                            Click here for the latest released version.
+                            
                         </a>
                     </div>
                 
@@ -2509,11 +2509,11 @@ in order respect directory hierarchy that match Go package import logic (see
 
 <p>Then use delivered Makefile :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Declare ROOTDIR, can be any location (for example xds-build)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Declare ROOTDIR, can be any location (for example xds-build)</span>
 <span class="nv">ROOTDIR</span><span class="o">=</span><span class="nv">$HOME</span>/xds-build
 
 <span class="c"># Create directory hierarchy that match Go package import logic</span>
-mkdir -p <span class="nv">$ROOTDIR</span>/src/gerrit.automotivelinux.org/gerrit/src/xds
+mkdir <span class="nt">-p</span> <span class="nv">$ROOTDIR</span>/src/gerrit.automotivelinux.org/gerrit/src/xds
 <span class="nb">cd</span> <span class="nv">$ROOTDIR</span>/src/gerrit.automotivelinux.org/gerrit/src/xds
 
 <span class="c"># Clone sources</span>
@@ -2524,14 +2524,12 @@ git clone https://gerrit.automotivelinux.org/gerrit/src/xds/xds-cli
 <span class="c"># (note that GOPATH will correctly be set by Makefile)</span>
 <span class="nb">cd </span>xds-cli
 make all
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Generate xds-cli package / tarball</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>make package-all
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make package-all
+</code></pre></div></div>
 
 
 
@@ -2612,7 +2610,7 @@ make all
 		</p>
 	</div>
     <div class="col-sm-3">
-		<small class="stats">Page rendered at:  2020-12-04 04:33:42 +0000</small>
+		<small class="stats">Page rendered at:  2021-05-10 04:33:57 +0000</small>
 		
 		<br/><small class="stats"><a href="https://git.automotivelinux.org/src/xds/xds-docs/plain/docs/part-2/3_xds-cli/1_build.md?h=guppy">Link to source document</small>
 		
@@ -2644,6 +2642,16 @@ make all
 </script>
  -->
             
+    
+        <script defer src="/static/js/lib/raphael-min.js"></script>
+    
+        <script defer src="/static/js/lib/underscore-min.js"></script>
+    
+        <script defer src="/static/js/lib/sequence-diagram-min.js"></script>
+    
+        <script defer src="/static/js/lib/flowchart-latest.js"></script>
+    
+        <script defer src="/static/js/process-uml.js"></script>
     
 
 </body>
